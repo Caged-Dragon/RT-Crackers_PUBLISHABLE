@@ -1,0 +1,1 @@
+(() => {const $=s=>document.querySelector(s);const menu=$('#menuBtn');menu?.addEventListener('click',()=>$('#mobileMenu')?.classList.toggle('show'));document.querySelectorAll('[data-year]').forEach(x=>x.textContent=new Date().getFullYear());})();

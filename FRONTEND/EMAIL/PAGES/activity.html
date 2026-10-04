@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<title>Sending Settings - RTC Crackers Mail</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tag-notifications": "#EA580C",
+            "secondary-fixed": "#dae2fd",
+            "surface-canvas": "#FFFFFF",
+            "tertiary": "#795500",
+            "on-surface-variant": "#5a4138",
+            "secondary-fixed-dim": "#bec6e0",
+            "border-strong": "#E2E8F0",
+            "brand-fire-red": "#E63946",
+            "surface-bright": "#f8f9ff",
+            "secondary-container": "#dae2fd",
+            "inverse-on-surface": "#eaf1ff",
+            "tag-noreply": "#475569",
+            "on-tertiary-container": "#fffbff",
+            "border-subtle": "#F1F5F9",
+            "on-surface": "#0b1c30",
+            "surface-container-low": "#eff4ff",
+            "tag-orders": "#D97706",
+            "tag-billing": "#7C3AED",
+            "outline": "#8e7166",
+            "on-tertiary": "#ffffff",
+            "secondary": "#565e74",
+            "on-primary-container": "#fffbff",
+            "primary": "#a33900",
+            "surface-variant": "#d3e4fe",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#271900",
+            "background": "#f8f9ff",
+            "surface-container": "#e5eeff",
+            "on-error-container": "#93000a",
+            "primary-container": "#cc4900",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#d3e4fe",
+            "error": "#ba1a1a",
+            "tertiary-container": "#996c00",
+            "surface-container-lowest": "#ffffff",
+            "surface-subtle": "#F8FAFC",
+            "on-secondary-container": "#5c647a",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#ffdbce",
+            "outline-variant": "#e2bfb2",
+            "on-primary": "#ffffff",
+            "tag-info": "#0891B2",
+            "tag-sales": "#16A34A",
+            "primary-fixed-dim": "#ffb599",
+            "tertiary-fixed": "#ffdea9",
+            "on-secondary-fixed-variant": "#3f465c",
+            "tag-contact": "#4F46E5",
+            "surface": "#f8f9ff",
+            "on-background": "#0b1c30",
+            "tertiary-fixed-dim": "#fbbc3c",
+            "on-secondary-fixed": "#131b2e",
+            "surface-dim": "#cbdbf5",
+            "tag-admin": "#DC2626",
+            "surface-tint": "#a73a00",
+            "surface-container-high": "#dce9ff",
+            "tag-support": "#2563EB",
+            "on-tertiary-fixed-variant": "#5e4200",
+            "on-primary-fixed-variant": "#7f2b00",
+            "inverse-primary": "#ffb599",
+            "on-primary-fixed": "#370e00",
+            "inverse-surface": "#213145"
+          },
+          fontFamily: {
+            "title-sm": ["Inter", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+            "code-sm": ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+            "headline-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "display-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "title-md": ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<link rel="stylesheet" href="/FRONTEND/EMAIL/email-runtime.css"><script src="/FRONTEND/EMAIL/config.js"></script><script src="/FRONTEND/EMAIL/email-api.js"></script><script src="/FRONTEND/EMAIL/email-runtime.js"></script></head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- LEFT PERSISTENT SIDEBAR -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto">
+<div class="flex flex-col">
+<!-- Brand Logo / Wordmark -->
+<div class="h-16 px-4 flex items-center justify-between gap-2 bg-surface-subtle border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<img alt="RTC Crackers Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG_c7pxIPE4wwgSpxLFdUH_tg8svgIbUIwkhn7NCze_r0x_6WTZ_jzC9vfGXc5OgbMK2FdXgS2SwxvmiHBQfXisYT_PH7cTvFWOSkZv_Mr-bzU71U1De5LkmvshUlwXLJFP2Kejr-oGaxIfUck0RnN2ckJhDtCVvshifzkErWtefVAW8Pr75VKhiKZMdr0XVUFm6PCVfbFXbMlmSMxDNBmEpn1CLLHaGet8zoB1wdpONt_CSqntRtOjqB_"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-sm text-on-surface tracking-tight font-bold leading-none">RTC Crackers</span>
+<span class="font-label-sm text-[11px] text-tag-notifications font-semibold leading-tight">Enterprise Mail</span>
+</div>
+</div>
+</div>
+<!-- Quick Compose Action -->
+<div class="px-4 pt-3 pb-2">
+<a class="w-full flex items-center justify-center gap-2 py-2 px-3 bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-sm rounded-lg transition-colors shadow-sm" href="/email/compose">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Compose</span>
+</a>
+</div>
+<!-- Mailbox Folders -->
+<div class="px-4 pt-2 pb-1">
+<span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Mailbox Folders</span>
+</div>
+<nav class="flex flex-col px-2 space-y-0.5">
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/inbox">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">inbox</span>
+<span class="text-sm">Inbox</span>
+</div>
+<span class="text-[11px] bg-tag-notifications text-on-primary px-1.5 py-0.5 rounded-full font-semibold">24</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/starred">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="text-sm">Starred</span>
+</div>
+<span class="text-[11px] text-secondary">8</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/drafts">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">draft</span>
+<span class="text-sm">Drafts</span>
+</div>
+<span class="text-[11px] text-secondary">3</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/sent">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span class="text-sm">Sent</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/archived">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+<span class="text-sm">Archived</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/trash">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span class="text-sm">Trash</span>
+</div>
+</a>
+</nav>
+<!-- Mailbox Accounts Section -->
+<div class="px-4 pt-4 pb-1">
+<span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Authorized Mailboxes</span>
+</div>
+<nav class="flex flex-col px-2 space-y-0.5">
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-on-surface"></span>
+<span class="text-xs truncate">All Mailboxes (9)</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-admin"></span>
+<span class="text-xs truncate">admin@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-support"></span>
+<span class="text-xs truncate">support@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-sales"></span>
+<span class="text-xs truncate">sales@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-orders"></span>
+<span class="text-xs truncate">orders@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-billing"></span>
+<span class="text-xs truncate">billing@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-info"></span>
+<span class="text-xs truncate">info@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-contact"></span>
+<span class="text-xs truncate">contact@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-notifications"></span>
+<span class="text-xs truncate">notifications@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-noreply"></span>
+<span class="text-xs truncate">noreply@rtcrackers.com</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Actions / Settings (Highlighted as Active App Section) -->
+<div class="flex flex-col border-t border-border-subtle p-2 bg-surface-subtle">
+<nav class="flex flex-col space-y-0.5 mb-2">
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-surface-container font-semibold text-on-surface shadow-xs transition-all" href="/email/settings">
+<span class="material-symbols-outlined text-[18px] text-tag-notifications">settings</span>
+<span class="text-xs">Settings</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">help</span>
+<span class="text-xs">Help &amp; Docs</span>
+</a>
+</nav>
+<!-- Profile Widget -->
+<div class="flex items-center justify-between px-2 py-1.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2 min-w-0">
+<img alt="Admin Avatar" class="w-7 h-7 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-semibold text-on-surface truncate">Operations Admin</span>
+<span class="text-[10px] text-secondary truncate">admin@rtcrackers.com</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[16px]">more_vert</span>
+</div>
+</div>
+</aside>
+<!-- MAIN VIEWPORT CONTENT (Padded 64 for sidebar) -->
+<div class="pl-64 min-h-screen flex flex-col">
+<!-- TOP HEADER -->
+<header class="fixed top-0 left-64 right-0 h-16 bg-surface-canvas/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-6 border-b border-border-subtle">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-notifications text-[22px]">outbox</span>
+<div>
+<div class="flex items-center gap-2">
+<h1 class="font-headline-sm text-base text-on-surface font-bold leading-tight">Settings</h1>
+<span class="text-secondary text-xs">/</span>
+<span class="font-label-md text-sm text-tag-notifications font-semibold">Sending</span>
+</div>
+<p class="text-xs text-secondary leading-none">Configure how emails are sent and how the compose experience behaves.</p>
+</div>
+</div>
+</div>
+<!-- Header Right Controls -->
+<div class="flex items-center gap-3">
+<!-- Live Autosave Status Indicator -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-xs font-medium text-secondary transition-all" id="saveStatusIndicator">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales" id="saveStatusDot"></span>
+<span id="saveStatusText">All changes saved</span>
+</span>
+<!-- Global Quick Search trigger -->
+<div class="relative w-64 hidden lg:block">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-secondary text-[16px]">search</span>
+<input class="w-full bg-surface-subtle text-on-surface placeholder:text-secondary text-xs pl-8 pr-8 py-1.5 rounded-md outline-none focus:ring-1 focus:ring-tag-notifications border border-border-strong" onkeydown="if(event.key==='Enter') window.location.href='/email/search?q='+encodeURIComponent(this.value)" placeholder="Quick find (⌘K)..." type="text"/>
+<span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-secondary bg-surface-container px-1 rounded font-mono">⌘K</span>
+</div>
+<!-- Refresh Button -->
+<button class="p-2 rounded-lg text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="refreshSettings()" title="Reload Sending Settings" type="button">
+<span class="material-symbols-outlined text-[20px]" id="refreshSettingsIcon">refresh</span>
+</button>
+<button class="p-2 rounded-lg text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Notifications" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="flex items-center gap-2 pl-2" type="button">
+<img alt="Admin Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+<span class="material-symbols-outlined text-secondary text-[16px]">expand_more</span>
+</button>
+</div>
+</header>
+<!-- WORKSPACE -->
+<main class="pt-16 flex-1 flex flex-col bg-surface"><div class="flex flex-col w-full">
+<!-- SCRIPT & DYNAMIC LOGIC FOR DRAWER, FILTERS, AND RETRY -->
+<script>
+    function openLogDrawer(msgId, status, sender, recipient, subject, time, reason, smtpCode) {
+      const drawer = document.getElementById('telemetryDrawer');
+      const backdrop = document.getElementById('drawerBackdrop');
+      
+      document.getElementById('drawerMsgId').innerText = msgId;
+      document.getElementById('drawerStatusBadge').innerText = status;
+      document.getElementById('drawerSender').innerText = sender;
+      document.getElementById('drawerRecipient').innerText = recipient;
+      document.getElementById('drawerSubject').innerText = subject;
+      document.getElementById('drawerTimestamp').innerText = time;
+      document.getElementById('drawerDiagnosticText').innerText = reason;
+      document.getElementById('drawerSmtpCode').innerText = smtpCode;
+      
+      const badge = document.getElementById('drawerStatusBadge');
+      if (status === 'DELIVERED') {
+        badge.className = 'px-2 py-0.5 rounded-full text-code-sm font-bold bg-tag-sales/15 text-tag-sales';
+      } else if (status === 'IN-FLIGHT') {
+        badge.className = 'px-2 py-0.5 rounded-full text-code-sm font-bold bg-tag-orders/15 text-tag-orders';
+      } else if (status === 'BOUNCED') {
+        badge.className = 'px-2 py-0.5 rounded-full text-code-sm font-bold bg-error/15 text-error';
+      } else {
+        badge.className = 'px-2 py-0.5 rounded-full text-code-sm font-bold bg-secondary/15 text-secondary';
+      }
+
+      backdrop.classList.remove('hidden');
+      backdrop.classList.add('block');
+      drawer.classList.remove('translate-x-full');
+      drawer.classList.add('translate-x-0');
+    }
+
+    function closeLogDrawer() {
+      const drawer = document.getElementById('telemetryDrawer');
+      const backdrop = document.getElementById('drawerBackdrop');
+      drawer.classList.remove('translate-x-0');
+      drawer.classList.add('translate-x-full');
+      setTimeout(() => {
+        backdrop.classList.remove('block');
+        backdrop.classList.add('hidden');
+      }, 200);
+    }
+
+    function copyToClipboard(text, elemId) {
+      navigator.clipboard.writeText(text).then(() => {
+        const icon = document.getElementById(elemId);
+        if (icon) {
+          const original = icon.innerText;
+          icon.innerText = 'done';
+          setTimeout(() => icon.innerText = original, 1200);
+        }
+        if (window.showToast) {
+          window.showToast('Copied ' + text + ' to clipboard');
+        }
+      });
+    }
+
+    function toggleLiveStream() {
+      const btn = document.getElementById('liveToggleBtn');
+      const dot = document.getElementById('livePulseDot');
+      const stateText = document.getElementById('liveToggleText');
+      if (dot.classList.contains('bg-tag-sales')) {
+        dot.classList.remove('bg-tag-sales', 'animate-ping');
+        dot.classList.add('bg-secondary');
+        stateText.innerText = 'Live Paused';
+        btn.classList.add('opacity-75');
+        if (window.showToast) window.showToast('Real-time telemetry stream paused', 'pause');
+      } else {
+        dot.classList.remove('bg-secondary');
+        dot.classList.add('bg-tag-sales', 'animate-ping');
+        stateText.innerText = 'Live Active';
+        btn.classList.remove('opacity-75');
+        if (window.showToast) window.showToast('Streaming live Sivakasi relay events', 'sensors');
+      }
+    }
+
+    function simulateRetry() {
+      const retryBtn = document.getElementById('drawerRetryBtn');
+      retryBtn.innerHTML = '<span class="material-symbols-outlined text-[15px] animate-spin">refresh</span> Re-queueing...';
+      setTimeout(() => {
+        retryBtn.innerHTML = '<span class="material-symbols-outlined text-[15px]">done_all</span> Enqueued in Spool';
+        if (window.showToast) window.showToast('Idempotent retry queued for relay dispatch #42881');
+      }, 700);
+    }
+  </script>
+<!-- SUBHEADER / OPERATIONS TITLE BANNER -->
+<section class="px-8 pt-7 pb-6 bg-surface-canvas shadow-xs">
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-secondary uppercase tracking-widest text-code-sm">Home</span>
+<span class="text-secondary text-code-sm">/</span>
+<span class="font-label-sm text-secondary uppercase tracking-widest text-code-sm">Email Operations</span>
+<span class="text-secondary text-code-sm">/</span>
+<span class="font-label-sm text-tag-notifications uppercase tracking-widest text-code-sm font-bold">Email Activity</span>
+</div>
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">Email Activity &amp; Delivery Status</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-tag-notifications/10 text-tag-notifications text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-notifications"></span>
+            9 Sivakasi Mailboxes
+          </span>
+</div>
+<p class="font-body-md text-body-md text-secondary mt-1 max-w-3xl">
+          Operational delivery telemetry, SMTP dispatch logs, and bounce diagnostic stream across 9 authorized Sivakasi mailboxes.
+        </p>
+</div>
+<!-- Action Cluster -->
+<div class="flex items-center flex-wrap gap-2.5 shrink-0">
+<!-- Live stream toggle -->
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-on-surface shadow-xs transition-all text-label-md" id="liveToggleBtn" onclick="toggleLiveStream()">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tag-sales opacity-75" id="livePulseDot"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tag-sales"></span>
+</span>
+<span class="font-semibold" id="liveToggleText">Live Active</span>
+</button>
+<!-- Stream status badge -->
+<div class="hidden xl:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-subtle text-secondary text-label-md">
+<span class="material-symbols-outlined text-[16px] text-tag-notifications">sensors</span>
+<span>Relay stream: <strong class="text-on-surface font-semibold">12s ago</strong></span>
+</div>
+<!-- Export CSV button -->
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-surface-canvas hover:bg-surface-subtle text-on-surface text-label-md font-semibold shadow-xs transition-all" onclick="if(window.showToast) window.showToast('Generating encrypted CSV dispatch export (1,482 records)...')">
+<span class="material-symbols-outlined text-[16px] text-secondary">file_download</span>
+<span>Export Log (CSV)</span>
+</button>
+<!-- Primary Refresh -->
+<button class="flex items-center gap-2 px-4 py-1.5 rounded-lg bg-tag-notifications hover:bg-primary-container text-on-primary text-label-md font-semibold shadow-xs transition-all" onclick="if(window.refreshSettings) window.refreshSettings();">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Sync Relay</span>
+</button>
+</div>
+</div>
+</section>
+<!-- OPERATIONAL SUMMARY METRICS (HIGH IMPACT BENTO TILES) -->
+<section class="px-8 pt-6 pb-2">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5">
+<!-- Total Dispatches -->
+<div class="bg-surface-canvas rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">24h Dispatches</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">forward_to_inbox</span>
+</div>
+<div class="mt-3">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">1,482</span>
+<span class="text-code-sm text-tag-sales font-bold ml-1.5">↑ 14.2%</span>
+</div>
+<div class="mt-2 text-code-sm text-secondary">Peak: Diwali wholesale rush</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-surface-container"></div>
+</div>
+<!-- Delivered Confirmation -->
+<div class="bg-surface-canvas rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tag-sales uppercase font-bold">Delivered</span>
+<span class="material-symbols-outlined text-tag-sales text-[18px]">verified</span>
+</div>
+<div class="mt-3">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">1,446</span>
+<span class="text-code-sm text-tag-sales font-bold ml-1.5">97.57%</span>
+</div>
+<div class="mt-2 text-code-sm text-secondary">Confirmed remote 250 OK</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-tag-sales"></div>
+</div>
+<!-- In-Flight / Spool -->
+<div class="bg-surface-canvas rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tag-orders uppercase font-bold">In-Flight Queue</span>
+<span class="material-symbols-outlined text-tag-orders text-[18px] animate-pulse">hourglass_top</span>
+</div>
+<div class="mt-3">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">18</span>
+<span class="text-code-sm text-tag-orders font-semibold ml-1.5">Active Spool</span>
+</div>
+<div class="mt-2 text-code-sm text-secondary">Avg relay queue: 2.1s</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-tag-orders"></div>
+</div>
+<!-- Failed / Bounced -->
+<div class="bg-surface-canvas rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-error uppercase font-bold">Bounces</span>
+<span class="material-symbols-outlined text-error text-[18px]">report_problem</span>
+</div>
+<div class="mt-3">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">14</span>
+<span class="text-code-sm text-error font-medium ml-1.5">0.94%</span>
+</div>
+<div class="mt-2 text-code-sm text-secondary">3 Hard • 11 Soft Quota</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-error"></div>
+</div>
+<!-- Suppressed Safeguard -->
+<div class="bg-surface-canvas rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Suppressed</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">shield</span>
+</div>
+<div class="mt-3">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">4</span>
+<span class="text-code-sm text-secondary font-medium ml-1.5">Protected</span>
+</div>
+<div class="mt-2 text-code-sm text-secondary">Auto-blocked unsubscribes</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-secondary"></div>
+</div>
+<!-- Sivakasi Gateway Telemetry -->
+<div class="bg-primary/5 rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tag-notifications uppercase font-bold">Relay Health</span>
+<span class="material-symbols-outlined text-tag-notifications text-[18px]">bolt</span>
+</div>
+<div class="mt-3 flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg text-tag-notifications font-bold">420</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">ms</span>
+</div>
+<div class="mt-2 text-code-sm text-on-surface-variant font-medium">blr-01 Ingress 100% OK</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-tag-notifications"></div>
+</div>
+</div>
+</section>
+<!-- SEARCH, MAILBOX FILTER & CRITERIA BAR -->
+<section class="px-8 pt-4 pb-4">
+<div class="bg-surface-canvas rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-3">
+<!-- Main Search Bar -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[18px]">search</span>
+<input class="w-full bg-surface-subtle text-on-surface placeholder:text-secondary text-body-md pl-10 pr-12 py-2 rounded-lg outline-none focus:bg-surface-canvas shadow-xs transition-all font-body-md" placeholder="Search by recipient, subject, msg_id, thread_id, error code..." type="text"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-code-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded font-mono font-medium">/</span>
+</div>
+<!-- Filter Controls Dropdowns -->
+<div class="flex items-center flex-wrap gap-2.5">
+<!-- Mailbox Selector -->
+<div class="relative">
+<select class="appearance-none bg-surface-subtle hover:bg-surface-container text-on-surface text-label-md font-semibold pl-3 pr-8 py-2 rounded-lg outline-none cursor-pointer shadow-xs transition-all">
+<option value="all">All Authorized Mailboxes (9)</option>
+<option value="orders">orders@rtcrackers.com</option>
+<option value="sales">sales@rtcrackers.com</option>
+<option value="billing">billing@rtcrackers.com</option>
+<option value="admin">admin@rtcrackers.com</option>
+<option value="support">support@rtcrackers.com</option>
+<option value="info">info@rtcrackers.com</option>
+<option value="contact">contact@rtcrackers.com</option>
+<option value="notifications">notifications@rtcrackers.com</option>
+<option value="noreply">noreply@rtcrackers.com</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-secondary text-[16px] pointer-events-none">expand_more</span>
+</div>
+<!-- Date Range Selector -->
+<div class="relative">
+<select class="appearance-none bg-surface-subtle hover:bg-surface-container text-on-surface text-label-md font-semibold pl-3 pr-8 py-2 rounded-lg outline-none cursor-pointer shadow-xs transition-all">
+<option value="today">Today (Diwali Rush 2026)</option>
+<option value="7d">Last 7 Days</option>
+<option value="30d">Last 30 Days</option>
+<option value="custom">Custom Date Range...</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-secondary text-[16px] pointer-events-none">calendar_month</span>
+</div>
+<!-- Direction Toggle -->
+<div class="inline-flex rounded-lg bg-surface-subtle p-0.5 shadow-xs">
+<button class="px-3 py-1.5 rounded-md text-label-sm font-bold bg-surface-canvas text-tag-notifications shadow-xs">Outbound</button>
+<button class="px-3 py-1.5 rounded-md text-label-sm font-medium text-secondary hover:text-on-surface">Inbound Relay</button>
+</div>
+</div>
+</div>
+<!-- Quick Status Filter Pills & Active Summary -->
+<div class="flex items-center justify-between flex-wrap gap-2 pt-1">
+<div class="flex items-center flex-wrap gap-1.5">
+<button class="px-3 py-1 rounded-full text-label-sm font-bold bg-tag-notifications text-on-primary shadow-xs">
+            All (1,482)
+          </button>
+<button class="px-3 py-1 rounded-full text-label-sm font-semibold bg-surface-subtle text-secondary hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-tag-sales mr-1"></span> Delivered (1,446)
+          </button>
+<button class="px-3 py-1 rounded-full text-label-sm font-semibold bg-surface-subtle text-secondary hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-tag-orders mr-1"></span> In-Flight (18)
+          </button>
+<button class="px-3 py-1 rounded-full text-label-sm font-semibold bg-surface-subtle text-secondary hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-error mr-1"></span> Bounced (14)
+          </button>
+<button class="px-3 py-1 rounded-full text-label-sm font-semibold bg-surface-subtle text-secondary hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary mr-1"></span> Suppressed (4)
+          </button>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-code-sm text-secondary font-mono">Showing 1-10 of 1,482 dispatches</span>
+<button class="text-label-sm text-tag-notifications hover:underline font-semibold ml-2" onclick="if(window.showToast) window.showToast('All filter criteria cleared')">
+            Reset filters
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- ENTERPRISE DELIVERY TELEMETRY LOG TABLE -->
+<section class="px-8 pb-12">
+<div class="bg-surface-canvas rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-subtle text-secondary font-label-sm text-code-sm uppercase tracking-wider">
+<th class="py-3 px-4 font-semibold">Delivery Status</th>
+<th class="py-3 px-4 font-semibold">Timestamp</th>
+<th class="py-3 px-4 font-semibold">Sender Mailbox</th>
+<th class="py-3 px-4 font-semibold">Recipient</th>
+<th class="py-3 px-4 font-semibold">Subject &amp; Workflow</th>
+<th class="py-3 px-4 font-semibold">Telemetry IDs</th>
+<th class="py-3 px-4 font-semibold">Payload</th>
+<th class="py-3 px-4 font-semibold text-right">Inspection</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-body-md text-on-surface font-body-md">
+<!-- ROW 1: Bounced Item (Featured in Inspection Drawer) -->
+<tr class="hover:bg-surface-subtle/80 transition-colors group cursor-pointer" onclick="openLogDrawer('msg_8f9a21d9b3b2', 'BOUNCED', 'orders@rtcrackers.com', 'logistics@kannanlorry.com', 'Lorry Receipt LR-9921 / 40 Cartons Sivakasi Dispatch', '10:42 AM IST', 'SMTP 452 4.2.2 Mailbox full / Over quota. Recipient storage limit exceeded.', '452 4.2.2 (Temporary)')">
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-code-sm font-bold bg-error/10 text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                  BOUNCED
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-title-sm text-on-surface font-semibold">10:42 AM IST</span>
+<span class="text-code-sm text-secondary">4m ago • blr-01</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-orders shrink-0"></span>
+<span class="font-semibold text-on-surface">orders@rtcrackers.com</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="font-title-sm text-on-surface font-semibold">logistics@kannanlorry.com</span>
+</td>
+<td class="py-3 px-4 max-w-xs">
+<div class="truncate font-semibold text-on-surface">Lorry Receipt LR-9921 / 40 Cartons Sivakasi Dispatch</div>
+<div class="text-code-sm text-error truncate font-medium">SMTP 452: Recipient Mailbox full (Soft bounce)</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container font-mono text-code-sm text-secondary">msg_8f9a...3b2</span>
+<button class="p-1 text-secondary hover:text-on-surface" onclick="event.stopPropagation(); copyToClipboard('msg_8f9a21d9b3b2', 'copyIcon1')" type="button">
+<span class="material-symbols-outlined text-[14px]" id="copyIcon1">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-subtle text-code-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px] text-tag-notifications">attach_file</span>
+                  PDF 1.4 MB
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<button class="px-3 py-1 rounded-lg bg-surface-container-low hover:bg-tag-notifications hover:text-on-primary text-secondary text-label-sm font-semibold transition-all" type="button">
+                  Diagnose
+                </button>
+</td>
+</tr>
+<!-- ROW 2: Delivered - Wholesale Order -->
+<tr class="hover:bg-surface-subtle/80 transition-colors group cursor-pointer" onclick="openLogDrawer('msg_7a4c1192e104', 'DELIVERED', 'billing@rtcrackers.com', 'meena.dealers@chennaisparklers.in', 'Wholesale Proforma Invoice #RTC-2026-8819', '10:39 AM IST', '250 2.0.0 OK: Delivered through Chennai Google MX cluster.', '250 2.0.0 (Success)')">
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-code-sm font-bold bg-tag-sales/10 text-tag-sales">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+                  DELIVERED
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-title-sm text-on-surface font-semibold">10:39 AM IST</span>
+<span class="text-code-sm text-secondary">7m ago • blr-01</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-billing shrink-0"></span>
+<span class="font-semibold text-on-surface">billing@rtcrackers.com</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="font-title-sm text-on-surface font-semibold">meena.dealers@chennaisparklers.in</span>
+</td>
+<td class="py-3 px-4 max-w-xs">
+<div class="truncate font-semibold text-on-surface">Wholesale Proforma Invoice #RTC-2026-8819</div>
+<div class="text-code-sm text-secondary truncate">GST Invoice + B2B Delivery Challan</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container font-mono text-code-sm text-secondary">msg_7a4c...104</span>
+<button class="p-1 text-secondary hover:text-on-surface" onclick="event.stopPropagation(); copyToClipboard('msg_7a4c1192e104', 'copyIcon2')" type="button">
+<span class="material-symbols-outlined text-[14px]" id="copyIcon2">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-subtle text-code-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px] text-tag-billing">receipt_long</span>
+                  PDF 890 KB
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<button class="px-3 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-secondary text-label-sm font-semibold transition-all" type="button">
+                  Details
+                </button>
+</td>
+</tr>
+<!-- ROW 3: In-Flight Message -->
+<tr class="hover:bg-surface-subtle/80 transition-colors group cursor-pointer" onclick="openLogDrawer('msg_3d1e89ff5511', 'IN-FLIGHT', 'sales@rtcrackers.com', 'procurement@deepamdiwali.com', 'Diwali Gift Hamper Pre-Order Allocation - Slot 4', '10:35 AM IST', 'Active delivery in spool. Waiting for TLS handshake with recipient MX.', 'Spool (Attempt 1/3)')">
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-code-sm font-bold bg-tag-orders/10 text-tag-orders">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-orders animate-pulse"></span>
+                  IN-FLIGHT
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-title-sm text-on-surface font-semibold">10:35 AM IST</span>
+<span class="text-code-sm text-secondary">11m ago • Relay Q</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-sales shrink-0"></span>
+<span class="font-semibold text-on-surface">sales@rtcrackers.com</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="font-title-sm text-on-surface font-semibold">procurement@deepamdiwali.com</span>
+</td>
+<td class="py-3 px-4 max-w-xs">
+<div class="truncate font-semibold text-on-surface">Diwali Gift Hamper Pre-Order Allocation - Slot 4</div>
+<div class="text-code-sm text-tag-orders truncate font-medium">Negotiating STARTTLS with relay.deepam.in</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container font-mono text-code-sm text-secondary">msg_3d1e...511</span>
+<button class="p-1 text-secondary hover:text-on-surface" onclick="event.stopPropagation(); copyToClipboard('msg_3d1e89ff5511', 'copyIcon3')" type="button">
+<span class="material-symbols-outlined text-[14px]" id="copyIcon3">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-subtle text-code-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px] text-tag-sales">table_chart</span>
+                  XLSX 2.1 MB
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<button class="px-3 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-secondary text-label-sm font-semibold transition-all" type="button">
+                  Track
+                </button>
+</td>
+</tr>
+<!-- ROW 4: Delivered - Customer Care Support -->
+<tr class="hover:bg-surface-subtle/80 transition-colors group cursor-pointer" onclick="openLogDrawer('msg_62b800ea12a9', 'DELIVERED', 'support@rtcrackers.com', 'kumar.fireworks@madurai.co', 'Re: Replacement Request for 5000-Wala Garland Cartons', '10:31 AM IST', '250 2.0.0 OK: Handoff acknowledged in 380ms.', '250 2.0.0 (Success)')">
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-code-sm font-bold bg-tag-sales/10 text-tag-sales">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+                  DELIVERED
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-title-sm text-on-surface font-semibold">10:31 AM IST</span>
+<span class="text-code-sm text-secondary">15m ago • blr-01</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-support shrink-0"></span>
+<span class="font-semibold text-on-surface">support@rtcrackers.com</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="font-title-sm text-on-surface font-semibold">kumar.fireworks@madurai.co</span>
+</td>
+<td class="py-3 px-4 max-w-xs">
+<div class="truncate font-semibold text-on-surface">Re: Replacement Request for 5000-Wala Garland Cartons</div>
+<div class="text-code-sm text-secondary truncate">Claim #RT-998 Approved by Sivakasi QC</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container font-mono text-code-sm text-secondary">msg_62b8...2a9</span>
+<button class="p-1 text-secondary hover:text-on-surface" onclick="event.stopPropagation(); copyToClipboard('msg_62b800ea12a9', 'copyIcon4')" type="button">
+<span class="material-symbols-outlined text-[14px]" id="copyIcon4">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-subtle text-code-sm text-secondary font-medium">
+                  None
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<button class="px-3 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-secondary text-label-sm font-semibold transition-all" type="button">
+                  Details
+                </button>
+</td>
+</tr>
+<!-- ROW 5: Suppressed Entry -->
+<tr class="hover:bg-surface-subtle/80 transition-colors group cursor-pointer" onclick="openLogDrawer('msg_90a1bc729103', 'SUPPRESSED', 'notifications@rtcrackers.com', 'inactive.dealer@sparklerhub.in', 'RTC Diwali Price List &amp; Stock Availability 2026', '10:28 AM IST', 'Dispatch halted: Recipient address matches global suppression database (Unsubscribed 14-Aug-2025).', 'Suppression Block (Rule #21)')">
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-code-sm font-bold bg-secondary/10 text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  SUPPRESSED
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-title-sm text-on-surface font-semibold">10:28 AM IST</span>
+<span class="text-code-sm text-secondary">18m ago • Policy Guard</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-notifications shrink-0"></span>
+<span class="font-semibold text-on-surface">notifications@rtcrackers.com</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="font-title-sm text-secondary line-through">inactive.dealer@sparklerhub.in</span>
+</td>
+<td class="py-3 px-4 max-w-xs">
+<div class="truncate font-semibold text-on-surface">RTC Diwali Price List &amp; Stock Availability 2026</div>
+<div class="text-code-sm text-secondary truncate">Policy Guard: Unsubscribed recipient blocked</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container font-mono text-code-sm text-secondary">msg_90a1...103</span>
+<button class="p-1 text-secondary hover:text-on-surface" onclick="event.stopPropagation(); copyToClipboard('msg_90a1bc729103', 'copyIcon5')" type="button">
+<span class="material-symbols-outlined text-[14px]" id="copyIcon5">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-subtle text-code-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px] text-tag-notifications">attach_file</span>
+                  PDF 4.2 MB
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<button class="px-3 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-secondary text-label-sm font-semibold transition-all" type="button">
+                  Policy
+                </button>
+</td>
+</tr>
+<!-- ROW 6: Delivered - System Admin Notice -->
+<tr class="hover:bg-surface-subtle/80 transition-colors group cursor-pointer" onclick="openLogDrawer('msg_1100aa778932', 'DELIVERED', 'admin@rtcrackers.com', 'audit@peso.gov.in', 'Sivakasi Magazine License Renewal Compliance Dossier #TN-SK-09', '10:15 AM IST', '250 2.0.0 OK: Handshake accepted by PESO Gov Mail gateway.', '250 2.0.0 (Success)')">
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-code-sm font-bold bg-tag-sales/10 text-tag-sales">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+                  DELIVERED
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-title-sm text-on-surface font-semibold">10:15 AM IST</span>
+<span class="text-code-sm text-secondary">31m ago • blr-01</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-admin shrink-0"></span>
+<span class="font-semibold text-on-surface">admin@rtcrackers.com</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="font-title-sm text-on-surface font-semibold">audit@peso.gov.in</span>
+</td>
+<td class="py-3 px-4 max-w-xs">
+<div class="truncate font-semibold text-on-surface">Sivakasi Magazine License Renewal Compliance Dossier #TN-SK-09</div>
+<div class="text-code-sm text-tag-sales truncate font-medium">Delivered to National Gov Secure Mailbox</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container font-mono text-code-sm text-secondary">msg_1100...932</span>
+<button class="p-1 text-secondary hover:text-on-surface" onclick="event.stopPropagation(); copyToClipboard('msg_1100aa778932', 'copyIcon6')" type="button">
+<span class="material-symbols-outlined text-[14px]" id="copyIcon6">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-subtle text-code-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px] text-error">lock</span>
+                  Encrypted 3.8 MB
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<button class="px-3 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-secondary text-label-sm font-semibold transition-all" type="button">
+                  Details
+                </button>
+</td>
+</tr>
+<!-- ROW 7: Hard Bounce Item -->
+<tr class="hover:bg-surface-subtle/80 transition-colors group cursor-pointer" onclick="openLogDrawer('msg_55fe31089bca', 'BOUNCED', 'sales@rtcrackers.com', 'old.store@coimbatorecrackers.net', 'Special Festive Discount: Aerial Fancy Rockets Consignment', '09:58 AM IST', 'SMTP 550 5.1.1 User unknown / Mailbox does not exist on remote host.', '550 5.1.1 (Permanent Hard Bounce)')">
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-code-sm font-bold bg-error/10 text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                  HARD BOUNCE
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-title-sm text-on-surface font-semibold">09:58 AM IST</span>
+<span class="text-code-sm text-secondary">48m ago • blr-01</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-sales shrink-0"></span>
+<span class="font-semibold text-on-surface">sales@rtcrackers.com</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="font-title-sm text-on-surface font-semibold">old.store@coimbatorecrackers.net</span>
+</td>
+<td class="py-3 px-4 max-w-xs">
+<div class="truncate font-semibold text-on-surface">Special Festive Discount: Aerial Fancy Rockets Consignment</div>
+<div class="text-code-sm text-error truncate font-medium">SMTP 550: Recipient user unknown</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container font-mono text-code-sm text-secondary">msg_55fe...bca</span>
+<button class="p-1 text-secondary hover:text-on-surface" onclick="event.stopPropagation(); copyToClipboard('msg_55fe31089bca', 'copyIcon7')" type="button">
+<span class="material-symbols-outlined text-[14px]" id="copyIcon7">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-subtle text-code-sm text-secondary font-medium">
+                  None
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<button class="px-3 py-1 rounded-lg bg-surface-container-low hover:bg-tag-notifications hover:text-on-primary text-secondary text-label-sm font-semibold transition-all" type="button">
+                  Diagnose
+                </button>
+</td>
+</tr>
+<!-- ROW 8: Delivered - Automated System Noreply -->
+<tr class="hover:bg-surface-subtle/80 transition-colors group cursor-pointer" onclick="openLogDrawer('msg_00a94432ff21', 'DELIVERED', 'noreply@rtcrackers.com', 'accounts@sivakasiagencies.in', 'Password Reset Request for Wholesale Portal B2B', '09:42 AM IST', '250 2.0.0 OK: Authentication token dispatched within 210ms.', '250 2.0.0 (Success)')">
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-code-sm font-bold bg-tag-sales/10 text-tag-sales">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+                  DELIVERED
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-title-sm text-on-surface font-semibold">09:42 AM IST</span>
+<span class="text-code-sm text-secondary">1h 4m ago • auth-srv</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-noreply shrink-0"></span>
+<span class="font-semibold text-on-surface">noreply@rtcrackers.com</span>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="font-title-sm text-on-surface font-semibold">accounts@sivakasiagencies.in</span>
+</td>
+<td class="py-3 px-4 max-w-xs">
+<div class="truncate font-semibold text-on-surface">Password Reset Request for Wholesale Portal B2B</div>
+<div class="text-code-sm text-secondary truncate">Transactional one-time secure link</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container font-mono text-code-sm text-secondary">msg_00a9...f21</span>
+<button class="p-1 text-secondary hover:text-on-surface" onclick="event.stopPropagation(); copyToClipboard('msg_00a94432ff21', 'copyIcon8')" type="button">
+<span class="material-symbols-outlined text-[14px]" id="copyIcon8">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-subtle text-code-sm text-secondary font-medium">
+                  None
+                </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap text-right">
+<button class="px-3 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-secondary text-label-sm font-semibold transition-all" type="button">
+                  Details
+                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer Bar -->
+<div class="flex items-center justify-between px-6 py-4 bg-surface-subtle border-t border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="text-body-sm text-secondary">Rows per page:</span>
+<select class="bg-surface-canvas text-on-surface text-code-sm font-semibold rounded px-2 py-1 outline-none shadow-xs">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+<option>100</option>
+</select>
+<span class="text-body-sm text-secondary ml-4">1-10 of 1,482 entries</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="p-1.5 rounded-lg bg-surface-canvas text-secondary hover:text-on-surface shadow-xs disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="px-3 py-1 rounded-lg bg-tag-notifications text-on-primary text-label-sm font-bold shadow-xs">1</button>
+<button class="px-3 py-1 rounded-lg bg-surface-canvas hover:bg-surface-container text-secondary hover:text-on-surface text-label-sm font-semibold shadow-xs">2</button>
+<button class="px-3 py-1 rounded-lg bg-surface-canvas hover:bg-surface-container text-secondary hover:text-on-surface text-label-sm font-semibold shadow-xs">3</button>
+<span class="px-1 text-secondary text-code-sm">...</span>
+<button class="px-3 py-1 rounded-lg bg-surface-canvas hover:bg-surface-container text-secondary hover:text-on-surface text-label-sm font-semibold shadow-xs">149</button>
+<button class="p-1.5 rounded-lg bg-surface-canvas text-secondary hover:text-on-surface shadow-xs">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- RECIPIENT TELEMETRY OVERVIEW INFOGRAPHIC (VISUAL RICHNESS) -->
+<section class="px-8 pb-10">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Handoff Latency Trend Card -->
+<div class="bg-surface-canvas rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Relay Latency Distribution</h2>
+<span class="text-code-sm font-bold text-tag-sales bg-tag-sales/10 px-2 py-0.5 rounded-full">Optimal (420ms)</span>
+</div>
+<p class="text-body-sm text-secondary mt-1">Sivakasi Node blr-01 direct roundtrip handshake to major domestic MX hosts.</p>
+</div>
+<!-- Inline SVG Latency Sparkline Chart -->
+<div class="my-4">
+<svg class="w-full h-24 overflow-visible" fill="none" viewbox="0 0 300 80">
+<defs>
+<lineargradient id="latencyGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#EA580C" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#EA580C" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Area -->
+<path d="M 0 65 Q 40 45 75 52 T 150 35 T 225 25 T 300 30 L 300 80 L 0 80 Z" fill="url(#latencyGrad)"></path>
+<!-- Line -->
+<path d="M 0 65 Q 40 45 75 52 T 150 35 T 225 25 T 300 30" fill="none" stroke="#EA580C" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Data Points -->
+<circle cx="75" cy="52" fill="#EA580C" r="3.5"></circle>
+<circle cx="150" cy="35" fill="#EA580C" r="3.5"></circle>
+<circle cx="225" cy="25" fill="#FFFFFF" r="4.5" stroke="#EA580C" stroke-width="2.5"></circle>
+<circle cx="300" cy="30" fill="#EA580C" r="3.5"></circle>
+</svg>
+<div class="flex justify-between text-code-sm text-secondary font-mono pt-1">
+<span>06:00 IST</span>
+<span>08:00 IST</span>
+<span>10:00 IST (Now)</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-code-sm pt-2 bg-surface-subtle p-2.5 rounded-lg">
+<span class="text-secondary">P95 Latency: <strong class="text-on-surface">680ms</strong></span>
+<span class="text-secondary">P99 Latency: <strong class="text-on-surface">1.2s</strong></span>
+<span class="text-tag-sales font-bold">0 Drop Rate</span>
+</div>
+</div>
+<!-- Domain Destination Breakdown -->
+<div class="bg-surface-canvas rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Top Delivery Destinations</h2>
+<span class="text-code-sm font-semibold text-secondary">24h Volume</span>
+</div>
+<p class="text-body-sm text-secondary mt-1">Recipient corporate and regional transport domains.</p>
+</div>
+<div class="space-y-3 my-3">
+<div>
+<div class="flex justify-between text-code-sm font-semibold mb-1">
+<span class="text-on-surface">Google Workspace / Retail Partners</span>
+<span class="text-secondary font-mono">612 msgs (41%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tag-notifications rounded-full" style="width: 41%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-code-sm font-semibold mb-1">
+<span class="text-on-surface">Tamil Nadu Transport / Kannan Lorry Logistics</span>
+<span class="text-secondary font-mono">380 msgs (26%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tag-orders rounded-full" style="width: 26%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-code-sm font-semibold mb-1">
+<span class="text-on-surface">B2B Wholesale Portals (Deepam, SparklerHub)</span>
+<span class="text-secondary font-mono">298 msgs (20%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tag-sales rounded-full" style="width: 20%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-code-sm font-semibold mb-1">
+<span class="text-on-surface">Government &amp; Regulatory (PESO, GST)</span>
+<span class="text-secondary font-mono">192 msgs (13%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tag-support rounded-full" style="width: 13%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 text-code-sm text-secondary">
+<span class="material-symbols-outlined text-[16px] text-tag-sales">lock</span>
+<span>100% of outbound connections enforce opportunistic TLS 1.3</span>
+</div>
+</div>
+<!-- Sivakasi Server Fleet Status -->
+<div class="bg-surface-canvas rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Relay Node Cluster</h2>
+<span class="inline-flex items-center gap-1 text-code-sm text-tag-sales font-bold">
+<span class="w-2 h-2 rounded-full bg-tag-sales animate-pulse"></span>
+              All 3 Online
+            </span>
+</div>
+<p class="text-body-sm text-secondary mt-1">Multi-AZ Postfix high-availability relay farm.</p>
+</div>
+<div class="space-y-2.5 my-3">
+<div class="p-2.5 rounded-lg bg-surface-subtle flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tag-sales text-[20px]">dns</span>
+<div>
+<div class="font-title-sm text-on-surface font-semibold">blr-01.relay.rtcrackers.com</div>
+<div class="text-code-sm text-secondary">Ingress Primary • Bangalore Datacenter</div>
+</div>
+</div>
+<span class="font-mono text-code-sm font-bold text-on-surface">32% CPU</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-subtle flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tag-sales text-[20px]">dns</span>
+<div>
+<div class="font-title-sm text-on-surface font-semibold">maa-02.relay.rtcrackers.com</div>
+<div class="text-code-sm text-secondary">Ingress Failover • Chennai Datacenter</div>
+</div>
+</div>
+<span class="font-mono text-code-sm font-bold text-on-surface">18% CPU</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-subtle flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tag-notifications text-[20px]">security</span>
+<div>
+<div class="font-title-sm text-on-surface font-semibold">svk-spool.rtcrackers.com</div>
+<div class="text-code-sm text-secondary">Local Factory Cache • Sivakasi Office</div>
+</div>
+</div>
+<span class="font-mono text-code-sm font-bold text-on-surface">0 Queued</span>
+</div>
+</div>
+<div class="text-code-sm text-secondary flex items-center justify-between">
+<span>Outbound IP: <code class="font-mono text-on-surface">103.21.58.42</code> (Clean PTR)</span>
+<span class="text-tag-sales font-semibold">DKIM: PASS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE TELEMETRY DETAIL DRAWER (OFF-CANVAS INSPECTOR) -->
+<div class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-xs hidden transition-opacity" id="drawerBackdrop" onclick="closeLogDrawer()"></div>
+<aside class="fixed top-0 right-0 h-full w-full max-w-xl bg-surface-canvas shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between overflow-y-auto" id="telemetryDrawer">
+<!-- Drawer Header -->
+<div class="p-6 bg-surface-subtle border-b border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tag-notifications/10 text-tag-notifications flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">csv</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Delivery Diagnostics</h2>
+<span class="px-2 py-0.5 rounded-full text-code-sm font-bold bg-error/15 text-error" id="drawerStatusBadge">BOUNCED</span>
+</div>
+<p class="text-code-sm text-secondary font-mono mt-0.5">ID: <span id="drawerMsgId">msg_8f9a21d9b3b2</span></p>
+</div>
+</div>
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" onclick="closeLogDrawer()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Content Body -->
+<div class="p-6 space-y-6 flex-1">
+<!-- Meta Overview Card -->
+<div class="p-4 rounded-xl bg-surface-subtle space-y-3">
+<div>
+<span class="text-code-sm text-secondary uppercase font-semibold">Subject</span>
+<div class="font-title-md text-title-md font-bold text-on-surface mt-0.5" id="drawerSubject">
+            Lorry Receipt LR-9921 / 40 Cartons Sivakasi Dispatch
+          </div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2 border-t border-border-subtle">
+<div>
+<span class="text-code-sm text-secondary uppercase font-semibold">From Mailbox</span>
+<div class="font-title-sm text-on-surface font-semibold truncate" id="drawerSender">orders@rtcrackers.com</div>
+</div>
+<div>
+<span class="text-code-sm text-secondary uppercase font-semibold">Recipient</span>
+<div class="font-title-sm text-on-surface font-semibold truncate" id="drawerRecipient">logistics@kannanlorry.com</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2 border-t border-border-subtle">
+<div>
+<span class="text-code-sm text-secondary uppercase font-semibold">Dispatch Time</span>
+<div class="font-title-sm text-on-surface font-semibold" id="drawerTimestamp">10:42 AM IST (14-Oct-2026)</div>
+</div>
+<div>
+<span class="text-code-sm text-secondary uppercase font-semibold">SMTP Diagnostic Code</span>
+<div class="font-mono text-code-sm text-error font-bold" id="drawerSmtpCode">452 4.2.2 (Temporary)</div>
+</div>
+</div>
+</div>
+<!-- Human-Readable Delivery Timeline -->
+<div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-notifications text-[18px]">history</span>
+          Handoff Event Telemetry
+        </h3>
+<div class="relative pl-6 space-y-4 before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container">
+<!-- Event 1 -->
+<div class="relative">
+<span class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-tag-sales ring-4 ring-surface-canvas"></span>
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-on-surface font-semibold">Accepted by Ingress API</span>
+<span class="text-code-sm font-mono text-secondary">10:42:01 IST</span>
+</div>
+<p class="text-body-sm text-secondary mt-0.5">Payload validated against Sivakasi Postfix relay schema. DKIM signed.</p>
+</div>
+<!-- Event 2 -->
+<div class="relative">
+<span class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-tag-sales ring-4 ring-surface-canvas"></span>
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-on-surface font-semibold">Authenticated &amp; Enqueued</span>
+<span class="text-code-sm font-mono text-secondary">10:42:03 IST</span>
+</div>
+<p class="text-body-sm text-secondary mt-0.5">Assigned to relay queue slot #1902 on node <code class="font-mono text-code-sm">blr-01</code>.</p>
+</div>
+<!-- Event 3 -->
+<div class="relative">
+<span class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-tag-orders ring-4 ring-surface-canvas"></span>
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-on-surface font-semibold">SMTP MX Handshake Initiated</span>
+<span class="text-code-sm font-mono text-secondary">10:42:09 IST</span>
+</div>
+<p class="text-body-sm text-secondary mt-0.5">Connecting to primary MX <code class="font-mono text-code-sm">mail.kannanlorry.com:25</code> with TLS 1.3.</p>
+</div>
+<!-- Event 4 (Bounce Event) -->
+<div class="relative">
+<span class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-error ring-4 ring-surface-canvas"></span>
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-error font-bold">Diagnostic Event: Soft Bounce</span>
+<span class="text-code-sm font-mono text-error font-bold">10:42:15 IST</span>
+</div>
+<p class="text-body-sm text-error mt-0.5 font-medium" id="drawerDiagnosticText">
+              SMTP 452 4.2.2 Mailbox full / Over quota. Recipient storage limit exceeded.
+            </p>
+</div>
+</div>
+</div>
+<!-- Diagnostic & Resolution Recommendation Box -->
+<div class="p-4 rounded-xl bg-error/10 text-on-surface space-y-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[20px]">info</span>
+<span class="font-title-sm text-on-surface font-bold">Recommended Action</span>
+</div>
+<p class="text-body-sm text-secondary">
+          This is a transient soft bounce. The recipient's corporate storage partition is full. Postfix relay will automatically retry dispatch with exponential backoff:
+        </p>
+<div class="p-2 rounded bg-surface-canvas text-code-sm font-mono text-on-surface">
+          Next automatic retry: 10:57:15 IST (Attempt 1 of 3)
+        </div>
+</div>
+<!-- Security / Privacy Footnote -->
+<div class="p-3 rounded-lg bg-surface-subtle text-code-sm text-secondary flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-tag-notifications mt-0.5">verified_user</span>
+<div>
+<strong class="text-on-surface font-semibold">Zero-Knowledge Delivery Logging.</strong> Raw email bodies and secrets are never stored in telemetry records. All timestamps are verified against the IST atomic clock cluster.
+        </div>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="p-5 bg-surface-subtle border-t border-border-subtle flex items-center justify-between gap-3">
+<button class="px-4 py-2 rounded-lg bg-surface-canvas text-on-surface hover:bg-surface-container text-label-md font-semibold shadow-xs transition-all" onclick="closeLogDrawer()">
+        Close Inspector
+      </button>
+<div class="flex items-center gap-2">
+<button class="px-3 py-2 rounded-lg bg-surface-canvas hover:bg-surface-container text-secondary hover:text-on-surface text-label-md font-semibold shadow-xs transition-all" onclick="if(window.showToast) window.showToast('Navigating to email thread view...');">
+          View Message
+        </button>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-tag-notifications hover:bg-primary-container text-on-primary text-label-md font-bold shadow-xs transition-all" id="drawerRetryBtn" onclick="simulateRetry()">
+<span class="material-symbols-outlined text-[16px]">replay</span>
+<span>Retry Handshake Now</span>
+</button>
+</div>
+</div>
+</aside>
+</div></main>
+</div>
+<!-- CONFIRMATION MODAL PREVIEW (Simulated for "Confirm before sending") -->
+<div class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-xs hidden items-center justify-center p-4" id="confirmSendDemoModal">
+<div class="bg-surface-canvas border border-border-strong rounded-2xl shadow-2xl max-w-md w-full p-5 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tag-notifications/10 text-tag-notifications flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">send</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-sm font-bold text-on-surface">Send Confirmation Active</h4>
+<p class="text-xs text-secondary mt-0.5">This safety dialog will appear before every outbound email dispatch.</p>
+</div>
+</div>
+<div class="p-3 bg-surface-subtle rounded-xl text-xs space-y-1.5 border border-border-subtle">
+<div><strong class="text-secondary">From:</strong> <span class="text-on-surface font-medium">sales@rtcrackers.com</span></div>
+<div><strong class="text-secondary">To:</strong> <span class="text-on-surface font-medium">client@supermart.in</span></div>
+<div><strong class="text-secondary">Subject:</strong> <span class="text-on-surface font-medium">Diwali Wholesale Consignment Quotation</span></div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-2">
+<button class="px-4 py-2 rounded-lg border border-border-strong text-secondary hover:text-on-surface text-xs font-semibold" onclick="closeConfirmDemo()">
+          Understood
+        </button>
+</div>
+</div>
+</div>
+<!-- FLOATING TOAST NOTIFICATION -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 px-4 py-3 rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl text-xs font-medium" id="toast">
+<span class="material-symbols-outlined text-tag-notifications text-[18px]" id="toastIcon">check_circle</span>
+<span id="toastMessage">Sending settings updated</span>
+</div>
+<!-- JAVASCRIPT STATE LOGIC & ADAPTER -->
+<script>
+    // State Store for User Sending Settings
+    const sendingSettingsState = {
+      default_mailbox_id: 3,
+      reply_from_behavior: "receiving_mailbox",
+      forward_from_behavior: "current_mailbox",
+      warn_non_default_mailbox: true,
+      confirm_before_send: false,
+      warn_external_recipients: true,
+      warn_multiple_recipients: false,
+      warn_large_attachments: true,
+      attachment_threshold_mb: 10,
+      auto_save_drafts: true,
+      draft_autosave_interval_seconds: 30,
+      keep_failed_messages_as_drafts: true,
+      undo_send_seconds: 10,
+      allow_scheduled_send: true,
+      show_cc_by_default: false,
+      show_bcc_by_default: false,
+      enable_cmd_enter_send: true
+    };
+
+    // Autosave Simulation with Live Indicator
+    function updateSetting(key, value) {
+      sendingSettingsState[key] = value;
+      triggerAutosave(key, value);
+    }
+
+    function triggerAutosave(key, value) {
+      const indicator = document.getElementById('saveStatusIndicator');
+      const dot = document.getElementById('saveStatusDot');
+      const text = document.getElementById('saveStatusText');
+
+      // Visual saving state
+      dot.className = "w-1.5 h-1.5 rounded-full bg-tag-orders animate-ping";
+      text.textContent = "Saving changes...";
+      indicator.classList.remove('text-secondary');
+      indicator.classList.add('text-tag-orders');
+
+      // Simulate backend PATCH /api/email/settings/sending
+      setTimeout(() => {
+        dot.className = "w-1.5 h-1.5 rounded-full bg-tag-sales";
+        text.textContent = "All changes saved";
+        indicator.classList.remove('text-tag-orders');
+        indicator.classList.add('text-secondary');
+        showToast('Sending settings updated');
+      }, 450);
+    }
+
+    function setAutosaveInterval(seconds) {
+      sendingSettingsState.draft_autosave_interval_seconds = seconds;
+      
+      const btn10 = document.getElementById('btnInterval10');
+      const btn30 = document.getElementById('btnInterval30');
+      const btn60 = document.getElementById('btnInterval60');
+
+      [btn10, btn30, btn60].forEach(b => {
+        b.className = "px-2.5 py-1 rounded-md text-xs font-medium border border-border-strong bg-surface-canvas text-secondary hover:text-on-surface";
+      });
+
+      if (seconds === 10) {
+        btn10.className = "px-2.5 py-1 rounded-md text-xs font-bold border border-tag-notifications bg-tag-notifications/10 text-tag-notifications";
+      } else if (seconds === 30) {
+        btn30.className = "px-2.5 py-1 rounded-md text-xs font-bold border border-tag-notifications bg-tag-notifications/10 text-tag-notifications";
+      } else if (seconds === 60) {
+        btn60.className = "px-2.5 py-1 rounded-md text-xs font-bold border border-tag-notifications bg-tag-notifications/10 text-tag-notifications";
+      }
+
+      triggerAutosave('draft_autosave_interval_seconds', seconds);
+    }
+
+    function toggleSendConfirmation(enabled) {
+      updateSetting('confirm_before_send', enabled);
+      if (enabled) {
+        document.getElementById('confirmSendDemoModal').classList.remove('hidden');
+        document.getElementById('confirmSendDemoModal').classList.add('flex');
+      }
+    }
+
+    function closeConfirmDemo() {
+      document.getElementById('confirmSendDemoModal').classList.add('hidden');
+      document.getElementById('confirmSendDemoModal').classList.remove('flex');
+    }
+
+    function refreshSettings() {
+      const icon = document.getElementById('refreshSettingsIcon');
+      icon.classList.add('animate-spin');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        showToast('Sending settings synchronized with PostgreSQL');
+      }, 500);
+    }
+
+    function showToast(message, icon = 'check_circle') {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toastMessage');
+      const iconEl = document.getElementById('toastIcon');
+      
+      text.textContent = message;
+      iconEl.textContent = icon;
+      
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+  </script>
+</body></html>

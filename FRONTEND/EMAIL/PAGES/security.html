@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<title>Mailbox Management - RTC Crackers Mail</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tag-notifications": "#EA580C",
+            "secondary-fixed": "#dae2fd",
+            "surface-canvas": "#FFFFFF",
+            "tertiary": "#795500",
+            "on-surface-variant": "#5a4138",
+            "secondary-fixed-dim": "#bec6e0",
+            "border-strong": "#E2E8F0",
+            "brand-fire-red": "#E63946",
+            "surface-bright": "#f8f9ff",
+            "secondary-container": "#dae2fd",
+            "inverse-on-surface": "#eaf1ff",
+            "tag-noreply": "#475569",
+            "on-tertiary-container": "#fffbff",
+            "border-subtle": "#F1F5F9",
+            "on-surface": "#0b1c30",
+            "surface-container-low": "#eff4ff",
+            "tag-orders": "#D97706",
+            "tag-billing": "#7C3AED",
+            "outline": "#8e7166",
+            "on-tertiary": "#ffffff",
+            "secondary": "#565e74",
+            "on-primary-container": "#fffbff",
+            "primary": "#a33900",
+            "surface-variant": "#d3e4fe",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#271900",
+            "background": "#f8f9ff",
+            "surface-container": "#e5eeff",
+            "on-error-container": "#93000a",
+            "primary-container": "#cc4900",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#d3e4fe",
+            "error": "#ba1a1a",
+            "tertiary-container": "#996c00",
+            "surface-container-lowest": "#ffffff",
+            "surface-subtle": "#F8FAFC",
+            "on-secondary-container": "#5c647a",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#ffdbce",
+            "outline-variant": "#e2bfb2",
+            "on-primary": "#ffffff",
+            "tag-info": "#0891B2",
+            "tag-sales": "#16A34A",
+            "primary-fixed-dim": "#ffb599",
+            "tertiary-fixed": "#ffdea9",
+            "on-secondary-fixed-variant": "#3f465c",
+            "tag-contact": "#4F46E5",
+            "surface": "#f8f9ff",
+            "on-background": "#0b1c30",
+            "tertiary-fixed-dim": "#fbbc3c",
+            "on-secondary-fixed": "#131b2e",
+            "surface-dim": "#cbdbf5",
+            "tag-admin": "#DC2626",
+            "surface-tint": "#a73a00",
+            "surface-container-high": "#dce9ff",
+            "tag-support": "#2563EB",
+            "on-tertiary-fixed-variant": "#5e4200",
+            "on-primary-fixed-variant": "#7f2b00",
+            "inverse-primary": "#ffb599",
+            "on-primary-fixed": "#370e00",
+            "inverse-surface": "#213145"
+          },
+          fontFamily: {
+            "title-sm": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "code-sm": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "title-md": ["Inter"]
+          }
+        }
+      }
+    };
+  </script>
+<link rel="stylesheet" href="/FRONTEND/EMAIL/email-runtime.css"><script src="/FRONTEND/EMAIL/config.js"></script><script src="/FRONTEND/EMAIL/email-api.js"></script><script src="/FRONTEND/EMAIL/email-runtime.js"></script></head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- LEFT PERSISTENT SIDEBAR -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto">
+<div class="flex flex-col">
+<!-- Brand Logo / Wordmark -->
+<div class="h-16 px-4 flex items-center justify-between gap-2 bg-surface-subtle border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<img alt="RTC Crackers Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG_c7pxIPE4wwgSpxLFdUH_tg8svgIbUIwkhn7NCze_r0x_6WTZ_jzC9vfGXc5OgbMK2FdXgS2SwxvmiHBQfXisYT_PH7cTvFWOSkZv_Mr-bzU71U1De5LkmvshUlwXLJFP2Kejr-oGaxIfUck0RnN2ckJhDtCVvshifzkErWtefVAW8Pr75VKhiKZMdr0XVUFm6PCVfbFXbMlmSMxDNBmEpn1CLLHaGet8zoB1wdpONt_CSqntRtOjqB_"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-sm text-on-surface tracking-tight font-bold leading-none">RTC Crackers</span>
+<span class="font-label-sm text-[11px] text-tag-notifications font-semibold leading-tight">Enterprise Mail</span>
+</div>
+</div>
+</div>
+<!-- Quick Compose Action -->
+<div class="px-4 pt-3 pb-2">
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-sm rounded-lg transition-colors shadow-sm" onclick="showToast('Navigating to Compose...')" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Compose</span>
+</button>
+</div>
+<!-- Mailbox Folders -->
+<div class="px-4 pt-2 pb-1">
+<span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Mailbox Folders</span>
+</div>
+<nav class="flex flex-col px-2 space-y-0.5">
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/inbox">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">inbox</span>
+<span class="text-sm">Inbox</span>
+</div>
+<span class="text-[11px] bg-tag-notifications text-on-primary px-1.5 py-0.5 rounded-full font-semibold">24</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/starred">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="text-sm">Starred</span>
+</div>
+<span class="text-[11px] text-secondary">8</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/drafts">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">draft</span>
+<span class="text-sm">Drafts</span>
+</div>
+<span class="text-[11px] text-secondary">3</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/sent">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span class="text-sm">Sent</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/archived">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+<span class="text-sm">Archived</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/trash">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span class="text-sm">Trash</span>
+</div>
+</a>
+</nav>
+<!-- Mailbox Accounts Section -->
+<div class="px-4 pt-4 pb-1">
+<span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Authorized Mailboxes</span>
+</div>
+<nav class="flex flex-col px-2 space-y-0.5">
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-on-surface"></span>
+<span class="text-xs truncate">All Mailboxes (9)</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-admin"></span>
+<span class="text-xs truncate">admin@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-support"></span>
+<span class="text-xs truncate">support@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-sales"></span>
+<span class="text-xs truncate">sales@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-orders"></span>
+<span class="text-xs truncate">orders@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-billing"></span>
+<span class="text-xs truncate">billing@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-info"></span>
+<span class="text-xs truncate">info@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-contact"></span>
+<span class="text-xs truncate">contact@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-notifications"></span>
+<span class="text-xs truncate">notifications@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-noreply"></span>
+<span class="text-xs truncate">noreply@rtcrackers.com</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Actions / Settings (Highlighted as Active App Section) -->
+<div class="flex flex-col border-t border-border-subtle p-2 bg-surface-subtle">
+<nav class="flex flex-col space-y-0.5 mb-2">
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-surface-container font-semibold text-on-surface shadow-xs transition-all" href="/email/settings">
+<span class="material-symbols-outlined text-[18px] text-tag-notifications">settings</span>
+<span class="text-xs">Settings</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">help</span>
+<span class="text-xs">Help &amp; Docs</span>
+</a>
+</nav>
+<!-- Profile Widget -->
+<div class="flex items-center justify-between px-2 py-1.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2 min-w-0">
+<img alt="Admin Avatar" class="w-7 h-7 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-semibold text-on-surface truncate">Operations Admin</span>
+<span class="text-[10px] text-secondary truncate">admin@rtcrackers.com</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[16px]">more_vert</span>
+</div>
+</div>
+</aside>
+<!-- MAIN VIEWPORT CONTENT (Padded 64 for sidebar) -->
+<div class="pl-64 min-h-screen flex flex-col">
+<!-- TOP HEADER -->
+<header class="fixed top-0 left-64 right-0 h-16 bg-surface-canvas/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-6 border-b border-border-subtle">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-notifications text-[22px]">mark_email_read</span>
+<div>
+<div class="flex items-center gap-2">
+<h1 class="font-headline-sm text-base text-on-surface font-bold leading-tight">Settings</h1>
+<span class="text-secondary text-xs">/</span>
+<span class="font-label-md text-sm text-tag-notifications font-semibold">Mailboxes</span>
+</div>
+<p class="text-xs text-secondary leading-none">Manage company mailbox permissions, statuses, sending/receiving capabilities, and signatures.</p>
+</div>
+</div>
+</div>
+<!-- Header Right Controls -->
+<div class="flex items-center gap-3">
+<!-- API Synchronization Status -->
+<span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low text-xs font-medium text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales animate-pulse"></span>
+<span>Connected: api.rtcrackers.com</span>
+</span>
+<!-- Global Quick Search trigger -->
+<div class="relative w-64 hidden lg:block">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-secondary text-[16px]">search</span>
+<input class="w-full bg-surface-subtle text-on-surface placeholder:text-secondary text-xs pl-8 pr-8 py-1.5 rounded-md outline-none focus:ring-1 focus:ring-tag-notifications border border-border-strong" placeholder="Quick find (⌘K)..." type="text"/>
+<span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-secondary bg-surface-container px-1 rounded font-mono">⌘K</span>
+</div>
+<button class="p-2 rounded-lg text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Notifications" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="flex items-center gap-2 pl-2" type="button">
+<img alt="Admin Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+<span class="material-symbols-outlined text-secondary text-[16px]">expand_more</span>
+</button>
+</div>
+</header>
+<!-- WORKSPACE: TWO-COLUMN SETTINGS ARCHITECTURE -->
+<main class="pt-16 flex-1 flex flex-col bg-surface"><div class="flex flex-col w-full">
+<!-- SETTINGS SUB-NAVIGATION BAR (Enterprise Horizontally Scrollable Rail) -->
+<div class="w-full bg-surface-canvas shadow-sm">
+<div class="max-w-7xl mx-auto px-6">
+<nav aria-label="Settings Categories" class="flex items-center space-x-1 overflow-x-auto py-2.5 scrollbar-none">
+<a class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/general">
+          General
+        </a>
+<a class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/appearance">
+          Appearance
+        </a>
+<a class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/notifications">
+          Notifications
+        </a>
+<a class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/mailboxes">
+          Mailboxes
+        </a>
+<a class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/signatures">
+          Signatures
+        </a>
+<a class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/templates">
+          Templates
+        </a>
+<a class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/sending">
+          Sending
+        </a>
+<a class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/reading">
+          Reading
+        </a>
+<a aria-current="page" class="relative px-3.5 py-1.5 rounded-lg bg-surface-container-high text-tag-notifications font-label-md text-label-md font-semibold whitespace-nowrap shadow-xs flex items-center gap-1.5" href="/email/settings/security">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-notifications"></span>
+<span>Security &amp; Sessions</span>
+</a>
+<a class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/about">
+          About
+        </a>
+</nav>
+</div>
+</div>
+<!-- WORKSPACE BODY -->
+<div class="w-full max-w-7xl mx-auto px-6 py-6 space-y-6">
+<!-- PAGE TITLE & UTILITY HEADER -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-surface-canvas p-6 rounded-2xl shadow-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-tag-notifications/10 text-tag-notifications flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Security &amp; Sessions</h2>
+<p class="font-body-sm text-body-sm text-secondary">Manage your active device authorizations, cryptographic session state, and email threat isolation shields.</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-tag-sales font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>All security policies synchronized</span>
+</span>
+<button class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors shadow-xs" id="refreshBtn" onclick="triggerRefreshSessions()" type="button">
+<span class="material-symbols-outlined text-[17px] text-secondary" id="refreshIcon">sync</span>
+<span>Refresh Sessions</span>
+</button>
+</div>
+</div>
+<!-- CARD 1: OVERVIEW METRIC BENTO -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Metric 1: Auth Status -->
+<div class="bg-surface-canvas p-5 rounded-2xl shadow-sm flex flex-col justify-between space-y-3 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Auth Framework</span>
+<span class="w-2 h-2 rounded-full bg-tag-sales animate-pulse"></span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">RBAC v2.4 (JWT)</div>
+<div class="font-body-sm text-body-sm text-tag-sales flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>Active • Valid (5h 22m remaining)</span>
+</div>
+</div>
+<div class="text-[11px] font-code-sm text-secondary bg-surface-container-low px-2 py-1 rounded">
+          Issuer: api.rtcrackers.com
+        </div>
+</div>
+<!-- Metric 2: Active Nodes -->
+<div class="bg-surface-canvas p-5 rounded-2xl shadow-sm flex flex-col justify-between space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Device Footprint</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">devices</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">3 Authorized Sessions</div>
+<div class="font-body-sm text-body-sm text-secondary mt-1">Desktop • Mobile • Plant Kiosk</div>
+</div>
+<div class="text-[11px] font-code-sm text-secondary bg-surface-container-low px-2 py-1 rounded">
+          Sivakasi Plant + Regional VPN
+        </div>
+</div>
+<!-- Metric 3: Threat Isolation -->
+<div class="bg-surface-canvas p-5 rounded-2xl shadow-sm flex flex-col justify-between space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">DOM Purify Guard</span>
+<span class="material-symbols-outlined text-tag-notifications text-[18px]">security</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">Safe HTML Active</div>
+<div class="font-body-sm text-body-sm text-secondary mt-1">Pixel Blocker: <span class="font-semibold text-tag-sales">Strict Enabled</span></div>
+</div>
+<div class="text-[11px] font-code-sm text-secondary bg-surface-container-low px-2 py-1 rounded">
+          Neutralizes scripts, iframes &amp; SVGs
+        </div>
+</div>
+<!-- Metric 4: Malware Sandbox -->
+<div class="bg-surface-canvas p-5 rounded-2xl shadow-sm flex flex-col justify-between space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">PESO Attachment Engine</span>
+<span class="material-symbols-outlined text-tag-info text-[18px]">verified_user</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">PESO v4.19 Sandbox</div>
+<div class="font-body-sm text-body-sm text-secondary mt-1">0 Malicious payloads flagged</div>
+</div>
+<div class="text-[11px] font-code-sm text-secondary bg-surface-container-low px-2 py-1 rounded">
+          Binary inspection on all payloads
+        </div>
+</div>
+</div>
+<!-- MAIN TWO-COLUMN SPLIT -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT COLUMN: SESSIONS & DEVICES (7 COLS) -->
+<div class="lg:col-span-7 space-y-6">
+<!-- CARD 2: CURRENT PRIMARY SESSION -->
+<div class="bg-surface-canvas rounded-2xl shadow-sm p-6 relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-tag-sales"></div>
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-4">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-xl bg-tag-sales/10 text-tag-sales flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">laptop_windows</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-title-md font-bold text-on-surface">Google Chrome 129.0 on Windows 11 Pro</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tag-sales/15 text-tag-sales font-label-sm text-[10px] uppercase font-bold tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+                    Current Session
+                  </span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary">Workstation Node: `DESKTOP-OPS-HQ01` • x86_64 Architecture</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 rounded-xl bg-surface-container-low font-body-sm text-body-sm">
+<div class="space-y-1">
+<span class="font-label-sm text-[11px] text-secondary uppercase font-semibold">IP Address &amp; Location</span>
+<p class="font-mono text-on-surface font-semibold text-xs flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-secondary">public</span>
+<span>103.28.246.84</span>
+</p>
+<p class="text-secondary text-xs">Sivakasi, Tamil Nadu, India (Edge Gateway)</p>
+</div>
+<div class="space-y-1">
+<span class="font-label-sm text-[11px] text-secondary uppercase font-semibold">Session Lifetime &amp; Cipher</span>
+<p class="text-on-surface font-semibold text-xs flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-tag-sales">schedule</span>
+<span>Initiated Today, 08:30 AM IST</span>
+</p>
+<p class="text-secondary text-xs">TLS 1.3 • AES-256-GCM • HttpOnly Strict</p>
+</div>
+</div>
+<div class="mt-4 pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-secondary">
+<div class="flex items-center gap-1.5 font-mono">
+<span class="material-symbols-outlined text-[15px] text-secondary">key</span>
+<span>Session ID:</span>
+<span class="text-on-surface font-semibold">sess_sec_994a8e27f...3bc</span>
+<button class="text-tag-notifications hover:underline ml-1 font-label-sm" onclick="navigator.clipboard.writeText('sess_sec_994a8e27f09a4718cd92b3bc'); alert('Session Token Reference Copied');" type="button">Copy</button>
+</div>
+<span class="inline-flex items-center gap-1 text-tag-sales font-semibold">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+              Device Fingerprint Verified
+            </span>
+</div>
+</div>
+<!-- CARD 3: ACTIVE DEVICE SESSIONS LIST & BULK REVOCATION -->
+<div class="bg-surface-canvas rounded-2xl shadow-sm p-6 space-y-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Other Active Authorizations</h3>
+<p class="font-body-sm text-body-sm text-secondary">All endpoints actively holding verified authentication tokens for Rajesh Kumar.</p>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-tag-admin hover:bg-error-container font-label-md text-label-md font-semibold transition-colors" onclick="openRevokeAllModal()" type="button">
+<span class="material-symbols-outlined text-[16px]">logout</span>
+<span>Sign Out All Other Sessions</span>
+</button>
+</div>
+<div class="space-y-3" id="sessionsList">
+<!-- Item 1: Android Mobile -->
+<div class="p-4 rounded-xl bg-surface-subtle transition-all duration-200 hover:bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-4" id="session-android">
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-tag-contact/10 text-tag-contact flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">phone_android</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Firefox 128 on Android 14</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-secondary">Mobile Mail</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary flex flex-wrap items-center gap-x-2 gap-y-1">
+<span>Sivakasi Depot Office Dispatch Kiosk</span>
+<span>•</span>
+<span class="font-mono text-xs">49.207.182.11</span>
+<span>•</span>
+<span class="text-on-surface font-medium">Last active 14m ago</span>
+</div>
+<div class="text-[11px] text-secondary">Authenticated: Yesterday, 18:20 IST via Mobile SSO OAuth</div>
+</div>
+</div>
+<button class="self-end sm:self-center shrink-0 px-3 py-1.5 rounded-lg bg-surface-container text-secondary hover:text-tag-admin hover:bg-error-container font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1" onclick="openRevokeModal('Firefox 128 on Android 14', 'session-android')" type="button">
+<span class="material-symbols-outlined text-[15px]">power_settings_new</span>
+<span>Sign out</span>
+</button>
+</div>
+<!-- Item 2: macOS Safari (Sales Regional) -->
+<div class="p-4 rounded-xl bg-surface-subtle transition-all duration-200 hover:bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-4" id="session-macos">
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-tag-sales/10 text-tag-sales flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">laptop_mac</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Safari 17.6 on macOS Sonoma</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-secondary">Regional Sales</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary flex flex-wrap items-center gap-x-2 gap-y-1">
+<span>Madurai Regional Sales Office • VPN Tunnel</span>
+<span>•</span>
+<span class="font-mono text-xs">157.48.91.204</span>
+<span>•</span>
+<span class="text-on-surface font-medium">Last active 3h ago</span>
+</div>
+<div class="text-[11px] text-secondary">Authenticated: Oct 02, 2026, 09:12 IST via Identity SAML</div>
+</div>
+</div>
+<button class="self-end sm:self-center shrink-0 px-3 py-1.5 rounded-lg bg-surface-container text-secondary hover:text-tag-admin hover:bg-error-container font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1" onclick="openRevokeModal('Safari 17.6 on macOS Sonoma', 'session-macos')" type="button">
+<span class="material-symbols-outlined text-[15px]">power_settings_new</span>
+<span>Sign out</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 5: ENTERPRISE IDENTITY & 2FA -->
+<div class="bg-surface-canvas rounded-2xl shadow-sm p-6 space-y-4">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Authentication &amp; Directory Authority</h3>
+<p class="font-body-sm text-body-sm text-secondary">Enterprise SSO with federated identity provider governance.</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-tag-contact/10 text-tag-contact font-label-sm text-xs font-semibold">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+              Corporate SSO Active
+            </span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low space-y-3">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-sales text-[20px]">phonelink_lock</span>
+<div>
+<div class="font-title-sm text-title-sm font-bold text-on-surface">Two-Factor Authentication (MFA / TOTP)</div>
+<div class="font-body-sm text-body-sm text-secondary">Hardware YubiKey (FIDO2) &amp; Google Authenticator enrolled.</div>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tag-sales/15 text-tag-sales font-label-sm text-label-sm font-bold">Enforced</span>
+</div>
+<div class="pt-2 text-xs text-secondary flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<span>Managed by Sivakasi Central Identity Directory (LDAP/SSO)</span>
+<a class="text-tag-notifications hover:underline font-label-sm font-semibold inline-flex items-center gap-1" href="https://sso.rtcrackers.com/profile/mfa" target="_blank">
+<span>Manage MFA via IT Portal</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-subtle text-xs text-secondary flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">info</span>
+<p>Password and credential rotations are securely orchestrated by Sivakasi Enterprise IT Identity Directory. Password adjustments cannot be initiated within the email client view to maintain compliance with SOC-2 type II audit controls.</p>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: THREAT ISOLATION, PREFERENCES & DANGER ZONE (5 COLS) -->
+<div class="lg:col-span-5 space-y-6">
+<!-- CARD 4: EMAIL CONTENT & SANDBOX SECURITY PREFERENCES -->
+<div class="bg-surface-canvas rounded-2xl shadow-sm p-6 space-y-5">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-notifications text-[20px]">verified</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Email Threat Isolation</h3>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Sanitization policies enforced for all incoming payloads and body renderings.</p>
+</div>
+<div class="space-y-4">
+<!-- Mandatory DOMPurify -->
+<div class="p-3.5 rounded-xl bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">DOMPurify HTML Neutralization</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-tag-sales/15 text-tag-sales uppercase">Mandatory Lock</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+                All scripts, object tags, nested frames, and insecure data bindings are sanitized on ingest before rendering in the reading canvas.
+              </p>
+</div>
+<!-- Preference Toggle 1: External Images -->
+<div class="flex items-start justify-between gap-3 p-3.5 rounded-xl bg-surface-subtle hover:bg-surface-container-low transition-colors">
+<div class="space-y-0.5 pr-2">
+<label class="font-title-sm text-title-sm font-semibold text-on-surface block cursor-pointer" for="toggleTrackingPixels">Block External Images &amp; Web Beacons</label>
+<p class="font-body-sm text-body-sm text-secondary">Prevents senders from learning your IP address, geolocation, and precise email opening timestamp.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" id="toggleTrackingPixels" onchange="notifySettingChange('Tracking pixel shield')" type="checkbox"/>
+<div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+</label>
+</div>
+<!-- Preference Toggle 2: External Link Warning -->
+<div class="flex items-start justify-between gap-3 p-3.5 rounded-xl bg-surface-subtle hover:bg-surface-container-low transition-colors">
+<div class="space-y-0.5 pr-2">
+<label class="font-title-sm text-title-sm font-semibold text-on-surface block cursor-pointer" for="toggleExternalLinks">External Link Confirmation Prompt</label>
+<p class="font-body-sm text-body-sm text-secondary">Displays an interception banner when clicking any link pointing outside *.rtcrackers.com domains.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" id="toggleExternalLinks" onchange="notifySettingChange('External redirect guard')" type="checkbox"/>
+<div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+</label>
+</div>
+<!-- Preference Toggle 3: Attachment Verification -->
+<div class="flex items-start justify-between gap-3 p-3.5 rounded-xl bg-surface-subtle hover:bg-surface-container-low transition-colors">
+<div class="space-y-0.5 pr-2">
+<label class="font-title-sm text-title-sm font-semibold text-on-surface block cursor-pointer" for="toggleStrictAttachment">Strict Attachment Sandbox Inspection</label>
+<p class="font-body-sm text-body-sm text-secondary">Performs cloud heuristic sandbox verification before allowing download of spreadsheets, PDFs, and archives.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" id="toggleStrictAttachment" onchange="notifySettingChange('Strict sandbox heuristic')" type="checkbox"/>
+<div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- VISUAL SECURITY INFOGRAPHIC CARD -->
+<div class="bg-surface-canvas rounded-2xl shadow-sm p-6 space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Mail Flow Encryption Audit</span>
+<span class="font-code-sm text-code-sm text-tag-sales font-bold">100% ENCRYPTED</span>
+</div>
+<!-- SVG Visual Security Pipeline -->
+<div class="p-3 bg-surface-container-low rounded-xl">
+<svg class="w-full h-24" fill="none" viewbox="0 0 380 90" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#FFFFFF" height="50" rx="8" width="80" x="10" y="20"></rect>
+<text fill="#0b1c30" font-size="11" font-weight="600" text-anchor="middle" x="50" y="44">Sivakasi Edge</text>
+<text fill="#16A34A" font-size="9" font-weight="500" text-anchor="middle" x="50" y="58">TLS 1.3</text>
+<path d="M95 45 H 145" stroke="#EA580C" stroke-dasharray="4 4" stroke-width="2"></path>
+<polygon fill="#EA580C" points="145,42 152,45 145,48"></polygon>
+<rect fill="#FFFFFF" height="60" rx="8" width="90" x="155" y="15"></rect>
+<text fill="#0b1c30" font-size="11" font-weight="700" text-anchor="middle" x="200" y="42">DOMPurify</text>
+<text fill="#7C3AED" font-size="9" font-weight="500" text-anchor="middle" x="200" y="55">Zero Script Exec</text>
+<path d="M250 45 H 295" stroke="#EA580C" stroke-dasharray="4 4" stroke-width="2"></path>
+<polygon fill="#EA580C" points="295,42 302,45 295,48"></polygon>
+<rect fill="#FFFFFF" height="50" rx="8" width="65" x="305" y="20"></rect>
+<text fill="#0b1c30" font-size="11" font-weight="600" text-anchor="middle" x="337" y="44">Client</text>
+<text fill="#2563EB" font-size="9" font-weight="500" text-anchor="middle" x="337" y="58">Protected</text>
+</svg>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+            Continuous packet inspection protects administrative mailboxes from zero-day phishing campaigns and spoofed supplier invoices.
+          </p>
+</div>
+<!-- CARD 6: DANGER ZONE -->
+<div class="bg-error-container/40 rounded-2xl shadow-sm p-6 space-y-4">
+<div class="flex items-center gap-2 text-tag-admin">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+<h3 class="font-headline-sm text-headline-sm font-bold">Session Termination Zone</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-error-container">
+            Actions performed here immediately disrupt authorized communication tunnels and invalidate cryptographic bearer tokens.
+          </p>
+<div class="pt-2 space-y-3">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 bg-surface-canvas rounded-xl">
+<div>
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Sign out of this computer</span>
+<p class="font-body-sm text-body-sm text-secondary">Revokes this browser's session and redirects to enterprise login.</p>
+</div>
+<button class="shrink-0 px-3.5 py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-semibold transition-colors" onclick="handleCurrentWorkstationSignOut()" type="button">
+                Sign Out Workstation
+              </button>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 bg-surface-canvas rounded-xl">
+<div>
+<span class="font-title-sm text-title-sm font-bold text-tag-admin">Emergency Killswitch</span>
+<p class="font-body-sm text-body-sm text-secondary">Terminate all 3 active sessions across desktop, mobile and plant depot.</p>
+</div>
+<button class="shrink-0 px-3.5 py-2 rounded-lg bg-tag-admin text-on-primary hover:bg-error font-label-md text-label-md font-semibold shadow-xs transition-colors" onclick="openEmergencyKillswitchModal()" type="button">
+                Terminate All
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- REVOCATION CONFIRMATION MODAL -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-on-surface/40 backdrop-blur-xs" id="revokeSessionModal">
+<div class="bg-surface-canvas rounded-2xl shadow-2xl max-w-md w-full p-6 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tag-admin/10 text-tag-admin flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">logout</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Revoke Device Session?</h4>
+<p class="font-body-sm text-body-sm text-secondary font-mono" id="revokeTargetLabel">Firefox 128 on Android 14</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+        This device will be immediately disconnected from the RTC Crackers Mail sync pipeline. Any unsent draft updates cached locally on that device will be locked until re-authentication via SSO.
+      </p>
+<div class="flex items-center justify-end gap-2.5 pt-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-secondary hover:text-on-surface font-label-md text-label-md font-semibold transition-colors" onclick="closeRevokeModal()" type="button">
+          Cancel
+        </button>
+<button class="px-4 py-2 rounded-lg bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold shadow-xs transition-all" id="confirmRevokeBtn" onclick="executeRevokeSession()" type="button">
+          Confirm Revocation
+        </button>
+</div>
+</div>
+</div>
+<!-- REVOKE ALL SESSIONS MODAL -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-on-surface/40 backdrop-blur-xs" id="revokeAllModal">
+<div class="bg-surface-canvas rounded-2xl shadow-2xl max-w-md w-full p-6 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tag-notifications/10 text-tag-notifications flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">devices_off</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Sign Out Other Sessions?</h4>
+<p class="font-body-sm text-body-sm text-secondary">Disconnects 2 peripheral authorized endpoints</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+        All devices excluding your current desktop Chrome session will be logged out. Users on those devices will require valid corporate SSO token issuance to sign back in.
+      </p>
+<div class="flex items-center justify-end gap-2.5 pt-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-secondary hover:text-on-surface font-label-md text-label-md font-semibold transition-colors" onclick="closeRevokeAllModal()" type="button">
+          Cancel
+        </button>
+<button class="px-4 py-2 rounded-lg bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold shadow-xs transition-all" onclick="executeRevokeAllOtherSessions()" type="button">
+          Sign Out Others
+        </button>
+</div>
+</div>
+</div>
+<!-- EMERGENCY TERMINATE ALL MODAL -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-on-surface/40 backdrop-blur-xs" id="emergencyModal">
+<div class="bg-surface-canvas rounded-2xl shadow-2xl max-w-md w-full p-6 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tag-admin/10 text-tag-admin flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">dangerous</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-tag-admin">Emergency Killswitch</h4>
+<p class="font-body-sm text-body-sm text-secondary">Immediate JWT invalidation across all nodes</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+        This will invalidate <strong>every active session including this workstation</strong>. You will be redirected immediately to the SSO sign-in portal. Proceed only if you suspect credential compromise.
+      </p>
+<div class="flex items-center justify-end gap-2.5 pt-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-secondary hover:text-on-surface font-label-md text-label-md font-semibold transition-colors" onclick="closeEmergencyModal()" type="button">
+          Abort
+        </button>
+<button class="px-4 py-2 rounded-lg bg-tag-admin hover:bg-error text-on-primary font-label-md text-label-md font-semibold shadow-xs transition-all" onclick="executeEmergencyKillswitch()" type="button">
+          Terminate All Now
+        </button>
+</div>
+</div>
+</div>
+<script>
+    let targetedSessionId = null;
+
+    function triggerRefreshSessions() {
+      const icon = document.getElementById('refreshIcon');
+      if (icon) icon.classList.add('animate-spin');
+      setTimeout(() => {
+        if (icon) icon.classList.remove('animate-spin');
+        if (typeof showToast === 'function') {
+          showToast('Active device sessions re-indexed with auth gateway', 'sync');
+        }
+      }, 700);
+    }
+
+    function notifySettingChange(settingName) {
+      if (typeof showToast === 'function') {
+        showToast(`${settingName} updated and synchronized with edge firewall`);
+      }
+    }
+
+    function openRevokeModal(sessionName, elementId) {
+      targetedSessionId = elementId;
+      const label = document.getElementById('revokeTargetLabel');
+      if (label) label.textContent = sessionName;
+      const modal = document.getElementById('revokeSessionModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeRevokeModal() {
+      const modal = document.getElementById('revokeSessionModal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+      targetedSessionId = null;
+    }
+
+    function executeRevokeSession() {
+      if (targetedSessionId) {
+        const el = document.getElementById(targetedSessionId);
+        if (el) {
+          el.style.opacity = '0.3';
+          el.style.pointerEvents = 'none';
+          setTimeout(() => {
+            el.remove();
+          }, 350);
+        }
+      }
+      closeRevokeModal();
+      if (typeof showToast === 'function') {
+        showToast('Session authorization successfully revoked');
+      }
+    }
+
+    function openRevokeAllModal() {
+      const modal = document.getElementById('revokeAllModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeRevokeAllModal() {
+      const modal = document.getElementById('revokeAllModal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function executeRevokeAllOtherSessions() {
+      const list = document.getElementById('sessionsList');
+      if (list) {
+        list.innerHTML = `
+          <div class="p-6 text-center rounded-xl bg-surface-subtle text-secondary font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-[28px] text-tag-sales mb-1">verified_user</span>
+            <p class="font-semibold text-on-surface">No other active devices</p>
+            <p class="text-xs mt-0.5">Only this primary desktop workstation is currently authenticated.</p>
+          </div>
+        `;
+      }
+      closeRevokeAllModal();
+      if (typeof showToast === 'function') {
+        showToast('All other sessions disconnected successfully');
+      }
+    }
+
+    function handleCurrentWorkstationSignOut() {
+      if (typeof showToast === 'function') {
+        showToast('Invalidating workstation session and redirecting...', 'logout');
+      }
+      setTimeout(() => {
+        window.location.href = '/login';
+      }, 1200);
+    }
+
+    function openEmergencyKillswitchModal() {
+      const modal = document.getElementById('emergencyModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeEmergencyModal() {
+      const modal = document.getElementById('emergencyModal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function executeEmergencyKillswitch() {
+      closeEmergencyModal();
+      if (typeof showToast === 'function') {
+        showToast('EMERGENCY: All session tokens invalidated across cluster', 'warning');
+      }
+      setTimeout(() => {
+        window.location.href = '/login?reason=emergency_killswitch';
+      }, 1400);
+    }
+  </script>
+</div></main>
+</div>
+<!-- MODAL: MANAGE MAILBOX DETAIL PANEL -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4" id="manageMailboxModal">
+<div class="bg-surface-canvas border border-border-strong rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden flex flex-col transition-all">
+<!-- Modal Header -->
+<div class="px-6 py-4 bg-surface-subtle border-b border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-tag-notifications/10 text-tag-notifications flex items-center justify-center font-bold text-xs" id="modalBadge">
+            MB
+          </div>
+<div>
+<h3 class="font-headline-sm text-sm font-bold text-on-surface" id="modalTitle">Manage Mailbox Settings</h3>
+<span class="text-xs font-mono text-secondary" id="modalSubtitle">support@rtcrackers.com</span>
+</div>
+</div>
+<button class="p-1 rounded-md text-secondary hover:text-on-surface" onclick="closeManageModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-5 text-xs max-h-[768px] overflow-y-auto">
+<!-- Display Name -->
+<div class="space-y-1.5">
+<label class="font-semibold text-on-surface block">Display Name (Sender Header)</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-subtle border border-border-strong text-xs text-on-surface outline-none focus:ring-2 focus:ring-tag-notifications" id="modalDisplayNameInput" type="text" value="RTC Crackers Support"/>
+<p class="text-[11px] text-secondary">This name appears as the friendly sender name in customer and supplier inboxes.</p>
+</div>
+<!-- Email Address (Read-only security field) -->
+<div class="space-y-1.5">
+<label class="font-semibold text-secondary block">Canonical Email Address (Read-Only)</label>
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-low border border-border-strong font-mono text-on-surface text-xs">
+<span id="modalEmailAddressText">support@rtcrackers.com</span>
+<span class="material-symbols-outlined text-[15px] text-secondary">lock</span>
+</div>
+<p class="text-[11px] text-secondary">Primary addresses are managed by the RTC Crackers domain administrator.</p>
+</div>
+<!-- Capability Toggles -->
+<div class="space-y-3 pt-2 border-t border-border-subtle">
+<span class="font-semibold text-on-surface block">Mailbox Operational Capabilities</span>
+<!-- Operational Status -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+<div>
+<div class="font-semibold text-on-surface">Mailbox Operational Status</div>
+<p class="text-[11px] text-secondary mt-0.5">Controls whether this mailbox is active in the company directory.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggleStatusInput" type="checkbox"/>
+<div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+</label>
+</div>
+<!-- Sending Status -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+<div>
+<div class="font-semibold text-on-surface">Sending Capability</div>
+<p class="text-[11px] text-secondary mt-0.5">Allows authorized staff to compose and reply using this address.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggleSendingInput" type="checkbox"/>
+<div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+</label>
+</div>
+<!-- Receiving Status -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+<div>
+<div class="font-semibold text-on-surface">Receiving Webhook / Ingress</div>
+<p class="text-[11px] text-secondary mt-0.5">Accepts incoming emails dispatched to this address.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggleReceivingInput" type="checkbox"/>
+<div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+</label>
+</div>
+</div>
+<!-- Signature Quick Link -->
+<div class="p-3 rounded-xl bg-surface-container-low border border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-notifications text-[18px]">draw</span>
+<div>
+<span class="font-semibold text-on-surface">Per-Mailbox Signature</span>
+<p class="text-[11px] text-secondary">HTML signature configured for this account.</p>
+</div>
+</div>
+<a class="px-2.5 py-1 rounded bg-surface-canvas border border-border-strong text-tag-notifications font-semibold hover:bg-surface-container transition-colors" href="/email/settings?section=signature">
+            Edit in Settings
+          </a>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-6 py-3 bg-surface-subtle border-t border-border-subtle flex items-center justify-end gap-2">
+<button class="px-4 py-2 rounded-lg border border-border-strong text-secondary hover:text-on-surface text-xs font-semibold" onclick="closeManageModal()">
+          Cancel
+        </button>
+<button class="px-4 py-2 rounded-lg bg-tag-notifications hover:bg-primary-container text-on-primary text-xs font-semibold shadow-xs flex items-center gap-1.5 transition-all" id="btnSaveMailbox" onclick="saveMailboxChanges()">
+<span class="material-symbols-outlined text-[16px]">save</span>
+<span>Save Changes</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CONFIRMATION DIALOG -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4" id="confirmationDialog">
+<div class="bg-surface-canvas border border-border-strong rounded-2xl shadow-2xl max-w-sm w-full p-5 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tag-notifications/10 text-tag-notifications flex items-center justify-center shrink-0" id="confirmIcon">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-sm font-bold text-on-surface" id="confirmTitle">Confirm Action</h4>
+<p class="text-xs text-secondary mt-0.5" id="confirmMessage">Are you sure you want to proceed?</p>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-2">
+<button class="px-3 py-1.5 rounded-lg border border-border-strong text-secondary hover:text-on-surface text-xs font-semibold" onclick="closeConfirmDialog()">
+          Cancel
+        </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-tag-notifications text-on-primary text-xs font-semibold" id="confirmActionBtn" onclick="executeConfirmedAction()">
+          Confirm
+        </button>
+</div>
+</div>
+</div>
+<!-- FLOATING TOAST NOTIFICATION -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 px-4 py-3 rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl text-xs font-medium" id="toast">
+<span class="material-symbols-outlined text-tag-notifications text-[18px]" id="toastIcon">check_circle</span>
+<span id="toastMessage">Action completed successfully</span>
+</div>
+<!-- JAVASCRIPT APP LOGIC & STATE HANDLING -->
+<script>
+    // State Tracking
+    let activeMailboxId = null;
+    let pendingConfirmAction = null;
+
+    // Toast Functionality
+    function showToast(message, icon = 'check_circle') {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toastMessage');
+      const iconEl = document.getElementById('toastIcon');
+      
+      text.textContent = message;
+      iconEl.textContent = icon;
+      
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2600);
+    }
+
+    // Refresh Action
+    function refreshMailboxes() {
+      const icon = document.getElementById('refreshIcon');
+      icon.classList.add('animate-spin');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        showToast('Authorized mailboxes synchronized with backend');
+      }, 600);
+    }
+
+    // View Mode Toggle (Cards vs Table)
+    function setViewMode(mode) {
+      const cards = document.getElementById('mailboxCardsContainer');
+      const table = document.getElementById('mailboxTableContainer');
+      const btnCards = document.getElementById('btnViewCards');
+      const btnTable = document.getElementById('btnViewTable');
+
+      if (mode === 'cards') {
+        cards.classList.remove('hidden');
+        table.classList.add('hidden');
+        btnCards.classList.add('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnCards.classList.remove('text-secondary');
+        btnTable.classList.remove('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnTable.classList.add('text-secondary');
+      } else {
+        cards.classList.add('hidden');
+        table.classList.remove('hidden');
+        btnTable.classList.add('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnTable.classList.remove('text-secondary');
+        btnCards.classList.remove('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnCards.classList.add('text-secondary');
+      }
+    }
+
+    // Search & Filtering
+    function handleSearch(query) {
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (query.trim()) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+      applyFilters();
+    }
+
+    function clearSearch() {
+      document.getElementById('mailboxSearchInput').value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const query = document.getElementById('mailboxSearchInput').value.toLowerCase().trim();
+      const statusFilter = document.getElementById('filterStatus').value;
+      const sendingFilter = document.getElementById('filterSending').value;
+
+      const cards = document.querySelectorAll('#mailboxCardsContainer > div');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const address = card.getAttribute('data-address').toLowerCase();
+        const name = card.getAttribute('data-name').toLowerCase();
+        const status = card.getAttribute('data-status');
+        const sending = card.getAttribute('data-sending');
+
+        const matchesQuery = !query || address.includes(query) || name.includes(query);
+        const matchesStatus = statusFilter === 'all' || status === statusFilter;
+        const matchesSending = sendingFilter === 'all' || sending === sendingFilter;
+
+        if (matchesQuery && matchesStatus && matchesSending) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const emptyState = document.getElementById('mailboxEmptyState');
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+        emptyState.classList.add('flex');
+      } else {
+        emptyState.classList.add('hidden');
+        emptyState.classList.remove('flex');
+      }
+    }
+
+    // Copy Address Action
+    function copyAddress(address) {
+      navigator.clipboard.writeText(address).then(() => {
+        showToast(`Copied ${address} to clipboard`);
+      }).catch(() => {
+        showToast(`Copied ${address}`);
+      });
+    }
+
+    // User Default Mailbox Switch
+    function setUserDefault(address) {
+      document.getElementById('userDefaultDisplay').innerHTML = `
+        <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+        ${address}
+      `;
+      document.getElementById('selectDefaultMailbox').value = address;
+      showToast(`Default sending mailbox set to ${address}`);
+    }
+
+    // Manage Modal Handling
+    function openManageModal(id, address, name, isActive, canSend, canReceive) {
+      activeMailboxId = id;
+      document.getElementById('modalTitle').textContent = `Manage: ${name}`;
+      document.getElementById('modalSubtitle').textContent = address;
+      document.getElementById('modalEmailAddressText').textContent = address;
+      document.getElementById('modalDisplayNameInput').value = name;
+      document.getElementById('toggleStatusInput').checked = isActive;
+      document.getElementById('toggleSendingInput').checked = canSend;
+      document.getElementById('toggleReceivingInput').checked = canReceive;
+
+      const modal = document.getElementById('manageMailboxModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeManageModal() {
+      const modal = document.getElementById('manageMailboxModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function saveMailboxChanges() {
+      const btn = document.getElementById('btnSaveMailbox');
+      btn.innerHTML = `<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> Saving...`;
+      
+      setTimeout(() => {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[16px]">save</span> Save Changes`;
+        closeManageModal();
+        showToast('Mailbox settings successfully synchronized');
+      }, 700);
+    }
+
+    // Capability Confirmation Dialog
+    function confirmCapabilityToggle(address, capability, enable) {
+      const dialog = document.getElementById('confirmationDialog');
+      const title = document.getElementById('confirmTitle');
+      const msg = document.getElementById('confirmMessage');
+
+      title.textContent = enable ? `Enable ${capability}?` : `Disable ${capability}?`;
+      msg.textContent = enable 
+        ? `Messages will resume normal processing for ${address}.`
+        : `Staff will temporarily be unable to use ${address} for outbound messages.`;
+
+      pendingConfirmAction = () => {
+        showToast(`${address} ${capability} status updated`);
+      };
+
+      dialog.classList.remove('hidden');
+      dialog.classList.add('flex');
+    }
+
+    function closeConfirmDialog() {
+      const dialog = document.getElementById('confirmationDialog');
+      dialog.classList.add('hidden');
+      dialog.classList.remove('flex');
+      pendingConfirmAction = null;
+    }
+
+    function executeConfirmedAction() {
+      if (pendingConfirmAction) pendingConfirmAction();
+      closeConfirmDialog();
+    }
+
+    // Dropdown Handling
+    function toggleDropdown(dropId) {
+      document.querySelectorAll('[id^="drop-"]').forEach(d => {
+        if (d.id !== dropId) d.classList.add('hidden');
+      });
+      const target = document.getElementById(dropId);
+      if (target) target.classList.toggle('hidden');
+    }
+
+    // Close open menus when clicking outside
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('.relative')) {
+        document.querySelectorAll('[id^="drop-"]').forEach(d => d.classList.add('hidden'));
+      }
+    });
+  </script>
+</body></html>

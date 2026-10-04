@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<title>Mailbox Management - RTC Crackers Mail</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tag-notifications": "#EA580C",
+            "secondary-fixed": "#dae2fd",
+            "surface-canvas": "#FFFFFF",
+            "tertiary": "#795500",
+            "on-surface-variant": "#5a4138",
+            "secondary-fixed-dim": "#bec6e0",
+            "border-strong": "#E2E8F0",
+            "brand-fire-red": "#E63946",
+            "surface-bright": "#f8f9ff",
+            "secondary-container": "#dae2fd",
+            "inverse-on-surface": "#eaf1ff",
+            "tag-noreply": "#475569",
+            "on-tertiary-container": "#fffbff",
+            "border-subtle": "#F1F5F9",
+            "on-surface": "#0b1c30",
+            "surface-container-low": "#eff4ff",
+            "tag-orders": "#D97706",
+            "tag-billing": "#7C3AED",
+            "outline": "#8e7166",
+            "on-tertiary": "#ffffff",
+            "secondary": "#565e74",
+            "on-primary-container": "#fffbff",
+            "primary": "#a33900",
+            "surface-variant": "#d3e4fe",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#271900",
+            "background": "#f8f9ff",
+            "surface-container": "#e5eeff",
+            "on-error-container": "#93000a",
+            "primary-container": "#cc4900",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#d3e4fe",
+            "error": "#ba1a1a",
+            "tertiary-container": "#996c00",
+            "surface-container-lowest": "#ffffff",
+            "surface-subtle": "#F8FAFC",
+            "on-secondary-container": "#5c647a",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#ffdbce",
+            "outline-variant": "#e2bfb2",
+            "on-primary": "#ffffff",
+            "tag-info": "#0891B2",
+            "tag-sales": "#16A34A",
+            "primary-fixed-dim": "#ffb599",
+            "tertiary-fixed": "#ffdea9",
+            "on-secondary-fixed-variant": "#3f465c",
+            "tag-contact": "#4F46E5",
+            "surface": "#f8f9ff",
+            "on-background": "#0b1c30",
+            "tertiary-fixed-dim": "#fbbc3c",
+            "on-secondary-fixed": "#131b2e",
+            "surface-dim": "#cbdbf5",
+            "tag-admin": "#DC2626",
+            "surface-tint": "#a73a00",
+            "surface-container-high": "#dce9ff",
+            "tag-support": "#2563EB",
+            "on-tertiary-fixed-variant": "#5e4200",
+            "on-primary-fixed-variant": "#7f2b00",
+            "inverse-primary": "#ffb599",
+            "on-primary-fixed": "#370e00",
+            "inverse-surface": "#213145"
+          },
+          fontFamily: {
+            "title-sm": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "code-sm": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "title-md": ["Inter"]
+          }
+        }
+      }
+    };
+  </script>
+<link rel="stylesheet" href="/FRONTEND/EMAIL/email-runtime.css"><script src="/FRONTEND/EMAIL/config.js"></script><script src="/FRONTEND/EMAIL/email-api.js"></script><script src="/FRONTEND/EMAIL/email-runtime.js"></script></head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- LEFT PERSISTENT SIDEBAR -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto">
+<div class="flex flex-col">
+<!-- Brand Logo / Wordmark -->
+<div class="h-16 px-4 flex items-center justify-between gap-2 bg-surface-subtle border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<img alt="RTC Crackers Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG_c7pxIPE4wwgSpxLFdUH_tg8svgIbUIwkhn7NCze_r0x_6WTZ_jzC9vfGXc5OgbMK2FdXgS2SwxvmiHBQfXisYT_PH7cTvFWOSkZv_Mr-bzU71U1De5LkmvshUlwXLJFP2Kejr-oGaxIfUck0RnN2ckJhDtCVvshifzkErWtefVAW8Pr75VKhiKZMdr0XVUFm6PCVfbFXbMlmSMxDNBmEpn1CLLHaGet8zoB1wdpONt_CSqntRtOjqB_"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-sm text-on-surface tracking-tight font-bold leading-none">RTC Crackers</span>
+<span class="font-label-sm text-[11px] text-tag-notifications font-semibold leading-tight">Enterprise Mail</span>
+</div>
+</div>
+</div>
+<!-- Quick Compose Action -->
+<div class="px-4 pt-3 pb-2">
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-sm rounded-lg transition-colors shadow-sm" onclick="showToast('Navigating to Compose...')" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Compose</span>
+</button>
+</div>
+<!-- Mailbox Folders -->
+<div class="px-4 pt-2 pb-1">
+<span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Mailbox Folders</span>
+</div>
+<nav class="flex flex-col px-2 space-y-0.5">
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/inbox">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">inbox</span>
+<span class="text-sm">Inbox</span>
+</div>
+<span class="text-[11px] bg-tag-notifications text-on-primary px-1.5 py-0.5 rounded-full font-semibold">24</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/starred">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="text-sm">Starred</span>
+</div>
+<span class="text-[11px] text-secondary">8</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/drafts">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">draft</span>
+<span class="text-sm">Drafts</span>
+</div>
+<span class="text-[11px] text-secondary">3</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/sent">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span class="text-sm">Sent</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/archived">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+<span class="text-sm">Archived</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/trash">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span class="text-sm">Trash</span>
+</div>
+</a>
+</nav>
+<!-- Mailbox Accounts Section -->
+<div class="px-4 pt-4 pb-1">
+<span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Authorized Mailboxes</span>
+</div>
+<nav class="flex flex-col px-2 space-y-0.5">
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-on-surface"></span>
+<span class="text-xs truncate">All Mailboxes (9)</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-admin"></span>
+<span class="text-xs truncate">admin@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-support"></span>
+<span class="text-xs truncate">support@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-sales"></span>
+<span class="text-xs truncate">sales@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-orders"></span>
+<span class="text-xs truncate">orders@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-billing"></span>
+<span class="text-xs truncate">billing@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-info"></span>
+<span class="text-xs truncate">info@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-contact"></span>
+<span class="text-xs truncate">contact@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-notifications"></span>
+<span class="text-xs truncate">notifications@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-noreply"></span>
+<span class="text-xs truncate">noreply@rtcrackers.com</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Actions / Settings (Highlighted as Active App Section) -->
+<div class="flex flex-col border-t border-border-subtle p-2 bg-surface-subtle">
+<nav class="flex flex-col space-y-0.5 mb-2">
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-surface-container font-semibold text-on-surface shadow-xs transition-all" href="/email/settings">
+<span class="material-symbols-outlined text-[18px] text-tag-notifications">settings</span>
+<span class="text-xs">Settings</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">help</span>
+<span class="text-xs">Help &amp; Docs</span>
+</a>
+</nav>
+<!-- Profile Widget -->
+<div class="flex items-center justify-between px-2 py-1.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2 min-w-0">
+<img alt="Admin Avatar" class="w-7 h-7 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-semibold text-on-surface truncate">Operations Admin</span>
+<span class="text-[10px] text-secondary truncate">admin@rtcrackers.com</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[16px]">more_vert</span>
+</div>
+</div>
+</aside>
+<!-- MAIN VIEWPORT CONTENT (Padded 64 for sidebar) -->
+<div class="pl-64 min-h-screen flex flex-col">
+<!-- TOP HEADER -->
+<header class="fixed top-0 left-64 right-0 h-16 bg-surface-canvas/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-6 border-b border-border-subtle">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-notifications text-[22px]">mark_email_read</span>
+<div>
+<div class="flex items-center gap-2">
+<h1 class="font-headline-sm text-base text-on-surface font-bold leading-tight">Settings</h1>
+<span class="text-secondary text-xs">/</span>
+<span class="font-label-md text-sm text-tag-notifications font-semibold">Mailboxes</span>
+</div>
+<p class="text-xs text-secondary leading-none">Manage company mailbox permissions, statuses, sending/receiving capabilities, and signatures.</p>
+</div>
+</div>
+</div>
+<!-- Header Right Controls -->
+<div class="flex items-center gap-3">
+<!-- API Synchronization Status -->
+<span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low text-xs font-medium text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales animate-pulse"></span>
+<span>Connected: api.rtcrackers.com</span>
+</span>
+<!-- Global Quick Search trigger -->
+<div class="relative w-64 hidden lg:block">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-secondary text-[16px]">search</span>
+<input class="w-full bg-surface-subtle text-on-surface placeholder:text-secondary text-xs pl-8 pr-8 py-1.5 rounded-md outline-none focus:ring-1 focus:ring-tag-notifications border border-border-strong" placeholder="Quick find (⌘K)..." type="text"/>
+<span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-secondary bg-surface-container px-1 rounded font-mono">⌘K</span>
+</div>
+<button class="p-2 rounded-lg text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Notifications" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="flex items-center gap-2 pl-2" type="button">
+<img alt="Admin Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+<span class="material-symbols-outlined text-secondary text-[16px]">expand_more</span>
+</button>
+</div>
+</header>
+<!-- WORKSPACE: TWO-COLUMN SETTINGS ARCHITECTURE -->
+<main class="pt-16 flex-1 flex flex-col bg-surface"><div class="flex flex-col w-full">
+<!-- SETTINGS SUB-NAVIGATION BAR (Sticky under shell header) -->
+<div class="sticky top-0 z-30 bg-surface-canvas/95 backdrop-blur-md px-6 py-2.5 shadow-sm">
+<div class="flex items-center justify-between gap-4">
+<!-- Horizontal Navigation Tabs -->
+<nav class="flex items-center gap-1 overflow-x-auto py-1 text-xs">
+<a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="/email/settings/general">
+<span class="material-symbols-outlined text-[17px]">tune</span>
+<span class="font-label-md text-label-md">General</span>
+</a>
+<a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="/email/settings/appearance">
+<span class="material-symbols-outlined text-[17px]">palette</span>
+<span class="font-label-md text-label-md">Appearance</span>
+</a>
+<a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="/email/settings/notifications">
+<span class="material-symbols-outlined text-[17px]">notifications_active</span>
+<span class="font-label-md text-label-md">Notifications</span>
+</a>
+<a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="/email/settings/mailboxes">
+<span class="material-symbols-outlined text-[17px]">mark_email_read</span>
+<span class="font-label-md text-label-md">Mailboxes</span>
+</a>
+<!-- ACTIVE TAB: Signatures -->
+<a class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-tag-notifications text-on-primary font-semibold shadow-xs" href="/email/settings/signatures">
+<span class="material-symbols-outlined text-[17px]" style="font-variation-settings: 'FILL' 1;">draw</span>
+<span class="font-label-md text-label-md">Signatures</span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-canvas animate-pulse"></span>
+</a>
+<a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="/email/settings/sending">
+<span class="material-symbols-outlined text-[17px]">outbox</span>
+<span class="font-label-md text-label-md">Sending &amp; Reading</span>
+</a>
+<a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="/email/settings/security">
+<span class="material-symbols-outlined text-[17px]">shield</span>
+<span class="font-label-md text-label-md">Security &amp; Sessions</span>
+</a>
+</nav>
+<!-- Sync Status & Live Indicator -->
+<div class="hidden xl:flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container text-secondary font-code-sm text-code-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+<span>POSTGRES: /api/email/signatures?mailbox_id=3</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-low text-tag-sales font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>All changes saved</span>
+</span>
+</div>
+</div>
+</div>
+<!-- ACTION & FILTER BAR -->
+<div class="px-6 py-4 bg-surface-subtle flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-lg bg-tag-notifications/15 text-tag-notifications flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[18px]">signature</span>
+</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Email Signatures</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-tag-notifications font-label-sm text-label-sm font-semibold">PESO Certified</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Create, format, and assign official PESO-compliant email signatures across authorized RTC Crackers company mailboxes.</p>
+</div>
+<!-- Quick controls -->
+<div class="flex items-center flex-wrap gap-2.5">
+<!-- Mailbox Context Switcher -->
+<div class="relative">
+<select class="appearance-none bg-surface-canvas text-on-surface font-label-md text-label-md pl-3 pr-8 py-2 rounded-lg shadow-sm outline-none focus:bg-surface-container cursor-pointer" id="mailboxFilterSelect" onchange="switchMailbox(this.value)">
+<option selected="" value="sales@rtcrackers.com">sales@rtcrackers.com (Default • Rajesh K.)</option>
+<option value="support@rtcrackers.com">support@rtcrackers.com (Support Team)</option>
+<option value="orders@rtcrackers.com">orders@rtcrackers.com (Dispatch Desk)</option>
+<option value="billing@rtcrackers.com">billing@rtcrackers.com (Accounts &amp; GST)</option>
+<option value="admin@rtcrackers.com">admin@rtcrackers.com (Operations Root)</option>
+<option value="info@rtcrackers.com">info@rtcrackers.com (General Inquiries)</option>
+<option value="contact@rtcrackers.com">contact@rtcrackers.com (Corporate Relations)</option>
+<option value="notifications@rtcrackers.com">notifications@rtcrackers.com (Automated)</option>
+<option value="noreply@rtcrackers.com">noreply@rtcrackers.com (Outbound Only)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-secondary text-[18px]">arrow_drop_down</span>
+</div>
+<!-- Refresh Button -->
+<button class="p-2 rounded-lg bg-surface-canvas text-secondary hover:text-on-surface hover:bg-surface-container transition-colors shadow-sm" onclick="refreshSignatures()" title="Reload signatures from API">
+<span class="material-symbols-outlined text-[19px] block" id="sigRefreshIcon">refresh</span>
+</button>
+<!-- New Signature Action -->
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-all transform active:scale-95" onclick="createNewSignature()">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>New Signature</span>
+</button>
+</div>
+</div>
+<!-- WORKSPACE: TWO-COLUMN SETTINGS ARCHITECTURE -->
+<div class="px-6 py-5 grid grid-cols-1 lg:grid-cols-12 gap-5 flex-1 items-start">
+<!-- ==========================================
+         LEFT COLUMN: SIGNATURE LIST & QUICK ACCESS (~340px / 4 Cols)
+         ========================================== -->
+<div class="lg:col-span-4 xl:col-span-3 flex flex-col gap-4">
+<!-- Signature Search & Metric Card -->
+<div class="bg-surface-canvas rounded-xl p-4 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Active Mailbox</span>
+<span class="inline-flex items-center gap-1 font-code-sm text-code-sm text-tag-sales font-medium bg-tag-sales/10 px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span> 3 Profiles
+          </span>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-secondary text-[16px]">search</span>
+<input class="w-full bg-surface-subtle text-on-surface placeholder:text-secondary text-body-sm font-body-sm pl-8 pr-3 py-1.5 rounded-lg outline-none focus:bg-surface-container transition-all" id="signatureSearchInput" onkeyup="filterSignatures(this.value)" placeholder="Search templates..." type="text"/>
+</div>
+</div>
+<!-- Signature Items Feed -->
+<div class="space-y-2.5" id="signatureListFeed">
+<!-- CARD 1: Selected & Default Signature -->
+<div class="group cursor-pointer bg-surface-container-low rounded-xl p-3.5 shadow-sm transition-all relative overflow-hidden" id="sig-card-1" onclick="selectSignature(1)">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tag-notifications"></div>
+<div class="flex items-start justify-between gap-2 pl-1">
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Wholesale &amp; Regional Desk</span>
+<span class="bg-tag-notifications/15 text-tag-notifications font-label-sm text-label-sm px-1.5 py-0.2 rounded font-bold">DEFAULT</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-tag-sales">verified</span>
+<span>sales@rtcrackers.com • Primary Outgoing</span>
+</p>
+</div>
+<!-- Star favorite toggle -->
+<button class="text-tag-notifications hover:scale-110 transition-transform" onclick="event.stopPropagation(); setSignatureAsDefault(1)" title="Primary sending default">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="mt-2.5 p-2 rounded-lg bg-surface-canvas/80 text-secondary font-body-sm text-body-sm line-clamp-2">
+            "Best regards, Rajesh Kumar | Regional Sales Manager • Wholesale Operations (PESO Green Certified)"
+          </div>
+<div class="mt-2.5 flex items-center justify-between pt-2 text-secondary font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Updated 2 hrs ago
+            </span>
+<div class="flex items-center gap-1 opacity-80 group-hover:opacity-100">
+<button class="p-1 rounded hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="event.stopPropagation(); duplicateSignature(1)" title="Duplicate template">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+<button class="p-1 rounded hover:bg-error-container hover:text-error transition-colors" onclick="event.stopPropagation(); deleteSignature(1)" title="Delete">
+<span class="material-symbols-outlined text-[15px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 2: Festival Bulk Inquiries -->
+<div class="group cursor-pointer bg-surface-canvas hover:bg-surface-container-low rounded-xl p-3.5 shadow-sm transition-all relative overflow-hidden" id="sig-card-2" onclick="selectSignature(2)">
+<div class="flex items-start justify-between gap-2">
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Festival Bulk &amp; Proforma Desk</span>
+<span class="bg-surface-container text-secondary font-label-sm text-label-sm px-1.5 py-0.2 rounded font-medium">Seasonal</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">sales@rtcrackers.com • Sivakasi Rush</p>
+</div>
+<button class="text-secondary/50 hover:text-tag-notifications transition-colors" onclick="event.stopPropagation(); setSignatureAsDefault(2)" title="Make default">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+</div>
+<div class="mt-2.5 p-2 rounded-lg bg-surface-subtle text-secondary font-body-sm text-body-sm line-clamp-2">
+            "RTC Crackers Sivakasi Dispatch &amp; Sales Operations Desk • Toll Free: 1800 425 XXXX • Special Diwali Consignments"
+          </div>
+<div class="mt-2.5 flex items-center justify-between pt-2 text-secondary font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Updated Oct 1
+            </span>
+<div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 rounded hover:bg-surface-container-high transition-colors" onclick="event.stopPropagation(); duplicateSignature(2)" title="Duplicate">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+<button class="p-1 rounded hover:bg-error-container hover:text-error transition-colors" onclick="event.stopPropagation(); deleteSignature(2)" title="Delete">
+<span class="material-symbols-outlined text-[15px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 3: Plain Text Minimal Notice -->
+<div class="group cursor-pointer bg-surface-canvas hover:bg-surface-container-low rounded-xl p-3.5 shadow-sm transition-all relative overflow-hidden" id="sig-card-3" onclick="selectSignature(3)">
+<div class="flex items-start justify-between gap-2">
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Plain Text Minimal Notice</span>
+<span class="bg-surface-container text-secondary font-label-sm text-label-sm px-1.5 py-0.2 rounded font-medium">Text-Only</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">sales@rtcrackers.com • Low Bandwidth</p>
+</div>
+<button class="text-secondary/50 hover:text-tag-notifications transition-colors" onclick="event.stopPropagation(); setSignatureAsDefault(3)" title="Make default">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+</div>
+<div class="mt-2.5 p-2 rounded-lg bg-surface-subtle text-secondary font-code-sm text-code-sm line-clamp-2">
+            -- Rajesh Kumar, Sales Ops (+91 98421 XXXXX) | Factory Depot Sivakasi 626123 --
+          </div>
+<div class="mt-2.5 flex items-center justify-between pt-2 text-secondary font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Updated Sep 20
+            </span>
+<div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 rounded hover:bg-surface-container-high transition-colors" onclick="event.stopPropagation(); duplicateSignature(3)" title="Duplicate">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+<button class="p-1 rounded hover:bg-error-container hover:text-error transition-colors" onclick="event.stopPropagation(); deleteSignature(3)" title="Delete">
+<span class="material-symbols-outlined text-[15px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Jump to Other Mailboxes -->
+<div class="bg-surface-canvas rounded-xl p-4 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Other Authorized Desks</span>
+<span class="material-symbols-outlined text-secondary text-[16px]">domain</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle hover:bg-surface-container text-left transition-colors" onclick="switchMailbox('support@rtcrackers.com')">
+<span class="font-label-sm text-label-sm text-on-surface truncate">support@</span>
+<span class="font-code-sm text-code-sm text-tag-support font-semibold">2 sigs</span>
+</button>
+<button class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle hover:bg-surface-container text-left transition-colors" onclick="switchMailbox('billing@rtcrackers.com')">
+<span class="font-label-sm text-label-sm text-on-surface truncate">billing@</span>
+<span class="font-code-sm text-code-sm text-tag-billing font-semibold">1 sig</span>
+</button>
+<button class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle hover:bg-surface-container text-left transition-colors" onclick="switchMailbox('orders@rtcrackers.com')">
+<span class="font-label-sm text-label-sm text-on-surface truncate">orders@</span>
+<span class="font-code-sm text-code-sm text-tag-orders font-semibold">2 sigs</span>
+</button>
+<button class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle hover:bg-surface-container text-left transition-colors" onclick="switchMailbox('admin@rtcrackers.com')">
+<span class="font-label-sm text-label-sm text-on-surface truncate">admin@</span>
+<span class="font-code-sm text-code-sm text-tag-admin font-semibold">1 sig</span>
+</button>
+</div>
+</div>
+<!-- PESO Fireworks Compliance Notice Card -->
+<div class="p-4 rounded-xl bg-gradient-to-br from-surface-canvas via-surface-container-low to-surface-container shadow-sm space-y-2 relative overflow-hidden">
+<div class="flex items-center gap-2 text-tag-sales">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">PESO Green Standard</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+          Statutory requirement: Petroleum and Explosives Safety Organisation (PESO) circular mandates registered green-firework certification tags on all wholesale commercial correspondence.
+        </p>
+<div class="pt-1 flex items-center justify-between text-[11px] text-tag-sales font-semibold">
+<span>Licence: PESO/EXP/TN/2024/99482</span>
+<span class="flex items-center gap-0.5"><span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span> Verified</span>
+</div>
+</div>
+</div>
+<!-- ==========================================
+         RIGHT COLUMN: DUAL-PANE EDITOR & SIMULATED CLIENT (8 Cols)
+         ========================================== -->
+<div class="lg:col-span-8 xl:col-span-9 flex flex-col gap-5">
+<!-- SIGNATURE CONFIGURATION & ACTIONS TOP BAR -->
+<div class="bg-surface-canvas rounded-xl p-4 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex-1 flex flex-col sm:flex-row sm:items-center gap-3">
+<div class="flex-1">
+<label class="font-label-sm text-label-sm text-secondary uppercase font-semibold block mb-1">Signature Profile Title</label>
+<input class="w-full bg-surface-subtle font-headline-sm text-headline-sm text-on-surface font-bold px-3 py-1.5 rounded-lg outline-none focus:bg-surface-container transition-all" id="sigNameInput" type="text" value="Wholesale &amp; Regional Desk"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-secondary uppercase font-semibold block mb-1">Target Identity</label>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container font-label-md text-label-md text-on-surface font-medium">
+<span class="w-2 h-2 rounded-full bg-tag-sales"></span>
+<span id="targetMailboxLabel">sales@rtcrackers.com</span>
+<span class="material-symbols-outlined text-[15px] text-secondary" title="Domain lock enforced">lock</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="px-3 py-1.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-secondary hover:text-on-surface font-label-md text-label-md transition-colors" onclick="resetSignatureChanges()">
+            Reset
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5" onclick="duplicateCurrentSignature()">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span class="hidden sm:inline">Duplicate</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold shadow-sm transition-all transform active:scale-95" onclick="saveActiveSignature()">
+<span class="material-symbols-outlined text-[17px]">save</span>
+<span>Save Signature</span>
+</button>
+</div>
+</div>
+<!-- SPLIT VIEW: EDITOR ON TOP/LEFT, PREVIEW ON RIGHT -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-5">
+<!-- SUB-COLUMN 1: WYSIWYG & AUTOMATION RULES (7 Cols) -->
+<div class="xl:col-span-7 flex flex-col gap-4">
+<!-- Editor Container Card -->
+<div class="bg-surface-canvas rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Editor Header & Mode Tabs -->
+<div class="p-3 bg-surface-subtle flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-1 bg-surface-canvas p-1 rounded-lg shadow-2xs">
+<button class="px-3 py-1 rounded-md bg-tag-notifications text-on-primary font-label-md text-label-md font-semibold transition-all" id="modeRichTab" onclick="setEditorMode('rich')">
+                  Rich Text Editor
+                </button>
+<button class="px-3 py-1 rounded-md text-secondary hover:text-on-surface font-label-md text-label-md font-medium transition-all" id="modePlainTab" onclick="setEditorMode('plain')">
+                  Plain Text Fallback
+                </button>
+<button class="px-3 py-1 rounded-md text-secondary hover:text-on-surface font-label-md text-label-md font-medium transition-all" id="modeHtmlTab" onclick="setEditorMode('html')">
+                  HTML Source
+                </button>
+</div>
+<!-- Sanitizer Security Badge -->
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tag-sales bg-tag-sales/10 px-2 py-0.5 rounded-full font-medium">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+<span>DOMPurify Sanitized</span>
+</span>
+</div>
+<!-- Formatting Toolbar -->
+<div class="px-3 py-2 bg-surface-canvas flex items-center flex-wrap gap-1" id="formattingToolbar">
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface" onclick="formatDoc('bold')" title="Bold (⌘B)">
+<span class="material-symbols-outlined text-[18px]">format_bold</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface" onclick="formatDoc('italic')" title="Italic (⌘I)">
+<span class="material-symbols-outlined text-[18px]">format_italic</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface" onclick="formatDoc('underline')" title="Underline (⌘U)">
+<span class="material-symbols-outlined text-[18px]">format_underlined</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface" onclick="formatDoc('strikeThrough')" title="Strikethrough">
+<span class="material-symbols-outlined text-[18px]">strikethrough_s</span>
+</button>
+<div class="h-4 w-px bg-surface-container mx-1"></div>
+<!-- Font selector -->
+<select class="bg-surface-subtle text-secondary font-label-sm text-label-sm px-2 py-1 rounded outline-none cursor-pointer" onchange="formatDoc('fontName', this.value)">
+<option value="Plus Jakarta Sans">Plus Jakarta Sans</option>
+<option value="Inter">Inter UI</option>
+<option value="sans-serif">System Sans</option>
+<option value="monospace">Courier Mono</option>
+</select>
+<!-- Font size -->
+<select class="bg-surface-subtle text-secondary font-label-sm text-label-sm px-2 py-1 rounded outline-none cursor-pointer" onchange="formatDoc('fontSize', this.value)">
+<option value="2">12px (Small)</option>
+<option selected="" value="3">13px (Body)</option>
+<option value="4">15px (Headline)</option>
+</select>
+<div class="h-4 w-px bg-surface-container mx-1"></div>
+<!-- Text alignment -->
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface" onclick="formatDoc('justifyLeft')" title="Align Left">
+<span class="material-symbols-outlined text-[18px]">format_align_left</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface" onclick="formatDoc('justifyCenter')" title="Align Center">
+<span class="material-symbols-outlined text-[18px]">format_align_center</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface" onclick="formatDoc('justifyRight')" title="Align Right">
+<span class="material-symbols-outlined text-[18px]">format_align_right</span>
+</button>
+<div class="h-4 w-px bg-surface-container mx-1"></div>
+<!-- Lists & Link -->
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface" onclick="formatDoc('insertUnorderedList')" title="Bullet List">
+<span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface" onclick="insertVerifiedLink()" title="Insert Safe Link">
+<span class="material-symbols-outlined text-[18px]">link</span>
+</button>
+<!-- Special RTC Firework Badge Inserter -->
+<button class="flex items-center gap-1 px-2 py-1 rounded bg-tag-sales/15 text-tag-sales font-label-sm text-label-sm font-semibold hover:bg-tag-sales/25 transition-colors" onclick="insertPesoBadge()" title="Insert PESO Green Badge">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span>+ PESO Badge</span>
+</button>
+<div class="h-4 w-px bg-surface-container mx-1"></div>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface" onclick="formatDoc('undo')" title="Undo">
+<span class="material-symbols-outlined text-[18px]">undo</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface" onclick="formatDoc('redo')" title="Redo">
+<span class="material-symbols-outlined text-[18px]">redo</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-secondary hover:text-on-surface" onclick="clearFormatting()" title="Clear Styles">
+<span class="material-symbols-outlined text-[18px]">format_clear</span>
+</button>
+</div>
+<!-- Content Editable Workspace -->
+<div class="p-5 font-body-md text-body-md text-on-surface min-h-[220px] max-h-[380px] overflow-y-auto bg-surface-canvas outline-none focus:bg-surface-bright transition-colors" contenteditable="true" id="richTextEditorBox" oninput="handleEditorContentChange()">
+<p style="margin: 0 0 6px 0; color: #565e74;">Best regards,</p>
+<p style="margin: 0 0 2px 0; font-size: 15px; font-weight: 700; color: #0b1c30; font-family: 'Plus Jakarta Sans', sans-serif;">Rajesh Kumar</p>
+<p style="margin: 0 0 8px 0; font-size: 13px; color: #565e74; font-weight: 500;">Regional Sales Manager • Wholesale Operations</p>
+<div style="margin: 8px 0; padding: 10px 12px; background-color: #eff4ff; border-radius: 8px; font-size: 12px; line-height: 1.5; color: #0b1c30;">
+<div style="font-weight: 700; color: #a33900; margin-bottom: 2px;">RTC Crackers Private Limited (Sivakasi Plant)</div>
+<div><strong>Direct Desk:</strong> +91 98421 XXXXX  |  <strong>Toll-Free:</strong> 1800 425 7822</div>
+<div><strong>Email:</strong> <a href="mailto:sales@rtcrackers.com" style="color: #a33900; text-decoration: underline;">sales@rtcrackers.com</a>  |  <strong>Portal:</strong> <a href="https://rtcrackers.com" style="color: #a33900; text-decoration: underline;" target="_blank">https://rtcrackers.com</a></div>
+<div style="color: #565e74; font-size: 11px; margin-top: 4px;">Factory Depot: 142/3 Bypass Road, Sivakasi, Tamil Nadu - 626123</div>
+</div>
+<div id="pesoBadgeInEditor" style="margin-top: 8px; display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background-color: #f0fdf4; color: #16a34a; border-radius: 6px; font-size: 11px; font-weight: 600;">
+<span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #16a34a;"></span>
+<span>PESO Compliant • 100% Green Fireworks Certified (Licence: DL-99482)</span>
+</div>
+</div>
+<!-- Plain Text Fallback View (Hidden by default) -->
+<textarea class="hidden p-5 font-code-sm text-code-sm text-on-surface min-h-[220px] bg-surface-canvas outline-none resize-none leading-relaxed" id="plainTextEditorBox" oninput="handlePlainTextChange()">Best regards,
+Rajesh Kumar
+Regional Sales Manager • Wholesale Operations
+RTC Crackers Private Limited (Sivakasi Plant)
+Direct Desk: +91 98421 XXXXX | Toll-Free: 1800 425 7822
+Email: sales@rtcrackers.com | Web: https://rtcrackers.com
+Depot: 142/3 Bypass Road, Sivakasi, Tamil Nadu - 626123
+[PESO Compliant • 100% Green Fireworks Certified • DL-99482]</textarea>
+<!-- HTML Source View (Hidden by default) -->
+<textarea class="hidden p-5 font-code-sm text-code-sm text-tag-billing min-h-[220px] bg-surface-subtle outline-none resize-none font-mono" id="htmlSourceEditorBox" oninput="handleHtmlSourceChange()"></textarea>
+<!-- Footer Stats in Editor -->
+<div class="px-4 py-2 bg-surface-subtle flex items-center justify-between text-secondary font-code-sm text-code-sm">
+<span id="charCountDisplay">Approx 482 characters • 76 words</span>
+<span>Compliant with MIME RFC-2046</span>
+</div>
+</div>
+<!-- AUTOMATION & DISPATCH RULES CARD -->
+<div class="bg-surface-canvas rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-notifications text-[20px]">tune</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Signature Dispatch Rules &amp; Placement</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Engine Level: Compose v2.4</span>
+</div>
+<!-- Toggles Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+<!-- Rule 1: New emails -->
+<label class="flex items-start gap-3 p-3 rounded-lg bg-surface-subtle hover:bg-surface-container-low transition-colors cursor-pointer">
+<input checked="" class="mt-0.5 accent-tag-notifications w-4 h-4 rounded cursor-pointer" id="ruleNewEmail" onchange="updateSimulatedPreview()" type="checkbox"/>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">Auto-insert for new drafts</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Prepend signature when hitting compose for fresh messages.</p>
+</div>
+</label>
+<!-- Rule 2: Replies -->
+<label class="flex items-start gap-3 p-3 rounded-lg bg-surface-subtle hover:bg-surface-container-low transition-colors cursor-pointer">
+<input checked="" class="mt-0.5 accent-tag-notifications w-4 h-4 rounded cursor-pointer" id="ruleReplies" onchange="updateSimulatedPreview()" type="checkbox"/>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">Auto-insert for replies</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Include concise signature block when responding to customer queries.</p>
+</div>
+</label>
+<!-- Rule 3: Forwards -->
+<label class="flex items-start gap-3 p-3 rounded-lg bg-surface-subtle hover:bg-surface-container-low transition-colors cursor-pointer">
+<input checked="" class="mt-0.5 accent-tag-notifications w-4 h-4 rounded cursor-pointer" id="ruleForwards" onchange="updateSimulatedPreview()" type="checkbox"/>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">Auto-insert for forwards</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Attach signature when routing quotations or invoices.</p>
+</div>
+</label>
+<!-- Rule 4: Delimiter Line -->
+<label class="flex items-start gap-3 p-3 rounded-lg bg-surface-subtle hover:bg-surface-container-low transition-colors cursor-pointer">
+<input checked="" class="mt-0.5 accent-tag-notifications w-4 h-4 rounded cursor-pointer" id="ruleDelimiter" onchange="toggleDelimiter(this.checked)" type="checkbox"/>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">RFC Delimiter Line ("-- ")</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Standardizes email parsers in Apple Mail &amp; Thunderbird.</p>
+</div>
+</label>
+</div>
+<!-- Placement Radios -->
+<div class="p-3.5 rounded-lg bg-surface-subtle flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Thread Placement:</span>
+<div class="flex items-center gap-4 text-body-sm font-body-sm text-on-surface">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="accent-tag-notifications" name="sigPlacement" onchange="updateSimulatedPreview()" type="radio" value="above"/>
+<span>Above quoted text (Standard)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="accent-tag-notifications" name="sigPlacement" onchange="updateSimulatedPreview()" type="radio" value="below"/>
+<span>Below quoted text</span>
+</label>
+</div>
+</div>
+<!-- Statutory Enforce Banner -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-tag-sales/10 text-on-surface">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tag-sales text-[20px]">shield</span>
+<div>
+<div class="font-title-sm text-title-sm font-semibold">Enforce PESO Compliance Badge on B2B Notes</div>
+<p class="font-body-sm text-body-sm text-secondary">Automatically blocks outbound delivery if PESO accreditation ID is missing.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- SUB-COLUMN 2: LIVE SIMULATED EMAIL CLIENT PREVIEW (5 Cols) -->
+<div class="xl:col-span-5 flex flex-col gap-4">
+<div class="bg-surface-canvas rounded-xl shadow-sm overflow-hidden flex flex-col flex-1">
+<!-- Simulated Client Top Header -->
+<div class="p-3.5 bg-surface-subtle flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-notifications text-[18px]">visibility</span>
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Simulated Email Rendering</span>
+</div>
+<!-- Theme preview toggle -->
+<div class="flex items-center gap-1 bg-surface-canvas p-0.5 rounded-lg shadow-2xs text-[11px]">
+<button class="px-2 py-0.5 rounded bg-surface-container font-semibold text-on-surface" id="previewLightBtn" onclick="togglePreviewTheme('light')">Light</button>
+<button class="px-2 py-0.5 rounded text-secondary hover:text-on-surface" id="previewDarkBtn" onclick="togglePreviewTheme('dark')">Dark Mode</button>
+</div>
+</div>
+<!-- Email Client Frame Mockup -->
+<div class="p-4 bg-surface-bright flex-1 flex flex-col gap-3 transition-colors duration-200" id="simulatedClientFrame">
+<!-- Simulated Thread History -->
+<div class="p-3 rounded-lg bg-surface-canvas shadow-xs space-y-1.5 opacity-75">
+<div class="flex items-center justify-between text-secondary font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-5 h-5 rounded-full bg-tag-info/20 text-tag-info font-bold text-[10px] flex items-center justify-center">SR</span>
+<span class="font-semibold text-on-surface truncate">Sunita Rao</span>
+<span class="text-[11px] truncate">&lt;sunita.rao@supermart.in&gt;</span>
+</div>
+<span class="text-[11px] shrink-0">11:42 AM</span>
+</div>
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">Re: Diwali 2026 Wholesale Quotation - 500 Cartons</div>
+<p class="font-body-sm text-body-sm text-secondary italic">
+                  "Hi Rajesh, Please confirm the revised proforma invoice and lorry dispatch schedule for the Sparklers &amp; Ground Chakkars batch..."
+                </p>
+</div>
+<!-- Simulated Compose Reply Container -->
+<div class="p-4 rounded-xl bg-surface-canvas shadow-md space-y-3 flex-1" id="simulatedReplyCanvas">
+<div class="flex items-center justify-between pb-2 text-secondary font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tag-notifications">reply</span>
+<span class="font-semibold text-on-surface">Draft Response to Sunita Rao</span>
+</div>
+<span class="font-code-sm text-code-sm text-tag-sales">Auto-Saving</span>
+</div>
+<!-- Simulated Reply Body -->
+<div class="font-body-md text-body-md text-on-surface space-y-2">
+<p>Dear Sunita ji,</p>
+<p>We have processed the revised GST proforma invoice and confirmed bay allotment #04 at our Sivakasi plant depot. The 500 cartons will be dispatched under safety seal via VRL Logistics.</p>
+</div>
+<!-- Delimiter Indicator -->
+<div class="font-code-sm text-code-sm text-secondary pt-2" id="simulatedDelimiter">-- </div>
+<!-- LIVE RENDERED SIGNATURE CONTAINER -->
+<div class="pt-1 transition-all" id="liveRenderedSignature">
+<!-- Injected via syncLivePreview() -->
+</div>
+<!-- Attachment preview tag -->
+<div class="pt-3 flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tag-notifications">picture_as_pdf</span>
+<span>Proforma_RTC_500Cartons_Oct2026.pdf (1.4 MB)</span>
+</span>
+</div>
+</div>
+<!-- Client Compatibility Notice -->
+<div class="p-2.5 rounded-lg bg-surface-container flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-tag-sales">done_all</span>
+<span>Outlook 365, Gmail, iOS Mail, Thunderbird Tested</span>
+</span>
+<span class="font-code-sm text-code-sm text-secondary">Zero 3rd-party trackers</span>
+</div>
+</div>
+</div>
+<!-- Signature Diagnostics Card -->
+<div class="bg-surface-canvas rounded-xl p-4 shadow-sm space-y-3">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold block">Signature Deliverability Diagnostics</span>
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="p-2 rounded-lg bg-surface-subtle">
+<div class="font-headline-sm text-headline-sm font-bold text-tag-sales">99.8%</div>
+<div class="text-[10px] text-secondary mt-0.5">Spam Pass Rate</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-subtle">
+<div class="font-headline-sm text-headline-sm font-bold text-tag-notifications">0 KB</div>
+<div class="text-[10px] text-secondary mt-0.5">External Images</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-subtle">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">RFC 2046</div>
+<div class="text-[10px] text-secondary mt-0.5">MIME Standards</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PERSISTENT BOTTOM NOTIFICATION & BACKEND AUDIT STATUS -->
+<div class="px-6 py-3 bg-surface-canvas shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-secondary font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-sales animate-pulse"></span>
+<span class="font-medium text-on-surface">Active Signature Engine:</span>
+<span class="truncate">All modifications propagate dynamically to the Page 3 Compose Email view and background SMTP relays.</span>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<span class="font-code-sm text-code-sm bg-surface-container px-2 py-0.5 rounded">v2.4.9 (Build 2026.10)</span>
+<a class="text-tag-notifications hover:underline font-label-md text-label-md font-semibold flex items-center gap-1" href="/email/help/signatures">
+<span>PESO Guidelines</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- INSERT SAFE LINK MODAL -->
+<div class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-xs hidden items-center justify-center p-4" id="insertLinkModal">
+<div class="bg-surface-canvas rounded-2xl shadow-2xl max-w-md w-full p-5 space-y-4">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-notifications">link</span>
+<span>Insert Verified Link</span>
+</h4>
+<button class="p-1 rounded text-secondary hover:text-on-surface" onclick="closeInsertLinkModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="space-y-3">
+<div>
+<label class="font-label-sm text-label-sm text-secondary block mb-1">Display Text</label>
+<input class="w-full bg-surface-subtle font-body-sm text-body-sm text-on-surface px-3 py-2 rounded-lg outline-none focus:bg-surface-container" id="linkTextVal" placeholder="e.g., https://rtcrackers.com" type="text"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-secondary block mb-1">Destination URL (https:// or mailto: only)</label>
+<input class="w-full bg-surface-subtle font-body-sm text-body-sm text-on-surface px-3 py-2 rounded-lg outline-none focus:bg-surface-container" id="linkUrlVal" placeholder="https://rtcrackers.com/wholesale" type="url"/>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-2">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-subtle text-secondary font-label-md text-label-md" onclick="closeInsertLinkModal()">Cancel</button>
+<button class="px-4 py-1.5 rounded-lg bg-tag-notifications text-on-primary font-label-md text-label-md font-semibold shadow-sm" onclick="applyVerifiedLink()">Insert Link</button>
+</div>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE BEHAVIOR & APPLICATION LOGIC -->
+<script>
+  // Initial sync upon render
+  document.addEventListener('DOMContentLoaded', () => {
+    syncLivePreview();
+  });
+
+  // State Management
+  let currentActiveSigId = 1;
+  let activeEditorMode = 'rich';
+
+  const signatureStore = {
+    1: {
+      name: "Wholesale & Regional Desk",
+      mailbox: "sales@rtcrackers.com",
+      isDefault: true,
+      htmlContent: `<p style="margin: 0 0 6px 0; color: #565e74;">Best regards,</p>
+<p style="margin: 0 0 2px 0; font-size: 15px; font-weight: 700; color: #0b1c30; font-family: 'Plus Jakarta Sans', sans-serif;">Rajesh Kumar</p>
+<p style="margin: 0 0 8px 0; font-size: 13px; color: #565e74; font-weight: 500;">Regional Sales Manager • Wholesale Operations</p>
+<div style="margin: 8px 0; padding: 10px 12px; background-color: #eff4ff; border-radius: 8px; font-size: 12px; line-height: 1.5; color: #0b1c30;">
+  <div style="font-weight: 700; color: #a33900; margin-bottom: 2px;">RTC Crackers Private Limited (Sivakasi Plant)</div>
+  <div><strong>Direct Desk:</strong> +91 98421 XXXXX &nbsp;|&nbsp; <strong>Toll-Free:</strong> 1800 425 7822</div>
+  <div><strong>Email:</strong> <a href="mailto:sales@rtcrackers.com" style="color: #a33900; text-decoration: underline;">sales@rtcrackers.com</a> &nbsp;|&nbsp; <strong>Portal:</strong> <a href="https://rtcrackers.com" target="_blank" style="color: #a33900; text-decoration: underline;">https://rtcrackers.com</a></div>
+  <div style="color: #565e74; font-size: 11px; margin-top: 4px;">Factory Depot: 142/3 Bypass Road, Sivakasi, Tamil Nadu - 626123</div>
+</div>
+<div id="pesoBadgeInEditor" style="margin-top: 8px; display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background-color: #f0fdf4; color: #16a34a; border-radius: 6px; font-size: 11px; font-weight: 600;">
+  <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #16a34a;"></span>
+  <span>PESO Compliant • 100% Green Fireworks Certified (Licence: DL-99482)</span>
+</div>`,
+      plainText: `Best regards,\nRajesh Kumar\nRegional Sales Manager • Wholesale Operations\nRTC Crackers Private Limited (Sivakasi Plant)\nDirect Desk: +91 98421 XXXXX | Toll-Free: 1800 425 7822\nEmail: sales@rtcrackers.com | Web: https://rtcrackers.com\nDepot: 142/3 Bypass Road, Sivakasi, Tamil Nadu - 626123\n[PESO Compliant • 100% Green Fireworks Certified • DL-99482]`
+    },
+    2: {
+      name: "Festival Bulk & Proforma Desk",
+      mailbox: "sales@rtcrackers.com",
+      isDefault: false,
+      htmlContent: `<p style="margin: 0 0 4px 0; font-size: 14px; font-weight: 700; color: #0b1c30;">RTC Crackers Sivakasi Dispatch &amp; Sales Desk</p>
+<p style="margin: 0 0 6px 0; font-size: 12px; color: #cc4900; font-weight: 600;">Special Diwali &amp; Festive Consignments Unit</p>
+<div style="font-size: 12px; color: #565e74; line-height: 1.4;">
+  <div>Express Order Helpline: +91 94431 XXXXX | Toll-Free: 1800 425 7822</div>
+  <div>Sivakasi Dispatch Bays #1 to #8 • Fast Road Clearance</div>
+  <div style="margin-top: 6px; padding: 3px 8px; background: #f0fdf4; color: #16a34a; font-weight: 600; display: inline-block; border-radius: 4px;">PESO Licensed Manufacturer</div>
+</div>`,
+      plainText: `RTC Crackers Sivakasi Dispatch & Sales Desk\nSpecial Diwali & Festive Consignments Unit\nExpress Order Helpline: +91 94431 XXXXX | Toll-Free: 1800 425 7822\nSivakasi Dispatch Bays #1 to #8\nPESO Licensed Manufacturer`
+    },
+    3: {
+      name: "Plain Text Minimal Notice",
+      mailbox: "sales@rtcrackers.com",
+      isDefault: false,
+      htmlContent: `<p style="font-family: monospace; font-size: 12px; color: #0b1c30; margin: 0;">-- Rajesh Kumar, Sales Ops (+91 98421 XXXXX) | Factory Depot Sivakasi 626123 --<br><span style="color: #16a34a;">[PESO Green Certified Factory Standard DL-99482]</span></p>`,
+      plainText: `-- Rajesh Kumar, Sales Ops (+91 98421 XXXXX) | Factory Depot Sivakasi 626123 --\n[PESO Green Certified Factory Standard DL-99482]`
+    }
+  };
+
+  function selectSignature(id) {
+    currentActiveSigId = id;
+    const sig = signatureStore[id];
+    if (!sig) return;
+
+    // Visual selection state on cards
+    [1, 2, 3].forEach(cardId => {
+      const card = document.getElementById(`sig-card-${cardId}`);
+      if (card) {
+        if (cardId === id) {
+          card.classList.remove('bg-surface-canvas');
+          card.classList.add('bg-surface-container-low');
+          let bar = card.querySelector('.absolute.left-0');
+          if (!bar) {
+            const newBar = document.createElement('div');
+            newBar.className = 'absolute left-0 top-0 bottom-0 w-1.5 bg-tag-notifications';
+            card.prepend(newBar);
+          }
+        } else {
+          card.classList.remove('bg-surface-container-low');
+          card.classList.add('bg-surface-canvas');
+          let bar = card.querySelector('.absolute.left-0');
+          if (bar) bar.remove();
+        }
+      }
+    });
+
+    // Populate editors
+    document.getElementById('sigNameInput').value = sig.name;
+    document.getElementById('targetMailboxLabel').textContent = sig.mailbox;
+    document.getElementById('richTextEditorBox').innerHTML = sig.htmlContent;
+    document.getElementById('plainTextEditorBox').value = sig.plainText;
+    document.getElementById('htmlSourceEditorBox').value = sig.htmlContent;
+
+    syncLivePreview();
+  }
+
+  function setEditorMode(mode) {
+    activeEditorMode = mode;
+    const richBox = document.getElementById('richTextEditorBox');
+    const plainBox = document.getElementById('plainTextEditorBox');
+    const htmlBox = document.getElementById('htmlSourceEditorBox');
+    const toolbar = document.getElementById('formattingToolbar');
+
+    const btnRich = document.getElementById('modeRichTab');
+    const btnPlain = document.getElementById('modePlainTab');
+    const btnHtml = document.getElementById('modeHtmlTab');
+
+    // Reset styles
+    [btnRich, btnPlain, btnHtml].forEach(b => {
+      b.className = 'px-3 py-1 rounded-md text-secondary hover:text-on-surface font-label-md text-label-md font-medium transition-all';
+    });
+
+    if (mode === 'rich') {
+      richBox.classList.remove('hidden');
+      plainBox.classList.add('hidden');
+      htmlBox.classList.add('hidden');
+      toolbar.classList.remove('hidden');
+      btnRich.className = 'px-3 py-1 rounded-md bg-tag-notifications text-on-primary font-label-md text-label-md font-semibold transition-all';
+    } else if (mode === 'plain') {
+      richBox.classList.add('hidden');
+      plainBox.classList.remove('hidden');
+      htmlBox.classList.add('hidden');
+      toolbar.classList.add('hidden');
+      btnPlain.className = 'px-3 py-1 rounded-md bg-tag-notifications text-on-primary font-label-md text-label-md font-semibold transition-all';
+    } else if (mode === 'html') {
+      htmlBox.value = richBox.innerHTML;
+      richBox.classList.add('hidden');
+      plainBox.classList.add('hidden');
+      htmlBox.classList.remove('hidden');
+      toolbar.classList.add('hidden');
+      btnHtml.className = 'px-3 py-1 rounded-md bg-tag-notifications text-on-primary font-label-md text-label-md font-semibold transition-all';
+    }
+
+    syncLivePreview();
+  }
+
+  function formatDoc(cmd, value = null) {
+    document.execCommand(cmd, false, value);
+    handleEditorContentChange();
+  }
+
+  function handleEditorContentChange() {
+    const content = document.getElementById('richTextEditorBox').innerHTML;
+    document.getElementById('htmlSourceEditorBox').value = content;
+    syncLivePreview();
+    updateCharCount();
+  }
+
+  function handlePlainTextChange() {
+    syncLivePreview();
+  }
+
+  function handleHtmlSourceChange() {
+    const val = document.getElementById('htmlSourceEditorBox').value;
+    document.getElementById('richTextEditorBox').innerHTML = val;
+    syncLivePreview();
+    updateCharCount();
+  }
+
+  function updateCharCount() {
+    const text = document.getElementById('richTextEditorBox').innerText || '';
+    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+    const chars = text.length;
+    document.getElementById('charCountDisplay').textContent = `Approx ${chars} characters • ${words} words`;
+  }
+
+  function syncLivePreview() {
+    const previewContainer = document.getElementById('liveRenderedSignature');
+    if (!previewContainer) return;
+
+    if (activeEditorMode === 'plain') {
+      const text = document.getElementById('plainTextEditorBox').value;
+      previewContainer.innerHTML = `<pre style="font-family: monospace; font-size: 11px; white-space: pre-wrap; color: #0b1c30;">${escapeHtml(text)}</pre>`;
+    } else {
+      const content = document.getElementById('richTextEditorBox').innerHTML;
+      previewContainer.innerHTML = content;
+    }
+  }
+
+  function escapeHtml(string) {
+    const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+    return string.replace(/[&<>"']/g, m => map[m]);
+  }
+
+  function toggleDelimiter(show) {
+    const delim = document.getElementById('simulatedDelimiter');
+    if (delim) {
+      if (show) {
+        delim.classList.remove('hidden');
+      } else {
+        delim.classList.add('hidden');
+      }
+    }
+  }
+
+  function togglePreviewTheme(theme) {
+    const frame = document.getElementById('simulatedClientFrame');
+    const canvas = document.getElementById('simulatedReplyCanvas');
+    const btnLight = document.getElementById('previewLightBtn');
+    const btnDark = document.getElementById('previewDarkBtn');
+
+    if (theme === 'dark') {
+      frame.classList.remove('bg-surface-bright');
+      frame.classList.add('bg-inverse-surface');
+      canvas.classList.remove('bg-surface-canvas');
+      canvas.classList.add('bg-on-surface');
+      canvas.classList.add('text-inverse-on-surface');
+      btnDark.className = 'px-2 py-0.5 rounded bg-surface-container font-semibold text-on-surface';
+      btnLight.className = 'px-2 py-0.5 rounded text-secondary hover:text-on-surface';
+    } else {
+      frame.classList.add('bg-surface-bright');
+      frame.classList.remove('bg-inverse-surface');
+      canvas.classList.add('bg-surface-canvas');
+      canvas.classList.remove('bg-on-surface');
+      canvas.classList.remove('text-inverse-on-surface');
+      btnLight.className = 'px-2 py-0.5 rounded bg-surface-container font-semibold text-on-surface';
+      btnDark.className = 'px-2 py-0.5 rounded text-secondary hover:text-on-surface';
+    }
+  }
+
+  function insertPesoBadge() {
+    const badgeHtml = `&nbsp;<div style="margin-top: 6px; display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background-color: #f0fdf4; color: #16a34a; border-radius: 6px; font-size: 11px; font-weight: 600;">
+      <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #16a34a;"></span>
+      <span>PESO Compliant • 100% Green Fireworks Certified (Licence: DL-99482)</span>
+    </div>&nbsp;`;
+    document.execCommand('insertHTML', false, badgeHtml);
+    handleEditorContentChange();
+    if (typeof showToast === 'function') showToast('Added PESO Green Badge to signature');
+  }
+
+  function clearFormatting() {
+    document.execCommand('removeFormat', false, null);
+    handleEditorContentChange();
+  }
+
+  function insertVerifiedLink() {
+    document.getElementById('insertLinkModal').classList.remove('hidden');
+    document.getElementById('insertLinkModal').classList.add('flex');
+    document.getElementById('linkTextVal').value = window.getSelection().toString() || 'https://rtcrackers.com';
+    document.getElementById('linkUrlVal').value = 'https://rtcrackers.com';
+  }
+
+  function closeInsertLinkModal() {
+    document.getElementById('insertLinkModal').classList.add('hidden');
+    document.getElementById('insertLinkModal').classList.remove('flex');
+  }
+
+  function applyVerifiedLink() {
+    const text = document.getElementById('linkTextVal').value.trim();
+    const url = document.getElementById('linkUrlVal').value.trim();
+    if (url && (url.startsWith('https://') || url.startsWith('mailto:'))) {
+      const linkTag = `<a href="${url}" target="_blank" style="color: #a33900; text-decoration: underline;">${text || url}</a>`;
+      document.execCommand('insertHTML', false, linkTag);
+      closeInsertLinkModal();
+      handleEditorContentChange();
+      if (typeof showToast === 'function') showToast('Safe link inserted');
+    } else {
+      alert('Security policy enforces https:// or mailto: links only.');
+    }
+  }
+
+  function saveActiveSignature() {
+    const name = document.getElementById('sigNameInput').value;
+    const content = document.getElementById('richTextEditorBox').innerHTML;
+    const plain = document.getElementById('plainTextEditorBox').value;
+
+    signatureStore[currentActiveSigId].name = name;
+    signatureStore[currentActiveSigId].htmlContent = content;
+    signatureStore[currentActiveSigId].plainText = plain;
+
+    if (typeof showToast === 'function') {
+      showToast(`Signature "${name}" saved to PostgreSQL backend`, 'cloud_done');
+    }
+  }
+
+  function setSignatureAsDefault(id) {
+    Object.keys(signatureStore).forEach(k => {
+      signatureStore[k].isDefault = (parseInt(k) === id);
+    });
+    if (typeof showToast === 'function') {
+      showToast(`Signature set as default for sales@rtcrackers.com`, 'star');
+    }
+    selectSignature(id);
+  }
+
+  function duplicateCurrentSignature() {
+    if (typeof showToast === 'function') {
+      showToast('Created copy: Wholesale & Regional Desk (Copy)', 'content_copy');
+    }
+  }
+
+  function duplicateSignature(id) {
+    if (typeof showToast === 'function') {
+      showToast(`Duplicated signature #${id}`, 'content_copy');
+    }
+  }
+
+  function deleteSignature(id) {
+    if (confirm('Delete this signature template from RTC Crackers mail system?')) {
+      if (typeof showToast === 'function') {
+        showToast(`Signature #${id} deleted`, 'delete');
+      }
+    }
+  }
+
+  function createNewSignature() {
+    document.getElementById('sigNameInput').value = 'New Custom Desk Signature';
+    document.getElementById('richTextEditorBox').innerHTML = `<p>Kind regards,</p><p><strong>Rajesh Kumar</strong></p><p>RTC Crackers Sivakasi</p>`;
+    setEditorMode('rich');
+    handleEditorContentChange();
+    if (typeof showToast === 'function') {
+      showToast('Initialized new signature template', 'add');
+    }
+  }
+
+  function resetSignatureChanges() {
+    selectSignature(currentActiveSigId);
+    if (typeof showToast === 'function') {
+      showToast('Reset signature back to saved version');
+    }
+  }
+
+  function switchMailbox(address) {
+    document.getElementById('mailboxFilterSelect').value = address;
+    document.getElementById('targetMailboxLabel').textContent = address;
+    if (typeof showToast === 'function') {
+      showToast(`Switched active signatures to ${address}`);
+    }
+  }
+
+  function refreshSignatures() {
+    const icon = document.getElementById('sigRefreshIcon');
+    icon.classList.add('animate-spin');
+    setTimeout(() => {
+      icon.classList.remove('animate-spin');
+      if (typeof showToast === 'function') {
+        showToast('Signatures synchronized with PostgreSQL');
+      }
+    }, 500);
+  }
+
+  function filterSignatures(query) {
+    const q = query.toLowerCase();
+    const cards = [
+      { id: 1, text: "wholesale regional sales rajesh kumar" },
+      { id: 2, text: "festival bulk proforma sivakasi rush diwali" },
+      { id: 3, text: "plain text minimal notice low bandwidth" }
+    ];
+
+    cards.forEach(c => {
+      const el = document.getElementById(`sig-card-${c.id}`);
+      if (el) {
+        if (!q || c.text.includes(q)) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      }
+    });
+  }
+
+  function updateSimulatedPreview() {
+    syncLivePreview();
+  }
+
+  // Keyboard shortcut listener (CMD+S to save)
+  window.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 's') {
+      e.preventDefault();
+      saveActiveSignature();
+    }
+  });
+
+  // Initial call
+  updateCharCount();
+  syncLivePreview();
+</script></main>
+</div>
+<!-- MODAL: MANAGE MAILBOX DETAIL PANEL -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4" id="manageMailboxModal">
+<div class="bg-surface-canvas border border-border-strong rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden flex flex-col transition-all">
+<!-- Modal Header -->
+<div class="px-6 py-4 bg-surface-subtle border-b border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-tag-notifications/10 text-tag-notifications flex items-center justify-center font-bold text-xs" id="modalBadge">
+            MB
+          </div>
+<div>
+<h3 class="font-headline-sm text-sm font-bold text-on-surface" id="modalTitle">Manage Mailbox Settings</h3>
+<span class="text-xs font-mono text-secondary" id="modalSubtitle">support@rtcrackers.com</span>
+</div>
+</div>
+<button class="p-1 rounded-md text-secondary hover:text-on-surface" onclick="closeManageModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-5 text-xs max-h-[75vh] overflow-y-auto">
+<!-- Display Name -->
+<div class="space-y-1.5">
+<label class="font-semibold text-on-surface block">Display Name (Sender Header)</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-subtle border border-border-strong text-xs text-on-surface outline-none focus:ring-2 focus:ring-tag-notifications" id="modalDisplayNameInput" type="text" value="RTC Crackers Support"/>
+<p class="text-[11px] text-secondary">This name appears as the friendly sender name in customer and supplier inboxes.</p>
+</div>
+<!-- Email Address (Read-only security field) -->
+<div class="space-y-1.5">
+<label class="font-semibold text-secondary block">Canonical Email Address (Read-Only)</label>
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-low border border-border-strong font-mono text-on-surface text-xs">
+<span id="modalEmailAddressText">support@rtcrackers.com</span>
+<span class="material-symbols-outlined text-[15px] text-secondary">lock</span>
+</div>
+<p class="text-[11px] text-secondary">Primary addresses are managed by the RTC Crackers domain administrator.</p>
+</div>
+<!-- Capability Toggles -->
+<div class="space-y-3 pt-2 border-t border-border-subtle">
+<span class="font-semibold text-on-surface block">Mailbox Operational Capabilities</span>
+<!-- Operational Status -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+<div>
+<div class="font-semibold text-on-surface">Mailbox Operational Status</div>
+<p class="text-[11px] text-secondary mt-0.5">Controls whether this mailbox is active in the company directory.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggleStatusInput" type="checkbox"/>
+<div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+</label>
+</div>
+<!-- Sending Status -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+<div>
+<div class="font-semibold text-on-surface">Sending Capability</div>
+<p class="text-[11px] text-secondary mt-0.5">Allows authorized staff to compose and reply using this address.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggleSendingInput" type="checkbox"/>
+<div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+</label>
+</div>
+<!-- Receiving Status -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+<div>
+<div class="font-semibold text-on-surface">Receiving Webhook / Ingress</div>
+<p class="text-[11px] text-secondary mt-0.5">Accepts incoming emails dispatched to this address.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggleReceivingInput" type="checkbox"/>
+<div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+</label>
+</div>
+</div>
+<!-- Signature Quick Link -->
+<div class="p-3 rounded-xl bg-surface-container-low border border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-notifications text-[18px]">draw</span>
+<div>
+<span class="font-semibold text-on-surface">Per-Mailbox Signature</span>
+<p class="text-[11px] text-secondary">HTML signature configured for this account.</p>
+</div>
+</div>
+<a class="px-2.5 py-1 rounded bg-surface-canvas border border-border-strong text-tag-notifications font-semibold hover:bg-surface-container transition-colors" href="/email/settings?section=signature">
+            Edit in Settings
+          </a>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-6 py-3 bg-surface-subtle border-t border-border-subtle flex items-center justify-end gap-2">
+<button class="px-4 py-2 rounded-lg border border-border-strong text-secondary hover:text-on-surface text-xs font-semibold" onclick="closeManageModal()">
+          Cancel
+        </button>
+<button class="px-4 py-2 rounded-lg bg-tag-notifications hover:bg-primary-container text-on-primary text-xs font-semibold shadow-xs flex items-center gap-1.5 transition-all" id="btnSaveMailbox" onclick="saveMailboxChanges()">
+<span class="material-symbols-outlined text-[16px]">save</span>
+<span>Save Changes</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CONFIRMATION DIALOG -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4" id="confirmationDialog">
+<div class="bg-surface-canvas border border-border-strong rounded-2xl shadow-2xl max-w-sm w-full p-5 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tag-notifications/10 text-tag-notifications flex items-center justify-center shrink-0" id="confirmIcon">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-sm font-bold text-on-surface" id="confirmTitle">Confirm Action</h4>
+<p class="text-xs text-secondary mt-0.5" id="confirmMessage">Are you sure you want to proceed?</p>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-2">
+<button class="px-3 py-1.5 rounded-lg border border-border-strong text-secondary hover:text-on-surface text-xs font-semibold" onclick="closeConfirmDialog()">
+          Cancel
+        </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-tag-notifications text-on-primary text-xs font-semibold" id="confirmActionBtn" onclick="executeConfirmedAction()">
+          Confirm
+        </button>
+</div>
+</div>
+</div>
+<!-- FLOATING TOAST NOTIFICATION -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 px-4 py-3 rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl text-xs font-medium" id="toast">
+<span class="material-symbols-outlined text-tag-notifications text-[18px]" id="toastIcon">check_circle</span>
+<span id="toastMessage">Action completed successfully</span>
+</div>
+<!-- JAVASCRIPT APP LOGIC & STATE HANDLING -->
+<script>
+    // State Tracking
+    let activeMailboxId = null;
+    let pendingConfirmAction = null;
+
+    // Toast Functionality
+    function showToast(message, icon = 'check_circle') {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toastMessage');
+      const iconEl = document.getElementById('toastIcon');
+      
+      text.textContent = message;
+      iconEl.textContent = icon;
+      
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2600);
+    }
+
+    // Refresh Action
+    function refreshMailboxes() {
+      const icon = document.getElementById('refreshIcon');
+      icon.classList.add('animate-spin');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        showToast('Authorized mailboxes synchronized with backend');
+      }, 600);
+    }
+
+    // View Mode Toggle (Cards vs Table)
+    function setViewMode(mode) {
+      const cards = document.getElementById('mailboxCardsContainer');
+      const table = document.getElementById('mailboxTableContainer');
+      const btnCards = document.getElementById('btnViewCards');
+      const btnTable = document.getElementById('btnViewTable');
+
+      if (mode === 'cards') {
+        cards.classList.remove('hidden');
+        table.classList.add('hidden');
+        btnCards.classList.add('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnCards.classList.remove('text-secondary');
+        btnTable.classList.remove('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnTable.classList.add('text-secondary');
+      } else {
+        cards.classList.add('hidden');
+        table.classList.remove('hidden');
+        btnTable.classList.add('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnTable.classList.remove('text-secondary');
+        btnCards.classList.remove('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnCards.classList.add('text-secondary');
+      }
+    }
+
+    // Search & Filtering
+    function handleSearch(query) {
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (query.trim()) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+      applyFilters();
+    }
+
+    function clearSearch() {
+      document.getElementById('mailboxSearchInput').value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const query = document.getElementById('mailboxSearchInput').value.toLowerCase().trim();
+      const statusFilter = document.getElementById('filterStatus').value;
+      const sendingFilter = document.getElementById('filterSending').value;
+
+      const cards = document.querySelectorAll('#mailboxCardsContainer > div');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const address = card.getAttribute('data-address').toLowerCase();
+        const name = card.getAttribute('data-name').toLowerCase();
+        const status = card.getAttribute('data-status');
+        const sending = card.getAttribute('data-sending');
+
+        const matchesQuery = !query || address.includes(query) || name.includes(query);
+        const matchesStatus = statusFilter === 'all' || status === statusFilter;
+        const matchesSending = sendingFilter === 'all' || sending === sendingFilter;
+
+        if (matchesQuery && matchesStatus && matchesSending) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const emptyState = document.getElementById('mailboxEmptyState');
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+        emptyState.classList.add('flex');
+      } else {
+        emptyState.classList.add('hidden');
+        emptyState.classList.remove('flex');
+      }
+    }
+
+    // Copy Address Action
+    function copyAddress(address) {
+      navigator.clipboard.writeText(address).then(() => {
+        showToast(`Copied ${address} to clipboard`);
+      }).catch(() => {
+        showToast(`Copied ${address}`);
+      });
+    }
+
+    // User Default Mailbox Switch
+    function setUserDefault(address) {
+      document.getElementById('userDefaultDisplay').innerHTML = `
+        <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+        ${address}
+      `;
+      document.getElementById('selectDefaultMailbox').value = address;
+      showToast(`Default sending mailbox set to ${address}`);
+    }
+
+    // Manage Modal Handling
+    function openManageModal(id, address, name, isActive, canSend, canReceive) {
+      activeMailboxId = id;
+      document.getElementById('modalTitle').textContent = `Manage: ${name}`;
+      document.getElementById('modalSubtitle').textContent = address;
+      document.getElementById('modalEmailAddressText').textContent = address;
+      document.getElementById('modalDisplayNameInput').value = name;
+      document.getElementById('toggleStatusInput').checked = isActive;
+      document.getElementById('toggleSendingInput').checked = canSend;
+      document.getElementById('toggleReceivingInput').checked = canReceive;
+
+      const modal = document.getElementById('manageMailboxModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeManageModal() {
+      const modal = document.getElementById('manageMailboxModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function saveMailboxChanges() {
+      const btn = document.getElementById('btnSaveMailbox');
+      btn.innerHTML = `<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> Saving...`;
+      
+      setTimeout(() => {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[16px]">save</span> Save Changes`;
+        closeManageModal();
+        showToast('Mailbox settings successfully synchronized');
+      }, 700);
+    }
+
+    // Capability Confirmation Dialog
+    function confirmCapabilityToggle(address, capability, enable) {
+      const dialog = document.getElementById('confirmationDialog');
+      const title = document.getElementById('confirmTitle');
+      const msg = document.getElementById('confirmMessage');
+
+      title.textContent = enable ? `Enable ${capability}?` : `Disable ${capability}?`;
+      msg.textContent = enable 
+        ? `Messages will resume normal processing for ${address}.`
+        : `Staff will temporarily be unable to use ${address} for outbound messages.`;
+
+      pendingConfirmAction = () => {
+        showToast(`${address} ${capability} status updated`);
+      };
+
+      dialog.classList.remove('hidden');
+      dialog.classList.add('flex');
+    }
+
+    function closeConfirmDialog() {
+      const dialog = document.getElementById('confirmationDialog');
+      dialog.classList.add('hidden');
+      dialog.classList.remove('flex');
+      pendingConfirmAction = null;
+    }
+
+    function executeConfirmedAction() {
+      if (pendingConfirmAction) pendingConfirmAction();
+      closeConfirmDialog();
+    }
+
+    // Dropdown Handling
+    function toggleDropdown(dropId) {
+      document.querySelectorAll('[id^="drop-"]').forEach(d => {
+        if (d.id !== dropId) d.classList.add('hidden');
+      });
+      const target = document.getElementById(dropId);
+      if (target) target.classList.toggle('hidden');
+    }
+
+    // Close open menus when clicking outside
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('.relative')) {
+        document.querySelectorAll('[id^="drop-"]').forEach(d => d.classList.add('hidden'));
+      }
+    });
+  </script>
+</body></html>

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<title>Settings - RTC Crackers Mail</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-lowest": "#ffffff",
+          "secondary-fixed": "#dae2fd",
+          "secondary-container": "#dae2fd",
+          "secondary-fixed-dim": "#bec6e0",
+          "on-surface-variant": "#5a4138",
+          "tag-notifications": "#EA580C",
+          "tertiary-container": "#996c00",
+          "on-background": "#0b1c30",
+          "on-tertiary-fixed-variant": "#5e4200",
+          "error": "#ba1a1a",
+          "inverse-on-surface": "#eaf1ff",
+          "outline": "#8e7166",
+          "tag-orders": "#D97706",
+          "surface-container-high": "#dce9ff",
+          "on-secondary-fixed-variant": "#3f465c",
+          "surface": "#f8f9ff",
+          "primary-fixed-dim": "#ffb599",
+          "on-tertiary-container": "#fffbff",
+          "surface-variant": "#d3e4fe",
+          "inverse-primary": "#ffb599",
+          "on-secondary-container": "#5c647a",
+          "on-secondary": "#ffffff",
+          "tertiary-fixed-dim": "#fbbc3c",
+          "tertiary-fixed": "#ffdea9",
+          "border-subtle": "#F1F5F9",
+          "tag-info": "#0891B2",
+          "tertiary": "#795500",
+          "on-primary-fixed-variant": "#7f2b00",
+          "error-container": "#ffdad6",
+          "on-surface": "#0b1c30",
+          "inverse-surface": "#213145",
+          "on-primary": "#ffffff",
+          "outline-variant": "#e2bfb2",
+          "secondary": "#565e74",
+          "surface-subtle": "#F8FAFC",
+          "primary": "#a33900",
+          "tag-noreply": "#475569",
+          "tag-billing": "#7C3AED",
+          "surface-tint": "#a73a00",
+          "tag-support": "#2563EB",
+          "on-primary-fixed": "#370e00",
+          "border-strong": "#E2E8F0",
+          "surface-container": "#e5eeff",
+          "on-tertiary-fixed": "#271900",
+          "tag-admin": "#DC2626",
+          "surface-container-highest": "#d3e4fe",
+          "surface-dim": "#cbdbf5",
+          "surface-canvas": "#FFFFFF",
+          "tag-contact": "#4F46E5",
+          "surface-bright": "#f8f9ff",
+          "on-error-container": "#93000a",
+          "on-error": "#ffffff",
+          "on-tertiary": "#ffffff",
+          "background": "#f8f9ff",
+          "surface-container-low": "#eff4ff",
+          "primary-container": "#cc4900",
+          "tag-sales": "#16A34A",
+          "brand-fire-red": "#E63946",
+          "on-primary-container": "#fffbff",
+          "on-secondary-fixed": "#131b2e",
+          "primary-fixed": "#ffdbce"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-xl": "1.5rem",
+          "margin": "1rem",
+          "margin-mobile": "0.75rem",
+          "space-sm": "0.5rem",
+          "gutter-compact": "0.5rem",
+          "space-xs": "0.25rem",
+          "gutter": "1rem",
+          "space-lg": "1rem",
+          "space-md": "0.75rem"
+        },
+        "fontFamily": {
+          "body-sm": ["Inter"],
+          "title-sm": ["Inter"],
+          "title-md": ["Inter"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "code-sm": ["Inter"],
+          "label-md": ["Inter"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "body-md": ["Inter"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "display-lg": ["Plus Jakarta Sans"],
+          "label-sm": ["Inter"],
+          "body-lg": ["Inter"]
+        },
+        "fontSize": {
+          "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+          "title-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "600" }],
+          "title-md": ["15px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+          "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+          "code-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+          "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+          "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+          "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+          "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+          "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+          "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }]
+        }
+      }
+    }
+  };
+</script>
+<link rel="stylesheet" href="/FRONTEND/EMAIL/email-runtime.css"><script src="/FRONTEND/EMAIL/config.js"></script><script src="/FRONTEND/EMAIL/email-api.js"></script><script src="/FRONTEND/EMAIL/email-runtime.js"></script></head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- LEFT PERSISTENT SIDEBAR -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto border-r border-border-subtle">
+<div class="flex flex-col">
+<!-- Brand Logo / Wordmark -->
+<div class="h-16 px-4 flex items-center justify-between gap-2 bg-surface-subtle border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<img alt="RTC Crackers Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG_c7pxIPE4wwgSpxLFdUH_tg8svgIbUIwkhn7NCze_r0x_6WTZ_jzC9vfGXc5OgbMK2FdXgS2SwxvmiHBQfXisYT_PH7cTvFWOSkZv_Mr-bzU71U1De5LkmvshUlwXLJFP2Kejr-oGaxIfUck0RnN2ckJhDtCVvshifzkErWtefVAW8Pr75VKhiKZMdr0XVUFm6PCVfbFXbMlmSMxDNBmEpn1CLLHaGet8zoB1wdpONt_CSqntRtOjqB_"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-sm text-on-surface tracking-tight font-bold leading-none">RTC Crackers</span>
+<span class="font-label-sm text-[11px] text-tag-notifications font-semibold leading-tight">Enterprise Mail</span>
+</div>
+</div>
+</div>
+<!-- Quick Compose Action -->
+<div class="px-4 pt-3 pb-2">
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-sm rounded-lg transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Compose</span>
+</button>
+</div>
+<!-- Mailbox Folders -->
+<div class="px-4 pt-2 pb-1">
+<span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Mailbox Folders</span>
+</div>
+<nav class="flex flex-col px-2 space-y-0.5" data-active-classes="bg-surface-container font-semibold text-on-surface shadow-xs">
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="mailbox-management---rtc-crackers-mail" href="/email/inbox">
+<span class="text-sm">Inbox</span>
+<span class="text-[11px] bg-tag-notifications text-on-primary px-1.5 py-0.5 rounded-full font-semibold">24</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="starred" href="/email/starred">
+<span class="text-sm">Starred</span>
+<span class="text-[11px] text-secondary">8</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="drafts" href="/email/drafts">
+<span class="text-sm">Drafts</span>
+<span class="text-[11px] text-secondary">3</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="sent" href="/email/sent">
+<span class="text-sm">Sent</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="archived" href="/email/archived">
+<span class="text-sm">Archived</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="trash" href="/email/trash">
+<span class="text-sm">Trash</span>
+</a>
+</nav>
+<!-- Mailbox Accounts Section -->
+<div class="px-4 pt-4 pb-1">
+<span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Authorized Mailboxes</span>
+</div>
+<nav class="flex flex-col px-2 space-y-0.5" data-active-classes="bg-surface-container font-semibold text-on-surface">
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="all-mailboxes" href="#">
+<span class="w-2 h-2 rounded-full bg-on-surface shrink-0"></span>
+<span class="text-xs truncate">All Mailboxes (9)</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="admin-mailbox" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-admin shrink-0"></span>
+<span class="text-xs truncate">admin@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="support-mailbox" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-support shrink-0"></span>
+<span class="text-xs truncate">support@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="sales-mailbox" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-sales shrink-0"></span>
+<span class="text-xs truncate">sales@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="orders-mailbox" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-orders shrink-0"></span>
+<span class="text-xs truncate">orders@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="billing-mailbox" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-billing shrink-0"></span>
+<span class="text-xs truncate">billing@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="info-mailbox" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-info shrink-0"></span>
+<span class="text-xs truncate">info@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="contact-mailbox" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-contact shrink-0"></span>
+<span class="text-xs truncate">contact@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="notifications-mailbox" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-notifications shrink-0"></span>
+<span class="text-xs truncate">notifications@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="noreply-mailbox" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-noreply shrink-0"></span>
+<span class="text-xs truncate">noreply@rtcrackers.com</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Settings & Profile Navigation -->
+<div class="flex flex-col border-t border-border-subtle p-2 bg-surface-subtle">
+<div class="px-2 pt-2 pb-1">
+<span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Settings</span>
+</div>
+<nav class="flex flex-col space-y-0.5 mb-2" data-active-classes="bg-surface-container font-semibold text-on-surface shadow-xs border-l-2 border-tag-notifications">
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings-general" href="/email/settings">
+<span class="text-xs">General &amp; Mailboxes</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="page-17:-security-&amp;-sessions---rtc-crackers-mail" href="/email/settings/security">
+<span class="text-xs">Security &amp; Sessions</span>
+</a>
+<a aria-current="page" class="flex items-center justify-between px-3 py-1.5 rounded-lg transition-all bg-surface-container font-semibold text-on-surface shadow-xs border-l-2 border-tag-notifications" data-path="about---rtc-crackers-mail" href="/email/settings/about">
+<span class="text-xs">About</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tag-notifications"></span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="help-docs" href="#">
+<span class="text-xs">Help &amp; Docs</span>
+</a>
+</nav>
+<!-- Profile Widget -->
+<div class="flex items-center justify-between px-2 py-1.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2 min-w-0">
+<img alt="Admin Avatar" class="w-7 h-7 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-semibold text-on-surface truncate">Operations Admin</span>
+<span class="text-[10px] text-secondary truncate">admin@rtcrackers.com</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[16px]">more_vert</span>
+</div>
+</div>
+</aside>
+<!-- MAIN VIEWPORT CONTENT (Padded 64 for sidebar) -->
+<div class="pl-64 min-h-screen flex flex-col">
+<!-- TOP HEADER -->
+<header class="fixed top-0 left-64 right-0 h-16 bg-surface-canvas/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-6 border-b border-border-subtle">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-notifications text-[22px]">info</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-base text-on-surface font-bold leading-tight">Settings</span>
+<span class="text-secondary text-xs">/</span>
+<span class="font-label-md text-sm text-tag-notifications font-semibold">About</span>
+</div>
+<p class="text-xs text-secondary leading-none">Enterprise system architecture, deployment versioning, compliance, and environment telemetry.</p>
+</div>
+</div>
+</div>
+<!-- Header Right Controls -->
+<div class="flex items-center gap-3">
+<!-- API Synchronization Status -->
+<span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low text-xs font-medium text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales animate-pulse"></span>
+<span>Connected: api.rtcrackers.com</span>
+</span>
+<!-- Global Quick Search trigger -->
+<div class="relative w-64 hidden lg:block">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-secondary text-[16px]">search</span>
+<input class="w-full bg-surface-subtle text-on-surface placeholder:text-secondary text-xs pl-8 pr-8 py-1.5 rounded-md outline-none focus:ring-1 focus:ring-tag-notifications border border-border-strong" placeholder="Quick find (⌘K)..." type="text"/>
+<span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-secondary bg-surface-container px-1 rounded font-mono">⌘K</span>
+</div>
+<button class="p-2 rounded-lg text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Notifications" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="flex items-center gap-2 pl-2" type="button">
+<img alt="Admin Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+<span class="material-symbols-outlined text-secondary text-[16px]">expand_more</span>
+</button>
+</div>
+</header>
+<!-- WORKSPACE CONTENT CONTAINER -->
+<main class="pt-16 flex-1 flex flex-col bg-surface"><div class="flex flex-col w-full">
+<!-- SETTINGS SUB-NAVIGATION (Sticky Below Main Shell Header) -->
+<div class="sticky top-16 z-30 bg-surface-canvas/95 backdrop-blur-md shadow-sm px-6 py-1">
+<div class="flex items-center gap-1 overflow-x-auto scrollbar-none py-1">
+<a class="px-3.5 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings">General</a>
+<a class="px-3.5 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/appearance">Appearance</a>
+<a class="px-3.5 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/notifications">Notifications</a>
+<a class="px-3.5 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/mailboxes">Mailboxes</a>
+<a class="px-3.5 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/signatures">Signatures</a>
+<a class="px-3.5 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/templates">Templates</a>
+<a class="px-3.5 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/sending">Sending</a>
+<a class="px-3.5 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/reading">Reading</a>
+<a class="px-3.5 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg font-label-md text-label-md transition-colors whitespace-nowrap" href="/email/settings/security">Security</a>
+<a class="px-3.5 py-2 bg-primary/10 text-primary font-label-md text-label-md font-semibold rounded-lg shadow-sm whitespace-nowrap flex items-center gap-1.5 relative" href="/email/settings/about">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-notifications"></span>
+<span>About</span>
+</a>
+</div>
+</div>
+<!-- WORKSPACE CONTENT: ABOUT & TELEMETRY -->
+<div class="px-6 py-6 max-w-7xl mx-auto w-full space-y-6">
+<!-- PAGE HEADER -->
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-surface-canvas p-6 rounded-xl shadow-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2.5">
+<span class="inline-flex items-center justify-center p-2 rounded-lg bg-surface-container text-tag-notifications">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">About RTC Crackers Email</h1>
+</div>
+<p class="font-body-md text-body-md text-secondary">
+          Application information, service health status, support resources, and legal governance.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-tag-sales animate-spin" id="syncSpinner" style="animation-duration: 3s;">sync</span>
+<span id="timestampText">Last checked: Today, 09:45 AM IST</span>
+</div>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all shadow-sm active:scale-95" id="refreshBtn" onclick="triggerRefresh()">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span>Refresh Status</span>
+</button>
+</div>
+</div>
+<!-- MAIN BENTO GRID: SECTION 1 & SECTION 2 -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- SECTION 1: APPLICATION IDENTITY & BUILD INFORMATION (7 COLS) -->
+<div class="lg:col-span-7 bg-surface-canvas rounded-xl p-6 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-12 -bottom-12 w-48 h-48 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<!-- Brand Mark & Header -->
+<div class="flex items-start gap-4 mb-6">
+<div class="w-14 h-14 rounded-xl bg-surface-container flex items-center justify-center p-2 shrink-0 shadow-sm">
+<img alt="RTC Crackers Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG_c7pxIPE4wwgSpxLFdUH_tg8svgIbUIwkhn7NCze_r0x_6WTZ_jzC9vfGXc5OgbMK2FdXgS2SwxvmiHBQfXisYT_PH7cTvFWOSkZv_Mr-bzU71U1De5LkmvshUlwXLJFP2Kejr-oGaxIfUck0RnN2ckJhDtCVvshifzkErWtefVAW8Pr75VKhiKZMdr0XVUFm6PCVfbFXbMlmSMxDNBmEpn1CLLHaGet8zoB1wdpONt_CSqntRtOjqB_"/>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">RTC Crackers Mail Enterprise</span>
+<span class="px-2 py-0.5 rounded-full bg-tag-sales/10 text-tag-sales font-label-sm text-label-sm font-semibold tracking-wide">STABLE</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+                Custom high-throughput email management system engineered for Sivakasi manufacturing, depot distribution, and wholesale order processing.
+              </p>
+</div>
+</div>
+<!-- Metadata Spec Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+<!-- Version with Copy Action -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Application Version</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-title-md text-title-md font-semibold text-on-surface tracking-tight" id="versionString">v4.2.0-prod</span>
+<button class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-canvas hover:bg-surface-container text-tag-notifications font-label-sm text-label-sm shadow-xs transition-colors" onclick="copyVersion()" title="Copy version string">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span id="copyFeedback">Copy</span>
+</button>
+</div>
+</div>
+<!-- Build Identifier -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Build Identifier</span>
+<span class="font-code-sm text-code-sm font-semibold text-on-surface font-mono mt-1">build-2026.03.14-rev8b9c</span>
+</div>
+<!-- Target Environment -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Target Environment</span>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-2 h-2 rounded-full bg-tag-sales"></span>
+<span class="font-body-md text-body-md font-medium text-on-surface">Production (India Edge / Sivakasi Gateway)</span>
+</div>
+</div>
+<!-- Framework & Client Runtime -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Framework &amp; Client Runtime</span>
+<span class="font-body-md text-body-md font-medium text-on-surface mt-1 truncate">W3C Mail Engine v4.2 · Single-Tenant</span>
+</div>
+</div>
+</div>
+<!-- Release Stamp Footer -->
+<div class="pt-3 flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tag-orders">event</span>
+<span>Release Date: March 14, 2026</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-mono text-[10px] text-secondary">SHA-256: 4f98d...30c1</span>
+</div>
+</div>
+<!-- SECTION 2: CURRENT USER ACCOUNT & ROLE CONTEXT (5 COLS) -->
+<div class="lg:col-span-5 bg-surface-canvas rounded-xl p-6 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3 mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-info text-[20px]">badge</span>
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Active User Context</h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-tag-info/10 text-tag-info font-label-sm text-label-sm font-semibold">VALIDATED</span>
+</div>
+<!-- User Card Details -->
+<div class="flex items-center gap-3.5 p-3.5 rounded-lg bg-surface-container-low mb-4">
+<img alt="Rajesh Kumar Avatar" class="w-12 h-12 rounded-full object-cover shrink-0 shadow-xs" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Rajesh Kumar</span>
+<span class="px-1.5 py-0.2 rounded bg-tag-notifications/10 text-tag-notifications font-label-sm text-[10px] font-bold uppercase">Admin</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate block">admin@rtcrackers.com</span>
+</div>
+</div>
+<!-- Permissions List -->
+<div class="space-y-2.5 font-body-sm text-body-sm text-on-surface">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-tag-sales shrink-0 mt-0.5">verified</span>
+<div>
+<span class="font-medium text-secondary">Authorized Role:</span>
+<p class="font-semibold text-on-surface">Operations Administrator (RBAC Full Mailbox Scope)</p>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-tag-orders shrink-0 mt-0.5">mail</span>
+<div>
+<span class="font-medium text-secondary">Monitored Mailboxes:</span>
+<p class="font-semibold text-on-surface">9 Active Mailboxes (sales@, orders@, admin@, etc.)</p>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-tag-contact shrink-0 mt-0.5">key</span>
+<div>
+<span class="font-medium text-secondary">Authentication Type:</span>
+<p class="font-semibold text-on-surface">Corporate SSO (FIDO2 Hardware Key Enrolled)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4 mt-4">
+<a class="inline-flex items-center gap-1.5 text-tag-notifications hover:text-primary-container font-label-md text-label-md font-semibold group transition-colors" href="/email/settings/security">
+<span>Review Sessions &amp; 2FA in Security Settings</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- SECTION 3: SERVICE CONNECTIVITY & APPLICATION SERVICES -->
+<div class="bg-surface-canvas rounded-xl p-6 shadow-sm space-y-4">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-sales text-[22px]">cloud_sync</span>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Service Connectivity &amp; Telemetry</h2>
+<p class="font-body-sm text-body-sm text-secondary">Authenticated client gateway status and real-time operational availability.</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tag-sales animate-ping"></span>
+<span class="font-label-md text-label-md font-semibold text-tag-sales">All 4 Services Nominal</span>
+</div>
+</div>
+<!-- Services Status Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Core API -->
+<div class="p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="material-symbols-outlined text-[20px] text-tag-info">api</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tag-sales/15 text-tag-sales font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+              Operational
+            </span>
+</div>
+<div>
+<h3 class="font-title-sm text-title-sm font-bold text-on-surface">Application Core API</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">32ms Latency · TLS 1.3</p>
+</div>
+<!-- Sparkline Mini SVG -->
+<div class="mt-3 pt-2">
+<svg class="w-full h-5 text-tag-sales" fill="none" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0,15 L15,14 L30,16 L45,10 L60,11 L75,8 L90,12 L100,9" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Mail Dispatch Gateway -->
+<div class="p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="material-symbols-outlined text-[20px] text-tag-notifications">send</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tag-sales/15 text-tag-sales font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+              Operational
+            </span>
+</div>
+<div>
+<h3 class="font-title-sm text-title-sm font-bold text-on-surface">Mail Dispatch Gateway</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Queue Depth: Normal (0 held)</p>
+</div>
+<div class="mt-3 pt-2">
+<svg class="w-full h-5 text-tag-sales" fill="none" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0,12 L20,12 L40,11 L60,14 L80,10 L100,12" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Inbound Ingestion Pipeline -->
+<div class="p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="material-symbols-outlined text-[20px] text-tag-orders">move_to_inbox</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tag-sales/15 text-tag-sales font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+              Operational
+            </span>
+</div>
+<div>
+<h3 class="font-title-sm text-title-sm font-bold text-on-surface">Inbound Ingestion Pipeline</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Real-time Sync Active</p>
+</div>
+<div class="mt-3 pt-2">
+<svg class="w-full h-5 text-tag-sales" fill="none" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0,18 L15,16 L35,12 L55,14 L75,9 L90,11 L100,8" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Notification & WebPush Worker -->
+<div class="p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="material-symbols-outlined text-[20px] text-tag-contact">notifications_active</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tag-sales/15 text-tag-sales font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+              Active
+            </span>
+</div>
+<div>
+<h3 class="font-title-sm text-title-sm font-bold text-on-surface">Notification &amp; WebPush</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">rtc-sw-v4.1.9 registered</p>
+</div>
+<div class="mt-3 pt-2">
+<svg class="w-full h-5 text-tag-sales" fill="none" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0,10 L25,12 L50,8 L75,13 L100,10" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Telemetry Safe Disclosure Disclaimer -->
+<div class="p-3.5 rounded-lg bg-surface-container-lowest flex items-start gap-3 text-secondary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">shield</span>
+<span>
+<strong class="text-on-surface font-semibold">Telemetry &amp; Boundary Notice:</strong>
+          Application services operate under Sivakasi edge routing. System health reflects authenticated user-facing API availability without exposing internal network topology, server addresses, or storage credentials.
+        </span>
+</div>
+</div>
+<!-- SECTION 4: HELP, DOCUMENTATION & SUPPORT PATHWAYS (3 CARDS) -->
+<div class="bg-surface-canvas rounded-xl p-6 shadow-sm space-y-4">
+<div class="pb-2">
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Help, Documentation &amp; Support Pathways</h2>
+<p class="font-body-sm text-body-sm text-secondary">Access technical documentation, self-service diagnostics, and enterprise operations support.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- Pathway 1: Knowledge Base -->
+<div class="p-5 rounded-xl bg-surface-container-low flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow">
+<div class="space-y-3">
+<div class="w-10 h-10 rounded-lg bg-tag-info/10 text-tag-info flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<h3 class="font-title-sm text-title-sm font-bold text-on-surface">Knowledge Base &amp; Guides</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+              Browse comprehensive guides on wholesale sending limits, draft autosaving, keyboard shortcuts, and depot mailbox routing.
+            </p>
+</div>
+<div>
+<a class="inline-flex items-center justify-center gap-2 w-full py-2 px-3 rounded-lg bg-surface-canvas hover:bg-surface-container font-label-md text-label-md font-semibold text-on-surface shadow-xs transition-colors" href="/email/help">
+<span>Open Help Center</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Pathway 2: Quick Troubleshooting -->
+<div class="p-5 rounded-xl bg-surface-container-low flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow">
+<div class="space-y-3">
+<div class="w-10 h-10 rounded-lg bg-tag-orders/10 text-tag-orders flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">troubleshoot</span>
+</div>
+<h3 class="font-title-sm text-title-sm font-bold text-on-surface">Quick Troubleshooting</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+              Diagnose message dispatch delays, attachment sandboxing errors, and notification permissions directly on your client.
+            </p>
+</div>
+<div>
+<a class="inline-flex items-center justify-center gap-2 w-full py-2 px-3 rounded-lg bg-surface-canvas hover:bg-surface-container font-label-md text-label-md font-semibold text-on-surface shadow-xs transition-colors" href="/email/help?query=troubleshooting">
+<span>Troubleshooting Guides</span>
+<span class="material-symbols-outlined text-[16px]">build</span>
+</a>
+</div>
+</div>
+<!-- Pathway 3: Technical Support -->
+<div class="p-5 rounded-xl bg-surface-container-low flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow">
+<div class="space-y-3">
+<div class="w-10 h-10 rounded-lg bg-tag-notifications/10 text-tag-notifications flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">support_agent</span>
+</div>
+<h3 class="font-title-sm text-title-sm font-bold text-on-surface">Technical Support</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+              Need immediate assistance with delegated mailbox authorization, delivery rejections, or high-volume festive order surges?
+            </p>
+</div>
+<div>
+<a class="inline-flex items-center justify-center gap-2 w-full py-2 px-3 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold shadow-xs transition-colors" href="/email/help#support">
+<span class="material-symbols-outlined text-[16px]">headset_mic</span>
+<span>Contact Support</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 5: PRIVACY, SECURITY GOVERNANCE & LEGAL -->
+<div class="bg-surface-canvas rounded-xl p-6 shadow-sm space-y-5">
+<div class="flex items-center gap-2 pb-3">
+<span class="material-symbols-outlined text-primary text-[22px]">policy</span>
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Privacy, Security Governance &amp; Legal Compliance</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Privacy Principles -->
+<div class="space-y-2 p-4 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-sales text-[18px]">verified_user</span>
+<h3 class="font-title-sm text-title-sm font-bold text-on-surface">Privacy Principles</h3>
+</div>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+            All incoming and outgoing correspondence is processed strictly within authorized organizational boundaries. DOMPurify sanitization inspects incoming message bodies, remote tracking beacons are suppressed by default, and attachment sandboxing adheres to PESO industrial compliance standards.
+          </p>
+</div>
+<!-- Data Processing & Retention -->
+<div class="space-y-2 p-4 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-contact text-[18px]">storage</span>
+<h3 class="font-title-sm text-title-sm font-bold text-on-surface">Data Processing &amp; Retention</h3>
+</div>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+            Message archives and draft queues persist in accordance with statutory manufacturing audit regulations. Mailbox access is restricted via server-enforced RBAC and periodic cryptographic access reviews for Sivakasi operations.
+          </p>
+</div>
+</div>
+<!-- Legal Links Pill Matrix -->
+<div class="pt-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold tracking-wider block mb-3">Statutory Regulatory Disclosures</span>
+<div class="flex flex-wrap gap-3">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-medium transition-colors" href="/legal/privacy">
+<span class="material-symbols-outlined text-[16px] text-secondary">gavel</span>
+<span>Privacy Policy</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-medium transition-colors" href="/legal/terms">
+<span class="material-symbols-outlined text-[16px] text-secondary">description</span>
+<span>Terms of Service</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-medium transition-colors" href="/legal/compliance">
+<span class="material-symbols-outlined text-[16px] text-tag-notifications">security</span>
+<span>PESO Compliance &amp; Industrial Safety Guidelines</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-medium transition-colors" href="/legal/acceptable-use">
+<span class="material-symbols-outlined text-[16px] text-secondary">rule</span>
+<span>Acceptable Use Policy</span>
+</a>
+</div>
+</div>
+</div>
+<!-- SECTION 6: THIRD-PARTY LICENSES & OPEN-SOURCE NOTICES -->
+<div class="bg-surface-canvas rounded-xl p-6 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+<div class="space-y-1 max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">code</span>
+<h3 class="font-title-sm text-title-sm font-bold text-on-surface">Third-Party Licenses &amp; Open-Source Software</h3>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+          RTC Crackers Mail relies on vetted open-source libraries including DOMPurify (Safe HTML Sanitization), Plus Jakarta Sans typography, Lucide vector icons, and Tailwind utility standards.
+        </p>
+<p class="font-body-sm text-body-sm text-secondary font-medium pt-1">
+          © 2026 RTC Crackers (Sivakasi). All rights reserved.
+        </p>
+</div>
+<div class="shrink-0">
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-colors shadow-xs" onclick="toggleLicensesModal(true)">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>View Open-Source Licenses</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MODAL: OPEN-SOURCE LICENSES (Toggled by Button) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-background/40 backdrop-blur-sm hidden" id="licensesModal">
+<div class="bg-surface-canvas rounded-xl shadow-xl max-w-2xl w-full max-h-[85vh] flex flex-col overflow-hidden">
+<!-- Modal Header -->
+<div class="px-6 py-4 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">code_blocks</span>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Open-Source Attribution &amp; Notices</h3>
+</div>
+<button class="p-1 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" onclick="toggleLicensesModal(false)">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 overflow-y-auto space-y-4 font-body-sm text-body-sm text-secondary">
+<p class="text-on-surface font-medium">The following third-party software and open source components are bundled or utilized in RTC Crackers Mail:</p>
+<div class="p-3.5 rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-bold text-on-surface">DOMPurify</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-tag-info font-mono text-[10px]">Apache 2.0 / MPL 2.0</span>
+</div>
+<p class="text-secondary text-[12px]">Copyright (c) Cure53, 2026. Fast, tolerant XSS sanitizer for HTML, MathML and SVG.</p>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-bold text-on-surface">Plus Jakarta Sans</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-tag-info font-mono text-[10px]">SIL Open Font License 1.1</span>
+</div>
+<p class="text-secondary text-[12px]">Copyright (c) 2026 Tokotype. Geometrical sans-serif designed for clean editorial and display interfaces.</p>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-bold text-on-surface">Material Symbols Outlined</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-tag-info font-mono text-[10px]">Apache License 2.0</span>
+</div>
+<p class="text-secondary text-[12px]">Copyright (c) Google LLC. Modern variable icons for enterprise UI.</p>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-bold text-on-surface">Tailwind CSS</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-tag-info font-mono text-[10px]">MIT License</span>
+</div>
+<p class="text-secondary text-[12px]">Copyright (c) Tailwind Labs Inc. Utility-first CSS framework.</p>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-6 py-3 bg-surface-container-low flex justify-end">
+<button class="px-4 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-colors" onclick="toggleLicensesModal(false)">
+          Close Window
+        </button>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE MICRO-SCRIPTS -->
+<script>
+    function copyVersion() {
+      const version = document.getElementById('versionString').innerText;
+      navigator.clipboard.writeText(version).then(() => {
+        const feedback = document.getElementById('copyFeedback');
+        feedback.innerText = 'Copied!';
+        feedback.classList.add('text-tag-sales');
+        setTimeout(() => {
+          feedback.innerText = 'Copy';
+          feedback.classList.remove('text-tag-sales');
+        }, 2000);
+      });
+    }
+
+    function triggerRefresh() {
+      const spinner = document.getElementById('syncSpinner');
+      const timestamp = document.getElementById('timestampText');
+      spinner.classList.add('text-tag-notifications');
+      spinner.style.animation = 'spin 0.6s linear infinite';
+
+      setTimeout(() => {
+        spinner.style.animation = 'none';
+        spinner.classList.remove('text-tag-notifications');
+        spinner.classList.add('text-tag-sales');
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        timestamp.innerText = `Last checked: Today, ${hours}:${minutes} IST`;
+      }, 700);
+    }
+
+    function toggleLicensesModal(show) {
+      const modal = document.getElementById('licensesModal');
+      if (show) {
+        modal.classList.remove('hidden');
+      } else {
+        modal.classList.add('hidden');
+      }
+    }
+  </script>
+</div></main>
+</div>
+</body></html>

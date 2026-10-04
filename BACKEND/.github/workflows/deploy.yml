@@ -1,0 +1,19 @@
+name: Deploy
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        required: true
+        default: production
+        type: string
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t rtcrackers-platform:${{ github.sha }} .
+      - name: Deployment hook
+        if: ${{ secrets.DEPLOY_WEBHOOK != '' }}
+        run: curl --fail-with-body -X POST -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}" "${{ secrets.DEPLOY_WEBHOOK }}"

@@ -1,0 +1,94 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  customer:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env: { POSTGRES_PASSWORD: postgres, POSTGRES_DB: rtcrackers }
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres -d rtcrackers"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install -r requirements.txt
+        working-directory: BACKEND/CUSTOMER
+      - run: python -m compileall -q .
+        working-directory: BACKEND/CUSTOMER
+      - run: ruff check .
+        working-directory: BACKEND/CUSTOMER
+      - run: pytest -q
+        working-directory: BACKEND/CUSTOMER
+        env:
+          DATABASE_URL: postgresql+asyncpg://postgres:postgres@localhost:5432/rtcrackers
+          JWT_SECRET_KEY: ci-secret-ci-secret-ci-secret-ci-secret-ci-secret
+          ENVIRONMENT: test
+          AUTH_COOKIE_SECURE: 'false'
+          DB_SSL_MODE: disable
+  admin:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env: { POSTGRES_PASSWORD: postgres, POSTGRES_DB: rtcrackers }
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres -d rtcrackers"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install -r requirements.txt
+        working-directory: BACKEND/ADMIN
+      - run: python -m compileall -q .
+        working-directory: BACKEND/ADMIN
+      - run: ruff check .
+        working-directory: BACKEND/ADMIN
+      - run: pytest -q
+        working-directory: BACKEND/ADMIN
+        env:
+          DATABASE_URL: postgresql+asyncpg://postgres:postgres@localhost:5432/rtcrackers
+          JWT_SECRET_KEY: ci-secret-ci-secret-ci-secret-ci-secret-ci-secret
+          ENVIRONMENT: test
+          AUTH_COOKIE_SECURE: 'false'
+          DB_SSL_MODE: disable
+  platform:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env: { POSTGRES_PASSWORD: postgres, POSTGRES_DB: rtcrackers }
+        ports: ["5432:5432"]
+      redis:
+        image: redis:7
+        ports: ["6379:6379"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install -r requirements.txt
+        working-directory: BACKEND
+      - run: python -m compileall -q app tests alembic worker.py
+        working-directory: BACKEND
+      - run: ruff check app tests alembic worker.py
+        working-directory: BACKEND
+      - run: pytest -q
+        working-directory: BACKEND
+        env:
+          DATABASE_URL: postgresql+asyncpg://postgres:postgres@localhost:5432/rtcrackers
+          JWT_SECRET_KEY: ci-secret-ci-secret-ci-secret-ci-secret-ci-secret
+          ENVIRONMENT: test
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: node --check FRONTEND/SITE/runtime/rtc-runtime.js

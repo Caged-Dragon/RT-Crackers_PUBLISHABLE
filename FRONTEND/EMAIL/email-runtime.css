@@ -1,0 +1,4 @@
+/* Small integration layer; the supplied Stitch/Tailwind design remains authoritative. */
+.rtc-mail-live-badge{position:fixed;right:14px;bottom:76px;z-index:9999;padding:6px 9px;border-radius:999px;background:#0f172a;color:#fff;font:600 10px/1 Inter,sans-serif;opacity:.78}
+.rtc-mail-api-error{position:fixed;right:14px;top:76px;z-index:10000;max-width:420px;padding:10px 12px;border-radius:8px;background:#fff1f2;color:#9f1239;border:1px solid #fecdd3;box-shadow:0 8px 24px rgba(15,23,42,.12);font:600 12px/18px Inter,sans-serif}
+.rtc-mail-api-loading{opacity:.65;pointer-events:none}

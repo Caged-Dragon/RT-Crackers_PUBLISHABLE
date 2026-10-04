@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎆</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="RTCrackers">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <title>RTCrackers | RTCrackers | Festive Products</title>
+  <meta name="description"
+    content="RTCrackers (RTCrackers), Sivakasi — browse our festive cracker catalog and submit an order request online. Celebrate Brighter. Celebrate Together.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261003">
+  <link rel="stylesheet" href="css/premium-ui.css?v=20261003">
+  <link rel="stylesheet" href="css/pwa.css?v=20261003">
+  <link rel="stylesheet" href="css/features.css?v=20261003">
+  <link rel="stylesheet" href="css/advanced-ui.css?v=20261003"><link rel="stylesheet" href="css/industrial-ui.css?v=20261003">
+
+  <link rel="canonical" href="./index.html"><meta property="og:title" content="RTCrackers | RTCrackers | Festive Products"><meta property="og:type" content="website"><meta property="og:url" content="./index.html"><meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/adaptive-layout.css?v=20261003-v6">
+</head>
+
+<body>
+  <script>
+    (() => {
+      const params = new URLSearchParams(location.search);
+      const fromIntro = params.get("fromIntro") === "1";
+      const completed = sessionStorage.getItem("rt_intro_completed");
+      if (fromIntro || completed === "1") {
+        sessionStorage.removeItem("rt_intro_completed");
+        sessionStorage.removeItem("rt_intro_play_lock");
+        sessionStorage.removeItem("rt_intro_nav_token");
+        if (fromIntro) history.replaceState(null, "", "index.html");
+        return;
+      }
+      location.replace("intro.html");
+    })();
+  </script>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img data-company-logo class="company-logo" src="" alt="RTCrackers" style="display:none;max-height:46px;max-width:150px;object-fit:contain;">
+        <span class="brand-name">RT <span>CRACKERS</span></span>
+        <span class="brand-sub">RTCrackers</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" data-nav="index.html" class="active">Home</a>
+        <a href="products.html" data-nav="products.html">Products</a>
+        <a href="about.html" data-nav="about.html">About</a>
+        <a href="policy.html" data-nav="policy.html">Policies</a>
+        <a href="feedback.html">Feedback</a><a href="contact.html" data-nav="contact.html">Contact</a>
+        <a href="my-orders.html" data-nav="my-orders.html">My Orders</a>
+        <a href="login.html" data-nav="login.html" id="accountNavLink">Login</a>
+      </nav>
+      <div class="header-actions">
+        <a href="order.html" class="btn btn-primary btn-sm">Order Now</a>
+        <a href="order.html" class="cart-btn">🛒 <span class="label">Order</span> (<span
+            class="cart-count">0</span>)</a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav-backdrop" aria-hidden="true"></div><div class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="policy.html">Policies</a>
+      <a href="feedback.html">Feedback</a><a href="contact.html">Contact</a>
+      <a href="my-orders.html">My Orders</a>
+      <a href="login.html" id="accountNavLinkMobile">Login</a>
+      <a href="order.html" class="btn btn-primary btn-block">Order Now — (<span class="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ADMIN-MANAGED BANNERS -->
+    <section id="homeBanners" class="rt-banner-section" aria-label="Promotions" hidden>
+      <div class="container">
+        <div id="homeBannerList" class="rt-banner-list"></div>
+      </div>
+    </section>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-eyebrow">✨ Diwali Festive Collection</span>
+          <h1>RT <span class="accent">CRACKERS</span></h1>
+          <p class="hero-tagline">Celebrate Brighter. Celebrate Together.</p>
+          <p class="lead">Explore our festive collection and submit your order request for convenient delivery across
+            Tamil Nadu.</p>
+          <div class="hero-cta">
+            <a href="products.html" class="btn btn-primary">Explore Products</a>
+            <a href="order.html" class="btn btn-outline">Order Now</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <svg width="70%" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="4" fill="#e8c158" />
+            <g stroke="#e8c158" stroke-width="2" stroke-linecap="round">
+              <line x1="100" y1="100" x2="100" y2="30" />
+              <line x1="100" y1="100" x2="153" y2="53" />
+              <line x1="100" y1="100" x2="170" y2="100" />
+              <line x1="100" y1="100" x2="153" y2="147" />
+              <line x1="100" y1="100" x2="100" y2="170" />
+              <line x1="100" y1="100" x2="47" y2="147" />
+              <line x1="100" y1="100" x2="30" y2="100" />
+              <line x1="100" y1="100" x2="47" y2="53" />
+            </g>
+            <g stroke="#e8622c" stroke-width="2" stroke-linecap="round" opacity="0.75">
+              <line x1="100" y1="100" x2="130" y2="20" />
+              <line x1="100" y1="100" x2="180" y2="130" />
+              <line x1="100" y1="100" x2="60" y2="180" />
+              <line x1="100" y1="100" x2="15" y2="65" />
+            </g>
+            <circle cx="100" cy="30" r="3" fill="#f3d888" />
+            <circle cx="170" cy="100" r="3" fill="#f3d888" />
+            <circle cx="100" cy="170" r="3" fill="#f3d888" />
+            <circle cx="30" cy="100" r="3" fill="#f3d888" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">About Us</span>
+          <h2>RTCrackers</h2>
+          <p>RTCrackers (RTCrackers) is based at 22, Sivan Sannathi Road, Parasakthi Colony, Sivakasi -
+            626123, with an admin office at 14, Rajendra Prasath Street, Manali, Chennai - 600068. We bring a wide
+            festive cracker collection to customers across Tamil Nadu through a simple, convenient order-request
+            process.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Browse</span>
+          <h2>Product Categories</h2>
+          <p>From sparklers to grand gift boxes — our full festive range, organized for easy browsing.</p>
+        </div>
+        <div id="categoryGrid" class="grid grid-4"></div>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Popular Picks</span>
+          <h2>Featured Products</h2>
+          <p>A sample from our complete catalog of 160 products.</p>
+        </div>
+        <div id="featuredGrid" class="product-grid"></div>
+        <div class="text-center" style="margin-top:32px;">
+          <a href="products.html" class="btn btn-dark">View Full Catalog</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section section-red">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Why RTCrackers</span>
+          <h2>Why Choose Us</h2>
+        </div>
+        <div class="grid grid-4">
+          <div class="card">
+            <div class="card-icon">🎆</div>
+            <h3>Wide Product Selection</h3>
+            <p>A broad festive catalog spanning sparklers, fountains, aerials, novelties and gift boxes.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🛒</div>
+            <h3>Easy Order Request</h3>
+            <p>Browse, add to your order, and submit a request in a few simple steps.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🚚</div>
+            <h3>Delivery Support</h3>
+            <p>Door-to-door delivery for Chennai and Kumbakonam, with transporter delivery for the rest of Tamil Nadu.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📞</div>
+            <h3>Customer Support</h3>
+            <p>Reach us by phone, WhatsApp or email for order confirmation and queries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW ORDERING WORKS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Simple Process</span>
+          <h2>How Ordering Works</h2>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h4>Browse Products</h4>
+            <p>Explore the full catalog</p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <h4>Add to Request</h4>
+            <p>Add products & quantities</p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <h4>Delivery Details</h4>
+            <p>Enter your delivery info</p>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <h4>Submit Request</h4>
+            <p>Send your order request</p>
+          </div>
+          <div class="step">
+            <div class="step-num">05</div>
+            <h4>We Contact You</h4>
+            <p>RTCrackers confirms your order</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DELIVERY INFO -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Delivery</span>
+          <h2>Delivery Information</h2>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>Chennai &amp; Kumbakonam</h3>
+            <p>Door-to-door delivery available. A flat shipping fee of ₹250 applies to all orders to these locations.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Rest of Tamil Nadu</h3>
+            <p>Crackers are delivered to the nearest transporter warehouse/godown. The transporter fee is payable
+              directly by you while collecting the parcel.</p>
+          </div>
+          <div class="card">
+            <h3>Minimum Order</h3>
+            <p>A minimum order value of ₹2,000 (after discount) applies to all order requests.</p>
+          </div>
+        </div>
+        <div class="text-center" style="margin-top:28px;">
+          <a href="policy.html" class="btn btn-outline on-light-navy"
+            style="border-color:var(--gold-500);color:var(--gold-500);">View Full Delivery &amp; Policy Details</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAFETY / LEGAL -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2">
+          <div class="notice-box safety">
+            <span class="icon">⚠️</span>
+            <div>
+              <h3>Celebrate Responsibly</h3>
+              <p>Always follow the manufacturer's instructions and applicable local laws and regulations. Use fireworks
+                only where legally permitted. Keep products away from children and unauthorized persons. Do not modify
+                or alter fireworks.</p>
+            </div>
+          </div>
+          <div class="notice-box legal">
+            <span class="icon">📄</span>
+            <div>
+              <h3>Legal Notice</h3>
+              <p>This website is an order-request system only. It does not process online payments. All order requests
+                are subject to confirmation by RTCrackers, and to the terms described on our Policies page.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-cool">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Get In Touch</span>
+          <h2>Contact RTCrackers</h2>
+        </div>
+        <div class="grid grid-4">
+          <div class="card">
+            <h3>Phone</h3>
+            <p data-company-phone-plist>7358633576</p>
+          </div>
+          <div class="card">
+            <h3>WhatsApp</h3>
+            <p data-company-whatsapp>72999 41355</p>
+          </div>
+          <div class="card">
+            <h3>Email</h3>
+            <p data-company-email>sales@rtcrackers.com</p>
+          </div>
+          <div class="card">
+            <h3>Admin Office</h3>
+            <p>Manali, Chennai - 600068</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-name">RTCRACKERS</span>
+          <p>RTCrackers<br>Celebrate Brighter. Celebrate Together.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="order.html">Order</a>
+          <a href="about.html">About</a>
+          <a href="policy.html">Policies</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Customer Support</h5>
+          <a data-email-link data-company-email href="mailto:sales@rtcrackers.com">sales@rtcrackers.com</a>
+          <a data-phone-link href="tel:+917358633576" data-company-phone-plist>7358633576</a>
+          <span>WhatsApp: <span data-company-whatsapp>72999 41355</span></span>
+        </div>
+        <div class="footer-col">
+          <h5>Office</h5>
+          <span>Sivakasi (Factory)</span>
+          <span>Manali, Chennai (Admin)</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="currentYear">2026</span> RTCrackers. All rights reserved.</span>
+        <span>Order requests only — no online payment is processed on this website.</span>
+        <a href="admin.html" style="opacity:.55;">Admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-order-bar">
+    <a href="order.html" class="btn btn-primary btn-block">🛒 View Order Request (<span class="cart-count">0</span>)</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/micro-interactions.js"></script>
+  <script src="js/auth.js?v=20261003"></script><script src="js/features.js?v=20261003"></script>
+  
+  <script src="js/script.js?v=20261003"></script>
+  <script src="js/performance.js?v=20261003"></script>
+  <script src="js/pwa.js?v=20261003"></script>
+  <script src="js/advanced-ui.js?v=20261003"></script>
+<script src="js/industrial-ui.js?v=20261003"></script>  <script src="js/adaptive-layout.js?v=20261003-v6"></script>
+  <script src="/js/pwa-update.js" defer></script>
+</body>
+
+</html>

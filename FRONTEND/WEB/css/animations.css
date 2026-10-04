@@ -1,0 +1,107 @@
+:root {
+  --rt-motion-duration: clamp(420ms, 34vw, 620ms);
+  --rt-motion-ease: cubic-bezier(.16, 1, .3, 1);
+  --rt-motion-distance: clamp(18px, calc(46px * var(--rt-motion-scale, 1)), 54px);
+  --rt-motion-blur: clamp(0px, calc(2.5px * var(--rt-motion-scale, 1)), 3px);
+  --rt-vw: 100vw;
+  --rt-vh: 100vh;
+}
+
+html { scroll-behavior: smooth; }
+body { overflow-x: clip; }
+
+[data-rt-animate] {
+  opacity: 0;
+  transform: translate3d(0, var(--rt-motion-distance), 0) scale(.975) rotateX(1.5deg);
+  filter: blur(var(--rt-motion-blur));
+  transition:
+    opacity var(--rt-motion-duration) var(--rt-motion-ease),
+    transform var(--rt-motion-duration) var(--rt-motion-ease),
+    filter var(--rt-motion-duration) var(--rt-motion-ease);
+  transition-delay: var(--rt-motion-delay, 0ms);
+  will-change: opacity, transform, filter;
+  backface-visibility: hidden;
+  transform-origin: center bottom;
+}
+
+[data-rt-animate="left"] { transform: translate3d(calc(var(--rt-motion-distance) * -1), 12px, 0) scale(.975) rotateY(2deg); }
+[data-rt-animate="right"] { transform: translate3d(var(--rt-motion-distance), 12px, 0) scale(.975) rotateY(-2deg); }
+[data-rt-animate="up"] { transform: translate3d(0, var(--rt-motion-distance), 0) scale(.975) rotateX(2deg); }
+[data-rt-animate="down"] { transform: translate3d(0, calc(var(--rt-motion-distance) * -1), 0) scale(.975) rotateX(-2deg); }
+
+[data-rt-animate].rt-motion-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1) rotate(0);
+  filter: blur(0);
+}
+
+[data-rt-animate].rt-motion-leaving { opacity: 0; }
+
+.rt-motion-delay-1 { --rt-motion-delay: 35ms; }
+.rt-motion-delay-2 { --rt-motion-delay: 70ms; }
+.rt-motion-delay-3 { --rt-motion-delay: 105ms; }
+.rt-motion-delay-4 { --rt-motion-delay: 140ms; }
+.rt-motion-delay-5 { --rt-motion-delay: 175ms; }
+
+/* Cinematic interactive cards */
+.rt-motion-tilt {
+  transform-style: preserve-3d;
+  transition: transform 260ms cubic-bezier(.2,.8,.2,1), box-shadow 260ms ease;
+}
+.rt-motion-tilt:hover {
+  transform: perspective(900px) rotateX(var(--rt-tilt-x, 0deg)) rotateY(var(--rt-tilt-y, 0deg)) translateY(-5px) scale(1.012);
+}
+.rt-motion-tilt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--rt-glow-x, 50%) var(--rt-glow-y, 50%), rgba(255,255,255,.18), transparent 34%);
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+.rt-motion-tilt:hover::after { opacity: 1; }
+
+/* Hero ambient light */
+.rt-ambient-orb {
+  position: absolute;
+  width: clamp(100px, 18vw, 300px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: .16;
+  filter: blur(38px);
+  animation: rtOrbFloat 8s ease-in-out infinite alternate;
+}
+@keyframes rtOrbFloat { to { transform: translate3d(22px, -28px, 0) scale(1.12); } }
+
+/* Scroll progress */
+#rtScrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 10000;
+  pointer-events: none;
+  transform-origin: left center;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, #ffb000, #ff5a36, #9c36ff, #00d4ff);
+  box-shadow: 0 0 14px rgba(255,170,0,.65);
+}
+
+@media (max-width: 700px), (max-height: 600px) {
+  :root { --rt-motion-duration: 540ms; }
+  [data-rt-animate="left"], [data-rt-animate="right"] {
+    transform: translate3d(0, var(--rt-motion-distance), 0) scale(.985);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-rt-animate], [data-rt-animate="left"], [data-rt-animate="right"], [data-rt-animate="up"], [data-rt-animate="down"] {
+    opacity: 1; transform: none; filter: none; transition: none; will-change: auto;
+  }
+  .rt-ambient-orb { animation: none; }
+}

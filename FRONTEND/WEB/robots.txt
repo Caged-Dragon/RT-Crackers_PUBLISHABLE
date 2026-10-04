@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /account
+Disallow: /admin
+Disallow: /admin-dashboard
+Disallow: /admin-register
+Disallow: /login
+Disallow: /reset-password
+Disallow: /my-orders

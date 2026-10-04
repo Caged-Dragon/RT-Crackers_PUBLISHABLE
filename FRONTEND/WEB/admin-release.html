@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RTCrackers — Release & Content Manager</title><link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/pwa-update.css"></head><body>
+<main class="container" style="max-width:980px;margin:40px auto;padding:20px">
+<h1>RTCrackers Release & Content Manager</h1>
+<p>Changes are staged first. Verify them before publishing. A failed verification leaves the current live release unchanged.</p>
+<section class="panel" style="padding:20px;margin-top:20px"><h2>Create release</h2>
+<label>Version <input id="version" placeholder="2026.10.04.1"></label>
+<label>Name <input id="name" value="RTCrackers update"></label>
+<label>Message <textarea id="message">A verified RTCrackers update is ready.</textarea></label>
+<label>Snapshot JSON <textarea id="snapshot" style="width:100%;min-height:240px">{}</textarea></label>
+<button class="btn btn-gold" id="create">Create draft</button></section>
+<section class="panel" style="padding:20px;margin-top:20px"><h2>Releases</h2><div id="releases">Loading…</div></section>
+<section class="panel" style="padding:20px;margin-top:20px"><h2>Page/section content</h2>
+<label>Content key <input id="ckey" placeholder="home.hero"></label><label>Page path <input id="path" value="/index.html"></label>
+<label>Release version <input id="rver"></label><label>Payload JSON <textarea id="payload" style="width:100%;min-height:180px">{}</textarea></label>
+<button class="btn btn-gold" id="saveContent">Stage content</button></section>
+</main><script>
+const A='/api/v1/admin/platform';
+const j=async(u,o={})=>{const r=await fetch(u,{credentials:'same-origin',headers:{'Content-Type':'application/json',...(o.headers||{})},...o});let x={};try{x=await r.json()}catch(_){}if(!r.ok)throw Error(x.detail||'Request failed');return x};
+async function load(){try{const rs=await j(A+'/releases');document.querySelector('#releases').innerHTML=rs.map(x=>`<article style="padding:12px;border-bottom:1px solid #ddd"><b>${x.version}</b> — ${x.status} ${x.is_current?'(LIVE)':''}<div>${x.message||''}</div>${x.status==='DRAFT'?`<button onclick="verify(${x.release_id})">Verify</button>`:''}${x.status==='VERIFIED'?`<button onclick="publish(${x.release_id})">Publish</button>`:''}</article>`).join('')||'No releases';}catch(e){document.querySelector('#releases').textContent=e.message}}
+window.verify=async id=>{try{await j(A+`/releases/${id}/verify`,{method:'POST'});await load()}catch(e){alert(e.message)}};
+window.publish=async id=>{try{await j(A+`/releases/${id}/publish`,{method:'POST'});await load()}catch(e){alert(e.message)}};
+document.querySelector('#create').onclick=async()=>{try{const snapshot=JSON.parse(document.querySelector('#snapshot').value||'{}');await j(A+'/releases',{method:'POST',body:JSON.stringify({version:version.value,name:name.value,message:message.value,snapshot})});await load()}catch(e){alert(e.message)}};
+document.querySelector('#saveContent').onclick=async()=>{try{await j(A+'/content',{method:'POST',body:JSON.stringify({content_key:ckey.value,page_path:path.value,payload:JSON.parse(payload.value||'{}'),release_version:rver.value})});alert('Content staged into the release. Verify the release before publishing.')}catch(e){alert(e.message)}};
+load();
+</script><script src="/js/pwa-update.js" defer></script></body></html>

@@ -50,11 +50,6 @@ CREATE TABLE IF NOT EXISTS deployment_change_notifications (
 );
 CREATE INDEX IF NOT EXISTS ix_deployment_notifications_admin ON deployment_change_notifications(admin_id,created_at DESC);
 
--- Match the rest of the schema: RLS on, no public policies (API connects as the DB owner role).
-ALTER TABLE site_releases ENABLE ROW LEVEL SECURITY;
-ALTER TABLE site_content_revisions ENABLE ROW LEVEL SECURITY;
-ALTER TABLE deployment_change_notifications ENABLE ROW LEVEL SECURITY;
-
 -- Every release is a complete immutable snapshot. Public traffic only reads PUBLISHED/current.
 -- Normal admins may edit content; existing RBAC remains authoritative.
 COMMIT;

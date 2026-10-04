@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎆</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | RTCrackers</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="RTCrackers admin login.">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261003">
+  <link rel="stylesheet" href="css/advanced-ui.css?v=20261003"><link rel="stylesheet" href="css/industrial-ui.css?v=20261003">
+  <link rel="stylesheet" href="css/premium-ui.css?v=20261003">
+  <style>
+    body {
+      background: linear-gradient(160deg, var(--navy-950), var(--navy-800));
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .admin-box {
+      width: 100%;
+      max-width: 420px;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .admin-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--brand-gradient-full);
+    }
+
+    .demo-creds {
+      background: #fff4e5;
+      border: 1px solid #f0c987;
+      color: #7a4c00;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .demo-creds code {
+      background: rgba(0, 0, 0, .06);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    .msg-error {
+      background: #fdecea;
+      color: var(--danger);
+      border: 1px solid #f3b6b0;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 13.5px;
+      margin-bottom: 14px;
+      display: none;
+    }
+  </style>
+  <link rel="stylesheet" href="css/adaptive-layout.css?v=20261003-v6">
+  <link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/css/pwa-update.css">
+</head>
+
+<body class="admin-auth-page">
+  <div class="admin-box">
+    <h2 style="margin-bottom:4px;">Admin Login</h2>
+    <p style="color:var(--grey-600);font-size:14px;">RTCrackers control panel</p>
+
+    <div class="demo-creds" id="setupNote">
+      <strong>Administrator account verified.</strong>
+      Enter only the Admin Panel Security Password to open the protected control center.
+    </div>
+
+    <div id="err" class="msg-error"></div>
+    <form id="adminLoginForm">
+      <div class="form-group"><label for="aPanelPass">Admin Panel Security Password</label><input type="password" id="aPanelPass" required autocomplete="current-password" autofocus><small style="color:var(--grey-600);">Your administrator account was authenticated on the main Login page. This step unlocks the protected admin panel.</small></div>
+      <button type="submit" class="btn btn-primary btn-block">Open Admin Dashboard</button>
+      <div style="text-align:center;margin-top:14px;"><a href="login.html" class="btn btn-outline btn-sm">Switch Admin Account</a></div>
+    </form>
+    <p style="text-align:center;margin-top:18px;font-size:13px;"><a href="index.html"
+        style="color:var(--grey-600);text-decoration:underline;">← Back to website</a></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/micro-interactions.js"></script>
+  <script src="js/auth.js?v=20261003"></script><script src="js/features.js?v=20261003"></script>
+  <script>
+    (async function () {
+      const errEl = document.getElementById("err");
+      function showErr(msg) { errEl.textContent = msg; errEl.style.display = "block"; }
+
+      if (!window.RTAdmin.configured) {
+        showErr("This site isn't connected to Supabase yet — see README.md → Supabase Setup.");
+        document.getElementById("adminLoginForm").querySelector("button").disabled = true;
+        return;
+      }
+
+      await window.RTAdmin.authReady;
+      const existingUser = window.RTAdmin.currentUser();
+      if (!existingUser) {
+        showErr("Please sign in through the main Login page first, using your administrator account.");
+        document.getElementById("adminLoginForm").querySelector("button").disabled = true;
+        return;
+      }
+
+      const isExistingAdmin = await window.RTAdmin.requireAdmin();
+      if (!isExistingAdmin) {
+        await window.RTAdmin.adminLogout();
+        showErr("This account is not authorized as an administrator. Sign in with the administrator account from the main Login page.");
+        document.getElementById("adminLoginForm").querySelector("button").disabled = true;
+        return;
+      }
+
+      document.getElementById("adminLoginForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        errEl.style.display = "none";
+        const btn = e.target.querySelector("button[type=submit]");
+        btn.disabled = true; btn.textContent = "Verifying…";
+        try {
+          const configured = await window.RTAdmin.isAdminSecurityConfigured();
+          if (!configured) {
+            showErr("Admin Panel Security Password has not been configured yet. Configure it from the Security & Admins section.");
+            return;
+          }
+          const r = await window.RTAdmin.verifyAdminPanelPassword(document.getElementById("aPanelPass").value);
+          if (r.ok) {
+            sessionStorage.setItem("rt_admin_panel_verified", "1");
+            window.location.href = "/admin-dashboard.html";
+          } else showErr(r.error);
+        } catch (error) {
+          showErr(error?.message || "Could not verify the Admin Panel Security Password.");
+        } finally {
+          btn.disabled = false; btn.textContent = "Open Admin Dashboard";
+        }
+      });
+    })();
+  </script>
+  <script src="js/advanced-ui.js?v=20261003"></script>
+<script src="js/industrial-ui.js?v=20261003"></script>  <script src="js/adaptive-layout.js?v=20261003-v6"></script>
+  <script src="/js/pwa-update.js" defer></script>
+</body>
+
+</html>

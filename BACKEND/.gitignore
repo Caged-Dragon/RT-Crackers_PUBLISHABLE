@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Runtime media/logs
+media/*
+!media/.gitkeep
+logs/
+*.log
+
+# IDE/OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Build/package
+build/
+dist/
+*.egg-info/
+
+# Docker/local state
+postgres-data/

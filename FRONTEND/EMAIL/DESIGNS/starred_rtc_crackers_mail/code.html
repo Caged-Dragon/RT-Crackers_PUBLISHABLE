@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed-dim":"#ffb599","on-surface-variant":"#5a4138","tag-orders":"#D97706","inverse-on-surface":"#eaf1ff","tag-support":"#2563EB","surface-variant":"#d3e4fe","outline":"#8e7166","brand-fire-red":"#E63946","surface-container-low":"#eff4ff","secondary-container":"#dae2fd","surface-canvas":"#FFFFFF","surface-container-highest":"#d3e4fe","error":"#ba1a1a","tertiary-fixed":"#ffdea9","on-background":"#0b1c30","on-surface":"#0b1c30","on-secondary-fixed-variant":"#3f465c","tag-billing":"#7C3AED","secondary":"#565e74","inverse-surface":"#213145","primary-fixed":"#ffdbce","tag-sales":"#16A34A","on-tertiary":"#ffffff","surface":"#f8f9ff","surface-subtle":"#F8FAFC","surface-tint":"#a73a00","tertiary-fixed-dim":"#fbbc3c","tag-contact":"#4F46E5","on-primary-fixed":"#370e00","secondary-fixed-dim":"#bec6e0","on-secondary":"#ffffff","on-primary-container":"#fffbff","primary":"#a33900","on-secondary-fixed":"#131b2e","tag-notifications":"#EA580C","surface-container":"#e5eeff","inverse-primary":"#ffb599","surface-bright":"#f8f9ff","surface-container-high":"#dce9ff","border-subtle":"#F1F5F9","error-container":"#ffdad6","outline-variant":"#e2bfb2","tag-admin":"#DC2626","on-tertiary-container":"#fffbff","tag-info":"#0891B2","tag-noreply":"#475569","secondary-fixed":"#dae2fd","background":"#f8f9ff","on-error":"#ffffff","on-tertiary-fixed":"#271900","on-error-container":"#93000a","tertiary":"#795500","primary-container":"#cc4900","surface-container-lowest":"#ffffff","on-secondary-container":"#5c647a","border-strong":"#E2E8F0","surface-dim":"#cbdbf5","tertiary-container":"#996c00","on-primary-fixed-variant":"#7f2b00","on-primary":"#ffffff","on-tertiary-fixed-variant":"#5e4200"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-sm":"0.5rem","gutter-compact":"0.5rem","space-xl":"1.5rem","space-xs":"0.25rem","space-lg":"1rem","gutter":"1rem","margin":"1rem","space-md":"0.75rem","margin-mobile":"0.75rem"},fontFamily:{"body-lg":["Inter"],"title-sm":["Inter"],"code-sm":["Inter"],"headline-sm":["Plus Jakarta Sans"],"label-sm":["Inter"],"display-lg":["Plus Jakarta Sans"],"title-md":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Inter"]},fontSize:{"body-lg":["15px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"400"}],"title-sm":["13px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"600"}],"code-sm":["11px",{lineHeight:"16px",letterSpacing:"0.03em",fontWeight:"500"}],"headline-sm":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.02em",fontWeight:"600"}],"display-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"title-md":["15px",{lineHeight:"20px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-md":["13px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"16px",letterSpacing:"0.005em",fontWeight:"400"}],"headline-md":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"500"}]}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="p-space-lg flex flex-col gap-space-md"><div class="flex items-center gap-space-sm pb-space-sm"><img alt="Brand logo. - Primary color: #ea580c - Font: plusJakartaSans - Mode: light - Roundness: rounded-sm" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG_c7pxIPE4wwgSpxLFdUH_tg8svgIbUIwkhn7NCze_r0x_6WTZ_jzC9vfGXc5OgbMK2FdXgS2SwxvmiHBQfXisYT_PH7cTvFWOSkZv_Mr-bzU71U1De5LkmvshUlwXLJFP2Kejr-oGaxIfUck0RnN2ckJhDtCVvshifzkErWtefVAW8Pr75VKhiKZMdr0XVUFm6PCVfbFXbMlmSMxDNBmEpn1CLLHaGet8zoB1wdpONt_CSqntRtOjqB_"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">RTC Crackers</span><span class="font-label-sm text-label-sm text-tag-notifications uppercase tracking-wider mt-0.5">Enterprise Mail</span></div></div><button class="w-full flex items-center justify-center gap-space-sm bg-tag-notifications hover:bg-primary text-on-primary font-title-sm text-title-sm py-space-sm px-space-lg rounded-xl shadow-[0_10px_25px_-5px_rgba(15,23,42,0.08)] transition-all" type="button"><span class="material-symbols-outlined text-[18px]">edit</span><span>Compose</span></button><nav class="flex flex-col gap-0.5 pt-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-title-sm font-semibold rounded-xl"><div class="px-space-sm pb-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Navigation</div><a class="flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inbox" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">inbox</span><span class="font-body-md text-body-md">Inbox</span></div><span class="px-1.5 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-on-surface">24</span></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-title-sm font-semibold rounded-xl" data-path="starred" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">star</span><span class="font-body-md text-body-md">Starred</span></div><span class="px-1.5 py-0.5 rounded-full bg-tag-notifications text-on-primary font-label-sm text-label-sm">24</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="drafts" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">draft</span><span class="font-body-md text-body-md">Drafts</span></div><span class="px-1.5 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-on-surface">3</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="sent" href="#"><span class="material-symbols-outlined text-[18px]">send</span><span class="font-body-md text-body-md">Sent</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="archived" href="#"><span class="material-symbols-outlined text-[18px]">archive</span><span class="font-body-md text-body-md">Archived</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="trash" href="#"><span class="material-symbols-outlined text-[18px]">delete</span><span class="font-body-md text-body-md">Trash</span></a></nav><div class="flex flex-col gap-0.5 pt-space-sm"><div class="px-space-sm pb-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider flex items-center justify-between"><span>Company Mailboxes</span><span class="material-symbols-outlined text-[14px]">expand_more</span></div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-title-sm font-semibold rounded-xl"><a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mailbox-all" href="#"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-body-sm text-body-sm truncate">All Mailboxes</span></a><a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mailbox-admin" href="#"><span class="w-2 h-2 rounded-full bg-tag-admin"></span><span class="font-body-sm text-body-sm truncate">admin@rtcrackers.com</span></a><a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mailbox-support" href="#"><span class="w-2 h-2 rounded-full bg-tag-support"></span><span class="font-body-sm text-body-sm truncate">support@rtcrackers.com</span></a><a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mailbox-sales" href="#"><span class="w-2 h-2 rounded-full bg-tag-sales"></span><span class="font-body-sm text-body-sm truncate">sales@rtcrackers.com</span></a><a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mailbox-orders" href="#"><span class="w-2 h-2 rounded-full bg-tag-orders"></span><span class="font-body-sm text-body-sm truncate">orders@rtcrackers.com</span></a><a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mailbox-billing" href="#"><span class="w-2 h-2 rounded-full bg-tag-billing"></span><span class="font-body-sm text-body-sm truncate">billing@rtcrackers.com</span></a><a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mailbox-info" href="#"><span class="w-2 h-2 rounded-full bg-tag-info"></span><span class="font-body-sm text-body-sm truncate">info@rtcrackers.com</span></a><a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mailbox-contact" href="#"><span class="w-2 h-2 rounded-full bg-tag-contact"></span><span class="font-body-sm text-body-sm truncate">contact@rtcrackers.com</span></a><a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mailbox-notifications" href="#"><span class="w-2 h-2 rounded-full bg-tag-notifications"></span><span class="font-body-sm text-body-sm truncate">notifications@rtcrackers.com</span></a><a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mailbox-noreply" href="#"><span class="w-2 h-2 rounded-full bg-tag-noreply"></span><span class="font-body-sm text-body-sm truncate">noreply@rtcrackers.com</span></a></nav></div></div><div class="p-space-lg flex flex-col gap-space-xs bg-surface-subtle"><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-title-sm font-semibold rounded-xl"><a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-body-sm text-body-sm">Settings</span></a><a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="help-docs" href="#"><span class="material-symbols-outlined text-[18px]">help</span><span class="font-body-sm text-body-sm">Help &amp; Docs</span></a><a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="sign-out" href="#"><span class="material-symbols-outlined text-[18px]">logout</span><span class="font-body-sm text-body-sm">Sign Out</span></a></nav><div class="mt-space-sm pt-space-sm flex items-center justify-between px-space-sm py-space-xs rounded-xl bg-surface-container-low"><div class="flex items-center gap-space-sm overflow-hidden"><img alt="Profile" class="w-7 h-7 rounded-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/><div class="flex flex-col truncate"><span class="font-title-sm text-title-sm text-on-surface truncate">Karthik S.</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Operations Admin</span></div></div><span class="material-symbols-outlined text-[16px] text-on-surface-variant">unfold_more</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-canvas/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-lg flex-1 max-w-2xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full pl-10 pr-16 py-space-sm rounded-xl bg-surface-subtle font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-canvas focus:ring-1 focus:ring-tag-notifications shadow-[0_1px_8px_rgba(0,0,0,0.02)] transition-all" placeholder="Search starred mail..." type="text"/><div class="absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container-high font-code-sm text-code-sm text-on-surface-variant font-medium">⌘K</div></div><nav class="hidden xl:flex items-center gap-space-md" data-active-classes="text-tag-notifications font-semibold"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="quick-all" href="#">All Mails</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="quick-unread" href="#">Unread Only</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="quick-priority" href="#">Priority Queue</a></nav></div><div class="flex items-center gap-space-md"><button class="p-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">tune</span></button><button class="p-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tag-notifications ring-2 ring-surface-canvas"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden sm:flex flex-col"><span class="font-title-sm text-title-sm text-on-surface leading-tight">Karthik S.</span><span class="font-code-sm text-code-sm text-on-surface-variant">Operations Admin</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-strong" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Banner / Summary Header Ribbon -->
+<div class="w-full bg-surface-canvas px-space-lg py-space-md shadow-sm">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-md">
+<!-- Primary Heading & Mode Toggles -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Starred Messages</h1>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold" id="global-badge-count">24</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Centralized priority radar across 9 mailboxes (Inbox, Sent &amp; Archived)</p>
+</div>
+</div>
+<!-- Prototype State Previews Switcher -->
+<div class="flex items-center gap-space-sm bg-surface-subtle p-1 rounded-xl">
+<span class="font-label-sm text-label-sm text-on-surface-variant px-space-sm">Preview:</span>
+<button class="px-space-md py-1 rounded-lg font-label-sm text-label-sm bg-surface-canvas text-tag-notifications shadow-sm font-semibold transition-all" id="view-state-live" onclick="setViewState('live')">Live Feed</button>
+<button class="px-space-md py-1 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" id="view-state-loading" onclick="setViewState('loading')">Skeleton</button>
+<button class="px-space-md py-1 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" id="view-state-empty" onclick="setViewState('empty')">Zero State</button>
+</div>
+</div>
+<!-- Quick Mailbox Filter Ribbon -->
+<div class="flex items-center justify-between gap-space-md overflow-x-auto pb-1 scrollbar-none">
+<div class="flex items-center gap-1.5 flex-nowrap" id="mailbox-filter-bar">
+<button class="filter-pill active px-3 py-1.5 rounded-xl font-label-sm text-label-sm flex items-center gap-1.5 bg-on-surface text-surface-canvas transition-all" onclick="filterMailbox('all', this)">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-canvas"></span>
+<span>All Mailboxes</span>
+<span class="opacity-75 text-[10px]">24</span>
+</button>
+<button class="filter-pill px-3 py-1.5 rounded-xl font-label-sm text-label-sm flex items-center gap-1.5 bg-surface-subtle text-on-surface-variant hover:bg-surface-container-high transition-all" onclick="filterMailbox('sales', this)">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+<span>sales@</span>
+<span class="opacity-75 text-[10px]">7</span>
+</button>
+<button class="filter-pill px-3 py-1.5 rounded-xl font-label-sm text-label-sm flex items-center gap-1.5 bg-surface-subtle text-on-surface-variant hover:bg-surface-container-high transition-all" onclick="filterMailbox('support', this)">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-support"></span>
+<span>support@</span>
+<span class="opacity-75 text-[10px]">5</span>
+</button>
+<button class="filter-pill px-3 py-1.5 rounded-xl font-label-sm text-label-sm flex items-center gap-1.5 bg-surface-subtle text-on-surface-variant hover:bg-surface-container-high transition-all" onclick="filterMailbox('orders', this)">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-orders"></span>
+<span>orders@</span>
+<span class="opacity-75 text-[10px]">4</span>
+</button>
+<button class="filter-pill px-3 py-1.5 rounded-xl font-label-sm text-label-sm flex items-center gap-1.5 bg-surface-subtle text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" onclick="filterMailbox('billing', this)">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-billing"></span>
+<span>billing@</span>
+<span class="opacity-75 text-[10px]">3</span>
+</button>
+<button class="filter-pill px-3 py-1.5 rounded-xl font-label-sm text-label-sm flex items-center gap-1.5 bg-surface-subtle text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" onclick="filterMailbox('admin', this)">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-admin"></span>
+<span>admin@</span>
+<span class="opacity-75 text-[10px]">2</span>
+</button>
+<button class="filter-pill px-3 py-1.5 rounded-xl font-label-sm text-label-sm flex items-center gap-1.5 bg-surface-subtle text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" onclick="filterMailbox('contact', this)">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-contact"></span>
+<span>contact@</span>
+<span class="opacity-75 text-[10px]">2</span>
+</button>
+<button class="filter-pill px-3 py-1.5 rounded-xl font-label-sm text-label-sm flex items-center gap-1.5 bg-surface-subtle text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" onclick="filterMailbox('info', this)">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-info"></span>
+<span>info@</span>
+<span class="opacity-75 text-[10px]">1</span>
+</button>
+</div>
+<!-- Thread Grouping View Toggle -->
+<div class="flex items-center gap-1 bg-surface-subtle p-0.5 rounded-xl flex-shrink-0">
+<button class="px-space-sm py-1 rounded-lg font-label-sm text-label-sm bg-surface-canvas text-on-surface shadow-sm font-semibold flex items-center gap-1" id="view-mode-individual" onclick="toggleGrouping('individual')">
+<span class="material-symbols-outlined text-[16px]">lists</span>
+<span>Messages</span>
+</button>
+<button class="px-space-sm py-1 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1" id="view-mode-thread" onclick="toggleGrouping('thread')">
+<span class="material-symbols-outlined text-[16px]">forum</span>
+<span>Threads</span>
+</button>
+</div>
+</div>
+<!-- Source Folder Filters & Counters -->
+<div class="flex items-center justify-between border-t-0 pt-0.5">
+<div class="flex items-center gap-space-sm" id="source-filter-cluster">
+<button class="source-tab active font-title-sm text-title-sm text-tag-notifications flex items-center gap-1.5 pb-1 relative transition-colors" onclick="filterSource('all', this)">
+<span>All Sources</span>
+<span class="text-[11px] px-1.5 py-0.2 rounded-full bg-primary-fixed text-primary font-bold">24</span>
+<div class="absolute bottom-0 left-0 right-0 h-0.5 bg-tag-notifications rounded-full"></div>
+</button>
+<span class="text-on-surface-variant opacity-40">/</span>
+<button class="source-tab font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 pb-1 relative transition-colors" onclick="filterSource('inbox', this)">
+<span class="material-symbols-outlined text-[16px]">inbox</span>
+<span>Inbox</span>
+<span class="text-[11px] px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface">14</span>
+</button>
+<span class="text-on-surface-variant opacity-40">/</span>
+<button class="source-tab font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 pb-1 relative transition-colors" onclick="filterSource('sent', this)">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Sent</span>
+<span class="text-[11px] px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface">7</span>
+</button>
+<span class="text-on-surface-variant opacity-40">/</span>
+<button class="source-tab font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 pb-1 relative transition-colors" onclick="filterSource('archived', this)">
+<span class="material-symbols-outlined text-[16px]">archive</span>
+<span>Archived</span>
+<span class="text-[11px] px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface">3</span>
+</button>
+</div>
+<div class="text-on-surface-variant font-code-sm text-code-sm flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-sales animate-pulse"></span>
+<span>Auto-sync active (PESO Hub)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Starred Action Toolbar -->
+<div class="sticky top-16 z-30 bg-surface-canvas/95 backdrop-blur-md px-space-lg py-2.5 shadow-sm">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-md">
+<!-- Selection & Batch Controls -->
+<div class="flex items-center gap-space-md">
+<!-- Checkbox with Dropdown Trigger -->
+<div class="flex items-center gap-1">
+<input class="w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer bg-surface-canvas" id="master-select-checkbox" onchange="toggleSelectAll(this.checked)" type="checkbox"/>
+<button class="text-on-surface-variant hover:text-on-surface p-0.5 rounded" onclick="toggleSelectDropdown(event)" type="button">
+<span class="material-symbols-outlined text-[16px]">arrow_drop_down</span>
+</button>
+</div>
+<!-- Live Selection Pill -->
+<div class="hidden items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold" id="selection-counter-wrapper">
+<span id="selected-count-number">0</span>
+<span>selected</span>
+<button class="text-primary hover:text-on-surface ml-1 text-sm font-bold" onclick="clearSelection()">×</button>
+</div>
+<!-- Batch Action Buttons (Hidden when none selected) -->
+<div class="flex items-center gap-1 opacity-40 pointer-events-none transition-all" id="batch-actions-cluster">
+<button class="flex items-center gap-1 px-space-sm py-1 rounded-xl bg-surface-subtle hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="batchAction('unstar')" title="Remove Star from Selected">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star_half</span>
+<span>Unstar</span>
+</button>
+<button class="flex items-center gap-1 px-space-sm py-1 rounded-xl bg-surface-subtle hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="batchAction('mark-read')" title="Mark as Read">
+<span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+<span>Read</span>
+</button>
+<button class="flex items-center gap-1 px-space-sm py-1 rounded-xl bg-surface-subtle hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="batchAction('archive')" title="Archive Selected">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+<span>Archive</span>
+</button>
+<button class="flex items-center gap-1 px-space-sm py-1 rounded-xl bg-surface-subtle hover:bg-error/10 hover:text-error text-on-surface font-label-md text-label-md transition-colors" onclick="batchAction('trash')" title="Move to Trash">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Delete</span>
+</button>
+<div class="h-4 w-px bg-surface-container-high mx-1"></div>
+<button class="flex items-center gap-1 px-space-sm py-1 rounded-xl bg-surface-subtle hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="batchAction('label')" title="Apply Tag or Mailbox Route">
+<span class="material-symbols-outlined text-[18px]">label</span>
+<span>Label</span>
+</button>
+</div>
+</div>
+<!-- Right-side View / Filter Controls -->
+<div class="flex items-center gap-space-sm">
+<!-- Quick Filter Dropdown -->
+<div class="relative">
+<select class="bg-surface-subtle text-on-surface font-label-md text-label-md px-3 py-1.5 rounded-xl appearance-none pr-8 cursor-pointer focus:outline-none focus:bg-surface-canvas shadow-sm" id="quick-filter-select" onchange="applyQuickFilter(this.value)">
+<option value="all">Filter: All Starred</option>
+<option value="unread">Unread Only</option>
+<option value="attachments">Has Attachments</option>
+<option value="today">Date: Today</option>
+<option value="week">Date: Last 7 Days</option>
+<option value="month">Date: Last 30 Days</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+<!-- Sort Control Dropdown -->
+<div class="relative">
+<select class="bg-surface-subtle text-on-surface font-label-md text-label-md px-3 py-1.5 rounded-xl appearance-none pr-8 cursor-pointer focus:outline-none focus:bg-surface-canvas shadow-sm" id="sort-select" onchange="applySort(this.value)">
+<option value="newest">Sort: Newest First</option>
+<option value="oldest">Sort: Oldest First</option>
+<option value="sender">Sender A-Z</option>
+<option value="subject">Subject A-Z</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-[16px] text-on-surface-variant">sort</span>
+</div>
+<!-- Refresh Button -->
+<button class="p-1.5 rounded-xl bg-surface-subtle hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all" onclick="refreshFeed()" title="Refresh Feed">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Select All Helper Menu Dropdown Modal (Dynamic) -->
+<div class="hidden absolute top-36 left-8 bg-surface-canvas rounded-xl shadow-xl p-1 z-50 flex flex-col gap-0.5 min-w-[160px]" id="select-dropdown-menu">
+<button class="text-left px-3 py-1.5 rounded-lg text-body-sm hover:bg-surface-container-high text-on-surface" onclick="selectByType('all')">Select All (15)</button>
+<button class="text-left px-3 py-1.5 rounded-lg text-body-sm hover:bg-surface-container-high text-on-surface" onclick="selectByType('none')">Select None</button>
+<button class="text-left px-3 py-1.5 rounded-lg text-body-sm hover:bg-surface-container-high text-on-surface" onclick="selectByType('read')">Select Read</button>
+<button class="text-left px-3 py-1.5 rounded-lg text-body-sm hover:bg-surface-container-high text-on-surface" onclick="selectByType('unread')">Select Unread</button>
+<button class="text-left px-3 py-1.5 rounded-lg text-body-sm hover:bg-surface-container-high text-on-surface" onclick="selectByType('inbound')">Select Inbound</button>
+<button class="text-left px-3 py-1.5 rounded-lg text-body-sm hover:bg-surface-container-high text-on-surface" onclick="selectByType('outbound')">Select Outbound</button>
+</div>
+<!-- Primary Content Area -->
+<div class="px-space-lg py-space-md max-w-7xl mx-auto w-full">
+<!-- LIVE VIEW CONTAINER -->
+<div class="flex flex-col gap-1.5 w-full" id="feed-live-container">
+<!-- ITEM 1: Inbound - Inbox - Unread -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all cursor-pointer shadow-sm" data-email-id="101" data-mailbox="sales" data-source="inbox" data-status="unread" data-type="inbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<!-- Selection & Star Trigger -->
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(101, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<!-- Unread Dot -->
+<div class="w-2 h-2 rounded-full bg-tag-notifications flex-shrink-0"></div>
+<!-- Inbound Contact Avatar -->
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+            RK
+          </div>
+<!-- Sender & Routing Info -->
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Raj Kumar (Royal Retail)</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">to sales@</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-variant font-code-sm text-[10px] text-tag-support font-semibold">Inbox</span>
+</div>
+</div>
+<!-- Mail Subject, Snippet & Pill Badges -->
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Urgent: Bulk Cracker Order Final Confirmation - Diwali 2026</span>
+<span class="px-2 py-0.5 rounded-full bg-tag-orders/10 text-tag-orders font-label-sm text-label-sm font-semibold whitespace-nowrap">Order Confirmation</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-[11px] text-on-surface-variant whitespace-nowrap">3 msgs</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Please expedite 120 Cartons Sivakasi ground chakkars, sparklers and flower pots. Attached purchase order with advance RTGS payment receipt.
+              </p>
+</div>
+</div>
+<!-- Attachment Tag -->
+<div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-canvas font-code-sm text-code-sm text-on-surface-variant flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">attachment</span>
+<span class="truncate max-w-[130px]">Catalog_Quote.pdf</span>
+<span class="text-[10px] opacity-70">2.4 MB</span>
+</div>
+<!-- Date / Timestamp -->
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-title-sm text-title-sm text-tag-notifications font-semibold">10:32 AM</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">Today</span>
+</div>
+</div>
+<!-- Floating Quick Hover Actions -->
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(101, event)" title="Unstar"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(101, event)" title="Mark as Read"><span class="material-symbols-outlined text-[16px]">mark_email_read</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(101, event)" title="Archive"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(101, event)" title="Trash"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- ITEM 2: Outbound - Sent -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-all cursor-pointer shadow-sm" data-email-id="102" data-mailbox="sales" data-source="sent" data-status="read" data-type="outbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(102, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="w-2 h-2 rounded-full bg-transparent flex-shrink-0"></div>
+<!-- Sent Outbound Avatar -->
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">outgoing_mail</span>
+</div>
+<!-- Recipient info -->
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">To: Priya Traders</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">from sales@</span>
+<span class="px-1.5 py-0.2 rounded bg-tag-sales/10 font-code-sm text-[10px] text-tag-sales font-semibold">Sent</span>
+<span class="text-tag-sales text-[11px] font-bold">✓ Delivered</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Wholesale Quotation &amp; Commercial Terms - Sivakasi Depot</span>
+<span class="px-2 py-0.5 rounded-full bg-tag-sales/10 text-tag-sales font-label-sm text-label-sm font-semibold whitespace-nowrap">Distributor</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Enclosing our revised wholesale pricing matrix for the 2026 festive season with volume slabs starting from 50 cartons upwards.
+              </p>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-subtle font-code-sm text-code-sm text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">table_chart</span>
+<span class="truncate max-w-[130px]">Price_Tier_2026.xlsx</span>
+<span class="text-[10px] opacity-70">340 KB</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Yesterday</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">4:15 PM</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(102, event)"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(102, event)"><span class="material-symbols-outlined text-[16px]">mark_email_unread</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(102, event)"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(102, event)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- ITEM 3: Inbound - Inbox - Billing -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-all cursor-pointer shadow-sm" data-email-id="103" data-mailbox="billing" data-source="inbox" data-status="read" data-type="inbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(103, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="w-2 h-2 rounded-full bg-transparent flex-shrink-0"></div>
+<div class="w-8 h-8 rounded-full bg-tag-billing/10 text-tag-billing font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+            RZ
+          </div>
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Razorpay Merchant Gateway</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">to billing@</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-variant font-code-sm text-[10px] text-tag-support font-semibold">Inbox</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Settlement Confirmed: INR 4,82,450.00 transferred to HDFC</span>
+<span class="px-2 py-0.5 rounded-full bg-tag-billing/10 text-tag-billing font-label-sm text-label-sm font-semibold whitespace-nowrap">Payout</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                UTR: UTIB000291048 batch settlement for B2B portal online purchases processed successfully. Check settlement ledger.
+              </p>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-subtle font-code-sm text-code-sm text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">picture_as_pdf</span>
+<span class="truncate max-w-[130px]">Payout_Advice_88219.pdf</span>
+<span class="text-[10px] opacity-70">890 KB</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Oct 24</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">11:04 AM</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(103, event)"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(103, event)"><span class="material-symbols-outlined text-[16px]">mark_email_unread</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(103, event)"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(103, event)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- ITEM 4: Inbound - Archived - Compliance -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-all cursor-pointer shadow-sm" data-email-id="104" data-mailbox="contact" data-source="archived" data-status="read" data-type="inbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(104, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="w-2 h-2 rounded-full bg-transparent flex-shrink-0"></div>
+<div class="w-8 h-8 rounded-full bg-tag-contact/10 text-tag-contact font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+            FS
+          </div>
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Tamil Nadu Fire &amp; Safety Dept</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">to contact@</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-container font-code-sm text-[10px] text-on-secondary-container font-semibold">Archived</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Statutory Compliance: Annual PESO Sivakasi Hub Inspection Passed</span>
+<span class="px-2 py-0.5 rounded-full bg-tag-contact/10 text-tag-contact font-label-sm text-label-sm font-semibold whitespace-nowrap">PESO Clearance</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Official safety clearance certificate granted for 2026-2027 fiscal. Storage norms in compliance with explosive regulations.
+              </p>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-subtle font-code-sm text-code-sm text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span class="truncate max-w-[130px]">PESO_Certified_Notice.pdf</span>
+<span class="text-[10px] opacity-70">1.8 MB</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Oct 22</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">9:20 AM</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(104, event)"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(104, event)"><span class="material-symbols-outlined text-[16px]">mark_email_unread</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(104, event)"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(104, event)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- ITEM 5: Outbound - Sent -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-all cursor-pointer shadow-sm" data-email-id="105" data-mailbox="info" data-source="sent" data-status="read" data-type="outbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(105, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="w-2 h-2 rounded-full bg-transparent flex-shrink-0"></div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">outgoing_mail</span>
+</div>
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">To: Sunita Rao (Event Fireworks Co)</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">from info@</span>
+<span class="px-1.5 py-0.2 rounded bg-tag-sales/10 font-code-sm text-[10px] text-tag-sales font-semibold">Sent</span>
+<span class="text-tag-sales text-[11px] font-bold">✓ Delivered</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Event Aerial Shell Safety Protocol &amp; Transportation Manifest</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-[11px] text-on-surface-variant whitespace-nowrap">2 msgs</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Standard operating procedures for stage pyrotechnics transport including Sivakasi driver clearance letters and vehicle escorts.
+              </p>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-subtle font-code-sm text-code-sm text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">attachment</span>
+<span class="truncate max-w-[130px]">Manifest_Oct20.pdf</span>
+<span class="text-[10px] opacity-70">1.2 MB</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Oct 20</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">3:40 PM</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(105, event)"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(105, event)"><span class="material-symbols-outlined text-[16px]">mark_email_unread</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(105, event)"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(105, event)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- ITEM 6: Inbound - Orders -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-all cursor-pointer shadow-sm" data-email-id="106" data-mailbox="orders" data-source="inbox" data-status="read" data-type="inbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(106, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="w-2 h-2 rounded-full bg-transparent flex-shrink-0"></div>
+<div class="w-8 h-8 rounded-full bg-tag-orders/10 text-tag-orders font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+            MS
+          </div>
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Murugan &amp; Sons Distributors</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">to orders@</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-variant font-code-sm text-[10px] text-tag-support font-semibold">Inbox</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Purchase Order PO-2026-9042 - 250 Master Cartons</span>
+<span class="px-2 py-0.5 rounded-full bg-tag-orders/10 text-tag-orders font-label-sm text-label-sm font-semibold whitespace-nowrap">PO Confirmed</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Sivakasi loading schedule confirmation requested for Nov 1st batch dispatch. Advance 50% paid.
+              </p>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-subtle font-code-sm text-code-sm text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">receipt_long</span>
+<span class="truncate max-w-[130px]">PO_9042_Signed.pdf</span>
+<span class="text-[10px] opacity-70">1.6 MB</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Oct 19</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">1:15 PM</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(106, event)"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(106, event)"><span class="material-symbols-outlined text-[16px]">mark_email_unread</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(106, event)"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(106, event)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- ITEM 7: Inbound - Admin -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-all cursor-pointer shadow-sm" data-email-id="107" data-mailbox="admin" data-source="inbox" data-status="read" data-type="inbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(107, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="w-2 h-2 rounded-full bg-transparent flex-shrink-0"></div>
+<div class="w-8 h-8 rounded-full bg-tag-admin/10 text-tag-admin font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+            AW
+          </div>
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Amazon Web Services Cloud</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">to admin@</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-variant font-code-sm text-[10px] text-tag-support font-semibold">Inbox</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface truncate">AWS Production Cluster Hosting Invoice #INV-99214</span>
+<span class="px-2 py-0.5 rounded-full bg-tag-admin/10 text-tag-admin font-label-sm text-label-sm font-semibold whitespace-nowrap">Infrastructure</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                E-commerce web API, SES notification relays, and database replication instance costs for peak festive demand load.
+              </p>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-subtle font-code-sm text-code-sm text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">receipt</span>
+<span class="truncate max-w-[130px]">AWS_Oct_Invoice.pdf</span>
+<span class="text-[10px] opacity-70">420 KB</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Oct 18</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">6:50 PM</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(107, event)"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(107, event)"><span class="material-symbols-outlined text-[16px]">mark_email_unread</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(107, event)"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(107, event)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- ITEM 8: Outbound - Sent -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-all cursor-pointer shadow-sm" data-email-id="108" data-mailbox="billing" data-source="sent" data-status="read" data-type="outbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(108, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="w-2 h-2 rounded-full bg-transparent flex-shrink-0"></div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">outgoing_mail</span>
+</div>
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">To: Accounts Team</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">from billing@</span>
+<span class="px-1.5 py-0.2 rounded bg-tag-sales/10 font-code-sm text-[10px] text-tag-sales font-semibold">Sent</span>
+<span class="text-tag-sales text-[11px] font-bold">✓ Delivered</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Internal Audit: Q3 GST Input Tax Credit Reconciliation</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                GSTR-2B vs Sivakasi Raw Materials Purchase Books reconciliation completed. INR 14.8L input claimed.
+              </p>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-subtle font-code-sm text-code-sm text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">table_view</span>
+<span class="truncate max-w-[130px]">Audit_Summary.xlsx</span>
+<span class="text-[10px] opacity-70">512 KB</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Oct 16</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">2:00 PM</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(108, event)"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(108, event)"><span class="material-symbols-outlined text-[16px]">mark_email_unread</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(108, event)"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(108, event)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- ITEM 9: Inbound - Archived - Admin -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-all cursor-pointer shadow-sm" data-email-id="109" data-mailbox="admin" data-source="archived" data-status="read" data-type="inbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(109, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="w-2 h-2 rounded-full bg-transparent flex-shrink-0"></div>
+<div class="w-8 h-8 rounded-full bg-tag-admin/10 text-tag-admin font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+            SC
+          </div>
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Sivakasi Chamber of Pyrotechnics</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">to admin@</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-container font-code-sm text-[10px] text-on-secondary-container font-semibold">Archived</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Regional Logistics Freight Tariff Revision 2026</span>
+<span class="px-2 py-0.5 rounded-full bg-tag-notifications/10 text-tag-notifications font-label-sm text-label-sm font-semibold whitespace-nowrap">Logistics</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Interstate explosive cargo carrier union revised tariffs across Tamil Nadu, Karnataka and Maharashtra routes.
+              </p>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-subtle font-code-sm text-code-sm text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">attachment</span>
+<span class="truncate max-w-[130px]">Circular_Ref_104.pdf</span>
+<span class="text-[10px] opacity-70">760 KB</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Oct 15</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">10:18 AM</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(109, event)"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(109, event)"><span class="material-symbols-outlined text-[16px]">mark_email_unread</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(109, event)"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(109, event)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- ITEM 10: Outbound - Sent -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-all cursor-pointer shadow-sm" data-email-id="110" data-mailbox="orders" data-source="sent" data-status="read" data-type="outbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(110, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="w-2 h-2 rounded-full bg-transparent flex-shrink-0"></div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">outgoing_mail</span>
+</div>
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">To: Deepak Patel (Gujarat Agency)</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">from orders@</span>
+<span class="px-1.5 py-0.2 rounded bg-tag-sales/10 font-code-sm text-[10px] text-tag-sales font-semibold">Sent</span>
+<span class="text-tag-sales text-[11px] font-bold">✓ Delivered</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Order Dispatch Notice: Sivakasi Express Cargo Consignment #CK-8910</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Lorry freight truck TN-67-AH-4122 departed depot. Expected delivery date Oct 17. Track vehicle live using driver mobile credentials.
+              </p>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-subtle font-code-sm text-code-sm text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+<span class="truncate max-w-[130px]">Waybill_8910.pdf</span>
+<span class="text-[10px] opacity-70">310 KB</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Oct 14</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">5:12 PM</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(110, event)"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(110, event)"><span class="material-symbols-outlined text-[16px]">mark_email_unread</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(110, event)"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(110, event)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- ITEM 11: Inbound - Sales -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-all cursor-pointer shadow-sm" data-email-id="111" data-mailbox="sales" data-source="inbox" data-status="read" data-type="inbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(111, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="w-2 h-2 rounded-full bg-transparent flex-shrink-0"></div>
+<div class="w-8 h-8 rounded-full bg-tag-sales/10 text-tag-sales font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+            RP
+          </div>
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Royal Palace Fireworks Blr</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">to sales@</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-variant font-code-sm text-[10px] text-tag-support font-semibold">Inbox</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Quotation Request for Luxury Sparkling Sky Lanterns &amp; Crackers</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-[11px] text-on-surface-variant whitespace-nowrap">4 msgs</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Mega grand celebration banquet in Palace Grounds Bangalore on Diwali eve. Need aerial repeater shells assortment.
+              </p>
+</div>
+</div>
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Oct 12</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">11:45 AM</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(111, event)"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(111, event)"><span class="material-symbols-outlined text-[16px]">mark_email_unread</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(111, event)"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(111, event)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- ITEM 12: Outbound - Sent (Pending Status) -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-all cursor-pointer shadow-sm" data-email-id="112" data-mailbox="orders" data-source="sent" data-status="read" data-type="outbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(112, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="w-2 h-2 rounded-full bg-transparent flex-shrink-0"></div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">outgoing_mail</span>
+</div>
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">To: Rajesh Packaging Sivakasi</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">from orders@</span>
+<span class="px-1.5 py-0.2 rounded bg-tag-sales/10 font-code-sm text-[10px] text-tag-sales font-semibold">Sent</span>
+<span class="text-tertiary text-[11px] font-bold">⏳ Pending Delivery</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Corrugated Master Box Purchase Contract #PO-8849</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Procurement agreement for 5,000 double-wall export grade packing cartons with explosive hazard warning labels printed.
+              </p>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-subtle font-code-sm text-code-sm text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">description</span>
+<span class="truncate max-w-[130px]">Specs_Sheet.pdf</span>
+<span class="text-[10px] opacity-70">1.4 MB</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Oct 10</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">4:40 PM</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md border-0 px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(112, event)"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(112, event)"><span class="material-symbols-outlined text-[16px]">mark_email_unread</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(112, event)"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(112, event)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- ITEM 13: Inbound - Archived -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-all cursor-pointer shadow-sm" data-email-id="113" data-mailbox="contact" data-source="archived" data-status="read" data-type="inbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(113, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="w-2 h-2 rounded-full bg-transparent flex-shrink-0"></div>
+<div class="w-8 h-8 rounded-full bg-tag-contact/10 text-tag-contact font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+            NG
+          </div>
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">National Green Tribunal Cell</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">to contact@</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-container font-code-sm text-[10px] text-on-secondary-container font-semibold">Archived</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Green Cracker Eco-Mark Certification Verification</span>
+<span class="px-2 py-0.5 rounded-full bg-tag-sales/10 text-tag-sales font-label-sm text-label-sm font-semibold whitespace-nowrap">Eco-Approved</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                CSIR-NEERI barium-free formulation chemical audit report accepted. QR Code emission certificates issued.
+              </p>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-subtle font-code-sm text-code-sm text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">task</span>
+<span class="truncate max-w-[130px]">Green_Cert_2026.pdf</span>
+<span class="text-[10px] opacity-70">2.1 MB</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Oct 08</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">3:25 PM</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(113, event)"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(113, event)"><span class="material-symbols-outlined text-[16px]">mark_email_unread</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(113, event)"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(113, event)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- ITEM 14: Inbound - Support -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-all cursor-pointer shadow-sm" data-email-id="114" data-mailbox="support" data-source="inbox" data-status="read" data-type="inbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(114, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="w-2 h-2 rounded-full bg-transparent flex-shrink-0"></div>
+<div class="w-8 h-8 rounded-full bg-tag-support/10 text-tag-support font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+            SB
+          </div>
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Suresh Babu Retailers Madurai</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">to support@</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-variant font-code-sm text-[10px] text-tag-support font-semibold">Inbox</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Assistance with Customer Portal Login &amp; Consignment Tracking</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-[11px] text-on-surface-variant whitespace-nowrap">2 msgs</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Customer account unlocked by support tech. OTP phone verified and customer logged in successfully.
+              </p>
+</div>
+</div>
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Oct 05</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">2:10 PM</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(114, event)"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(114, event)"><span class="material-symbols-outlined text-[16px]">mark_email_unread</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(114, event)"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(114, event)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<!-- ITEM 15: Outbound - Sent -->
+<div class="email-row group relative flex items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-all cursor-pointer shadow-sm" data-email-id="115" data-mailbox="sales" data-source="sent" data-status="read" data-type="outbound">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="flex items-center gap-2 flex-shrink-0" onclick="event.stopPropagation()">
+<input class="row-checkbox w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+<button class="star-btn text-tertiary hover:scale-110 transition-transform" onclick="toggleStar(115, event)">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="w-2 h-2 rounded-full bg-transparent flex-shrink-0"></div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center justify-center font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">outgoing_mail</span>
+</div>
+<div class="flex flex-col min-w-[210px] max-w-[230px] truncate flex-shrink-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">To: Vikram Verma (North Distribution)</span>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-code-sm text-[10px] text-on-surface-variant">from sales@</span>
+<span class="px-1.5 py-0.2 rounded bg-tag-sales/10 font-code-sm text-[10px] text-tag-sales font-semibold">Sent</span>
+<span class="text-tag-sales text-[11px] font-bold">✓ Delivered</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0 flex-1">
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Diwali Distributorship Agreement Final Copy</span>
+<span class="px-2 py-0.5 rounded-full bg-tag-sales/10 text-tag-sales font-label-sm text-label-sm font-semibold whitespace-nowrap">Distributor</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Counter-signed regional exclusive sales agreement for Delhi NCR &amp; Haryana territory. Minimum sales targets attached.
+              </p>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-subtle font-code-sm text-code-sm text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">policy</span>
+<span class="truncate max-w-[130px]">Agreement_Final_Stamped.pdf</span>
+<span class="text-[10px] opacity-70">3.2 MB</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] flex-shrink-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Oct 03</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">11:15 AM</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-md px-2 py-1 rounded-xl z-20" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="toggleStar(115, event)"><span class="material-symbols-outlined text-[16px]">star</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="toggleReadRow(115, event)"><span class="material-symbols-outlined text-[16px]">mark_email_unread</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="archiveRow(115, event)"><span class="material-symbols-outlined text-[16px]">archive</span></button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-error" onclick="deleteRow(115, event)"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+</div>
+<!-- SKELETON LOADING VIEW (Toggled via Switcher) -->
+<div class="hidden flex-col gap-2 w-full animate-pulse" id="feed-skeleton-container">
+<div class="h-16 bg-surface-canvas rounded-xl w-full flex items-center px-4 gap-4">
+<div class="w-4 h-4 bg-surface-container-high rounded"></div>
+<div class="w-5 h-5 bg-surface-container-high rounded-full"></div>
+<div class="w-8 h-8 bg-surface-container-high rounded-full"></div>
+<div class="w-48 h-4 bg-surface-container-high rounded"></div>
+<div class="w-full h-4 bg-surface-container-high rounded flex-1"></div>
+<div class="w-20 h-4 bg-surface-container-high rounded"></div>
+</div>
+<div class="h-16 bg-surface-canvas rounded-xl w-full flex items-center px-4 gap-4">
+<div class="w-4 h-4 bg-surface-container-high rounded"></div>
+<div class="w-5 h-5 bg-surface-container-high rounded-full"></div>
+<div class="w-8 h-8 bg-surface-container-high rounded-full"></div>
+<div class="w-40 h-4 bg-surface-container-high rounded"></div>
+<div class="w-full h-4 bg-surface-container-high rounded flex-1"></div>
+<div class="w-20 h-4 bg-surface-container-high rounded"></div>
+</div>
+<div class="h-16 bg-surface-canvas rounded-xl w-full flex items-center px-4 gap-4">
+<div class="w-4 h-4 bg-surface-container-high rounded"></div>
+<div class="w-5 h-5 bg-surface-container-high rounded-full"></div>
+<div class="w-8 h-8 bg-surface-container-high rounded-full"></div>
+<div class="w-44 h-4 bg-surface-container-high rounded"></div>
+<div class="w-full h-4 bg-surface-container-high rounded flex-1"></div>
+<div class="w-20 h-4 bg-surface-container-high rounded"></div>
+</div>
+<div class="h-16 bg-surface-canvas rounded-xl w-full flex items-center px-4 gap-4">
+<div class="w-4 h-4 bg-surface-container-high rounded"></div>
+<div class="w-5 h-5 bg-surface-container-high rounded-full"></div>
+<div class="w-8 h-8 bg-surface-container-high rounded-full"></div>
+<div class="w-36 h-4 bg-surface-container-high rounded"></div>
+<div class="w-full h-4 bg-surface-container-high rounded flex-1"></div>
+<div class="w-20 h-4 bg-surface-container-high rounded"></div>
+</div>
+<div class="h-16 bg-surface-canvas rounded-xl w-full flex items-center px-4 gap-4">
+<div class="w-4 h-4 bg-surface-container-high rounded"></div>
+<div class="w-5 h-5 bg-surface-container-high rounded-full"></div>
+<div class="w-8 h-8 bg-surface-container-high rounded-full"></div>
+<div class="w-48 h-4 bg-surface-container-high rounded"></div>
+<div class="w-full h-4 bg-surface-container-high rounded flex-1"></div>
+<div class="w-20 h-4 bg-surface-container-high rounded"></div>
+</div>
+</div>
+<!-- ZERO / EMPTY STATE VIEW (Toggled via Switcher) -->
+<div class="hidden flex-col items-center justify-center py-20 px-space-lg text-center bg-surface-canvas rounded-2xl shadow-sm" id="feed-empty-container">
+<div class="w-20 h-20 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-space-md shadow-inner">
+<span class="material-symbols-outlined text-[42px]" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">No Starred Emails Yet</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-space-lg">
+        Click the star icon next to any critical email across Inbox, Sent, or Archived folders to pin it right here for instant access.
+      </p>
+<div class="flex items-center gap-space-sm">
+<a class="px-space-lg py-2.5 rounded-xl bg-tag-notifications hover:bg-primary text-on-primary font-title-sm text-title-sm shadow-md transition-all flex items-center gap-2" data-path="inbox" href="#">
+<span class="material-symbols-outlined text-[18px]">inbox</span>
+<span>Go to Inbox</span>
+</a>
+<button class="px-space-lg py-2.5 rounded-xl bg-surface-subtle hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm transition-all" onclick="setViewState('live')">
+          Restore Starred Demo
+        </button>
+</div>
+</div>
+<!-- Server-side Pagination & Stats Bar -->
+<div class="mt-space-lg bg-surface-canvas px-space-lg py-space-md rounded-xl shadow-sm flex flex-wrap items-center justify-between gap-space-md" id="pagination-toolbar">
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span>Showing <strong class="text-on-surface font-semibold" id="pagination-showing-count">1–15</strong> of <strong class="text-on-surface font-semibold" id="pagination-total-count">24</strong> starred items</span>
+<div class="flex items-center gap-1.5 ml-space-sm">
+<span>Show:</span>
+<select class="bg-surface-subtle text-on-surface rounded-lg px-2 py-1 font-code-sm text-code-sm border-0 focus:outline-none focus:ring-1 focus:ring-tag-notifications">
+<option selected="">15</option>
+<option>25</option>
+<option>50</option>
+<option>100</option>
+</select>
+</div>
+</div>
+<!-- Pagination Numbers -->
+<div class="flex items-center gap-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-subtle text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md disabled:opacity-40 flex items-center gap-1" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Previous</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-tag-notifications text-on-primary font-label-sm text-label-sm font-semibold flex items-center justify-center">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-subtle hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center justify-center">2</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-subtle text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center gap-1">
+<span>Next</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Toast Notification Dynamic Container -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none" id="toast-shelf"></div>
+<!-- Interactive JavaScript -->
+<script>
+    // State Tracker
+    let currentSelectedIds = new Set();
+    let currentUnstarredIds = new Set();
+
+    // 1. Toast Notification Utility
+    function showToast(message, actionLabel = null, actionCallback = null) {
+      const shelf = document.getElementById('toast-shelf');
+      const toast = document.createElement('div');
+      toast.className = 'pointer-events-auto flex items-center gap-3 px-4 py-3 rounded-xl bg-on-surface text-surface-canvas shadow-xl text-body-sm font-medium transition-all transform translate-y-4 opacity-0';
+      
+      let html = `<span>${message}</span>`;
+      if (actionLabel) {
+        html += `<button class="toast-undo text-primary-fixed font-bold hover:underline ml-2 uppercase text-label-sm">${actionLabel}</button>`;
+      }
+      toast.innerHTML = html;
+      shelf.appendChild(toast);
+
+      // Trigger animation
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-4', 'opacity-0');
+      });
+
+      if (actionLabel && actionCallback) {
+        toast.querySelector('.toast-undo').onclick = () => {
+          actionCallback();
+          dismissToast(toast);
+        };
+      }
+
+      // Auto dismiss after 4 seconds
+      setTimeout(() => {
+        dismissToast(toast);
+      }, 4000);
+    }
+
+    function dismissToast(toastEl) {
+      if (!toastEl) return;
+      toastEl.classList.add('opacity-0', 'translate-y-2');
+      setTimeout(() => {
+        toastEl.remove();
+      }, 300);
+    }
+
+    // 2. Star Toggle with Optimistic Row Hiding + Undo
+    function toggleStar(emailId, event) {
+      if (event) event.stopPropagation();
+      const row = document.querySelector(`.email-row[data-email-id="${emailId}"]`);
+      if (!row) return;
+
+      currentUnstarredIds.add(emailId);
+      row.classList.add('opacity-40');
+      
+      setTimeout(() => {
+        row.style.display = 'none';
+        updateCountersAfterStarRemoval();
+      }, 250);
+
+      showToast(`Email unstarred & removed from Starred`, 'Undo', () => {
+        currentUnstarredIds.delete(emailId);
+        row.style.display = 'flex';
+        requestAnimationFrame(() => {
+          row.classList.remove('opacity-40');
+        });
+        updateCountersAfterStarRemoval();
+      });
+    }
+
+    function updateCountersAfterStarRemoval() {
+      const visibleRows = document.querySelectorAll('.email-row:not([style*="display: none"])');
+      const count = visibleRows.length;
+      document.getElementById('pagination-showing-count').innerText = `1–${count}`;
+      document.getElementById('global-badge-count').innerText = `${count}`;
+      if (count === 0) {
+        setViewState('empty');
+      }
+    }
+
+    // 3. Selection Handlers
+    function updateSelectedCount() {
+      const checkboxes = document.querySelectorAll('.row-checkbox:checked');
+      const count = checkboxes.length;
+      const counterWrapper = document.getElementById('selection-counter-wrapper');
+      const counterNum = document.getElementById('selected-count-number');
+      const batchCluster = document.getElementById('batch-actions-cluster');
+      const masterCheckbox = document.getElementById('master-select-checkbox');
+
+      counterNum.innerText = count;
+      if (count > 0) {
+        counterWrapper.classList.remove('hidden');
+        counterWrapper.classList.add('flex');
+        batchCluster.classList.remove('opacity-40', 'pointer-events-none');
+        masterCheckbox.indeterminate = (count < document.querySelectorAll('.row-checkbox').length);
+      } else {
+        counterWrapper.classList.add('hidden');
+        counterWrapper.classList.remove('flex');
+        batchCluster.classList.add('opacity-40', 'pointer-events-none');
+        masterCheckbox.indeterminate = false;
+        masterCheckbox.checked = false;
+      }
+    }
+
+    function toggleSelectAll(isChecked) {
+      document.querySelectorAll('.email-row:not([style*="display: none"]) .row-checkbox').forEach(cb => {
+        cb.checked = isChecked;
+      });
+      updateSelectedCount();
+    }
+
+    function clearSelection() {
+      document.querySelectorAll('.row-checkbox').forEach(cb => cb.checked = false);
+      const masterCheckbox = document.getElementById('master-select-checkbox');
+      if (masterCheckbox) masterCheckbox.checked = false;
+      updateSelectedCount();
+    }
+
+    function toggleSelectDropdown(event) {
+      event.stopPropagation();
+      const menu = document.getElementById('select-dropdown-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    document.addEventListener('click', () => {
+      const menu = document.getElementById('select-dropdown-menu');
+      if (menu && !menu.classList.contains('hidden')) {
+        menu.classList.add('hidden');
+      }
+    });
+
+    function selectByType(type) {
+      clearSelection();
+      const visibleRows = document.querySelectorAll('.email-row:not([style*="display: none"])');
+      visibleRows.forEach(row => {
+        const cb = row.querySelector('.row-checkbox');
+        if (!cb) return;
+        if (type === 'all') cb.checked = true;
+        if (type === 'read' && row.getAttribute('data-status') === 'read') cb.checked = true;
+        if (type === 'unread' && row.getAttribute('data-status') === 'unread') cb.checked = true;
+        if (type === 'inbound' && row.getAttribute('data-type') === 'inbound') cb.checked = true;
+        if (type === 'outbound' && row.getAttribute('data-type') === 'outbound') cb.checked = true;
+      });
+      updateSelectedCount();
+    }
+
+    // 4. Batch Actions
+    function batchAction(action) {
+      const selectedBoxes = document.querySelectorAll('.row-checkbox:checked');
+      const count = selectedBoxes.length;
+      if (count === 0) return;
+
+      if (action === 'unstar') {
+        selectedBoxes.forEach(cb => {
+          const row = cb.closest('.email-row');
+          if (row) {
+            const id = row.getAttribute('data-email-id');
+            currentUnstarredIds.add(id);
+            row.style.display = 'none';
+          }
+        });
+        clearSelection();
+        updateCountersAfterStarRemoval();
+        showToast(`${count} messages unstarred`, 'Undo', () => {
+          selectedBoxes.forEach(cb => {
+            const row = cb.closest('.email-row');
+            if (row) row.style.display = 'flex';
+          });
+          updateCountersAfterStarRemoval();
+        });
+      } else if (action === 'mark-read') {
+        selectedBoxes.forEach(cb => {
+          const row = cb.closest('.email-row');
+          if (row) {
+            row.setAttribute('data-status', 'read');
+            row.classList.remove('bg-surface-container-low');
+            row.classList.add('bg-surface-canvas');
+            const unreadDot = row.querySelector('.bg-tag-notifications');
+            if (unreadDot) unreadDot.classList.replace('bg-tag-notifications', 'bg-transparent');
+          }
+        });
+        clearSelection();
+        showToast(`Marked ${count} messages as read`);
+      } else if (action === 'archive') {
+        clearSelection();
+        showToast(`${count} messages moved to Archive (retained in Starred)`);
+      } else if (action === 'trash') {
+        selectedBoxes.forEach(cb => {
+          const row = cb.closest('.email-row');
+          if (row) row.style.display = 'none';
+        });
+        clearSelection();
+        updateCountersAfterStarRemoval();
+        showToast(`${count} messages moved to Trash`, 'Undo', () => {
+          selectedBoxes.forEach(cb => {
+            const row = cb.closest('.email-row');
+            if (row) row.style.display = 'flex';
+          });
+          updateCountersAfterStarRemoval();
+        });
+      } else if (action === 'label') {
+        showToast(`Tags and Mailbox labels updated`);
+      }
+    }
+
+    // 5. Individual Row Actions
+    function toggleReadRow(id, e) {
+      e.stopPropagation();
+      const row = document.querySelector(`.email-row[data-email-id="${id}"]`);
+      if (!row) return;
+      const isUnread = row.getAttribute('data-status') === 'unread';
+      if (isUnread) {
+        row.setAttribute('data-status', 'read');
+        row.classList.remove('bg-surface-container-low');
+        row.classList.add('bg-surface-canvas');
+        showToast('Marked as read');
+      } else {
+        row.setAttribute('data-status', 'unread');
+        row.classList.remove('bg-surface-canvas');
+        row.classList.add('bg-surface-container-low');
+        showToast('Marked as unread');
+      }
+    }
+
+    function archiveRow(id, e) {
+      e.stopPropagation();
+      showToast('Thread moved to Archived (remains Starred)');
+    }
+
+    function deleteRow(id, e) {
+      e.stopPropagation();
+      const row = document.querySelector(`.email-row[data-email-id="${id}"]`);
+      if (row) {
+        row.style.display = 'none';
+        updateCountersAfterStarRemoval();
+        showToast('Message moved to Trash', 'Undo', () => {
+          row.style.display = 'flex';
+          updateCountersAfterStarRemoval();
+        });
+      }
+    }
+
+    // 6. Navigation Link Simulation
+    document.querySelectorAll('.email-row').forEach(row => {
+      row.addEventListener('click', (e) => {
+        // Ignore clicks if selecting checkbox or star
+        if (e.target.closest('input') || e.target.closest('button')) return;
+        const emailId = row.getAttribute('data-email-id');
+        showToast(`Opening Starred Message #${emailId}...`);
+      });
+    });
+
+    // 7. Filtering by Mailbox Ribbon
+    function filterMailbox(dept, btn) {
+      document.querySelectorAll('#mailbox-filter-bar button').forEach(b => {
+        b.className = 'filter-pill px-3 py-1.5 rounded-xl font-label-sm text-label-sm flex items-center gap-1.5 bg-surface-subtle text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all';
+      });
+      btn.className = 'filter-pill active px-3 py-1.5 rounded-xl font-label-sm text-label-sm flex items-center gap-1.5 bg-on-surface text-surface-canvas transition-all';
+
+      const rows = document.querySelectorAll('.email-row');
+      let visibleCount = 0;
+      rows.forEach(r => {
+        if (currentUnstarredIds.has(r.getAttribute('data-email-id'))) return;
+        if (dept === 'all' || r.getAttribute('data-mailbox') === dept) {
+          r.style.display = 'flex';
+          visibleCount++;
+        } else {
+          r.style.display = 'none';
+        }
+      });
+      document.getElementById('pagination-showing-count').innerText = `1–${visibleCount}`;
+    }
+
+    // 8. Filtering by Source (Inbox, Sent, Archived)
+    function filterSource(src, btn) {
+      document.querySelectorAll('#source-filter-cluster .source-tab').forEach(t => {
+        t.className = 'source-tab font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 pb-1 relative transition-colors';
+        const indicator = t.querySelector('div');
+        if (indicator) indicator.remove();
+      });
+      btn.className = 'source-tab active font-title-sm text-title-sm text-tag-notifications flex items-center gap-1.5 pb-1 relative transition-colors';
+      const line = document.createElement('div');
+      line.className = 'absolute bottom-0 left-0 right-0 h-0.5 bg-tag-notifications rounded-full';
+      btn.appendChild(line);
+
+      const rows = document.querySelectorAll('.email-row');
+      let visibleCount = 0;
+      rows.forEach(r => {
+        if (currentUnstarredIds.has(r.getAttribute('data-email-id'))) return;
+        if (src === 'all' || r.getAttribute('data-source') === src) {
+          r.style.display = 'flex';
+          visibleCount++;
+        } else {
+          r.style.display = 'none';
+        }
+      });
+      document.getElementById('pagination-showing-count').innerText = `1–${visibleCount}`;
+    }
+
+    // 9. View State Switcher (Live / Skeleton / Empty)
+    function setViewState(state) {
+      const live = document.getElementById('feed-live-container');
+      const skeleton = document.getElementById('feed-skeleton-container');
+      const empty = document.getElementById('feed-empty-container');
+      const pagination = document.getElementById('pagination-toolbar');
+
+      // Reset button styles
+      ['live', 'loading', 'empty'].forEach(s => {
+        const b = document.getElementById(`view-state-${s}`);
+        b.className = 'px-space-md py-1 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all';
+      });
+      const activeBtn = document.getElementById(`view-state-${state}`);
+      if (activeBtn) {
+        activeBtn.className = 'px-space-md py-1 rounded-lg font-label-sm text-label-sm bg-surface-canvas text-tag-notifications shadow-sm font-semibold transition-all';
+      }
+
+      if (state === 'live') {
+        live.classList.remove('hidden');
+        skeleton.classList.add('hidden');
+        skeleton.classList.remove('flex');
+        empty.classList.add('hidden');
+        empty.classList.remove('flex');
+        pagination.classList.remove('hidden');
+      } else if (state === 'loading') {
+        live.classList.add('hidden');
+        skeleton.classList.remove('hidden');
+        skeleton.classList.add('flex');
+        empty.classList.add('hidden');
+        empty.classList.remove('flex');
+        pagination.classList.add('hidden');
+      } else if (state === 'empty') {
+        live.classList.add('hidden');
+        skeleton.classList.add('hidden');
+        skeleton.classList.remove('flex');
+        empty.classList.remove('hidden');
+        empty.classList.add('flex');
+        pagination.classList.add('hidden');
+      }
+    }
+
+    // 10. Quick Filter and Refresh Handlers
+    function applyQuickFilter(val) {
+      showToast(`Filtered by: ${val}`);
+    }
+
+    function applySort(val) {
+      showToast(`Sorted by: ${val}`);
+    }
+
+    function refreshFeed() {
+      setViewState('loading');
+      setTimeout(() => {
+        setViewState('live');
+        showToast('Starred messages updated');
+      }, 650);
+    }
+
+    function toggleGrouping(mode) {
+      const indBtn = document.getElementById('view-mode-individual');
+      const threadBtn = document.getElementById('view-mode-thread');
+      if (mode === 'individual') {
+        indBtn.className = 'px-space-sm py-1 rounded-lg font-label-sm text-label-sm bg-surface-canvas text-on-surface shadow-sm font-semibold flex items-center gap-1';
+        threadBtn.className = 'px-space-sm py-1 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1';
+        showToast('Viewing individual messages');
+      } else {
+        threadBtn.className = 'px-space-sm py-1 rounded-lg font-label-sm text-label-sm bg-surface-canvas text-on-surface shadow-sm font-semibold flex items-center gap-1';
+        indBtn.className = 'px-space-sm py-1 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1';
+        showToast('Grouped by conversation threads');
+      }
+    }
+  </script>
+</div></main></div></body></html>

@@ -1,0 +1,82 @@
+/* RTCrackers runtime-adaptive layout layer.
+   Layout values are supplied continuously by adaptive-layout.js from the actual
+   rendered container/viewport size. No device-type breakpoints are used here. */
+:root {
+  --rt-runtime-gutter: 18px;
+  --rt-runtime-gap: 16px;
+  --rt-runtime-scale: 1;
+  --rt-runtime-page-max: 1800px;
+}
+
+html, body { min-width: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+img, video, canvas, svg { max-width: 100%; }
+
+.container,
+.stitch-shell,
+.rt-shell-header .shell-inner,
+.rt-shell-footer .footer-main {
+  width: min(calc(100% - (2 * var(--rt-runtime-gutter))), var(--rt-runtime-page-max)) !important;
+  margin-inline: auto !important;
+}
+
+main, section, article, aside, header, footer { min-width: 0; }
+
+/* Runtime-generated grid values override legacy breakpoint grids. */
+.rt-runtime-grid { grid-template-columns: repeat(var(--rt-runtime-cols, 1), minmax(0, 1fr)) !important; gap: var(--rt-runtime-gap, 16px) !important; }
+.rt-runtime-stack { display: flex !important; flex-direction: column !important; }
+.rt-runtime-wrap { flex-wrap: wrap !important; }
+
+/* The shell menu is controlled by measured navigation fit, not device width. */
+.rt-shell-menu.rt-runtime-visible { display: inline-flex !important; align-items: center; justify-content: center; margin-left: auto; }
+.rt-shell-nav.rt-runtime-hidden { display: none !important; }
+.rt-shell-actions.rt-runtime-tight .desktop-only { display: none !important; }
+
+/* Existing mobile-nav is only opened when the measured shell cannot fit. */
+.rt-shell-header .rt-shell-mobile { max-height: min(70vh, 520px); overflow: auto; }
+
+/* Admin drawers are compact by default and expand only on explicit arrow click. */
+.adm-layout.rt-admin-runtime { grid-template-columns: var(--rt-admin-left, 48px) minmax(0, 1fr) var(--rt-admin-right, 48px) !important; gap: var(--rt-admin-gap, 10px) !important; }
+.adm-side.rt-runtime-collapsed { width: 48px !important; min-width: 48px !important; padding-inline: 6px !important; }
+.adm-side.rt-runtime-expanded { width: var(--rt-admin-expanded, 204px) !important; min-width: var(--rt-admin-expanded, 204px) !important; }
+.adm-side.rt-runtime-collapsed .adm-side-title,
+.adm-side.rt-runtime-collapsed .adm-side-label { display: none !important; }
+.adm-side.rt-runtime-collapsed .adm-side-toggle { margin-inline: auto; }
+.adm-side.rt-runtime-collapsed .adm-tab { justify-content: center; padding-inline: 5px; }
+
+/* Forms and dense toolbars naturally wrap according to their measured space. */
+.grid-form, .form-row, .add-row, .bulk-grid, .theme-editor, .review-grid, .rt-box-builder, .saved-address-picker, .coupon-box {
+  min-width: 0;
+}
+
+.rt-runtime-overflow-x { overflow-x: auto !important; overscroll-behavior-inline: contain; }
+.rt-runtime-hidden { display: none !important; }
+
+/* Intro: always uses the actual visual viewport. */
+.rt-intro, .rt-intro-video { width: 100vw !important; height: 100dvh !important; }
+.rt-intro-video { object-position: 50% 50% !important; }
+
+@supports not (height: 100dvh) {
+  .rt-intro, .rt-intro-video { height: 100vh !important; }
+}
+
+.adm-layout.rt-admin-drawer-overlay { position: relative; }
+.adm-layout.rt-admin-drawer-overlay .adm-side.rt-runtime-expanded {
+  position: absolute !important;
+  top: 0;
+  bottom: auto;
+  z-index: 50;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  box-shadow: 0 24px 70px rgba(0,0,0,.38);
+}
+.adm-layout.rt-admin-drawer-overlay .adm-side-left.rt-runtime-expanded { left: 0; }
+.adm-layout.rt-admin-drawer-overlay .adm-side-right.rt-runtime-expanded { right: 0; }
+.adm-layout.rt-admin-drawer-overlay .adm-content { grid-column: 1 / -1; }
+.rt-runtime-grid > * { min-width: 0; }
+.hero-grid.rt-runtime-grid,
+.editorial-grid.rt-runtime-grid,
+.order-layout.rt-runtime-grid,
+.account-grid.rt-runtime-grid { align-items: start; }
+@media (prefers-reduced-motion: reduce) { .adm-side, .rt-shell-header, .rt-shell-mobile { transition: none !important; } }
+

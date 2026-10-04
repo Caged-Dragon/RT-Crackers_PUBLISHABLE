@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎆</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="RTCrackers">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <title>Login | RTCrackers</title>
+  <meta name="description"
+    content="Log in or create an account with RTCrackers for faster checkout and order history. Login is optional — you can browse and order as a guest.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261003">
+  <link rel="stylesheet" href="css/premium-ui.css?v=20261003">
+  <link rel="stylesheet" href="css/animations.css?v=20261003">
+  <link rel="stylesheet" href="css/pwa.css?v=20261003">
+  <link rel="stylesheet" href="css/features.css?v=20261003">
+  <link rel="stylesheet" href="css/advanced-ui.css?v=20261003"><link rel="stylesheet" href="css/industrial-ui.css?v=20261003">
+  <style>
+    .auth-wrap {
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .auth-tabs {
+      display: flex;
+      background: var(--grey-100);
+      border-radius: var(--radius-sm);
+      padding: 4px;
+      margin-bottom: 28px;
+    }
+
+    .auth-tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      font-family: var(--font-display);
+      color: var(--grey-600);
+    }
+
+    .auth-tab.active {
+      background: var(--white);
+      color: var(--navy-950);
+      box-shadow: var(--shadow-card);
+    }
+
+    .auth-panel {
+      display: none;
+    }
+
+    .auth-panel.active {
+      display: block;
+    }
+
+    .auth-msg {
+      font-size: 13.5px;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+      display: none;
+    }
+
+    .auth-msg.show {
+      display: block;
+    }
+
+    .auth-msg.error {
+      background: #fdecea;
+      color: var(--danger);
+      border: 1px solid #f3b6b0;
+    }
+
+    .auth-msg.success {
+      background: #e6f4ea;
+      color: var(--success);
+      border: 1px solid #b9e2c4;
+    }
+
+    .guest-cta {
+      text-align: center;
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid var(--grey-300);
+    }
+  </style>
+  <link rel="stylesheet" href="css/adaptive-layout.css?v=20261003-v6">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="brand-name">RT <span>CRACKERS</span></span>
+        <span class="brand-sub">RTCrackers</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" data-nav="index.html">Home</a>
+        <a href="products.html" data-nav="products.html">Products</a>
+        <a href="about.html" data-nav="about.html">About</a>
+        <a href="policy.html" data-nav="policy.html">Policies</a>
+        <a href="feedback.html">Feedback</a><a href="contact.html" data-nav="contact.html">Contact</a>
+        <a href="my-orders.html" data-nav="my-orders.html">My Orders</a>
+        <a href="login.html" data-nav="login.html" id="accountNavLink" class="active">Login</a>
+      </nav>
+      <div class="header-actions">
+        <a href="order.html" class="btn btn-primary btn-sm">Order Now</a>
+        <a href="order.html" class="cart-btn">🛒 <span class="label">Order</span> (<span
+            class="cart-count">0</span>)</a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav-backdrop" aria-hidden="true"></div><div class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="policy.html">Policies</a>
+      <a href="feedback.html">Feedback</a><a href="contact.html">Contact</a>
+      <a href="my-orders.html">My Orders</a>
+      <a href="login.html" id="accountNavLinkMobile">Login</a>
+      <a href="order.html" class="btn btn-primary btn-block">Order Now — (<span class="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container auth-wrap">
+        <div class="section-head" style="margin-bottom:28px;">
+          <span class="eyebrow">Your Account</span>
+          <h2>Welcome to RTCrackers</h2>
+          <p>Logging in is optional — it saves your details for faster checkout and lets you view your order
+            history. You can still browse and order as a guest.</p>
+        </div>
+
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab active" data-tab="login">Log In</button>
+          <button type="button" class="auth-tab" data-tab="signup">Sign Up</button>
+        </div>
+
+        <div id="authMsg" class="auth-msg"></div>
+
+        <!-- LOGIN -->
+        <div class="auth-panel active" id="panel-login">
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="loginEmail">Email</label>
+              <input type="email" id="loginEmail" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" required autocomplete="current-password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Log In</button>
+            <div style="text-align:center;margin-top:14px;"><button type="button" id="forgotPasswordBtn" class="btn btn-outline btn-sm">Forgot password?</button></div>
+          </form>
+
+          <div id="forgotPasswordBox" class="auth-msg" style="margin-top:16px;">
+            <strong>Reset your password</strong><br>
+            Enter the email used for your RTCrackers account. We will send a secure reset link.
+            <div style="display:flex;gap:8px;margin-top:10px;">
+              <input id="forgotEmail" type="email" placeholder="Your account email" autocomplete="email" style="flex:1;min-width:0;">
+              <button type="button" id="sendResetBtn" class="btn btn-primary btn-sm">Send link</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIGNUP -->
+        <div class="auth-panel" id="panel-signup">
+          <form id="signupForm">
+            <div class="form-group">
+              <label for="signupName">Full Name</label>
+              <input type="text" id="signupName" required>
+            </div>
+            <div class="form-group">
+              <label for="signupEmail">Email</label>
+              <input type="email" id="signupEmail" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="signupPhone">Phone Number</label>
+              <input type="tel" id="signupPhone" placeholder="10-digit mobile number">
+            </div>
+            <div class="form-group">
+              <label for="signupPassword">Password</label>
+              <input type="password" id="signupPassword" required minlength="6" autocomplete="new-password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+          </form>
+        </div>
+
+        <div id="adminAccessCard" style="margin-top:20px;padding:16px;border:1px solid rgba(242,202,80,.55);border-radius:14px;background:linear-gradient(135deg,#fffaf0,#fff);">
+          <div style="font-weight:800;margin-bottom:5px;">Administrator?</div>
+          <div style="font-size:13px;color:var(--grey-600);margin-bottom:10px;">Sign in here with your administrator account. After authentication, RTCrackers will open the Admin Security Gate, which asks only for the panel security password.</div>
+          <button type="button" id="adminAccessBtn" class="btn btn-outline btn-sm">Use Administrator Login</button>
+        </div>
+
+        <div class="guest-cta">
+          <p style="color:var(--grey-600);font-size:13.5px;margin-bottom:12px;">Prefer not to log in? No problem — you
+            can browse and order as a guest any time.</p>
+          <a href="products.html" class="btn btn-outline on-light-navy"
+            style="border-color:var(--navy-800);color:var(--navy-800);">Continue as Guest</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:0;">
+        <span>© <span id="currentYear">2026</span> RTCrackers. All rights reserved.</span>
+        <a href="login.html?mode=admin" style="opacity:.75;">Administrator Login</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/micro-interactions.js"></script>
+  <script src="js/auth.js?v=20261003"></script><script src="js/features.js?v=20261003"></script>
+  <script src="js/script.js?v=20261003"></script>
+  <script>
+    (function () {
+      const tabs = document.querySelectorAll(".auth-tab");
+      const panels = document.querySelectorAll(".auth-panel");
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          panels.forEach((p) => p.classList.remove("active"));
+          tab.classList.add("active");
+          document.getElementById("panel-" + tab.getAttribute("data-tab")).classList.add("active");
+          hideMsg();
+        });
+      });
+
+      const msgEl = document.getElementById("authMsg");
+      function showMsg(text, type) {
+        msgEl.textContent = text;
+        msgEl.className = "auth-msg show " + type;
+      }
+      function hideMsg() {
+        msgEl.className = "auth-msg";
+      }
+
+      function safeRedirect() {
+        const raw = new URLSearchParams(location.search).get("redirect");
+        if (!raw) return "index.html";
+        try {
+          const target = new URL(raw, location.href);
+          if (target.origin !== location.origin) return "index.html";
+          const path = target.pathname + target.search + target.hash;
+          return path.replace(/^\//, "") || "index.html";
+        } catch { return "index.html"; }
+      }
+      const requestedRedirect = safeRedirect();
+      const adminMode = new URLSearchParams(location.search).get("mode") === "admin";
+
+      function setLoading(form, isLoading) {
+        const btn = form.querySelector("button[type=submit]");
+        btn.disabled = isLoading;
+        btn.dataset.label = btn.dataset.label || btn.textContent;
+        btn.textContent = isLoading ? "Please wait..." : btn.dataset.label;
+      }
+
+      if (adminMode) {
+        document.querySelector('.auth-tab[data-tab="login"]')?.click();
+        setTimeout(() => {
+          document.getElementById("loginEmail")?.focus();
+          showMsg("Administrator access: enter your administrator account email and password. After role verification, the Admin Security Gate will ask only for the panel security password.", "success");
+        }, 0);
+      }
+
+      (async function () {
+        if (!window.RTAdmin) return;
+        if (!window.RTAdmin.configured) {
+          showMsg("This site isn't connected to Supabase yet, so accounts can't be created or saved. See README.md → Supabase Setup.", "error");
+          return;
+        }
+        await window.RTAdmin.authReady;
+        // Already logged in with a real account? Redirect to My Orders.
+        if (window.RTAdmin.currentUser()) {
+          const isAdmin = await window.RTAdmin.requireAdmin();
+          window.location.href = isAdmin ? "/admin" : requestedRedirect;
+        }
+      })();
+
+      document.getElementById("adminAccessBtn")?.addEventListener("click", () => {
+        document.querySelector('.auth-tab[data-tab="login"]')?.click();
+        document.getElementById("loginEmail")?.focus();
+        showMsg("Enter your administrator account email and password here. After successful role verification, only the Admin Panel Security Password will be requested.", "success");
+      });
+
+      document.getElementById("loginForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const form = e.target;
+        setLoading(form, true);
+        const email = document.getElementById("loginEmail").value;
+        const password = document.getElementById("loginPassword").value;
+        const result = await window.RTAdmin.login(email, password);
+        setLoading(form, false);
+        if (result.ok) {
+          const isAdmin = await window.RTAdmin.requireAdmin();
+          showMsg(isAdmin ? "Administrator account detected. Opening secure Admin Login..." : "Logged in successfully! Redirecting...", "success");
+          setTimeout(() => (window.location.href = isAdmin ? "admin.html" : requestedRedirect), 600);
+        } else {
+          showMsg(result.error, "error");
+        }
+      });
+
+      document.getElementById("forgotPasswordBtn").addEventListener("click", () => {
+        const box = document.getElementById("forgotPasswordBox");
+        box.className = "auth-msg show";
+        document.getElementById("forgotEmail").value = document.getElementById("loginEmail").value.trim();
+        document.getElementById("forgotEmail").focus();
+      });
+
+      document.getElementById("sendResetBtn").addEventListener("click", async () => {
+        const btn = document.getElementById("sendResetBtn");
+        btn.disabled = true; btn.textContent = "Sending…";
+        const r = await window.RTAdmin.requestPasswordReset(document.getElementById("forgotEmail").value);
+        btn.disabled = false; btn.textContent = "Send link";
+        showMsg(r.ok ? r.message : r.error, r.ok ? "success" : "error");
+      });
+
+      document.getElementById("signupForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const form = e.target;
+        setLoading(form, true);
+        const name = document.getElementById("signupName").value;
+        const email = document.getElementById("signupEmail").value;
+        const phone = document.getElementById("signupPhone").value;
+        const password = document.getElementById("signupPassword").value;
+        const result = await window.RTAdmin.signup(name, email, phone, password, requestedRedirect);
+        setLoading(form, false);
+        if (result.ok) {
+          if (result.needsEmailConfirmation) {
+            showMsg("Account created. Please check your email and confirm your email address before logging in.", "success");
+            document.querySelector('[data-tab="login"]').click();
+            document.getElementById("loginEmail").value = email;
+            document.getElementById("loginPassword").focus();
+          } else {
+            showMsg("Account created and logged in! Redirecting...", "success");
+            setTimeout(() => (window.location.href = requestedRedirect || "my-orders.html"), 600);
+          }
+        } else {
+          showMsg(result.error, "error");
+        }
+      });
+    })();
+  </script>
+  <script src="js/animations.js?v=20261003"></script>
+  <script src="js/pwa.js?v=20261003"></script>
+  <script src="js/advanced-ui.js?v=20261003"></script>
+<script src="js/industrial-ui.js?v=20261003"></script><script src="components/customer-shell.js?v=20261003"></script>
+  <script src="js/adaptive-layout.js?v=20261003-v6"></script>
+  <script src="/js/pwa-update.js" defer></script>
+</body>
+
+</html>

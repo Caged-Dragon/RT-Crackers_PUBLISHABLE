@@ -1,0 +1,10 @@
+{
+  "name": "RTC Crackers Complete",
+  "backend": "BACKEND/app/main.py",
+  "site_frontend": "FRONTEND/SITE",
+  "email_frontend": "FRONTEND/EMAIL",
+  "database": "DATABASE",
+  "email_api_prefix": "/api/v1/email",
+  "email_webhook": "/api/v1/email/webhook/resend",
+  "provider": "Resend"
+}

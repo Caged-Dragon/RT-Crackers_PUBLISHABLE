@@ -1,0 +1,10 @@
+tests/
+alembic/
+alembic.ini
+scripts/
+docs/
+Dockerfile
+gunicorn.conf.py
+requirements-dev.txt
+*.md
+model_diff.py

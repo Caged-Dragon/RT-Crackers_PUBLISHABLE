@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary-fixed": "#251a00", "primary-container": "#e31b16", "error-container": "#ffdad6", "on-primary-container": "#fff9f8", "outline": "#926e69", "secondary-fixed": "#ffdf95", "inverse-surface": "#2e3135", "on-primary": "#ffffff", "tertiary-container": "#b05e00", "on-tertiary": "#ffffff", "surface-dim": "#d8dadf", "secondary": "#765a00", "on-surface-variant": "#5e3f3b", "surface-container": "#eceef3", "surface-container-low": "#f2f3f9", "primary-fixed": "#ffdad5", "inverse-primary": "#ffb4a9", "on-primary-fixed": "#410001", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "surface-bright": "#f8f9ff", "surface-tint": "#c00006", "surface-container-high": "#e6e8ee", "on-error": "#ffffff", "error": "#ba1a1a", "tertiary": "#8c4900", "primary": "#b90006", "on-background": "#191c20", "on-tertiary-fixed": "#2f1500", "surface-variant": "#e1e2e8", "primary-fixed-dim": "#ffb4a9", "secondary-container": "#fdc826", "surface-container-highest": "#e1e2e8", "on-tertiary-container": "#fff9f8", "on-error-container": "#93000a", "inverse-on-surface": "#eff0f6", "on-tertiary-fixed-variant": "#6f3900", "tertiary-fixed-dim": "#ffb77f", "background": "#f8f9ff", "on-surface": "#191c20", "on-primary-fixed-variant": "#930003", "surface": "#f8f9ff", "secondary-fixed-dim": "#f4bf1b", "on-secondary-container": "#6e5400", "outline-variant": "#e8bdb6", "on-secondary-fixed-variant": "#594400", "tertiary-fixed": "#ffdcc4" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-lg": "1.5rem", "gutter-mobile": "0.75rem", "space-xs": "0.25rem", "space-md": "1rem", "space-xl": "2.5rem", "margin": "2rem", "margin-mobile": "1rem", "gutter": "1.25rem", "space-sm": "0.5rem" }, fontFamily: { "label-caps": ["Oswald"], "headline-md": ["Oswald"], "body-lg": ["Inter"], "label-lg": ["Inter"], "body-md": ["Inter"], "headline-xl": ["Oswald"], "display-hero": ["Oswald"], "headline-lg": ["Oswald"], "headline-xl-mobile": ["Oswald"], "label-md": ["Inter"], "display-hero-mobile": ["Oswald"], "body-sm": ["Inter"], "headline-sm": ["Oswald"] }, fontSize: { "label-caps": ["13px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "0.01em", "fontWeight": "700" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "0.02em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }] } } } };</script><link href="../runtime/theme.css" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-inverse-surface text-inverse-on-surface px-margin-mobile md:px-margin py-space-xs"><div class="max-w-[1360px] mx-auto flex items-center justify-between text-label-md font-label-md"><div class="flex items-center gap-space-sm"><span class="inline-block w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span><span>FESTIVAL DISPATCH: PREMIUM FIREWORKS DROPS SHIFT WITHIN 24 HRS</span></div><div class="hidden md:flex items-center gap-space-md"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">support_agent</span>ORDER SUPPORT: 7358737658</span><span class="text-surface-variant/40">|</span><span>SIVAKASI DISPATCH ACTIVE</span></div></div></div><div class="h-28 max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex flex-col justify-center"><div class="flex items-center justify-between gap-space-md py-space-xs"><div class="flex items-center gap-space-md"><img alt="LOGO.jpeg" class="h-8 w-auto object-contain" src="../assets/branding/LOGO.jpeg"/><div class="flex flex-col"><span class="font-headline-lg text-headline-lg tracking-wider uppercase text-primary leading-none">RTCRACKERS</span><span class="font-label-caps text-label-caps text-on-surface-variant leading-tight tracking-widest">SPORTS &amp; ATHLETICS</span></div></div><div class="flex-1 max-w-xl hidden lg:block"><div class="relative flex items-center bg-surface-container rounded-lg px-space-md py-space-xs focus-within:bg-surface-container-lowest transition-colors"><span class="material-symbols-outlined text-on-surface-variant text-[20px] mr-space-sm">search</span><input class="w-full bg-transparent text-body-md font-body-md text-on-surface focus:outline-none placeholder:text-on-surface-variant/60" placeholder="Search crackers, sparklers, rockets, flower pots..." type="text"/><span class="text-label-md font-label-md uppercase text-on-surface-variant bg-surface-container-high px-space-xs py-0.5 rounded">ESC</span></div></div><div class="flex items-center gap-space-md"><button class="flex flex-col items-center text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">favorite</span><span class="hidden md:inline font-label-md text-label-md mt-0.5">Wishlist</span></button><button class="flex flex-col items-center text-on-surface-variant hover:text-primary transition-colors relative"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="hidden md:inline font-label-md text-label-md mt-0.5">Alerts</span><span class="absolute top-0 right-2 w-2 h-2 bg-primary rounded-full"></span></button><div class="flex items-center gap-space-xs pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden xl:flex flex-col text-left"><span class="font-label-md text-label-md leading-tight text-on-surface font-semibold">Raghav Kumar</span><span class="font-label-md text-label-md leading-none text-on-surface-variant">Festive Pro</span></div></div><button class="flex items-center gap-space-xs bg-primary text-on-primary px-space-md py-space-sm rounded-lg hover:bg-primary-container transition-colors"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span class="font-label-caps text-label-caps uppercase">BAG</span><span class="bg-surface-container-lowest text-primary font-label-caps text-label-caps px-1.5 py-0.5 rounded font-bold">3</span></button></div></div><nav class="flex items-center gap-space-lg overflow-x-auto pt-space-xs" data-active-classes="text-primary border-b-2 border-primary font-bold"><a class="font-label-caps text-label-caps uppercase text-on-surface-variant pb-1 whitespace-nowrap hover:text-primary transition-colors" data-path="cricket" href="#">Fireworks</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant pb-1 whitespace-nowrap hover:text-primary transition-colors" data-path="football" href="#">Fireworks</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant pb-1 whitespace-nowrap hover:text-primary transition-colors" data-path="tennis" href="#">Fireworks</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant pb-1 whitespace-nowrap hover:text-primary transition-colors" data-path="badminton" href="#">Fireworks</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant pb-1 whitespace-nowrap hover:text-primary transition-colors" data-path="fitness" href="#">Fitness</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant pb-1 whitespace-nowrap hover:text-primary transition-colors" data-path="sports-accessories" href="#">Sports Accessories</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant pb-1 whitespace-nowrap hover:text-primary transition-colors" data-path="brands" href="#">Brands</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant pb-1 whitespace-nowrap hover:text-primary transition-colors" data-path="offers" href="#">Offers</a></nav></div></header><main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
+<!-- Sub-Header / Breadcrumb Toolbar -->
+<section class="bg-surface-container-low py-space-sm px-margin-mobile md:px-margin">
+<div class="max-w-[1360px] mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<nav class="flex items-center gap-space-xs text-body-sm font-body-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>Home
+        </a>
+<span class="text-on-surface-variant/40">/</span>
+<a class="hover:text-primary transition-colors" href="#">My Account</a>
+<span class="text-on-surface-variant/40">/</span>
+<span class="text-on-surface font-semibold">Settings</span>
+</nav>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[15px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+          Your account is protected (256-Bit SSL)
+        </span>
+</div>
+</div>
+</section>
+<!-- Page Title & Primary Actions Banner -->
+<section class="bg-surface-container-lowest py-space-lg px-margin-mobile md:px-margin shadow-sm">
+<div class="max-w-[1360px] mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm">
+<span class="inline-block w-2.5 h-6 bg-primary rounded-sm"></span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface uppercase tracking-wide">
+            ACCOUNT SETTINGS &amp; PRIVACY
+          </h1>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl pl-4">
+          Manage your personal platform preferences, telemetry controls, cookie consent, and statutory data portability under India's DPDP Act 2023.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm pl-4 lg:pl-0">
+<button class="px-space-md py-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-caps text-label-caps uppercase transition-colors flex items-center gap-1.5" id="btn-reset-top">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+          Reset to Recommended
+        </button>
+<button class="px-space-lg py-space-sm rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-caps text-label-caps uppercase shadow-sm transition-all flex items-center gap-1.5" id="btn-save-top">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+          Save Settings
+        </button>
+</div>
+</div>
+</section>
+<!-- Core Workspace Grid: Sidebar (3 cols) + Content (9 cols) -->
+<section class="max-w-[1360px] w-full mx-auto px-margin-mobile md:px-margin py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- ================= SIDEBAR (3 cols) ================= -->
+<aside class="lg:col-span-3 flex flex-col gap-space-md">
+<!-- Athlete Profile Badge Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline-md text-headline-md tracking-wider">
+                RK
+              </div>
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-secondary-container flex items-center justify-center" title="Verified Athlete">
+<span class="material-symbols-outlined text-[12px] text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate uppercase">Raghav Kumar</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">raghav.k@example.com</span>
+<span class="inline-flex items-center gap-1 mt-1 font-label-md text-label-md text-primary font-semibold">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+                Pro Athlete Member L3
+              </span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs text-center">
+<div class="bg-surface-container-low p-space-xs rounded">
+<span class="block font-headline-sm text-headline-sm text-on-surface">14</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Match Orders</span>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded">
+<span class="block font-headline-sm text-headline-sm text-on-surface">3</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hub Addresses</span>
+</div>
+</div>
+</div>
+<!-- Account Navigation Menu -->
+<nav class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<a class="flex items-center justify-between px-space-md py-space-sm text-on-surface hover:bg-surface-container-low transition-colors" href="#">
+<span class="flex items-center gap-space-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">dashboard</span>
+              Overview
+            </span>
+</a>
+<a class="flex items-center justify-between px-space-md py-space-sm text-on-surface hover:bg-surface-container-low transition-colors" href="#">
+<span class="flex items-center gap-space-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">package_2</span>
+              My Orders
+            </span>
+<span class="bg-surface-container font-label-md text-label-md text-on-surface px-2 py-0.5 rounded-full">14</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-space-sm text-on-surface hover:bg-surface-container-low transition-colors" href="#">
+<span class="flex items-center gap-space-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">favorite</span>
+              Wishlist
+            </span>
+<span class="bg-surface-container font-label-md text-label-md text-on-surface px-2 py-0.5 rounded-full">8</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-space-sm text-on-surface hover:bg-surface-container-low transition-colors" href="#">
+<span class="flex items-center gap-space-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">pin_drop</span>
+              Saved Addresses
+            </span>
+<span class="bg-surface-container font-label-md text-label-md text-on-surface px-2 py-0.5 rounded-full">3</span>
+</a>
+<a class="flex items-center justify-between px-space-md py-space-sm text-on-surface hover:bg-surface-container-low transition-colors" href="#">
+<span class="flex items-center gap-space-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">person</span>
+              Profile Information
+            </span>
+</a>
+<a class="flex items-center justify-between px-space-md py-space-sm text-on-surface hover:bg-surface-container-low transition-colors" href="#">
+<span class="flex items-center gap-space-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">credit_card</span>
+              Saved Payments
+            </span>
+</a>
+<a class="flex items-center justify-between px-space-md py-space-sm text-on-surface hover:bg-surface-container-low transition-colors" href="#">
+<span class="flex items-center gap-space-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">notifications</span>
+              Notifications
+            </span>
+</a>
+<!-- ACTIVE SETTINGS LINK -->
+<a class="flex items-center justify-between px-space-md py-space-sm bg-primary/10 text-primary transition-colors relative" href="#">
+<span class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></span>
+<span class="flex items-center gap-space-sm font-label-lg text-label-lg font-bold">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">tune</span>
+              Settings &amp; Privacy
+            </span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+<div class="h-px bg-surface-container my-space-xs mx-space-md"></div>
+<a class="flex items-center justify-between px-space-md py-space-sm text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="flex items-center gap-space-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[20px]">help_center</span>
+              Help &amp; Support
+            </span>
+</a>
+<a class="flex items-center justify-between px-space-md py-space-sm text-on-surface-variant hover:text-primary transition-colors mb-space-xs" href="#">
+<span class="flex items-center gap-space-sm font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+              Sign Out
+            </span>
+</a>
+</nav>
+<!-- DPDP Compliance Trust Vault Box -->
+<div class="bg-surface-container-high/60 p-space-md rounded-xl flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide">DATA PRIVACY COMMITTED</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            ISO/IEC 27001 Certified Infrastructure &amp; compliant with India's Digital Personal Data Protection Act 2023. Telemetry strictly remains unshared with unverified ad networks.
+          </p>
+<div class="pt-1 flex items-center justify-between font-label-md text-label-md text-on-surface font-semibold">
+<span>DPO Registry: RTC-DPO-2026</span>
+<span class="text-primary hover:underline cursor-pointer">Inquire</span>
+</div>
+</div>
+<!-- System Quick Metrics Visual (Inline SVG Telemetry Radar) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Security &amp; Consent Score</span>
+<span class="font-headline-sm text-headline-sm text-primary">94%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[94%] rounded-full"></div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-1">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              2FA Active
+            </span>
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Minimal Telemetry
+            </span>
+</div>
+</div>
+</aside>
+<!-- ================= CONTENT AREA (9 cols) ================= -->
+<main class="lg:col-span-9 flex flex-col gap-space-lg">
+<!-- 1. Quick-Tab Navigation Pills -->
+<div class="bg-surface-container-lowest p-space-xs rounded-xl shadow-sm overflow-x-auto flex items-center gap-space-xs">
+<button class="px-space-md py-space-xs rounded font-label-caps text-label-caps uppercase tracking-wide bg-primary text-on-primary whitespace-nowrap shadow-sm">
+            General Preferences
+          </button>
+<button class="px-space-md py-space-xs rounded font-label-caps text-label-caps uppercase tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors whitespace-nowrap">
+            Privacy &amp; Consent
+          </button>
+<button class="px-space-md py-space-xs rounded font-label-caps text-label-caps uppercase tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors whitespace-nowrap">
+            Personalization
+          </button>
+<button class="px-space-md py-space-xs rounded font-label-caps text-label-caps uppercase tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors whitespace-nowrap">
+            Data &amp; Security
+          </button>
+<button class="px-space-md py-space-xs rounded font-label-caps text-label-caps uppercase tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors whitespace-nowrap">
+            Connected Services
+          </button>
+<button class="px-space-md py-space-xs rounded font-label-caps text-label-caps uppercase tracking-wide text-on-surface-variant hover:text-error hover:bg-error-container/20 transition-colors whitespace-nowrap">
+            Account Management
+          </button>
+</div>
+<!-- 2. Section 1: General Preferences -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">language</span>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md uppercase text-on-surface">Regional &amp; Display Preferences</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Configure localization, currency defaults, and festive dispatch territory presets.</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">Auto-Synced</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-xs">
+<!-- Language Dropdown -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-label-caps uppercase text-on-surface">Store Language</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg p-space-sm appearance-none focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary">
+<option selected="">English (India) — EN-IN</option>
+<option>Tamil — தமிழ் (TN Special)</option>
+<option>Hindi — हिन्दी</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-3 text-[18px] text-on-surface-variant">expand_more</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Applied to technical sparkler profiles &amp; alerts.</span>
+</div>
+<!-- Currency Selector -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-label-caps uppercase text-on-surface">Trading Currency</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg p-space-sm appearance-none focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary">
+<option selected="">INR — ₹ (Indian Rupee)</option>
+<option>USD — $ (US Dollar - Intl Courier)</option>
+<option>GBP — £ (Great Britain Pound)</option>
+<option>AED — د.إ (UAE Dirham)</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-3 text-[18px] text-on-surface-variant">expand_more</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">GST is computed natively on domestic checkouts.</span>
+</div>
+<!-- Regional Dispatch Territory -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-label-caps uppercase text-on-surface">Dispatch Hub Territory</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg p-space-sm appearance-none focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary">
+<option selected="">India (Tamil Nadu / Fast Track Hub)</option>
+<option>India (North Zone / NCR Stadium Hub)</option>
+<option>India (West Zone / Mumbai Hub)</option>
+<option>India (South Zone / Bengaluru Center)</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-3 text-[18px] text-on-surface-variant">expand_more</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Calibrates next-day bat knocking queue.</span>
+</div>
+</div>
+<!-- Appearance Theme Mode Radio Matrix -->
+<div class="flex flex-col gap-space-xs pt-space-sm">
+<span class="font-label-caps text-label-caps uppercase text-on-surface">Interface Appearance</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<!-- System Default (Active) -->
+<label class="cursor-pointer flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">brightness_auto</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">System Default</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Syncs with OS settings</span>
+</div>
+</div>
+<input checked="" class="accent-primary w-4 h-4 cursor-pointer" name="appearance-theme" type="radio"/>
+</label>
+<!-- Light Mode -->
+<label class="cursor-pointer flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">light_mode</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">High-Key Light</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Optimized for daylight</span>
+</div>
+</div>
+<input class="accent-primary w-4 h-4 cursor-pointer" name="appearance-theme" type="radio"/>
+</label>
+<!-- Dark Mode -->
+<label class="cursor-pointer flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">dark_mode</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Arena Pitch Dark</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Night stadium mode</span>
+</div>
+</div>
+<input class="accent-primary w-4 h-4 cursor-pointer" name="appearance-theme" type="radio"/>
+</label>
+</div>
+</div>
+</section>
+<!-- 3. Section 2: Shopping Personalization -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">model_training</span>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md uppercase text-on-surface">Shopping Personalization</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Control how RTCrackers algorithms tailor products recommendations to your matches.</p>
+</div>
+</div>
+<a class="font-label-md text-label-md text-primary font-semibold hover:underline flex items-center gap-1" href="#">
+              Manage Notification Channels →
+            </a>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Toggle 1 -->
+<div class="flex items-start justify-between p-space-md rounded-lg bg-surface-container-low gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Personalized Products Recommendations</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Use matchplay searches, sparkler grade preferences, and past orders to suggest tailored sparkler, spiked shoes, and protective batting guards.
+                </span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle 2 -->
+<div class="flex items-start justify-between p-space-md rounded-lg bg-surface-container-low gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Recently Viewed Equipment Tracking</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Remember recently browsed fireworks products, bowling machines, and firework kits for rapid comparison across multi-device sessions.
+                </span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle 3 -->
+<div class="flex items-start justify-between p-space-md rounded-lg bg-surface-container-low gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Targeted Offers &amp; Festive Drops</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Receive festival discount alerts and seasonal festival firework bundle discounts aligned with your past purchase volume.
+                </span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle 4 -->
+<div class="flex items-start justify-between p-space-md rounded-lg bg-surface-container-low gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Wishlist Instant Price Drop Alerts</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Trigger immediate app notifications and SMS dispatch when items in your 8-bat wishlist receive promotional clearance cuts.
+                </span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- 4. Section 3: Privacy Controls & Telemetry Consent -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">lock_reset</span>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md uppercase text-on-surface">Privacy Controls &amp; Telemetry Consent</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Granular consent toggles governing analytical logging and marketing telemetry.</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-caps text-label-caps uppercase">
+              DPDP ACT COMPLIANT
+            </span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Item 1: Essential (Immutable) -->
+<div class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-low">
+<div class="flex flex-col pr-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Account Credentials &amp; Essential Order Data</span>
+<span class="bg-surface-container-highest text-on-surface font-label-md text-label-md px-2 py-0.5 rounded">Required</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Required for account authentication, festival products warranty registration, billing records, and statutory GST tax compliance.
+                </span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface font-bold whitespace-nowrap bg-surface-container-high px-3 py-1 rounded">
+                Always Active
+              </span>
+</div>
+<!-- Item 2: Browsing & Sports Analytics -->
+<div class="flex items-start justify-between p-space-md rounded-lg bg-surface-container-low gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Browsing &amp; Sports Activity Analytics</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Allow RTCrackers to record anonymized search clickstreams to optimize bat weight filtering speed and reduce catalog latency.
+                </span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Item 3: Marketing Personalization -->
+<div class="flex items-start justify-between p-space-md rounded-lg bg-surface-container-low gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Marketing Personalization &amp; Campaigns</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Allow tailored matchday newsletters, WhatsApp dispatch notifications, and seasonal festive firework pre-order access.
+                </span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Item 4: Third-Party Crash Diagnostics (OFF) -->
+<div class="flex items-start justify-between p-space-md rounded-lg bg-surface-container-low gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Third-Party Crash Analytics</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Share anonymized crash stack traces and rendering failures with external diagnostics platforms for faster bug resolution.
+                </span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- 5. Section 4: Cookie Preferences Center -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">cookie</span>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md uppercase text-on-surface">Cookie Preferences Center</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Control the local client storage tokens deployed when browsing our stadium catalog.</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-on-surface-variant block">Last updated: Today, 11:20 AM IST</span>
+</div>
+</div>
+<!-- Cookie Categories Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Necessary -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col justify-between gap-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Strictly Necessary</span>
+<span class="font-label-md text-label-md text-primary font-bold">Always Active</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Essential for authenticating athlete sessions, maintaining persistent shopping bag state, and processing encrypted checkout payloads.
+                </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-label-md font-label-md text-on-surface-variant">
+<span>3 Cookies Active</span>
+<span class="font-semibold text-on-surface">Immutable</span>
+</div>
+</div>
+<!-- Performance -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col justify-between gap-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Performance &amp; Analytics</span>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Measures page loading latencies, fireworks product filter speed, and user journey drop-offs to improve server response timing.
+                </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-label-md font-label-md text-on-surface-variant">
+<span>2 Cookies Active</span>
+<span class="text-secondary font-semibold">Enabled</span>
+</div>
+</div>
+<!-- Functional -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col justify-between gap-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Functional Personalization</span>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Preserves your selected sparkler weight range, grip preferences, and currency views across browser restarts.
+                </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-label-md font-label-md text-on-surface-variant">
+<span>4 Cookies Active</span>
+<span class="text-secondary font-semibold">Enabled</span>
+</div>
+</div>
+<!-- Marketing -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col justify-between gap-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Marketing &amp; Advertising</span>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Delivers fireworks season festival drops and festive firework specials matched to your regional stadium territory.
+                </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-label-md font-label-md text-on-surface-variant">
+<span>3 Cookies Active</span>
+<span class="text-secondary font-semibold">Enabled</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Adjust anytime; changes take effect immediately on session reload.</span>
+<button class="px-space-md py-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-caps text-label-caps uppercase transition-colors">
+              Save Cookie Preferences
+            </button>
+</div>
+</section>
+<!-- 6. Section 5: Data Portability & Security Controls -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">folder_shared</span>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md uppercase text-on-surface">Data Portability &amp; Security Controls</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Download your complete athlete ledger or review recent authentication handshakes.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Card A: Download Data -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Download Account Data (Portability)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Request a machine-readable export (JSON/CSV) of your order ledger, addresses, wishlist, and profile attributes in accordance with India's DPDP Act.
+                </p>
+<div class="bg-surface-container-lowest p-space-xs rounded font-body-sm text-body-sm text-on-surface-variant flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">info</span>
+<span>Archives are compiled within 24 hours &amp; emailed to raghav.k@example.com</span>
+</div>
+</div>
+<button class="w-full py-space-sm bg-on-surface text-surface font-label-caps text-label-caps uppercase rounded-lg hover:bg-primary transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+                Request Data Archive
+              </button>
+</div>
+<!-- Card B: Security & Activity Log -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-primary">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px]">security</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Audit Security &amp; Activity Log</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Real-time telemetry of recent logins, 2FA verifications, and active session tokens.
+                </p>
+<!-- 3 Activity Rows -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex items-center justify-between bg-surface-container-lowest px-space-sm py-1.5 rounded text-body-sm font-body-sm">
+<span class="truncate font-medium text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">key</span> Password Updated
+                    </span>
+<span class="text-on-surface-variant text-label-md font-label-md">Yesterday, 19:42</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest px-space-sm py-1.5 rounded text-body-sm font-body-sm">
+<span class="truncate font-medium text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">phonelink_lock</span> 2FA OTP Verified
+                    </span>
+<span class="text-on-surface-variant text-label-md font-label-md">14 Oct, 08:15</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest px-space-sm py-1.5 rounded text-body-sm font-body-sm">
+<span class="truncate font-medium text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">laptop_mac</span> Chrome 124 (Chennai Hub)
+                    </span>
+<span class="text-on-surface-variant text-label-md font-label-md">12 Oct, 14:02</span>
+</div>
+</div>
+</div>
+<a class="font-label-caps text-label-caps uppercase text-primary font-bold hover:underline flex items-center justify-center gap-1" href="#">
+                View Complete Activity Log →
+              </a>
+</div>
+</div>
+<!-- Quick Hub Jump Cards -->
+<div class="pt-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant block mb-space-xs">Quick Access Sub-Hubs</span>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<a class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center gap-space-xs text-on-surface" href="#">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+<span class="font-label-md text-label-md font-semibold">Manage Profile</span>
+</a>
+<a class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center gap-space-xs text-on-surface" href="#">
+<span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span>
+<span class="font-label-md text-label-md font-semibold">Manage Addresses</span>
+</a>
+<a class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center gap-space-xs text-on-surface" href="#">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+<span class="font-label-md text-label-md font-semibold">Manage Payments</span>
+</a>
+<a class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center gap-space-xs text-on-surface" href="#">
+<span class="material-symbols-outlined text-primary text-[20px]">mark_chat_read</span>
+<span class="font-label-md text-label-md font-semibold">Notification Channels</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 7. Section 6: Connected Accounts & Services -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">hub</span>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md uppercase text-on-surface">Connected Accounts &amp; Fast Authentication</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Third-party authenticators linked to your RTCrackers athlete wallet.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Google Connected -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">account_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Google Identity</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Connected as raghav.kumar@gmail.com</span>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-caps text-label-caps uppercase transition-colors">
+                Disconnect
+              </button>
+</div>
+<!-- Truecaller / Fast-OTP -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Fast-OTP / Phone</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Verified +91 73587 37658</span>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-caps text-label-caps uppercase transition-colors">
+                Manage
+              </button>
+</div>
+</div>
+</section>
+<!-- 8. Section 7: Account Management & Deactivation (Danger Zone) -->
+<section class="bg-error-container/20 rounded-xl p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-error text-[26px]">warning</span>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md uppercase text-on-error-container">Danger Zone: Account Closure &amp; Pause</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Take a temporary hiatus or permanently purge your athlete credential ledger.</p>
+</div>
+</div>
+<span class="bg-error-container text-on-error-container px-2.5 py-1 rounded font-label-caps text-label-caps uppercase font-bold">
+              Irreversible Actions
+            </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Sub-card 1: Temporary Pause -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl flex flex-col justify-between gap-space-md shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Temporary Account Deactivation</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Temporarily pause your account. Your 8 saved wishlist items and Pro Club points remain securely frozen until you sign in again.
+                </p>
+<div class="p-space-xs bg-surface-container-low rounded text-label-md font-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface">pause_circle</span>
+<span>Can be reactivated with an SMS OTP at any time.</span>
+</div>
+</div>
+<button class="w-full py-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-caps text-label-caps uppercase transition-colors">
+                Deactivate Account
+              </button>
+</div>
+<!-- Sub-card 2: Permanent Deletion -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl flex flex-col justify-between gap-space-md shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<span class="font-headline-sm text-headline-sm uppercase text-error">Permanent Account Deletion</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Permanently erase your athlete profile, reward points (450 Pts), and saved sparkler specs. Legally required GST tax invoices for completed orders are archived securely per statutory regulations.
+                </p>
+<!-- 4-step checklist review -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>No active orders in transit (#RTC1024587 is completed)</span>
+</div>
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>No pending Order Changes payment adjustment or match-day credits</span>
+</div>
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Loss of Pro Club L3 perks &amp; discount tier acknowledged</span>
+</div>
+</div>
+</div>
+<button class="w-full py-space-sm rounded-lg bg-error hover:bg-error/90 text-on-error font-label-caps text-label-caps uppercase shadow-sm transition-all flex items-center justify-center gap-1.5" id="btn-open-delete-modal">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+                Request Account Deletion
+              </button>
+</div>
+</div>
+</section>
+</main>
+</div>
+</section>
+<!-- Sticky / Contextual Floating Save Bar -->
+<aside class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-inverse-surface text-inverse-on-surface px-space-lg py-space-sm rounded-xl shadow-xl flex items-center gap-space-lg" id="contextual-save-bar">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-body-md text-body-md font-medium text-inverse-on-surface">You have unsaved privacy preferences</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-1 rounded font-label-caps text-label-caps uppercase text-inverse-on-surface/80 hover:text-inverse-on-surface hover:bg-surface-variant/20 transition-colors" id="btn-bar-discard">
+        Discard
+      </button>
+<button class="px-space-md py-1.5 rounded bg-primary hover:bg-primary-container text-on-primary font-label-caps text-label-caps uppercase font-semibold transition-colors shadow-sm" id="btn-bar-save">
+        Save Changes
+      </button>
+</div>
+</aside>
+<!-- Account Deletion Confirmation Modal Backdrop -->
+<dialog class="p-0 bg-transparent backdrop:bg-on-surface/60 max-w-lg w-full m-auto rounded-xl shadow-2xl" id="delete-modal">
+<div class="bg-surface-container-lowest p-space-xl rounded-xl flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm text-error">
+<span class="material-symbols-outlined text-[32px]">warning</span>
+<h3 class="font-headline-lg text-headline-lg uppercase">Confirm Account Deletion</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        This action is immediate and irrevocable. Your profile, 450 festival reward points, customized bat specs, and wishlist will be permanently erased.
+      </p>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1">
+<span class="font-label-caps text-label-caps uppercase text-on-surface">Type "CONFIRM DELETE" to proceed</span>
+<input class="bg-surface-container-lowest p-space-sm rounded font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-error" id="confirm-input" placeholder="CONFIRM DELETE" type="text"/>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-space-sm rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-caps text-label-caps uppercase" id="btn-cancel-modal">
+          Cancel
+        </button>
+<button class="px-space-md py-space-sm rounded bg-error/50 cursor-not-allowed text-on-error font-label-caps text-label-caps uppercase" disabled="" id="btn-confirm-delete">
+          Permanently Delete
+        </button>
+</div>
+</div>
+</dialog>
+<!-- Micro-Interactions Script -->
+<script>
+    (function() {
+      // Elements
+      const saveBar = document.getElementById('contextual-save-bar');
+      const btnDiscard = document.getElementById('btn-bar-discard');
+      const btnSaveBar = document.getElementById('btn-bar-save');
+      const btnSaveTop = document.getElementById('btn-save-top');
+      const btnResetTop = document.getElementById('btn-reset-top');
+
+      const modal = document.getElementById('delete-modal');
+      const btnOpenModal = document.getElementById('btn-open-delete-modal');
+      const btnCancelModal = document.getElementById('btn-cancel-modal');
+      const confirmInput = document.getElementById('confirm-input');
+      const btnConfirmDelete = document.getElementById('btn-confirm-delete');
+
+      // Dismiss floating save bar on discard or save
+      if (btnDiscard) {
+        btnDiscard.addEventListener('click', () => {
+          saveBar.style.display = 'none';
+        });
+      }
+      if (btnSaveBar) {
+        btnSaveBar.addEventListener('click', () => {
+          btnSaveBar.textContent = 'SAVED!';
+          setTimeout(() => {
+            saveBar.style.display = 'none';
+            btnSaveBar.textContent = 'SAVE CHANGES';
+          }, 600);
+        });
+      }
+      if (btnSaveTop) {
+        btnSaveTop.addEventListener('click', () => {
+          const original = btnSaveTop.innerHTML;
+          btnSaveTop.innerHTML = '<span class="material-symbols-outlined text-[18px]">done</span> Saved Preferences';
+          if (saveBar) saveBar.style.display = 'none';
+          setTimeout(() => {
+            btnSaveTop.innerHTML = original;
+          }, 1800);
+        });
+      }
+      if (btnResetTop) {
+        btnResetTop.addEventListener('click', () => {
+          alert('Settings reset to RTCrackers recommended baseline.');
+          if (saveBar) saveBar.style.display = 'flex';
+        });
+      }
+
+      // Deletion Modal logic
+      if (btnOpenModal && modal) {
+        btnOpenModal.addEventListener('click', () => {
+          modal.showModal();
+        });
+      }
+      if (btnCancelModal && modal) {
+        btnCancelModal.addEventListener('click', () => {
+          modal.close();
+        });
+      }
+      if (confirmInput && btnConfirmDelete) {
+        confirmInput.addEventListener('input', (e) => {
+          if (e.target.value.trim() === 'CONFIRM DELETE') {
+            btnConfirmDelete.disabled = false;
+            btnConfirmDelete.classList.remove('bg-error/50', 'cursor-not-allowed');
+            btnConfirmDelete.classList.add('bg-error', 'hover:bg-error/90', 'cursor-pointer');
+          } else {
+            btnConfirmDelete.disabled = true;
+            btnConfirmDelete.classList.add('bg-error/50', 'cursor-not-allowed');
+            btnConfirmDelete.classList.remove('bg-error', 'hover:bg-error/90', 'cursor-pointer');
+          }
+        });
+        btnConfirmDelete.addEventListener('click', () => {
+          alert('Account deletion scheduled in compliance with statutory notice period.');
+          modal.close();
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-high mt-space-xl pt-space-xl pb-space-lg"><div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl mb-space-xl"><div class="flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-md text-headline-md tracking-wider uppercase text-primary">RTCRAKERS</span></div><p class="font-body-md text-body-md text-on-surface-variant">Engineered for aggressive festival dominance. We supply ICC-compliant sparkler, match-grade products, and festive equipment for competitors who play at the absolute limit.</p><div class="flex flex-col gap-1"><span class="font-label-caps text-label-caps uppercase text-on-surface">Toll-Free Festive Support</span><span class="font-headline-sm text-headline-sm text-primary tracking-wide">1800-842-GEAR</span><span class="font-body-sm text-body-sm text-on-surface-variant">Mon - Sat | 08:00 - 21:00 IST</span></div></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wide mb-space-xs">Customer Service</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Bat Knocking &amp; Preparation</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Track Match-Day Order</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Order Changes &amp; Replacement Portal</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Sparkler Weight &amp; Profile Guide</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Bulk Academy &amp; Club Orders</a></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wide mb-space-xs">Policies &amp; Standards</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Authenticity &amp; Sparkler Certificate</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping &amp; Stadium Dispatch</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Warranty &amp; Edge Damage Terms</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy &amp; Telemetry Policy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Festival Service</a></div><div class="flex flex-col gap-space-md"><span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wide">Secure Arena Checkout</span><p class="font-body-sm text-body-sm text-on-surface-variant">Encrypted with 256-bit bank-grade protocol. Verified festive hardware guarantee.</p><div class="flex flex-wrap gap-space-xs text-label-md font-label-md"><span class="bg-surface-container-lowest px-space-sm py-1 rounded text-on-surface">VISA SECURE</span><span class="bg-surface-container-lowest px-space-sm py-1 rounded text-on-surface">MASTERCARD</span><span class="bg-surface-container-lowest px-space-sm py-1 rounded text-on-surface">UPI FASTPAY</span><span class="bg-surface-container-lowest px-space-sm py-1 rounded text-on-surface">PCI-DSS</span></div><div class="flex flex-col gap-1 pt-space-xs"><span class="font-label-caps text-label-caps uppercase text-on-surface">Direct Contact</span><span class="font-body-sm text-body-sm text-on-surface-variant">support@rtcrackers.com</span><span class="font-body-sm text-body-sm text-on-surface-variant">HQ: Sector 14 Sports Arena Hub, NCR</span></div></div></div><div class="border-t border-outline-variant/30 pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-sm text-body-sm font-body-sm text-on-surface-variant"><p>© 2026 RTCrackers Sports &amp; Festives. All Rights Reserved. Engineered for Performance.</p><div class="flex items-center gap-space-lg"><span class="hover:text-primary cursor-pointer">Compliance</span><span class="hover:text-primary cursor-pointer">Security Protocol</span><span class="hover:text-primary cursor-pointer">Festival Registry</span></div></div></div></footer><script src="../runtime/rtc-runtime.js"></script></body></html>

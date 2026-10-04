@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@400;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#410001", "primary-fixed-dim": "#ffb4a9", "surface-container-highest": "#323539", "secondary-container": "#e5b200", "inverse-surface": "#e1e2e8", "tertiary-fixed-dim": "#ffb77f", "surface-tint": "#ffb4a9", "primary": "#ffb4a9", "surface-container-high": "#272a2f", "on-primary-container": "#fff9f8", "secondary-fixed": "#ffdf95", "tertiary": "#ffb77f", "tertiary-fixed": "#ffdcc4", "inverse-primary": "#c00006", "surface": "#111418", "surface-container": "#1d2024", "surface-container-lowest": "#0b0e12", "on-background": "#e1e2e8", "secondary": "#ffce4b", "primary-container": "#e31b16", "on-primary-fixed-variant": "#930003", "on-secondary-fixed": "#251a00", "on-surface": "#e1e2e8", "on-surface-variant": "#e8bdb6", "surface-bright": "#36393e", "error": "#ffb4ab", "on-error-container": "#ffdad6", "inverse-on-surface": "#2e3135", "on-error": "#690005", "primary-fixed": "#ffdad5", "on-secondary-fixed-variant": "#594400", "tertiary-container": "#b05e00", "on-secondary-container": "#5c4600", "on-tertiary-fixed-variant": "#6f3900", "outline": "#ae8882", "surface-variant": "#323539", "error-container": "#93000a", "outline-variant": "#5e3f3b", "surface-container-low": "#191c20", "on-tertiary-fixed": "#2f1500", "on-primary": "#690002", "on-tertiary": "#4e2600", "on-secondary": "#3e2e00", "background": "#111418", "secondary-fixed-dim": "#f4bf1b", "surface-dim": "#111418", "on-tertiary-container": "#fff9f8" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-mobile": "1.25rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter": "1.5rem", "margin": "3rem", "space-xl": "2.5rem", "space-md": "1rem", "gutter-mobile": "1rem", "space-sm": "0.5rem" }, "fontFamily": { "label-md": ["Inter"], "headline-xl-mobile": ["Oswald"], "title-md": ["Montserrat"], "headline-lg": ["Oswald"], "label-lg": ["Inter"], "body-sm": ["Montserrat"], "headline-md": ["Oswald"], "display-hero": ["Oswald"], "title-lg": ["Montserrat"], "display-hero-mobile": ["Oswald"], "body-lg": ["Montserrat"], "label-sm": ["Inter"], "headline-xl": ["Oswald"], "body-md": ["Montserrat"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.8px", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "0.5px", "fontWeight": "700" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "0.5px", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "1px", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0.5px", "fontWeight": "600" }], "display-hero": ["64px", { "lineHeight": "72px", "letterSpacing": "1.5px", "fontWeight": "700" }], "title-lg": ["20px", { "lineHeight": "28px", "letterSpacing": "0.2px", "fontWeight": "700" }], "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "1px", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "1.2px", "fontWeight": "700" }], "headline-xl": ["44px", { "lineHeight": "52px", "letterSpacing": "1px", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }] } } } };</script><link href="../runtime/theme.css" rel="stylesheet"/></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col h-full overflow-hidden"><div class="h-16 flex items-center px-space-md gap-space-sm bg-surface-container-lowest shrink-0"><img alt="LOGO.jpeg" class="h-8 w-auto object-contain" src="../assets/branding/LOGO.jpeg"/><div class="flex flex-col"><span class="font-headline-md text-headline-md tracking-wider text-on-surface uppercase">RTCrackers</span><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Ops Console</span></div></div><div class="flex-1 overflow-y-auto px-space-sm py-space-md space-y-space-md"><nav class="space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-[0_0_16px_rgba(227,27,22,0.45)]"><div><p class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Core Command</p><div class="space-y-1"><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="font-label-md text-label-md">Dashboard</span></div></a></div></div><div><p class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Catalog &amp; Inventory</p><div class="space-y-1"><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="products" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="font-label-md text-label-md">Products</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="categories" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">category</span><span class="font-label-md text-label-md">Categories</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="brands" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">workspace_premium</span><span class="font-label-md text-label-md">Brands</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inventory-matrix" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">table_chart</span><span class="font-label-md text-label-md">Inventory Matrix</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="product-reviews" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">rate_review</span><span class="font-label-md text-label-md">Product Reviews</span></div></a></div></div><div><p class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Order Desk</p><div class="space-y-1"><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="all-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="font-label-md text-label-md">All Orders</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pending-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">pending_actions</span><span class="font-label-md text-label-md">Pending Orders</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="processing-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">sync_alt</span><span class="font-label-md text-label-md">Processing</span></div><span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">286</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="shipped-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="font-label-md text-label-md">Shipped</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="delivered-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">task_alt</span><span class="font-label-md text-label-md">Delivered</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cancelled-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">cancel</span><span class="font-label-md text-label-md">Cancelled</span></div></a></div></div><div><p class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Fulfillment &amp; Systems</p><div class="space-y-1"><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="customers-and-academies" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">local_fire_department</span><span class="font-label-md text-label-md">Customers &amp; Academies</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="coupons-and-offers" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">sell</span><span class="font-label-md text-label-md">Coupons &amp; Offers</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="shipments-and-dispatch" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">forklift</span><span class="font-label-md text-label-md">Shipments &amp; Dispatch</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="finance-and-upi-settlements" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">account_balance_wallet</span><span class="font-label-md text-label-md">Finance &amp; UPI Settlements</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="sales-analytics" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">monitoring</span><span class="font-label-md text-label-md">Sales Analytics</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="roles-and-permissions" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">shield_person</span><span class="font-label-md text-label-md">Roles &amp; Permissions</span></div></a></div></div></nav></div></div><div class="p-space-sm bg-surface-container-lowest shrink-0 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center justify-between px-space-sm py-space-xs rounded bg-surface-container-low"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary-fixed shadow-[0_0_8px_rgba(255,206,75,0.8)]"></span><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">PROD-API: v2.4.9</span></div><span class="font-label-sm text-label-sm text-secondary">18ms</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 px-gutter flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md"><button class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">menu_open</span></button><div class="flex items-center gap-space-xs font-label-md text-label-md tracking-wide text-on-surface-variant"><span class="text-outline">Admin</span><span>/</span><span class="text-outline">Orders</span><span>/</span><span class="text-primary font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>Processing Queue</span></div></div><div class="flex-1 max-w-lg mx-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-[18px] text-outline">search</span><input class="w-full pl-9 pr-4 py-1.5 rounded bg-surface-container text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="Search orders, SKUs, barcode, batch... (⌘K)" type="text"/><div class="absolute right-2 px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">⌘K</div></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_6px_rgba(255,206,75,0.7)]"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Fulfillment Yard: <span class="text-on-surface font-semibold">Online</span></span></div><button class="relative p-1.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-0 right-0 w-4 h-4 rounded-full bg-primary-container text-on-primary-container font-label-sm text-[10px] flex items-center justify-center font-bold">4</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden sm:block"><p class="font-label-md text-label-md text-on-surface leading-tight">Vikram S.</p><p class="font-label-sm text-label-sm text-outline leading-tight">Fulfillment Supv L2</p></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive & Notification Script -->
+<script>
+    function switchDrawer(shpId, rtcId, awb, customer, city, carrier, status, rider, eta, wt) {
+      const drawer = document.getElementById('shipment-inspector');
+      if (!drawer) return;
+      document.getElementById('insp-shp-id').innerText = shpId;
+      document.getElementById('insp-rtc-id').innerText = rtcId;
+      document.getElementById('insp-awb').innerText = awb;
+      document.getElementById('insp-cust').innerText = customer;
+      document.getElementById('insp-city').innerText = city;
+      document.getElementById('insp-carrier').innerText = carrier;
+      document.getElementById('insp-status').innerText = status;
+      document.getElementById('insp-rider').innerText = rider;
+      document.getElementById('insp-eta').innerText = eta;
+      document.getElementById('insp-wt').innerText = wt;
+      drawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function copyToClipboard(text, elemId) {
+      navigator.clipboard.writeText(text);
+      const icon = document.getElementById(elemId);
+      if (icon) {
+        icon.innerText = 'check';
+        setTimeout(() => { icon.innerText = 'content_copy'; }, 1500);
+      }
+    }
+
+    function toggleSelectAll(master) {
+      const checkboxes = document.querySelectorAll('.shp-checkbox');
+      checkboxes.forEach(cb => cb.checked = master.checked);
+    }
+  </script>
+<!-- Highlight Sidebar Active Marker for Shipments & Dispatch -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.querySelectorAll('aside nav a[data-path="shipments-and-dispatch"]');
+      navLinks.forEach(link => {
+        link.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-high');
+        link.classList.add('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'rounded-lg', 'shadow-lg');
+      });
+    });
+  </script>
+<!-- Main Logistics Surface Container -->
+<div class="px-gutter py-space-md space-y-space-lg">
+<!-- Section 1: Operational Header & Live Telemetry Link -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md bg-surface-container-low p-space-md rounded-xl shadow-md">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Fulfillment &amp; Systems</span>
+<span class="text-outline-variant text-xs">/</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Shipping &amp; Delivery Ops</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-[10px] uppercase font-bold tracking-widest">Live Dispatch Node</span>
+</div>
+<div class="flex items-center gap-space-md flex-wrap">
+<h1 class="font-headline-lg text-headline-lg uppercase tracking-wide text-on-surface flex items-center gap-space-xs">
+            Shipment Operations Desk
+          </h1>
+<!-- Live Carrier Gateway Status Pill -->
+<div class="flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-highest shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface">Carrier Gateways: <span class="text-secondary font-bold">4/4 Active</span> (Delhivery, BlueDart, DTDC, IndiaPost)</span>
+<span class="text-outline-variant font-label-sm text-xs">|</span>
+<span class="font-label-sm text-label-sm text-outline">API Sync: <span class="text-secondary">24ms</span></span>
+</div>
+</div>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-md text-label-md uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px] text-secondary">sync</span>
+<span>Refresh (Auto 30s)</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-md text-label-md uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px] text-outline">file_download</span>
+<span>Export Manifests</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-md text-label-md uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px] text-outline">tune</span>
+<span>Gateways</span>
+</button>
+<button class="flex items-center gap-2 px-space-lg py-2 rounded bg-primary-container text-on-primary-container hover:bg-primary-container/90 transition-all font-headline-md text-title-md uppercase tracking-wider shadow-lg">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+<span>Create Shipment</span>
+</button>
+</div>
+</div>
+<!-- Section 2: Logistics KPI Telemetry Bar (6 High-Density Panels) -->
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-space-sm">
+<!-- Card 1 -->
+<div class="bg-surface-container p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Total Active</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">package_2</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-normal leading-none">1,482</span>
+<div class="flex items-center gap-1 mt-1 text-secondary">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span class="font-label-sm text-label-sm font-bold">+118 Today</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Awaiting Manifest</span>
+<span class="material-symbols-outlined text-outline text-[20px]">inventory</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-normal leading-none">86</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate mt-1">Del: 42 | BD: 28 | DT: 16</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">In Transit Hubs</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">forklift</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-xl text-headline-xl text-secondary tracking-normal leading-none">942</span>
+<div class="flex items-center justify-between text-outline-variant mt-1 font-label-sm text-label-sm">
+<span>On Track: 914</span>
+<span class="text-tertiary font-bold">28 Risk</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Out For Delivery</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">sports_motorsports</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-normal leading-none">318</span>
+<p class="font-label-sm text-label-sm text-secondary font-bold mt-1">Due by 20:00 IST</p>
+</div>
+</div>
+<!-- Card 5 (Exception) -->
+<div class="bg-surface-container-high p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Exceptions / RTO</span>
+<span class="material-symbols-outlined text-primary-container text-[20px]">warning</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-xl text-headline-xl text-primary tracking-normal leading-none">24</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Requires Agent Action</p>
+</div>
+</div>
+<!-- Card 6 (Critical Breached) -->
+<div class="bg-surface-container-high p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">SLA Breached</span>
+<span class="material-symbols-outlined text-primary text-[20px]">fmd_bad</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-xl text-headline-xl text-primary tracking-normal leading-none">12</span>
+<p class="font-label-sm text-label-sm text-primary font-bold mt-1">Escalated to Desk</p>
+</div>
+</div>
+</div>
+<!-- Section 3: Visual Logistics Lifecycle Pipeline Bar -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-md">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Logistics Flow &amp; Manifest Stage Gate</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Weekly Delivered: 4,210 Parcels</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-space-xs">
+<!-- Stage 1 -->
+<div class="bg-surface-container p-space-sm rounded flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline">01. Manifest Created</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">86</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+<!-- Stage 2 -->
+<div class="bg-surface-container p-space-sm rounded flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline">02. Scheduled Pickup</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">64</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 60%;"></div>
+</div>
+</div>
+<!-- Stage 3 -->
+<div class="bg-surface-container p-space-sm rounded flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">03. In Transit Hubs</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">942</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 82%;"></div>
+</div>
+</div>
+<!-- Stage 4 -->
+<div class="bg-surface-container p-space-sm rounded flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline">04. Out For Delivery</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">318</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 70%;"></div>
+</div>
+</div>
+<!-- Stage 5 Exception Split -->
+<div class="bg-surface-container-high p-space-sm rounded flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold">Exceptions / RTO</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">24 Active</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<div class="flex-1 bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 58%;"></div>
+</div>
+<div class="flex-1 bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 42%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Critical Attention & Exceptions Triage Strip -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-sm shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">report</span>
+<span class="font-title-md text-title-md uppercase tracking-wider text-on-surface font-bold">Critical Exception Triage Queue</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">3 High Alert</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Requires immediate carrier resolution</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-sm">
+<!-- Bottleneck 1 -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col justify-between space-y-3">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">#SHP-98214 • BlueDart Air</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-tertiary">Address Discrepancy</span>
+</div>
+<p class="font-headline-md text-title-md text-on-surface">Pincode Mismatch (Bengaluru Hub 560038)</p>
+<p class="font-body-sm text-body-sm text-outline">Consignee phone reachable. Apartment block number omitted in raw address payload.</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Customer: Arjun Mehta</span>
+<button class="px-space-sm py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm uppercase font-bold hover:bg-secondary-fixed transition-colors">
+              Update Address
+            </button>
+</div>
+</div>
+<!-- Bottleneck 2 -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col justify-between space-y-3">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">#SHP-98102 • Delhivery Surface</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-primary">COD Refusal (Attempt 1/3)</span>
+</div>
+<p class="font-headline-md text-title-md text-on-surface">Customer Cash Unavailable at Doorstep</p>
+<p class="font-body-sm text-body-sm text-outline">Order value: ₹4,850. Consignee requested UPI payment conversion or reattempt tomorrow.</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Consignee: Rajesh G.</span>
+<button class="px-space-sm py-1 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase font-bold hover:bg-primary transition-colors">
+              Send UPI Link
+            </button>
+</div>
+</div>
+<!-- Bottleneck 3 -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col justify-between space-y-3">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-bold uppercase tracking-wider">#SHP-97940 • DTDC Express</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-primary">Stalled &gt; 48 Hrs</span>
+</div>
+<p class="font-headline-md text-title-md text-on-surface">Nagpur Transshipment Hub Bottleneck</p>
+<p class="font-body-sm text-body-sm text-outline">Explosive certified transport vehicle delayed due to NH44 weather closure advisory.</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Manifest: #MNF-8841</span>
+<button class="px-space-sm py-1 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm uppercase font-bold hover:bg-surface-bright transition-colors">
+              Raise Escalation
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 5: Filter & Multi-Parameter Search Toolbar -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-sm shadow-md">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-sm">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-xl">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[20px] text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded bg-surface-container text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-high transition-colors" placeholder="Search by SHP ID, Order #RTC-, Tracking AWB, Customer name, Phone, Pincode..." type="text"/>
+<span class="absolute right-3 top-2 px-1.5 py-0.5 rounded bg-surface-container-highest text-outline font-label-sm text-[10px]">Filter Mode</span>
+</div>
+<!-- Carrier Quick Toggles -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0">
+<button class="px-3 py-1.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase font-bold">All (1,482)</button>
+<button class="px-3 py-1.5 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm uppercase font-medium">Delhivery (620)</button>
+<button class="px-3 py-1.5 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm uppercase font-medium">BlueDart (490)</button>
+<button class="px-3 py-1.5 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm uppercase font-medium">DTDC (248)</button>
+<button class="px-3 py-1.5 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm uppercase font-medium">India Post (124)</button>
+</div>
+</div>
+<!-- Secondary Filters Strip -->
+<div class="flex items-center justify-between flex-wrap gap-2 pt-space-xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Status:</span>
+<button class="px-2 py-1 rounded bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">Active In-Flight</button>
+<button class="px-2 py-1 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm">Awaiting Pickup</button>
+<button class="px-2 py-1 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm">Out for Delivery</button>
+<button class="px-2 py-1 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm">Exceptions (24)</button>
+<span class="text-outline-variant mx-1">|</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Service:</span>
+<button class="px-2 py-1 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm">Air Express</button>
+<button class="px-2 py-1 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm">Hazardous Surface</button>
+<span class="text-outline-variant mx-1">|</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Payment:</span>
+<button class="px-2 py-1 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm">Prepaid</button>
+<button class="px-2 py-1 rounded bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm">COD Only</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline">Bulk Action:</span>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface hover:bg-surface-container-highest font-label-sm text-label-sm">Print Labels (0)</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface hover:bg-surface-container-highest font-label-sm text-label-sm">Generate Manifest</button>
+</div>
+</div>
+</div>
+<!-- Section 6 & 7: Main Operations Workspace (Table & Inspector Split) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md items-start">
+<!-- Operations Table (Left 8 Cols) -->
+<div class="xl:col-span-8 bg-surface-container-low rounded-xl shadow-md overflow-hidden">
+<div class="px-space-md py-space-sm bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-title-md uppercase tracking-wider text-on-surface">Active Telemetry Manifest</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-bold">Showing 8 of 1,482</span>
+</div>
+<div class="flex items-center gap-2 text-outline font-label-sm text-label-sm">
+<span>Sort:</span>
+<span class="text-on-surface font-medium">SLA Urgency (High to Low)</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-highest text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="p-3 w-8">
+<input class="rounded bg-surface-container text-primary-container focus:ring-0 cursor-pointer" onchange="toggleSelectAll(this)" type="checkbox"/>
+</th>
+<th class="p-3">Shipment / Order</th>
+<th class="p-3">Consignee &amp; City</th>
+<th class="p-3">Carrier / AWB</th>
+<th class="p-3">Status &amp; Hub</th>
+<th class="p-3">SLA / ETA</th>
+<th class="p-3">Payment</th>
+<th class="p-3 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+<!-- ROW 1 (Active/Selected) -->
+<tr class="bg-surface-container/60 hover:bg-surface-container transition-colors cursor-pointer" onclick="switchDrawer('#SHP-98421', '#RTC-1024587', 'TRK938472615', 'Vikramaditya Rao', 'Bengaluru, KA (560038)', 'Delhivery Surface Express', 'Out for Delivery', 'Amit K. (+91 98450 XXXXX)', 'Today by 18:30 IST', '3.4 kg')">
+<td class="p-3" onclick="event.stopPropagation()">
+<input class="shp-checkbox rounded bg-surface-container text-primary-container focus:ring-0" type="checkbox"/>
+</td>
+<td class="p-3">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-md text-label-lg text-secondary">#SHP-98421</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">#RTC-1024587</div>
+<span class="font-label-sm text-[10px] text-tertiary">1x Thunder King Aerial Box</span>
+</td>
+<td class="p-3">
+<p class="font-label-md text-label-md font-bold text-on-surface">Vikramaditya Rao</p>
+<p class="font-label-sm text-label-sm text-outline truncate max-w-[150px]">Indiranagar, Bengaluru, KA</p>
+<p class="font-label-sm text-label-sm text-outline">PIN: 560038</p>
+</td>
+<td class="p-3">
+<div class="flex items-center gap-1 font-label-md text-label-md font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">local_shipping</span>
+<span>Delhivery Surface</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>TRK938472615</span>
+<button class="hover:text-secondary" onclick="event.stopPropagation(); copyToClipboard('TRK938472615', 'c-btn-1')">
+<span class="material-symbols-outlined text-[14px]" id="c-btn-1">content_copy</span>
+</button>
+</div>
+</td>
+<td class="p-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Out for Delivery
+                  </span>
+<p class="font-label-sm text-label-sm text-outline mt-1 truncate max-w-[140px]">Indiranagar DC Unit</p>
+</td>
+<td class="p-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-bold">ON TRACK</span>
+<p class="font-label-sm text-label-sm text-outline mt-1">Today 18:30</p>
+</td>
+<td class="p-3">
+<span class="font-headline-md text-label-md text-secondary">₹7,574</span>
+<span class="block font-label-sm text-[10px] text-outline font-bold">PREPAID (Razorpay)</span>
+</td>
+<td class="p-3 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded bg-surface-container-highest text-on-surface hover:text-secondary" title="View Tracking">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded bg-surface-container-highest text-on-surface hover:text-secondary" title="Print Shipping Label">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2 (Exception Row) -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer bg-surface-container-high/40" onclick="switchDrawer('#SHP-98214', '#RTC-1024310', 'BLU98127394', 'Arjun Mehta', 'Bengaluru, KA (560038)', 'BlueDart Apex Air', 'Exception: Address Fix', 'Pending Re-dispatch', 'Delayed +24h', '5.1 kg')">
+<td class="p-3" onclick="event.stopPropagation()">
+<input class="shp-checkbox rounded bg-surface-container text-primary-container focus:ring-0" type="checkbox"/>
+</td>
+<td class="p-3">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-md text-label-lg text-primary">#SHP-98214</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">#RTC-1024310</div>
+<span class="font-label-sm text-[10px] text-tertiary">English Sparkler Bat Pro Grade</span>
+</td>
+<td class="p-3">
+<p class="font-label-md text-label-md font-bold text-on-surface">Arjun Mehta</p>
+<p class="font-label-sm text-label-sm text-outline truncate max-w-[150px]">Koramangala 4th Blk</p>
+<p class="font-label-sm text-label-sm text-outline">PIN: 560034</p>
+</td>
+<td class="p-3">
+<div class="flex items-center gap-1 font-label-md text-label-md font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-outline">flight</span>
+<span>BlueDart Air</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>BLU98127394</span>
+<button class="hover:text-secondary" onclick="event.stopPropagation(); copyToClipboard('BLU98127394', 'c-btn-2')">
+<span class="material-symbols-outlined text-[14px]" id="c-btn-2">content_copy</span>
+</button>
+</div>
+</td>
+<td class="p-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Address Issue
+                  </span>
+<p class="font-label-sm text-label-sm text-primary mt-1">BLR Hub Hold</p>
+</td>
+<td class="p-3">
+<span class="px-2 py-0.5 rounded bg-primary-container/30 text-primary font-label-sm text-label-sm font-bold">BREACHED</span>
+<p class="font-label-sm text-label-sm text-outline mt-1">Oct 05 (Past)</p>
+</td>
+<td class="p-3">
+<span class="font-headline-md text-label-md text-secondary">₹14,200</span>
+<span class="block font-label-sm text-[10px] text-outline font-bold">PREPAID</span>
+</td>
+<td class="p-3 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-bold" title="Resolve Address Issue">
+                      Fix
+                    </button>
+</div>
+</td>
+</tr>
+<!-- ROW 3 (COD Delivery Refused) -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer" onclick="switchDrawer('#SHP-98102', '#RTC-1024190', 'DLV88712398', 'Rajesh G.', 'Hyderabad, TS (500081)', 'Delhivery Surface', 'COD Refused (1/3)', 'Kishore M. (+91 99882 XXXXX)', 'Reattempt Oct 07', '8.2 kg')">
+<td class="p-3" onclick="event.stopPropagation()">
+<input class="shp-checkbox rounded bg-surface-container text-primary-container focus:ring-0" type="checkbox"/>
+</td>
+<td class="p-3">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-md text-label-lg text-secondary">#SHP-98102</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">#RTC-1024190</div>
+<span class="font-label-sm text-[10px] text-tertiary">Diwali Mega Hamper 50-Shots</span>
+</td>
+<td class="p-3">
+<p class="font-label-md text-label-md font-bold text-on-surface">Rajesh G.</p>
+<p class="font-label-sm text-label-sm text-outline truncate max-w-[150px]">Madhapur, Hitech City</p>
+<p class="font-label-sm text-label-sm text-outline">PIN: 500081</p>
+</td>
+<td class="p-3">
+<div class="flex items-center gap-1 font-label-md text-label-md font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">local_shipping</span>
+<span>Delhivery Surface</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>DLV88712398</span>
+<button class="hover:text-secondary" onclick="event.stopPropagation(); copyToClipboard('DLV88712398', 'c-btn-3')">
+<span class="material-symbols-outlined text-[14px]" id="c-btn-3">content_copy</span>
+</button>
+</div>
+</td>
+<td class="p-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    COD Refused
+                  </span>
+<p class="font-label-sm text-label-sm text-outline mt-1">Madhapur DC</p>
+</td>
+<td class="p-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-tertiary font-label-sm text-label-sm font-bold">REATTEMPT</span>
+<p class="font-label-sm text-label-sm text-outline mt-1">Oct 07 14:00</p>
+</td>
+<td class="p-3">
+<span class="font-headline-md text-label-md text-primary font-bold">₹4,850</span>
+<span class="block font-label-sm text-[10px] text-primary-fixed uppercase font-bold">COD PENDING</span>
+</td>
+<td class="p-3 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded bg-surface-container-highest text-on-surface hover:text-secondary" title="Dispatch SMS Pay Link">
+<span class="material-symbols-outlined text-[18px]">sms</span>
+</button>
+<button class="p-1 rounded bg-surface-container-highest text-on-surface hover:text-secondary" title="View Tracking">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4 (In-Transit Stalled) -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer" onclick="switchDrawer('#SHP-97940', '#RTC-1023992', 'DTC55129481', 'Kavita Sundaram', 'Nagpur, MH (440001)', 'DTDC Heavy Cargo', 'In Transit: Stalled Hub', 'Fleet Truck #MH-31-TR-9182', 'Oct 08 (+2D)', '12.0 kg')">
+<td class="p-3" onclick="event.stopPropagation()">
+<input class="shp-checkbox rounded bg-surface-container text-primary-container focus:ring-0" type="checkbox"/>
+</td>
+<td class="p-3">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-md text-label-lg text-secondary">#SHP-97940</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">#RTC-1023992</div>
+<span class="font-label-sm text-[10px] text-tertiary">Club Leather Fireworks Kit (Bulk)</span>
+</td>
+<td class="p-3">
+<p class="font-label-md text-label-md font-bold text-on-surface">Kavita Sundaram</p>
+<p class="font-label-sm text-label-sm text-outline truncate max-w-[150px]">Civil Lines, Nagpur</p>
+<p class="font-label-sm text-label-sm text-outline">PIN: 440001</p>
+</td>
+<td class="p-3">
+<div class="flex items-center gap-1 font-label-md text-label-md font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-outline">rv_hookup</span>
+<span>DTDC Heavy</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>DTC55129481</span>
+<button class="hover:text-secondary" onclick="event.stopPropagation(); copyToClipboard('DTC55129481', 'c-btn-4')">
+<span class="material-symbols-outlined text-[14px]" id="c-btn-4">content_copy</span>
+</button>
+</div>
+</td>
+<td class="p-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-highest text-tertiary font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    Stalled Hub
+                  </span>
+<p class="font-label-sm text-label-sm text-outline mt-1">Nagpur Hub (NH44)</p>
+</td>
+<td class="p-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold">DELAYED +2D</span>
+<p class="font-label-sm text-label-sm text-outline mt-1">Oct 08 (Est)</p>
+</td>
+<td class="p-3">
+<span class="font-headline-md text-label-md text-secondary">₹28,900</span>
+<span class="block font-label-sm text-[10px] text-outline font-bold">PREPAID (Corporate)</span>
+</td>
+<td class="p-3 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded bg-surface-container-highest text-on-surface hover:text-secondary" title="Carrier Escalation Ticket">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+</button>
+<button class="p-1 rounded bg-surface-container-highest text-on-surface hover:text-secondary" title="View Tracking">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5 (In Transit Normal) -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer" onclick="switchDrawer('#SHP-97881', '#RTC-1023811', 'IP77281920IN', 'Lt. Col. P. Sharma', 'Pune, MH (411001)', 'India Post Speed Post', 'In Transit Hubs', 'Sort Rail Hub Pune', 'Oct 07 16:00', '1.8 kg')">
+<td class="p-3" onclick="event.stopPropagation()">
+<input class="shp-checkbox rounded bg-surface-container text-primary-container focus:ring-0" type="checkbox"/>
+</td>
+<td class="p-3">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-md text-label-lg text-secondary">#SHP-97881</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">#RTC-1023811</div>
+<span class="font-label-sm text-[10px] text-tertiary">12x Festival Leather Balls</span>
+</td>
+<td class="p-3">
+<p class="font-label-md text-label-md font-bold text-on-surface">Lt. Col. P. Sharma</p>
+<p class="font-label-sm text-label-sm text-outline truncate max-w-[150px]">Cantonment, Pune</p>
+<p class="font-label-sm text-label-sm text-outline">PIN: 411001</p>
+</td>
+<td class="p-3">
+<div class="flex items-center gap-1 font-label-md text-label-md font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-outline">markunread_mailbox</span>
+<span>India Post</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>IP77281920IN</span>
+<button class="hover:text-secondary" onclick="event.stopPropagation(); copyToClipboard('IP77281920IN', 'c-btn-5')">
+<span class="material-symbols-outlined text-[14px]" id="c-btn-5">content_copy</span>
+</button>
+</div>
+</td>
+<td class="p-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    In Transit
+                  </span>
+<p class="font-label-sm text-label-sm text-outline mt-1 truncate max-w-[140px]">Pune Rail Nodal Ctr</p>
+</td>
+<td class="p-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-bold">ON TRACK</span>
+<p class="font-label-sm text-label-sm text-outline mt-1">Oct 07 16:00</p>
+</td>
+<td class="p-3">
+<span class="font-headline-md text-label-md text-secondary">₹5,120</span>
+<span class="block font-label-sm text-[10px] text-outline font-bold">PREPAID</span>
+</td>
+<td class="p-3 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded bg-surface-container-highest text-on-surface hover:text-secondary" title="View Tracking">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 6 (Awaiting Pickup) -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer" onclick="switchDrawer('#SHP-97810', '#RTC-1023744', 'TRK992817263', 'Sunil Narine Fan Club', 'Kolkata, WB (700029)', 'Delhivery Surface', 'Awaiting Yard Pickup', 'Van Scheduled 16:30', 'Oct 09', '4.5 kg')">
+<td class="p-3" onclick="event.stopPropagation()">
+<input class="shp-checkbox rounded bg-surface-container text-primary-container focus:ring-0" type="checkbox"/>
+</td>
+<td class="p-3">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-md text-label-lg text-secondary">#SHP-97810</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">#RTC-1023744</div>
+<span class="font-label-sm text-[10px] text-tertiary">Gold Glitter Sparkler Bundle</span>
+</td>
+<td class="p-3">
+<p class="font-label-md text-label-md font-bold text-on-surface">Debashish Sen</p>
+<p class="font-label-sm text-label-sm text-outline truncate max-w-[150px]">Salt Lake Sector V, Kolkata</p>
+<p class="font-label-sm text-label-sm text-outline">PIN: 700091</p>
+</td>
+<td class="p-3">
+<div class="flex items-center gap-1 font-label-md text-label-md font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">local_shipping</span>
+<span>Delhivery</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>TRK992817263</span>
+<button class="hover:text-secondary" onclick="event.stopPropagation(); copyToClipboard('TRK992817263', 'c-btn-6')">
+<span class="material-symbols-outlined text-[14px]" id="c-btn-6">content_copy</span>
+</button>
+</div>
+</td>
+<td class="p-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-highest text-outline font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                    Manifested
+                  </span>
+<p class="font-label-sm text-label-sm text-outline mt-1 truncate max-w-[140px]">Sivakasi Yard Bay 04</p>
+</td>
+<td class="p-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-outline font-label-sm text-label-sm font-bold">PENDING PICKUP</span>
+<p class="font-label-sm text-label-sm text-outline mt-1">Oct 09 (Est)</p>
+</td>
+<td class="p-3">
+<span class="font-headline-md text-label-md text-secondary">₹3,450</span>
+<span class="block font-label-sm text-[10px] text-outline font-bold">PREPAID</span>
+</td>
+<td class="p-3 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded bg-surface-container-highest text-on-surface hover:text-secondary" title="Print Shipping Label">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="px-space-md py-space-sm bg-surface-container flex items-center justify-between">
+<div class="font-label-sm text-label-sm text-outline">
+            Showing <span class="text-on-surface font-semibold">1 to 8</span> of <span class="text-on-surface font-semibold">1,482</span> shipments
+          </div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<button class="px-2.5 py-1 rounded bg-surface-container-highest text-outline hover:text-on-surface">Prev</button>
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary-container font-bold">1</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-highest text-outline hover:text-on-surface">2</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-highest text-outline hover:text-on-surface">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-highest text-outline hover:text-on-surface">186</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-highest text-outline hover:text-on-surface">Next</button>
+</div>
+</div>
+</div>
+<!-- Section 7: Detailed Shipment Tracking & Exception Drawer / Inspector (Right 4 Cols) -->
+<div class="xl:col-span-4 bg-surface-container-low rounded-xl shadow-md p-space-md space-y-space-md" id="shipment-inspector">
+<!-- Inspector Top Header -->
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md uppercase text-secondary" id="insp-shp-id">#SHP-98421</span>
+<span class="px-2 py-0.5 rounded bg-secondary/20 text-secondary font-label-sm text-[10px] font-bold uppercase tracking-wider">Hazardous Hazmat A</span>
+</div>
+<p class="font-label-sm text-label-sm text-outline">Associated Order: <span class="text-on-surface font-bold" id="insp-rtc-id">#RTC-1024587</span></p>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded bg-surface-container-highest text-on-surface hover:text-secondary" title="Open Fullscreen Audit">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Carrier & Live Status Capsule -->
+<div class="bg-surface-container p-space-sm rounded-lg space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Gateway Telemetry</span>
+<span class="font-label-md text-label-md text-on-surface font-bold" id="insp-carrier">Delhivery Surface Express</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-outline">AWB Barcode:</span>
+<div class="flex items-center gap-1 text-secondary font-mono font-bold">
+<span id="insp-awb">TRK938472615</span>
+<span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-on-surface">barcode</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="text-outline font-label-sm text-label-sm">Delivery Status:</span>
+<span class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-bold uppercase tracking-wider" id="insp-status">Out for Delivery</span>
+</div>
+</div>
+<!-- Consignee & Package Metadata Card -->
+<div class="bg-surface-container p-space-sm rounded-lg space-y-2 text-body-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Consignee Destination</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Priority Tier 1</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold" id="insp-cust">Vikramaditya Rao</p>
+<p class="text-outline font-body-sm text-xs mt-0.5" id="insp-city">Indiranagar, 12th Main Road, HAL 2nd Stage, Bengaluru, KA - 560038</p>
+<p class="text-secondary font-label-sm text-xs mt-0.5">Phone: +91 98450 19284 (Verified Consignee)</p>
+</div>
+<div class="pt-2 flex items-center justify-between text-xs text-outline">
+<span>Package Specs:</span>
+<span class="text-on-surface font-medium" id="insp-wt">3.4 kg • 88x15x12 cm (Shockproof Tube)</span>
+</div>
+<div class="flex items-center justify-between text-xs text-outline">
+<span>Rider Assigned:</span>
+<span class="text-secondary font-bold" id="insp-rider">Amit K. (+91 98450 XXXXX)</span>
+</div>
+<div class="flex items-center justify-between text-xs text-outline">
+<span>Expected Arrival:</span>
+<span class="text-on-surface font-bold" id="insp-eta">Today by 18:30 IST</span>
+</div>
+</div>
+<!-- Vertical GPS Telemetry Tracking Timeline -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">GPS Tracking Audit</span>
+<span class="font-label-sm text-label-sm text-secondary">Hub Sync Live</span>
+</div>
+<div class="relative pl-6 space-y-4 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-highest">
+<!-- Milestone 1 (Current Active) -->
+<div class="relative">
+<span class="absolute -left-[22px] top-1 w-3 h-3 rounded-full bg-secondary ring-4 ring-surface-container-low shadow-sm"></span>
+<div>
+<p class="font-label-md text-label-md text-secondary font-bold">Out for Delivery from Indiranagar Hub</p>
+<p class="font-body-sm text-xs text-outline">Oct 05, 08:30 AM • Scanned onto Last-Mile Electric Van (EV-88)</p>
+</div>
+</div>
+<!-- Milestone 2 -->
+<div class="relative">
+<span class="absolute -left-[22px] top-1 w-2.5 h-2.5 rounded-full bg-outline ring-4 ring-surface-container-low"></span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-medium">Arrived at Bengaluru Central Sort Center</p>
+<p class="font-body-sm text-xs text-outline">Oct 04, 11:20 PM • Manifest de-bagged and barcoded</p>
+</div>
+</div>
+<!-- Milestone 3 -->
+<div class="relative">
+<span class="absolute -left-[22px] top-1 w-2.5 h-2.5 rounded-full bg-outline ring-4 ring-surface-container-low"></span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-medium">Departed Sivakasi Hazmat Yard</p>
+<p class="font-body-sm text-xs text-outline">Oct 03, 04:15 PM • Heavy Line-Haul Truck (Manifest #MNF-9921)</p>
+</div>
+</div>
+<!-- Milestone 4 -->
+<div class="relative">
+<span class="absolute -left-[22px] top-1 w-2.5 h-2.5 rounded-full bg-outline ring-4 ring-surface-container-low"></span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-medium">Pickup Scanned &amp; AWB Handshake</p>
+<p class="font-body-sm text-xs text-outline">Oct 02, 06:00 PM • Verified by Inspector S. Murugan</p>
+</div>
+</div>
+<!-- Milestone 5 -->
+<div class="relative">
+<span class="absolute -left-[22px] top-1 w-2.5 h-2.5 rounded-full bg-outline ring-4 ring-surface-container-low"></span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-medium">Shipping Label &amp; Invoices Generated</p>
+<p class="font-body-sm text-xs text-outline">Oct 02, 02:30 PM • RTC Auto-Fulfillment Engine</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Package Manifest Contents & Payment Status -->
+<div class="bg-surface-container p-space-sm rounded-lg space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Parcel Inclusions</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">1 SKU (3 Units)</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between text-xs">
+<span class="text-on-surface">1x Thunder King Aerial 50-Burst Display Box</span>
+<span class="text-secondary font-bold">₹5,499</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-on-surface">2x Titanium Flash Sparkler Bundles (10pk)</span>
+<span class="text-secondary font-bold">₹2,075</span>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between font-label-md text-label-md">
+<span class="text-outline">Settlement Status:</span>
+<span class="text-secondary font-bold">₹7,574 (Prepaid - Zero COD Due)</span>
+</div>
+</div>
+<!-- Quick Action Trigger Cluster -->
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<button class="flex items-center justify-center gap-1.5 py-2 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-outline">print</span>
+<span>Reprint Label</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-secondary">chat</span>
+<span>WhatsApp Rider</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-primary">warning</span>
+<span>Raise Escalation</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 rounded bg-primary-container text-on-primary-container hover:bg-primary transition-colors font-label-sm text-label-sm uppercase font-bold tracking-wider">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+<span>Mark Delivered</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Section 8: Carrier SLA Benchmarks & COD Settlement Matrix -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- Carrier SLA Benchmark Card 1: Delhivery -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-sm shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-secondary font-bold">
+              DEL
+            </div>
+<div>
+<p class="font-headline-md text-title-md text-on-surface uppercase">Delhivery Surface</p>
+<p class="font-label-sm text-label-sm text-outline">Primary Ground Transporter</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary/20 text-secondary font-label-sm text-label-sm font-bold">97.2% SLA</span>
+</div>
+<div class="space-y-1 pt-1">
+<div class="flex items-center justify-between text-xs">
+<span class="text-outline">Average Transit Time:</span>
+<span class="text-on-surface font-semibold">2.8 Days (Pan India)</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-outline">Active Parcels in Custody:</span>
+<span class="text-secondary font-bold">620 Shipments</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-outline">Weekly First-Attempt Success:</span>
+<span class="text-on-surface font-semibold">94.8%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden mt-2">
+<div class="bg-secondary h-full rounded-full" style="width: 97.2%;"></div>
+</div>
+</div>
+<!-- Carrier SLA Benchmark Card 2: BlueDart -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-sm shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-secondary font-bold">
+              BLU
+            </div>
+<div>
+<p class="font-headline-md text-title-md text-on-surface uppercase">BlueDart Express Air</p>
+<p class="font-label-sm text-label-sm text-outline">Air Cargo &amp; Fireworks Hardware</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary/20 text-secondary font-label-sm text-label-sm font-bold">98.6% SLA</span>
+</div>
+<div class="space-y-1 pt-1">
+<div class="flex items-center justify-between text-xs">
+<span class="text-outline">Average Transit Time:</span>
+<span class="text-on-surface font-semibold">1.9 Days (Metro Hubs)</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-outline">Active Parcels in Custody:</span>
+<span class="text-secondary font-bold">490 Shipments</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-outline">Weekly First-Attempt Success:</span>
+<span class="text-on-surface font-semibold">97.4%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden mt-2">
+<div class="bg-secondary h-full rounded-full" style="width: 98.6%;"></div>
+</div>
+</div>
+<!-- Carrier SLA Benchmark Card 3: DTDC & India Post Combined -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-sm shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-primary font-bold">
+              DTC
+            </div>
+<div>
+<p class="font-headline-md text-title-md text-on-surface uppercase">DTDC &amp; Speed Post</p>
+<p class="font-label-sm text-label-sm text-outline">Tier 2/3 Remote &amp; Heavy Cargo</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary font-label-sm text-label-sm font-bold">93.4% SLA</span>
+</div>
+<div class="space-y-1 pt-1">
+<div class="flex items-center justify-between text-xs">
+<span class="text-outline">Average Transit Time:</span>
+<span class="text-on-surface font-semibold">3.8 Days (Regional)</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-outline">Active Parcels in Custody:</span>
+<span class="text-secondary font-bold">372 Shipments</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-outline">Weekly First-Attempt Success:</span>
+<span class="text-on-surface font-semibold">89.2%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden mt-2">
+<div class="bg-tertiary h-full rounded-full" style="width: 93.4%;"></div>
+</div>
+</div>
+</div>
+<!-- Operations Security & Legal Footer -->
+<div class="flex flex-col md:flex-row items-center justify-between text-outline font-label-sm text-label-sm px-space-sm py-space-xs gap-2">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span>PESO Statutory Hazmat Transport Compliant (License #PESO-TN-SK-9982)</span>
+</span>
+<span>•</span>
+<span>Manifest Signoff: Auto Hash SHA-256</span>
+</div>
+<div>
+<span>Logged Terminal: Desk-Sivakasi-Alpha-4 | System v2.4.9</span>
+</div>
+</div>
+</div>
+</div></main></div><script src="../runtime/rtc-runtime.js"></script></body></html>

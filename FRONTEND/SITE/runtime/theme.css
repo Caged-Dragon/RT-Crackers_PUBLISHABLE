@@ -1,0 +1,39 @@
+
+:root {
+  --rtc-red:#e31b16; --rtc-red-dark:#b90f0b; --rtc-gold:#ffce4b; --rtc-gold-dark:#d9a900;
+  --rtc-blue:#092b63; --rtc-blue-2:#0d4d8f; --rtc-cream:#fff8e8; --rtc-white:#ffffff;
+  --rtc-ink:#10224b; --rtc-muted:#53617d; --rtc-border:#ead9ad; --rtc-green:#159447;
+}
+html,body { background:var(--rtc-cream) !important; color:var(--rtc-ink) !important; }
+body { font-family:Inter,system-ui,sans-serif; }
+/* Re-map the existing Tailwind design tokens to the supplied RT Crackers artwork. */
+.bg-surface-container-lowest,.bg-background { background-color:var(--rtc-cream) !important; }
+.bg-surface,.bg-surface-container-low { background-color:var(--rtc-white) !important; }
+.bg-surface-container,.bg-surface-container-high,.bg-surface-container-highest,.bg-surface-variant { background-color:#fff3cf !important; }
+.text-on-surface,.text-on-background { color:var(--rtc-ink) !important; }
+.text-on-surface-variant,.text-outline,.text-muted { color:var(--rtc-muted) !important; }
+.text-primary,.text-primary-container { color:var(--rtc-red) !important; }
+.bg-primary,.bg-primary-container { background-color:var(--rtc-red) !important; }
+.text-secondary,.text-secondary-container { color:var(--rtc-gold-dark) !important; }
+.bg-secondary,.bg-secondary-container { background-color:var(--rtc-gold) !important; }
+.border-outline-variant,.border-secondary { border-color:var(--rtc-border) !important; }
+.text-on-primary-container,.text-on-primary { color:#fff !important; }
+.text-on-secondary { color:var(--rtc-ink) !important; }
+.shadow-\[0_0_20px_rgba\(227\,27\,22\,0\.5\)\] { box-shadow:0 10px 28px rgba(227,27,22,.18) !important; }
+.rtc-home-banner { display:block; width:100%; max-width:1600px; margin:0 auto; border-radius:0 0 18px 18px; overflow:hidden; box-shadow:0 12px 35px rgba(16,34,75,.16); }
+.rtc-home-banner img { display:block; width:100%; height:auto; }
+.rtc-theme-bar { position:fixed; right:14px; bottom:14px; z-index:99999; display:flex; gap:6px; padding:6px; border-radius:999px; background:#fff; border:1px solid var(--rtc-border); box-shadow:0 8px 24px rgba(0,0,0,.14); }
+.rtc-theme-bar button { border:0; border-radius:999px; padding:7px 11px; font:600 11px/1 Inter,sans-serif; cursor:pointer; }
+.rtc-theme-bar .active { background:var(--rtc-red); color:#fff; }
+.rtc-sync-badge { position:fixed; left:14px; bottom:14px; z-index:99998; padding:7px 10px; border-radius:999px; background:#fff; border:1px solid var(--rtc-border); color:var(--rtc-blue); font:600 11px/1 Inter,sans-serif; box-shadow:0 8px 24px rgba(0,0,0,.1); }
+/* Explicit opt-in dark theme. */
+html.dark body { background:#0b0e12 !important; color:#f8f9ff !important; }
+html.dark .bg-surface-container-lowest,html.dark .bg-background { background:#0b0e12 !important; }
+html.dark .bg-surface,html.dark .bg-surface-container-low { background:#111418 !important; }
+html.dark .bg-surface-container,html.dark .bg-surface-container-high,html.dark .bg-surface-container-highest,html.dark .bg-surface-variant { background:#191c20 !important; }
+html.dark .text-on-surface,html.dark .text-on-background { color:#f8f9ff !important; }
+html.dark .text-on-surface-variant,html.dark .text-outline { color:#b5b9c2 !important; }
+html.dark .text-secondary { color:#ffce4b !important; }
+html.dark .bg-secondary { background:#ffce4b !important; }
+html.dark .rtc-theme-bar { background:#111418; color:#f8f9ff; border-color:#32373e; }
+@media (max-width:640px){ .rtc-home-banner{border-radius:0 0 10px 10px}.rtc-theme-bar{right:8px;bottom:8px}.rtc-sync-badge{left:8px;bottom:8px} }

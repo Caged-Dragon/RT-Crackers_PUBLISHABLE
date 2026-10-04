@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@400;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#410001", "primary-fixed-dim": "#ffb4a9", "surface-container-highest": "#323539", "secondary-container": "#e5b200", "inverse-surface": "#e1e2e8", "tertiary-fixed-dim": "#ffb77f", "surface-tint": "#ffb4a9", "primary": "#ffb4a9", "surface-container-high": "#272a2f", "on-primary-container": "#fff9f8", "secondary-fixed": "#ffdf95", "tertiary": "#ffb77f", "tertiary-fixed": "#ffdcc4", "inverse-primary": "#c00006", "surface": "#111418", "surface-container": "#1d2024", "surface-container-lowest": "#0b0e12", "on-background": "#e1e2e8", "secondary": "#ffce4b", "primary-container": "#e31b16", "on-primary-fixed-variant": "#930003", "on-secondary-fixed": "#251a00", "on-surface": "#e1e2e8", "on-surface-variant": "#e8bdb6", "surface-bright": "#36393e", "error": "#ffb4ab", "on-error-container": "#ffdad6", "inverse-on-surface": "#2e3135", "on-error": "#690005", "primary-fixed": "#ffdad5", "on-secondary-fixed-variant": "#594400", "tertiary-container": "#b05e00", "on-secondary-container": "#5c4600", "on-tertiary-fixed-variant": "#6f3900", "outline": "#ae8882", "surface-variant": "#323539", "error-container": "#93000a", "outline-variant": "#5e3f3b", "surface-container-low": "#191c20", "on-tertiary-fixed": "#2f1500", "on-primary": "#690002", "on-tertiary": "#4e2600", "on-secondary": "#3e2e00", "background": "#111418", "secondary-fixed-dim": "#f4bf1b", "surface-dim": "#111418", "on-tertiary-container": "#fff9f8" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-mobile": "1.25rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter": "1.5rem", "margin": "3rem", "space-xl": "2.5rem", "space-md": "1rem", "gutter-mobile": "1rem", "space-sm": "0.5rem" }, "fontFamily": { "label-md": ["Inter"], "headline-xl-mobile": ["Oswald"], "title-md": ["Montserrat"], "headline-lg": ["Oswald"], "label-lg": ["Inter"], "body-sm": ["Montserrat"], "headline-md": ["Oswald"], "display-hero": ["Oswald"], "title-lg": ["Montserrat"], "display-hero-mobile": ["Oswald"], "body-lg": ["Montserrat"], "label-sm": ["Inter"], "headline-xl": ["Oswald"], "body-md": ["Montserrat"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.8px", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "0.5px", "fontWeight": "700" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "0.5px", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "1px", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0.5px", "fontWeight": "600" }], "display-hero": ["64px", { "lineHeight": "72px", "letterSpacing": "1.5px", "fontWeight": "700" }], "title-lg": ["20px", { "lineHeight": "28px", "letterSpacing": "0.2px", "fontWeight": "700" }], "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "1px", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "1.2px", "fontWeight": "700" }], "headline-xl": ["44px", { "lineHeight": "52px", "letterSpacing": "1px", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }] } } } };</script><link href="../runtime/theme.css" rel="stylesheet"/></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col h-full overflow-hidden"><div class="h-16 flex items-center px-space-md gap-space-sm bg-surface-container-lowest shrink-0"><img alt="LOGO.jpeg" class="h-8 w-auto object-contain" src="../assets/branding/LOGO.jpeg"/><div class="flex flex-col"><span class="font-headline-md text-headline-md tracking-wider text-on-surface uppercase">RTCrackers</span><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Ops Console</span></div></div><div class="flex-1 overflow-y-auto px-space-sm py-space-md space-y-space-md"><nav class="space-y-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-[0_0_16px_rgba(227,27,22,0.45)]"><div><p class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Core Command</p><div class="space-y-1"><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="font-label-md text-label-md">Dashboard</span></div></a></div></div><div><p class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Catalog &amp; Inventory</p><div class="space-y-1"><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="products" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="font-label-md text-label-md">Products</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="categories" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">category</span><span class="font-label-md text-label-md">Categories</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="brands" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">workspace_premium</span><span class="font-label-md text-label-md">Brands</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inventory-matrix" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">table_chart</span><span class="font-label-md text-label-md">Inventory Matrix</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="product-reviews" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">rate_review</span><span class="font-label-md text-label-md">Product Reviews</span></div></a></div></div><div><p class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Order Desk</p><div class="space-y-1"><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="all-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="font-label-md text-label-md">All Orders</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pending-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">pending_actions</span><span class="font-label-md text-label-md">Pending Orders</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="processing-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">sync_alt</span><span class="font-label-md text-label-md">Processing</span></div><span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">286</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="shipped-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="font-label-md text-label-md">Shipped</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="delivered-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">task_alt</span><span class="font-label-md text-label-md">Delivered</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cancelled-orders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">cancel</span><span class="font-label-md text-label-md">Cancelled</span></div></a></div></div><div><p class="px-space-sm mb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Fulfillment &amp; Systems</p><div class="space-y-1"><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="customers-and-academies" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">local_fire_department</span><span class="font-label-md text-label-md">Customers &amp; Academies</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="coupons-and-offers" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">sell</span><span class="font-label-md text-label-md">Coupons &amp; Offers</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="shipments-and-dispatch" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">forklift</span><span class="font-label-md text-label-md">Shipments &amp; Dispatch</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="finance-and-upi-settlements" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">account_balance_wallet</span><span class="font-label-md text-label-md">Finance &amp; UPI Settlements</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="sales-analytics" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">monitoring</span><span class="font-label-md text-label-md">Sales Analytics</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="roles-and-permissions" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">shield_person</span><span class="font-label-md text-label-md">Roles &amp; Permissions</span></div></a></div></div></nav></div></div><div class="p-space-sm bg-surface-container-lowest shrink-0 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center justify-between px-space-sm py-space-xs rounded bg-surface-container-low"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary-fixed shadow-[0_0_8px_rgba(255,206,75,0.8)]"></span><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">PROD-API: v2.4.9</span></div><span class="font-label-sm text-label-sm text-secondary">18ms</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 px-gutter flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md"><button class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">menu_open</span></button><div class="flex items-center gap-space-xs font-label-md text-label-md tracking-wide text-on-surface-variant"><span class="text-outline">Admin</span><span>/</span><span class="text-outline">Orders</span><span>/</span><span class="text-primary font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>Processing Queue</span></div></div><div class="flex-1 max-w-lg mx-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-[18px] text-outline">search</span><input class="w-full pl-9 pr-4 py-1.5 rounded bg-surface-container text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="Search orders, SKUs, barcode, batch... (⌘K)" type="text"/><div class="absolute right-2 px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">⌘K</div></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_6px_rgba(255,206,75,0.7)]"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Fulfillment Yard: <span class="text-on-surface font-semibold">Online</span></span></div><button class="relative p-1.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-0 right-0 w-4 h-4 rounded-full bg-primary-container text-on-primary-container font-label-sm text-[10px] flex items-center justify-center font-bold">4</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden sm:block"><p class="font-label-md text-label-md text-on-surface leading-tight">Vikram S.</p><p class="font-label-sm text-label-sm text-outline leading-tight">Fulfillment Supv L2</p></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Dynamic Operational Ambient Scrim -->
+<div class="w-full px-gutter py-space-md flex flex-col gap-space-lg">
+<!-- Top Level Operational Command Bar -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider font-bold">DIRECTORY ARCHIVE</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-outline tracking-widest uppercase">SYSLOG: CLOUD-SYNC OK</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface uppercase tracking-tight leading-none">Customer Operations &amp; Accounts</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl mt-1">
+          Real-time registry of verified celebration curators, Diwali wholesale bulk accounts, club organizers, and pyrotechnic accounts.
+        </p>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex items-center flex-wrap gap-space-sm">
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all" id="refreshBtn">
+<span class="material-symbols-outlined text-[18px] text-secondary">sync</span>
+<span>Refresh (Auto 30s)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all">
+<span class="material-symbols-outlined text-[18px] text-outline">file_download</span>
+<span>Export CSV / Ledger</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded bg-primary-container text-on-primary-container font-label-md text-label-md font-bold uppercase shadow-lg shadow-primary-container/30 hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>+ Add Customer</span>
+</button>
+</div>
+</div>
+<!-- Telemetry KPI Strip (6 High-Density Monolithic Cards) -->
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-space-sm">
+<!-- KPI 1 -->
+<div class="flex flex-col justify-between p-space-md rounded bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between text-outline mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Total Registered</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">groups</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-lg text-on-surface">24,820</span>
+<div class="flex items-center gap-1 mt-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+1,284 this month</span>
+</div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="flex flex-col justify-between p-space-md rounded bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between text-outline mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Active Customers</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-lg text-on-surface">21,420</span>
+<div class="flex items-center gap-1 mt-1 font-label-sm text-label-sm text-on-surface-variant">
+<span>86.3% active in 90d</span>
+</div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="flex flex-col justify-between p-space-md rounded bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between text-outline mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Repeat Buyers</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">repeat</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-lg text-on-surface">8,420</span>
+<div class="flex items-center gap-1 mt-1 font-label-sm text-label-sm text-tertiary">
+<span>34.8% frequency rate</span>
+</div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="flex flex-col justify-between p-space-md rounded bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between text-outline mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">High-Value Pro VIP</span>
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed">stars</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-lg text-secondary">1,420</span>
+<div class="flex items-center gap-1 mt-1 font-label-sm text-label-sm text-on-surface-variant">
+<span>Spend &gt; ₹50,000 / yr</span>
+</div>
+</div>
+</div>
+<!-- KPI 5 -->
+<div class="flex flex-col justify-between p-space-md rounded bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between text-outline mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Review Needed</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">warning</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-lg text-secondary">18</span>
+<div class="flex items-center gap-1 mt-1 font-label-sm text-label-sm text-secondary">
+<span>Failed KYC / Address</span>
+</div>
+</div>
+</div>
+<!-- KPI 6 -->
+<div class="flex flex-col justify-between p-space-md rounded bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between text-outline mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Suspended</span>
+<span class="material-symbols-outlined text-[18px] text-primary">gavel</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-lg text-primary">3</span>
+<div class="flex items-center gap-1 mt-1 font-label-sm text-label-sm text-primary">
+<span>Dispute / Chargeback</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tiers Spectrum & Attention Triage Strip -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start">
+<!-- Customer Segmentation Ribbon -->
+<div class="lg:col-span-4 p-space-md rounded bg-surface-container-low flex flex-col justify-between h-full">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md font-bold uppercase text-on-surface tracking-wider">Customer Spectrum</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">+14.2% YoY Growth</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mb-space-md">Volume concentration across consumer and enterprise pyrotechnic buyers.</p>
+<!-- Segmented Bar -->
+<div class="w-full h-3 rounded-full bg-surface-container-highest flex overflow-hidden p-0.5 gap-0.5 mb-space-sm">
+<div class="h-full bg-secondary rounded-l" style="width: 62%" title="Retail Consumer (62%)"></div>
+<div class="h-full bg-primary-container" style="width: 24%" title="Academy / Club (24%)"></div>
+<div class="h-full bg-tertiary-container" style="width: 10%" title="Wholesale Diwali (10%)"></div>
+<div class="h-full bg-primary rounded-r" style="width: 4%" title="Pro VIP (4%)"></div>
+</div>
+<div class="grid grid-cols-2 gap-y-2 gap-x-space-sm font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Retail (62%)</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Sports &amp; Clubs (24%)</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span>Wholesale Bulk (10%)</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Pro VIP (4%)</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between bg-surface-container px-space-sm py-2 rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant">VIP Quota Allocation: 94.6% Filled</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">1,420 / 1,500</span>
+</div>
+</div>
+<!-- Attention Triage Strip -->
+<div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<!-- Triage 1 -->
+<div class="p-space-md rounded bg-surface-container-low flex flex-col justify-between hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold uppercase">LOCK: AUTH</span>
+<span class="font-label-sm text-label-sm text-outline">#CUS-10284</span>
+</div>
+<p class="font-title-md text-title-md text-on-surface mt-1">Deepak S. (Delhi)</p>
+<p class="font-body-sm text-body-sm text-outline mt-1 line-clamp-2">Multiple failed SMS OTPs with ₹42,000 cart checkout from new IP.</p>
+</div>
+<button class="mt-space-md w-full py-1.5 rounded bg-surface-container-high hover:bg-primary-container text-on-surface hover:text-on-primary-container font-label-sm text-label-sm font-bold tracking-wider uppercase transition-all">
+            Review Verification
+          </button>
+</div>
+<!-- Triage 2 -->
+<div class="p-space-md rounded bg-surface-container-low flex flex-col justify-between hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold uppercase">PIN MISMATCH</span>
+<span class="font-label-sm text-label-sm text-outline">#CUS-10842</span>
+</div>
+<p class="font-title-md text-title-md text-on-surface mt-1">Kiran V. (Karnataka)</p>
+<p class="font-body-sm text-body-sm text-outline mt-1 line-clamp-2">Postal PIN 562149 rural delivery yard unmapped for Class 1.4G transport.</p>
+</div>
+<button class="mt-space-md w-full py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-secondary font-label-sm text-label-sm font-bold tracking-wider uppercase transition-all">
+            Request Address Fix
+          </button>
+</div>
+<!-- Triage 3 -->
+<div class="p-space-md rounded bg-surface-container-low flex flex-col justify-between hover:bg-surface-container transition-colors">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold uppercase">DISPUTE CLAIM</span>
+<span class="font-label-sm text-label-sm text-outline">#CUS-09841</span>
+</div>
+<p class="font-title-md text-title-md text-on-surface mt-1">Mohammed F. (TN)</p>
+<p class="font-body-sm text-body-sm text-outline mt-1 line-clamp-2">Double charge ticket logged on Axis Razorpay flow for ₹18,450 box.</p>
+</div>
+<button class="mt-space-md w-full py-1.5 rounded bg-surface-container-high hover:bg-primary-container text-on-surface hover:text-on-primary-container font-label-sm text-label-sm font-bold tracking-wider uppercase transition-all">
+            Inspect Dossier
+          </button>
+</div>
+</div>
+</div>
+<!-- Search, Dynamic Filter Bar & Batch Strip -->
+<div class="flex flex-col gap-space-sm p-space-md rounded bg-surface-container-low shadow-sm">
+<div class="flex flex-col lg:flex-row items-center gap-space-md justify-between">
+<!-- Search Input with Icon -->
+<div class="relative w-full lg:w-96">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">manage_search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded bg-surface-container text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-high transition-colors" id="searchInput" placeholder="Search by Name, Mobile (+91), ID (#CUS-), or City..." type="text"/>
+</div>
+<!-- Segment Filter Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto w-full lg:w-auto pb-1 lg:pb-0" id="filterPillsContainer">
+<button class="filter-pill active px-space-md py-1.5 rounded font-label-sm text-label-sm font-bold uppercase bg-primary-container text-on-primary-container shadow-md" data-filter="all">All (24,820)</button>
+<button class="filter-pill px-space-md py-1.5 rounded font-label-sm text-label-sm font-medium uppercase bg-surface-container hover:bg-surface-container-high text-on-surface-variant" data-filter="active">Active (21,420)</button>
+<button class="filter-pill px-space-md py-1.5 rounded font-label-sm text-label-sm font-medium uppercase bg-surface-container hover:bg-surface-container-high text-on-surface-variant" data-filter="vip">VIP Academy (1,420)</button>
+<button class="filter-pill px-space-md py-1.5 rounded font-label-sm text-label-sm font-medium uppercase bg-surface-container hover:bg-surface-container-high text-on-surface-variant" data-filter="retail">Retail (14,941)</button>
+<button class="filter-pill px-space-md py-1.5 rounded font-label-sm text-label-sm font-medium uppercase bg-surface-container hover:bg-surface-container-high text-on-surface-variant" data-filter="flagged">Flagged (21)</button>
+</div>
+<!-- Batch Secondary Actions -->
+<div class="flex items-center gap-space-xs shrink-0">
+<button class="px-space-sm py-1.5 rounded bg-surface-container text-on-surface-variant hover:text-on-surface text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Filters</span>
+</button>
+<button class="px-space-sm py-1.5 rounded bg-surface-container text-on-surface-variant hover:text-on-surface text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">checklist</span>
+<span>Batch (3 Selected)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Operational Workspace: Directory Table + Detailed Inspector Drawer (8:4 Layout) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start">
+<!-- Customer Directory Table (8 Columns) -->
+<div class="lg:col-span-8 flex flex-col rounded bg-surface-container-low overflow-hidden shadow-sm">
+<!-- Table Toolbar Header -->
+<div class="p-space-md flex items-center justify-between bg-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-md text-headline-md text-on-surface uppercase tracking-wide">Customer Roster</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm">Live Sync</span>
+</div>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-outline">
+<span>Showing 7 of 24,820 accounts</span>
+</div>
+</div>
+<!-- Density Data Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-high text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-3 w-8">
+<input class="accent-primary-container rounded bg-surface cursor-pointer" type="checkbox"/>
+</th>
+<th class="py-3 px-3">Customer Entity</th>
+<th class="py-3 px-3">Contact &amp; Region</th>
+<th class="py-3 px-3 text-right">Orders / Spend</th>
+<th class="py-3 px-3">Last Order</th>
+<th class="py-3 px-3">Status</th>
+<th class="py-3 px-3 text-center">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container" id="customerTableBody">
+<!-- Row 1: Vikramaditya Rao -->
+<tr class="customer-row bg-surface-container-high/40 hover:bg-surface-container cursor-pointer transition-colors" data-aov="₹6,933" data-avatar-color="bg-primary-container text-on-primary-container" data-city="Bengaluru, Karnataka" data-delivered="16" data-email="vikramaditya.rao@fireworksblr.org" data-gstin="29AAACB1284F1ZS" data-id="#CUS-10928" data-initials="VR" data-joined="October 2023" data-masked-email="vik***@fireworksblr.org" data-name="Vikramaditya Rao" data-orders="18" data-phone="+91 73587 37658" data-returned="1" data-returnrate="5.5%" data-spend="₹1,24,800" data-status="Active" data-status-color="text-secondary" data-transit="1" data-type="VIP Academy Coach">
+<td class="py-3 px-3" onclick="event.stopPropagation()">
+<input checked="" class="accent-primary-container rounded bg-surface cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md text-headline-md font-bold shrink-0">VR</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface truncate font-semibold">Vikramaditya Rao</span>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-outline">#CUS-10928</span>
+<span class="px-1 py-0.2 rounded bg-secondary-container text-on-secondary-container font-label-sm text-[9px] uppercase font-bold">VIP Academy</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-body-sm">vik***@fireworksblr.org</span>
+<span class="text-outline font-label-sm text-label-sm">+91 98450 XXXXX • Bengaluru, KA</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md text-secondary leading-none">₹1,24,800</span>
+<span class="text-outline font-label-sm text-label-sm">18 orders • AOV ₹6.9k</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-label-sm text-label-sm font-semibold">#RTC-1024587</span>
+<span class="text-outline font-label-sm text-label-sm">2 days ago</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active
+                  </span>
+</td>
+<td class="py-3 px-3 text-center" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface inspect-btn" title="Inspect Customer">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Raghav K. -->
+<tr class="customer-row hover:bg-surface-container cursor-pointer transition-colors" data-aov="₹6,775" data-avatar-color="bg-secondary-container text-on-secondary-container" data-city="Bengaluru, Karnataka" data-delivered="8" data-email="raghav.kulkarni@apexfireworks.in" data-gstin="29ZZPK09121M1ZQ" data-id="#CUS-10245" data-initials="RK" data-joined="December 2023" data-masked-email="rag***@apexfireworks.in" data-name="Raghav Kulkarni" data-orders="8" data-phone="+91 97412 88410" data-returned="0" data-returnrate="0.0%" data-spend="₹54,200" data-status="Active" data-status-color="text-secondary" data-transit="0" data-type="Pro Club Member">
+<td class="py-3 px-3" onclick="event.stopPropagation()">
+<input class="accent-primary-container rounded bg-surface cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded bg-surface-container-highest text-secondary flex items-center justify-center font-headline-md text-headline-md font-bold shrink-0">RK</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface truncate font-semibold">Raghav Kulkarni</span>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-outline">#CUS-10245</span>
+<span class="px-1 py-0.2 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-[9px] uppercase">Pro Club</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-body-sm">rag***@apexfireworks.in</span>
+<span class="text-outline font-label-sm text-label-sm">+91 97412 XXXXX • Bengaluru, KA</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md text-secondary leading-none">₹54,200</span>
+<span class="text-outline font-label-sm text-label-sm">8 orders • AOV ₹6.7k</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-label-sm text-label-sm font-semibold">#RTC-1023901</span>
+<span class="text-outline font-label-sm text-label-sm">6 days ago</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active
+                  </span>
+</td>
+<td class="py-3 px-3 text-center" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface inspect-btn" title="Inspect Customer">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Arjun Mehta -->
+<tr class="customer-row hover:bg-surface-container cursor-pointer transition-colors" data-aov="₹6,490" data-avatar-color="bg-surface-container-high text-on-surface" data-city="Mumbai, Maharashtra" data-delivered="4" data-email="arjun.mehta92@yahoo.com" data-gstin="Unregistered Retail" data-id="#CUS-10118" data-initials="AM" data-joined="January 2024" data-masked-email="arj***@yahoo.com" data-name="Arjun Mehta" data-orders="5" data-phone="+91 98200 44109" data-returned="0" data-returnrate="0.0%" data-spend="₹32,450" data-status="Active" data-status-color="text-secondary" data-transit="1" data-type="Retail Consumer">
+<td class="py-3 px-3" onclick="event.stopPropagation()">
+<input class="accent-primary-container rounded bg-surface cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded bg-surface-container text-outline flex items-center justify-center font-headline-md text-headline-md font-bold shrink-0">AM</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface truncate font-semibold">Arjun Mehta</span>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-outline">#CUS-10118</span>
+<span class="px-1 py-0.2 rounded bg-surface-container text-on-surface-variant font-label-sm text-[9px] uppercase">Retail</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-body-sm">arj***@yahoo.com</span>
+<span class="text-outline font-label-sm text-label-sm">+91 98200 XXXXX • Mumbai, MH</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md text-on-surface leading-none">₹32,450</span>
+<span class="text-outline font-label-sm text-label-sm">5 orders • AOV ₹6.4k</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-label-sm text-label-sm font-semibold">#RTC-1022140</span>
+<span class="text-outline font-label-sm text-label-sm">11 days ago</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active
+                  </span>
+</td>
+<td class="py-3 px-3 text-center" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface inspect-btn" title="Inspect Customer">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Rajesh G. (Wholesale Bulk) -->
+<tr class="customer-row hover:bg-surface-container cursor-pointer transition-colors" data-aov="₹15,708" data-avatar-color="bg-tertiary-container text-on-tertiary-container" data-city="Hyderabad, Telangana" data-delivered="12" data-email="rajesh.goud.fireworks@gmail.com" data-gstin="36AAGCG8821K1ZY" data-id="#CUS-09884" data-initials="RG" data-joined="August 2023" data-masked-email="raj***@gmail.com" data-name="Rajesh Goud" data-orders="12" data-phone="+91 94401 22891" data-returned="0" data-returnrate="0.0%" data-spend="₹1,88,500" data-status="Active" data-status-color="text-secondary" data-transit="0" data-type="Festive Wholesale Buyer">
+<td class="py-3 px-3" onclick="event.stopPropagation()">
+<input class="accent-primary-container rounded bg-surface cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-headline-md text-headline-md font-bold shrink-0">RG</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface truncate font-semibold">Rajesh Goud</span>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-outline">#CUS-09884</span>
+<span class="px-1 py-0.2 rounded bg-tertiary-container text-on-tertiary-container font-label-sm text-[9px] uppercase font-bold">Wholesale Bulk</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-body-sm">raj***@gmail.com</span>
+<span class="text-outline font-label-sm text-label-sm">+91 94401 XXXXX • Hyderabad, TG</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md text-secondary leading-none">₹1,88,500</span>
+<span class="text-outline font-label-sm text-label-sm">12 orders • AOV ₹15.7k</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-label-sm text-label-sm font-semibold">#RTC-1020084</span>
+<span class="text-outline font-label-sm text-label-sm">2 weeks ago</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active
+                  </span>
+</td>
+<td class="py-3 px-3 text-center" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface inspect-btn" title="Inspect Customer">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: Lt. Col. P. Sharma -->
+<tr class="customer-row hover:bg-surface-container cursor-pointer transition-colors" data-aov="₹8,150" data-avatar-color="bg-surface-container-highest text-secondary" data-city="Pune, Maharashtra" data-delivered="6" data-email="pradeep.sharma.officer@nic.in" data-gstin="Official Defence Protocol" data-id="#CUS-09412" data-initials="PS" data-joined="September 2023" data-masked-email="pra***@nic.in" data-name="Lt. Col. Pradeep Sharma" data-orders="6" data-phone="+91 99118 73200" data-returned="0" data-returnrate="0.0%" data-spend="₹48,900" data-status="Active" data-status-color="text-secondary" data-transit="0" data-type="Defence Club Officer">
+<td class="py-3 px-3" onclick="event.stopPropagation()">
+<input class="accent-primary-container rounded bg-surface cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded bg-surface-container-highest text-on-surface flex items-center justify-center font-headline-md text-headline-md font-bold shrink-0">PS</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface truncate font-semibold">Lt. Col. Pradeep Sharma</span>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-outline">#CUS-09412</span>
+<span class="px-1 py-0.2 rounded bg-surface-container text-on-surface-variant font-label-sm text-[9px] uppercase">Defence Club</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-body-sm">pra***@nic.in</span>
+<span class="text-outline font-label-sm text-label-sm">+91 99118 XXXXX • Pune, MH</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md text-on-surface leading-none">₹48,900</span>
+<span class="text-outline font-label-sm text-label-sm">6 orders • AOV ₹8.1k</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-label-sm text-label-sm font-semibold">#RTC-1019488</span>
+<span class="text-outline font-label-sm text-label-sm">3 weeks ago</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active
+                  </span>
+</td>
+<td class="py-3 px-3 text-center" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface inspect-btn" title="Inspect Customer">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 6: Sunil Narine Fan Club Lead -->
+<tr class="customer-row hover:bg-surface-container cursor-pointer transition-colors" data-aov="₹9,563" data-avatar-color="bg-primary-container text-on-primary-container" data-city="Kolkata, West Bengal" data-delivered="21" data-email="supratik.kolkatafireworks@gmail.com" data-gstin="19AABCS9120H1Z8" data-id="#CUS-09104" data-initials="SN" data-joined="July 2023" data-masked-email="sup***@gmail.com" data-name="Sunil Narine Fan Club (Supratik S.)" data-orders="22" data-phone="+91 98310 99412" data-returned="0" data-returnrate="0.0%" data-spend="₹2,10,400" data-status="Active" data-status-color="text-secondary" data-transit="1" data-type="Fireworks Fan Club Head">
+<td class="py-3 px-3" onclick="event.stopPropagation()">
+<input class="accent-primary-container rounded bg-surface cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md text-headline-md font-bold shrink-0">SN</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface truncate font-semibold">Sunil Narine Fan Club</span>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-outline">#CUS-09104</span>
+<span class="px-1 py-0.2 rounded bg-primary-container text-on-primary-container font-label-sm text-[9px] uppercase font-bold">Top VIP Fan Club</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-body-sm">sup***@gmail.com</span>
+<span class="text-outline font-label-sm text-label-sm">+91 98310 XXXXX • Kolkata, WB</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md text-secondary leading-none">₹2,10,400</span>
+<span class="text-outline font-label-sm text-label-sm">22 orders • AOV ₹9.5k</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-label-sm text-label-sm font-semibold">#RTC-1018902</span>
+<span class="text-outline font-label-sm text-label-sm">Yesterday</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active
+                  </span>
+</td>
+<td class="py-3 px-3 text-center" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface inspect-btn" title="Inspect Customer">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 7: Mohammed Farooq (Flagged) -->
+<tr class="customer-row hover:bg-surface-container cursor-pointer transition-colors" data-aov="₹7,425" data-avatar-color="bg-primary-container text-on-primary-container" data-city="Chennai, Tamil Nadu" data-delivered="1" data-email="farooq.dispute@outlook.com" data-gstin="Unregistered Retail" data-id="#CUS-08912" data-initials="MF" data-joined="February 2024" data-masked-email="far***@outlook.com" data-name="Mohammed Farooq" data-orders="2" data-phone="+91 94440 18491" data-returned="1" data-returnrate="50.0%" data-spend="₹14,850" data-status="Suspended" data-status-color="text-primary" data-transit="0" data-type="Dispute Pending">
+<td class="py-3 px-3" onclick="event.stopPropagation()">
+<input class="accent-primary-container rounded bg-surface cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded bg-error-container text-on-error-container flex items-center justify-center font-headline-md text-headline-md font-bold shrink-0">MF</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface truncate font-semibold">Mohammed Farooq</span>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-outline">#CUS-08912</span>
+<span class="px-1 py-0.2 rounded bg-error-container text-on-error-container font-label-sm text-[9px] uppercase font-bold">Chargeback Lock</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-body-sm">far***@outlook.com</span>
+<span class="text-outline font-label-sm text-label-sm">+91 94440 XXXXX • Chennai, TN</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-headline-md text-headline-md text-primary leading-none">₹14,850</span>
+<span class="text-outline font-label-sm text-label-sm">2 orders • AOV ₹7.4k</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-label-sm text-label-sm font-semibold">#RTC-1014112</span>
+<span class="text-outline font-label-sm text-label-sm">1 month ago</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Suspended
+                  </span>
+</td>
+<td class="py-3 px-3 text-center" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface inspect-btn" title="Inspect Customer">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Bar -->
+<div class="p-space-sm bg-surface-container flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-outline">
+<div class="flex items-center gap-2">
+<span>Showing records 1 - 7 of 24,820</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span>Batch size: 25</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-outline hover:text-on-surface disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[14px]">arrow_back_ios</span>
+</button>
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary-container font-bold">1</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface hover:bg-surface-container-highest">2</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface hover:bg-surface-container-highest">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface hover:bg-surface-container-highest">993</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-[14px]">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right 4 Columns: Interactive Customer Dossier & Inspection Card -->
+<div class="lg:col-span-4 flex flex-col rounded bg-surface-container-low shadow-xl sticky top-20 overflow-hidden" id="customerDossier">
+<!-- Dossier Header -->
+<div class="p-space-md bg-surface-container flex flex-col gap-space-md">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-14 h-14 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-headline-xl text-headline-xl font-bold shadow-md shadow-primary-container/20" id="dossierAvatar">
+                VR
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-wide leading-tight" id="dossierName">Vikramaditya Rao</h2>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-outline" id="dossierId">#CUS-10928</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold uppercase" id="dossierBadge">VIP ACADEMY</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-1" id="dossierJoined">Client since October 2023</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded bg-surface-container-high text-outline hover:text-secondary" title="Direct Phone Call">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+<button class="p-1 rounded bg-surface-container-high text-outline hover:text-secondary" title="Email Dispatch">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</button>
+</div>
+</div>
+<!-- Dossier KPI Grid -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="p-2 rounded bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-outline uppercase block">Lifetime Spend</span>
+<span class="font-headline-md text-headline-md text-secondary leading-none" id="dossierSpend">₹1,24,800</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-outline uppercase block">Total Orders</span>
+<span class="font-headline-md text-headline-md text-on-surface leading-none" id="dossierOrders">18</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-outline uppercase block">Average Order</span>
+<span class="font-headline-md text-headline-md text-on-surface leading-none" id="dossierAov">₹6,933</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-outline uppercase block">Return Rate</span>
+<span class="font-headline-md text-headline-md text-tertiary leading-none" id="dossierReturns">5.5%</span>
+</div>
+</div>
+</div>
+<!-- Interactive Dossier Tabs -->
+<div class="flex items-center bg-surface-container-high px-space-xs font-label-sm text-label-sm font-semibold uppercase tracking-wider overflow-x-auto" id="dossierTabs">
+<button class="dossier-tab active py-2.5 px-space-sm text-secondary bg-surface-container-low rounded-t transition-colors" data-tab="tab-overview">Overview</button>
+<button class="dossier-tab py-2.5 px-space-sm text-outline hover:text-on-surface transition-colors" data-tab="tab-orders">Orders (3)</button>
+<button class="dossier-tab py-2.5 px-space-sm text-outline hover:text-on-surface transition-colors" data-tab="tab-addresses">Addresses</button>
+<button class="dossier-tab py-2.5 px-space-sm text-outline hover:text-on-surface transition-colors" data-tab="tab-notes">Notes</button>
+</div>
+<!-- Tab Contents Container -->
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- TAB 1: OVERVIEW -->
+<div class="tab-pane flex flex-col gap-space-md" id="tab-overview">
+<!-- Contact & Corporate Verification -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Verification &amp; Tax ID</span>
+<div class="p-space-sm rounded bg-surface-container flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">Email:</span>
+<span class="text-on-surface font-semibold truncate" id="dossierEmail">vikramaditya.rao@fireworksblr.org</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">Mobile:</span>
+<span class="text-on-surface font-semibold" id="dossierPhone">+91 73587 37658</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">GSTIN / Tax:</span>
+<span class="text-secondary font-mono text-xs font-semibold" id="dossierGstin">29AAACB1284F1ZS</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">Account Health:</span>
+<span class="text-secondary font-bold flex items-center gap-1" id="dossierStatusPill">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Tier-1 Verified
+                  </span>
+</div>
+</div>
+</div>
+<!-- Recent Orders Snippet -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Recent Dispatches</span>
+<span class="font-label-sm text-label-sm text-secondary">Verified Couriers</span>
+</div>
+<div class="space-y-1.5" id="dossierOrdersList">
+<div class="p-2 rounded bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">task_alt</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">#RTC-1024587</span>
+<span class="font-label-sm text-label-sm text-outline">Thunder Rocket 500 &amp; Sparklers</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-secondary font-bold block">₹7,574</span>
+<span class="font-label-sm text-label-sm text-outline">Delivered</span>
+</div>
+</div>
+<div class="p-2 rounded bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">local_shipping</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">#RTC-1023811</span>
+<span class="font-label-sm text-label-sm text-outline">Diwali Mega Hamper Pro</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-secondary font-bold block">₹14,200</span>
+<span class="font-label-sm text-label-sm text-tertiary">In Transit</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Safe Payment Method Profiles -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Payment Instruments</span>
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="p-2 rounded bg-surface-container flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-[10px] uppercase font-bold text-secondary">HDFC BANK UPI</span>
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface mt-1 truncate">vik***@okhdfcbank</span>
+<span class="font-label-sm text-[9px] text-outline mt-0.5">Primary Fast-Checkout</span>
+</div>
+<div class="p-2 rounded bg-surface-container flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-[10px] uppercase font-bold text-outline">VISA CORP</span>
+<span class="material-symbols-outlined text-[16px]">credit_card</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface mt-1">•••• 4821</span>
+<span class="font-label-sm text-[9px] text-outline mt-0.5">Exp 08/27</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 2: RECENT ORDERS -->
+<div class="tab-pane hidden flex-col gap-space-sm" id="tab-orders">
+<div class="p-space-sm rounded bg-surface-container flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-secondary font-bold">#RTC-1024587</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary">Delivered</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Ordered: 24 Oct 2024 • 4 Line items • Delivery via Bluedart Yard</p>
+<div class="flex items-center justify-between text-body-sm font-body-sm pt-2">
+<span>Value: <strong class="text-on-surface">₹7,574</strong></span>
+<button class="text-secondary font-label-sm text-label-sm uppercase hover:underline">View Invoice</button>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-secondary font-bold">#RTC-1023811</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-tertiary-container text-on-tertiary-container">In Transit</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Ordered: 18 Oct 2024 • Mega Pyrotechnics Crate • VRL Logistics</p>
+<div class="flex items-center justify-between text-body-sm font-body-sm pt-2">
+<span>Value: <strong class="text-on-surface">₹14,200</strong></span>
+<button class="text-secondary font-label-sm text-label-sm uppercase hover:underline">Track Consignment</button>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-secondary font-bold">#RTC-1021940</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary">Delivered</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Ordered: 02 Oct 2024 • 12 Sky Shots &amp; Chakkars • Safexpress Hub</p>
+<div class="flex items-center justify-between text-body-sm font-body-sm pt-2">
+<span>Value: <strong class="text-on-surface">₹18,500</strong></span>
+<button class="text-secondary font-label-sm text-label-sm uppercase hover:underline">View Invoice</button>
+</div>
+</div>
+</div>
+<!-- TAB 3: ADDRESSES -->
+<div class="tab-pane hidden flex-col gap-space-sm" id="tab-addresses">
+<div class="p-space-sm rounded bg-surface-container flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">Primary Residence (Default)</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-[9px] uppercase font-bold">Default</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">12th Main Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka - 560038</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Phone: +91 73587 37658</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">Hebbal Sports Pavilion</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-outline font-label-sm text-[9px] uppercase">Academy Dispatch</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Gate 3, Karnataka Youth Fireworks Complex, Bellary Road, Hebbal, Bengaluru - 560024</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Attn: Coach Equipment Locker</span>
+</div>
+</div>
+<!-- TAB 4: INTERNAL NOTES -->
+<div class="tab-pane hidden flex-col gap-space-sm" id="tab-notes">
+<div class="p-space-sm rounded bg-surface-container text-body-sm font-body-sm flex flex-col gap-1">
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>By: Vikram S. (Supervisor)</span>
+<span>12 Oct 2024</span>
+</div>
+<p class="text-on-surface">Verified academy GST registration credentials. Approved for Diwali VIP wholesale pre-booking with ₹50,000 credit window.</p>
+</div>
+<div class="flex flex-col gap-space-xs mt-2">
+<input class="w-full px-space-sm py-2 rounded bg-surface-container text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none" placeholder="Type internal operator note..." type="text"/>
+<button class="w-full py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-secondary font-label-sm text-label-sm font-bold uppercase transition-all">
+                Post Internal Audit Note
+              </button>
+</div>
+</div>
+<!-- Operations Controls Footer -->
+<div class="pt-space-sm border-t-0 flex flex-col gap-space-xs">
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold uppercase flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit Profile</span>
+</button>
+<button class="py-2 rounded bg-surface-container hover:bg-surface-container-high text-secondary font-label-sm text-label-sm font-bold uppercase flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">credit_score</span>
+<span>Credit Limit</span>
+</button>
+</div>
+<button class="py-2 rounded bg-primary-container/20 hover:bg-primary-container text-primary hover:text-on-primary-container font-label-sm text-label-sm font-bold uppercase flex items-center justify-center gap-1 transition-all" id="suspendAccountBtn">
+<span class="material-symbols-outlined text-[16px]">block</span>
+<span id="suspendBtnText">Suspend Account &amp; Hold Orders</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Client-side Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Row selection & Dossier sync
+      const rows = document.querySelectorAll('.customer-row');
+      const dossierName = document.getElementById('dossierName');
+      const dossierId = document.getElementById('dossierId');
+      const dossierBadge = document.getElementById('dossierBadge');
+      const dossierAvatar = document.getElementById('dossierAvatar');
+      const dossierJoined = document.getElementById('dossierJoined');
+      const dossierSpend = document.getElementById('dossierSpend');
+      const dossierOrders = document.getElementById('dossierOrders');
+      const dossierAov = document.getElementById('dossierAov');
+      const dossierReturns = document.getElementById('dossierReturns');
+      const dossierEmail = document.getElementById('dossierEmail');
+      const dossierPhone = document.getElementById('dossierPhone');
+      const dossierGstin = document.getElementById('dossierGstin');
+      const dossierStatusPill = document.getElementById('dossierStatusPill');
+      const suspendBtnText = document.getElementById('suspendBtnText');
+
+      rows.forEach(row => {
+        row.addEventListener('click', () => {
+          // Highlight active row visually
+          rows.forEach(r => r.classList.remove('bg-surface-container-high/40'));
+          row.classList.add('bg-surface-container-high/40');
+
+          // Extract data
+          const name = row.getAttribute('data-name');
+          const id = row.getAttribute('data-id');
+          const type = row.getAttribute('data-type');
+          const initials = row.getAttribute('data-initials');
+          const joined = row.getAttribute('data-joined');
+          const spend = row.getAttribute('data-spend');
+          const orders = row.getAttribute('data-orders');
+          const aov = row.getAttribute('data-aov');
+          const returnRate = row.getAttribute('data-returnrate');
+          const email = row.getAttribute('data-email');
+          const phone = row.getAttribute('data-phone');
+          const gstin = row.getAttribute('data-gstin');
+          const status = row.getAttribute('data-status');
+
+          // Update dossier elements
+          dossierName.textContent = name;
+          dossierId.textContent = id;
+          dossierBadge.textContent = type;
+          dossierAvatar.textContent = initials;
+          dossierJoined.textContent = `Client since ${joined}`;
+          dossierSpend.textContent = spend;
+          dossierOrders.textContent = orders;
+          dossierAov.textContent = aov;
+          dossierReturns.textContent = returnRate;
+          dossierEmail.textContent = email;
+          dossierPhone.textContent = phone;
+          dossierGstin.textContent = gstin;
+
+          if (status === 'Suspended') {
+            dossierStatusPill.className = 'text-primary font-bold flex items-center gap-1';
+            dossierStatusPill.innerHTML = '<span class="w-2 h-2 rounded-full bg-primary-container"></span> Account Suspended';
+            suspendBtnText.textContent = 'Restore Active Privileges';
+          } else {
+            dossierStatusPill.className = 'text-secondary font-bold flex items-center gap-1';
+            dossierStatusPill.innerHTML = '<span class="w-2 h-2 rounded-full bg-secondary"></span> Tier-1 Verified';
+            suspendBtnText.textContent = 'Suspend Account & Hold Orders';
+          }
+        });
+      });
+
+      // 2. Dossier Tab Navigation
+      const tabs = document.querySelectorAll('.dossier-tab');
+      const panes = document.querySelectorAll('.tab-pane');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.classList.remove('active', 'text-secondary', 'bg-surface-container-low');
+            t.classList.add('text-outline');
+          });
+          tab.classList.add('active', 'text-secondary', 'bg-surface-container-low');
+          tab.classList.remove('text-outline');
+
+          const target = tab.getAttribute('data-tab');
+          panes.forEach(p => {
+            if (p.id === target) {
+              p.classList.remove('hidden');
+              p.classList.add('flex');
+            } else {
+              p.classList.remove('flex');
+              p.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // 3. Search & Quick Filters
+      const searchInput = document.getElementById('searchInput');
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        rows.forEach(r => {
+          const text = r.innerText.toLowerCase();
+          if (text.includes(query)) {
+            r.style.display = '';
+          } else {
+            r.style.display = 'none';
+          }
+        });
+      });
+
+      // 4. Segment filter pills
+      const filterPills = document.querySelectorAll('.filter-pill');
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          filterPills.forEach(p => {
+            p.classList.remove('active', 'bg-primary-container', 'text-on-primary-container', 'shadow-md');
+            p.classList.add('bg-surface-container', 'text-on-surface-variant');
+          });
+          pill.classList.add('active', 'bg-primary-container', 'text-on-primary-container', 'shadow-md');
+          pill.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+          const filter = pill.getAttribute('data-filter');
+          rows.forEach(r => {
+            const status = r.getAttribute('data-status').toLowerCase();
+            const type = r.getAttribute('data-type').toLowerCase();
+
+            if (filter === 'all') {
+              r.style.display = '';
+            } else if (filter === 'active' && status === 'active') {
+              r.style.display = '';
+            } else if (filter === 'vip' && type.includes('vip')) {
+              r.style.display = '';
+            } else if (filter === 'retail' && type.includes('retail')) {
+              r.style.display = '';
+            } else if (filter === 'flagged' && status === 'suspended') {
+              r.style.display = '';
+            } else {
+              r.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 5. Suspend Account Micro-interaction
+      const suspendBtn = document.getElementById('suspendAccountBtn');
+      suspendBtn.addEventListener('click', () => {
+        const isSuspended = suspendBtnText.textContent.includes('Restore');
+        if (isSuspended) {
+          suspendBtnText.textContent = 'Suspend Account & Hold Orders';
+          dossierStatusPill.className = 'text-secondary font-bold flex items-center gap-1';
+          dossierStatusPill.innerHTML = '<span class="w-2 h-2 rounded-full bg-secondary"></span> Tier-1 Verified';
+          alert('Account credentials restored to active operational status.');
+        } else {
+          suspendBtnText.textContent = 'Restore Active Privileges';
+          dossierStatusPill.className = 'text-primary font-bold flex items-center gap-1';
+          dossierStatusPill.innerHTML = '<span class="w-2 h-2 rounded-full bg-primary-container"></span> Account Suspended';
+          alert('Account locked and pending orders held for compliance verification.');
+        }
+      });
+
+      // 6. Refresh button feedback
+      const refreshBtn = document.getElementById('refreshBtn');
+      refreshBtn.addEventListener('click', () => {
+        const icon = refreshBtn.querySelector('.material-symbols-outlined');
+        icon.classList.add('animate-spin');
+        setTimeout(() => {
+          icon.classList.remove('animate-spin');
+        }, 800);
+      });
+    });
+  </script>
+</div></main></div><script src="../runtime/rtc-runtime.js"></script></body></html>

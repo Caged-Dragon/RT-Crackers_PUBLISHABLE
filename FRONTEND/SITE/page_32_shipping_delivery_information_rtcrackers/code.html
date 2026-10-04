@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Oswald:wght@100..900&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary-container":"#fff9f8","on-secondary-container":"#6e5400","background":"#f8f9ff","secondary-fixed":"#ffdf95","on-surface-variant":"#5e3f3b","secondary-container":"#fdc826","surface-container-lowest":"#ffffff","surface-container-low":"#f2f3f9","on-error":"#ffffff","surface-tint":"#c00006","primary-container":"#e31b16","on-primary":"#ffffff","on-secondary":"#ffffff","on-background":"#191c20","error":"#ba1a1a","surface-container-high":"#e6e8ee","tertiary-container":"#b05e00","secondary":"#765a00","on-primary-fixed":"#410001","on-tertiary-fixed":"#2f1500","tertiary-fixed-dim":"#ffb77f","on-primary-fixed-variant":"#930003","inverse-primary":"#ffb4a9","tertiary-fixed":"#ffdcc4","inverse-surface":"#2e3135","primary-fixed":"#ffdad5","on-tertiary-fixed-variant":"#6f3900","inverse-on-surface":"#eff0f6","surface-bright":"#f8f9ff","outline-variant":"#e8bdb6","on-tertiary":"#ffffff","surface":"#f8f9ff","on-secondary-fixed":"#251a00","surface-variant":"#e1e2e8","outline":"#926e69","on-tertiary-container":"#fff9f8","tertiary":"#8c4900","surface-container":"#eceef3","primary":"#b90006","primary-fixed-dim":"#ffb4a9","error-container":"#ffdad6","on-surface":"#191c20","surface-dim":"#d8dadf","on-error-container":"#93000a","surface-container-highest":"#e1e2e8","on-secondary-fixed-variant":"#594400","secondary-fixed-dim":"#f4bf1b"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-xs":"0.25rem","space-lg":"1.5rem","gutter":"1.25rem","margin":"2rem","space-xl":"2.5rem","space-sm":"0.5rem","space-md":"1rem","gutter-mobile":"0.75rem","margin-mobile":"1rem"},"fontFamily":{"label-lg":["Inter"],"headline-sm":["Oswald"],"headline-xl-mobile":["Oswald"],"headline-xl":["Oswald"],"display-hero-mobile":["Oswald"],"label-md":["Inter"],"headline-lg":["Oswald"],"body-sm":["Inter"],"headline-md":["Oswald"],"display-hero":["Oswald"],"body-md":["Inter"],"body-lg":["Inter"],"label-caps":["Oswald"]},"fontSize":{"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"0.01em","fontWeight":"700"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"0.01em","fontWeight":"700"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"0.02em","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-lg":["28px",{"lineHeight":"36px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"600"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-caps":["13px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"600"}]}}}}</script><link href="../runtime/theme.css" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.06)]"><div class="h-28 max-w-[1360px] mx-auto px-margin flex flex-col justify-between"><div class="h-16 flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-sm shrink-0"><img alt="LOGO.jpeg" class="h-8 w-auto object-contain" src="../assets/branding/LOGO.jpeg"/><span class="font-headline-md text-headline-md tracking-tight uppercase text-on-surface">RTCrackers</span></div><div class="flex-1 max-w-2xl mx-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-outline select-none pointer-events-none text-[20px]">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-outline text-body-md font-body-md pl-11 pr-space-md py-space-sm rounded-lg focus:outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Search for bats, shoes, jerseys, equipment..." type="search"/></div></div><div class="flex items-center gap-space-md shrink-0"><a class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="wishlist" href="#"><span class="material-symbols-outlined text-[24px]">favorite</span><span class="absolute top-0 right-0 w-4 h-4 bg-primary text-on-primary font-label-md text-[10px] rounded-full flex items-center justify-center font-bold">5</span></a><a class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full"></span></a><a class="relative flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="cart" href="#"><span class="material-symbols-outlined text-[24px]">shopping_bag</span><span class="bg-secondary-container text-on-secondary-container font-label-md text-label-md px-1.5 py-0.5 rounded-full font-bold">3</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="h-12 flex items-center overflow-x-auto"><nav class="flex items-center gap-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm rounded-lg"><a class="px-space-md py-1.5 font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="cricket" href="#">Fireworks</a><a class="px-space-md py-1.5 font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="football" href="#">Fireworks</a><a class="px-space-md py-1.5 font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="tennis" href="#">Fireworks</a><a class="px-space-md py-1.5 font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="badminton" href="#">Fireworks</a><a class="px-space-md py-1.5 font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="fitness" href="#">Fitness</a><a class="px-space-md py-1.5 font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="sports-accessories" href="#">Sports Accessories</a><a class="px-space-md py-1.5 font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="brands" href="#">Brands</a><a class="px-space-md py-1.5 font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="offers" href="#">Offers</a></nav></div></div></header><main class="w-full pt-28 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- BREADCRUMB & METRIC ACCENT STRIP -->
+<div class="w-full bg-surface-container-low">
+<div class="max-w-[1360px] mx-auto px-margin py-space-sm flex flex-wrap items-center justify-between gap-space-sm">
+<nav class="flex items-center gap-space-xs text-body-sm font-body-md text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span> Home
+        </a>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="text-on-surface font-semibold">Shipping &amp; Delivery Information</span>
+</nav>
+<div class="flex items-center gap-space-md text-label-md font-label-md text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-[#16A34A] animate-ping"></span>
+          National Fulfillment Network: Operational (99.4% On-Time Dispatch)
+        </span>
+<span class="hidden md:inline-block text-outline">|</span>
+<span class="hidden md:inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">local_shipping</span>
+          Pan-India Coverage: 19,400+ PIN Codes
+        </span>
+</div>
+</div>
+</div>
+<!-- HERO SECTION -->
+<section class="relative w-full bg-surface-container-lowest overflow-hidden shadow-sm">
+<div class="max-w-[1360px] mx-auto px-margin py-space-xl relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Text Column -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container rounded-full w-fit">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface tracking-wider">Festival-Grade Dispatch Protocols</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl uppercase tracking-tight text-on-surface">
+            SHIPPING &amp; DELIVERY <span class="text-primary-container">INFORMATION</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Everything you need to know about getting your premium fireworks products, protective products, festive footwear, and matchday equipment safely from our specialized fulfillment hubs to your doorstep.
+          </p>
+<!-- Dual CTAs -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="px-space-lg py-3 bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider rounded-lg shadow-md hover:shadow-lg transition-all flex items-center gap-space-xs" href="#order-tracker">
+<span class="material-symbols-outlined text-[20px]">radar</span> Track My Order
+            </a>
+<a class="px-space-lg py-3 bg-surface-container-highest hover:bg-surface-container text-on-surface font-headline-sm text-headline-sm uppercase tracking-wider rounded-lg transition-all flex items-center gap-space-xs" href="#pin-checker">
+<span class="material-symbols-outlined text-[20px]">pin_drop</span> Check PIN Serviceability
+            </a>
+<a class="px-space-md py-3 text-primary font-label-lg text-label-lg hover:underline flex items-center gap-1" href="#">
+              View My Orders <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Key Delivery Badges Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-md">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">public</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">All-India Network</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Tier 1 to remote PINs</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">flight_takeoff</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Air &amp; Express Surface</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Guaranteed express</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">lock_reset</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Tamper-Proof Box</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Rigid bat tubes &amp; crates</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">format_image_left</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Transit Insurance</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">100% loss/damage cover</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Hero Media Mosaic -->
+<div class="lg:col-span-5 relative">
+<div class="bg-surface-container rounded-xl p-space-md relative overflow-hidden shadow-lg">
+<img class="w-full h-80 object-cover rounded-lg" data-alt="High-speed warehouse packaging technician carefully inspecting a premium grade 1 English willow cricket bat before wrapping it inside heavy-duty shock absorbing telemetry foam and protective rigid tube packaging under crisp industrial lighting with fiery crimson accents." src="../assets/branding/LOGO.jpeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-transparent to-transparent rounded-xl flex flex-col justify-end p-space-lg">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-md text-label-md uppercase font-bold rounded">Live Hub Telemetry</span>
+<span class="text-surface-container-lowest font-body-sm text-body-sm">Meerut Dispatch Central</span>
+</div>
+<p class="text-surface-container-lowest font-headline-sm text-headline-sm uppercase tracking-wide">English Sparkler Conditioning Hub</p>
+<p class="text-surface-dim font-body-sm text-body-sm">Bats undergo 15,000 automated machine knocks prior to moisture-sealed courier dispatch.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DELIVERY JOURNEY TIMELINE -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-[1360px] mx-auto px-margin">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-xs">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">End-To-End Fulfillment Pipeline</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">DELIVERY JOURNEY: FROM ORDER TO DOORSTEP</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Every consignment is logged via real-time sports telemetry tracking with dual QA clearance.</p>
+</div>
+<!-- 5-Stage Visual Timeline Grid -->
+<div class="grid grid-cols-1 md:grid-cols-5 gap-space-md relative">
+<!-- Stage 01 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative group hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-lg text-headline-lg text-primary">01</span>
+<span class="material-symbols-outlined text-primary text-[24px]">receipt_long</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Order Placed</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Order successfully confirmed, digital tax invoice generated, and inventory reserved instantly in regional stock node.</p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-block px-2 py-0.5 bg-surface-container-high text-on-surface-variant font-label-md text-[11px] rounded">Within 15 Mins</span>
+</div>
+</div>
+<!-- Stage 02 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative group hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-lg text-headline-lg text-primary">02</span>
+<span class="material-symbols-outlined text-primary text-[24px]">local_fire_department</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Processing &amp; QA</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Bat knocking, oiled sparkler moisture sealing, grip alignment, and protective equipment stress verification by master products specialists.</p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-block px-2 py-0.5 bg-surface-container-high text-on-surface-variant font-label-md text-[11px] rounded">12–24 Hours</span>
+</div>
+</div>
+<!-- Stage 03 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative group hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-lg text-headline-lg text-primary">03</span>
+<span class="material-symbols-outlined text-primary text-[24px]">package_2</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Dispatched</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Securely sealed in rigid shock-proof tubes or fortified crates with dedicated Airway Bill (AWB) carrier tracking assigned.</p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-block px-2 py-0.5 bg-surface-container-high text-on-surface-variant font-label-md text-[11px] rounded">Same-Day Departure</span>
+</div>
+</div>
+<!-- Stage 04 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative group hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-lg text-headline-lg text-primary">04</span>
+<span class="material-symbols-outlined text-primary text-[24px]">local_shipping</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Out For Delivery</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Assigned to certified last-mile courier associate. Dispatch telemetry alerts you with active tracking and delivery OTP.</p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-block px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-md text-[11px] font-bold rounded">Live SMS + Call</span>
+</div>
+</div>
+<!-- Stage 05 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative group hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-lg text-headline-lg text-primary">05</span>
+<span class="material-symbols-outlined text-primary text-[24px]">task_alt</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Delivered</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Consignment handed over with tamper-tape inspection and OTP verification. Ready for matchday action.</p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-block px-2 py-0.5 bg-[#16A34A] text-on-primary font-label-md text-[11px] font-bold rounded">Completed</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DUAL UTILITY TOOL MODULE (PIN CHECKER & LIVE TRACKER) -->
+<section class="w-full py-space-xl bg-surface-container-low" id="utility-modules">
+<div class="max-w-[1360px] mx-auto px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-start">
+<!-- LEFT CARD: PIN CODE SERVICEABILITY CHECKER -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col gap-space-md" id="pin-checker">
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">location_searching</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Geo-Delivery Engine</span>
+<h2 class="font-headline-md text-headline-md uppercase text-on-surface">CHECK DELIVERY TO YOUR LOCATION</h2>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Enter your 6-digit postal code to calculate exact matchday delivery windows, Cash On Delivery (COD) limits, and air courier availability.
+          </p>
+<!-- Input Group -->
+<div class="flex flex-col sm:flex-row gap-space-xs">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]">pin_drop</span>
+<input class="w-full bg-surface-container-low text-on-surface placeholder:text-outline text-body-md font-body-md pl-10 pr-4 py-2.5 rounded-lg focus:outline-none focus:bg-surface-container-lowest transition-colors font-semibold" id="pincode-input" maxlength="6" placeholder="Enter 6-digit PIN (e.g. 620017)" type="text" value="620017"/>
+</div>
+<button class="px-space-md py-2.5 bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-1" onclick="checkPinSimulated()" type="button">
+<span>Check Availability</span>
+</button>
+</div>
+<!-- Active Demo Result State (PIN 620017 - Tiruchirappalli) -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-sm mt-space-xs" id="pin-result-card">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#16A34A] text-[20px]">check_circle</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">PIN 620017 — Tiruchirappalli, Tamil Nadu</span>
+</div>
+<span class="px-2 py-0.5 bg-[#16A34A] text-on-primary font-label-md text-label-md rounded font-bold uppercase">Tier 1 Express Hub</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span> Standard Surface
+                </span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-1">2–3 Business Days</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Free over ₹1,999</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">flash_on</span> Express Air Dispatch
+                </span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-1">Next-Day by 4:00 PM</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Flat ₹249 supplement</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">payments</span> Cash on Delivery
+                </span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-1">Supported</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Eligible up to ₹15,000</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-space-xs flex-wrap gap-2">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">sync_alt</span> Routed Carrier Partners: BlueDart Air, Delhivery Direct, DTDC Express
+              </span>
+<span class="text-primary font-semibold">Cut-off for same-day dispatch: 3:00 PM IST</span>
+</div>
+</div>
+</div>
+<!-- RIGHT CARD: LIVE ORDER TELEMETRY & TRACKING -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col gap-space-md" id="order-tracker">
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">navigation</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Active Logistics Telemetry</span>
+<h2 class="font-headline-md text-headline-md uppercase text-on-surface">LIVE ORDER TRACKING</h2>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Enter your Order ID (starts with #RTC) or AWB carrier tracking number to view real-time transit telemetry.
+          </p>
+<!-- Input Group -->
+<div class="flex flex-col sm:flex-row gap-space-xs">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]">qr_code_scanner</span>
+<input class="w-full bg-surface-container-low text-on-surface placeholder:text-outline text-body-md font-body-md pl-10 pr-4 py-2.5 rounded-lg focus:outline-none focus:bg-surface-container-lowest transition-colors font-semibold uppercase" id="order-input" placeholder="e.g. #RTC1024587 or BLUEDART771092" type="text" value="#RTC1024587"/>
+</div>
+<button class="px-space-md py-2.5 bg-on-background hover:bg-inverse-surface text-surface-container-lowest font-headline-sm text-headline-sm uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-1" type="button">
+<span>Track Order</span>
+</button>
+</div>
+<!-- Active Sample Tracking Preview: #RTC1024587 -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-sm mt-space-xs">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Order #RTC1024587</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant ml-2">AWB: BD-AIR-992019842</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-md text-label-md rounded font-bold uppercase">Out For Delivery</span>
+</div>
+</div>
+<!-- Mini Progress Trackbar -->
+<div class="w-full py-2">
+<div class="flex items-center justify-between text-[11px] font-label-md text-on-surface-variant mb-1">
+<span class="text-on-surface font-bold">Confirmed ✓</span>
+<span class="text-on-surface font-bold">Packed ✓</span>
+<span class="text-on-surface font-bold">Shipped ✓</span>
+<span class="text-primary font-bold">Out For Delivery ●</span>
+<span class="text-outline">Delivered</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 82%;"></div>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm text-on-surface-variant mt-1.5">
+<span>Estimated Arrival: <strong class="text-on-surface">Today by 4:00 PM</strong></span>
+<span class="text-primary font-semibold">Tiruchirappalli South Hub</span>
+</div>
+</div>
+<!-- Consignment Item & Delivery Agent Meta Strip -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">local_fire_department</span>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">SS Ton Reserve Edition Bat</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Weight: 2.8 lbs | Short Handle | Factory Knocked &amp; Oiled</p>
+</div>
+</div>
+<div class="flex flex-col sm:items-end">
+<p class="font-label-md text-label-md text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">person_pin</span> Delivery Agent: Karthik S.
+                </p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Secure Delivery OTP: <strong class="text-primary font-headline-sm">7194</strong></p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center justify-between gap-space-xs pt-space-xs">
+<button class="text-primary font-label-lg text-label-lg hover:underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">receipt</span> View Full Order Telemetry
+              </button>
+<a class="px-space-sm py-1.5 bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded-lg font-label-md text-label-md flex items-center gap-1 transition-colors" href="tel:+919488311200">
+<span class="material-symbols-outlined text-[16px] text-primary">call</span> Contact Courier Associate
+              </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DELIVERY TIMELINES & CHARGES MATRIX -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-[1360px] mx-auto px-margin">
+<div class="text-center max-w-2xl mx-auto mb-space-xl flex flex-col items-center gap-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">Transparent Logistics Pricing</span>
+<h2 class="font-headline-xl text-headline-xl uppercase text-on-surface">DELIVERY TIMELINES &amp; SHIPPING CHARGES</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">We partner with premier tier-1 aviation and surface carriers to bring festival-ready sports equipment directly to your clubhouse, academy, or residence.</p>
+</div>
+<!-- 3 Service Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Service Card 1: STANDARD SURFACE DISPATCH -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col justify-between hover:shadow-xl transition-all">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-caps text-label-caps uppercase rounded">Reliable Ground</span>
+<span class="material-symbols-outlined text-outline text-[28px]">local_shipping</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface">STANDARD SURFACE DISPATCH</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Economical surface freight for products bags, heavy padding, and regular sporting equipment.</p>
+</div>
+<!-- Price Pill -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Shipping Tariff</span>
+<span class="font-headline-lg text-headline-lg text-primary mt-1">FREE <span class="text-body-md font-body-md text-on-surface-variant font-normal">on orders over ₹1,999</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Flat ₹99 for orders under ₹1,999</span>
+</div>
+<!-- Timelines Breakdown -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface uppercase">Estimated Transit Windows:</span>
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest">
+<span class="font-body-md text-body-md text-on-surface">Metro Cities</span>
+<span class="font-label-lg text-label-lg text-on-surface">2–4 Business Days</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest">
+<span class="font-body-md text-body-md text-on-surface">Tier 2 &amp; Tier 3 Cities</span>
+<span class="font-label-lg text-label-lg text-on-surface">3–5 Business Days</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest">
+<span class="font-body-md text-body-md text-on-surface">North-East &amp; Remote</span>
+<span class="font-label-lg text-label-lg text-on-surface">5–7 Business Days</span>
+</div>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg">
+<span class="font-label-md text-label-md text-on-surface uppercase block mb-1">Recommended Consignments:</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Full fireworks kit bags, batting pads, wicket keeping sets, fireworks goals, gym weights, and bulky accessories.</p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-xs">
+<a class="w-full py-2.5 bg-surface-container-highest hover:bg-surface-container text-on-surface font-headline-sm text-headline-sm uppercase text-center block rounded-lg transition-colors" href="#">
+              Browse Eligible Catalog
+            </a>
+</div>
+</div>
+<!-- Service Card 2: EXPRESS MATCHDAY AIR (Featured) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-xl flex flex-col justify-between relative transform lg:-translate-y-2">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="px-space-sm py-1 bg-primary-container text-on-primary font-label-caps text-label-caps uppercase rounded font-bold">Fastest Dispatch</span>
+<span class="material-symbols-outlined text-primary text-[28px]">flight_takeoff</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface">EXPRESS MATCHDAY AIR</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Priority airfield cargo routing via BlueDart Aviation &amp; Delhivery Express Air network.</p>
+</div>
+<!-- Price Pill -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col">
+<span class="font-label-md text-label-md text-primary uppercase font-bold">Priority Air Freight</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1">₹249 <span class="text-body-md font-body-md text-on-surface-variant font-normal">flat supplement per order</span></span>
+<span class="font-body-sm text-body-sm text-[#16A34A] font-semibold mt-1">Guaranteed same-day departure if ordered before 3 PM</span>
+</div>
+<!-- Timelines Breakdown -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface uppercase">Estimated Transit Windows:</span>
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Major Metro Hubs</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">24–48 Hours</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest">
+<span class="font-body-md text-body-md text-on-surface">Tier 2 Air Hubs</span>
+<span class="font-label-lg text-label-lg text-on-surface">48–72 Hours</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest">
+<span class="font-body-md text-body-md text-on-surface">Island &amp; Hill Stations</span>
+<span class="font-label-lg text-label-lg text-on-surface">3–4 Business Days</span>
+</div>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg">
+<span class="font-label-md text-label-md text-on-surface uppercase block mb-1">Recommended Consignments:</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Urgent match replacements, Grade 1 festival English sparkler bats, match spikes, festival balls, and club apparel.</p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-xs">
+<a class="w-full py-2.5 bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm uppercase text-center block rounded-lg shadow-md transition-colors" href="#pin-checker">
+              Check Air Availability
+            </a>
+</div>
+</div>
+<!-- Service Card 3: BULK TEAM & ACADEMY DISPATCH -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col justify-between hover:shadow-xl transition-all">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-caps text-label-caps uppercase rounded">B2B &amp; Academy</span>
+<span class="material-symbols-outlined text-outline text-[28px]">pallet</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface">BULK TEAM &amp; ACADEMY</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Dedicated palletized freight and scheduled liftgate deliveries for sporting institutions.</p>
+</div>
+<!-- Price Pill -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Volumetric Freight</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1">CALCULATED <span class="text-body-md font-body-md text-on-surface-variant font-normal">at checkout</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Subsidized commercial cargo rates via Safexpress</span>
+</div>
+<!-- Timelines Breakdown -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface uppercase">Estimated Transit Windows:</span>
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest">
+<span class="font-body-md text-body-md text-on-surface">Institutional Delivery</span>
+<span class="font-label-lg text-label-lg text-on-surface">3–7 Business Days</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest">
+<span class="font-body-md text-body-md text-on-surface">Custom Scheduled Slot</span>
+<span class="font-label-lg text-label-lg text-on-surface">Coordinated with Coach</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest">
+<span class="font-body-md text-body-md text-on-surface">Transit Insurance</span>
+<span class="font-label-lg text-label-lg text-[#16A34A] font-semibold">Included 100%</span>
+</div>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg">
+<span class="font-label-md text-label-md text-on-surface uppercase block mb-1">Recommended Consignments:</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fireworks coaching academies, school festive boards, festival organizers, and multi-team kit consignments (20+ kg).</p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-xs">
+<a class="w-full py-2.5 bg-surface-container-highest hover:bg-surface-container text-on-surface font-headline-sm text-headline-sm uppercase text-center block rounded-lg transition-colors" href="mailto:dispatch@rtcrackers.com?subject=Bulk%20Academy%20Shipping%20Quote">
+              Contact Bulk Freight Desk
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ORDER PROCESSING & SPECIALIZED PACKAGING DEEP DIVE -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-[1360px] mx-auto px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Text Details -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">Specialized Sporting Protection</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">WHEN WILL MY ORDER BE SHIPPED?</h2>
+<div class="flex flex-col gap-space-sm text-body-md font-body-md text-on-surface-variant">
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="font-headline-sm text-[16px]">24</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">Standard Items &amp; Products (24-Hour Dispatch)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Apparel, festive footwear, balls, gloves, helmets, and ready-to-play products ship within 24 hours of payment verification from our central logistics warehouses.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5 font-bold">
+<span class="font-headline-sm text-[16px]">48</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">English Sparkler Bats Requiring Knocking (48-Hour Conditioning)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">For bats selected with professional preparation, our batmakers perform 15,000 automated pneumatic machine knocks, raw linseed oiling, and toe-guard application before sealing them in moisture barrier films.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">call_split</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">Multiple Shipments Transparency</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">To ensure maximum freshness and velocity, multi-item orders (e.g., an English sparkler bat paired with spiked turf shoes) may dispatch from specialized regional nodes (Meerut Sparkler Vault vs. Jalandhar Footwear Lab). You receive discrete AWB codes at zero additional charge.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Packaging Graphic Visual Showcase -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col gap-space-md">
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">inventory_2</span>
+              RTCrackers Fortified Packaging Anatomy
+            </h3>
+<img class="w-full h-56 object-cover rounded-lg" data-alt="Cutaway visualization of high-performance rigid cylinder shipping crate for cricket bats showing triple wall corrugated armor, custom high-density molded EVA foam, moisture protection seal, and bright tamper evident crimson security tape." src="../assets/branding/LOGO.jpeg"/>
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="bg-surface-container p-space-sm rounded-lg">
+<span class="font-label-md text-label-md text-on-surface uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]">security</span> Triple-Wall Armour
+                </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Heavy-duty cardboard cylinders with crush ratings exceeding 80 kg/sq inch.</p>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg">
+<span class="font-label-md text-label-md text-on-surface uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]">water_drop</span> Vapour-Shield Liner
+                </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Guards raw fireworks sparkler grains from temperature shocks and humidity shifts.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DELIVERY GUIDELINES & EXCEPTION HANDLING (6 HELPFUL CARDS) -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-[1360px] mx-auto px-margin">
+<div class="mb-space-lg">
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">Protocol &amp; Support Handshake</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">DELIVERY GUIDELINES &amp; EXCEPTION RESOLUTION</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Clear procedures to handle address modifications, missed delivery attempts, transit delays, and parcel verification.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center mb-space-sm">
+<span class="material-symbols-outlined text-[24px]">edit_location</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Address Changes &amp; Redirects</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Destination address edits are permissible prior to warehouse AWB generation. Once dispatched, carrier rerouting takes 24 additional hours and requires desk authorization.</p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1" href="mailto:dispatch@rtcrackers.com?subject=Urgent%20Address%20Change">
+              Contact Dispatch Desk Immediately <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center mb-space-sm">
+<span class="material-symbols-outlined text-[24px]">history_toggle_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">What If You're Unavailable?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Carrier associates conduct up to 3 automatic reattempt cycles before initiates a Order Changes-to-origin (RTO). You can reschedule delivery or authorize security gate receipt via SMS.</p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="px-2 py-1 bg-surface-container font-label-md text-[11px] text-on-surface-variant rounded">3 Reattempts Free of Charge</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center mb-space-sm">
+<span class="material-symbols-outlined text-[24px]">fmd_bad</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Delayed Shipments Notice</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">During festive peaks, regional border check-posts, or severe monsoons, road freight may experience transit offsets. Automated telemetry updates trigger via SMS within 4 hours of delay.</p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1" href="#order-tracker">
+              Track Live Delays <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center mb-space-sm">
+<span class="material-symbols-outlined text-[24px]">broken_image</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Damaged Package Protocol</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inspect outer security tape before signing. If the carton is torn or punctured, refuse delivery or record 3 unboxing photos and notify customer service within 24 hours for instant replacement.</p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1" href="#">
+              File Transit Damage Claim <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center mb-space-sm">
+<span class="material-symbols-outlined text-[24px]">checklist</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Missing Items In Delivery</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">If you ordered both bulky goods (bat/kitbag) and small accessories (grips/socks), check the parcel label for "Box 1 of 2". Remaining parcels often arrive within subsequent delivery routes.</p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="px-2 py-1 bg-surface-container font-label-md text-[11px] text-on-surface-variant rounded">Check Multi-Parcel AWB Tags</span>
+</div>
+</div>
+<!-- Card 6: Delivery Security Warning -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-error-container text-on-error-container flex items-center justify-center mb-space-sm">
+<span class="material-symbols-outlined text-[24px]">explore</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Delivery Security Assurance</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Strict Consumer Notice:</strong> RTCrackers personnel or delivery riders will <em>never</em> ask for online passwords, credit card CVV numbers, or remote-access app downloads over phone or SMS.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="px-2 py-1 bg-error-container text-on-error-container font-label-md text-[11px] font-bold rounded">Zero-Fraud Protocol</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- COMPREHENSIVE SHIPPING FAQS (ACCORDION STYLE) -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-[1360px] mx-auto px-margin">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">Frequently Asked Questions</span>
+<h2 class="font-headline-xl text-headline-xl uppercase text-on-surface">SHIPPING INTELLIGENCE &amp; POLICIES</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Instant clarity on transit, carrier partners, remote post codes, and parcel security.</p>
+</div>
+<!-- FAQ Container -->
+<div class="max-w-4xl mx-auto flex flex-col gap-space-sm" id="faq-accordion-group">
+<!-- FAQ Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">How do I track my order once it leaves the warehouse?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content p-space-md pt-0 text-body-md font-body-md text-on-surface-variant">
+            As soon as our dispatch technicians register the courier manifest, you receive an automated SMS and email containing your direct Airway Bill (AWB) number and carrier tracking hyperlink. You can also paste that tracking code directly into the Live Order Telemetry tool on this page to view live transit checkpoints.
+          </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">What are the eligibility criteria for Free Shipping?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content hidden p-space-md pt-0 text-body-md font-body-md text-on-surface-variant">
+            Free Standard Surface Shipping applies to all cart values of ₹1,999 or above across 19,400+ PIN codes in India. For orders below ₹1,999, a nominal freight contribution of ₹99 is added at checkout. Express Air options carry an optional flat surcharge of ₹249.
+          </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Do you deliver to remote or military postal (APO/FPO) addresses?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content hidden p-space-md pt-0 text-body-md font-body-md text-on-surface-variant">
+            Yes. We service Indian Armed Forces military camp stations, Field Post Offices (FPO), and Army Post Offices (APO) through India Post Speed Post network tie-ups. Please specify unit details and military PIN clearly during checkout. Note that COD is not available on APO/FPO consignments.
+          </div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Can I schedule a specific time or weekend delivery slot?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content hidden p-space-md pt-0 text-body-md font-body-md text-on-surface-variant">
+            Once your order enters "Out for Delivery" status, you will receive an SMS with your assigned driver's contact number and a delivery management link. You can use that link to request a morning or afternoon window, or authorize front-desk/gatekeeper drop-off.
+          </div>
+</div>
+<!-- FAQ Item 5 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">What happens if a parcel is lost in transit?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content hidden p-space-md pt-0 text-body-md font-body-md text-on-surface-variant">
+            All RTCrackers shipments are 100% insured against loss, transit accidents, or damage. If a package has no telemetry scans for 7 consecutive days, our claims team initiates a priority warehouse replacement or an immediate 100% payment adjustment to your original payment method.
+          </div>
+</div>
+<!-- FAQ Item 6 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Do you ship internationally?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content hidden p-space-md pt-0 text-body-md font-body-md text-on-surface-variant">
+            Standard automated checkout services all 28 states and 8 Union Territories across India. For international orders (UK, Australia, UAE, USA, South Africa, and Singapore), please contact our specialized International Export Desk at <code>exports@rtcrackers.com</code> with your products specifications for custom DHL Express customs-cleared invoices.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- DEDICATED LOGISTICS SUPPORT STRIP -->
+<section class="w-full py-space-lg bg-surface-container-highest">
+<div class="max-w-[1360px] mx-auto px-margin">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[28px]">headset_mic</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md uppercase text-on-surface">NEED HELP WITH AN ACTIVE SHIPMENT?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Our dedicated dispatch escalation desk is operational Monday to Saturday, 08:00 to 21:00 IST.</p>
+<div class="flex flex-wrap items-center gap-space-md mt-1 text-label-md font-label-md">
+<a class="text-primary hover:underline flex items-center gap-1" href="tel:18008424327">
+<span class="material-symbols-outlined text-[16px]">call</span> 1800-842-GEAR (Toll-Free)
+              </a>
+<a class="text-on-surface hover:text-primary transition-colors flex items-center gap-1" href="mailto:dispatch@rtcrackers.com">
+<span class="material-symbols-outlined text-[16px]">mail</span> dispatch@rtcrackers.com
+              </a>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm shrink-0 w-full md:w-auto">
+<a class="px-space-md py-2.5 bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider rounded-lg transition-colors flex-1 md:flex-initial text-center shadow" href="#">
+            Create Support Request
+          </a>
+<a class="px-space-md py-2.5 bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-headline-sm text-headline-sm uppercase tracking-wider rounded-lg transition-colors flex-1 md:flex-initial text-center" href="#">
+            Visit Help Center
+          </a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- CLIENT INTERACTIVITY SCRIPT -->
+<script>
+  function toggleFaq(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('.material-symbols-outlined');
+    const isHidden = content.classList.contains('hidden');
+
+    // Close all FAQs in this group
+    document.querySelectorAll('#faq-accordion-group .faq-content').forEach(el => {
+      el.classList.add('hidden');
+    });
+    document.querySelectorAll('#faq-accordion-group .material-symbols-outlined').forEach(el => {
+      el.style.transform = 'rotate(0deg)';
+    });
+
+    // Toggle current
+    if (isHidden) {
+      content.classList.remove('hidden');
+      icon.style.transform = 'rotate(180deg)';
+    } else {
+      content.classList.add('hidden');
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+
+  function checkPinSimulated() {
+    const pin = document.getElementById('pincode-input').value.trim();
+    const resultCard = document.getElementById('pin-result-card');
+    if (!pin || pin.length !== 6 || isNaN(pin)) {
+      alert('Please enter a valid 6-digit Indian PIN Code.');
+      return;
+    }
+    // Visual feedback simulation
+    resultCard.style.opacity = '0.5';
+    setTimeout(() => {
+      resultCard.style.opacity = '1';
+      resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 250);
+  }
+</script></main><footer class="w-full bg-surface-container-low mt-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.03)]"><div class="max-w-[1360px] mx-auto px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div class="flex flex-col gap-space-sm"><h3 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider mb-space-xs">Customer Service</h3><nav class="flex flex-col gap-space-xs"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact-us" href="#">Contact Us</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="shipping-information" href="#">Shipping Information</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="order-tracking" href="#">Order Tracking</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="faqs" href="#">FAQs</a></nav></div><div class="flex flex-col gap-space-sm"><h3 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider mb-space-xs">About RTCrackers</h3><nav class="flex flex-col gap-space-xs"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-us" href="#">About Us</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="careers" href="#">Careers</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="blog" href="#">Blog</a></nav></div><div class="flex flex-col gap-space-sm"><h3 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider mb-space-xs">Policies</h3><nav class="flex flex-col gap-space-xs"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms-and-conditions" href="#">Terms &amp; Conditions</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="cancellation-policy" href="#">Cancellation Policy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="cookie-policy" href="#">Cookie Policy</a></nav></div><div class="flex flex-col gap-space-sm"><h3 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider mb-space-xs">Direct Contact</h3><div class="flex flex-col gap-space-xs text-body-md font-body-md text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary">call</span><span>+91 (080) 4123-7890</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary">mail</span><span>support@rtcrackers.com</span></div><div class="flex items-start gap-space-xs mt-space-xs"><span class="material-symbols-outlined text-[18px] text-primary mt-0.5">schedule</span><div><p class="font-label-md text-label-md text-on-surface">Support Hours</p><p class="font-body-sm text-body-sm">Mon - Sat: 08:00 - 21:00 IST</p></div></div></div></div></div><div class="bg-surface-container px-space-md py-space-sm rounded-lg flex flex-wrap items-center justify-between gap-space-md mb-space-lg"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[20px]">verified_user</span><span class="font-label-md text-label-md text-on-surface uppercase">Secure Shopping Guarantee</span></div><div class="flex flex-wrap items-center gap-space-sm"><span class="px-space-sm py-1 bg-surface-container-lowest text-on-surface font-label-md text-[11px] rounded-lg shadow-sm">256-Bit SSL</span><span class="px-space-sm py-1 bg-surface-container-lowest text-on-surface font-label-md text-[11px] rounded-lg shadow-sm">Visa</span><span class="px-space-sm py-1 bg-surface-container-lowest text-on-surface font-label-md text-[11px] rounded-lg shadow-sm">Mastercard</span><span class="px-space-sm py-1 bg-surface-container-lowest text-on-surface font-label-md text-[11px] rounded-lg shadow-sm">UPI Fastpay</span><span class="px-space-sm py-1 bg-surface-container-lowest text-on-surface font-label-md text-[11px] rounded-lg shadow-sm">PCI-DSS Certified</span></div></div><div class="flex flex-col md:flex-row items-center justify-between gap-space-sm text-center md:text-left"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2026 RTCrackers Sports &amp; Festives. All Rights Reserved. Engineered for Performance.</p><div class="flex items-center gap-space-md"><span class="flex items-center gap-1 font-label-md text-label-md text-primary"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>Global Sports Telemetry Online</span></div></div></div></footer><script src="../runtime/rtc-runtime.js"></script></body></html>

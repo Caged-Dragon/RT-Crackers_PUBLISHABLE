@@ -1,0 +1,101 @@
+services:
+  customer-api:
+    build: ./CUSTOMER
+    env_file: .env
+    environment:
+      APP_NAME: RTCrackers Customer API
+      API_V1_PREFIX: /api/v1
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    networks: [rtc]
+
+  admin-api:
+    build: ./ADMIN
+    env_file: .env
+    environment:
+      APP_NAME: RTCrackers Admin API
+      API_V1_PREFIX: /api/v1/admin
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    networks: [rtc]
+
+  celery-worker:
+    build: .
+    env_file: .env
+    command: celery -A app.modules.background_jobs.celery_app.celery_app worker --loglevel=INFO --concurrency=2
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    networks: [rtc]
+
+  celery-beat:
+    build: .
+    env_file: .env
+    command: celery -A app.modules.background_jobs.celery_app.celery_app beat --loglevel=INFO
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    networks: [rtc]
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-rtcrackers}
+      POSTGRES_USER: ${POSTGRES_USER:-rtcrackers}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-rtcrackers} -d ${POSTGRES_DB:-rtcrackers}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+    networks: [rtc]
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes --save 60 1000
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+    networks: [rtc]
+
+  nginx:
+    image: nginx:1.27-alpine
+    depends_on:
+      customer-api:
+        condition: service_healthy
+      admin-api:
+        condition: service_healthy
+    ports:
+      - "80:80"
+    volumes:
+      - ./devops/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ../FRONTEND/WEB:/usr/share/nginx/html:ro
+    restart: unless-stopped
+    networks: [rtc]
+
+networks:
+  rtc:
+
+volumes:
+  postgres_data:
+  redis_data:

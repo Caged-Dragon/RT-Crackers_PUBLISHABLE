@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"inverse-on-surface":"#eaf1ff","surface-dim":"#cbdbf5","primary-container":"#cc4900","on-tertiary-fixed-variant":"#5e4200","surface-variant":"#d3e4fe","surface-container":"#e5eeff","secondary":"#565e74","surface-tint":"#a73a00","on-tertiary-container":"#fffbff","surface-container-highest":"#d3e4fe","on-secondary-fixed":"#131b2e","on-tertiary":"#ffffff","surface":"#f8f9ff","secondary-fixed":"#dae2fd","tertiary":"#795500","tag-admin":"#DC2626","surface-canvas":"#FFFFFF","primary":"#a33900","on-secondary-container":"#5c647a","surface-container-low":"#eff4ff","inverse-primary":"#ffb599","primary-fixed-dim":"#ffb599","on-secondary-fixed-variant":"#3f465c","surface-subtle":"#F8FAFC","error":"#ba1a1a","tag-sales":"#16A34A","tag-notifications":"#EA580C","surface-container-lowest":"#ffffff","on-error-container":"#93000a","tag-info":"#0891B2","surface-bright":"#f8f9ff","primary-fixed":"#ffdbce","tag-contact":"#4F46E5","secondary-container":"#dae2fd","surface-container-high":"#dce9ff","on-surface-variant":"#5a4138","on-background":"#0b1c30","tertiary-fixed":"#ffdea9","border-strong":"#E2E8F0","on-primary":"#ffffff","brand-fire-red":"#E63946","on-surface":"#0b1c30","on-primary-fixed":"#370e00","tag-noreply":"#475569","tertiary-container":"#996c00","tag-support":"#2563EB","tag-orders":"#D97706","secondary-fixed-dim":"#bec6e0","border-subtle":"#F1F5F9","error-container":"#ffdad6","on-tertiary-fixed":"#271900","background":"#f8f9ff","on-primary-fixed-variant":"#7f2b00","inverse-surface":"#213145","on-secondary":"#ffffff","outline-variant":"#e2bfb2","on-error":"#ffffff","tag-billing":"#7C3AED","outline":"#8e7166","on-primary-container":"#fffbff","tertiary-fixed-dim":"#fbbc3c"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin":"1rem","gutter-compact":"0.5rem","gutter":"1rem","space-lg":"1rem","margin-mobile":"0.75rem","space-md":"0.75rem","space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"1.5rem"},"fontFamily":{"body-lg":["Inter"],"label-sm":["Inter"],"code-sm":["Inter"],"body-sm":["Inter"],"display-lg":["Plus Jakarta Sans"],"title-sm":["Inter"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Inter"],"headline-sm":["Plus Jakarta Sans"],"title-md":["Inter"],"headline-md":["Plus Jakarta Sans"],"body-md":["Inter"]},"fontSize":{"body-lg":["15px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"600"}],"code-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.03em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.005em","fontWeight":"400"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"title-sm":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"title-md":["15px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}]}}}};</script><link rel="stylesheet" href="/FRONTEND/EMAIL/email-runtime.css"><script src="/FRONTEND/EMAIL/config.js"></script><script src="/FRONTEND/EMAIL/email-api.js"></script><script src="/FRONTEND/EMAIL/email-runtime.js"></script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-gutter flex items-center justify-between"><div class="flex items-center gap-space-lg w-72"><img alt="Brand logo. - Primary color: #ea580c
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG_c7pxIPE4wwgSpxLFdUH_tg8svgIbUIwkhn7NCze_r0x_6WTZ_jzC9vfGXc5OgbMK2FdXgS2SwxvmiHBQfXisYT_PH7cTvFWOSkZv_Mr-bzU71U1De5LkmvshUlwXLJFP2Kejr-oGaxIfUck0RnN2ckJhDtCVvshifzkErWtefVAW8Pr75VKhiKZMdr0XVUFm6PCVfbFXbMlmSMxDNBmEpn1CLLHaGet8zoB1wdpONt_CSqntRtOjqB_"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">RTC Crackers</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none mt-space-xs">rtcrackers.com ops</span></div></div><div class="flex-1 max-w-xl mx-gutter"><div class="relative flex items-center bg-surface-container-low rounded-xl px-space-md py-space-xs"><span class="material-symbols-outlined text-secondary mr-space-sm text-headline-sm">search</span><input class="w-full bg-transparent border-0 outline-none text-on-surface placeholder:text-secondary font-body-sm text-body-sm" placeholder="Search threads, dispatches, orders, or operators..." type="text"/><kbd class="hidden sm:inline-flex items-center gap-space-xs px-space-xs py-0.5 bg-surface-container rounded font-code-sm text-code-sm text-secondary">⌘K</kbd></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-low rounded-full"><span class="w-2 h-2 rounded-full bg-tag-sales animate-pulse"></span><span class="font-code-sm text-code-sm text-secondary">Connected: api.rtcrackers.com blr-01</span></div><button class="relative p-space-xs rounded-xl hover:bg-surface-container-high transition-colors text-secondary hover:text-on-surface"><span class="material-symbols-outlined text-headline-sm">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary-container"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/><div class="hidden lg:flex flex-col text-left"><span class="font-title-sm text-title-sm text-on-surface leading-tight">Rajesh Kumar</span><span class="font-code-sm text-code-sm text-secondary leading-tight">admin@rtcrackers.com</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-72 bg-surface-subtle overflow-y-auto shadow-[0_1px_8px_rgba(0,0,0,0.03)] z-40"><div class="p-space-md flex flex-col gap-space-xl"><div class="flex flex-col gap-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-secondary uppercase tracking-wider">Mailbox</div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="inbox" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-headline-sm">inbox</span><span class="font-title-sm text-title-sm">Inbox</span></div><span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-code-sm text-code-sm">124</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="starred" href="#"><span class="material-symbols-outlined text-headline-sm">star</span><span class="font-title-sm text-title-sm">Starred</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="drafts" href="#"><span class="material-symbols-outlined text-headline-sm">draft</span><span class="font-title-sm text-title-sm">Drafts</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="sent-outbox" href="#"><span class="material-symbols-outlined text-headline-sm">send</span><span class="font-title-sm text-title-sm">Sent / Outbox</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="archived" href="#"><span class="material-symbols-outlined text-headline-sm">archive</span><span class="font-title-sm text-title-sm">Archived</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="trash" href="#"><span class="material-symbols-outlined text-headline-sm">delete</span><span class="font-title-sm text-title-sm">Trash</span></a></nav></div><div class="flex flex-col gap-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-secondary uppercase tracking-wider">Operations</div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="email-activity" href="#"><span class="material-symbols-outlined text-headline-sm">monitoring</span><span class="font-title-sm text-title-sm">Email Activity</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="contacts" href="#"><span class="material-symbols-outlined text-headline-sm">contacts</span><span class="font-title-sm text-title-sm">Contacts</span></a></nav></div><div class="flex flex-col gap-space-xs"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-secondary uppercase tracking-wider">Authorized Mailboxes</div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="mailbox-admin" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-tag-admin"></span><span class="font-code-sm text-code-sm">admin@</span></div><span class="font-label-sm text-label-sm text-secondary">HQ</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="mailbox-support" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-tag-support"></span><span class="font-code-sm text-code-sm">support@</span></div><span class="font-label-sm text-label-sm text-secondary">Desk</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="mailbox-sales" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-tag-sales"></span><span class="font-code-sm text-code-sm">sales@</span></div><span class="font-label-sm text-label-sm text-secondary">Wholesale</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="mailbox-orders" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-tag-orders"></span><span class="font-code-sm text-code-sm">orders@</span></div><span class="font-label-sm text-label-sm text-secondary">Dispatch</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="mailbox-billing" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-tag-billing"></span><span class="font-code-sm text-code-sm">billing@</span></div><span class="font-label-sm text-label-sm text-secondary">Accounts</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="mailbox-info" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-tag-info"></span><span class="font-code-sm text-code-sm">info@</span></div><span class="font-label-sm text-label-sm text-secondary">General</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="mailbox-contact" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-tag-contact"></span><span class="font-code-sm text-code-sm">contact@</span></div><span class="font-label-sm text-label-sm text-secondary">Inbound</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="mailbox-notifications" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-tag-notifications"></span><span class="font-code-sm text-code-sm">notifications@</span></div><span class="font-label-sm text-label-sm text-secondary">Alerts</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="mailbox-noreply" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-tag-noreply"></span><span class="font-code-sm text-code-sm">noreply@</span></div><span class="font-label-sm text-label-sm text-secondary">Automated</span></a></nav></div><div class="flex flex-col gap-space-xs pb-space-lg"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-secondary uppercase tracking-wider">Settings</div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-general" href="#"><span class="material-symbols-outlined text-headline-sm">tune</span><span class="font-body-md text-body-md">General</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-appearance" href="#"><span class="material-symbols-outlined text-headline-sm">palette</span><span class="font-body-md text-body-md">Appearance</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-notifications" href="#"><span class="material-symbols-outlined text-headline-sm">notifications_active</span><span class="font-body-md text-body-md">Notifications</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-mailboxes" href="#"><span class="material-symbols-outlined text-headline-sm">all_inbox</span><span class="font-body-md text-body-md">Mailboxes</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-signatures" href="#"><span class="material-symbols-outlined text-headline-sm">draw</span><span class="font-body-md text-body-md">Signatures</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-templates" href="#"><span class="material-symbols-outlined text-headline-sm">snippet_folder</span><span class="font-body-md text-body-md">Templates</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-sending" href="#"><span class="material-symbols-outlined text-headline-sm">forward_to_inbox</span><span class="font-body-md text-body-md">Sending</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-reading" href="#"><span class="material-symbols-outlined text-headline-sm">chrome_reader_mode</span><span class="font-body-md text-body-md">Reading</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-security" href="#"><span class="material-symbols-outlined text-headline-sm">security</span><span class="font-body-md text-body-md">Security</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-rules" href="#"><span class="material-symbols-outlined text-headline-sm">alt_route</span><span class="font-body-md text-body-md">Rules</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-labels" href="#"><span class="material-symbols-outlined text-headline-sm">label</span><span class="font-body-md text-body-md">Labels</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="settings-delegation" href="#"><span class="material-symbols-outlined text-headline-sm">supervisor_account</span><span class="font-body-md text-body-md">Delegation</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings-about" href="#"><span class="material-symbols-outlined text-headline-sm">info</span><span class="font-body-md text-body-md">About</span></a></nav></div></div></aside><div class="pl-72"><main class="relative w-full pt-16 min-h-screen bg-surface px-gutter"><div class="flex flex-col w-full">
+<!-- Horizontal Settings Navigation Bar -->
+<div class="w-full bg-surface-container-lowest shadow-sm rounded-xl p-space-sm mb-space-lg flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5">
+<a class="px-space-sm py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-title-sm text-title-sm transition-colors whitespace-nowrap" href="#">General</a>
+<a class="px-space-sm py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-title-sm text-title-sm transition-colors whitespace-nowrap" href="#">Appearance</a>
+<a class="px-space-sm py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-title-sm text-title-sm transition-colors whitespace-nowrap" href="#">Notifications</a>
+<a class="px-space-sm py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-title-sm text-title-sm transition-colors whitespace-nowrap" href="#">Mailboxes</a>
+<a class="px-space-sm py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-title-sm text-title-sm transition-colors whitespace-nowrap" href="#">Signatures</a>
+<a class="px-space-sm py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-title-sm text-title-sm transition-colors whitespace-nowrap" href="#">Templates</a>
+<a class="px-space-sm py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-title-sm text-title-sm transition-colors whitespace-nowrap" href="#">Sending</a>
+<a class="px-space-sm py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-title-sm text-title-sm transition-colors whitespace-nowrap" href="#">Reading</a>
+<a class="px-space-sm py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-title-sm text-title-sm transition-colors whitespace-nowrap" href="#">Security</a>
+<a class="px-space-sm py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-title-sm text-title-sm transition-colors whitespace-nowrap" href="#">Rules</a>
+<a class="px-space-sm py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-title-sm text-title-sm transition-colors whitespace-nowrap" href="#">Labels</a>
+<a class="px-space-sm py-space-xs rounded-lg bg-tag-notifications text-surface-container-lowest font-headline-sm text-headline-sm transition-all whitespace-nowrap shadow-sm flex items-center gap-space-xs" href="#">
+<span class="material-symbols-outlined text-headline-sm leading-none" style="font-variation-settings: 'FILL' 1;">supervisor_account</span>
+<span>Delegation</span>
+</a>
+<a class="px-space-sm py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low font-title-sm text-title-sm transition-colors whitespace-nowrap" href="#">About</a>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end xl:self-auto">
+<div class="flex items-center gap-space-xs px-space-sm py-0.5 bg-surface-container-low rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales animate-pulse"></span>
+<span class="font-code-sm text-code-sm text-secondary">RBAC Enforced: Tier 3 Multi-Delegate</span>
+</div>
+<div class="hidden md:flex items-center gap-space-xs px-space-sm py-0.5 bg-surface-container rounded-full">
+<span class="font-code-sm text-code-sm text-secondary">API: 99.98%</span>
+</div>
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm rounded-lg flex items-center gap-1 transition-all" onclick="handleAccessSync(this)">
+<span class="material-symbols-outlined text-title-sm leading-none">sync</span>
+<span>Refresh Access</span>
+</button>
+</div>
+</div>
+<!-- Page Header / Top Action Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-space-xs text-secondary font-code-sm text-code-sm mb-space-xs">
+<span>Settings</span>
+<span class="material-symbols-outlined text-code-sm leading-none">chevron_right</span>
+<span>Delegation &amp; Access</span>
+<span class="material-symbols-outlined text-code-sm leading-none">chevron_right</span>
+<span class="text-tag-notifications font-label-md">support@rtcrackers.com</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight leading-none mb-space-xs">Email Delegation &amp; Shared Mailbox Access</h1>
+<p class="font-body-md text-body-md text-secondary">Control authorized team access, Send-As permissions, and operational delegation across RTC Crackers shared departments.</p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="px-space-md py-2 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface shadow-sm rounded-xl font-title-sm text-title-sm flex items-center gap-space-xs transition-colors">
+<span class="material-symbols-outlined text-title-sm leading-none">policy</span>
+<span>Audit Access Log</span>
+</button>
+<button class="px-space-md py-2 bg-tag-notifications hover:bg-primary-container text-on-tertiary shadow-md rounded-xl font-headline-sm text-headline-sm flex items-center gap-space-xs transition-all transform active:scale-95" onclick="document.getElementById('grantModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-headline-sm leading-none">person_add</span>
+<span>+ Grant Access</span>
+</button>
+</div>
+</div>
+<!-- Informational Security Banner -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-lg relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 bg-primary-fixed/30 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start gap-space-md relative z-10">
+<div class="w-10 h-10 rounded-xl bg-tag-notifications/10 text-tag-notifications flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-headline-lg leading-none">verified_user</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-space-sm mb-0.5">
+<span class="font-title-md text-title-md text-on-surface">Cryptographic Session Verification Active</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high rounded text-tag-notifications font-code-sm text-code-sm">TLS 1.3 / DKIM Aligned</span>
+</div>
+<p class="font-body-md text-body-md text-secondary max-w-4xl">
+          Access is strictly enforced server-side via W3C enterprise mail gateway and cryptographic session verification. Your account (<strong class="text-on-surface font-semibold">Rajesh Kumar — Operations Administrator</strong>) currently manages 9 shared production mailboxes. Any permission revocation takes effect across all active Postfix SMTP sessions immediately.
+        </p>
+<div class="mt-space-sm flex items-center gap-space-md">
+<a class="font-label-sm text-label-sm text-tag-notifications hover:underline flex items-center gap-0.5" href="#">
+<span>Learn more about Send-As vs Send-on-Behalf</span>
+<span class="material-symbols-outlined text-code-sm leading-none">open_in_new</span>
+</a>
+<span class="text-secondary font-code-sm text-code-sm">•</span>
+<span class="font-code-sm text-code-sm text-secondary">PESO Compliance Reg #RTC-TN-2026-X8</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Capability & Summary Overview Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Managed Mailboxes</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-headline-sm leading-none">dns</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-sm mb-space-xs">
+<span class="font-display-lg text-display-lg text-on-surface">9</span>
+<span class="font-title-sm text-title-sm text-secondary">Mailboxes</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tag-sales/15 text-tag-sales font-code-sm text-code-sm font-semibold">All Active</span>
+<span class="font-body-sm text-body-sm text-secondary">100% inbound operational</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Authorized Delegates</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-tag-notifications">
+<span class="material-symbols-outlined text-headline-sm leading-none">group</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-sm mb-space-xs">
+<span class="font-display-lg text-display-lg text-on-surface">14</span>
+<span class="font-title-sm text-title-sm text-secondary">Operators</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tag-notifications/15 text-tag-notifications font-code-sm text-code-sm font-semibold">+3 Festive Season</span>
+<span class="font-body-sm text-body-sm text-secondary">Added recently</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Full Mailbox Access</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-tag-support">
+<span class="material-symbols-outlined text-headline-sm leading-none">shield_person</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-sm mb-space-xs">
+<span class="font-display-lg text-display-lg text-on-surface">5</span>
+<span class="font-title-sm text-title-sm text-secondary">Accounts</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-secondary-container font-code-sm text-code-sm">Ops Leads &amp; Root</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Send-As Privileges</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-tag-orders">
+<span class="material-symbols-outlined text-headline-sm leading-none">forward_to_inbox</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-sm mb-space-xs">
+<span class="font-display-lg text-display-lg text-on-surface">11</span>
+<span class="font-title-sm text-title-sm text-secondary">Accounts</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tag-orders/15 text-tag-orders font-code-sm text-code-sm font-semibold">Dispatch &amp; Desk</span>
+</div>
+</div>
+</div>
+<!-- Mailbox Scope Selector Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-lg flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface font-title-sm text-title-sm mr-space-xs">
+<span class="material-symbols-outlined text-headline-sm text-tag-notifications leading-none">filter_list</span>
+<span>Target Mailbox:</span>
+</div>
+<!-- Target Pills -->
+<button class="px-space-sm py-1.5 rounded-xl bg-tag-support/15 text-tag-support font-title-sm text-title-sm shadow-sm flex items-center gap-space-xs transition-all">
+<span class="w-2 h-2 rounded-full bg-tag-support"></span>
+<span>support@rtcrackers.com</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-lowest text-tag-support font-code-sm text-code-sm">4</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary hover:text-on-surface font-title-sm text-title-sm flex items-center gap-space-xs transition-all">
+<span class="w-2 h-2 rounded-full bg-tag-orders"></span>
+<span>orders@rtcrackers.com</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-lowest text-secondary font-code-sm text-code-sm">5</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary hover:text-on-surface font-title-sm text-title-sm flex items-center gap-space-xs transition-all">
+<span class="w-2 h-2 rounded-full bg-tag-sales"></span>
+<span>sales@rtcrackers.com</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-lowest text-secondary font-code-sm text-code-sm">3</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary hover:text-on-surface font-title-sm text-title-sm flex items-center gap-space-xs transition-all">
+<span class="w-2 h-2 rounded-full bg-tag-billing"></span>
+<span>billing@rtcrackers.com</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-lowest text-secondary font-code-sm text-code-sm">2</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary hover:text-on-surface font-title-sm text-title-sm flex items-center gap-space-xs transition-all">
+<span class="w-2 h-2 rounded-full bg-tag-info"></span>
+<span>info@rtcrackers.com</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-lowest text-secondary font-code-sm text-code-sm">2</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary hover:text-on-surface font-title-sm text-title-sm flex items-center gap-space-xs transition-all opacity-80">
+<span class="w-2 h-2 rounded-full bg-tag-admin"></span>
+<span>admin@rtcrackers.com</span>
+<span class="material-symbols-outlined text-body-sm leading-none">lock</span>
+</button>
+</div>
+<!-- Quick Actions and Filter Input -->
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="relative flex items-center bg-surface-container-low rounded-xl px-space-sm py-1 w-full xl:w-72">
+<span class="material-symbols-outlined text-secondary mr-space-xs text-headline-sm">search</span>
+<input class="w-full bg-transparent border-0 outline-none text-on-surface placeholder:text-secondary font-body-sm text-body-sm" placeholder="Filter delegates... (⌘F)" type="text"/>
+</div>
+<div class="hidden 2xl:flex items-center gap-space-xs pl-space-xs">
+<a class="font-label-sm text-label-sm text-secondary hover:text-tag-notifications flex items-center gap-0.5" href="#">
+<span>Open Inbox</span>
+<span class="material-symbols-outlined text-body-sm leading-none">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Main Content Split (2/3 + 1/3) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Left Area: Delegates Management (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
+<!-- Card Header & Filter Tabs -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">People with Access to support@rtcrackers.com</h2>
+<p class="font-body-sm text-body-sm text-secondary">Active authorized staff who can access, route, or dispatch tickets from this shared queue.</p>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-xl shrink-0">
+<button class="px-space-sm py-0.5 rounded-lg bg-surface-container-lowest text-on-surface font-title-sm text-title-sm shadow-sm">All (4)</button>
+<button class="px-space-sm py-0.5 rounded-lg text-secondary hover:text-on-surface font-title-sm text-title-sm">Full (1)</button>
+<button class="px-space-sm py-0.5 rounded-lg text-secondary hover:text-on-surface font-title-sm text-title-sm">Send As (2)</button>
+<button class="px-space-sm py-0.5 rounded-lg text-secondary hover:text-on-surface font-title-sm text-title-sm">Read Only (1)</button>
+</div>
+</div>
+<!-- Delegates Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low/60 text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-sm px-space-md rounded-l-lg">User / Identity</th>
+<th class="py-space-sm px-space-sm">Assigned Role</th>
+<th class="py-space-sm px-space-xs text-center">Read</th>
+<th class="py-space-sm px-space-xs text-center">Send</th>
+<th class="py-space-sm px-space-xs text-center">Manage</th>
+<th class="py-space-sm px-space-sm">Last Active</th>
+<th class="py-space-sm px-space-md text-right rounded-r-lg">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1: Rajesh Kumar (Admin) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<img alt="Rajesh Kumar avatar" class="w-9 h-9 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Rajesh Kumar</span>
+<span class="px-space-xs py-0.2 bg-primary-fixed text-on-primary-fixed font-code-sm text-code-sm rounded">You</span>
+</div>
+<div class="font-code-sm text-code-sm text-secondary truncate">admin@rtcrackers.com</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="px-space-xs py-1 rounded bg-tag-billing/15 text-tag-billing font-code-sm text-code-sm font-semibold flex items-center gap-1 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-billing"></span>
+<span>Mailbox Manager</span>
+</span>
+</td>
+<td class="py-space-md px-space-xs text-center">
+<span class="material-symbols-outlined text-tag-sales text-headline-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="py-space-md px-space-xs text-center">
+<span class="material-symbols-outlined text-tag-sales text-headline-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="py-space-md px-space-xs text-center">
+<span class="material-symbols-outlined text-tag-sales text-headline-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface">Just now</span>
+<span class="font-code-sm text-code-sm text-secondary">Active Session</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-space-xs py-1 bg-surface-container rounded-lg text-secondary font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-body-sm leading-none">lock</span>
+<span>Protected</span>
+</span>
+</td>
+</tr>
+<!-- Row 2: Murugesan (Full Access) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover shrink-0" data-alt="Professional headshot of senior Indian operations officer K.V. Murugesan wearing a crisp formal linen collared shirt against a warm industrial Sivakasi warehouse background. Sharp focused lighting, photorealistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1xipuzxzch1kmwfGUPK3ondiiG0jAJFTJk_7i62-uchcbZyWAQ8HKRMv9gKq-YDT9U7ZevzMFBZsXj1ai3a_MNiPr8MW6n-tktiH5zU3isGergDIJOKS0Rq6yal8o4v6svgNW945a81slfzXddqKBak8H16vXwFl81z2-BxyGzAjqKbmTDDrxCocsjWGNScOMLEQQh4RMePMEh9l7rBNucd80yw4mrdk_7yVPyfyg4vaMqVjSsJZWdQ"/>
+<div class="min-w-0">
+<div class="font-title-sm text-title-sm text-on-surface truncate">K. V. Murugesan</div>
+<div class="font-code-sm text-code-sm text-secondary truncate">murugesan@rtcrackers.com</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="px-space-xs py-1 rounded bg-tag-support/15 text-tag-support font-code-sm text-code-sm font-semibold flex items-center gap-1 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-support"></span>
+<span>Full Access</span>
+</span>
+</td>
+<td class="py-space-md px-space-xs text-center">
+<span class="material-symbols-outlined text-tag-sales text-headline-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="py-space-md px-space-xs text-center">
+<span class="material-symbols-outlined text-tag-sales text-headline-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="py-space-md px-space-xs text-center">
+<span class="material-symbols-outlined text-surface-variant text-headline-sm">cancel</span>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface">12 mins ago</span>
+<span class="font-code-sm text-code-sm text-secondary">Added 18 Aug 2026</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-space-xs py-1 hover:bg-surface-container rounded-lg text-secondary hover:text-on-surface font-title-sm text-title-sm transition-colors">Manage</button>
+<button class="px-space-xs py-1 hover:bg-error-container text-error rounded-lg font-title-sm text-title-sm transition-colors">Revoke</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Rajeshwari Sundaram (Send On Behalf) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover shrink-0" data-alt="Portrait of Rajeshwari Sundaram, a focused South Indian customer operations supervisor working at a clean tech desk with dual monitor dashboard in Bangalore. Warm amber accent lighting, corporate SaaS aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmlKXoBXgn5FqJQCb8ji_i5H7MgyFwzsdNM0PYETXCvg110c5WhGTyNiIyy475eCRCEo9J1Ys8eT_m1zE8Ma2krgnLG5W0cnv28MXAXQs_X4o_O5IVyP593Z-Vr--Oj4Bc-wZdauwjPYxVYBdsW-KoXluTtcdz4zDLzKDcsBi39JGC8AnHo91yoEG7dlmX7a6bQDo_dj_Z-Rk4J6HeIlHyjdfKXWb6XKskSTvKz1R2fs8myH3M4Lzgow"/>
+<div class="min-w-0">
+<div class="font-title-sm text-title-sm text-on-surface truncate">Rajeshwari Sundaram</div>
+<div class="font-code-sm text-code-sm text-secondary truncate">r.sundaram@rtcrackers.com</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<span class="px-space-xs py-1 rounded bg-tag-orders/15 text-tag-orders font-code-sm text-code-sm font-semibold flex items-center gap-1 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-orders"></span>
+<span>Send On Behalf</span>
+</span>
+</td>
+<td class="py-space-md px-space-xs text-center">
+<span class="material-symbols-outlined text-tag-sales text-headline-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="py-space-md px-space-xs text-center">
+<span class="material-symbols-outlined text-tag-orders text-headline-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="py-space-md px-space-xs text-center">
+<span class="material-symbols-outlined text-surface-variant text-headline-sm">cancel</span>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface">Today, 09:40 AM</span>
+<span class="font-code-sm text-code-sm text-secondary">Added 02 Sep 2026</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-space-xs py-1 hover:bg-surface-container rounded-lg text-secondary hover:text-on-surface font-title-sm text-title-sm transition-colors">Manage</button>
+<button class="px-space-xs py-1 hover:bg-error-container text-error rounded-lg font-title-sm text-title-sm transition-colors">Revoke</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Sunita Rao (Read Only / Temporary) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover shrink-0" data-alt="Professional headshot of Sunita Rao, a young Indian retail customer support associate wearing modern smart casual attire, cheerful and confident expression in a bright modern tech support office." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Da6n4HVilg52CcCVqE9eYa0Wj9aktt2CjWXGdCvfxeeeWD3IsW9-ied27gxmwzBXAxxXDzOIJzfA61ACkzYq90v13g7TgpyP589TPQg69kRGsoZbHjwc3iC30WusBQ5lcALsL9vXcq3vmuzuP-XFZ--OjvQ_nuaJFx_HEdnyjWXzGRnOb6en5av75TigNZ1SnvimRrEwZyHbpVAPyMpzESQf6AN2rbjjjslh5ofQuJl-bC8IKyajHQ"/>
+<div class="min-w-0">
+<div class="font-title-sm text-title-sm text-on-surface truncate">Sunita Rao</div>
+<div class="font-code-sm text-code-sm text-secondary truncate">sunita.rao@rtcrackers.com</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex flex-col gap-0.5">
+<span class="px-space-xs py-1 rounded bg-surface-container text-secondary font-code-sm text-code-sm font-semibold flex items-center gap-1 w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Read Only</span>
+</span>
+<span class="font-code-sm text-code-sm text-tag-notifications flex items-center gap-0.5">
+<span class="material-symbols-outlined text-code-sm leading-none">timer</span>
+<span>Exp: Oct 31</span>
+</span>
+</div>
+</td>
+<td class="py-space-md px-space-xs text-center">
+<span class="material-symbols-outlined text-tag-sales text-headline-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="py-space-md px-space-xs text-center">
+<span class="material-symbols-outlined text-surface-variant text-headline-sm">cancel</span>
+</td>
+<td class="py-space-md px-space-xs text-center">
+<span class="material-symbols-outlined text-surface-variant text-headline-sm">cancel</span>
+</td>
+<td class="py-space-md px-space-sm">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface">1h ago</span>
+<span class="font-code-sm text-code-sm text-secondary">Added Yesterday</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-space-xs py-1 hover:bg-surface-container rounded-lg text-secondary hover:text-on-surface font-title-sm text-title-sm transition-colors">Manage</button>
+<button class="px-space-xs py-1 hover:bg-error-container text-error rounded-lg font-title-sm text-title-sm transition-colors">Revoke</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pending Invitation Notice Bar -->
+<div class="mt-space-md p-space-sm rounded-xl bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-tag-orders animate-pulse shrink-0"></span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold">Pending Invitation:</strong> Selvam Ramanathan (<span class="font-code-sm text-code-sm text-secondary">selvam.r@rtcrackers.com</span>) • Role: <span class="font-semibold text-tag-orders">Send As</span> • <span class="text-secondary">Invited by Rajesh Kumar 2 days ago</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-end sm:self-auto shrink-0">
+<button class="px-space-sm py-1 bg-surface-container-lowest hover:bg-surface-container text-on-surface rounded-lg font-title-sm text-title-sm transition-colors shadow-sm">Resend</button>
+<button class="px-space-sm py-1 hover:bg-error-container text-error rounded-lg font-title-sm text-title-sm transition-colors">Cancel</button>
+</div>
+</div>
+</div>
+<!-- Audit Stream Visualizer Widget -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-headline-sm text-secondary leading-none">history_toggle_off</span>
+<h3 class="font-title-md text-title-md text-on-surface">Recent Delegated Mail Activity</h3>
+</div>
+<span class="font-code-sm text-code-sm text-secondary">Live Postfix Relay Stream</span>
+</div>
+<!-- Audit Timeline entries -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-7 h-7 rounded-full bg-tag-support/15 text-tag-support flex items-center justify-center font-code-sm font-bold shrink-0">KM</div>
+<div class="min-w-0">
+<div class="font-title-sm text-title-sm text-on-surface truncate">Murugesan sent reply to wholesale inquiry #RT-9921</div>
+<div class="font-code-sm text-code-sm text-secondary">Header: From: support@rtcrackers.com [Auth: murugesan@rtcrackers.com]</div>
+</div>
+</div>
+<div class="font-code-sm text-code-sm text-secondary shrink-0 pl-space-sm">14m ago</div>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-7 h-7 rounded-full bg-tag-orders/15 text-tag-orders flex items-center justify-center font-code-sm font-bold shrink-0">RS</div>
+<div class="min-w-0">
+<div class="font-title-sm text-title-sm text-on-surface truncate">Rajeshwari sent on behalf regarding delivery delay update</div>
+<div class="font-code-sm text-code-sm text-secondary">Header: Sender: r.sundaram@rtcrackers.com on behalf of support@rtcrackers.com</div>
+</div>
+</div>
+<div class="font-code-sm text-code-sm text-secondary shrink-0 pl-space-sm">3h ago</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar Panel: Policies & Permission Matrix (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Permission Matrix Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-headline-sm text-tag-notifications leading-none">account_tree</span>
+<h3 class="font-title-md text-title-md text-on-surface">RFC 4314 IMAP ACL</h3>
+</div>
+<span class="font-code-sm text-code-sm text-secondary">ACL Spec</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mb-space-md">Strict protocol rules mapped directly to mailbox delegates.</p>
+<div class="flex flex-col gap-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-title-sm text-title-sm text-on-surface">Read Messages</span>
+<span class="px-space-xs py-0.5 bg-surface-container rounded text-secondary font-code-sm text-code-sm">lrswipkxte</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">View threads, preview attachments, and search message history without altering unread flags.</p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-title-sm text-title-sm text-on-surface">Send As</span>
+<span class="px-space-xs py-0.5 bg-tag-orders/15 text-tag-orders font-code-sm text-code-sm font-semibold">Direct Mask</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Outbound headers reflect <code class="text-on-surface">support@rtcrackers.com</code> directly. Customer sees no operator name.</p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-title-sm text-title-sm text-on-surface">Send On Behalf</span>
+<span class="px-space-xs py-0.5 bg-tag-support/15 text-tag-support font-code-sm text-code-sm font-semibold">Dual Header</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">From header includes operator identity accompanied by shared mailbox signature.</p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-title-sm text-title-sm text-on-surface">Manage Delegation</span>
+<span class="px-space-xs py-0.5 bg-tag-billing/15 text-tag-billing font-code-sm text-code-sm font-semibold">Admin Tier</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Grant, change, or terminate access for subordinate personnel across this department.</p>
+</div>
+</div>
+</div>
+<!-- Security & Delegation Policy Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
+<div class="flex items-center gap-space-xs mb-space-sm">
+<span class="material-symbols-outlined text-headline-sm text-tag-sales leading-none">security_update_good</span>
+<h3 class="font-title-md text-title-md text-on-surface">Security Enforcement</h3>
+</div>
+<ul class="flex flex-col gap-space-sm font-body-sm text-body-sm text-secondary">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tag-sales text-title-md leading-tight shrink-0">check</span>
+<span><strong class="text-on-surface">Zero-Knowledge Session Enclave:</strong> API tokens and passwords are never cached in browser local storage.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tag-sales text-title-md leading-tight shrink-0">check</span>
+<span><strong class="text-on-surface">Automated Access Expiry:</strong> Temporary Diwali rush contractors automatically forfeit tokens on cutoff date.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tag-sales text-title-md leading-tight shrink-0">check</span>
+<span><strong class="text-on-surface">PESO Compliance Logging:</strong> All delegated dispatches record operator hardware UUID in internal gateway headers.</span>
+</li>
+</ul>
+</div>
+<!-- Quick Grant Drawer Inline Widget -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-title-sm text-title-sm text-on-surface">Quick Access Dispatch</span>
+<span class="px-space-xs py-0.5 bg-tag-notifications/15 text-tag-notifications font-code-sm text-code-sm font-semibold">Fast Provision</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div>
+<label class="font-label-sm text-label-sm text-secondary block mb-1">Operator Email</label>
+<input class="w-full bg-surface-container-low rounded-lg px-space-sm py-1.5 text-on-surface font-body-sm text-body-sm border-0 outline-none" placeholder="e.g. senthil.v@rtcrackers.com" type="email"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-secondary block mb-1">Delegation Profile</label>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="p-space-xs rounded-lg bg-tag-notifications text-on-tertiary font-title-sm text-title-sm text-center" type="button">Send As</button>
+<button class="p-space-xs rounded-lg bg-surface-container-low text-secondary hover:text-on-surface font-title-sm text-title-sm text-center" type="button">Read Only</button>
+</div>
+</div>
+<button class="w-full mt-space-xs py-2 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-xl font-title-sm text-title-sm flex items-center justify-center gap-1 transition-colors" onclick="document.getElementById('grantModal').classList.remove('hidden')" type="button">
+<span>Configure Advanced Grant</span>
+<span class="material-symbols-outlined text-body-sm leading-none">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Grant Access Modal Dialog (Simulated & Dismissable) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-space-md" id="grantModal">
+<div class="bg-surface-container-lowest rounded-xl shadow-2xl max-w-lg w-full p-space-xl relative">
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-9 h-9 rounded-xl bg-tag-notifications/15 text-tag-notifications flex items-center justify-center">
+<span class="material-symbols-outlined text-headline-sm leading-none">person_add</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Grant Shared Mailbox Access</h3>
+<p class="font-body-sm text-body-sm text-secondary">Target: support@rtcrackers.com</p>
+</div>
+</div>
+<button class="p-space-xs rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" onclick="document.getElementById('grantModal').classList.add('hidden')">
+<span class="material-symbols-outlined text-headline-sm leading-none">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-space-md" onsubmit="event.preventDefault(); document.getElementById('grantModal').classList.add('hidden'); alert('Delegation invitation dispatched successfully.');">
+<div>
+<label class="font-title-sm text-title-sm text-on-surface block mb-1">Target Operator</label>
+<input class="w-full bg-surface-container-low rounded-xl px-space-md py-2 font-body-sm text-body-sm text-on-surface border-0 outline-none" type="text" value="ganesh.kumar@rtcrackers.com"/>
+<span class="font-code-sm text-code-sm text-secondary mt-1 block">Found: Ganesh Kumar — Dispatch Desk Sivakasi Lead</span>
+</div>
+<div>
+<label class="font-title-sm text-title-sm text-on-surface block mb-1">Privilege Assignment</label>
+<div class="grid grid-cols-2 gap-space-xs">
+<label class="flex flex-col p-space-sm bg-surface-container-low hover:bg-surface-container rounded-xl cursor-pointer">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm text-on-surface">Read Only</span>
+<input class="accent-tag-notifications" name="role_select" type="radio"/>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Trainee / view threads only</span>
+</label>
+<label class="flex flex-col p-space-sm bg-tag-notifications/10 rounded-xl cursor-pointer">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm text-tag-notifications font-semibold">Send As</span>
+<input checked="" class="accent-tag-notifications" name="role_select" type="radio"/>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Send as support@ directly</span>
+</label>
+<label class="flex flex-col p-space-sm bg-surface-container-low hover:bg-surface-container rounded-xl cursor-pointer">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm text-on-surface">Send On Behalf</span>
+<input class="accent-tag-notifications" name="role_select" type="radio"/>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Shows sender identity</span>
+</label>
+<label class="flex flex-col p-space-sm bg-surface-container-low hover:bg-surface-container rounded-xl cursor-pointer">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm text-on-surface">Full Manager</span>
+<input class="accent-tag-notifications" name="role_select" type="radio"/>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Can delegate to others</span>
+</label>
+</div>
+</div>
+<div>
+<label class="flex items-center justify-between cursor-pointer">
+<span class="font-title-sm text-title-sm text-on-surface">Festival Season Temporary Expiry</span>
+<input checked="" class="w-4 h-4 rounded accent-tag-notifications" type="checkbox"/>
+</label>
+<div class="mt-1 flex items-center gap-space-xs px-space-sm py-1.5 bg-surface-container-low rounded-lg font-code-sm text-code-sm text-secondary">
+<span class="material-symbols-outlined text-body-sm leading-none">event</span>
+<span>Revokes automatically on <strong>Nov 15, 2026 (Diwali Cutoff)</strong></span>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container rounded-xl flex items-start gap-space-xs">
+<input class="mt-1 w-4 h-4 rounded accent-tag-notifications" id="auditConfirm" required="" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-secondary cursor-pointer" for="auditConfirm">
+            I confirm that this operator has completed the RTC Crackers data integrity brief and acknowledge that all emails will be signed with PESO regulatory stamps.
+          </label>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2 bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm rounded-xl transition-colors" onclick="document.getElementById('grantModal').classList.add('hidden')" type="button">
+            Cancel
+          </button>
+<button class="px-space-md py-2 bg-tag-notifications hover:bg-primary-container text-on-tertiary font-headline-sm text-headline-sm rounded-xl shadow-md transition-all" type="submit">
+            Confirm &amp; Discard Token
+          </button>
+</div>
+</form>
+</div>
+</div>
+<script>
+    function handleAccessSync(btn) {
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined text-title-sm leading-none animate-spin">refresh</span><span>Verifying ACL...</span>';
+      setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined text-title-sm leading-none text-tag-sales">check</span><span>Synchronized</span>';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 2000);
+      }, 700);
+    }
+  </script>
+</div></main></div></body></html>

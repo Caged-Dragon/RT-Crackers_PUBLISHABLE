@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error-container": "#93000a", "on-surface": "#191c20", "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-secondary-fixed": "#251a00", "outline-variant": "#e8bdb6", "on-primary-fixed": "#410001", "surface-dim": "#d8dadf", "tertiary": "#8c4900", "primary-container": "#e31b16", "primary": "#b90006", "on-tertiary-fixed": "#2f1500", "on-error": "#ffffff", "on-background": "#191c20", "surface-container": "#eceef3", "inverse-surface": "#2e3135", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#930003", "inverse-on-surface": "#eff0f6", "on-secondary-container": "#6e5400", "primary-fixed": "#ffdad5", "inverse-primary": "#ffb4a9", "surface-tint": "#c00006", "primary-fixed-dim": "#ffb4a9", "surface": "#f8f9ff", "background": "#f8f9ff", "surface-bright": "#f8f9ff", "tertiary-container": "#b05e00", "secondary": "#765a00", "error": "#ba1a1a", "on-surface-variant": "#5e3f3b", "on-primary": "#ffffff", "tertiary-fixed-dim": "#ffb77f", "surface-container-low": "#f2f3f9", "surface-container-highest": "#e1e2e8", "surface-container-high": "#e6e8ee", "tertiary-fixed": "#ffdcc4", "on-secondary-fixed-variant": "#594400", "secondary-fixed-dim": "#f4bf1b", "surface-variant": "#e1e2e8", "outline": "#926e69", "on-tertiary-fixed-variant": "#6f3900", "on-primary-container": "#fff9f8", "secondary-fixed": "#ffdf95", "surface-container-lowest": "#ffffff", "on-tertiary-container": "#fff9f8", "secondary-container": "#fdc826" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2.5rem", "space-lg": "1.5rem", "gutter": "1.25rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem", "space-xs": "0.25rem", "space-md": "1rem", "margin-mobile": "1rem", "margin": "2rem" }, "fontFamily": { "headline-xl-mobile": ["Oswald"], "body-md": ["Inter"], "headline-sm": ["Oswald"], "label-md": ["Inter"], "headline-lg": ["Oswald"], "display-hero": ["Oswald"], "headline-xl": ["Oswald"], "label-lg": ["Inter"], "display-hero-mobile": ["Oswald"], "label-caps": ["Oswald"], "headline-md": ["Oswald"], "body-sm": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "0.02em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "0.01em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "0.02em", "fontWeight": "700" }], "label-caps": ["13px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } };</script><link href="../runtime/theme.css" rel="stylesheet"/></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[260px] bg-inverse-surface text-inverse-on-surface z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.12)]"><div class="h-16 px-space-md flex items-center justify-between bg-inverse-surface border-b border-inverse-on-surface/10"><div class="flex items-center gap-space-xs"><img alt="LOGO.jpeg" class="h-8 w-auto object-contain" src="../assets/branding/LOGO.jpeg"/><span class="font-headline-sm text-headline-sm tracking-wide uppercase text-surface font-bold">RTCrackers</span></div><span class="px-space-xs py-0.5 rounded bg-primary text-on-primary font-label-md text-[10px] uppercase font-bold tracking-wider">Admin</span></div><nav class="flex-1 overflow-y-auto px-space-xs py-space-sm space-y-space-sm" data-active-classes="bg-primary text-on-primary font-bold shadow-[0_4px_16px_rgba(227,27,22,0.25)]"><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Dashboard</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Dashboard</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Catalog</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="products" href="#"><span class="material-symbols-outlined text-[18px]">local_fire_department</span><span>Products</span></a><a aria-current="page" class="flex items-center gap-space-xs px-space-sm py-1.5 rounded transition-colors bg-primary text-on-primary font-bold shadow-[0_4px_16px_rgba(227,27,22,0.25)]" data-path="categories" href="#"><span class="material-symbols-outlined text-[18px]">category</span><span>Categories</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="brands" href="#"><span class="material-symbols-outlined text-[18px]">verified</span><span>Brands</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="inventory" href="#"><span class="material-symbols-outlined text-[18px]">warehouse</span><span>Inventory</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="product-reviews" href="#"><span class="material-symbols-outlined text-[18px]">reviews</span><span>Product Reviews</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Orders</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="all-orders" href="#"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span>All Orders</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="pending-orders" href="#"><span class="material-symbols-outlined text-[18px]">pending_actions</span><span>Pending Orders</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="processing-orders" href="#"><span class="material-symbols-outlined text-[18px]">sync</span><span>Processing</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="shipped-orders" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span>Shipped</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="delivered-orders" href="#"><span class="material-symbols-outlined text-[18px]">check_circle</span><span>Delivered</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="cancelled-orders" href="#"><span class="material-symbols-outlined text-[18px]">cancel</span><span>Cancelled</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Customers</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="customers" href="#"><span class="material-symbols-outlined text-[18px]">groups</span><span>Customers</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="customer-segments" href="#"><span class="material-symbols-outlined text-[18px]">pie_chart</span><span>Customer Segments</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="customer-activity" href="#"><span class="material-symbols-outlined text-[18px]">monitoring</span><span>Customer Activity</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Marketing</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="coupons" href="#"><span class="material-symbols-outlined text-[18px]">confirmation_number</span><span>Coupons</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="offers" href="#"><span class="material-symbols-outlined text-[18px]">sell</span><span>Offers</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="campaigns" href="#"><span class="material-symbols-outlined text-[18px]">campaign</span><span>Campaigns</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="loyalty" href="#"><span class="material-symbols-outlined text-[18px]">military_tech</span><span>Loyalty</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="referrals" href="#"><span class="material-symbols-outlined text-[18px]">share</span><span>Referrals</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Content</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="cms" href="#"><span class="material-symbols-outlined text-[18px]">article</span><span>CMS</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="banners" href="#"><span class="material-symbols-outlined text-[18px]">view_carousel</span><span>Banners</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="pages" href="#"><span class="material-symbols-outlined text-[18px]">web</span><span>Pages</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="blog" href="#"><span class="material-symbols-outlined text-[18px]">feed</span><span>Blog</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="faqs" href="#"><span class="material-symbols-outlined text-[18px]">quiz</span><span>FAQs</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Delivery</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="shipments" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span>Shipments</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="delivery-tracking" href="#"><span class="material-symbols-outlined text-[18px]">route</span><span>Delivery Tracking</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="shipping-rules" href="#"><span class="material-symbols-outlined text-[18px]">rule</span><span>Shipping Rules</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Finance</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="payments" href="#"><span class="material-symbols-outlined text-[18px]">payments</span><span>Payments</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="transactions" href="#"><span class="material-symbols-outlined text-[18px]">account_balance_wallet</span><span>Transactions</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="invoices" href="#"><span class="material-symbols-outlined text-[18px]">description</span><span>Invoices</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="taxes" href="#"><span class="material-symbols-outlined text-[18px]">account_balance</span><span>Taxes</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Support</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="support-tickets" href="#"><span class="material-symbols-outlined text-[18px]">headset_mic</span><span>Support Tickets</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="contact-requests" href="#"><span class="material-symbols-outlined text-[18px]">mail</span><span>Contact Requests</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Analytics</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="sales-analytics" href="#"><span class="material-symbols-outlined text-[18px]">insights</span><span>Sales Analytics</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="product-analytics" href="#"><span class="material-symbols-outlined text-[18px]">trending_up</span><span>Product Analytics</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="customer-analytics" href="#"><span class="material-symbols-outlined text-[18px]">leaderboard</span><span>Customer Analytics</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">summarize</span><span>Reports</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">System</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="notifications" href="#"><span class="material-symbols-outlined text-[18px]">notifications</span><span>Notifications</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="admin-users" href="#"><span class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span>Admin Users</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="roles-permissions" href="#"><span class="material-symbols-outlined text-[18px]">lock_person</span><span>Roles &amp; Permissions</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-[18px]">history</span><span>Audit Logs</span></a></div></nav><div class="p-space-sm border-t border-inverse-on-surface/10 bg-inverse-surface space-y-space-xs"><button class="w-full flex items-center justify-between px-space-sm py-1.5 rounded text-inverse-on-surface/70 hover:bg-surface-container-high hover:text-on-surface text-label-md font-label-md transition-colors" type="button"><span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px]">keyboard_double_arrow_left</span><span>Collapse Menu</span></span><span class="font-label-caps text-[10px] text-inverse-on-surface/40">⌥B</span></button><div class="flex items-center justify-between px-space-sm py-1 bg-inverse-on-surface/5 rounded"><div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-label-md text-[11px] text-inverse-on-surface/90">Production Engine</span></div><span class="font-label-caps text-[10px] uppercase tracking-wider text-emerald-400 font-bold">99.98%</span></div></div></aside><div class="pl-[260px] min-h-screen flex flex-col"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 border-b border-surface-container-high shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-full w-full px-space-md flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-[220px]"><button class="h-9 w-9 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button><div class="flex items-center gap-1.5 font-label-lg text-label-lg text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="catalog" href="#">Catalog</a><span class="text-on-surface-variant/40">/</span><span class="text-on-surface font-semibold">Categories</span></div></div><div class="flex-1 max-w-xl"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-[18px] text-on-surface-variant">search</span><input class="w-full pl-9 pr-14 py-1.5 bg-surface-container-low rounded border border-surface-container-highest text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="Search orders, customers, products, categories..." type="text"/><kbd class="absolute right-3 px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-md text-[10px] font-bold">⌘K</kbd></div></div><div class="flex items-center gap-space-xs"><a class="h-9 px-2.5 rounded flex items-center gap-1.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md transition-colors" href="#" title="Live Storefront Preview"><span class="material-symbols-outlined text-[18px]">storefront</span><span class="hidden xl:inline">Live Store</span></a><div class="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-label-md text-label-md"><span class="h-2 w-2 rounded-full bg-emerald-500"></span><span>All systems operational</span></div><button class="relative h-9 w-9 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 h-4 min-w-[16px] px-1 rounded-full bg-primary text-on-primary font-label-md text-[10px] flex items-center justify-center font-bold">4</span></button><div class="flex items-center gap-2 pl-2 border-l border-surface-container-highest"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md font-bold text-on-surface leading-tight">Super Admin</span><span class="font-body-sm text-[11px] text-on-surface-variant leading-none">R. Kumar</span></div><button class="text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">expand_more</span></button></div></div></div></header><main class="relative flex-1 w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<div class="w-full px-space-md py-space-lg space-y-space-lg">
+<!-- PAGE HEADER -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant">
+<span>Catalog</span>
+<span class="text-on-surface-variant/40">/</span>
+<span class="text-primary font-bold">Categories</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl uppercase tracking-wider text-on-surface">Categories</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Organize your product catalog into clear, discoverable categories, manage taxonomy hierarchies, and control navigation visibility.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="h-10 px-4 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md flex items-center gap-2 shadow-sm transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[18px]">upload</span>
+<span>Import Categories</span>
+</button>
+<button class="h-10 px-4 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md flex items-center gap-2 shadow-sm transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Categories</span>
+</button>
+<button class="h-10 px-5 rounded bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider flex items-center gap-2 shadow-md hover:shadow-lg transition-all duration-150 active:scale-95" onclick="document.getElementById('new-category-modal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>+ Add Category</span>
+</button>
+</div>
+</div>
+<!-- KPI SUMMARY STRIP -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Total Categories -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">Total Categories</span>
+<div class="font-headline-xl text-headline-xl text-on-surface mt-1 leading-none">48</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[22px]">account_tree</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-1.5 font-label-md text-label-md text-primary font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+3 added this month</span>
+</div>
+</div>
+<!-- Active Categories -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">Active Categories</span>
+<div class="font-headline-xl text-headline-xl text-on-surface mt-1 leading-none">42</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-emerald-500 text-surface-container-lowest flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-1.5 font-label-md text-label-md text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>87.5% published &amp; visible in store</span>
+</div>
+</div>
+<!-- Empty Categories -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">Empty Categories</span>
+<div class="font-headline-xl text-headline-xl text-secondary-container text-on-surface mt-1 leading-none">3</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-1.5 font-label-md text-label-md text-tertiary font-semibold">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+<span>No products assigned (review required)</span>
+</div>
+</div>
+<!-- Subcategories -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">Subcategories</span>
+<div class="font-headline-xl text-headline-xl text-on-surface mt-1 leading-none">86</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-inverse-surface text-inverse-on-surface flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[22px]">fork_right</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-1.5 font-label-md text-label-md text-on-surface-variant">
+<span>Across 6 primary root sports divisions</span>
+</div>
+</div>
+</div>
+<!-- FILTERING & VIEW CONTROLS TOOLBAR -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Search bar -->
+<div class="flex-1 max-w-xl relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[20px] text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-10 py-2 bg-surface-container-low rounded text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" placeholder="Search categories by name, slug, ID, or root division..." type="text"/>
+<button class="absolute right-3 top-2.5 text-on-surface-variant hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- View Mode Switcher -->
+<div class="flex items-center gap-1 bg-surface-container-high p-1 rounded">
+<button class="px-3 py-1.5 rounded bg-surface-container-lowest text-on-surface font-label-md text-label-md font-bold shadow-sm flex items-center gap-1.5" id="tab-list-btn" onclick="switchView('list')" type="button">
+<span class="material-symbols-outlined text-[18px]">table_rows</span>
+<span>List View</span>
+</button>
+<button class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-1.5" id="tab-tree-btn" onclick="switchView('tree')" type="button">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+<span>Tree View</span>
+</button>
+</div>
+</div>
+<!-- Filter Controls Strip -->
+<div class="flex flex-wrap items-center gap-space-xs pt-2">
+<!-- Status Dropdown -->
+<div class="relative inline-block text-left">
+<select class="h-9 px-3 pr-8 rounded bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+<option>Status: All Statuses</option>
+<option>Active</option>
+<option>Draft</option>
+<option>Archived</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2 pointer-events-none text-[18px] text-on-surface-variant">expand_more</span>
+</div>
+<!-- Parent Category -->
+<div class="relative inline-block text-left">
+<select class="h-9 px-3 pr-8 rounded bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+<option>Parent: All Parents</option>
+<option>Root Categories Only</option>
+<option>Fireworks</option>
+<option>Fireworks</option>
+<option>Fireworks</option>
+<option>Fireworks</option>
+<option>Fitness</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2 pointer-events-none text-[18px] text-on-surface-variant">expand_more</span>
+</div>
+<!-- Product Count Filter -->
+<div class="relative inline-block text-left">
+<select class="h-9 px-3 pr-8 rounded bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+<option>Products: All Counts</option>
+<option>Empty (0 SKUs)</option>
+<option>1 – 10 SKUs</option>
+<option>11 – 50 SKUs</option>
+<option>51 – 100 SKUs</option>
+<option>100+ SKUs</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2 pointer-events-none text-[18px] text-on-surface-variant">expand_more</span>
+</div>
+<!-- Visibility Filter -->
+<div class="relative inline-block text-left">
+<select class="h-9 px-3 pr-8 rounded bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+<option>Visibility: All Channels</option>
+<option>Storefront Nav</option>
+<option>Homepage Spotlight</option>
+<option>Search Indexed</option>
+<option>Hidden from Storefront</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2 pointer-events-none text-[18px] text-on-surface-variant">expand_more</span>
+</div>
+<button class="h-9 px-4 rounded bg-on-surface text-surface font-label-md text-label-md hover:bg-inverse-surface transition-colors" type="button">
+          Apply Filters
+        </button>
+<button class="h-9 px-3 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors" type="button">
+          Clear
+        </button>
+</div>
+</div>
+<!-- BULK ACTIONS DYNAMIC FLOATING STRIP -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-xl px-space-md py-3 shadow-lg flex flex-wrap items-center justify-between gap-space-md" id="bulk-toolbar">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-caps text-label-caps font-bold">3 Selected</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface/80">Batch processing enabled</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<button class="px-3 py-1.5 rounded bg-inverse-on-surface/10 hover:bg-inverse-on-surface/20 text-inverse-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Activate</span>
+</button>
+<button class="px-3 py-1.5 rounded bg-inverse-on-surface/10 hover:bg-inverse-on-surface/20 text-inverse-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility_off</span>
+<span>Set Draft</span>
+</button>
+<button class="px-3 py-1.5 rounded bg-inverse-on-surface/10 hover:bg-inverse-on-surface/20 text-inverse-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">drive_file_move</span>
+<span>Change Parent</span>
+</button>
+<button class="px-3 py-1.5 rounded bg-inverse-on-surface/10 hover:bg-inverse-on-surface/20 text-inverse-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Selected</span>
+</button>
+<button class="px-3 py-1.5 rounded bg-error-container text-on-error-container font-label-md text-label-md flex items-center gap-1.5 hover:bg-error hover:text-on-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Delete / Archive</span>
+</button>
+</div>
+</div>
+<!-- VIEW 1: MAIN CATEGORY TABLE (LIST VIEW) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col" id="view-list">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<th class="py-3 px-4 w-12 text-center">
+<input checked="" class="rounded w-4 h-4 text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</th>
+<th class="py-3 px-4 font-bold">Category</th>
+<th class="py-3 px-4 font-bold">Slug &amp; ID</th>
+<th class="py-3 px-4 font-bold">Parent Tier</th>
+<th class="py-3 px-4 font-bold">Products</th>
+<th class="py-3 px-4 font-bold">Subcategories</th>
+<th class="py-3 px-4 font-bold">Store Visibility</th>
+<th class="py-3 px-4 font-bold">Status</th>
+<th class="py-3 px-4 font-bold text-center">Order</th>
+<th class="py-3 px-4 font-bold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+<!-- ROW 1: Fireworks (Root) -->
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 font-bold text-on-surface">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-primary-container text-on-primary flex items-center justify-center font-headline-sm shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide block text-on-surface">Fireworks</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-normal">Primary Division</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono text-label-md font-bold text-primary">#CAT-101</div>
+<div class="text-on-surface-variant font-mono text-[11px]">/fireworks</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-md text-[11px] font-bold uppercase tracking-wider">Top Level Root</span>
+</td>
+<td class="py-3.5 px-4">
+<a class="font-bold text-primary hover:underline flex items-center gap-1" href="#">
+<span>842 products</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</td>
+<td class="py-3.5 px-4 font-medium">12 subcategories</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Nav</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Homepage</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Search</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 font-label-md text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center font-bold text-on-surface">1</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Add Child Subcategory" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Edit" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: Fireworks Bats (Child of Fireworks) -->
+<tr class="hover:bg-surface-container/50 bg-surface/30 transition-colors group">
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 font-bold text-on-surface pl-10 relative">
+<!-- curved visual indicator for tree child -->
+<span class="absolute left-6 top-0 bottom-1/2 w-3 border-b-2 border-l-2 border-surface-container-highest rounded-bl"></span>
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container"></div>
+<div>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Fireworks Bats</span>
+<span class="block text-[11px] font-normal text-on-surface-variant">English &amp; Kashmir Sparkler</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono text-label-md font-bold text-on-surface">#CAT-102</div>
+<div class="text-on-surface-variant font-mono text-[11px]">/fireworks/bats</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-md text-[11px]">Fireworks (#CAT-101)</span>
+</td>
+<td class="py-3.5 px-4">
+<a class="font-bold text-primary hover:underline" href="#">318 products</a>
+</td>
+<td class="py-3.5 px-4 font-medium">4 subcategories</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Nav</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Search</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 font-label-md text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center font-bold text-on-surface">2</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Add Child" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Edit" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: Fireworks (Root) -->
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 font-bold text-on-surface">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">sports_soccer</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide block text-on-surface">Fireworks</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-normal">Primary Division</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono text-label-md font-bold text-on-surface">#CAT-103</div>
+<div class="text-on-surface-variant font-mono text-[11px]">/fireworks</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-md text-[11px] font-bold uppercase tracking-wider">Top Level Root</span>
+</td>
+<td class="py-3.5 px-4">
+<a class="font-bold text-primary hover:underline" href="#">420 products</a>
+</td>
+<td class="py-3.5 px-4 font-medium">8 subcategories</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Nav</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Homepage</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Search</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 font-label-md text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center font-bold text-on-surface">3</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: Fireworks Boots (Child of Fireworks) -->
+<tr class="hover:bg-surface-container/50 bg-surface/30 transition-colors group">
+<td class="py-3.5 px-4 text-center">
+<input class="rounded w-4 h-4 accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 font-bold text-on-surface pl-10 relative">
+<span class="absolute left-6 top-0 bottom-1/2 w-3 border-b-2 border-l-2 border-surface-container-highest rounded-bl"></span>
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary"></div>
+<div>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Fireworks Boots &amp; Cleats</span>
+<span class="block text-[11px] font-normal text-on-surface-variant">Turf, Firm Ground &amp; Studs</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono text-label-md font-bold text-on-surface">#CAT-104</div>
+<div class="text-on-surface-variant font-mono text-[11px]">/fireworks/boots</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-md text-[11px]">Fireworks (#CAT-103)</span>
+</td>
+<td class="py-3.5 px-4">
+<a class="font-bold text-primary hover:underline" href="#">164 products</a>
+</td>
+<td class="py-3.5 px-4 font-medium">3 subcategories</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Nav</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Search</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 font-label-md text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center font-bold text-on-surface">4</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: Fireworks (Root) -->
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="py-3.5 px-4 text-center">
+<input class="rounded w-4 h-4 accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 font-bold text-on-surface">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide block text-on-surface">Fireworks</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-normal">Primary Division</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono text-label-md font-bold text-on-surface">#CAT-105</div>
+<div class="text-on-surface-variant font-mono text-[11px]">/fireworks</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-md text-[11px] font-bold uppercase tracking-wider">Top Level Root</span>
+</td>
+<td class="py-3.5 px-4">
+<a class="font-bold text-primary hover:underline" href="#">290 products</a>
+</td>
+<td class="py-3.5 px-4 font-medium">6 subcategories</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Nav</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Homepage</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Search</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 font-label-md text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center font-bold text-on-surface">5</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 6: Fireworks (Root) -->
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="py-3.5 px-4 text-center">
+<input class="rounded w-4 h-4 accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 font-bold text-on-surface">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide block text-on-surface">Fireworks</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-normal">Primary Division</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono text-label-md font-bold text-on-surface">#CAT-106</div>
+<div class="text-on-surface-variant font-mono text-[11px]">/fireworks</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-md text-[11px] font-bold uppercase tracking-wider">Top Level Root</span>
+</td>
+<td class="py-3.5 px-4">
+<a class="font-bold text-primary hover:underline" href="#">345 products</a>
+</td>
+<td class="py-3.5 px-4 font-medium">7 subcategories</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Nav</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Homepage</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Search</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 font-label-md text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center font-bold text-on-surface">6</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 7: Fitness & Conditioning -->
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="py-3.5 px-4 text-center">
+<input class="rounded w-4 h-4 accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 font-bold text-on-surface">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">fitness_center</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide block text-on-surface">Fitness &amp; Conditioning</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-normal">Primary Division</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono text-label-md font-bold text-on-surface">#CAT-107</div>
+<div class="text-on-surface-variant font-mono text-[11px]">/fitness</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-md text-[11px] font-bold uppercase tracking-wider">Top Level Root</span>
+</td>
+<td class="py-3.5 px-4">
+<a class="font-bold text-primary hover:underline" href="#">185 products</a>
+</td>
+<td class="py-3.5 px-4 font-medium">5 subcategories</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Nav</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-md text-[10px]">Search</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 font-label-md text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center font-bold text-on-surface">7</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 8: Recovery & First Aid (Empty Draft Warning) -->
+<tr class="hover:bg-surface-container/50 bg-secondary-container/5 transition-colors group">
+<td class="py-3.5 px-4 text-center">
+<input class="rounded w-4 h-4 accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 font-bold text-on-surface">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-secondary-container/30 text-on-surface flex items-center justify-center font-headline-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">medical_services</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide block text-on-surface">Recovery &amp; First Aid</span>
+<span class="font-label-md text-label-md text-tertiary font-normal">Matchday Rehab &amp; Protection</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono text-label-md font-bold text-on-surface">#CAT-108</div>
+<div class="text-on-surface-variant font-mono text-[11px]">/recovery</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-md text-[11px] font-bold uppercase tracking-wider">Top Level Root</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-on-error-container font-semibold bg-error-container/40 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">warning</span> 0 products
+                </span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant font-medium">0</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-md text-[10px]">Hidden from Store</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-[11px] font-bold">
+                  Draft
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center font-bold text-on-surface">8</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 9: Monsoon Fireworks Specials (Archived) -->
+<tr class="hover:bg-surface-container/50 opacity-60 transition-colors group">
+<td class="py-3.5 px-4 text-center">
+<input class="rounded w-4 h-4 accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 font-bold text-on-surface">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-surface-container-highest text-on-surface flex items-center justify-center font-headline-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">cloudy_snowing</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide block text-on-surface line-through">Monsoon Specials</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-normal">Seasonal Promo Category</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="font-mono text-label-md font-bold text-on-surface">#CAT-109</div>
+<div class="text-on-surface-variant font-mono text-[11px]">/promos/monsoon</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-md text-[11px]">Top Level Root</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="text-on-surface-variant font-medium">28 products</span>
+</td>
+<td class="py-3.5 px-4 font-medium">0</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-md text-[10px]">Archived</span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-dim text-on-surface-variant font-label-md text-[11px] font-bold">
+                  Archived
+                </span>
+</td>
+<td class="py-3.5 px-4 text-center font-bold text-on-surface">9</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">restore_from_trash</span>
+</button>
+<button class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-space-md py-3 bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span>Showing <strong class="text-on-surface">1–9</strong> of <strong class="text-on-surface">48</strong> categories</span>
+<span class="text-on-surface-variant/40">•</span>
+<select class="h-7 px-2 bg-surface-container rounded text-on-surface font-label-md text-label-md focus:outline-none">
+<option>10 per page</option>
+<option>25 per page</option>
+<option>50 per page</option>
+</select>
+</div>
+<div class="flex items-center gap-1">
+<button class="h-8 w-8 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="h-8 w-8 rounded bg-primary text-on-primary font-bold" type="button">1</button>
+<button class="h-8 w-8 rounded hover:bg-surface-container-high text-on-surface font-bold" type="button">2</button>
+<button class="h-8 w-8 rounded hover:bg-surface-container-high text-on-surface font-bold" type="button">3</button>
+<span class="px-1 text-on-surface-variant">...</span>
+<button class="h-8 w-8 rounded hover:bg-surface-container-high text-on-surface font-bold" type="button">5</button>
+<button class="h-8 w-8 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- VIEW 2: INTERACTIVE HIERARCHY TREE VIEW PREVIEW PANEL & QUICK DRAWER (Split Bento Layout) -->
+<div class="hidden grid-cols-1 lg:grid-cols-12 gap-space-md" id="view-tree">
+<!-- Left: Tree Taxonomy Node Explorer -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">account_tree</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Category Taxonomy Tree</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-primary font-label-md text-label-md hover:underline font-bold flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">unfold_more</span> Expand All
+            </button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">drag_indicator</span> Reorder Mode
+            </button>
+</div>
+</div>
+<!-- Tree Nodes View -->
+<div class="space-y-2 font-body-sm text-body-sm text-on-surface select-none">
+<!-- Root Sports Level -->
+<div class="p-2.5 rounded bg-surface-container-low flex items-center justify-between group">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant cursor-pointer">arrow_drop_down</span>
+<span class="material-symbols-outlined text-[18px] text-primary">category</span>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wide">Root Sports Hub</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-md text-[10px]">6 Divisions</span>
+</div>
+<button class="text-primary hover:text-primary-container text-label-md font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span> Add Root Division
+            </button>
+</div>
+<!-- Fireworks Level (Expanded) -->
+<div class="pl-6 space-y-2">
+<div class="p-2.5 rounded bg-primary-container/10 border-l-4 border-primary flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary cursor-pointer">arrow_drop_down</span>
+<span class="material-symbols-outlined text-[18px] text-primary">local_fire_department</span>
+<span class="font-bold text-on-surface">Fireworks</span>
+<span class="font-mono text-label-md text-primary font-bold">#CAT-101</span>
+<span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-700 font-label-md text-[10px] font-bold">Active</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-on-surface-variant font-label-md text-label-md mr-2">842 SKUs</span>
+<button class="w-6 h-6 rounded flex items-center justify-center hover:bg-surface-container text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+<button class="w-6 h-6 rounded flex items-center justify-center hover:bg-surface-container text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Fireworks Bats (Active Inspector Selection) -->
+<div class="pl-6 space-y-2">
+<div class="p-2.5 rounded bg-surface-container-highest ring-2 ring-primary flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant cursor-pointer">arrow_drop_down</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface">sports</span>
+<span class="font-bold text-primary">Fireworks Bats</span>
+<span class="font-mono text-label-md font-bold text-on-surface">#CAT-102</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary font-label-caps text-[9px] font-bold">SELECTED</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-on-surface font-label-md text-label-md">318 SKUs</span>
+<span class="material-symbols-outlined text-[16px] text-primary">arrow_forward</span>
+</div>
+</div>
+<!-- Children of Fireworks Bats -->
+<div class="pl-6 space-y-1.5 text-on-surface-variant">
+<div class="p-2 rounded hover:bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-surface-dim"></span>
+<span>English Sparkler Grade 1+</span>
+<span class="text-[11px] font-mono">#CAT-102A</span>
+</div>
+<span class="font-label-md text-label-md">112 SKUs</span>
+</div>
+<div class="p-2 rounded hover:bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-surface-dim"></span>
+<span>Kashmir Sparkler Festival</span>
+<span class="text-[11px] font-mono">#CAT-102B</span>
+</div>
+<span class="font-label-md text-label-md">84 SKUs</span>
+</div>
+<div class="p-2 rounded hover:bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-surface-dim"></span>
+<span>Junior &amp; Academy Range</span>
+<span class="text-[11px] font-mono">#CAT-102C</span>
+</div>
+<span class="font-label-md text-label-md">68 SKUs</span>
+</div>
+<div class="p-2 rounded hover:bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-surface-dim"></span>
+<span>Training &amp; Heavy Catch Bats</span>
+<span class="text-[11px] font-mono">#CAT-102D</span>
+</div>
+<span class="font-label-md text-label-md">54 SKUs</span>
+</div>
+</div>
+<!-- Protective Products Node (Collapsed) -->
+<div class="p-2.5 rounded hover:bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant cursor-pointer">arrow_right</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">shield</span>
+<span class="font-medium text-on-surface">Protective Products (Pads, Gloves, Helmets)</span>
+</div>
+<span class="text-on-surface-variant font-label-md text-label-md">324 SKUs</span>
+</div>
+<!-- Fireworks Balls & Accessories Node (Collapsed) -->
+<div class="p-2.5 rounded hover:bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant cursor-pointer">arrow_right</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">sports_baseball</span>
+<span class="font-medium text-on-surface">Fireworks Leather Balls &amp; Stumps</span>
+</div>
+<span class="text-on-surface-variant font-label-md text-label-md">200 SKUs</span>
+</div>
+</div>
+<!-- Fireworks Root Node (Collapsed) -->
+<div class="p-2.5 rounded hover:bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant cursor-pointer">arrow_right</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">sports_soccer</span>
+<span class="font-bold text-on-surface">Fireworks</span>
+<span class="font-mono text-label-md text-on-surface-variant">#CAT-103</span>
+</div>
+<span class="text-on-surface-variant font-label-md text-label-md">420 SKUs</span>
+</div>
+<!-- Fireworks Root Node (Collapsed) -->
+<div class="p-2.5 rounded hover:bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant cursor-pointer">arrow_right</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">local_fire_department</span>
+<span class="font-bold text-on-surface">Fireworks</span>
+<span class="font-mono text-label-md text-on-surface-variant">#CAT-105</span>
+</div>
+<span class="text-on-surface-variant font-label-md text-label-md">290 SKUs</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Category Detail Quick Inspector -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md flex flex-col justify-between">
+<div class="space-y-space-md">
+<!-- Inspector Header -->
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-container">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-700 font-label-md text-[11px] font-bold">Active in Catalog</span>
+<span class="font-mono text-label-md text-primary font-bold">#CAT-102</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg uppercase text-on-surface mt-1">Fireworks Bats</h3>
+<a class="text-[12px] font-mono text-primary flex items-center gap-1 hover:underline" href="#">
+<span>rtcrackers.com/category/fireworks-bats</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+<div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-headline-sm shadow-md">
+<span class="material-symbols-outlined text-[28px]">local_fire_department</span>
+</div>
+</div>
+<!-- Quick Metrics Bar -->
+<div class="grid grid-cols-3 gap-2 p-3 bg-surface-container-low rounded-lg text-center">
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">₹18.4L</div>
+<span class="font-label-md text-[10px] uppercase text-on-surface-variant font-semibold">30D Revenue</span>
+</div>
+<div class="border-x border-surface-container-highest">
+<div class="font-headline-sm text-headline-sm text-primary">318</div>
+<span class="font-label-md text-[10px] uppercase text-on-surface-variant font-semibold">Live SKUs</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">4</div>
+<span class="font-label-md text-[10px] uppercase text-on-surface-variant font-semibold">Sub-nodes</span>
+</div>
+</div>
+<!-- Quick Toggles -->
+<div class="space-y-3">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">Channel Visibility &amp; Indexing</span>
+<div class="flex items-center justify-between p-2.5 rounded bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface">menu</span>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Show in Mega Navigation</div>
+<div class="font-body-sm text-[11px] text-on-surface-variant">Render under Fireworks category flyout</div>
+</div>
+</div>
+<input checked="" class="w-5 h-5 accent-primary cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface">grid_view</span>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Show on Homepage Grid</div>
+<div class="font-body-sm text-[11px] text-on-surface-variant">Featured in Sports Spotlight section</div>
+</div>
+</div>
+<input checked="" class="w-5 h-5 accent-primary cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface">travel_explore</span>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Search Engine Indexing (SEO)</div>
+<div class="font-body-sm text-[11px] text-on-surface-variant">Include in sitemap.xml and meta tags</div>
+</div>
+</div>
+<input checked="" class="w-5 h-5 accent-primary cursor-pointer" type="checkbox"/>
+</div>
+</div>
+<!-- Associated Hero Banner Thumbnail -->
+<div class="space-y-1.5">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">Category Banner Media</span>
+<div class="relative w-full h-24 rounded-lg overflow-hidden bg-surface-container flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="High performance English sparkler fireworks bat resting against red stadium leather balls on a clean festive concrete floor dramatic rim lighting high contrast sports photography" src="../assets/branding/LOGO.jpeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent flex items-end p-2.5">
+<span class="font-label-md text-[11px] text-surface font-semibold">fireworks_bats_banner_2026.webp (1200x400)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Inspector Action Buttons -->
+<div class="pt-4 border-t border-surface-container flex flex-wrap gap-2">
+<button class="flex-1 h-9 px-3 rounded bg-primary-container text-on-primary font-headline-sm text-headline-sm uppercase tracking-wide hover:bg-primary transition-colors flex items-center justify-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Edit Full Category</span>
+</button>
+<button class="h-9 px-3 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+<span>Manage Products (318)</span>
+</button>
+<button class="h-9 px-3 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md flex items-center justify-center transition-colors" title="Change Hierarchy Level" type="button">
+<span class="material-symbols-outlined text-[18px]">drive_file_move</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RECENT TAXONOMY ACTIVITY & AUDIT LOG STRIP -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between border-b border-surface-container pb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">history</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Recent Taxonomy Activity &amp; Audit Log</span>
+</div>
+<a class="font-label-md text-label-md text-primary font-bold hover:underline flex items-center gap-1" href="#">
+<span>View All Audit History</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-1">
+<!-- Activity 1 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs flex-shrink-0">
+            RK
+          </div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Admin (R. Kumar)</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">
+              Reordered category <strong class="text-on-surface">'Fireworks Bats'</strong> to priority position <span class="font-mono text-primary font-bold">#2</span>.
+            </p>
+<span class="text-[11px] text-on-surface-variant/70 mt-1 block">15 minutes ago</span>
+</div>
+</div>
+<!-- Activity 2 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-inverse-surface text-inverse-on-surface flex items-center justify-center font-bold text-xs flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">System Inventory Sync</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">
+              Assigned <strong class="text-on-surface">14 new SKUs</strong> to subcategory 'Fireworks Rackets'.
+            </p>
+<span class="text-[11px] text-on-surface-variant/70 mt-1 block">1 hour ago</span>
+</div>
+</div>
+<!-- Activity 3 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs flex-shrink-0">
+            AP
+          </div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Admin (A. Patel)</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">
+              Created new subcategory <strong class="text-on-surface">'English Sparkler Pro Grade 1'</strong> under Fireworks.
+            </p>
+<span class="text-[11px] text-on-surface-variant/70 mt-1 block">3 hours ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE-OVER DRAWER / MODAL: "+ ADD CATEGORY" -->
+<div class="hidden fixed inset-0 z-50 overflow-hidden bg-on-surface/40 backdrop-blur-sm flex justify-end" id="new-category-modal">
+<div class="w-full max-w-xl bg-surface-container-lowest h-full shadow-2xl flex flex-col justify-between overflow-y-auto">
+<!-- Drawer Header -->
+<div class="p-space-md border-b border-surface-container flex items-center justify-between bg-surface-container-low sticky top-0 z-10">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md uppercase text-on-surface">Create New Category</h2>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Taxonomy Node Architecture</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" onclick="document.getElementById('new-category-modal').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Content Form -->
+<div class="p-space-md space-y-space-md flex-1">
+<!-- Category Name -->
+<div class="space-y-1">
+<label class="font-label-caps text-label-caps uppercase text-on-surface font-bold">Category Title *</label>
+<input class="w-full px-3 py-2 bg-surface-container-low rounded text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="e.g. Fireworks Spikes &amp; Footwear" type="text"/>
+</div>
+<!-- Parent Category Selector -->
+<div class="space-y-1">
+<label class="font-label-caps text-label-caps uppercase text-on-surface font-bold">Parent Division Hierarchy *</label>
+<select class="w-full px-3 py-2 bg-surface-container-low rounded text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">
+<option value="root">[Root Level / Top Tier]</option>
+<option selected="" value="101">Fireworks (#CAT-101)</option>
+<option value="102">-- Fireworks Bats (#CAT-102)</option>
+<option value="103">Fireworks (#CAT-103)</option>
+<option value="105">Fireworks (#CAT-105)</option>
+<option value="106">Fireworks (#CAT-106)</option>
+</select>
+<span class="font-body-sm text-[11px] text-on-surface-variant block">Select [Root Level] to make this a primary navbar sport division.</span>
+</div>
+<!-- URL Slug Generator -->
+<div class="space-y-1">
+<label class="font-label-caps text-label-caps uppercase text-on-surface font-bold">Auto-Generated URL Slug</label>
+<div class="flex items-center">
+<span class="px-3 py-2 bg-surface-container-high rounded-l text-on-surface-variant font-mono text-[12px]">rtcrackers.com/category/fireworks/</span>
+<input class="flex-1 px-3 py-2 bg-surface-container-low rounded-r text-body-sm font-mono text-primary font-bold focus:outline-none focus:ring-2 focus:ring-primary" type="text" value="spikes-footwear"/>
+</div>
+</div>
+<!-- Description -->
+<div class="space-y-1">
+<label class="font-label-caps text-label-caps uppercase text-on-surface font-bold">Category Description</label>
+<textarea class="w-full px-3 py-2 bg-surface-container-low rounded text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="Write festive merchandise description for store category landing..." rows="3"></textarea>
+</div>
+<!-- Media Upload -->
+<div class="space-y-1">
+<label class="font-label-caps text-label-caps uppercase text-on-surface font-bold">Category Hero Visual</label>
+<div class="w-full p-4 rounded-lg bg-surface-container-low border-2 border-dashed border-surface-container-highest flex flex-col items-center justify-center gap-1.5 cursor-pointer hover:bg-surface-container">
+<span class="material-symbols-outlined text-[32px] text-primary">add_photo_alternate</span>
+<div class="font-label-md text-label-md text-on-surface font-bold">Click to upload banner or drop image here</div>
+<span class="text-[11px] text-on-surface-variant">Recommended: 1200 x 400px (Max 2MB WebP, PNG, JPG)</span>
+</div>
+</div>
+<!-- Display Order & Status -->
+<div class="grid grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-caps text-label-caps uppercase text-on-surface font-bold">Display Order</label>
+<input class="w-full px-3 py-2 bg-surface-container-low rounded text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" type="number" value="10"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-caps text-label-caps uppercase text-on-surface font-bold">Publish Status</label>
+<select class="w-full px-3 py-2 bg-surface-container-low rounded text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary">
+<option>Active (Published)</option>
+<option>Draft (Staging)</option>
+<option>Archived</option>
+</select>
+</div>
+</div>
+<!-- Google SERP SEO Preview Snippet -->
+<div class="space-y-1 pt-2">
+<label class="font-label-caps text-label-caps uppercase text-on-surface font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">preview</span>
+<span>Google SERP Preview</span>
+</label>
+<div class="p-3 bg-surface rounded-lg space-y-1 border border-surface-container">
+<div class="text-[11px] text-emerald-700 font-mono">https://rtcrackers.com › category › fireworks › spikes-footwear</div>
+<div class="font-headline-sm text-headline-sm text-blue-700 hover:underline cursor-pointer leading-tight">
+              Fireworks Spikes &amp; Footwear | Buy Festival Turf Shoes — RTCrackers
+            </div>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2">
+              Explore pro-grade fireworks spikes, rubber studs, and indoor training shoes engineered for explosive festive acceleration and unmatched crease grip.
+            </p>
+</div>
+</div>
+</div>
+<!-- Drawer Footer Action Bar -->
+<div class="p-space-md bg-surface-container-low border-t border-surface-container flex items-center justify-between sticky bottom-0 z-10">
+<button class="px-4 py-2 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md" onclick="document.getElementById('new-category-modal').classList.add('hidden')" type="button">
+          Cancel
+        </button>
+<button class="px-6 py-2 rounded bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm uppercase tracking-wide shadow-md transition-all" onclick="document.getElementById('new-category-modal').classList.add('hidden')" type="button">
+          Save &amp; Publish Category
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchView(mode) {
+    const listBtn = document.getElementById('tab-list-btn');
+    const treeBtn = document.getElementById('tab-tree-btn');
+    const listView = document.getElementById('view-list');
+    const treeView = document.getElementById('view-tree');
+
+    if (mode === 'tree') {
+      treeBtn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'font-bold', 'shadow-sm');
+      treeBtn.classList.remove('text-on-surface-variant');
+      listBtn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'font-bold', 'shadow-sm');
+      listBtn.classList.add('text-on-surface-variant');
+
+      listView.classList.add('hidden');
+      treeView.classList.remove('hidden');
+      treeView.classList.add('grid');
+    } else {
+      listBtn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'font-bold', 'shadow-sm');
+      listBtn.classList.remove('text-on-surface-variant');
+      treeBtn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'font-bold', 'shadow-sm');
+      treeBtn.classList.add('text-on-surface-variant');
+
+      treeView.classList.add('hidden');
+      treeView.classList.remove('grid');
+      listView.classList.remove('hidden');
+    }
+  }
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-high py-space-sm"><div class="w-full px-space-md flex flex-col md:flex-row items-center justify-between gap-space-xs text-on-surface-variant font-label-md text-label-md"><div>RTCrackers Enterprise Admin <span class="font-semibold text-on-surface">v2.4</span> • © 2026 RTCrackers Ltd.</div><div class="flex items-center gap-space-md"><a class="hover:text-primary transition-colors" data-path="documentation" href="#">Documentation</a><a class="hover:text-primary transition-colors" data-path="support-desk" href="#">Support Desk</a><a class="hover:text-primary transition-colors" data-path="api-status" href="#">API Status</a><a class="hover:text-primary transition-colors" data-path="privacy-security" href="#">Privacy &amp; Security</a></div></div></footer></div><script src="../runtime/rtc-runtime.js"></script></body></html>

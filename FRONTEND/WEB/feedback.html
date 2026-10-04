@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback | RTCrackers</title>
+<meta name="description" content="Share feedback about RTCrackers or the Caged Dragon digital experience team.">
+<link rel="stylesheet" href="css/style.css?v=20261003">
+  <link rel="stylesheet" href="css/premium-ui.css?v=20261003"><link rel="stylesheet" href="css/animations.css?v=20261003"><link rel="stylesheet" href="css/pwa.css?v=20261003">
+  <link rel="stylesheet" href="css/features.css?v=20261003">
+  <link rel="stylesheet" href="css/advanced-ui.css?v=20261003"><link rel="stylesheet" href="css/industrial-ui.css?v=20261003">
+
+  <link rel="canonical" href="./feedback.html"><meta property="og:title" content="Feedback | RTCrackers"><meta property="og:type" content="website"><meta property="og:url" content="./feedback.html"><meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/adaptive-layout.css?v=20261003-v6">
+  <link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/css/pwa-update.css">
+</head>
+<body>
+<header class="site-header"><div class="container">
+<a href="index.html" class="brand"><span class="brand-name">RT <span>CRACKERS</span></span><span class="brand-sub">RTCrackers</span></a>
+<nav class="main-nav"><a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a><a href="policy.html">Policies</a><a href="contact.html">Contact</a><a href="feedback.html" class="active">Feedback</a><a href="my-orders.html">My Orders</a><a href="login.html" id="accountNavLink">Login</a></nav>
+<div class="header-actions"><a href="order.html" class="btn btn-primary btn-sm">Order Now</a><button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button></div>
+</div><div class="mobile-nav-backdrop" aria-hidden="true"></div><div class="mobile-nav"><a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a><a href="policy.html">Policies</a><a href="contact.html">Contact</a><a href="feedback.html">Feedback</a><a href="my-orders.html">My Orders</a><a href="login.html">Login</a></div></header>
+<main>
+<section class="hero" style="padding:64px 0"><div class="container"><span class="hero-eyebrow">Your Voice Matters</span><h1>Feedback</h1><p class="lead">Tell us what worked, what did not, and what we can improve.</p></div></section>
+<section class="section"><div class="container"><div class="grid grid-2">
+<div class="card"><h2>RTCrackers</h2><p>Rate your shopping, ordering, delivery, product or support experience.</p>
+<form id="rtFeedbackForm"><input type="hidden" id="rtBrand" value="rt_crackers"><div class="form-group"><label>Rating</label><select id="rtRating"><option value="5">★★★★★ — Excellent</option><option value="4">★★★★☆ — Good</option><option value="3">★★★☆☆ — Okay</option><option value="2">★★☆☆☆ — Needs improvement</option><option value="1">★☆☆☆☆ — Poor</option></select></div>
+<div class="form-group"><label>Category</label><select id="rtCategory"><option>Order Experience</option><option>Product</option><option>Delivery</option><option>Website</option><option>Support</option><option>Policy</option><option>General</option></select></div>
+<div class="form-group"><label>Order (optional)</label><select id="rtOrder"><option value="">General feedback</option></select></div>
+<div class="form-group"><label>Name</label><input id="rtName" maxlength="120"></div><div class="form-group"><label>Email</label><input id="rtEmail" type="email" maxlength="160"></div>
+<div class="form-group"><label>Subject</label><input id="rtSubject" maxlength="180"></div><div class="form-group"><label>Your feedback *</label><textarea id="rtMessage" rows="6" maxlength="4000" required placeholder="Tell us about your experience..."></textarea></div><button class="btn btn-primary" type="submit">Send RTCrackers Feedback</button></form><div id="rtResult" style="margin-top:12px"></div></div>
+<div class="card"><h2>Caged Dragon</h2><p>Feedback about the digital experience, website, design, development or support delivered by Caged Dragon.</p>
+<form id="cdFeedbackForm"><input type="hidden" id="cdBrand" value="caged_dragon"><div class="form-group"><label>Rating</label><select id="cdRating"><option value="5">★★★★★ — Excellent</option><option value="4">★★★★☆ — Good</option><option value="3">★★★☆☆ — Okay</option><option value="2">★★☆☆☆ — Needs improvement</option><option value="1">★☆☆☆☆ — Poor</option></select></div><div class="form-group"><label>Category</label><select id="cdCategory"><option>Website</option><option>Design</option><option>Development</option><option>Support</option><option>Communication</option><option>General</option></select></div><div class="form-group"><label>Name</label><input id="cdName" maxlength="120"></div><div class="form-group"><label>Email</label><input id="cdEmail" type="email" maxlength="160"></div><div class="form-group"><label>Subject</label><input id="cdSubject" maxlength="180"></div><div class="form-group"><label>Your feedback *</label><textarea id="cdMessage" rows="6" maxlength="4000" required placeholder="Share your experience with Caged Dragon..."></textarea></div><button class="btn btn-primary" type="submit">Send Caged Dragon Feedback</button></form><div id="cdResult" style="margin-top:12px"></div></div>
+</div></div></section></main>
+<footer class="site-footer"><div class="container"><div class="footer-bottom"><span>© <span id="currentYear">2026</span> RTCrackers.</span><a href="index.html">Home</a><a href="admin.html">Admin</a></div></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/supabase-config.js"></script><script src="js/theme.js"></script>
+  <script src="js/micro-interactions.js"></script><script src="js/auth.js?v=20261003"></script><script src="js/features.js?v=20261003"></script><script src="js/feedback.js"></script><script src="js/animations.js?v=20261003"></script><script src="js/pwa.js?v=20261003"></script>
+  <script src="js/advanced-ui.js?v=20261003"></script>
+<script src="js/industrial-ui.js?v=20261003"></script><script src="components/customer-shell.js?v=20261003"></script>
+  <script src="js/adaptive-layout.js?v=20261003-v6"></script>
+  <script src="/js/pwa-update.js" defer></script>
+</body></html>

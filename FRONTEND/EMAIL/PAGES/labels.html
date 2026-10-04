@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tag-contact":"#4F46E5","surface-container-lowest":"#ffffff","tertiary":"#795500","outline":"#8e7166","on-surface-variant":"#5a4138","on-background":"#0b1c30","on-secondary-container":"#5c647a","on-primary":"#ffffff","tertiary-fixed-dim":"#fbbc3c","on-surface":"#0b1c30","surface-bright":"#f8f9ff","tag-noreply":"#475569","surface-subtle":"#F8FAFC","error-container":"#ffdad6","tag-orders":"#D97706","on-tertiary-fixed-variant":"#5e4200","tertiary-fixed":"#ffdea9","on-primary-fixed":"#370e00","on-primary-container":"#fffbff","tertiary-container":"#996c00","tag-info":"#0891B2","on-error-container":"#93000a","tag-sales":"#16A34A","outline-variant":"#e2bfb2","border-subtle":"#F1F5F9","tag-support":"#2563EB","brand-fire-red":"#E63946","primary-fixed":"#ffdbce","on-error":"#ffffff","primary":"#a33900","secondary-fixed":"#dae2fd","secondary":"#565e74","surface-tint":"#a73a00","secondary-container":"#dae2fd","inverse-on-surface":"#eaf1ff","primary-fixed-dim":"#ffb599","tag-notifications":"#EA580C","tag-admin":"#DC2626","surface-container-low":"#eff4ff","error":"#ba1a1a","tag-billing":"#7C3AED","surface-container-highest":"#d3e4fe","surface":"#f8f9ff","inverse-surface":"#213145","primary-container":"#cc4900","surface-container":"#e5eeff","background":"#f8f9ff","surface-container-high":"#dce9ff","on-tertiary":"#ffffff","surface-variant":"#d3e4fe","on-secondary":"#ffffff","on-tertiary-container":"#fffbff","secondary-fixed-dim":"#bec6e0","border-strong":"#E2E8F0","on-tertiary-fixed":"#271900","surface-canvas":"#FFFFFF","on-secondary-fixed":"#131b2e","on-primary-fixed-variant":"#7f2b00","on-secondary-fixed-variant":"#3f465c","surface-dim":"#cbdbf5","inverse-primary":"#ffb599"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter":"1rem","space-sm":"0.5rem","margin-mobile":"0.75rem","margin":"1rem","gutter-compact":"0.5rem","space-xs":"0.25rem","space-md":"0.75rem","space-lg":"1rem","space-xl":"1.5rem"},fontFamily:{"title-md":["Inter"],"body-sm":["Inter"],"label-md":["Inter"],"code-sm":["Inter"],"headline-lg":["Plus Jakarta Sans"],"body-md":["Inter"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-lg":["Inter"],"label-sm":["Inter"],"headline-sm":["Plus Jakarta Sans"],"title-sm":["Inter"]},fontSize:{"title-md":["15px",{lineHeight:"20px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",letterSpacing:"0.005em",fontWeight:"400"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"500"}],"code-sm":["11px",{lineHeight:"16px",letterSpacing:"0.03em",fontWeight:"500"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-md":["13px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"display-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-lg":["15px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-sm":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"title-sm":["13px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"600"}]}}}};</script><link rel="stylesheet" href="/FRONTEND/EMAIL/email-runtime.css"><script src="/FRONTEND/EMAIL/config.js"></script><script src="/FRONTEND/EMAIL/email-api.js"></script><script src="/FRONTEND/EMAIL/email-runtime.js"></script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-subtle z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)] overflow-y-auto"><div class="flex flex-col"><div class="px-space-lg pt-space-lg pb-space-md flex items-center gap-space-md"><img alt="Brand logo. - Primary color: #ea580c
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG_c7pxIPE4wwgSpxLFdUH_tg8svgIbUIwkhn7NCze_r0x_6WTZ_jzC9vfGXc5OgbMK2FdXgS2SwxvmiHBQfXisYT_PH7cTvFWOSkZv_Mr-bzU71U1De5LkmvshUlwXLJFP2Kejr-oGaxIfUck0RnN2ckJhDtCVvshifzkErWtefVAW8Pr75VKhiKZMdr0XVUFm6PCVfbFXbMlmSMxDNBmEpn1CLLHaGet8zoB1wdpONt_CSqntRtOjqB_"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-none tracking-tight">RTC Crackers</span><span class="font-label-sm text-label-sm text-tag-notifications tracking-wider uppercase font-semibold mt-space-xs">Enterprise Mail</span></div></div><div class="px-space-md mb-space-md"><button class="w-full flex items-center justify-center gap-space-sm bg-tag-notifications hover:bg-primary text-on-primary font-title-sm text-title-sm py-space-sm px-space-lg rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">edit</span><span>Compose</span></button></div><div class="px-space-md mb-space-sm"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Mailbox Folders</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container text-tag-notifications font-title-sm"><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="inbox" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">inbox</span><span class="font-body-md text-body-md">Inbox</span></div><span class="font-code-sm text-code-sm bg-surface-container-highest text-on-surface px-space-xs py-0.5 rounded-full font-bold">24</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="starred" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">star</span><span class="font-body-md text-body-md">Starred</span></div><span class="font-code-sm text-code-sm bg-surface-container text-secondary px-space-xs py-0.5 rounded-full">8</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="drafts" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">drafts</span><span class="font-body-md text-body-md">Drafts</span></div><span class="font-code-sm text-code-sm bg-surface-container text-secondary px-space-xs py-0.5 rounded-full">3</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="sent" href="#"><span class="material-symbols-outlined text-[18px]">send</span><span class="font-body-md text-body-md">Sent</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="archived" href="#"><span class="material-symbols-outlined text-[18px]">archive</span><span class="font-body-md text-body-md">Archived</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="trash" href="#"><span class="material-symbols-outlined text-[18px]">delete</span><span class="font-body-md text-body-md">Trash</span></a></nav></div><div class="px-space-md mb-space-sm"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Operations</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container text-tag-notifications font-title-sm"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="email-activity" href="#"><span class="material-symbols-outlined text-[18px]">monitoring</span><span class="font-body-md text-body-md">Email Activity</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="contacts" href="#"><span class="material-symbols-outlined text-[18px]">contacts</span><span class="font-body-md text-body-md">Contacts</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="authorized-mailboxes" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">domain</span><span class="font-body-md text-body-md">Authorized Mailboxes</span></div><span class="font-code-sm text-code-sm bg-surface-container text-secondary px-space-xs py-0.5 rounded-full">9</span></a></nav></div><div class="px-space-md mb-space-sm"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Preferences &amp; Rules</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container text-tag-notifications font-title-sm"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="general-settings" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span class="font-body-md text-body-md">General</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="appearance-settings" href="#"><span class="material-symbols-outlined text-[18px]">palette</span><span class="font-body-md text-body-md">Appearance</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="notification-settings" href="#"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="font-body-md text-body-md">Notifications</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="mailboxes-settings" href="#"><span class="material-symbols-outlined text-[18px]">mark_email_unread</span><span class="font-body-md text-body-md">Mailboxes</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="signatures-settings" href="#"><span class="material-symbols-outlined text-[18px]">signature</span><span class="font-body-md text-body-md">Signatures</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="templates-settings" href="#"><span class="material-symbols-outlined text-[18px]">description</span><span class="font-body-md text-body-md">Templates</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="sending-settings" href="#"><span class="material-symbols-outlined text-[18px]">outgoing_mail</span><span class="font-body-md text-body-md">Sending</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="reading-settings" href="#"><span class="material-symbols-outlined text-[18px]">menu_book</span><span class="font-body-md text-body-md">Reading</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="security-settings" href="#"><span class="material-symbols-outlined text-[18px]">security</span><span class="font-body-md text-body-md">Security</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="rules-settings" href="#"><span class="material-symbols-outlined text-[18px]">alt_route</span><span class="font-body-md text-body-md">Rules</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg transition-colors bg-surface-container text-tag-notifications font-title-sm" data-path="labels-settings" href="#"><span class="material-symbols-outlined text-[18px]">label</span><span class="font-body-md text-body-md">Labels</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="about-settings" href="#"><span class="material-symbols-outlined text-[18px]">info</span><span class="font-body-md text-body-md">About</span></a></nav></div><div class="px-space-md mb-space-md"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="help-docs" href="#"><span class="material-symbols-outlined text-[18px]">help_center</span><span class="font-body-md text-body-md">Help &amp; Docs</span></a></div></div><div class="p-space-md m-space-sm bg-surface-container-lowest rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between"><div class="flex items-center gap-space-sm min-w-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate">Rajesh Kumar</span><span class="font-code-sm text-code-sm text-secondary truncate">Operations Admin</span></div></div><span class="material-symbols-outlined text-secondary text-[18px] shrink-0">unfold_more</span></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-canvas/90 backdrop-blur-md z-40 flex items-center justify-between px-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col justify-center"><div class="flex items-center gap-space-xs"><span class="font-body-sm text-body-sm text-secondary">Settings</span><span class="font-body-sm text-body-sm text-secondary">/</span><span class="font-title-sm text-title-sm text-on-surface">Labels &amp; Folders</span></div><span class="font-body-sm text-body-sm text-secondary mt-0.5">Organize your email with custom labels and structured folder taxonomy</span></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container rounded-full"><span class="w-2 h-2 rounded-full bg-tag-sales animate-pulse"></span><span class="font-code-sm text-code-sm text-on-surface-variant font-medium">Connected: api.rtcrackers.com (Sivakasi Gateway)</span></div><div class="relative flex items-center w-72"><span class="material-symbols-outlined absolute left-space-sm text-secondary text-[18px]">search</span><input class="w-full pl-8 pr-12 py-1.5 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-lg focus:outline-none focus:bg-surface-canvas focus:ring-1 focus:ring-primary shadow-[0_1px_8px_rgba(0,0,0,0.04)] placeholder:text-secondary" placeholder="Quick find" type="text"/><div class="absolute right-space-sm px-1.5 py-0.5 bg-surface-container rounded font-code-sm text-code-sm text-secondary pointer-events-none">⌘K</div></div><button class="relative p-1.5 rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-tag-notifications"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/><div class="hidden md:flex flex-col"><span class="font-label-md text-label-md text-on-surface leading-none">admin@rtcrackers.com</span></div></div></div></header><main class="w-full pt-16 px-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full pb-16">
+<!-- SETTINGS SUB-NAV TAB BAR (Persistent across Settings) -->
+<div class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] rounded-xl px-space-md mb-space-lg">
+<div class="flex items-center gap-space-xs overflow-x-auto py-2">
+<a class="px-space-md py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="#">General</a>
+<a class="px-space-md py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="#">Appearance</a>
+<a class="px-space-md py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="#">Notifications</a>
+<a class="px-space-md py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="#">Mailboxes</a>
+<a class="px-space-md py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="#">Signatures</a>
+<a class="px-space-md py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="#">Templates</a>
+<a class="px-space-md py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="#">Sending</a>
+<a class="px-space-md py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="#">Reading</a>
+<a class="px-space-md py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="#">Security</a>
+<a class="px-space-md py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="#">Rules</a>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container text-tag-notifications font-title-sm text-title-sm flex items-center gap-1.5 shadow-sm whitespace-nowrap" href="#">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-notifications"></span>
+<span>Labels &amp; Folders</span>
+</a>
+<a class="px-space-md py-space-xs rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors whitespace-nowrap" href="#">About</a>
+</div>
+</div>
+<!-- PAGE HEADER & ACTIONS -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg mb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm mb-1">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Labels &amp; Folders</h1>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-primary font-code-sm text-code-sm font-semibold uppercase tracking-wider">Sivakasi Mail Engine Taxonomy</span>
+</div>
+<p class="font-body-md text-body-md text-secondary max-w-4xl">
+        Organize your incoming and outbound correspondence with color-coded labels, hierarchical mailbox folders, and rule-driven classification across all 9 Sivakasi mailboxes.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-surface-container-lowest text-on-surface font-title-sm text-title-sm rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">swap_vert</span>
+<span>Reorder Mode</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-surface-container-lowest text-on-surface font-title-sm text-title-sm rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">create_new_folder</span>
+<span>+ Create Folder</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-lg py-2 bg-tag-notifications hover:bg-primary text-on-primary font-title-sm text-title-sm rounded-xl shadow-md transition-colors" onclick="document.getElementById('edit-drawer').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">label</span>
+<span>+ Create Label</span>
+</button>
+</div>
+</div>
+<!-- METRIC SUMMARY CARDS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Total Custom Labels</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md text-on-surface">14 Active</span>
+</div>
+<span class="font-body-sm text-body-sm text-tag-contact mt-1 font-medium">100% synchronized with rules engine</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-tag-contact shrink-0">
+<span class="material-symbols-outlined text-[22px]">label</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Folders &amp; Subfolders</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md text-on-surface">8 Folders</span>
+</div>
+<span class="font-body-sm text-body-sm text-tag-orders mt-1 font-medium">3 nested hierarchy branches</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-tag-orders shrink-0">
+<span class="material-symbols-outlined text-[22px]">folder_open</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Rule Automations</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md text-on-surface">19 Linked Rules</span>
+</div>
+<span class="font-body-sm text-body-sm text-tag-notifications mt-1 font-medium">Auto-applying tags on ingress</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-tag-notifications shrink-0">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Total Labeled Threads</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md text-on-surface">4,892</span>
+<span class="font-body-sm text-body-sm text-secondary">messages</span>
+</div>
+<span class="font-body-sm text-body-sm text-tag-sales mt-1 font-medium">Across 9 authorized channels</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-tag-sales shrink-0">
+<span class="material-symbols-outlined text-[22px]">mark_email_read</span>
+</div>
+</div>
+</div>
+<!-- FILTER & SEARCH TOOLBAR -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex flex-wrap items-center gap-space-sm flex-1">
+<div class="relative flex items-center min-w-[260px] flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-space-sm text-secondary text-[18px]">search</span>
+<input class="w-full pl-8 pr-10 py-1.5 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-lg focus:outline-none focus:bg-surface-canvas shadow-[0_1px_8px_rgba(0,0,0,0.04)] placeholder:text-secondary" placeholder="Search labels, folders, rules, or hex colors..." type="text"/>
+<span class="absolute right-space-sm px-1.5 py-0.5 bg-surface-container rounded font-code-sm text-code-sm text-secondary">/</span>
+</div>
+<div class="flex items-center bg-surface-container p-0.5 rounded-lg">
+<button class="px-space-sm py-1 bg-surface-container-lowest text-on-surface font-title-sm text-title-sm rounded-md shadow-sm" type="button">All (22)</button>
+<button class="px-space-sm py-1 text-secondary hover:text-on-surface font-body-sm text-body-sm rounded-md transition-colors" type="button">System (6)</button>
+<button class="px-space-sm py-1 text-secondary hover:text-on-surface font-body-sm text-body-sm rounded-md transition-colors" type="button">Labels (14)</button>
+<button class="px-space-sm py-1 text-secondary hover:text-on-surface font-body-sm text-body-sm rounded-md transition-colors" type="button">Folders (2)</button>
+</div>
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-on-surface font-body-sm text-body-sm pl-space-sm pr-8 py-1.5 rounded-lg focus:outline-none cursor-pointer">
+<option>All Visibility</option>
+<option>Shown in Sidebar</option>
+<option>Hidden in Sidebar</option>
+<option>Show if Unread</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-secondary text-[16px] pointer-events-none">expand_more</span>
+</div>
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-on-surface font-body-sm text-body-sm pl-space-sm pr-8 py-1.5 rounded-lg focus:outline-none cursor-pointer">
+<option>Scope: All 9 Mailboxes</option>
+<option>sales@rtcrackers.com</option>
+<option>orders@rtcrackers.com</option>
+<option>admin@rtcrackers.com</option>
+<option>billing@rtcrackers.com</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-secondary text-[16px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<label class="flex items-center gap-space-xs cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-tag-notifications accent-tag-notifications cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Show Message Counts</span>
+</label>
+</div>
+</div>
+<!-- WORKSPACE GRID: MAIN CONTENT + EDIT DRAWER -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT 8/12 COLUMNS: TABLES & LISTS -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg">
+<!-- MAIN SECTION 1: SYSTEM MAILBOX FOLDERS (PROTECTED) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] overflow-hidden">
+<div class="p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface-subtle">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">lock</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">System Mailbox Folders</span>
+<span class="font-code-sm text-code-sm text-secondary">Core IMAP / SMTP partitions (Protected taxonomy)</span>
+</div>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container text-secondary font-code-sm text-code-sm">6 system partitions</span>
+</div>
+<!-- Protected Banner Notice -->
+<div class="px-space-md py-space-sm bg-surface-container flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tag-support text-[18px]">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            System folders are managed by the core IMAP/SMTP mail server. They cannot be renamed, nested, or deleted.
+          </p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-subtle">
+<tr>
+<th class="px-space-md py-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider">System Folder</th>
+<th class="px-space-md py-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider">Standard Route</th>
+<th class="px-space-md py-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider">System ID</th>
+<th class="px-space-md py-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider">Sidebar Visibility</th>
+<th class="px-space-md py-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider text-right">Messages</th>
+<th class="px-space-md py-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider text-right">Unread</th>
+<th class="px-space-md py-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider text-center">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-md py-space-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">inbox</span>
+<span class="font-title-sm text-title-sm text-on-surface">Inbox</span>
+</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-secondary">/email/inbox</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-secondary">sys_inbox</td>
+<td class="px-space-md py-space-sm">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-secondary">
+<span class="material-symbols-outlined text-[16px] text-tag-sales">visibility</span>
+<span>Always Visible</span>
+</span>
+</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-on-surface font-semibold text-right">1,482</td>
+<td class="px-space-md py-space-sm text-right">
+<span class="font-code-sm text-code-sm bg-tag-notifications text-on-primary px-space-xs py-0.5 rounded-full font-bold">24</span>
+</td>
+<td class="px-space-md py-space-sm text-center">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-secondary font-code-sm text-code-sm font-medium">Immutable</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-md py-space-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">star</span>
+<span class="font-title-sm text-title-sm text-on-surface">Starred</span>
+</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-secondary">/email/starred</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-secondary">sys_starred</td>
+<td class="px-space-md py-space-sm">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tag-sales">visibility</span>
+<span>Visible in Sidebar</span>
+</span>
+</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-on-surface font-semibold text-right">412</td>
+<td class="px-space-md py-space-sm text-right">
+<span class="font-code-sm text-code-sm bg-surface-container text-on-surface px-space-xs py-0.5 rounded-full font-semibold">8</span>
+</td>
+<td class="px-space-md py-space-sm text-center">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-secondary font-code-sm text-code-sm font-medium">Immutable</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-md py-space-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">send</span>
+<span class="font-title-sm text-title-sm text-on-surface">Sent / Outbox</span>
+</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-secondary">/email/sent</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-secondary">sys_sent</td>
+<td class="px-space-md py-space-sm">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tag-sales">visibility</span>
+<span>Visible in Sidebar</span>
+</span>
+</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-on-surface font-semibold text-right">8,940</td>
+<td class="px-space-md py-space-sm text-right font-code-sm text-code-sm text-secondary">0</td>
+<td class="px-space-md py-space-sm text-center">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-secondary font-code-sm text-code-sm font-medium">Immutable</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-md py-space-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">drafts</span>
+<span class="font-title-sm text-title-sm text-on-surface">Drafts</span>
+</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-secondary">/email/drafts</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-secondary">sys_drafts</td>
+<td class="px-space-md py-space-sm">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tag-sales">visibility</span>
+<span>Visible in Sidebar</span>
+</span>
+</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-on-surface font-semibold text-right">18</td>
+<td class="px-space-md py-space-sm text-right">
+<span class="font-code-sm text-code-sm bg-surface-container text-on-surface px-space-xs py-0.5 rounded-full font-semibold">3</span>
+</td>
+<td class="px-space-md py-space-sm text-center">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-secondary font-code-sm text-code-sm font-medium">Immutable</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-md py-space-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">archive</span>
+<span class="font-title-sm text-title-sm text-on-surface">Archived</span>
+</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-secondary">/email/archived</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-secondary">sys_archived</td>
+<td class="px-space-md py-space-sm">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tag-sales">visibility</span>
+<span>Visible in Sidebar</span>
+</span>
+</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-on-surface font-semibold text-right">3,210</td>
+<td class="px-space-md py-space-sm text-right font-code-sm text-code-sm text-secondary">0</td>
+<td class="px-space-md py-space-sm text-center">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-secondary font-code-sm text-code-sm font-medium">Immutable</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-md py-space-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">delete</span>
+<span class="font-title-sm text-title-sm text-on-surface">Trash</span>
+</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-secondary">/email/trash</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-secondary">sys_trash</td>
+<td class="px-space-md py-space-sm">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tag-sales">visibility</span>
+<span>Visible (30d purge)</span>
+</span>
+</td>
+<td class="px-space-md py-space-sm font-code-sm text-code-sm text-on-surface font-semibold text-right">94</td>
+<td class="px-space-md py-space-sm text-right font-code-sm text-code-sm text-secondary">0</td>
+<td class="px-space-md py-space-sm text-center">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-secondary font-code-sm text-code-sm font-medium">Immutable</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- MAIN SECTION 2: CUSTOM LABELS & TAXONOMY -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] overflow-hidden">
+<div class="p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface-subtle">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tag-notifications text-[20px]">label</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Active Custom Labels &amp; Rules Usage</span>
+<span class="font-code-sm text-code-sm text-secondary">Dynamic metadata tags applied manually or by Sivakasi ingress routing engine</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" title="Export Taxonomy JSON" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" title="Filter columns" type="button">
+<span class="material-symbols-outlined text-[18px]">view_column</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-subtle">
+<tr>
+<th class="px-space-sm py-space-sm font-label-sm text-label-sm text-secondary w-8 text-center">#</th>
+<th class="px-space-md py-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider">Label &amp; Description</th>
+<th class="px-space-md py-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider">Hierarchy</th>
+<th class="px-space-md py-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider">Sidebar</th>
+<th class="px-space-md py-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider">Linked Rules</th>
+<th class="px-space-md py-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider text-right">Messages</th>
+<th class="px-space-md py-space-sm font-label-sm text-label-sm text-secondary uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Label 1: Diwali Wholesale 2026 (Selected / Highlights) -->
+<tr class="bg-surface-container/50 hover:bg-surface-container transition-colors">
+<td class="px-space-sm py-space-md text-center cursor-grab text-secondary">
+<span class="material-symbols-outlined text-[16px]">drag_indicator</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-tag-admin/10 text-tag-admin font-title-sm text-title-sm">
+<span class="w-2 h-2 rounded-full bg-tag-admin"></span>
+<span>Diwali Wholesale 2026</span>
+</span>
+<span class="font-code-sm text-code-sm text-secondary">#dc2626</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary max-w-sm">High-volume distributor advance orders &amp; booking queries</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<span class="font-code-sm text-code-sm text-on-surface px-space-xs py-0.5 rounded bg-surface-container">Top-level</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex items-center gap-space-xs text-tag-sales font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Visible</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">4 Rules</span>
+<span class="font-code-sm text-code-sm text-secondary truncate max-w-[140px]">Rule #01: Triage...</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">1,420 msgs</span>
+<span class="font-code-sm text-code-sm text-tag-notifications font-semibold">38 unread</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded text-tag-notifications bg-surface-container-lowest hover:bg-surface-container transition-colors" title="Edit Label Details" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" title="Change Color" type="button">
+<span class="material-symbols-outlined text-[18px]">palette</span>
+</button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" title="Open in Inbox" type="button">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" title="More" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Label 5 (Sublabel of Diwali Wholesale) -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-sm py-space-md text-center cursor-grab text-secondary">
+<span class="material-symbols-outlined text-[16px]">drag_indicator</span>
+</td>
+<td class="px-space-md py-space-md pl-space-xl">
+<div class="flex flex-col gap-1 pl-4 border-l-2 border-border-strong">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-tag-billing/10 text-tag-billing font-title-sm text-title-sm">
+<span class="w-2 h-2 rounded-full bg-tag-billing"></span>
+<span>GST Invoicing &amp; Billing</span>
+</span>
+<span class="font-code-sm text-code-sm text-secondary">#7c3aed</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary max-w-sm">E-way bills, 18% GST tax invoices, and payment proof receipts</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex items-center gap-1 font-code-sm text-code-sm text-secondary">
+<span class="material-symbols-outlined text-[14px]">subdirectory_arrow_right</span>
+<span class="truncate max-w-[120px]">Diwali Wholesale</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex items-center gap-space-xs text-secondary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">notifications_paused</span>
+<span>Show if unread</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">3 Rules</span>
+<span class="font-code-sm text-code-sm text-secondary truncate max-w-[140px]">Rule #11: GST Tax</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">648 msgs</span>
+<span class="font-code-sm text-code-sm text-tag-notifications font-semibold">9 unread</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">palette</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">open_in_new</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Label 2: PESO Statutory / Licensure -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-sm py-space-md text-center cursor-grab text-secondary">
+<span class="material-symbols-outlined text-[16px]">drag_indicator</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-tag-orders/10 text-tag-orders font-title-sm text-title-sm">
+<span class="w-2 h-2 rounded-full bg-tag-orders"></span>
+<span>PESO Statutory / Licensure</span>
+</span>
+<span class="font-code-sm text-code-sm text-secondary">#d97706</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary max-w-sm">Petroleum &amp; Explosives Safety Organization compliance documents &amp; NOC renewals</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<span class="font-code-sm text-code-sm text-on-surface px-space-xs py-0.5 rounded bg-surface-container">Top-level</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex items-center gap-space-xs text-tag-sales font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Visible</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">3 Rules</span>
+<span class="font-code-sm text-code-sm text-secondary truncate max-w-[140px]">Rule #04: PESO License</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">184 msgs</span>
+<span class="font-code-sm text-code-sm text-tag-notifications font-semibold">2 unread</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">palette</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">open_in_new</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Label 3: Lorry Transport & Consignments -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-sm py-space-md text-center cursor-grab text-secondary">
+<span class="material-symbols-outlined text-[16px]">drag_indicator</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-tag-support/10 text-tag-support font-title-sm text-title-sm">
+<span class="w-2 h-2 rounded-full bg-tag-support"></span>
+<span>Lorry Transport &amp; Consignments</span>
+</span>
+<span class="font-code-sm text-code-sm text-secondary">#2563eb</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary max-w-sm">Lorry receipts (LR), Kaliswari / Kannan transport dispatch notes</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<span class="font-code-sm text-code-sm text-on-surface px-space-xs py-0.5 rounded bg-surface-container">Top-level</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex items-center gap-space-xs text-tag-sales font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Visible</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">5 Rules</span>
+<span class="font-code-sm text-code-sm text-secondary truncate max-w-[140px]">Rule #06: Lorry Receipt</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">940 msgs</span>
+<span class="font-code-sm text-code-sm text-tag-notifications font-semibold">12 unread</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">palette</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">open_in_new</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Label 6: Sublabel of Lorry Transport -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-sm py-space-md text-center cursor-grab text-secondary">
+<span class="material-symbols-outlined text-[16px]">drag_indicator</span>
+</td>
+<td class="px-space-md py-space-md pl-space-xl">
+<div class="flex flex-col gap-1 pl-4 border-l-2 border-border-strong">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-tag-notifications/10 text-tag-notifications font-title-sm text-title-sm">
+<span class="w-2 h-2 rounded-full bg-tag-notifications"></span>
+<span>High Priority Dispatch</span>
+</span>
+<span class="font-code-sm text-code-sm text-secondary">#ea580c</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary max-w-sm">Same-day Sivakasi depot dispatch emergencies &amp; rush consignments</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex items-center gap-1 font-code-sm text-code-sm text-secondary">
+<span class="material-symbols-outlined text-[14px]">subdirectory_arrow_right</span>
+<span class="truncate max-w-[120px]">Lorry Transport</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex items-center gap-space-xs text-tag-sales font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Visible</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">2 Rules</span>
+<span class="font-code-sm text-code-sm text-secondary truncate max-w-[140px]">Rule #09: Rush Consign</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">89 msgs</span>
+<span class="font-code-sm text-code-sm text-tag-notifications font-semibold">4 unread</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">palette</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">open_in_new</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Label 4: Raw Material Vendors -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-sm py-space-md text-center cursor-grab text-secondary">
+<span class="material-symbols-outlined text-[16px]">drag_indicator</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-tag-sales/10 text-tag-sales font-title-sm text-title-sm">
+<span class="w-2 h-2 rounded-full bg-tag-sales"></span>
+<span>Raw Material Vendors</span>
+</span>
+<span class="font-code-sm text-code-sm text-secondary">#059669</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary max-w-sm">Potassium nitrate, barium nitrate, fuse wire, and kraft paper board suppliers</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<span class="font-code-sm text-code-sm text-on-surface px-space-xs py-0.5 rounded bg-surface-container">Top-level</span>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex items-center gap-space-xs text-tag-sales font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Visible</span>
+</div>
+</td>
+<td class="px-space-md py-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">2 Rules</span>
+<span class="font-code-sm text-code-sm text-secondary truncate max-w-[140px]">Rule #14: Chem Supply</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">312 msgs</span>
+<span class="font-code-sm text-code-sm text-secondary">0 unread</span>
+</div>
+</td>
+<td class="px-space-md py-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">palette</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">open_in_new</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- MAIN SECTION 3: CUSTOM FOLDERS & PHYSICAL MAILBOX HIERARCHY -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] overflow-hidden">
+<div class="p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface-subtle">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tag-orders text-[20px]">folder_copy</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Custom Folders &amp; Physical Mailbox Hierarchy</span>
+<span class="font-code-sm text-code-sm text-secondary">Physical IMAP message stores and multi-account mail partitions</span>
+</div>
+</div>
+<button class="flex items-center gap-space-xs text-primary font-title-sm text-title-sm hover:underline" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>New IMAP Folder</span>
+</button>
+</div>
+<div class="px-space-md py-space-sm bg-surface-container flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tag-info text-[18px]">lightbulb</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Folders physically group messages within specific mailbox partitions, while labels allow multiple tags per message without moving files.
+          </p>
+</div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<!-- Folder Tree 1 -->
+<div class="bg-surface-subtle p-space-md rounded-xl flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tag-orders text-[22px]">folder</span>
+<span class="font-title-sm text-title-sm text-on-surface">2026 Season Archives</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-code-sm text-code-sm">Parent: None</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-code-sm text-code-sm">Mailbox: All Mailboxes</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">2,140 messages</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">create_new_folder</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+</div>
+<!-- Subfolder 1.1 -->
+<div class="ml-6 pl-4 border-l-2 border-border-strong flex items-center justify-between py-1.5">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">subdirectory_arrow_right</span>
+<span class="material-symbols-outlined text-tag-orders text-[18px]">folder</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">South Zone Depot</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-code-sm text-code-sm">sales@rtcrackers.com</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-code-sm text-code-sm text-secondary">840 messages</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+</div>
+<!-- Subfolder 1.2 -->
+<div class="ml-6 pl-4 border-l-2 border-border-strong flex items-center justify-between py-1.5">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">subdirectory_arrow_right</span>
+<span class="material-symbols-outlined text-tag-orders text-[18px]">folder</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">North Zone Depot</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-code-sm text-code-sm">sales@rtcrackers.com</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-code-sm text-code-sm text-secondary">620 messages</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Folder Tree 2 -->
+<div class="bg-surface-subtle p-space-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tag-orders text-[22px]">folder</span>
+<span class="font-title-sm text-title-sm text-on-surface">Statutory Audits &amp; PESO Records</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-code-sm text-code-sm">Parent: None</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-code-sm text-code-sm">Mailbox: admin@rtcrackers.com</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">310 messages</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">create_new_folder</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT 4/12 COLUMNS: EDIT LABEL SLIDE-OVER / DRAWER CARD -->
+<div class="xl:col-span-4 bg-surface-container-lowest rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] overflow-hidden sticky top-20" id="edit-drawer">
+<div class="p-space-md bg-surface-subtle flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tag-notifications text-[20px]">edit_note</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Edit Label</span>
+<span class="font-code-sm text-code-sm text-secondary">lbl_diwali_2026_whls</span>
+</div>
+</div>
+<button class="p-1 rounded text-secondary hover:bg-surface-container transition-colors" onclick="document.getElementById('edit-drawer').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Label Name Field -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface">Label Name</label>
+<span class="font-code-sm text-code-sm text-secondary">22/50</span>
+</div>
+<input class="w-full px-space-sm py-2 bg-surface-container-low text-on-surface font-title-sm text-title-sm rounded-lg focus:outline-none focus:bg-surface-canvas shadow-[0_1px_8px_rgba(0,0,0,0.04)]" type="text" value="Diwali Wholesale 2026"/>
+</div>
+<!-- Color Swatches & Live Picker -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">Color Palette &amp; Chip Styling</label>
+<div class="grid grid-cols-5 gap-2">
+<!-- Crimson Red (Selected) -->
+<button class="h-8 rounded-lg bg-tag-admin flex items-center justify-center text-on-primary ring-2 ring-primary ring-offset-2" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+<button class="h-8 rounded-lg bg-tag-notifications flex items-center justify-center text-on-primary hover:opacity-90" type="button"></button>
+<button class="h-8 rounded-lg bg-tag-orders flex items-center justify-center text-on-primary hover:opacity-90" type="button"></button>
+<button class="h-8 rounded-lg bg-tag-sales flex items-center justify-center text-on-primary hover:opacity-90" type="button"></button>
+<button class="h-8 rounded-lg bg-tag-info flex items-center justify-center text-on-primary hover:opacity-90" type="button"></button>
+<button class="h-8 rounded-lg bg-tag-support flex items-center justify-center text-on-primary hover:opacity-90" type="button"></button>
+<button class="h-8 rounded-lg bg-tag-contact flex items-center justify-center text-on-primary hover:opacity-90" type="button"></button>
+<button class="h-8 rounded-lg bg-tag-billing flex items-center justify-center text-on-primary hover:opacity-90" type="button"></button>
+<button class="h-8 rounded-lg bg-brand-fire-red flex items-center justify-center text-on-primary hover:opacity-90" type="button"></button>
+<button class="h-8 rounded-lg bg-tag-noreply flex items-center justify-center text-on-primary hover:opacity-90" type="button"></button>
+</div>
+<div class="flex items-center gap-space-sm mt-1">
+<div class="w-6 h-6 rounded bg-tag-admin shrink-0"></div>
+<input class="w-full px-space-sm py-1 bg-surface-container-low text-on-surface font-code-sm text-code-sm rounded focus:outline-none" type="text" value="#dc2626"/>
+<span class="font-body-sm text-body-sm text-secondary shrink-0">Vibrant Crimson</span>
+</div>
+</div>
+<!-- Description -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Description &amp; Dispatch Context</label>
+<textarea class="w-full px-space-sm py-2 bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-lg focus:outline-none focus:bg-surface-canvas shadow-[0_1px_8px_rgba(0,0,0,0.04)]" rows="2">High-volume distributor advance orders &amp; booking queries</textarea>
+</div>
+<!-- Parent Hierarchy -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Nest under parent label</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low text-on-surface font-body-sm text-body-sm pl-space-sm pr-8 py-2 rounded-lg focus:outline-none cursor-pointer">
+<option selected="">None (Top-level Label)</option>
+<option>PESO Statutory / Licensure</option>
+<option>Lorry Transport &amp; Consignments</option>
+<option>Raw Material Vendors</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-secondary text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Visibility Checkboxes -->
+<div class="flex flex-col gap-space-xs pt-1">
+<label class="font-label-md text-label-md text-on-surface">Visibility Settings</label>
+<div class="flex flex-col gap-2 bg-surface-subtle p-space-sm rounded-lg">
+<label class="flex items-center gap-space-xs cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-tag-notifications accent-tag-notifications" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Show in Left Navigation Sidebar</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-tag-notifications accent-tag-notifications" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Show in Message List Badges</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer select-none">
+<input class="w-4 h-4 rounded text-tag-notifications accent-tag-notifications" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-secondary">Auto-expand child labels in tree</span>
+</label>
+</div>
+</div>
+<!-- Associated Rules -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface">Associated Rules (Ingress Automation)</label>
+<span class="font-code-sm text-code-sm text-tag-notifications">2 Active</span>
+</div>
+<div class="flex flex-col gap-1 bg-surface-subtle p-space-sm rounded-lg">
+<div class="flex items-center justify-between py-1">
+<span class="font-body-sm text-body-sm text-on-surface truncate">Rule #01: Sivakasi Distributor Triage</span>
+<span class="material-symbols-outlined text-tag-sales text-[16px]">check_circle</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="font-body-sm text-body-sm text-on-surface truncate">Rule #05: Chennai &amp; Madurai Route</span>
+<span class="material-symbols-outlined text-tag-sales text-[16px]">check_circle</span>
+</div>
+<a class="font-code-sm text-code-sm text-primary hover:underline pt-1 flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span>+ Link another rule in Email Rules settings</span>
+</a>
+</div>
+</div>
+<!-- Danger Zone -->
+<div class="bg-error-container/30 p-space-sm rounded-lg flex flex-col gap-1.5">
+<div class="flex items-center gap-1 text-error">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span class="font-label-md text-label-md font-semibold">Danger Zone</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Deleting this label will remove it from 1,420 messages and 4 automation rules. Email messages themselves will not be deleted.
+          </p>
+<button class="self-start text-error hover:text-on-error-container font-title-sm text-title-sm flex items-center gap-1 mt-1" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Delete Label</span>
+</button>
+</div>
+<!-- Drawer Action Buttons -->
+<div class="flex items-center justify-end gap-space-sm pt-2">
+<button class="px-space-md py-2 bg-surface-container text-on-surface font-title-sm text-title-sm rounded-lg hover:bg-surface-container-high transition-colors" onclick="document.getElementById('edit-drawer').classList.add('hidden')" type="button">
+            Cancel
+          </button>
+<button class="px-space-lg py-2 bg-tag-notifications hover:bg-primary text-on-primary font-title-sm text-title-sm rounded-lg shadow-sm transition-colors" type="button">
+            Save Changes
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

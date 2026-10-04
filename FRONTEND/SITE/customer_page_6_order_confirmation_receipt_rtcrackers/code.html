@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@400;600;700&amp;family=Oswald:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-lowest": "#0b0e12",
+          "on-error": "#690005",
+          "on-error-container": "#ffdad6",
+          "tertiary-container": "#b05e00",
+          "on-tertiary": "#4e2600",
+          "primary-fixed-dim": "#ffb4a9",
+          "secondary": "#ffce4b",
+          "on-surface": "#e1e2e8",
+          "surface-container-low": "#191c20",
+          "on-tertiary-container": "#fff9f8",
+          "surface-container-high": "#272a2f",
+          "outline": "#ae8882",
+          "primary-container": "#e31b16",
+          "inverse-primary": "#c00006",
+          "on-tertiary-fixed-variant": "#6f3900",
+          "error-container": "#93000a",
+          "surface-dim": "#111418",
+          "on-secondary": "#3e2e00",
+          "on-secondary-fixed-variant": "#594400",
+          "secondary-container": "#e5b200",
+          "tertiary-fixed-dim": "#ffb77f",
+          "on-background": "#e1e2e8",
+          "on-tertiary-fixed": "#2f1500",
+          "surface-tint": "#ffb4a9",
+          "primary": "#ffb4a9",
+          "inverse-on-surface": "#2e3135",
+          "tertiary": "#ffb77f",
+          "tertiary-fixed": "#ffdcc4",
+          "on-secondary-container": "#5c4600",
+          "outline-variant": "#5e3f3b",
+          "on-secondary-fixed": "#251a00",
+          "on-primary-fixed-variant": "#930003",
+          "primary-fixed": "#ffdad5",
+          "on-surface-variant": "#e8bdb6",
+          "surface-variant": "#323539",
+          "secondary-fixed": "#ffdf95",
+          "surface-container-highest": "#323539",
+          "on-primary-container": "#fff9f8",
+          "on-primary": "#690002",
+          "error": "#ffb4ab",
+          "surface-container": "#1d2024",
+          "inverse-surface": "#e1e2e8",
+          "background": "#111418",
+          "surface-bright": "#36393e",
+          "surface": "#111418",
+          "secondary-fixed-dim": "#f4bf1b",
+          "on-primary-fixed": "#410001"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "gutter-mobile": "1rem",
+          "gutter": "1.5rem",
+          "space-md": "1rem",
+          "margin-mobile": "1.25rem",
+          "margin": "3rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-xl": "2.5rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "title-lg": [
+            "Montserrat"
+          ],
+          "display-hero": [
+            "Oswald"
+          ],
+          "display-hero-mobile": [
+            "Oswald"
+          ],
+          "headline-xl": [
+            "Oswald"
+          ],
+          "label-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Montserrat"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Montserrat"
+          ],
+          "headline-xl-mobile": [
+            "Oswald"
+          ],
+          "body-md": [
+            "Montserrat"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Oswald"
+          ],
+          "headline-md": [
+            "Oswald"
+          ],
+          "title-md": [
+            "Montserrat"
+          ]
+        },
+        "fontSize": {
+          "title-lg": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "0.2px",
+              "fontWeight": "700"
+            }
+          ],
+          "display-hero": [
+            "64px",
+            {
+              "lineHeight": "72px",
+              "letterSpacing": "1.5px",
+              "fontWeight": "700"
+            }
+          ],
+          "display-hero-mobile": [
+            "38px",
+            {
+              "lineHeight": "44px",
+              "letterSpacing": "1px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-xl": [
+            "44px",
+            {
+              "lineHeight": "52px",
+              "letterSpacing": "1px",
+              "fontWeight": "700"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "1px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.8px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl-mobile": [
+            "30px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "0.5px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-sm": [
+            "10px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "1.2px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "0.5px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "0.5px",
+              "fontWeight": "600"
+            }
+          ],
+          "title-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  };</script><link href="../runtime/theme.css" rel="stylesheet"/></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased selection:bg-primary selection:text-on-primary"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1360px] mx-auto px-gutter-mobile md:px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-sm focus:outline-none" data-path="home" href="#"><img alt="LOGO.jpeg" class="h-8 w-auto object-contain" src="../assets/branding/LOGO.jpeg"/><span class="font-headline-md text-headline-md tracking-wider text-secondary uppercase hidden sm:inline-block">RTCrackers</span></a></div><div class="flex items-center gap-space-xs sm:gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-inner"><span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span><span class="font-label-md text-label-md text-secondary tracking-widest uppercase">Secure Checkout</span><span class="text-outline-variant hidden sm:inline">•</span><span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline tracking-wider">256-Bit SSL Encrypted</span></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex flex-col items-end"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Need Assistance?</span><a class="font-title-md text-title-md text-secondary hover:text-on-surface transition-colors" href="tel:+918124100501">+91 73587 37658</a></div><div class="hidden md:flex items-center gap-space-xs bg-surface-container-high px-space-md py-space-xs rounded-xl text-on-surface-variant hover:text-secondary cursor-pointer transition-colors"><span class="material-symbols-outlined text-[20px]">chat_bubble</span><span class="font-label-md text-label-md">Instant Chat</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow Orbs -->
+<div class="relative w-full max-w-[1360px] mx-auto px-gutter-mobile md:px-gutter py-space-xl">
+<div class="absolute top-12 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary-container/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-64 right-10 w-72 h-72 bg-secondary/10 rounded-full blur-2xl pointer-events-none -z-10"></div>
+<!-- 1. Hero Confirmation & Status Banner -->
+<div class="w-full bg-surface-container rounded-xl p-space-lg md:p-space-xl relative overflow-hidden shadow-xl mb-space-xl">
+<!-- Glow Accent Line -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
+<div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+<!-- Glowing Emerald & Gold Success Halo -->
+<div class="relative mb-space-md flex items-center justify-center">
+<div class="w-24 h-24 rounded-full bg-surface-container-high flex items-center justify-center shadow-lg relative">
+<div class="absolute inset-0 rounded-full border border-secondary/40 animate-ping opacity-25"></div>
+<div class="w-16 h-16 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[36px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Spark Particle Badges -->
+<span class="material-symbols-outlined absolute -top-1 -right-2 text-secondary text-[22px] animate-pulse">arrow_back_ios_new</span>
+<span class="material-symbols-outlined absolute bottom-1 -left-2 text-primary text-[20px]">local_fire_department</span>
+</div>
+<div class="inline-flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-xs rounded-full text-secondary mb-space-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">PESO Statutory Approved • Safe Dispatch Assured</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl uppercase text-on-surface tracking-wider mb-space-sm">
+          Order Confirmed &amp; Dispatch Prepared!
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-space-lg">
+          Thank you, <strong class="text-on-surface font-semibold">Rajesh Kumar</strong>! Your Diwali pyrotechnics order has been authenticated, inspected, and queued at the Sivakasi Central Explosives Depot.
+        </p>
+<!-- Key Reference Ribbon Bento -->
+<div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm bg-surface-container-lowest p-space-md rounded-xl text-left">
+<!-- Ref ID -->
+<div class="p-space-sm bg-surface-container rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-space-xs">Reference No.</span>
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-headline-md text-title-lg text-secondary tracking-wide" id="orderIdText">RTC-2026-88914</span>
+<button class="p-1 text-on-surface-variant hover:text-secondary rounded bg-surface-container-high transition-colors" id="copyBtn" onclick="navigator.clipboard.writeText('RTC-2026-88914'); const el = document.getElementById('copyTooltip'); el.classList.remove('hidden'); setTimeout(() =&gt; el.classList.add('hidden'), 2000);" title="Copy Order ID">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+<span class="hidden font-label-sm text-label-sm text-secondary" id="copyTooltip">Copied!</span>
+</div>
+<!-- Placed Time -->
+<div class="p-space-sm bg-surface-container rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-space-xs">Booked On</span>
+<p class="font-body-md text-body-md text-on-surface font-semibold">14 Oct 2026</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">08:42 PM IST</p>
+</div>
+<!-- Payment Status -->
+<div class="p-space-sm bg-surface-container rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-space-xs">Settlement Status</span>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">PAID • Instant UPI</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-space-xs py-0.5 rounded">UPI-884912903</span>
+</div>
+<!-- License Verification -->
+<div class="p-space-sm bg-surface-container rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-space-xs">Depot Origin</span>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Sivakasi Hub 04</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">PESO: TN/SV/EXP-88914</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Fast Command Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-low p-space-md rounded-xl mb-space-xl shadow-md">
+<div class="flex flex-wrap items-center gap-space-sm">
+<a class="inline-flex items-center gap-space-xs bg-primary-container hover:bg-primary-container/90 text-on-primary-container px-space-lg py-space-sm rounded-lg font-headline-md text-headline-md tracking-wider uppercase transition-all shadow-[0_0_16px_rgba(227,27,22,0.45)]" href="#">
+<span class="material-symbols-outlined text-[20px]">radar</span>
+          Track Hazmat Live Dispatch →
+        </a>
+<button class="inline-flex items-center gap-space-xs bg-surface-container-high hover:bg-surface-bright text-on-surface px-space-md py-space-sm rounded-lg font-label-lg text-label-lg transition-colors" onclick="window.print()">
+<span class="material-symbols-outlined text-[18px]">download</span>
+          Download Tax Invoice
+        </button>
+<button class="inline-flex items-center gap-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface px-space-md py-space-sm rounded-lg font-label-lg text-label-lg transition-colors" onclick="window.print()">
+<span class="material-symbols-outlined text-[18px]">print</span>
+          Print Receipt
+        </button>
+</div>
+<a class="inline-flex items-center gap-space-xs font-title-md text-title-md text-secondary hover:underline" href="#">
+        Continue Shopping Festive Specials
+        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- 3. Two-Column Split Architecture (60% / 40%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl mb-space-xl">
+<!-- Left Column (Items & Logistics) - 7 cols -->
+<div class="lg:col-span-7 flex flex-col gap-space-xl">
+<!-- Order Items Bento -->
+<div class="bg-surface-container rounded-xl p-space-lg shadow-md">
+<div class="flex items-center justify-between pb-space-md mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Manifest Breakdown</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase">Pyrotechnic Consignment (3 Items)</h2>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant bg-surface-container-high px-space-sm py-1 rounded">Inspected &amp; Sealed</span>
+</div>
+<div class="space-y-space-md">
+<!-- Item 1 -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md p-space-md bg-surface-container-lowest rounded-lg">
+<img class="w-20 h-20 object-cover rounded-lg bg-surface-container-high shrink-0" data-alt="Thunder King 50 shot multi break aerial fireworks cake box in luxurious red and gold festive packaging glowing on a deep charcoal studio set" src="../assets/branding/LOGO.jpeg"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-1.5 py-0.5 rounded uppercase">Sky Aerial</span>
+<span class="text-secondary font-label-sm text-label-sm">Class 7.2 Pyro</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface truncate">Thunder King 50-Shot Aerial Cake</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">50 Multi-Breaks, Gold &amp; Crimson Brocade • Sivakasi Batch #TK-2026</p>
+<div class="flex items-center gap-space-md mt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Qty: <strong class="text-on-surface">2</strong></span>
+<span class="text-on-surface-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">₹2,499 per unit</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-md text-headline-md text-secondary tracking-wide">₹4,998</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md p-space-md bg-surface-container-lowest rounded-lg">
+<img class="w-20 h-20 object-cover rounded-lg bg-surface-container-high shrink-0" data-alt="Pack of high altitude pyrotechnic rockets with metallic red and gold rocket heads lined up with safety fuses on dark background" src="../assets/branding/LOGO.jpeg"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-1.5 py-0.5 rounded uppercase">High Altitude</span>
+<span class="text-secondary font-label-sm text-label-sm">250ft Reach</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface truncate">Red Thunder Falcon Rockets</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pack of 10 Heavy Velocity Sound Rockets • Parachute Burst</p>
+<div class="flex items-center gap-space-md mt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Qty: <strong class="text-on-surface">1</strong></span>
+<span class="text-on-surface-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">₹1,199 per pack</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-md text-headline-md text-secondary tracking-wide">₹1,199</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md p-space-md bg-surface-container-lowest rounded-lg">
+<img class="w-20 h-20 object-cover rounded-lg bg-surface-container-high shrink-0" data-alt="Sparkler sticks burning with clean golden sparks in darkness showing eco friendly low smoke pyrotechnics celebration" src="../assets/branding/LOGO.jpeg"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="bg-surface-container-high text-secondary font-label-sm text-label-sm px-1.5 py-0.5 rounded uppercase">Green Safe</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Child Protected</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface truncate">Electric Sparklers 50cm</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pack of 20 • Low-Smoke Sulfur Free • Long Burn Formulation</p>
+<div class="flex items-center gap-space-md mt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Qty: <strong class="text-on-surface">2</strong></span>
+<span class="text-on-surface-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">₹450 per pack</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-md text-headline-md text-secondary tracking-wide">₹900</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Logistics & Hazmat Tracking Card -->
+<div class="bg-surface-container rounded-xl p-space-lg shadow-md">
+<div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">PESO-Certified Transport Logistics</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase mb-space-md">Safe Transit &amp; Delivery Destination</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mb-space-md">
+<!-- Destination Address -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-space-xs">Delivery Address</span>
+<p class="font-title-md text-title-md text-on-surface mb-1">Rajesh Kumar</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb- space-xs">
+                Flat 402, Royal Palms Residency, 18th Main,<br/>
+                HSR Layout Sector 3, Bengaluru, Karnataka — 560102
+              </p>
+<div class="flex items-center gap-space-xs text-secondary mt-space-xs">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span class="font-body-sm text-body-sm font-semibold">+91 73587 37658</span>
+</div>
+</div>
+<!-- Transport Protocol -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-space-xs">Carrier &amp; Protection</span>
+<p class="font-title-md text-title-md text-on-surface mb-1">Safe Hazmat Express Transport</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">
+                Temperature &amp; shockproof container with satellite GPS tag. Fully insured Class 1.4G licensed carrier.
+              </p>
+<div class="mt-space-sm p-space-xs bg-surface-container-high rounded flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-label-sm text-label-sm">ETA: October 18 – October 20, 2026 (3 Days Pre-Diwali)</span>
+</div>
+</div>
+</div>
+<!-- Real-Time Fulfillment Pipeline -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-space-md">Fulfillment Stage</span>
+<div class="grid grid-cols-1 sm:grid-cols-4 gap-space-sm text-center">
+<div class="p-space-xs rounded bg-surface-container text-secondary flex flex-col items-center">
+<span class="material-symbols-outlined text-[20px] mb-1">check_circle</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Order Placed</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant">Oct 14, 20:42</span>
+</div>
+<div class="p-space-xs rounded bg-surface-container-high text-secondary flex flex-col items-center shadow-inner">
+<span class="material-symbols-outlined text-[20px] mb-1 animate-spin">autorenew</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Depot Pack</span>
+<span class="font-body-sm text-[10px] text-secondary">In Inspection</span>
+</div>
+<div class="p-space-xs rounded bg-surface-container text-on-surface-variant flex flex-col items-center opacity-70">
+<span class="material-symbols-outlined text-[20px] mb-1">local_shipping</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Hazmat Transit</span>
+<span class="font-body-sm text-[10px]">Departs Oct 16</span>
+</div>
+<div class="p-space-xs rounded bg-surface-container text-on-surface-variant flex flex-col items-center opacity-70">
+<span class="material-symbols-outlined text-[20px] mb-1">home_pin</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Doorstep</span>
+<span class="font-body-sm text-[10px]">Expected Oct 18</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Safety & Statutory Handling Box -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-inner">
+<div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-[22px]">health_and_safety</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Statutory Pyrotechnic Safety Charter</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-sm">Unboxing &amp; Storage Guidelines</h3>
+<ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">verified</span>
+<span><strong>Dual PESO QR Seals:</strong> Scan the metallic holographic seals on each box to verify authenticity and Sivakasi batch test reports.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">thermostat</span>
+<span><strong>Safe Dry Storage:</strong> Store all consignments in a cool, moisture-free location away from electrical sockets and open flames.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">family_restroom</span>
+<span><strong>Adult Supervised Lighting:</strong> Always ignite aerial fireworks with extended agarbatti/punk sticks and maintain a minimum safe distance of 50 feet.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Right Column (Financials & Support) - 5 cols -->
+<div class="lg:col-span-5 flex flex-col gap-space-xl">
+<!-- Financial Summary Bento -->
+<div class="bg-surface-container rounded-xl p-space-lg shadow-md">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase">Payment Summary</h2>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-space-xs py-0.5 rounded">UPI Settled</span>
+</div>
+<div class="space-y-space-sm font-body-md text-body-md text-on-surface-variant">
+<div class="flex justify-between items-center">
+<span>Items Subtotal</span>
+<span class="font-title-md text-title-md text-on-surface">₹7,097</span>
+</div>
+<div class="flex justify-between items-center text-secondary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">sell</span>
+                Festive Offer (DIWALI20)
+              </span>
+<span class="font-title-md text-title-md">-₹1,419</span>
+</div>
+<div class="flex justify-between items-center">
+<span>Hazmat Shockproof Packaging</span>
+<span class="text-secondary font-semibold uppercase text-label-sm">FREE</span>
+</div>
+<div class="flex justify-between items-center">
+<span>Class 1.4G Transit Transit Insurance</span>
+<span class="text-secondary font-semibold uppercase text-label-sm">FREE</span>
+</div>
+<div class="flex justify-between items-center">
+<span>GST (18% Statutory Green Pyro)</span>
+<span class="text-on-surface-variant">Included</span>
+</div>
+<!-- Grand Total Block -->
+<div class="pt-space-md mt-space-md bg-surface-container-lowest p-space-md rounded-lg flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Total Amount Paid</span>
+<span class="font-body-sm text-body-sm text-secondary">Zero Balance Due</span>
+</div>
+<span class="font-display-hero text-[36px] leading-[40px] text-secondary font-bold">₹5,678</span>
+</div>
+</div>
+</div>
+<!-- Live Notifications Channel Card -->
+<div class="bg-surface-container rounded-xl p-space-lg shadow-md">
+<div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Dispatch Telemetry</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-sm">Real-Time SMS &amp; WhatsApp Alerts</h3>
+<div class="space-y-space-sm mb-space-md">
+<div class="flex items-start gap-space-xs text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[18px]">chat</span>
+<div>
+<p class="text-on-surface font-semibold">WhatsApp Bot Synced</p>
+<p>Tracking updates, live GPS vehicle coordinates, and unboxing OTPs will stream to <strong class="text-on-surface">+91 73587 37658</strong>.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-xs text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+<div>
+<p class="text-on-surface font-semibold">Delivery OTP Protection</p>
+<p>Hazmat packages are released solely upon verbal OTP verification at your Bengaluru doorstep.</p>
+</div>
+</div>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-surface-bright text-on-surface py-space-sm rounded-lg font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+            Manage Notification Preferences
+          </a>
+</div>
+<!-- Dedicated Support Desk -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-md relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-secondary/5 rounded-full pointer-events-none"></div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block mb-space-xs">Priority Help</span>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-space-xs">Sivakasi Dispatch Desk</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Need adjustments or batch certificate checks? Reach our pyrotechnic logistics team 24/7.
+          </p>
+<div class="space-y-space-xs mb-space-md">
+<a class="flex items-center gap-space-xs p-space-xs rounded bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface" href="tel:1800REDTHUNDER">
+<span class="material-symbols-outlined text-secondary text-[20px]">support_agent</span>
+<span class="font-title-md text-title-md">1800-RED-THUNDER (Toll Free)</span>
+</a>
+<a class="flex items-center gap-space-xs p-space-xs rounded bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface" href="https://wa.me/918124100501" target="_blank">
+<span class="material-symbols-outlined text-secondary text-[20px]">forum</span>
+<span class="font-title-md text-title-md">Direct WhatsApp Support</span>
+</a>
+</div>
+<div class="p-space-xs bg-surface-container-lowest rounded text-on-surface-variant font-body-sm text-[11px] leading-tight">
+            * Consignment modifications or destination rerouting allowed within 2 hours of booking before security pallet strapping.
+          </div>
+</div>
+</div>
+</div>
+<!-- 4. Recommended Additions Strip (Festival Essentials) -->
+<div class="w-full bg-surface-container rounded-xl p-space-lg shadow-md mb-space-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Recommended Add-Ons</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase">Don't Forget These Festival Essentials</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Add before packing lock closes (01h 42m remaining)</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Addon 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col justify-between hover:bg-surface-container-high transition-all">
+<div class="flex items-center gap-space-md mb-space-sm">
+<img class="w-16 h-16 object-cover rounded-lg bg-surface-container shrink-0" data-alt="Extra long pyro safety wooden matches in stylish branded dark red box on slate table" src="../assets/branding/LOGO.jpeg"/>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase">Safety Tool</span>
+<h3 class="font-title-md text-title-md text-on-surface">Long Safety Matches</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pack of 5 boxes • 30cm reach</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-headline-md text-headline-md text-secondary">₹149</span>
+<button class="bg-surface-container-high hover:bg-primary-container text-on-surface hover:text-on-primary-container px-space-md py-1 rounded font-label-md text-label-md transition-colors">
+              + Add to Box
+            </button>
+</div>
+</div>
+<!-- Addon 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col justify-between hover:bg-surface-container-high transition-all">
+<div class="flex items-center gap-space-md mb-space-sm">
+<img class="w-16 h-16 object-cover rounded-lg bg-surface-container shrink-0" data-alt="Heavy brass decorative sparkler stands and lighting holders glowing with festive warmth" src="../assets/branding/LOGO.jpeg"/>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase">Accessories</span>
+<h3 class="font-title-md text-title-md text-on-surface">Brass Sparkler Stands</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Set of 4 tabletop security bases</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-headline-md text-headline-md text-secondary">₹399</span>
+<button class="bg-surface-container-high hover:bg-primary-container text-on-surface hover:text-on-primary-container px-space-md py-1 rounded font-label-md text-label-md transition-colors">
+              + Add to Box
+            </button>
+</div>
+</div>
+<!-- Addon 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col justify-between hover:bg-surface-container-high transition-all">
+<div class="flex items-center gap-space-md mb-space-sm">
+<img class="w-16 h-16 object-cover rounded-lg bg-surface-container shrink-0" data-alt="Biodegradable glowing Diwali sky lanterns floating gracefully into the warm evening midnight sky" src="../assets/branding/LOGO.jpeg"/>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase">Celebration</span>
+<h3 class="font-title-md text-title-md text-on-surface">Eco Warm Sky Lanterns</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">100% Biodegradable • Pack of 5</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-headline-md text-headline-md text-secondary">₹299</span>
+<button class="bg-surface-container-high hover:bg-primary-container text-on-surface hover:text-on-primary-container px-space-md py-1 rounded font-label-md text-label-md transition-colors">
+              + Add to Box
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest text-on-surface-variant"><div class="max-w-[1360px] mx-auto px-gutter-mobile md:px-gutter pt-margin pb-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl mb-space-xl"><div><div class="flex items-center gap-space-sm mb-space-md"><img alt="LOGO.jpeg" class="h-8 w-auto object-contain" src="../assets/branding/LOGO.jpeg"/><span class="font-headline-md text-headline-md text-secondary uppercase">RTCrackers</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">India's premier certified pyrotechnic lifestyle store. Igniting Diwali and elite milestone celebrations with supreme safety and thunderous brilliance.</p><div class="flex items-center gap-space-xs text-secondary"><span class="material-symbols-outlined text-[18px]">verified</span><span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface">100% PESO Certified Sparklers</span></div></div><div><h4 class="font-headline-md text-headline-md text-on-surface mb-space-md tracking-wider uppercase">Customer Service</h4><ul class="space-y-space-sm font-body-sm text-body-sm"><nav class="flex flex-col space-y-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg"><li><a class="text-on-surface-variant hover:text-on-surface transition-colors block" data-path="contact-us" href="#">Contact Us</a></li><li><a class="text-on-surface-variant hover:text-on-surface transition-colors block" data-path="shipping-info" href="#">Shipping Information</a></li><li><a class="text-on-surface-variant hover:text-on-surface transition-colors block" data-path="order-tracking" href="#">Track Live Order</a></li><li><a class="text-on-surface-variant hover:text-on-surface transition-colors block" data-path="faqs" href="#">Safety &amp; Celebration FAQs</a></li></nav></ul></div><div><h4 class="font-headline-md text-headline-md text-on-surface mb-space-md tracking-wider uppercase">About RTCrackers</h4><ul class="space-y-space-sm font-body-sm text-body-sm"><nav class="flex flex-col space-y-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg"><li><a class="text-on-surface-variant hover:text-on-surface transition-colors block" data-path="about-us" href="#">About Us</a></li><li><a class="text-on-surface-variant hover:text-on-surface transition-colors block" data-path="careers" href="#">Careers &amp; Culture</a></li><li><a class="text-on-surface-variant hover:text-on-surface transition-colors block" data-path="blog" href="#">Festival &amp; Safety Blog</a></li></nav></ul></div><div><h4 class="font-headline-md text-headline-md text-on-surface mb-space-md tracking-wider uppercase">Legal &amp; Policies</h4><ul class="space-y-space-sm font-body-sm text-body-sm"><nav class="flex flex-col space-y-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg"><li><a class="text-on-surface-variant hover:text-on-surface transition-colors block" data-path="privacy-policy" href="#">Privacy Policy</a></li><li><a class="text-on-surface-variant hover:text-on-surface transition-colors block" data-path="terms-and-conditions" href="#">Terms &amp; Conditions</a></li><li><a class="text-on-surface-variant hover:text-on-surface transition-colors block" data-path="cancellation-policy" href="#">Cancellation Policy</a></li></nav></ul></div><div><h4 class="font-headline-md text-headline-md text-on-surface mb-space-md tracking-wider uppercase">Reach Us</h4><div class="space-y-space-sm font-body-sm text-body-sm"><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">call</span><div><p class="text-on-surface font-title-md text-title-md">+91 73587 37658</p><p class="text-on-surface-variant">Mon - Sun: 8:00 AM - 11:00 PM</p></div></div><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">mail</span><span class="text-on-surface-variant">support@rtcrackers.in</span></div><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">location_on</span><span class="text-on-surface-variant">Sivakasi &amp; Chennai Dispatch Hubs, Tamil Nadu, India</span></div><div class="pt-space-sm flex items-center gap-space-sm"><a aria-label="Customer Community" class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">public</span></a><a aria-label="Video Channel" class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">smart_display</span></a><a aria-label="Official Chat" class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">forum</span></a><a aria-label="Photo Showcase" class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">photo_camera</span></a></div></div></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-center sm:text-left bg-surface-container-low px-space-lg py-space-md rounded-xl"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2026 RTCrackers. All rights reserved.</p><div class="flex items-center gap-space-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-[18px]">local_shipping</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Safe Licensed Transport Across India</span></div></div></div></footer><script src="../runtime/rtc-runtime.js"></script></body></html>

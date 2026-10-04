@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrator Registration | RTCrackers</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="css/style.css?v=20261003">
+  <link rel="stylesheet" href="css/advanced-ui.css?v=20261003"><link rel="stylesheet" href="css/industrial-ui.css?v=20261003">
+  <link rel="stylesheet" href="css/premium-ui.css?v=20261003">
+  <style>
+    body{background:linear-gradient(160deg,var(--navy-950),var(--navy-800));min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+    .box{width:100%;max-width:500px;background:#fff;border-radius:18px;padding:34px;box-shadow:0 20px 60px rgba(0,0,0,.4);position:relative}
+    .box:before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--brand-gradient-full)}
+    .msg{display:none;padding:12px;border-radius:8px;margin:14px 0;font-size:13.5px}.msg.show{display:block}.success{background:#eaf7ee;color:#176b37}.error{background:#fdecea;color:#a51f15}.notice{background:#fff5df;color:#765000}
+  </style>
+  <link rel="stylesheet" href="css/adaptive-layout.css?v=20261003-v6">
+  <link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/css/pwa-update.css">
+</head>
+<body class="admin-auth-page">
+  <main class="box">
+    <h2>Administrator Registration</h2>
+    <p style="color:var(--grey-600);font-size:14px">This page is only for an administrator invited from the RTCrackers Admin Panel.</p>
+    <div id="msg" class="msg"></div>
+
+    <section id="signupSection" style="display:none">
+      <form id="signupForm">
+        <div class="form-group"><label>Email</label><input type="email" id="email" required autocomplete="email"></div>
+        <div class="form-group"><label>Create your account password</label><input type="password" id="password" required minlength="6" autocomplete="new-password"></div>
+        <button class="btn btn-primary btn-block" type="submit">Create Administrator Account</button>
+      </form>
+      <p style="font-size:12.5px;color:var(--grey-600);margin-top:12px">Your email must match the invitation created by an existing administrator.</p>
+    </section>
+
+    <section id="verifySection" style="display:none">
+      <div class="notice" style="margin-bottom:16px"><strong>Email verified.</strong> Answer the administrator-set security question to activate your admin access.</div>
+      <div class="form-group"><label id="questionLabel">Security question</label><input type="password" id="answer" autocomplete="off" required></div>
+      <button class="btn btn-primary btn-block" id="completeBtn">Activate Administrator Access</button>
+    </section>
+
+    <section id="loginSection">
+      <p style="font-size:13.5px">Your email is verified, but this browser has no active session. Sign in once to complete administrator activation.</p>
+      <form id="loginForm">
+        <div class="form-group"><label>Email</label><input type="email" id="loginEmail" required autocomplete="email"></div>
+        <div class="form-group"><label>Password</label><input type="password" id="loginPassword" required autocomplete="current-password"></div>
+        <button class="btn btn-primary btn-block">Continue</button>
+      </form>
+    </section>
+
+    <p style="text-align:center;margin-top:20px;font-size:13px"><a href="index.html">← Website Home</a></p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/micro-interactions.js"></script>
+  <script src="js/auth.js?v=20261003"></script><script src="js/features.js?v=20261003"></script>
+  <script>
+    (async function(){
+      const A=window.RTAdmin, msg=document.getElementById('msg');
+      const show=(text,type)=>{msg.textContent=text;msg.className='msg show '+type};
+      if(!A || !A.configured){show('Supabase is not configured.','error');return}
+
+      async function loadQuestion(){
+        const q=await A.getAdminSecurityQuestion();
+        if(!q.ok){show(q.error,'error');return false}
+        document.getElementById('questionLabel').textContent=q.question;
+        return true;
+      }
+
+      async function showVerified(){
+        const {data}=await A.supabaseSession();
+        if(data?.session?.user){
+          document.getElementById('signupSection').style.display='none';
+          document.getElementById('loginSection').style.display='none';
+          document.getElementById('verifySection').style.display='block';
+          await loadQuestion();
+        } else {
+          document.getElementById('signupSection').style.display='none';
+          document.getElementById('loginSection').style.display='block';
+          document.getElementById('verifySection').style.display='none';
+          show('Email verification completed. Sign in below to answer the security question.','success');
+        }
+      }
+
+      document.getElementById('signupForm').addEventListener('submit',async e=>{
+        e.preventDefault();
+        const email=document.getElementById('email').value.trim().toLowerCase();
+        const password=document.getElementById('password').value;
+        const r=await A.signup(email.split('@')[0],email,'',password,location.origin + location.pathname + '?verified=1');
+        if(!r.ok){show(r.error,'error');return}
+        if(r.needsEmailConfirmation){
+          show('Account created. Check your email and click the verification link. This page will then open the security-question step.','success');
+          document.getElementById('signupSection').style.display='none';
+          return;
+        }
+        await showVerified();
+      });
+
+      document.getElementById('loginForm').addEventListener('submit',async e=>{
+        e.preventDefault();
+        const r=await A.login(document.getElementById('loginEmail').value,document.getElementById('loginPassword').value);
+        if(!r.ok){show(r.error,'error');return}
+        await showVerified();
+      });
+
+      document.getElementById('completeBtn').onclick=async()=>{
+        const btn=document.getElementById('completeBtn');btn.disabled=true;btn.textContent='Verifying...';
+        const r=await A.completeAdminRegistration(document.getElementById('answer').value);
+        btn.disabled=false;btn.textContent='Activate Administrator Access';
+        if(!r.ok){show(r.error,'error');return}
+        show('Administrator access activated. Opening Admin Panel...','success');
+        setTimeout(()=>location.href='admin.html',700);
+      };
+
+      // If Supabase redirected back after email verification, show the question step.
+      const {data}=await A.supabaseSession();
+      if(data?.session?.user) await showVerified();
+      else if (new URLSearchParams(location.search).get('invited') === '1') {
+        document.getElementById('loginSection').style.display='block';
+        document.getElementById('signupSection').style.display='none';
+        show('Use the temporary password supplied by the existing administrator. After sign-in, the administrator security question will appear.','notice');
+      }
+    })();
+  </script>
+<script src="js/animations.js?v=20261003"></script>
+  <script src="js/advanced-ui.js?v=20261003"></script>
+<script src="js/industrial-ui.js?v=20261003"></script>  <script src="js/adaptive-layout.js?v=20261003-v6"></script>
+  <script src="/js/pwa-update.js" defer></script>
+</body>
+</html>

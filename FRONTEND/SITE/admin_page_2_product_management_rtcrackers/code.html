@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-slate-950" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin: Product Management — RTCrackers</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff1f1',
+              100: '#ffe1e1',
+              500: '#e31b16',
+              600: '#b90006',
+              700: '#930003',
+              900: '#410001'
+            },
+            admin: {
+              bg: '#090d16',
+              surface: '#0f172a',
+              card: '#131e36',
+              border: '#1e293b',
+              muted: '#64748b',
+              text: '#f8fafc'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Oswald', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    /* Custom admin scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+  </style>
+<link href="../runtime/theme.css" rel="stylesheet"/></head>
+<body class="h-full bg-slate-950 font-sans text-slate-100 antialiased flex overflow-hidden">
+<!-- ============================================================== -->
+<!-- 1. LEFT ADMIN SIDEBAR                                          -->
+<!-- ============================================================== -->
+<aside class="w-64 bg-slate-900 border-r border-slate-800 flex flex-col shrink-0 z-30 transition-all duration-300 select-none" id="admin-sidebar">
+<!-- Brand Logo & Workspace Info -->
+<div class="h-16 flex items-center justify-between px-5 border-b border-slate-800 bg-slate-900/60 backdrop-blur">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+<span class="material-symbols-outlined text-[22px]">local_fire_department</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-display tracking-wide font-bold text-lg leading-none text-white">RT<span class="text-brand-500">CRACKERS</span></span>
+<span class="text-[10px] font-semibold bg-brand-500/20 text-brand-500 px-1.5 py-0.2 rounded border border-brand-500/30 uppercase">HQ</span>
+</div>
+<span class="text-[11px] text-slate-400 font-medium">Operations Center</span>
+</div>
+</div>
+<button class="text-slate-400 hover:text-white p-1 rounded-md hover:bg-slate-800 lg:hidden" onclick="toggleSidebar()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Navigation Menu (Scrollable) -->
+<div class="flex-1 overflow-y-auto px-3 py-4 space-y-6 text-xs font-medium">
+<!-- Section: Core -->
+<div>
+<div class="px-3 pb-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Core Command</div>
+<ul class="space-y-0.5">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">dashboard</span>
+<span class="text-sm">Dashboard</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Section: Catalog (ACTIVE) -->
+<div>
+<div class="px-3 pb-2 text-[10px] font-bold text-brand-500 uppercase tracking-widest flex items-center justify-between">
+<span>Catalog &amp; Inventory</span>
+<span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+</div>
+<ul class="space-y-0.5">
+<li>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg bg-brand-500 text-white font-semibold shadow-sm shadow-brand-500/30" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+<span class="text-sm">Products</span>
+</div>
+<span class="text-[11px] bg-black/30 px-1.5 py-0.5 rounded font-bold">2,486</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">category</span>
+<span class="text-sm">Categories</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="text-sm">Brands</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">warehouse</span>
+<span class="text-sm">Inventory Matrix</span>
+</div>
+<span class="text-[10px] bg-amber-500/20 text-amber-400 px-1.5 py-0.5 rounded font-bold">86 Low</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">rate_review</span>
+<span class="text-sm">Product Reviews</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Section: Orders -->
+<div>
+<div class="px-3 pb-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Order Desk</div>
+<ul class="space-y-0.5">
+<li>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span class="text-sm">All Orders</span>
+</div>
+<span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded">1,248</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">hourglass_top</span>
+<span class="text-sm">Pending / Knocking</span>
+</div>
+<span class="text-[10px] bg-brand-500/20 text-brand-500 font-bold px-1.5 py-0.5 rounded">42</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">assignment_return</span>
+<span class="text-sm">Returns &amp; Refunds</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Section: Operations & Finance -->
+<div>
+<div class="px-3 pb-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Fulfillment &amp; Systems</div>
+<ul class="space-y-0.5">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span class="text-sm">Customers &amp; Academies</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">sell</span>
+<span class="text-sm">Coupons &amp; Offers</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span class="text-sm">Shipments &amp; Dispatch</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+<span class="text-sm">Finance &amp; UPI Settlements</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">query_stats</span>
+<span class="text-sm">Sales Analytics</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">admin_panel_settings</span>
+<span class="text-sm">Roles &amp; Permissions</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- Sidebar Footer / Environment Pill -->
+<div class="p-3 border-t border-slate-800 bg-slate-900/90 flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-slate-400 font-mono text-[11px]">PROD-API: v2.4.9</span>
+</div>
+<button class="text-slate-400 hover:text-white p-1 hover:bg-slate-800 rounded" title="Collapse Sidebar">
+<span class="material-symbols-outlined text-[18px]">first_page</span>
+</button>
+</div>
+</aside>
+<!-- ============================================================== -->
+<!-- 2. MAIN APPLICATION WORKSPACE                                  -->
+<!-- ============================================================== -->
+<div class="flex-1 flex flex-col min-w-0 bg-slate-950 overflow-hidden relative">
+<!-- Top Admin Header -->
+<header class="h-16 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 flex items-center justify-between px-6 shrink-0 z-20">
+<div class="flex items-center gap-4 flex-1">
+<button class="lg:hidden text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-slate-800" onclick="toggleSidebar()">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+</button>
+<!-- Breadcrumb Pill -->
+<nav class="flex items-center gap-2 text-xs font-medium text-slate-400">
+<span class="hover:text-slate-200 cursor-pointer">Admin</span>
+<span class="text-slate-600">/</span>
+<span class="hover:text-slate-200 cursor-pointer">Catalog</span>
+<span class="text-slate-600">/</span>
+<span class="text-brand-500 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+            Products
+          </span>
+</nav>
+<!-- Global Search Bar -->
+<div class="relative max-w-md w-full ml-4 hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-500 text-[18px]">search</span>
+<input class="w-full bg-slate-800/80 border border-slate-700/80 rounded-lg pl-9 pr-12 py-1.5 text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all" placeholder="Global search: orders, SKUs, sparkler grades, players..." type="text"/>
+<kbd class="absolute right-2.5 top-2 text-[10px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded border border-slate-700">⌘K</kbd>
+</div>
+</div>
+<!-- Header Right Utilities -->
+<div class="flex items-center gap-3 shrink-0">
+<!-- Quick Notification Bell -->
+<button class="relative p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-brand-500 ring-2 ring-slate-900"></span>
+</button>
+<div class="h-6 w-px bg-slate-800"></div>
+<!-- Admin Profile Pill -->
+<div class="flex items-center gap-3 pl-1 pr-2 py-1 rounded-lg bg-slate-800/60 border border-slate-700/60 cursor-pointer hover:border-slate-600 transition-colors">
+<div class="w-8 h-8 rounded-md bg-gradient-to-tr from-brand-600 to-amber-500 flex items-center justify-center text-white font-bold text-xs shadow-inner">
+            RA
+          </div>
+<div class="flex flex-col text-left leading-tight hidden sm:block">
+<span class="text-xs font-semibold text-slate-200">Raghav A.</span>
+<span class="text-[10px] text-brand-500 font-medium font-mono">Catalog Admin (L3)</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[18px]">expand_more</span>
+</div>
+</div>
+</header>
+<!-- Scrollable Workspace Body -->
+<main class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- ============================================================== -->
+<!-- 3. PAGE HEADER & PRIMARY ACTION WORKFLOW                       -->
+<!-- ============================================================== -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2.5">
+<h1 class="text-2xl font-bold font-display uppercase tracking-wide text-white">Product Catalog</h1>
+<span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              Live Sync Active
+            </span>
+</div>
+<p class="text-xs text-slate-400 mt-1">Manage master specifications, sparkler telemetry, stock allocations, multi-variant pricing, and storefront publication.</p>
+</div>
+<div class="flex items-center gap-2.5 shrink-0 flex-wrap">
+<!-- Import Products Trigger -->
+<button class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-slate-600 text-xs font-semibold flex items-center gap-2 transition-all" onclick="openModal('import-modal')">
+<span class="material-symbols-outlined text-[18px]">upload</span>
+<span>Import CSV / Excel</span>
+</button>
+<!-- Export Filtered Trigger -->
+<button class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-slate-600 text-xs font-semibold flex items-center gap-2 transition-all" onclick="exportData()">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export (2,486)</span>
+</button>
+<!-- Primary: Add Product Workflow Modal -->
+<button class="px-4 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 active:bg-brand-700 text-white font-semibold text-xs flex items-center gap-2 shadow-lg shadow-brand-500/25 transition-all transform hover:-translate-y-0.5" onclick="openModal('add-product-modal')">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Add New Product</span>
+</button>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 4. PRODUCT METRIC KPIS (4 Summary Cards)                       -->
+<!-- ============================================================== -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- 1. Total Catalog -->
+<div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex items-center justify-between relative overflow-hidden group hover:border-slate-700 transition-all">
+<div class="space-y-1">
+<span class="text-xs font-medium text-slate-400 uppercase tracking-wider">Total SKUs</span>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold font-display text-white">2,486</span>
+<span class="text-[11px] text-emerald-400 font-medium flex items-center">+42 new</span>
+</div>
+<p class="text-[11px] text-slate-400">Across 8 primary sports divisions</p>
+</div>
+<div class="w-12 h-12 rounded-lg bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">inventory_2</span>
+</div>
+</div>
+<!-- 2. Active Online -->
+<div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex items-center justify-between relative overflow-hidden group hover:border-slate-700 transition-all">
+<div class="space-y-1">
+<span class="text-xs font-medium text-slate-400 uppercase tracking-wider">Active Published</span>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold font-display text-emerald-400">2,214</span>
+<span class="text-[11px] text-slate-400 font-medium">89.1% live</span>
+</div>
+<p class="text-[11px] text-slate-400">Customer checkout enabled</p>
+</div>
+<div class="w-12 h-12 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">check_circle</span>
+</div>
+</div>
+<!-- 3. Low / Out of Stock -->
+<div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex items-center justify-between relative overflow-hidden group hover:border-slate-700 transition-all">
+<div class="space-y-1">
+<span class="text-xs font-medium text-slate-400 uppercase tracking-wider">Stock Alerts</span>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold font-display text-amber-400">86</span>
+<span class="text-[11px] text-brand-500 font-medium flex items-center font-bold">14 zero stock</span>
+</div>
+<p class="text-[11px] text-slate-400">Below threshold (&lt;5 items left)</p>
+</div>
+<div class="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">warning</span>
+</div>
+</div>
+<!-- 4. Draft & In-Review -->
+<div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex items-center justify-between relative overflow-hidden group hover:border-slate-700 transition-all">
+<div class="space-y-1">
+<span class="text-xs font-medium text-slate-400 uppercase tracking-wider">Drafts &amp; Staging</span>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold font-display text-slate-300">186</span>
+<span class="text-[11px] text-slate-400 font-medium">pending images</span>
+</div>
+<p class="text-[11px] text-slate-400">Sparkler knocking QA pending</p>
+</div>
+<div class="w-12 h-12 rounded-lg bg-slate-800 border border-slate-700 text-slate-400 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">edit_note</span>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 5. SEARCH & DYNAMIC FILTER TOOLBAR                             -->
+<!-- ============================================================== -->
+<div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-3">
+<!-- Main Filter Bar Top -->
+<div class="flex flex-col lg:flex-row items-center justify-between gap-3">
+<!-- Search input -->
+<div class="relative flex-1 w-full">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-500 text-[18px]">search</span>
+<input class="w-full bg-slate-950 border border-slate-800 rounded-lg pl-9 pr-10 py-2 text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all" id="product-search" oninput="filterTable()" placeholder="Search by product name, SKU, cleft grain count, barcode, or brand..." type="text"/>
+<button class="absolute right-3 top-2.5 text-slate-500 hover:text-slate-300" onclick="document.getElementById('product-search').value=''; filterTable();">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Quick Dropdown Filters -->
+<div class="flex items-center gap-2.5 w-full lg:w-auto overflow-x-auto pb-1 lg:pb-0">
+<!-- Status Filter -->
+<select class="bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-300 focus:border-brand-500 focus:outline-none cursor-pointer" id="filter-status" onchange="filterTable()">
+<option value="ALL">Status: All (2,486)</option>
+<option value="Active">Active Published (2,214)</option>
+<option value="Low Stock">Low Stock (86)</option>
+<option value="Out of Stock">Out of Stock (14)</option>
+<option value="Draft">Draft / Staging (186)</option>
+</select>
+<!-- Category Filter -->
+<select class="bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-300 focus:border-brand-500 focus:outline-none cursor-pointer" id="filter-category" onchange="filterTable()">
+<option value="ALL">Category: All Sports</option>
+<option value="Fireworks">Fireworks (Bats, Pads, Balls)</option>
+<option value="Fireworks">Fireworks (Boots, Balls)</option>
+<option value="Fireworks">Fireworks (Rackets, Cans)</option>
+<option value="Fireworks">Fireworks (Carbon Frames)</option>
+<option value="Fitness">Fitness &amp; Conditioning</option>
+</select>
+<!-- Brand Filter -->
+<select class="bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-300 focus:border-brand-500 focus:outline-none cursor-pointer" id="filter-brand" onchange="filterTable()">
+<option value="ALL">Brand: All Labels</option>
+<option value="SS Ton">SS Ton</option>
+<option value="SG">SG (Sanspareils Greenlands)</option>
+<option value="Kookaburra">Kookaburra Sport</option>
+<option value="DSC">DSC Fireworks</option>
+<option value="Yonex">Yonex Pro</option>
+<option value="Nike">Nike Festives</option>
+</select>
+<!-- Sort By -->
+<select class="bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-300 focus:border-brand-500 focus:outline-none cursor-pointer">
+<option>Sort: Recently Updated</option>
+<option>Price: High to Low</option>
+<option>Price: Low to High</option>
+<option>Stock: Lowest First</option>
+<option>Units Sold (Velocity)</option>
+</select>
+<!-- Clear Filters -->
+<button class="text-xs text-slate-400 hover:text-brand-500 px-2 py-2 flex items-center gap-1 shrink-0 font-medium" onclick="clearAllFilters()">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset</span>
+</button>
+</div>
+</div>
+<!-- Filter Tags Strip -->
+<div class="flex items-center gap-2 pt-2 border-t border-slate-800/80 text-[11px] text-slate-400 flex-wrap">
+<span class="font-semibold text-slate-400 uppercase tracking-wider text-[10px]">Active Filters:</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-slate-800 text-slate-200 border border-slate-700">
+            Channel: Storefront Live
+            <button class="hover:text-brand-500"><span class="material-symbols-outlined text-[12px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-slate-800 text-slate-200 border border-slate-700">
+            In Stock &gt; 0
+            <button class="hover:text-brand-500"><span class="material-symbols-outlined text-[12px]">close</span></button>
+</span>
+<span class="text-slate-400 ml-auto">Showing <span class="text-white font-bold" id="item-count">6</span> of 2,486 items</span>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 6. BULK ACTIONS FLOATING CONSOLE (Shows when rows selected)    -->
+<!-- ============================================================== -->
+<div class="hidden bg-slate-900 border border-brand-500/40 shadow-xl shadow-brand-500/10 rounded-xl p-3 flex flex-wrap items-center justify-between gap-3 transition-all animate-in fade-in slide-in-from-top-2" id="bulk-bar">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-lg bg-brand-500 text-white flex items-center justify-center font-bold text-xs" id="selected-count">2</span>
+<span class="text-xs font-semibold text-slate-200">Products selected across catalog</span>
+<span class="text-xs text-slate-500">•</span>
+<button class="text-xs text-brand-500 hover:underline font-medium" onclick="selectAllRows(false)">Deselect All</button>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<button class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700 flex items-center gap-1.5" onclick="bulkStatus('Active')">
+<span class="material-symbols-outlined text-[16px] text-emerald-400">check_circle</span>
+<span>Set Active</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700 flex items-center gap-1.5" onclick="bulkStatus('Draft')">
+<span class="material-symbols-outlined text-[16px] text-amber-400">edit_note</span>
+<span>Move to Draft</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700 flex items-center gap-1.5" onclick="openModal('bulk-price-modal')">
+<span class="material-symbols-outlined text-[16px] text-blue-400">currency_rupee</span>
+<span>Adjust Pricing</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-brand-500/20 hover:bg-brand-500/30 text-brand-500 border border-brand-500/40 text-xs font-medium flex items-center gap-1.5" onclick="openModal('bulk-delete-modal')">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Delete Selected</span>
+</button>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 7. MAIN PRODUCT DATA TABLE                                     -->
+<!-- ============================================================== -->
+<div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left text-xs" id="product-table">
+<!-- Table Header -->
+<thead class="bg-slate-950/70 border-b border-slate-800 text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+<tr>
+<th class="py-3.5 pl-4 pr-2 w-10">
+<input class="rounded bg-slate-900 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-slate-900 w-3.5 h-3.5 cursor-pointer" id="select-all-header" onchange="toggleSelectAll(this)" type="checkbox"/>
+</th>
+<th class="py-3.5 px-3">Product Name &amp; Spec</th>
+<th class="py-3.5 px-3">SKU &amp; Barcode</th>
+<th class="py-3.5 px-3">Category</th>
+<th class="py-3.5 px-3 text-right">Selling Price</th>
+<th class="py-3.5 px-3 text-center">Stock Level</th>
+<th class="py-3.5 px-3 text-center">Status</th>
+<th class="py-3.5 px-3">Last Telemetry</th>
+<th class="py-3.5 pr-4 pl-2 text-right">Actions</th>
+</tr>
+</thead>
+<!-- Table Rows -->
+<tbody class="divide-y divide-slate-800/80 text-slate-300" id="table-body">
+<!-- ROW 1 -->
+<tr class="hover:bg-slate-800/40 transition-colors group cursor-pointer" onclick="handleRowClick(event, 'drawer-prod-1')">
+<td class="py-3.5 pl-4 pr-2">
+<input class="row-checkbox rounded bg-slate-900 border-slate-700 text-brand-500 focus:ring-brand-500 w-3.5 h-3.5" onclick="event.stopPropagation(); updateSelectionState();" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 overflow-hidden flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-brand-500 text-[22px]">local_fire_department</span>
+</div>
+<div>
+<div class="font-semibold text-slate-100 group-hover:text-brand-500 transition-colors text-xs flex items-center gap-1.5">
+<span>SS Ton Reserve Edition English Sparkler Bat</span>
+<span class="px-1.5 py-0.2 rounded bg-brand-500/20 text-brand-500 text-[10px] font-bold">Grade 1+</span>
+</div>
+<div class="text-[11px] text-slate-400 mt-0.5 flex items-center gap-2">
+<span>Brand: SS Ton</span>
+<span>•</span>
+<span>4 Variants (Weights: 1160g–1210g)</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 font-mono text-[11px] text-slate-400">
+<div class="text-slate-300 font-semibold">SS-TON-RES-001</div>
+<div class="text-[10px] text-slate-400">8901234567891</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 text-[11px]">Fireworks / Sparkler Bats</span>
+</td>
+<td class="py-3.5 px-3 text-right">
+<div class="font-bold text-slate-100">₹42,999</div>
+<div class="text-[10px] text-slate-400 line-through">₹48,000</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-bold text-emerald-400">28 pcs</span>
+<div class="text-[10px] text-slate-400">Bench Knocked</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Active
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-slate-400 text-[11px]">
+<div>Today, 11:32 AM</div>
+<div class="text-[10px] text-slate-400">by Raghav A.</div>
+</td>
+<td class="py-3.5 pr-4 pl-2 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800" onclick="openDrawer('drawer-prod-1')" title="Quick Drawer View">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded text-slate-400 hover:text-brand-500 hover:bg-slate-800" onclick="openModal('add-product-modal')" title="Edit Spec">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800" title="More Actions">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2 -->
+<tr class="hover:bg-slate-800/40 transition-colors group cursor-pointer" onclick="handleRowClick(event, 'drawer-prod-2')">
+<td class="py-3.5 pl-4 pr-2">
+<input class="row-checkbox rounded bg-slate-900 border-slate-700 text-brand-500 focus:ring-brand-500 w-3.5 h-3.5" onclick="event.stopPropagation(); updateSelectionState();" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 overflow-hidden flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-blue-400 text-[22px]">sports_soccer</span>
+</div>
+<div>
+<div class="font-semibold text-slate-100 group-hover:text-brand-500 transition-colors text-xs flex items-center gap-1.5">
+<span>Nike Mercurial Vapor 15 Elite FG Studs</span>
+<span class="px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-400 text-[10px] font-bold">Pro Pitch</span>
+</div>
+<div class="text-[11px] text-slate-400 mt-0.5 flex items-center gap-2">
+<span>Brand: Nike Festives</span>
+<span>•</span>
+<span>6 Size Variants (UK 6 to 11)</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 font-mono text-[11px] text-slate-400">
+<div class="text-slate-300 font-semibold">NK-MERC-V15-FG</div>
+<div class="text-[10px] text-slate-400">8909876543212</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 text-[11px]">Fireworks / Boots &amp; Studs</span>
+</td>
+<td class="py-3.5 px-3 text-right">
+<div class="font-bold text-slate-100">₹21,495</div>
+<div class="text-[10px] text-slate-400 line-through">₹24,999</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-bold text-amber-400">4 left</span>
+<div class="text-[10px] text-amber-500 font-semibold">Low Stock Alert</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Low Stock
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-slate-400 text-[11px]">
+<div>Yesterday, 06:14 PM</div>
+<div class="text-[10px] text-slate-400">Stock Deducted (Order)</div>
+</td>
+<td class="py-3.5 pr-4 pl-2 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800" onclick="openDrawer('drawer-prod-2')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded text-slate-400 hover:text-brand-500 hover:bg-slate-800" onclick="openModal('add-product-modal')">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3 -->
+<tr class="hover:bg-slate-800/40 transition-colors group cursor-pointer" onclick="handleRowClick(event, 'drawer-prod-1')">
+<td class="py-3.5 pl-4 pr-2">
+<input class="row-checkbox rounded bg-slate-900 border-slate-700 text-brand-500 focus:ring-brand-500 w-3.5 h-3.5" onclick="event.stopPropagation(); updateSelectionState();" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 overflow-hidden flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-amber-400 text-[22px]">local_fire_department</span>
+</div>
+<div>
+<div class="font-semibold text-slate-100 group-hover:text-brand-500 transition-colors text-xs flex items-center gap-1.5">
+<span>Yonex Astrox 99 Pro Graphite Fireworks Racket</span>
+<span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-400 text-[10px] font-bold">Namd Carbon</span>
+</div>
+<div class="text-[11px] text-slate-400 mt-0.5 flex items-center gap-2">
+<span>Brand: Yonex</span>
+<span>•</span>
+<span>White Tiger (4U / G5)</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 font-mono text-[11px] text-slate-400">
+<div class="text-slate-300 font-semibold">YNX-AX99-WT-4U</div>
+<div class="text-[10px] text-slate-400">8905544332211</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 text-[11px]">Fireworks / Rackets</span>
+</td>
+<td class="py-3.5 px-3 text-right">
+<div class="font-bold text-slate-100">₹18,490</div>
+<div class="text-[10px] text-slate-400 line-through">₹20,900</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-bold text-emerald-400">19 pcs</span>
+<div class="text-[10px] text-slate-400">Pre-strung 28 lbs</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Active
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-slate-400 text-[11px]">
+<div>Oct 03, 02:40 PM</div>
+<div class="text-[10px] text-slate-400">Grip Specs Updated</div>
+</td>
+<td class="py-3.5 pr-4 pl-2 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800" onclick="openDrawer('drawer-prod-1')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded text-slate-400 hover:text-brand-500 hover:bg-slate-800" onclick="openModal('add-product-modal')">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4 -->
+<tr class="hover:bg-slate-800/40 transition-colors group cursor-pointer" onclick="handleRowClick(event, 'drawer-prod-1')">
+<td class="py-3.5 pl-4 pr-2">
+<input class="row-checkbox rounded bg-slate-900 border-slate-700 text-brand-500 focus:ring-brand-500 w-3.5 h-3.5" onclick="event.stopPropagation(); updateSelectionState();" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 overflow-hidden flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-brand-500 text-[22px]">shield</span>
+</div>
+<div>
+<div class="font-semibold text-slate-100 group-hover:text-brand-500 transition-colors text-xs flex items-center gap-1.5">
+<span>SG Test Pro Batting Leg Guards (Pads)</span>
+<span class="px-1.5 py-0.2 rounded bg-slate-700 text-slate-300 text-[10px] font-bold">BCCI Approved</span>
+</div>
+<div class="text-[11px] text-slate-400 mt-0.5 flex items-center gap-2">
+<span>Brand: SG</span>
+<span>•</span>
+<span>Adult / Men's Right Hand</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 font-mono text-[11px] text-slate-400">
+<div class="text-slate-300 font-semibold">SG-LEG-PRO-RH</div>
+<div class="text-[10px] text-slate-400">8906677889900</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 text-[11px]">Fireworks / Protection</span>
+</td>
+<td class="py-3.5 px-3 text-right">
+<div class="font-bold text-slate-100">₹6,850</div>
+<div class="text-[10px] text-slate-400 line-through">₹7,999</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-bold text-emerald-400">45 pairs</span>
+<div class="text-[10px] text-slate-400">High-Density Foam</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Active
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-slate-400 text-[11px]">
+<div>Oct 01, 10:15 AM</div>
+<div class="text-[10px] text-slate-400">Bulk Restock Batch</div>
+</td>
+<td class="py-3.5 pr-4 pl-2 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800" onclick="openDrawer('drawer-prod-1')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded text-slate-400 hover:text-brand-500 hover:bg-slate-800" onclick="openModal('add-product-modal')">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5 (Out of Stock) -->
+<tr class="hover:bg-slate-800/40 transition-colors group cursor-pointer bg-red-950/10" onclick="handleRowClick(event, 'drawer-prod-1')">
+<td class="py-3.5 pl-4 pr-2">
+<input class="row-checkbox rounded bg-slate-900 border-slate-700 text-brand-500 focus:ring-brand-500 w-3.5 h-3.5" onclick="event.stopPropagation(); updateSelectionState();" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 overflow-hidden flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-brand-500 text-[22px]">local_fire_department</span>
+</div>
+<div>
+<div class="font-semibold text-slate-100 group-hover:text-brand-500 transition-colors text-xs flex items-center gap-1.5">
+<span>Kookaburra Kahuna Pro Limited Bat</span>
+<span class="px-1.5 py-0.2 rounded bg-red-500/20 text-red-400 text-[10px] font-bold">Sold Out</span>
+</div>
+<div class="text-[11px] text-slate-400 mt-0.5 flex items-center gap-2">
+<span>Brand: Kookaburra</span>
+<span>•</span>
+<span>Full Concave Spine Profile</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 font-mono text-[11px] text-slate-400">
+<div class="text-slate-300 font-semibold">KB-KAH-PRO-2026</div>
+<div class="text-[10px] text-slate-400">8907788991122</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 text-[11px]">Fireworks / Sparkler Bats</span>
+</td>
+<td class="py-3.5 px-3 text-right">
+<div class="font-bold text-slate-100">₹54,000</div>
+<div class="text-[10px] text-slate-400 line-through">₹59,999</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-bold text-brand-500">0 pcs</span>
+<div class="text-[10px] text-brand-500 font-semibold">Out of Stock</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-red-500/10 text-red-400 border border-red-500/20">
+<span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> Out of Stock
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-slate-400 text-[11px]">
+<div>Sep 29, 04:22 PM</div>
+<div class="text-[10px] text-slate-400">Waitlist Alert (38)</div>
+</td>
+<td class="py-3.5 pr-4 pl-2 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800" onclick="openDrawer('drawer-prod-1')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded text-slate-400 hover:text-brand-500 hover:bg-slate-800" onclick="openModal('add-product-modal')">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 6 (Draft) -->
+<tr class="hover:bg-slate-800/40 transition-colors group cursor-pointer" onclick="handleRowClick(event, 'drawer-prod-1')">
+<td class="py-3.5 pl-4 pr-2">
+<input class="row-checkbox rounded bg-slate-900 border-slate-700 text-brand-500 focus:ring-brand-500 w-3.5 h-3.5" onclick="event.stopPropagation(); updateSelectionState();" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 overflow-hidden flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-purple-400 text-[22px]">fitness_center</span>
+</div>
+<div>
+<div class="font-semibold text-slate-100 group-hover:text-brand-500 transition-colors text-xs flex items-center gap-1.5">
+<span>RT Speed &amp; Agility Academy Training Kit</span>
+<span class="px-1.5 py-0.2 rounded bg-purple-500/20 text-purple-400 text-[10px] font-bold">Staging</span>
+</div>
+<div class="text-[11px] text-slate-400 mt-0.5 flex items-center gap-2">
+<span>Brand: RT Festives</span>
+<span>•</span>
+<span>Includes ladder, 20 cones, resistance</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 font-mono text-[11px] text-slate-400">
+<div class="text-slate-300 font-semibold">RT-AGIL-KIT-01</div>
+<div class="text-[10px] text-slate-400">8909988776655</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 text-[11px]">Fitness / Speed Conditioning</span>
+</td>
+<td class="py-3.5 px-3 text-right">
+<div class="font-bold text-slate-100">₹3,499</div>
+<div class="text-[10px] text-slate-400 line-through">₹4,200</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-bold text-slate-300">120 kits</span>
+<div class="text-[10px] text-slate-400">Warehouse Dock 3</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-slate-700/60 text-slate-300 border border-slate-600">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> Draft
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-slate-400 text-[11px]">
+<div>Sep 27, 12:00 PM</div>
+<div class="text-[10px] text-slate-400">Images Pending Upload</div>
+</td>
+<td class="py-3.5 pr-4 pl-2 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800" onclick="openDrawer('drawer-prod-1')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded text-slate-400 hover:text-brand-500 hover:bg-slate-800" onclick="openModal('add-product-modal')">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-slate-400 hover:text-white hover:bg-slate-800">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination Controls -->
+<div class="px-4 py-3.5 bg-slate-950/80 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+<div class="flex items-center gap-3">
+<span>Showing <span class="font-semibold text-white">1–6</span> of <span class="font-semibold text-white">2,486</span> items</span>
+<div class="flex items-center gap-1.5">
+<span>Per page:</span>
+<select class="bg-slate-900 border border-slate-800 rounded px-2 py-1 text-slate-300 focus:outline-none">
+<option>25</option>
+<option>50</option>
+<option>100</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded bg-slate-800 text-slate-400 hover:text-white disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="w-7 h-7 rounded bg-brand-500 text-white font-bold flex items-center justify-center text-xs">1</button>
+<button class="w-7 h-7 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 flex items-center justify-center text-xs">2</button>
+<button class="w-7 h-7 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 flex items-center justify-center text-xs">3</button>
+<span class="px-1 text-slate-600">...</span>
+<button class="w-7 h-7 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 flex items-center justify-center text-xs">99</button>
+<button class="p-1.5 rounded bg-slate-800 text-slate-400 hover:text-white">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Compact Admin Footer -->
+<div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-slate-400">RTCrackers Admin Suite</span>
+<span>•</span>
+<span>© 2026 RTCrackers Festives Ltd. Confidential &amp; Protected.</span>
+</div>
+<div class="flex items-center gap-4">
+<a class="hover:text-slate-300" href="#">Catalog API Docs</a>
+<a class="hover:text-slate-300" href="#">Sparkler Matrix Standards</a>
+<a class="hover:text-slate-300" href="#">Security Audit Logs</a>
+<a class="hover:text-slate-300" href="#">Help Desk (7358737658)</a>
+</div>
+</div>
+</main>
+</div>
+<!-- ============================================================== -->
+<!-- 8. QUICK-VIEW PRODUCT DETAIL DRAWER                            -->
+<!-- ============================================================== -->
+<div aria-labelledby="slide-over-title" aria-modal="true" class="fixed inset-0 z-50 overflow-hidden hidden" id="drawer-prod-1" role="dialog">
+<div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="closeDrawer('drawer-prod-1')"></div>
+<div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+<div class="pointer-events-auto w-screen max-w-xl bg-slate-900 border-l border-slate-800 shadow-2xl flex flex-col">
+<!-- Drawer Header -->
+<div class="p-5 border-b border-slate-800 bg-slate-950/60 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded bg-brand-500/20 text-brand-500 text-[10px] font-bold uppercase tracking-wider border border-brand-500/30">Catalog Quick-Spec</span>
+<span class="text-xs text-slate-400 font-mono">ID: #PROD-84201</span>
+</div>
+<button class="text-slate-400 hover:text-white p-1 rounded-md hover:bg-slate-800" onclick="closeDrawer('drawer-prod-1')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Content Body -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Product Hero Summary -->
+<div class="flex gap-4 items-start">
+<div class="w-20 h-20 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-brand-500 text-[36px]">local_fire_department</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-emerald-400 text-xs font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Active Published
+                </span>
+<span class="text-slate-600">•</span>
+<span class="text-xs text-slate-400 font-mono">SKU: SS-TON-RES-001</span>
+</div>
+<h2 class="text-base font-bold text-white leading-snug">SS Ton Reserve Edition English Sparkler Bat</h2>
+<div class="text-xs text-slate-400">Category: <span class="text-slate-200">Fireworks / Bats</span> | Brand: <span class="text-brand-500 font-semibold">SS Ton</span></div>
+<div class="flex items-baseline gap-2 pt-1">
+<span class="text-xl font-bold font-display text-white">₹42,999</span>
+<span class="text-xs text-slate-500 line-through">₹48,000</span>
+<span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-1.5 py-0.2 rounded">10.4% OFF</span>
+</div>
+</div>
+</div>
+<!-- Quick Metrics Bar -->
+<div class="grid grid-cols-3 gap-3 p-3 rounded-xl bg-slate-950 border border-slate-800 text-center">
+<div>
+<span class="text-[10px] text-slate-400 uppercase tracking-wider block">Live Stock</span>
+<span class="text-base font-bold text-emerald-400">28 pcs</span>
+</div>
+<div class="border-x border-slate-800">
+<span class="text-[10px] text-slate-400 uppercase tracking-wider block">Units Sold (30D)</span>
+<span class="text-base font-bold text-white">142</span>
+</div>
+<div>
+<span class="text-[10px] text-slate-400 uppercase tracking-wider block">Gross Revenue</span>
+<span class="text-base font-bold text-white">₹61,05,858</span>
+</div>
+</div>
+<!-- Technical Sparkler Specs Matrix -->
+<div class="space-y-3">
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Master Grade Telemetry</h3>
+<div class="bg-slate-950 rounded-xl border border-slate-800 divide-y divide-slate-800/80 text-xs">
+<div class="p-2.5 flex justify-between">
+<span class="text-slate-400">Sparkler Classification</span>
+<span class="font-semibold text-white">Grade 1+ Limited Reserve Cleft</span>
+</div>
+<div class="p-2.5 flex justify-between">
+<span class="text-slate-400">Grains Count</span>
+<span class="font-semibold text-white">9 to 11 Straight Unblemished Grains</span>
+</div>
+<div class="p-2.5 flex justify-between">
+<span class="text-slate-400">Edge Thickness</span>
+<span class="font-semibold text-white">40mm – 42mm Contoured Edges</span>
+</div>
+<div class="p-2.5 flex justify-between">
+<span class="text-slate-400">Spine Profile</span>
+<span class="font-semibold text-white">65mm Full Duckbill Spine</span>
+</div>
+<div class="p-2.5 flex justify-between">
+<span class="text-slate-400">Handle Type</span>
+<span class="font-semibold text-white">12-piece Sarawak Cane Semi-Oval</span>
+</div>
+<div class="p-2.5 flex justify-between">
+<span class="text-slate-400">Knocking Status</span>
+<span class="font-semibold text-brand-500">15,000 Strikes + Raw Linseed Oiled</span>
+</div>
+</div>
+</div>
+<!-- Variants Table -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Weight &amp; Size Variants (4)</h3>
+<span class="text-[11px] text-brand-500 cursor-pointer hover:underline font-semibold">+ Add Variant</span>
+</div>
+<div class="bg-slate-950 rounded-xl border border-slate-800 overflow-hidden text-xs">
+<table class="w-full text-left">
+<thead class="bg-slate-900/60 border-b border-slate-800 text-[10px] text-slate-400 uppercase">
+<tr>
+<th class="p-2.5">Variant</th>
+<th class="p-2.5">SKU</th>
+<th class="p-2.5 text-right">Stock</th>
+<th class="p-2.5 text-center">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-800/60 text-slate-300">
+<tr>
+<td class="p-2.5 font-medium">SH / 1160g (Feather Light)</td>
+<td class="p-2.5 font-mono text-[10px] text-slate-400">SS-RES-SH-1160</td>
+<td class="p-2.5 text-right font-bold text-emerald-400">8</td>
+<td class="p-2.5 text-center"><span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded">Active</span></td>
+</tr>
+<tr>
+<td class="p-2.5 font-medium">SH / 1180g (Festival Spec)</td>
+<td class="p-2.5 font-mono text-[10px] text-slate-400">SS-RES-SH-1180</td>
+<td class="p-2.5 text-right font-bold text-emerald-400">14</td>
+<td class="p-2.5 text-center"><span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded">Active</span></td>
+</tr>
+<tr>
+<td class="p-2.5 font-medium">SH / 1210g (Power Profile)</td>
+<td class="p-2.5 font-mono text-[10px] text-slate-400">SS-RES-SH-1210</td>
+<td class="p-2.5 text-right font-bold text-emerald-400">6</td>
+<td class="p-2.5 text-center"><span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded">Active</span></td>
+</tr>
+<tr>
+<td class="p-2.5 font-medium">LH / 1190g (Long Handle)</td>
+<td class="p-2.5 font-mono text-[10px] text-slate-400">SS-RES-LH-1190</td>
+<td class="p-2.5 text-right font-bold text-brand-500">0</td>
+<td class="p-2.5 text-center"><span class="text-[10px] bg-red-500/10 text-red-400 px-1.5 py-0.5 rounded">Out</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Audit Timeline Preview -->
+<div class="space-y-3">
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Recent Admin Activity</h3>
+<div class="space-y-2 border-l border-slate-800 ml-2 pl-4 text-xs">
+<div class="relative">
+<span class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-brand-500 ring-4 ring-slate-900"></span>
+<p class="font-medium text-slate-200">Selling Price updated from ₹44,999 to ₹42,999</p>
+<span class="text-[10px] text-slate-400">Today, 11:32 AM by Raghav A.</span>
+</div>
+<div class="relative">
+<span class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-slate-900"></span>
+<p class="font-medium text-slate-200">Batch restock verified (+10 bats into Bangalore Depot)</p>
+<span class="text-[10px] text-slate-400">Yesterday, 04:15 PM by Suresh K. (Logistics)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer Controls -->
+<div class="p-4 border-t border-slate-800 bg-slate-950 flex items-center justify-between gap-3">
+<button class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold" onclick="closeDrawer('drawer-prod-1')">
+            Close
+          </button>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 text-xs font-semibold flex items-center gap-1.5" onclick="openModal('add-product-modal'); closeDrawer('drawer-prod-1');">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit Product</span>
+</button>
+<a class="px-4 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 text-white text-xs font-semibold flex items-center gap-1.5 shadow-md shadow-brand-500/20" href="#" target="_blank">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+<span>View on Store</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 9. ADD / EDIT PRODUCT MULTI-STEP MODAL WORKFLOW                -->
+<!-- ============================================================== -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 overflow-y-auto hidden" id="add-product-modal" role="dialog">
+<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+<div class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="closeModal('add-product-modal')"></div>
+<span aria-hidden="true" class="hidden sm:inline-block sm:align-middle sm:h-screen">​</span>
+<!-- Modal Card -->
+<div class="inline-block align-bottom bg-slate-900 border border-slate-800 rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+<!-- Modal Top Bar -->
+<div class="px-6 py-4 border-b border-slate-800 bg-slate-950 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-brand-500 text-white flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">add_box</span>
+</div>
+<div>
+<h2 class="text-sm font-bold text-white uppercase tracking-wide font-display">Product Configuration Studio</h2>
+<p class="text-[11px] text-slate-400">Configure catalog spec, sparkler telemetry, stock, and media assets</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-white p-1 rounded-md hover:bg-slate-800" onclick="closeModal('add-product-modal')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Multi-Step Navigation Strip -->
+<div class="px-6 py-3 bg-slate-950/60 border-b border-slate-800 flex items-center justify-between overflow-x-auto text-xs font-medium">
+<div class="flex items-center gap-6 shrink-0">
+<button class="text-brand-500 font-bold flex items-center gap-1.5 border-b-2 border-brand-500 pb-1">
+<span class="w-5 h-5 rounded-full bg-brand-500 text-white text-[11px] flex items-center justify-center">1</span>
+<span>General Info</span>
+</button>
+<button class="text-slate-400 hover:text-slate-200 flex items-center gap-1.5 pb-1">
+<span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 text-[11px] flex items-center justify-center">2</span>
+<span>Pricing &amp; Tax</span>
+</button>
+<button class="text-slate-400 hover:text-slate-200 flex items-center gap-1.5 pb-1">
+<span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 text-[11px] flex items-center justify-center">3</span>
+<span>Sparkler &amp; Specs</span>
+</button>
+<button class="text-slate-400 hover:text-slate-200 flex items-center gap-1.5 pb-1">
+<span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 text-[11px] flex items-center justify-center">4</span>
+<span>Media &amp; Photos</span>
+</button>
+<button class="text-slate-400 hover:text-slate-200 flex items-center gap-1.5 pb-1">
+<span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 text-[11px] flex items-center justify-center">5</span>
+<span>Variants</span>
+</button>
+<button class="text-slate-400 hover:text-slate-200 flex items-center gap-1.5 pb-1">
+<span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 text-[11px] flex items-center justify-center">6</span>
+<span>Review &amp; Publish</span>
+</button>
+</div>
+</div>
+<!-- Form Body -->
+<div class="p-6 space-y-6 max-h-[65vh] overflow-y-auto text-xs">
+<!-- Step 1: Basic Information -->
+<div class="space-y-4">
+<h3 class="text-xs font-bold uppercase tracking-wider text-brand-500">01. Basic Information</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="sm:col-span-2 space-y-1">
+<label class="block text-slate-300 font-semibold">Product Title <span class="text-brand-500">*</span></label>
+<input class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none" type="text" value="SS Ton Reserve Edition English Sparkler Bat"/>
+</div>
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Primary Category <span class="text-brand-500">*</span></label>
+<select class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none">
+<option selected="">Fireworks</option>
+<option>Fireworks</option>
+<option>Fireworks</option>
+<option>Fireworks</option>
+<option>Fitness</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Sub-Category</label>
+<select class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none">
+<option selected="">English Sparkler Bats</option>
+<option>Kashmir Sparkler Bats</option>
+<option>Batting Leg Guards</option>
+<option>Batting Gloves</option>
+<option>Helmets &amp; Armor</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Brand / Manufacturer <span class="text-brand-500">*</span></label>
+<select class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none">
+<option selected="">SS Ton</option>
+<option>SG</option>
+<option>Kookaburra</option>
+<option>DSC</option>
+<option>Yonex</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Master SKU <span class="text-brand-500">*</span></label>
+<input class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 font-mono focus:border-brand-500 focus:outline-none" type="text" value="SS-TON-RES-001"/>
+</div>
+</div>
+<!-- Description Textarea -->
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Detailed Product Description &amp; Grain Profile</label>
+<textarea class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none" rows="3">The SS Ton Reserve Edition represents the pinnacle of handcrafted fireworks sparkler. Hand-selected Grade 1+ English cleft featuring straight, unbleached grains with massive 40mm contoured edges and light pickup.</textarea>
+</div>
+</div>
+<!-- Step 2: Pricing, MRP & Tax -->
+<div class="space-y-4 pt-4 border-t border-slate-800">
+<h3 class="text-xs font-bold uppercase tracking-wider text-brand-500">02. Financial &amp; Tax Configuration</h3>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Selling Price (INR) <span class="text-brand-500">*</span></label>
+<div class="relative">
+<span class="absolute left-3 top-2 text-slate-500">₹</span>
+<input class="w-full bg-slate-950 border border-slate-800 rounded-lg pl-7 pr-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none" type="number" value="42999"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Maximum Retail Price (MRP)</label>
+<div class="relative">
+<span class="absolute left-3 top-2 text-slate-500">₹</span>
+<input class="w-full bg-slate-950 border border-slate-800 rounded-lg pl-7 pr-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none" type="number" value="48000"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Cost of Goods (Internal Only)</label>
+<div class="relative">
+<span class="absolute left-3 top-2 text-slate-500">₹</span>
+<input class="w-full bg-slate-950 border border-slate-800 rounded-lg pl-7 pr-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none" type="number" value="28500"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Media Upload Area -->
+<div class="space-y-4 pt-4 border-t border-slate-800">
+<h3 class="text-xs font-bold uppercase tracking-wider text-brand-500">03. High-Resolution Media &amp; Holograms</h3>
+<div class="border-2 border-dashed border-slate-800 hover:border-brand-500/50 rounded-xl p-6 text-center cursor-pointer transition-colors bg-slate-950/40">
+<span class="material-symbols-outlined text-brand-500 text-[36px] mb-2">add_photo_alternate</span>
+<p class="text-xs font-semibold text-slate-200">Drag &amp; drop product imagery, grain close-ups, or 360° spin renders</p>
+<p class="text-[11px] text-slate-500 mt-1">Supports PNG, JPG, WEBP up to 10MB per file</p>
+</div>
+<!-- Uploaded Image Thumbs Preview -->
+<div class="grid grid-cols-4 gap-3">
+<div class="relative rounded-lg border border-brand-500/60 p-1 bg-slate-950 flex flex-col items-center">
+<div class="w-full h-16 bg-slate-800 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-brand-500 text-[24px]">local_fire_department</span>
+</div>
+<span class="absolute top-2 left-2 bg-brand-500 text-white text-[9px] font-bold px-1.5 rounded">PRIMARY</span>
+<span class="text-[10px] text-slate-400 mt-1 truncate max-w-full">Bat_Full_View.jpg</span>
+</div>
+<div class="relative rounded-lg border border-slate-800 p-1 bg-slate-950 flex flex-col items-center">
+<div class="w-full h-16 bg-slate-800 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400 text-[24px]">zoom_in</span>
+</div>
+<span class="text-[10px] text-slate-400 mt-1 truncate max-w-full">Grain_Telemetry.jpg</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer Controls -->
+<div class="px-6 py-4 border-t border-slate-800 bg-slate-950 flex items-center justify-between">
+<button class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-xs" onclick="closeModal('add-product-modal')">
+            Cancel &amp; Discard
+          </button>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-medium text-xs">
+              Save as Staging Draft
+            </button>
+<button class="px-5 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs shadow-lg shadow-brand-500/30 flex items-center gap-1.5" onclick="submitProductSuccess()">
+<span class="material-symbols-outlined text-[16px]">publish</span>
+<span>Publish Product Live</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 10. BULK DELETE CONFIRMATION MODAL                             -->
+<!-- ============================================================== -->
+<div aria-modal="true" class="fixed inset-0 z-50 overflow-y-auto hidden" id="bulk-delete-modal" role="dialog">
+<div class="flex items-center justify-center min-h-screen px-4">
+<div class="fixed inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal('bulk-delete-modal')"></div>
+<div class="relative bg-slate-900 border border-slate-800 rounded-2xl max-w-md w-full p-6 text-left shadow-2xl z-10 space-y-4">
+<div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">delete_forever</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-white">Delete Selected Products?</h3>
+<p class="text-xs text-slate-400 mt-1">You are about to delete <span class="text-white font-bold" id="delete-count-display">2</span> catalog items. Products with historical orders will be converted to <strong class="text-slate-200">Archived</strong> status to preserve transaction integrity.</p>
+</div>
+<div class="pt-2 flex items-center justify-end gap-2.5">
+<button class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium" onclick="closeModal('bulk-delete-modal')">Cancel</button>
+<button class="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-md shadow-red-600/30" onclick="confirmBulkDelete()">Confirm Delete / Archive</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 11. IMPORT CSV MODAL                                           -->
+<!-- ============================================================== -->
+<div aria-modal="true" class="fixed inset-0 z-50 overflow-y-auto hidden" id="import-modal" role="dialog">
+<div class="flex items-center justify-center min-h-screen px-4">
+<div class="fixed inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal('import-modal')"></div>
+<div class="relative bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 text-left shadow-2xl z-10 space-y-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-brand-500 text-[24px]">file_upload</span>
+<h3 class="text-sm font-bold text-white font-display uppercase tracking-wide">Import Product Catalog (CSV/XLSX)</h3>
+</div>
+<button class="text-slate-400 hover:text-white" onclick="closeModal('import-modal')"><span class="material-symbols-outlined text-[20px]">close</span></button>
+</div>
+<div class="border-2 border-dashed border-slate-800 hover:border-brand-500/50 rounded-xl p-8 text-center cursor-pointer bg-slate-950/40">
+<span class="material-symbols-outlined text-slate-500 text-[36px] mb-2">upload_file</span>
+<p class="text-xs font-semibold text-slate-200">Select or drag CSV catalog spreadsheet</p>
+<p class="text-[11px] text-slate-500 mt-1">Complies with RTCrackers Sparkler &amp; Multi-Variant schema</p>
+</div>
+<div class="flex items-center justify-between text-xs text-slate-400">
+<a class="text-brand-500 hover:underline flex items-center gap-1 font-semibold" href="#">
+<span class="material-symbols-outlined text-[16px]">download</span> Download Sample CSV Template
+          </a>
+<span>Max 15MB file size</span>
+</div>
+<div class="pt-3 border-t border-slate-800 flex justify-end gap-2">
+<button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium" onclick="closeModal('import-modal')">Cancel</button>
+<button class="px-4 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 text-white text-xs font-bold" onclick="alert('Import validation queued: 240 rows parsed successfully.'); closeModal('import-modal');">Start Batch Import</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 12. INTERACTION JAVASCRIPT CONTROLLERS                         -->
+<!-- ============================================================== -->
+<script>
+    // Toggle Mobile Sidebar
+    function toggleSidebar() {
+      const sb = document.getElementById('admin-sidebar');
+      sb.classList.toggle('-translate-x-full');
+      sb.classList.toggle('fixed');
+      sb.classList.toggle('inset-y-0');
+      sb.classList.toggle('left-0');
+    }
+
+    // Modal helpers
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    // Quick-View Drawer Helpers
+    function openDrawer(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function closeDrawer(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+    function handleRowClick(event, drawerId) {
+      // Don't trigger if clicked on checkbox or buttons
+      if (event.target.tagName.toLowerCase() === 'input' || event.target.closest('button')) {
+        return;
+      }
+      openDrawer(drawerId);
+    }
+
+    // Selection & Bulk Toolbar logic
+    function toggleSelectAll(master) {
+      const boxes = document.querySelectorAll('.row-checkbox');
+      boxes.forEach(b => b.checked = master.checked);
+      updateSelectionState();
+    }
+    function updateSelectionState() {
+      const boxes = document.querySelectorAll('.row-checkbox:checked');
+      const count = boxes.length;
+      const bar = document.getElementById('bulk-bar');
+      const countLabel = document.getElementById('selected-count');
+      const delLabel = document.getElementById('delete-count-display');
+
+      if (count > 0) {
+        bar.classList.remove('hidden');
+        countLabel.textContent = count;
+        if (delLabel) delLabel.textContent = count;
+      } else {
+        bar.classList.add('hidden');
+      }
+    }
+    function selectAllRows(status) {
+      const boxes = document.querySelectorAll('.row-checkbox');
+      boxes.forEach(b => b.checked = status);
+      const master = document.getElementById('select-all-header');
+      if (master) master.checked = status;
+      updateSelectionState();
+    }
+
+    // Filter Logic
+    function filterTable() {
+      const searchVal = document.getElementById('product-search').value.toLowerCase();
+      const statusVal = document.getElementById('filter-status').value;
+      const catVal = document.getElementById('filter-category').value;
+      const rows = document.querySelectorAll('#table-body tr');
+
+      let visibleCount = 0;
+      rows.forEach(r => {
+        const text = r.textContent.toLowerCase();
+        const matchesSearch = text.includes(searchVal);
+        const matchesStatus = (statusVal === 'ALL') || text.includes(statusVal.toLowerCase());
+        const matchesCat = (catVal === 'ALL') || text.includes(catVal.toLowerCase());
+
+        if (matchesSearch && matchesStatus && matchesCat) {
+          r.style.display = '';
+          visibleCount++;
+        } else {
+          r.style.display = 'none';
+        }
+      });
+      document.getElementById('item-count').textContent = visibleCount;
+    }
+
+    function clearAllFilters() {
+      document.getElementById('product-search').value = '';
+      document.getElementById('filter-status').value = 'ALL';
+      document.getElementById('filter-category').value = 'ALL';
+      document.getElementById('filter-brand').value = 'ALL';
+      filterTable();
+    }
+
+    function bulkStatus(newStatus) {
+      alert(`Updated status to "${newStatus}" for selected items.`);
+      selectAllRows(false);
+    }
+    function confirmBulkDelete() {
+      alert("Selected products have been scheduled for deletion/archival.");
+      closeModal('bulk-delete-modal');
+      selectAllRows(false);
+    }
+    function submitProductSuccess() {
+      alert("Product published successfully! Live telemetry updated on storefront.");
+      closeModal('add-product-modal');
+    }
+    function exportData() {
+      alert("Generating comprehensive CSV report with grain count, weight in grams, and MRP margins...");
+    }
+  </script>
+<script src="../runtime/rtc-runtime.js"></script></body>
+</html>

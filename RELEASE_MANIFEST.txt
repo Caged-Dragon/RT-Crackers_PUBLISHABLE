@@ -1,0 +1,8 @@
+RTCrackers Production Release
+Generated: 2026-10-04
+Base: existing RTC_CRACKERS_PRODUCTION_READY codebase
+Reference: RTCrackers-MASTER feature inventory
+Brand: RTCrackers
+Payments: Cash On Delivery only
+PWA: explicit user-approved updates
+Database: existing PostgreSQL schema + additive 26_PLATFORM release/content governance migration

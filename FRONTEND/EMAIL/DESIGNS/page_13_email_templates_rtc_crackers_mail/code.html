@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<title>Mailbox Management - RTC Crackers Mail</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tag-notifications": "#EA580C",
+            "secondary-fixed": "#dae2fd",
+            "surface-canvas": "#FFFFFF",
+            "tertiary": "#795500",
+            "on-surface-variant": "#5a4138",
+            "secondary-fixed-dim": "#bec6e0",
+            "border-strong": "#E2E8F0",
+            "brand-fire-red": "#E63946",
+            "surface-bright": "#f8f9ff",
+            "secondary-container": "#dae2fd",
+            "inverse-on-surface": "#eaf1ff",
+            "tag-noreply": "#475569",
+            "on-tertiary-container": "#fffbff",
+            "border-subtle": "#F1F5F9",
+            "on-surface": "#0b1c30",
+            "surface-container-low": "#eff4ff",
+            "tag-orders": "#D97706",
+            "tag-billing": "#7C3AED",
+            "outline": "#8e7166",
+            "on-tertiary": "#ffffff",
+            "secondary": "#565e74",
+            "on-primary-container": "#fffbff",
+            "primary": "#a33900",
+            "surface-variant": "#d3e4fe",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#271900",
+            "background": "#f8f9ff",
+            "surface-container": "#e5eeff",
+            "on-error-container": "#93000a",
+            "primary-container": "#cc4900",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#d3e4fe",
+            "error": "#ba1a1a",
+            "tertiary-container": "#996c00",
+            "surface-container-lowest": "#ffffff",
+            "surface-subtle": "#F8FAFC",
+            "on-secondary-container": "#5c647a",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#ffdbce",
+            "outline-variant": "#e2bfb2",
+            "on-primary": "#ffffff",
+            "tag-info": "#0891B2",
+            "tag-sales": "#16A34A",
+            "primary-fixed-dim": "#ffb599",
+            "tertiary-fixed": "#ffdea9",
+            "on-secondary-fixed-variant": "#3f465c",
+            "tag-contact": "#4F46E5",
+            "surface": "#f8f9ff",
+            "on-background": "#0b1c30",
+            "tertiary-fixed-dim": "#fbbc3c",
+            "on-secondary-fixed": "#131b2e",
+            "surface-dim": "#cbdbf5",
+            "tag-admin": "#DC2626",
+            "surface-tint": "#a73a00",
+            "surface-container-high": "#dce9ff",
+            "tag-support": "#2563EB",
+            "on-tertiary-fixed-variant": "#5e4200",
+            "on-primary-fixed-variant": "#7f2b00",
+            "inverse-primary": "#ffb599",
+            "on-primary-fixed": "#370e00",
+            "inverse-surface": "#213145"
+          },
+          fontFamily: {
+            "title-sm": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "code-sm": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "title-md": ["Inter"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- LEFT PERSISTENT SIDEBAR -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto">
+<div class="flex flex-col">
+<!-- Brand Logo / Wordmark -->
+<div class="h-16 px-4 flex items-center justify-between gap-2 bg-surface-subtle border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<img alt="RTC Crackers Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG_c7pxIPE4wwgSpxLFdUH_tg8svgIbUIwkhn7NCze_r0x_6WTZ_jzC9vfGXc5OgbMK2FdXgS2SwxvmiHBQfXisYT_PH7cTvFWOSkZv_Mr-bzU71U1De5LkmvshUlwXLJFP2Kejr-oGaxIfUck0RnN2ckJhDtCVvshifzkErWtefVAW8Pr75VKhiKZMdr0XVUFm6PCVfbFXbMlmSMxDNBmEpn1CLLHaGet8zoB1wdpONt_CSqntRtOjqB_"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-sm text-on-surface tracking-tight font-bold leading-none">RTC Crackers</span>
+<span class="font-label-sm text-[11px] text-tag-notifications font-semibold leading-tight">Enterprise Mail</span>
+</div>
+</div>
+</div>
+<!-- Quick Compose Action -->
+<div class="px-4 pt-3 pb-2">
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-sm rounded-lg transition-colors shadow-sm" onclick="showToast('Navigating to Compose...')" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Compose</span>
+</button>
+</div>
+<!-- Mailbox Folders -->
+<div class="px-4 pt-2 pb-1">
+<span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Mailbox Folders</span>
+</div>
+<nav class="flex flex-col px-2 space-y-0.5">
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/inbox">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">inbox</span>
+<span class="text-sm">Inbox</span>
+</div>
+<span class="text-[11px] bg-tag-notifications text-on-primary px-1.5 py-0.5 rounded-full font-semibold">24</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/starred">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="text-sm">Starred</span>
+</div>
+<span class="text-[11px] text-secondary">8</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/drafts">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">draft</span>
+<span class="text-sm">Drafts</span>
+</div>
+<span class="text-[11px] text-secondary">3</span>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/sent">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span class="text-sm">Sent</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/archived">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+<span class="text-sm">Archived</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/trash">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span class="text-sm">Trash</span>
+</div>
+</a>
+</nav>
+<!-- Mailbox Accounts Section -->
+<div class="px-4 pt-4 pb-1">
+<span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Authorized Mailboxes</span>
+</div>
+<nav class="flex flex-col px-2 space-y-0.5">
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-on-surface"></span>
+<span class="text-xs truncate">All Mailboxes (9)</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-admin"></span>
+<span class="text-xs truncate">admin@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-support"></span>
+<span class="text-xs truncate">support@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-sales"></span>
+<span class="text-xs truncate">sales@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-orders"></span>
+<span class="text-xs truncate">orders@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-billing"></span>
+<span class="text-xs truncate">billing@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-info"></span>
+<span class="text-xs truncate">info@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-contact"></span>
+<span class="text-xs truncate">contact@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-notifications"></span>
+<span class="text-xs truncate">notifications@rtcrackers.com</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="w-2 h-2 rounded-full bg-tag-noreply"></span>
+<span class="text-xs truncate">noreply@rtcrackers.com</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Actions / Settings (Highlighted as Active App Section) -->
+<div class="flex flex-col border-t border-border-subtle p-2 bg-surface-subtle">
+<nav class="flex flex-col space-y-0.5 mb-2">
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-surface-container font-semibold text-on-surface shadow-xs transition-all" href="/email/settings">
+<span class="material-symbols-outlined text-[18px] text-tag-notifications">settings</span>
+<span class="text-xs">Settings</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">help</span>
+<span class="text-xs">Help &amp; Docs</span>
+</a>
+</nav>
+<!-- Profile Widget -->
+<div class="flex items-center justify-between px-2 py-1.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2 min-w-0">
+<img alt="Admin Avatar" class="w-7 h-7 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-semibold text-on-surface truncate">Operations Admin</span>
+<span class="text-[10px] text-secondary truncate">admin@rtcrackers.com</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[16px]">more_vert</span>
+</div>
+</div>
+</aside>
+<!-- MAIN VIEWPORT CONTENT (Padded 64 for sidebar) -->
+<div class="pl-64 min-h-screen flex flex-col">
+<!-- TOP HEADER -->
+<header class="fixed top-0 left-64 right-0 h-16 bg-surface-canvas/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-6 border-b border-border-subtle">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-notifications text-[22px]">mark_email_read</span>
+<div>
+<div class="flex items-center gap-2">
+<h1 class="font-headline-sm text-base text-on-surface font-bold leading-tight">Settings</h1>
+<span class="text-secondary text-xs">/</span>
+<span class="font-label-md text-sm text-tag-notifications font-semibold">Mailboxes</span>
+</div>
+<p class="text-xs text-secondary leading-none">Manage company mailbox permissions, statuses, sending/receiving capabilities, and signatures.</p>
+</div>
+</div>
+</div>
+<!-- Header Right Controls -->
+<div class="flex items-center gap-3">
+<!-- API Synchronization Status -->
+<span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low text-xs font-medium text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales animate-pulse"></span>
+<span>Connected: api.rtcrackers.com</span>
+</span>
+<!-- Global Quick Search trigger -->
+<div class="relative w-64 hidden lg:block">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-secondary text-[16px]">search</span>
+<input class="w-full bg-surface-subtle text-on-surface placeholder:text-secondary text-xs pl-8 pr-8 py-1.5 rounded-md outline-none focus:ring-1 focus:ring-tag-notifications border border-border-strong" placeholder="Quick find (⌘K)..." type="text"/>
+<span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-secondary bg-surface-container px-1 rounded font-mono">⌘K</span>
+</div>
+<button class="p-2 rounded-lg text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Notifications" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="flex items-center gap-2 pl-2" type="button">
+<img alt="Admin Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+<span class="material-symbols-outlined text-secondary text-[16px]">expand_more</span>
+</button>
+</div>
+</header>
+<!-- WORKSPACE: TWO-COLUMN SETTINGS ARCHITECTURE -->
+<main class="pt-16 flex-1 flex flex-col bg-surface"><div class="flex flex-col w-full">
+<!-- SETTINGS SUB-HEADER WITH TABS -->
+<div class="bg-surface-canvas shadow-xs px-6 pt-5 pb-0 flex flex-col gap-4">
+<!-- Top Row: Page Title + Global State Controls -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-tag-notifications/10 text-tag-notifications flex items-center justify-center">
+<span class="material-symbols-outlined text-[19px]">description</span>
+</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Email Templates</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-tag-notifications font-label-sm text-label-sm">
+            Ignite Engine v4.2
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1 max-w-2xl">
+          Create, edit, and organize standardized communications with dynamic variables for faster customer updates across all 9 Sivakasi operations mailboxes.
+        </p>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low text-secondary font-code-sm text-code-sm">
+<span class="w-2 h-2 rounded-full bg-tag-sales animate-pulse"></span>
+<span>Live Sync: api.rtcrackers.com</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-subtle hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" onclick="refreshTemplatesList()" title="Sync backend cache">
+<span class="material-symbols-outlined text-[18px]" id="templateSyncIcon">sync</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all shadow-sm" onclick="openNewTemplateDrawer()">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>New Template</span>
+</button>
+</div>
+</div>
+<!-- Settings Navigation Tabs Bar -->
+<nav class="flex items-center gap-1 overflow-x-auto text-nowrap scrollbar-none pt-2">
+<a class="px-3.5 py-2.5 text-secondary hover:text-on-surface font-label-md text-label-md transition-colors" href="/email/settings/general">
+        General
+      </a>
+<a class="px-3.5 py-2.5 text-secondary hover:text-on-surface font-label-md text-label-md transition-colors" href="/email/settings/appearance">
+        Appearance
+      </a>
+<a class="px-3.5 py-2.5 text-secondary hover:text-on-surface font-label-md text-label-md transition-colors" href="/email/settings/notifications">
+        Notifications
+      </a>
+<a class="px-3.5 py-2.5 text-secondary hover:text-on-surface font-label-md text-label-md transition-colors" href="/email/settings/mailboxes">
+        Mailboxes
+      </a>
+<a class="px-3.5 py-2.5 text-secondary hover:text-on-surface font-label-md text-label-md transition-colors" href="/email/settings/signatures">
+        Signatures
+      </a>
+<!-- Active Tab: Templates -->
+<a class="px-3.5 py-2.5 font-label-md text-label-md text-tag-notifications bg-surface-container-low rounded-t-lg flex items-center gap-2 transition-colors relative" href="/email/settings/templates">
+<span class="material-symbols-outlined text-[16px]">folder_special</span>
+<span>Templates</span>
+<span class="px-1.5 py-0.2 rounded-full bg-tag-notifications text-on-primary font-code-sm text-[10px]">7 Available</span>
+<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-tag-notifications"></span>
+</a>
+<a class="px-3.5 py-2.5 text-secondary hover:text-on-surface font-label-md text-label-md transition-colors" href="/email/settings/sending-reading">
+        Sending &amp; Reading
+      </a>
+<a class="px-3.5 py-2.5 text-secondary hover:text-on-surface font-label-md text-label-md transition-colors" href="/email/settings/security">
+        Security &amp; Sessions
+      </a>
+</nav>
+</div>
+<!-- WORKSPACE: MASTER-DETAIL INTERACTION ARCHITECTURE -->
+<div class="flex-1 flex flex-col xl:flex-row min-h-[calc(100vh-160px)] p-6 gap-6 bg-surface">
+<!-- LEFT PANEL: TEMPLATE DIRECTORY (Master List) -->
+<div class="w-full xl:w-[380px] shrink-0 flex flex-col bg-surface-canvas rounded-2xl shadow-sm overflow-hidden">
+<!-- Search & Filters Container -->
+<div class="p-4 bg-surface-subtle flex flex-col gap-3">
+<!-- Search Input -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[18px]">search</span>
+<input class="w-full bg-surface-canvas text-on-surface placeholder:text-secondary font-body-sm text-body-sm pl-9 pr-8 py-2 rounded-xl outline-none focus:bg-surface-container-lowest transition-all" id="templateSearchInput" oninput="filterTemplates()" placeholder="Search templates by title, token, tag..." type="text"/>
+<button class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-secondary hover:text-on-surface" id="templateClearSearch" onclick="clearSearchInput()">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Category Horizontal Filter Chips -->
+<div class="flex items-center gap-1.5 overflow-x-auto scrollbar-none py-0.5" id="categoryChips">
+<button class="category-chip px-2.5 py-1 rounded-lg bg-tag-notifications text-on-primary font-label-sm text-label-sm shadow-xs transition-all" onclick="filterByCategory('all', this)">
+            All (7)
+          </button>
+<button class="category-chip px-2.5 py-1 rounded-lg bg-surface-container-low text-secondary hover:text-on-surface font-label-sm text-label-sm transition-all" onclick="filterByCategory('orders', this)">
+            Orders (2)
+          </button>
+<button class="category-chip px-2.5 py-1 rounded-lg bg-surface-container-low text-secondary hover:text-on-surface font-label-sm text-label-sm transition-all" onclick="filterByCategory('support', this)">
+            Support (2)
+          </button>
+<button class="category-chip px-2.5 py-1 rounded-lg bg-surface-container-low text-secondary hover:text-on-surface font-label-sm text-label-sm transition-all" onclick="filterByCategory('billing', this)">
+            Billing (1)
+          </button>
+<button class="category-chip px-2.5 py-1 rounded-lg bg-surface-container-low text-secondary hover:text-on-surface font-label-sm text-label-sm transition-all" onclick="filterByCategory('sales', this)">
+            Sales (1)
+          </button>
+<button class="category-chip px-2.5 py-1 rounded-lg bg-surface-container-low text-secondary hover:text-on-surface font-label-sm text-label-sm transition-all" onclick="filterByCategory('internal', this)">
+            Internal (1)
+          </button>
+</div>
+<!-- Context Filter Dual Row: Mailbox & Sort -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="relative">
+<select class="w-full bg-surface-canvas text-secondary hover:text-on-surface font-label-sm text-label-sm py-1.5 pl-2.5 pr-6 rounded-lg appearance-none cursor-pointer outline-none" id="mailboxFilter" onchange="filterTemplates()">
+<option value="all">All Mailboxes (9)</option>
+<option value="orders@rtcrackers.com">orders@rtcrackers.com</option>
+<option value="support@rtcrackers.com">support@rtcrackers.com</option>
+<option value="billing@rtcrackers.com">billing@rtcrackers.com</option>
+<option value="sales@rtcrackers.com">sales@rtcrackers.com</option>
+<option value="admin@rtcrackers.com">admin@rtcrackers.com</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-secondary pointer-events-none text-[15px]">expand_more</span>
+</div>
+<div class="relative">
+<select class="w-full bg-surface-canvas text-secondary hover:text-on-surface font-label-sm text-label-sm py-1.5 pl-2.5 pr-6 rounded-lg appearance-none cursor-pointer outline-none" id="sortFilter" onchange="sortTemplateList()">
+<option value="recent">Recently updated</option>
+<option value="name">Name (A-Z)</option>
+<option value="usage">Most used (Weekly)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-secondary pointer-events-none text-[15px]">sort</span>
+</div>
+</div>
+</div>
+<!-- Scrollable Templates List Items -->
+<div class="flex-1 overflow-y-auto divide-y divide-border-subtle p-2 space-y-1" id="templateItemsList">
+<!-- ITEM 1 (Active Selected Template) -->
+<div class="template-card cursor-pointer p-3.5 rounded-xl bg-surface-container-low transition-all relative" data-cat="orders" data-id="order-conf" data-mailbox="orders@rtcrackers.com" data-name="Order Confirmation" id="card-order-conf" onclick="selectTemplate('order-conf')">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-orders"></span>
+<span class="font-title-sm text-title-sm text-on-surface">Order Confirmation</span>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-tag-sales/10 text-tag-sales font-label-sm text-[10px]">Active</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary truncate mb-2">
+            Your RTC Crackers order <span class="font-mono text-tag-notifications">{{order_number}}</span> has been confirmed
+          </div>
+<p class="font-body-sm text-body-sm text-secondary/80 line-clamp-2 mb-2.5">
+            Hello {{customer_name}}, thank you for placing your order with RTC Crackers. Verified &amp; sent to Sivakasi central depot for batch fulfillment...
+          </p>
+<div class="flex items-center justify-between text-secondary font-label-sm text-[10px]">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[13px] text-tag-orders">mail</span>
+              orders@rtcrackers.com
+            </span>
+<span>Updated 2h ago</span>
+</div>
+</div>
+<!-- ITEM 2: Support Ticket Acknowledgement -->
+<div class="template-card cursor-pointer p-3.5 rounded-xl hover:bg-surface-subtle transition-all" data-cat="support" data-id="support-ack" data-mailbox="support@rtcrackers.com" data-name="Support Acknowledgement &amp; Ticket ID" id="card-support-ack" onclick="selectTemplate('support-ack')">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-support"></span>
+<span class="font-title-sm text-title-sm text-on-surface">Support Acknowledgement &amp; Ticket ID</span>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-tag-sales/10 text-tag-sales font-label-sm text-[10px]">Active</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary truncate mb-2">
+            We've received your request [Ticket #<span class="font-mono text-tag-support">{{ticket_id}}</span>]
+          </div>
+<p class="font-body-sm text-body-sm text-secondary/80 line-clamp-2 mb-2.5">
+            Thank you for contacting RTC Crackers customer care. Our Sivakasi technical helpdesk has registered your ticket...
+          </p>
+<div class="flex items-center justify-between text-secondary font-label-sm text-[10px]">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[13px] text-tag-support">support_agent</span>
+              support@rtcrackers.com
+            </span>
+<span>Updated Yesterday</span>
+</div>
+</div>
+<!-- ITEM 3: Payment Proforma Receipt -->
+<div class="template-card cursor-pointer p-3.5 rounded-xl hover:bg-surface-subtle transition-all" data-cat="billing" data-id="payment-rec" data-mailbox="billing@rtcrackers.com" data-name="Payment Received &amp; Proforma Receipt" id="card-payment-rec" onclick="selectTemplate('payment-rec')">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-billing"></span>
+<span class="font-title-sm text-title-sm text-on-surface">Payment Received &amp; Proforma Receipt</span>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-tag-sales/10 text-tag-sales font-label-sm text-[10px]">Active</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary truncate mb-2">
+            Payment confirmation for invoice <span class="font-mono text-tag-billing">{{invoice_number}}</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary/80 line-clamp-2 mb-2.5">
+            We have acknowledged your NEFT/RTGS transaction of {{payment_amount}}. The GST tax invoice is attached...
+          </p>
+<div class="flex items-center justify-between text-secondary font-label-sm text-[10px]">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[13px] text-tag-billing">receipt_long</span>
+              billing@rtcrackers.com
+            </span>
+<span>Updated Oct 02</span>
+</div>
+</div>
+<!-- ITEM 4: Wholesale Catalogue Inquiry -->
+<div class="template-card cursor-pointer p-3.5 rounded-xl hover:bg-surface-subtle transition-all" data-cat="sales" data-id="sales-cat" data-mailbox="sales@rtcrackers.com" data-name="Wholesale Price List &amp; Catalogue Inquiry" id="card-sales-cat" onclick="selectTemplate('sales-cat')">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-sales"></span>
+<span class="font-title-sm text-title-sm text-on-surface">Wholesale Price List &amp; Catalogue</span>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-tag-sales/10 text-tag-sales font-label-sm text-[10px]">Active</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary truncate mb-2">
+            RTC Crackers 2026 Festive Catalogue &amp; Commercial Quotation
+          </div>
+<p class="font-body-sm text-body-sm text-secondary/80 line-clamp-2 mb-2.5">
+            Enclosed is our authorized Sivakasi wholesale tier rate chart. Minimum distributor carton order quantities apply...
+          </p>
+<div class="flex items-center justify-between text-secondary font-label-sm text-[10px]">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[13px] text-tag-sales">store</span>
+              sales@rtcrackers.com
+            </span>
+<span>Updated Sep 28</span>
+</div>
+</div>
+<!-- ITEM 5: Dispatch Notification LR -->
+<div class="template-card cursor-pointer p-3.5 rounded-xl hover:bg-surface-subtle transition-all" data-cat="orders" data-id="order-dispatch" data-mailbox="orders@rtcrackers.com" data-name="Dispatch Notification &amp; Lorry Receipt" id="card-order-dispatch" onclick="selectTemplate('order-dispatch')">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-orders"></span>
+<span class="font-title-sm text-title-sm text-on-surface">Dispatch Notification &amp; Lorry Receipt</span>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-tag-sales/10 text-tag-sales font-label-sm text-[10px]">Active</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary truncate mb-2">
+            Consignment dispatched - LR #<span class="font-mono text-tag-orders">{{lr_number}}</span> via {{transporter_name}}
+          </div>
+<p class="font-body-sm text-body-sm text-secondary/80 line-clamp-2 mb-2.5">
+            Your Diwali consignment has been dispatched from Sivakasi Depot #2. Transporter driver contact enclosed...
+          </p>
+<div class="flex items-center justify-between text-secondary font-label-sm text-[10px]">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[13px] text-tag-orders">local_shipping</span>
+              orders@rtcrackers.com
+            </span>
+<span>Updated Sep 25</span>
+</div>
+</div>
+<!-- ITEM 6: Defective Carton Follow-up -->
+<div class="template-card cursor-pointer p-3.5 rounded-xl hover:bg-surface-subtle transition-all" data-cat="support" data-id="support-claim" data-mailbox="support@rtcrackers.com" data-name="Defective Carton Claim Follow-up" id="card-support-claim" onclick="selectTemplate('support-claim')">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-support"></span>
+<span class="font-title-sm text-title-sm text-on-surface">Defective Carton Claim Follow-up</span>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-tag-sales/10 text-tag-sales font-label-sm text-[10px]">Active</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary truncate mb-2">
+            Update on transit inspection claim for <span class="font-mono">{{order_number}}</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary/80 line-clamp-2 mb-2.5">
+            Our Sivakasi QA warehouse team has verified the photo documentation provided for damp or crushed cartons...
+          </p>
+<div class="flex items-center justify-between text-secondary font-label-sm text-[10px]">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[13px] text-tag-support">assignment_late</span>
+              support@rtcrackers.com
+            </span>
+<span>Updated Sep 20</span>
+</div>
+</div>
+<!-- ITEM 7: PESO Safety Compliance -->
+<div class="template-card cursor-pointer p-3.5 rounded-xl hover:bg-surface-subtle transition-all" data-cat="internal" data-id="peso-safety" data-mailbox="admin@rtcrackers.com" data-name="PESO Safety Compliance Advisory" id="card-peso-safety" onclick="selectTemplate('peso-safety')">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tag-admin"></span>
+<span class="font-title-sm text-title-sm text-on-surface">PESO Safety Compliance Advisory</span>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-tag-sales/10 text-tag-sales font-label-sm text-[10px]">Active</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary truncate mb-2">
+            Statutory Green Cracker QR &amp; Storage Guidelines 2026
+          </div>
+<p class="font-body-sm text-body-sm text-secondary/80 line-clamp-2 mb-2.5">
+            Mandatory compliance advisory for licensed regional distributors. Ensure CSIR-NEERI barcodes remain intact...
+          </p>
+<div class="flex items-center justify-between text-secondary font-label-sm text-[10px]">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[13px] text-tag-admin">verified_user</span>
+              admin@rtcrackers.com
+            </span>
+<span>Updated Sep 15</span>
+</div>
+</div>
+</div>
+<!-- Directory Empty State (hidden by default) -->
+<div class="hidden flex-col items-center justify-center p-8 text-center" id="templatesEmptyState">
+<span class="material-symbols-outlined text-[36px] text-secondary mb-2">inbox</span>
+<h4 class="font-title-sm text-title-sm text-on-surface">No templates found</h4>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Try relaxing search terms or mailbox filters.</p>
+<button class="mt-3 px-3 py-1.5 rounded-lg bg-surface-container font-label-md text-label-md text-tag-notifications" onclick="clearSearchInput()">Clear filters</button>
+</div>
+<!-- Footer Info -->
+<div class="p-3 bg-surface-subtle flex items-center justify-between text-secondary font-label-sm text-[11px]">
+<span>Showing 7 of 7 enterprise templates</span>
+<span class="text-tag-notifications font-mono">Auto-Saved</span>
+</div>
+</div>
+<!-- RIGHT PANEL: TEMPLATE EDITOR & LIVE PREVIEW WORKSTATION -->
+<div class="flex-1 flex flex-col bg-surface-canvas rounded-2xl shadow-sm overflow-hidden">
+<!-- Top Action Bar for Editor -->
+<div class="px-6 py-3.5 bg-surface-subtle flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-code-sm text-code-sm text-tag-notifications font-bold">
+            ID: TPL-ORD-01
+          </span>
+<span class="font-title-sm text-title-sm text-on-surface" id="currentTemplateHeading">Editing: Order Confirmation</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="view-btn px-2.5 py-1.5 rounded-lg bg-surface-canvas shadow-xs font-label-sm text-label-sm text-tag-notifications flex items-center gap-1.5 transition-all" id="btnViewSplit" onclick="switchView('split')">
+<span class="material-symbols-outlined text-[16px]">vertical_split</span>
+<span>Split Editor</span>
+</button>
+<button class="view-btn px-2.5 py-1.5 rounded-lg text-secondary hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" id="btnViewPreview" onclick="switchView('preview')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Full Preview</span>
+</button>
+</div>
+</div>
+<!-- Workstation Body: Split Editor & Preview Canvas -->
+<div class="flex-1 grid grid-cols-1 lg:grid-cols-12 overflow-y-auto">
+<!-- LEFT SUB-COLUMN: METADATA & RICH TEXT EDITOR (7 Cols) -->
+<div class="lg:col-span-7 p-6 flex flex-col gap-5 overflow-y-auto" id="editorSubColumn">
+<!-- SECTION A: METADATA FORM -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface block">Template Name</label>
+<input class="w-full px-3 py-2 rounded-xl bg-surface-subtle font-title-sm text-title-sm text-on-surface outline-none focus:bg-surface-container-lowest transition-all" id="formTemplateName" type="text" value="Order Confirmation"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface block">Category Classification</label>
+<select class="w-full px-3 py-2 rounded-xl bg-surface-subtle font-body-sm text-body-sm text-on-surface outline-none focus:bg-surface-container-lowest transition-all" id="formCategory">
+<option selected="" value="Orders">Orders (Fulfillment &amp; Dispatch)</option>
+<option value="Support">Support &amp; Claims Helpdesk</option>
+<option value="Billing">Billing &amp; GST Invoicing</option>
+<option value="Sales">Sales &amp; Distributor Inquiries</option>
+<option value="Internal">Internal &amp; PESO Safety</option>
+</select>
+</div>
+<div class="space-y-1 sm:col-span-2">
+<label class="font-label-sm text-label-sm text-on-surface flex items-center justify-between">
+<span>Associated Sivakasi Mailbox</span>
+<span class="text-secondary font-code-sm text-[11px]">Primary Dispatch Identity</span>
+</label>
+<select class="w-full px-3 py-2 rounded-xl bg-surface-subtle font-body-sm text-body-sm text-on-surface outline-none focus:bg-surface-container-lowest transition-all" id="formMailbox">
+<option selected="" value="orders@rtcrackers.com">orders@rtcrackers.com (RTC Crackers Order Fulfillment)</option>
+<option value="support@rtcrackers.com">support@rtcrackers.com (Customer Care &amp; Transit Claims)</option>
+<option value="sales@rtcrackers.com">sales@rtcrackers.com (Festive Wholesale Sales)</option>
+<option value="billing@rtcrackers.com">billing@rtcrackers.com (Accounts &amp; GST Invoicing)</option>
+<option value="admin@rtcrackers.com">admin@rtcrackers.com (Executive &amp; Operations Admin)</option>
+</select>
+</div>
+<div class="space-y-1 sm:col-span-2">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface">Internal Operational Description</label>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-[11px] text-secondary">Active Status</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="formTemplateStatus" type="checkbox"/>
+<div class="w-8 h-4 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-tag-sales"></div>
+</label>
+</div>
+</div>
+<input class="w-full px-3 py-2 rounded-xl bg-surface-subtle font-body-sm text-body-sm text-secondary outline-none focus:bg-surface-container-lowest transition-all" id="formDescription" type="text" value="Triggered upon confirmation of wholesale or retail orders prior to Sivakasi dispatch."/>
+</div>
+</div>
+<!-- SECTION B: SUBJECT LINE WITH INLINE VARIABLE PICKER -->
+<div class="space-y-1.5 pt-2">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tag-notifications">title</span>
+<span>Email Subject Line</span>
+</label>
+<span class="text-secondary font-code-sm text-[11px]">Dynamic variables supported</span>
+</div>
+<div class="relative flex items-center">
+<input class="w-full pl-3 pr-28 py-2.5 rounded-xl bg-surface-subtle font-title-sm text-title-sm text-on-surface outline-none focus:bg-surface-container-lowest transition-all" id="formSubject" oninput="updateLivePreview()" type="text" value="Your RTC Crackers order {{order_number}} has been confirmed"/>
+<button class="absolute right-2 px-2.5 py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-tag-notifications font-label-sm text-label-sm flex items-center gap-1 transition-colors" onclick="toggleVariablePopover('subject')" type="button">
+<span class="material-symbols-outlined text-[15px]">data_object</span>
+<span>+ Variable</span>
+</button>
+</div>
+</div>
+<!-- SECTION C: RICH TEXT BODY EDITOR -->
+<div class="space-y-2 pt-1 flex-1 flex flex-col">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tag-notifications">edit_note</span>
+<span>Email Body Content (Markdown &amp; Tokens)</span>
+</label>
+<!-- Quick Insert Variable Main Button -->
+<div class="relative">
+<button class="px-3 py-1 rounded-lg bg-tag-notifications/10 hover:bg-tag-notifications/20 text-tag-notifications font-label-sm text-label-sm flex items-center gap-1.5 transition-colors" onclick="toggleVariablePopover('body')" type="button">
+<span class="material-symbols-outlined text-[15px]">code_blocks</span>
+<span>{x} Insert Variable</span>
+</button>
+<!-- Categorized Variables Popover Menu (Absolute floating) -->
+<div class="hidden absolute right-0 top-full mt-2 w-80 bg-surface-canvas rounded-2xl shadow-xl z-50 p-3 space-y-3" id="variableDropdownPopover">
+<div class="flex items-center justify-between pb-1.5 border-b border-border-subtle">
+<span class="font-label-md text-label-md text-on-surface font-bold">Dynamic Tokens</span>
+<span class="font-code-sm text-[11px] text-secondary">Click token to insert</span>
+</div>
+<!-- Customer Tokens -->
+<div>
+<span class="font-label-sm text-[10px] text-secondary uppercase tracking-wider block mb-1">Customer Details</span>
+<div class="flex flex-wrap gap-1">
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-tag-notifications font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{customer_name}}')">{{customer_name}}</button>
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-tag-notifications font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{customer_email}}')">{{customer_email}}</button>
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-tag-notifications font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{customer_phone}}')">{{customer_phone}}</button>
+</div>
+</div>
+<!-- Order Tokens -->
+<div>
+<span class="font-label-sm text-[10px] text-secondary uppercase tracking-wider block mb-1">Order Logistics</span>
+<div class="flex flex-wrap gap-1">
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-tag-orders font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{order_number}}')">{{order_number}}</button>
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-tag-orders font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{order_date}}')">{{order_date}}</button>
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-tag-orders font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{order_total}}')">{{order_total}}</button>
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-tag-orders font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{item_count}}')">{{item_count}}</button>
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-tag-orders font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{delivery_pincode}}')">{{delivery_pincode}}</button>
+</div>
+</div>
+<!-- Shipping / Consignment -->
+<div>
+<span class="font-label-sm text-[10px] text-secondary uppercase tracking-wider block mb-1">Transporter / Sivakasi Dispatch</span>
+<div class="flex flex-wrap gap-1">
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-tag-sales font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{transporter_name}}')">{{transporter_name}}</button>
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-tag-sales font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{lr_number}}')">{{lr_number}}</button>
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-tag-sales font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{estimated_dispatch}}')">{{estimated_dispatch}}</button>
+</div>
+</div>
+<!-- Company & Desk -->
+<div>
+<span class="font-label-sm text-[10px] text-secondary uppercase tracking-wider block mb-1">Company Contact</span>
+<div class="flex flex-wrap gap-1">
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-secondary font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{company_name}}')">{{company_name}}</button>
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-secondary font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{support_email}}')">{{support_email}}</button>
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-secondary font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{sales_email}}')">{{sales_email}}</button>
+<button class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-surface-container text-secondary font-code-sm text-code-sm transition-colors" onclick="insertVariableToken('{{billing_email}}')">{{billing_email}}</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- WYSIWYG / Markdown Formatting Toolbar -->
+<div class="p-1.5 rounded-xl bg-surface-subtle flex flex-wrap items-center gap-1">
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-canvas transition-colors" title="Bold" type="button"><span class="material-symbols-outlined text-[17px]">format_bold</span></button>
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-canvas transition-colors" title="Italic" type="button"><span class="material-symbols-outlined text-[17px]">format_italic</span></button>
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-canvas transition-colors" title="Underline" type="button"><span class="material-symbols-outlined text-[17px]">format_underlined</span></button>
+<span class="w-px h-4 bg-border-strong mx-1"></span>
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-canvas transition-colors" title="Heading 2" type="button"><span class="material-symbols-outlined text-[17px]">title</span></button>
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-canvas transition-colors" title="Bullet List" type="button"><span class="material-symbols-outlined text-[17px]">format_list_bulleted</span></button>
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-canvas transition-colors" title="Numbered List" type="button"><span class="material-symbols-outlined text-[17px]">format_list_numbered</span></button>
+<span class="w-px h-4 bg-border-strong mx-1"></span>
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-canvas transition-colors" title="Insert Link" type="button"><span class="material-symbols-outlined text-[17px]">link</span></button>
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-canvas transition-colors" title="Quote Block" type="button"><span class="material-symbols-outlined text-[17px]">format_quote</span></button>
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-canvas transition-colors" title="Code" type="button"><span class="material-symbols-outlined text-[17px]">code</span></button>
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-canvas transition-colors" title="Clear Formatting" type="button"><span class="material-symbols-outlined text-[17px]">format_clear</span></button>
+<div class="ml-auto flex items-center gap-1">
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-canvas transition-colors" title="Undo" type="button"><span class="material-symbols-outlined text-[17px]">undo</span></button>
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-canvas transition-colors" title="Redo" type="button"><span class="material-symbols-outlined text-[17px]">redo</span></button>
+</div>
+</div>
+<!-- Body Textarea Area -->
+<textarea class="w-full flex-1 p-4 rounded-xl bg-surface-subtle font-mono text-body-sm leading-relaxed text-on-surface outline-none focus:bg-surface-container-lowest transition-all" id="formBodyText" oninput="updateLivePreview()" rows="12">Hello {{customer_name}},
+
+Thank you for choosing RTC Crackers. We are pleased to confirm that your booking #{{order_number}} for festive fireworks has been verified and sent to our Sivakasi central depot for batch fulfillment.
+
+Order Summary:
+• Order Reference: {{order_number}}
+• Estimated Dispatch Date: {{estimated_dispatch}}
+• Total Amount: {{order_total}}
+
+Our dispatch coordinator will send you the Lorry Receipt (LR) tracking number and transporter contact as soon as the consignment is loaded onto the regional transport container.
+
+For any order modifications or delivery date requests, please reply directly to this email or reach us at orders@rtcrackers.com.
+
+Warm regards,
+RTC Crackers Order Fulfillment Team</textarea>
+<!-- Dynamic Token Pills Display Under Editor -->
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-label-sm text-[11px] text-secondary">Detected Variables in Body:</span>
+<span class="px-2 py-0.5 rounded-full bg-tag-notifications/10 text-tag-notifications font-code-sm text-code-sm">{{customer_name}}</span>
+<span class="px-2 py-0.5 rounded-full bg-tag-orders/10 text-tag-orders font-code-sm text-code-sm">{{order_number}}</span>
+<span class="px-2 py-0.5 rounded-full bg-tag-sales/10 text-tag-sales font-code-sm text-code-sm">{{estimated_dispatch}}</span>
+<span class="px-2 py-0.5 rounded-full bg-tag-orders/10 text-tag-orders font-code-sm text-code-sm">{{order_total}}</span>
+</div>
+</div>
+</div>
+<!-- RIGHT SUB-COLUMN: LIVE SANITIZED PREVIEW PANE (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-subtle p-6 flex flex-col gap-4 overflow-y-auto" id="previewSubColumn">
+<!-- Preview Header Bar with Device Switchers -->
+<div class="flex items-center justify-between pb-2 border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tag-notifications">devices</span>
+<span class="font-title-sm text-title-sm text-on-surface">Simulated Message Delivery</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container p-1 rounded-lg">
+<button class="px-2.5 py-1 rounded bg-surface-canvas text-on-surface shadow-xs font-label-sm text-label-sm transition-all flex items-center gap-1" id="btnPreviewDesktop" onclick="setPreviewDevice('desktop')">
+<span class="material-symbols-outlined text-[15px]">desktop_windows</span>
+<span>Desktop</span>
+</button>
+<button class="px-2.5 py-1 rounded text-secondary hover:text-on-surface font-label-sm text-label-sm transition-all flex items-center gap-1" id="btnPreviewMobile" onclick="setPreviewDevice('mobile')">
+<span class="material-symbols-outlined text-[15px]">smartphone</span>
+<span>Mobile</span>
+</button>
+</div>
+</div>
+<!-- Live Mock Email Container (Rendered preview with sample evaluated data) -->
+<div class="w-full flex-1 transition-all duration-300" id="previewWrapper">
+<div class="bg-surface-canvas rounded-2xl shadow-md overflow-hidden flex flex-col">
+<!-- Simulated Email Client Header Bar -->
+<div class="p-4 bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between text-secondary font-label-sm text-[11px]">
+<span>MOCK RECIPIENT SIMULATION</span>
+<span class="text-tag-sales font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+                    Ready for Ingress
+                  </span>
+</div>
+<div class="grid grid-cols-[60px_1fr] text-xs gap-y-1">
+<span class="text-secondary font-semibold">From:</span>
+<span class="font-mono text-on-surface" id="previewFrom">orders@rtcrackers.com</span>
+<span class="text-secondary font-semibold">To:</span>
+<span class="font-mono text-on-surface">rahul.sharma@royalretail.in (Rahul Sharma)</span>
+<span class="text-secondary font-semibold">Subject:</span>
+<span class="font-semibold text-on-surface" id="previewSubject">Your RTC Crackers order RTC-10482 has been confirmed</span>
+</div>
+</div>
+<!-- Sanitized Dynamic Body Preview Area -->
+<div class="p-5 font-body-md text-body-md text-on-surface leading-relaxed space-y-4 whitespace-pre-line" id="previewBody">Hello Rahul Sharma,
+
+Thank you for choosing RTC Crackers. We are pleased to confirm that your booking #RTC-10482 for festive fireworks has been verified and sent to our Sivakasi central depot for batch fulfillment.
+
+Order Summary:
+• Order Reference: RTC-10482
+• Estimated Dispatch Date: 12 Oct 2026
+• Total Amount: ₹1,42,800
+
+Our dispatch coordinator will send you the Lorry Receipt (LR) tracking number and transporter contact as soon as the consignment is loaded onto the regional transport container.
+
+For any order modifications or delivery date requests, please reply directly to this email or reach us at orders@rtcrackers.com.
+
+Warm regards,
+RTC Crackers Order Fulfillment Team</div>
+<!-- Appended Default Signature Preview (Per System Architecture Note) -->
+<div class="mx-5 my-3 pt-4 border-t border-border-subtle bg-surface-subtle p-3 rounded-xl flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-tag-notifications/10 text-tag-notifications font-bold text-xs flex items-center justify-center shrink-0">
+                  RTC
+                </div>
+<div class="flex flex-col text-xs">
+<div class="flex items-center gap-1.5">
+<span class="font-bold text-on-surface">RTC Crackers Sivakasi Operations</span>
+<span class="text-[10px] px-1.5 py-0.2 rounded bg-surface-container text-tag-notifications font-mono">Appended by Mail Engine</span>
+</div>
+<span class="text-secondary text-[11px]">Central Hub, 142 Bye-Pass Road, Sivakasi - 626123, Tamil Nadu</span>
+<span class="text-secondary text-[11px]">Direct Support: +91 4562 278100 | GSTIN: 33AAACR2948P1Z8</span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low text-secondary font-label-sm text-[10px] flex items-center justify-between">
+<span>Variables replaced: 4</span>
+<span class="text-tag-notifications font-mono">Dynamic Merge: PASS</span>
+</div>
+</div>
+</div>
+<!-- Note indicator on clean signature inheritance -->
+<div class="p-3 rounded-xl bg-surface-container-high/40 text-secondary text-xs flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-tag-notifications shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-body-sm leading-snug">
+<strong>Signature Separation Notice:</strong> Templates omit fixed sign-offs so your configured mailbox signature automatically appends upon compose, maintaining organizational compliance without redundant duplicate text.
+            </p>
+</div>
+</div>
+</div>
+<!-- BOTTOM STICKY ACTION BAR -->
+<div class="p-4 bg-surface-canvas shadow-xs flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-tag-notifications font-label-md text-label-md flex items-center gap-1.5 transition-colors" onclick="useInCompose()">
+<span class="material-symbols-outlined text-[17px]">send</span>
+<span>Use in Compose</span>
+</button>
+<button class="px-3 py-2 rounded-xl bg-surface-subtle hover:bg-surface-container text-secondary hover:text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" onclick="duplicateTemplate()">
+<span class="material-symbols-outlined text-[17px]">content_copy</span>
+<span>Duplicate</span>
+</button>
+<button class="px-3 py-2 rounded-xl bg-surface-subtle hover:bg-surface-container text-secondary hover:text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" onclick="openTestEmailModal()">
+<span class="material-symbols-outlined text-[17px]">mark_email_unread</span>
+<span>Send Test</span>
+</button>
+</div>
+<div class="flex items-center gap-2.5">
+<button class="px-3 py-2 rounded-xl text-error hover:bg-error-container/20 font-label-md text-label-md flex items-center gap-1 transition-colors" onclick="deleteTemplatePrompt()">
+<span class="material-symbols-outlined text-[17px]">delete</span>
+<span>Delete</span>
+</button>
+<button class="px-3.5 py-2 rounded-xl bg-surface-subtle text-secondary hover:text-on-surface font-label-md text-label-md transition-colors" onclick="resetEditorForm()">
+            Reset
+          </button>
+<button class="px-5 py-2 rounded-xl bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm flex items-center gap-2 transition-all" id="btnSaveTemplate" onclick="saveTemplateChanges()">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Save Template</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL: SEND TEST EMAIL DIALOG -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4" id="testEmailModal">
+<div class="bg-surface-canvas rounded-2xl shadow-2xl max-w-md w-full overflow-hidden flex flex-col">
+<div class="p-5 bg-surface-subtle flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-tag-notifications/10 text-tag-notifications flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">outgoing_mail</span>
+</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Send Test Template</h4>
+<span class="font-code-sm text-code-sm text-secondary">Evaluates with mock dataset</span>
+</div>
+</div>
+<button class="text-secondary hover:text-on-surface" onclick="closeTestEmailModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-6 space-y-4">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface block">Destination Email Address</label>
+<input class="w-full px-3 py-2 rounded-xl bg-surface-subtle font-body-sm text-body-sm text-on-surface outline-none" id="testEmailRecipient" type="email" value="admin@rtcrackers.com"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface block">Mock Context Profile</label>
+<select class="w-full px-3 py-2 rounded-xl bg-surface-subtle font-body-sm text-body-sm text-on-surface outline-none">
+<option>Retail Diwali Booking (Rahul Sharma - #RTC-10482)</option>
+<option>Wholesale Sivakasi Distributor (Sri Ganesh Stores - #RTC-9921)</option>
+<option>Bulk Container Consignment (#RTC-11204)</option>
+</select>
+</div>
+<p class="font-body-sm text-[11px] text-secondary">
+          A test message will be sent through the backend mail server without altering production database records.
+        </p>
+</div>
+<div class="p-4 bg-surface-subtle flex items-center justify-end gap-2">
+<button class="px-3.5 py-1.5 rounded-lg text-secondary hover:text-on-surface font-label-md text-label-md" onclick="closeTestEmailModal()">
+          Cancel
+        </button>
+<button class="px-4 py-1.5 rounded-lg bg-tag-notifications text-on-primary font-label-md text-label-md flex items-center gap-1.5" onclick="submitTestEmail()">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Dispatch Test</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SCRIPT FOR CLIENT-SIDE WORKSPACE LOGIC -->
+<script>
+    // Templates Database Mock for Prototype Interaction
+    const TEMPLATES_DATA = {
+      'order-conf': {
+        name: 'Order Confirmation',
+        category: 'Orders',
+        mailbox: 'orders@rtcrackers.com',
+        description: 'Triggered upon confirmation of wholesale or retail orders prior to Sivakasi dispatch.',
+        subject: 'Your RTC Crackers order {{order_number}} has been confirmed',
+        body: `Hello {{customer_name}},
+
+Thank you for choosing RTC Crackers. We are pleased to confirm that your booking #{{order_number}} for festive fireworks has been verified and sent to our Sivakasi central depot for batch fulfillment.
+
+Order Summary:
+• Order Reference: {{order_number}}
+• Estimated Dispatch Date: {{estimated_dispatch}}
+• Total Amount: {{order_total}}
+
+Our dispatch coordinator will send you the Lorry Receipt (LR) tracking number and transporter contact as soon as the consignment is loaded onto the regional transport container.
+
+For any order modifications or delivery date requests, please reply directly to this email or reach us at orders@rtcrackers.com.
+
+Warm regards,
+RTC Crackers Order Fulfillment Team`,
+        active: true
+      },
+      'support-ack': {
+        name: 'Support Acknowledgement & Ticket ID',
+        category: 'Support',
+        mailbox: 'support@rtcrackers.com',
+        description: 'Automatic response for customer grievances, damaged consignments, or order status inquiries.',
+        subject: "We've received your request [Ticket #{{ticket_id}}]",
+        body: `Hello {{customer_name}},
+
+Thank you for contacting RTC Crackers customer support. We have received your inquiry regarding order #{{order_number}} and logged ticket #{{ticket_id}}.
+
+A representative from our Sivakasi operations desk will investigate and follow up with you within 4 business hours. If this matter concerns transit water damage or crushed cartons, please have parcel opening photos ready.
+
+Support Reference:
+• Ticket ID: {{ticket_id}}
+• Priority: Standard Operations
+• Desk: Sivakasi Support HQ
+
+Warm regards,
+RTC Crackers Support Desk`,
+        active: true
+      },
+      'payment-rec': {
+        name: 'Payment Received & Proforma Receipt',
+        category: 'Billing',
+        mailbox: 'billing@rtcrackers.com',
+        description: 'Dispatched once payment gateway or bank NEFT/RTGS transaction clears in company ledger.',
+        subject: 'Payment confirmation for invoice {{invoice_number}}',
+        body: `Dear {{customer_name}},
+
+We have confirmed receipt of your payment for invoice {{invoice_number}} totaling {{order_total}}.
+
+Your official GST tax invoice and clearance slip have been generated and forwarded to our Sivakasi inventory warehouse to authorize dispatch clearance.
+
+Transaction Details:
+• Invoice Number: {{invoice_number}}
+• Amount Settled: {{order_total}}
+• Ledger Status: Fully Paid
+
+Warm regards,
+RTC Crackers Accounts Team`,
+        active: true
+      },
+      'sales-cat': {
+        name: 'Wholesale Price List & Catalogue Inquiry',
+        category: 'Sales',
+        mailbox: 'sales@rtcrackers.com',
+        description: 'Introductory response for retail dealers requesting bulk season discount tier quotations.',
+        subject: 'RTC Crackers 2026 Festive Catalogue & Commercial Quotation',
+        body: `Hello {{customer_name}},
+
+Thank you for reaching out to RTC Crackers. Enclosed is our authorized Sivakasi 2026 Festive Wholesale Price List & Product Safety Catalogue.
+
+Key Commercial Terms:
+• Minimum Carton Order: 10 Master Cartons
+• Regional Hubs: Sivakasi, Chennai, Bangalore, Hyderabad
+• Green Cracker QR Certifications: CSIR-NEERI Approved
+
+Please reply with your tentative carton breakdown to receive custom bulk freight estimates.
+
+Best regards,
+RTC Crackers Sales Directorate`,
+        active: true
+      },
+      'order-dispatch': {
+        name: 'Dispatch Notification & Lorry Receipt',
+        category: 'Orders',
+        mailbox: 'orders@rtcrackers.com',
+        description: 'Sent once master cartons are handed to regional freight transporters in Sivakasi.',
+        subject: 'Consignment dispatched - LR #{{lr_number}} via {{transporter_name}}',
+        body: `Hello {{customer_name}},
+
+Great news! Your fireworks consignment for booking #{{order_number}} has officially departed our Sivakasi central hub.
+
+Logistics & Transport Info:
+• Transporter: {{transporter_name}}
+• Lorry Receipt (LR) No: {{lr_number}}
+• Estimated Arrival: {{estimated_dispatch}}
+• Destination Pincode: {{delivery_pincode}}
+
+Please ensure an authorized representative with government photo ID is available at the destination transport godown for parcel clearance.
+
+Regards,
+RTC Crackers Logistics Division`,
+        active: true
+      },
+      'support-claim': {
+        name: 'Defective Carton Claim Follow-up',
+        category: 'Support',
+        mailbox: 'support@rtcrackers.com',
+        description: 'Standard investigation follow-up for damaged carton insurance claims.',
+        subject: 'Update on transit inspection claim for {{order_number}}',
+        body: `Dear {{customer_name}},
+
+Our Sivakasi Quality Assurance team has reviewed the claim documentation submitted for order #{{order_number}}.
+
+Our insurance surveyor has approved credit compensation for the impacted product lines. A revised credit note has been issued to your registered account ledger.
+
+Thank you for your cooperation and patience throughout our inspection procedure.
+
+Sincerely,
+RTC Crackers QA & Claims Department`,
+        active: true
+      },
+      'peso-safety': {
+        name: 'PESO Safety Compliance Advisory',
+        category: 'Internal',
+        mailbox: 'admin@rtcrackers.com',
+        description: 'Statutory safety regulations dispatched to registered distributors and depot supervisors.',
+        subject: 'Statutory Green Cracker QR & Storage Guidelines 2026',
+        body: `Dear Regional Distributor,
+
+This is a mandatory safety reminder from RTC Crackers Sivakasi Executive Office.
+
+Please ensure all stock received carries the official CSIR-NEERI green cracker hologram and QR verification. Godown storage must adhere strictly to Petroleum and Explosives Safety Organisation (PESO) regulations:
+1. Maintain dry, elevated wooden palleted stacking.
+2. Ensure active sand buckets and pressurized extinguishers are unobstructed.
+3. No smoking or open flames within 50 meters of licensed storage.
+
+Compliance is monitored in coordination with local district licensing authorities.
+
+Regards,
+RTC Crackers Compliance Office`,
+        active: true
+      }
+    };
+
+    let activeTemplateKey = 'order-conf';
+    let currentCategoryFilter = 'all';
+
+    // Mock Sample Data for Live Dynamic Evaluation
+    const MOCK_DATA = {
+      '{{customer_name}}': 'Rahul Sharma',
+      '{{customer_email}}': 'rahul.sharma@royalretail.in',
+      '{{customer_phone}}': '+91 98401 23456',
+      '{{order_number}}': 'RTC-10482',
+      '{{ticket_id}}': 'TCK-8819',
+      '{{invoice_number}}': 'INV-2026-0812',
+      '{{order_date}}': '08 Oct 2026',
+      '{{order_total}}': '₹1,42,800',
+      '{{item_count}}': '42 Cases',
+      '{{delivery_pincode}}': '600028',
+      '{{transporter_name}}': 'VRL Sivakasi Express Logistics',
+      '{{lr_number}}': 'LR-99214-SVK',
+      '{{estimated_dispatch}}': '12 Oct 2026',
+      '{{company_name}}': 'RTC Crackers Sivakasi',
+      '{{support_email}}': 'support@rtcrackers.com',
+      '{{sales_email}}': 'sales@rtcrackers.com',
+      '{{billing_email}}': 'billing@rtcrackers.com'
+    };
+
+    function selectTemplate(key) {
+      if (!TEMPLATES_DATA[key]) return;
+      activeTemplateKey = key;
+      const data = TEMPLATES_DATA[key];
+
+      // Highlight Active List Item
+      document.querySelectorAll('.template-card').forEach(card => {
+        card.classList.remove('bg-surface-container-low');
+      });
+      const selectedEl = document.getElementById(`card-${key}`);
+      if (selectedEl) {
+        selectedEl.classList.add('bg-surface-container-low');
+      }
+
+      // Populate Form Fields
+      document.getElementById('currentTemplateHeading').textContent = `Editing: ${data.name}`;
+      document.getElementById('formTemplateName').value = data.name;
+      document.getElementById('formCategory').value = data.category;
+      document.getElementById('formMailbox').value = data.mailbox;
+      document.getElementById('formDescription').value = data.description;
+      document.getElementById('formSubject').value = data.subject;
+      document.getElementById('formBodyText').value = data.body;
+      document.getElementById('formTemplateStatus').checked = data.active;
+
+      updateLivePreview();
+    }
+
+    function updateLivePreview() {
+      const subjectRaw = document.getElementById('formSubject').value;
+      const bodyRaw = document.getElementById('formBodyText').value;
+      const mailbox = document.getElementById('formMailbox').value;
+
+      let renderedSubject = subjectRaw;
+      let renderedBody = bodyRaw;
+
+      // Replace tokens with mock values
+      for (const [token, value] of Object.entries(MOCK_DATA)) {
+        renderedSubject = renderedSubject.split(token).join(value);
+        renderedBody = renderedBody.split(token).join(value);
+      }
+
+      document.getElementById('previewFrom').textContent = mailbox;
+      document.getElementById('previewSubject').textContent = renderedSubject;
+      document.getElementById('previewBody').textContent = renderedBody;
+    }
+
+    function toggleVariablePopover(source) {
+      const popover = document.getElementById('variableDropdownPopover');
+      popover.classList.toggle('hidden');
+    }
+
+    function insertVariableToken(token) {
+      const textarea = document.getElementById('formBodyText');
+      const start = textarea.selectionStart;
+      const end = textarea.selectionEnd;
+      const text = textarea.value;
+
+      textarea.value = text.substring(0, start) + token + text.substring(end);
+      textarea.focus();
+      textarea.selectionStart = textarea.selectionEnd = start + token.length;
+
+      document.getElementById('variableDropdownPopover').classList.add('hidden');
+      updateLivePreview();
+      if (typeof showToast === 'function') {
+        showToast(`Inserted token: ${token}`);
+      }
+    }
+
+    function filterByCategory(cat, btn) {
+      currentCategoryFilter = cat;
+      document.querySelectorAll('#categoryChips .category-chip').forEach(b => {
+        b.classList.remove('bg-tag-notifications', 'text-on-primary', 'shadow-xs');
+        b.classList.add('bg-surface-container-low', 'text-secondary');
+      });
+      btn.classList.add('bg-tag-notifications', 'text-on-primary', 'shadow-xs');
+      btn.classList.remove('bg-surface-container-low', 'text-secondary');
+      filterTemplates();
+    }
+
+    function filterTemplates() {
+      const query = document.getElementById('templateSearchInput').value.toLowerCase().trim();
+      const mailbox = document.getElementById('mailboxFilter').value;
+      const clearBtn = document.getElementById('templateClearSearch');
+
+      if (query) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+
+      const cards = document.querySelectorAll('#templateItemsList .template-card');
+      let visible = 0;
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-cat');
+        const cardMailbox = card.getAttribute('data-mailbox');
+        const name = card.getAttribute('data-name').toLowerCase();
+
+        const matchCat = (currentCategoryFilter === 'all' || cat === currentCategoryFilter);
+        const matchMailbox = (mailbox === 'all' || cardMailbox === mailbox);
+        const matchQuery = (!query || name.includes(query));
+
+        if (matchCat && matchMailbox && matchQuery) {
+          card.classList.remove('hidden');
+          visible++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const empty = document.getElementById('templatesEmptyState');
+      if (visible === 0) {
+        empty.classList.remove('hidden');
+        empty.classList.add('flex');
+      } else {
+        empty.classList.add('hidden');
+        empty.classList.remove('flex');
+      }
+    }
+
+    function clearSearchInput() {
+      document.getElementById('templateSearchInput').value = '';
+      filterTemplates();
+    }
+
+    function sortTemplateList() {
+      const mode = document.getElementById('sortFilter').value;
+      const container = document.getElementById('templateItemsList');
+      const cards = Array.from(container.children);
+
+      if (mode === 'name') {
+        cards.sort((a, b) => (a.getAttribute('data-name') || '').localeCompare(b.getAttribute('data-name') || ''));
+      }
+      cards.forEach(c => container.appendChild(c));
+    }
+
+    function setPreviewDevice(device) {
+      const wrapper = document.getElementById('previewWrapper');
+      const btnDesk = document.getElementById('btnPreviewDesktop');
+      const btnMob = document.getElementById('btnPreviewMobile');
+
+      if (device === 'mobile') {
+        wrapper.classList.remove('w-full');
+        wrapper.classList.add('max-w-[340px]', 'mx-auto');
+        btnMob.classList.add('bg-surface-canvas', 'text-on-surface', 'shadow-xs');
+        btnMob.classList.remove('text-secondary');
+        btnDesk.classList.remove('bg-surface-canvas', 'text-on-surface', 'shadow-xs');
+        btnDesk.classList.add('text-secondary');
+      } else {
+        wrapper.classList.remove('max-w-[340px]', 'mx-auto');
+        wrapper.classList.add('w-full');
+        btnDesk.classList.add('bg-surface-canvas', 'text-on-surface', 'shadow-xs');
+        btnDesk.classList.remove('text-secondary');
+        btnMob.classList.remove('bg-surface-canvas', 'text-on-surface', 'shadow-xs');
+        btnMob.classList.add('text-secondary');
+      }
+    }
+
+    function switchView(mode) {
+      const editor = document.getElementById('editorSubColumn');
+      const preview = document.getElementById('previewSubColumn');
+      const btnSplit = document.getElementById('btnViewSplit');
+      const btnPreview = document.getElementById('btnViewPreview');
+
+      if (mode === 'preview') {
+        editor.classList.add('hidden');
+        preview.classList.remove('lg:col-span-5');
+        preview.classList.add('lg:col-span-12');
+        btnPreview.classList.add('bg-surface-canvas', 'text-tag-notifications', 'shadow-xs');
+        btnPreview.classList.remove('text-secondary');
+        btnSplit.classList.remove('bg-surface-canvas', 'text-tag-notifications', 'shadow-xs');
+        btnSplit.classList.add('text-secondary');
+      } else {
+        editor.classList.remove('hidden');
+        preview.classList.remove('lg:col-span-12');
+        preview.classList.add('lg:col-span-5');
+        btnSplit.classList.add('bg-surface-canvas', 'text-tag-notifications', 'shadow-xs');
+        btnSplit.classList.remove('text-secondary');
+        btnPreview.classList.remove('bg-surface-canvas', 'text-tag-notifications', 'shadow-xs');
+        btnPreview.classList.add('text-secondary');
+      }
+    }
+
+    function refreshTemplatesList() {
+      const icon = document.getElementById('templateSyncIcon');
+      icon.classList.add('animate-spin');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        if (typeof showToast === 'function') {
+          showToast('Synchronized 7 email templates from Sivakasi central cluster');
+        }
+      }, 700);
+    }
+
+    function openNewTemplateDrawer() {
+      // Clear form for fresh template entry
+      document.getElementById('currentTemplateHeading').textContent = 'Creating: New Template';
+      document.getElementById('formTemplateName').value = 'Untitled Business Template';
+      document.getElementById('formCategory').value = 'Orders';
+      document.getElementById('formSubject').value = 'Important Update from RTC Crackers';
+      document.getElementById('formBodyText').value = 'Hello {{customer_name}},\n\n[Type your template content here]\n\nWarm regards,\nRTC Crackers Team';
+      updateLivePreview();
+      if (typeof showToast === 'function') {
+        showToast('Initialized new template workstation');
+      }
+    }
+
+    function saveTemplateChanges() {
+      const btn = document.getElementById('btnSaveTemplate');
+      btn.innerHTML = `<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Saving...</span>`;
+      setTimeout(() => {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[18px]">save</span><span>Save Template</span>`;
+        if (typeof showToast === 'function') {
+          showToast('Template successfully committed to backend');
+        }
+      }, 600);
+    }
+
+    function useInCompose() {
+      if (typeof showToast === 'function') {
+        showToast('Loading template into compose editor...');
+      }
+      setTimeout(() => {
+        window.location.href = '/email/inbox';
+      }, 800);
+    }
+
+    function duplicateTemplate() {
+      const currentName = document.getElementById('formTemplateName').value;
+      document.getElementById('formTemplateName').value = `${currentName} (Copy)`;
+      document.getElementById('currentTemplateHeading').textContent = `Editing: ${currentName} (Copy)`;
+      if (typeof showToast === 'function') {
+        showToast('Template duplicated as draft copy');
+      }
+    }
+
+    function deleteTemplatePrompt() {
+      if (confirm('Delete this template? Authorized staff will no longer be able to insert it in replies.')) {
+        if (typeof showToast === 'function') {
+          showToast('Template marked as archived/deleted', 'delete');
+        }
+      }
+    }
+
+    function resetEditorForm() {
+      selectTemplate(activeTemplateKey);
+      if (typeof showToast === 'function') {
+        showToast('Form reset to saved state');
+      }
+    }
+
+    function openTestEmailModal() {
+      document.getElementById('testEmailModal').classList.remove('hidden');
+      document.getElementById('testEmailModal').classList.add('flex');
+    }
+
+    function closeTestEmailModal() {
+      document.getElementById('testEmailModal').classList.add('hidden');
+      document.getElementById('testEmailModal').classList.remove('flex');
+    }
+
+    function submitTestEmail() {
+      const recipient = document.getElementById('testEmailRecipient').value;
+      closeTestEmailModal();
+      if (typeof showToast === 'function') {
+        showToast(`Dispatched simulated test email to ${recipient}`);
+      }
+    }
+
+    // Close variable menu if clicked outside
+    window.addEventListener('click', (e) => {
+      const popover = document.getElementById('variableDropdownPopover');
+      if (popover && !e.target.closest('#variableDropdownPopover') && !e.target.closest('button[onclick*="toggleVariablePopover"]')) {
+        popover.classList.add('hidden');
+      }
+    });
+
+    // Initialize state
+    document.addEventListener('DOMContentLoaded', () => {
+      selectTemplate('order-conf');
+    });
+  </script>
+</div></main>
+</div>
+<!-- MODAL: MANAGE MAILBOX DETAIL PANEL -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4" id="manageMailboxModal">
+<div class="bg-surface-canvas border border-border-strong rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden flex flex-col transition-all">
+<!-- Modal Header -->
+<div class="px-6 py-4 bg-surface-subtle border-b border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-tag-notifications/10 text-tag-notifications flex items-center justify-center font-bold text-xs" id="modalBadge">
+            MB
+          </div>
+<div>
+<h3 class="font-headline-sm text-sm font-bold text-on-surface" id="modalTitle">Manage Mailbox Settings</h3>
+<span class="text-xs font-mono text-secondary" id="modalSubtitle">support@rtcrackers.com</span>
+</div>
+</div>
+<button class="p-1 rounded-md text-secondary hover:text-on-surface" onclick="closeManageModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-5 text-xs max-h-[75vh] overflow-y-auto">
+<!-- Display Name -->
+<div class="space-y-1.5">
+<label class="font-semibold text-on-surface block">Display Name (Sender Header)</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-subtle border border-border-strong text-xs text-on-surface outline-none focus:ring-2 focus:ring-tag-notifications" id="modalDisplayNameInput" type="text" value="RTC Crackers Support"/>
+<p class="text-[11px] text-secondary">This name appears as the friendly sender name in customer and supplier inboxes.</p>
+</div>
+<!-- Email Address (Read-only security field) -->
+<div class="space-y-1.5">
+<label class="font-semibold text-secondary block">Canonical Email Address (Read-Only)</label>
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-low border border-border-strong font-mono text-on-surface text-xs">
+<span id="modalEmailAddressText">support@rtcrackers.com</span>
+<span class="material-symbols-outlined text-[15px] text-secondary">lock</span>
+</div>
+<p class="text-[11px] text-secondary">Primary addresses are managed by the RTC Crackers domain administrator.</p>
+</div>
+<!-- Capability Toggles -->
+<div class="space-y-3 pt-2 border-t border-border-subtle">
+<span class="font-semibold text-on-surface block">Mailbox Operational Capabilities</span>
+<!-- Operational Status -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+<div>
+<div class="font-semibold text-on-surface">Mailbox Operational Status</div>
+<p class="text-[11px] text-secondary mt-0.5">Controls whether this mailbox is active in the company directory.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggleStatusInput" type="checkbox"/>
+<div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+</label>
+</div>
+<!-- Sending Status -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+<div>
+<div class="font-semibold text-on-surface">Sending Capability</div>
+<p class="text-[11px] text-secondary mt-0.5">Allows authorized staff to compose and reply using this address.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggleSendingInput" type="checkbox"/>
+<div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+</label>
+</div>
+<!-- Receiving Status -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+<div>
+<div class="font-semibold text-on-surface">Receiving Webhook / Ingress</div>
+<p class="text-[11px] text-secondary mt-0.5">Accepts incoming emails dispatched to this address.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggleReceivingInput" type="checkbox"/>
+<div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+</label>
+</div>
+</div>
+<!-- Signature Quick Link -->
+<div class="p-3 rounded-xl bg-surface-container-low border border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-notifications text-[18px]">draw</span>
+<div>
+<span class="font-semibold text-on-surface">Per-Mailbox Signature</span>
+<p class="text-[11px] text-secondary">HTML signature configured for this account.</p>
+</div>
+</div>
+<a class="px-2.5 py-1 rounded bg-surface-canvas border border-border-strong text-tag-notifications font-semibold hover:bg-surface-container transition-colors" href="/email/settings?section=signature">
+            Edit in Settings
+          </a>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-6 py-3 bg-surface-subtle border-t border-border-subtle flex items-center justify-end gap-2">
+<button class="px-4 py-2 rounded-lg border border-border-strong text-secondary hover:text-on-surface text-xs font-semibold" onclick="closeManageModal()">
+          Cancel
+        </button>
+<button class="px-4 py-2 rounded-lg bg-tag-notifications hover:bg-primary-container text-on-primary text-xs font-semibold shadow-xs flex items-center gap-1.5 transition-all" id="btnSaveMailbox" onclick="saveMailboxChanges()">
+<span class="material-symbols-outlined text-[16px]">save</span>
+<span>Save Changes</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CONFIRMATION DIALOG -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4" id="confirmationDialog">
+<div class="bg-surface-canvas border border-border-strong rounded-2xl shadow-2xl max-w-sm w-full p-5 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tag-notifications/10 text-tag-notifications flex items-center justify-center shrink-0" id="confirmIcon">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-sm font-bold text-on-surface" id="confirmTitle">Confirm Action</h4>
+<p class="text-xs text-secondary mt-0.5" id="confirmMessage">Are you sure you want to proceed?</p>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-2">
+<button class="px-3 py-1.5 rounded-lg border border-border-strong text-secondary hover:text-on-surface text-xs font-semibold" onclick="closeConfirmDialog()">
+          Cancel
+        </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-tag-notifications text-on-primary text-xs font-semibold" id="confirmActionBtn" onclick="executeConfirmedAction()">
+          Confirm
+        </button>
+</div>
+</div>
+</div>
+<!-- FLOATING TOAST NOTIFICATION -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 px-4 py-3 rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl text-xs font-medium" id="toast">
+<span class="material-symbols-outlined text-tag-notifications text-[18px]" id="toastIcon">check_circle</span>
+<span id="toastMessage">Action completed successfully</span>
+</div>
+<!-- JAVASCRIPT APP LOGIC & STATE HANDLING -->
+<script>
+    // State Tracking
+    let activeMailboxId = null;
+    let pendingConfirmAction = null;
+
+    // Toast Functionality
+    function showToast(message, icon = 'check_circle') {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toastMessage');
+      const iconEl = document.getElementById('toastIcon');
+      
+      text.textContent = message;
+      iconEl.textContent = icon;
+      
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2600);
+    }
+
+    // Refresh Action
+    function refreshMailboxes() {
+      const icon = document.getElementById('refreshIcon');
+      icon.classList.add('animate-spin');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        showToast('Authorized mailboxes synchronized with backend');
+      }, 600);
+    }
+
+    // View Mode Toggle (Cards vs Table)
+    function setViewMode(mode) {
+      const cards = document.getElementById('mailboxCardsContainer');
+      const table = document.getElementById('mailboxTableContainer');
+      const btnCards = document.getElementById('btnViewCards');
+      const btnTable = document.getElementById('btnViewTable');
+
+      if (mode === 'cards') {
+        cards.classList.remove('hidden');
+        table.classList.add('hidden');
+        btnCards.classList.add('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnCards.classList.remove('text-secondary');
+        btnTable.classList.remove('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnTable.classList.add('text-secondary');
+      } else {
+        cards.classList.add('hidden');
+        table.classList.remove('hidden');
+        btnTable.classList.add('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnTable.classList.remove('text-secondary');
+        btnCards.classList.remove('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnCards.classList.add('text-secondary');
+      }
+    }
+
+    // Search & Filtering
+    function handleSearch(query) {
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (query.trim()) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+      applyFilters();
+    }
+
+    function clearSearch() {
+      document.getElementById('mailboxSearchInput').value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const query = document.getElementById('mailboxSearchInput').value.toLowerCase().trim();
+      const statusFilter = document.getElementById('filterStatus').value;
+      const sendingFilter = document.getElementById('filterSending').value;
+
+      const cards = document.querySelectorAll('#mailboxCardsContainer > div');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const address = card.getAttribute('data-address').toLowerCase();
+        const name = card.getAttribute('data-name').toLowerCase();
+        const status = card.getAttribute('data-status');
+        const sending = card.getAttribute('data-sending');
+
+        const matchesQuery = !query || address.includes(query) || name.includes(query);
+        const matchesStatus = statusFilter === 'all' || status === statusFilter;
+        const matchesSending = sendingFilter === 'all' || sending === sendingFilter;
+
+        if (matchesQuery && matchesStatus && matchesSending) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const emptyState = document.getElementById('mailboxEmptyState');
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+        emptyState.classList.add('flex');
+      } else {
+        emptyState.classList.add('hidden');
+        emptyState.classList.remove('flex');
+      }
+    }
+
+    // Copy Address Action
+    function copyAddress(address) {
+      navigator.clipboard.writeText(address).then(() => {
+        showToast(`Copied ${address} to clipboard`);
+      }).catch(() => {
+        showToast(`Copied ${address}`);
+      });
+    }
+
+    // User Default Mailbox Switch
+    function setUserDefault(address) {
+      document.getElementById('userDefaultDisplay').innerHTML = `
+        <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+        ${address}
+      `;
+      document.getElementById('selectDefaultMailbox').value = address;
+      showToast(`Default sending mailbox set to ${address}`);
+    }
+
+    // Manage Modal Handling
+    function openManageModal(id, address, name, isActive, canSend, canReceive) {
+      activeMailboxId = id;
+      document.getElementById('modalTitle').textContent = `Manage: ${name}`;
+      document.getElementById('modalSubtitle').textContent = address;
+      document.getElementById('modalEmailAddressText').textContent = address;
+      document.getElementById('modalDisplayNameInput').value = name;
+      document.getElementById('toggleStatusInput').checked = isActive;
+      document.getElementById('toggleSendingInput').checked = canSend;
+      document.getElementById('toggleReceivingInput').checked = canReceive;
+
+      const modal = document.getElementById('manageMailboxModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeManageModal() {
+      const modal = document.getElementById('manageMailboxModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function saveMailboxChanges() {
+      const btn = document.getElementById('btnSaveMailbox');
+      btn.innerHTML = `<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> Saving...`;
+      
+      setTimeout(() => {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[16px]">save</span> Save Changes`;
+        closeManageModal();
+        showToast('Mailbox settings successfully synchronized');
+      }, 700);
+    }
+
+    // Capability Confirmation Dialog
+    function confirmCapabilityToggle(address, capability, enable) {
+      const dialog = document.getElementById('confirmationDialog');
+      const title = document.getElementById('confirmTitle');
+      const msg = document.getElementById('confirmMessage');
+
+      title.textContent = enable ? `Enable ${capability}?` : `Disable ${capability}?`;
+      msg.textContent = enable 
+        ? `Messages will resume normal processing for ${address}.`
+        : `Staff will temporarily be unable to use ${address} for outbound messages.`;
+
+      pendingConfirmAction = () => {
+        showToast(`${address} ${capability} status updated`);
+      };
+
+      dialog.classList.remove('hidden');
+      dialog.classList.add('flex');
+    }
+
+    function closeConfirmDialog() {
+      const dialog = document.getElementById('confirmationDialog');
+      dialog.classList.add('hidden');
+      dialog.classList.remove('flex');
+      pendingConfirmAction = null;
+    }
+
+    function executeConfirmedAction() {
+      if (pendingConfirmAction) pendingConfirmAction();
+      closeConfirmDialog();
+    }
+
+    // Dropdown Handling
+    function toggleDropdown(dropId) {
+      document.querySelectorAll('[id^="drop-"]').forEach(d => {
+        if (d.id !== dropId) d.classList.add('hidden');
+      });
+      const target = document.getElementById(dropId);
+      if (target) target.classList.toggle('hidden');
+    }
+
+    // Close open menus when clicking outside
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('.relative')) {
+        document.querySelectorAll('[id^="drop-"]').forEach(d => d.classList.add('hidden'));
+      }
+    });
+  </script>
+</body></html>

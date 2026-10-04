@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-slate-950" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin: Product Management — RTCrackers</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff1f1',
+              100: '#ffe1e1',
+              500: '#e31b16',
+              600: '#b90006',
+              700: '#930003',
+              900: '#410001'
+            },
+            admin: {
+              bg: '#090d16',
+              surface: '#0f172a',
+              card: '#131e36',
+              border: '#1e293b',
+              muted: '#64748b',
+              text: '#f8fafc'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Oswald', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    /* Custom admin scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+  </style>
+<meta content="web_dashboard" name="shell-type"/><link href="../runtime/theme.css" rel="stylesheet"/></head>
+<body class="h-full bg-slate-950 font-sans text-slate-100 antialiased flex overflow-hidden">
+<!-- ============================================================== -->
+<!-- 1. LEFT ADMIN SIDEBAR                                          -->
+<!-- ============================================================== -->
+<aside class="w-64 bg-slate-900 border-r border-slate-800 flex flex-col shrink-0 z-30 transition-all duration-300 select-none" id="admin-sidebar">
+<!-- Brand Logo & Workspace Info -->
+<div class="h-16 flex items-center justify-between px-5 border-b border-slate-800 bg-slate-900/60 backdrop-blur">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+<span class="material-symbols-outlined text-[22px]">local_fire_department</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-display tracking-wide font-bold text-lg leading-none text-white">RT<span class="text-brand-500">CRACKERS</span></span>
+<span class="text-[10px] font-semibold bg-brand-500/20 text-brand-500 px-1.5 py-0.2 rounded border border-brand-500/30 uppercase">HQ</span>
+</div>
+<span class="text-[11px] text-slate-400 font-medium">Operations Center</span>
+</div>
+</div>
+<button class="text-slate-400 hover:text-white p-1 rounded-md hover:bg-slate-800 lg:hidden" onclick="toggleSidebar()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Navigation Menu (Scrollable) -->
+<div class="flex-1 overflow-y-auto px-3 py-4 space-y-6 text-xs font-medium">
+<!-- Section: Core -->
+<div>
+<div class="px-3 pb-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Core Command</div>
+<ul class="space-y-0.5">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">dashboard</span>
+<span class="text-sm">Dashboard</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Section: Catalog (ACTIVE) -->
+<div>
+<div class="px-3 pb-2 text-[10px] font-bold text-brand-500 uppercase tracking-widest flex items-center justify-between">
+<span>Catalog &amp; Inventory</span>
+<span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+</div>
+<ul class="space-y-0.5">
+<li>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg bg-brand-500 text-white font-semibold shadow-sm shadow-brand-500/30" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+<span class="text-sm">Products</span>
+</div>
+<span class="text-[11px] bg-black/30 px-1.5 py-0.5 rounded font-bold">2,486</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">category</span>
+<span class="text-sm">Categories</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="text-sm">Brands</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">warehouse</span>
+<span class="text-sm">Inventory Matrix</span>
+</div>
+<span class="text-[10px] bg-amber-500/20 text-amber-400 px-1.5 py-0.5 rounded font-bold">86 Low</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">rate_review</span>
+<span class="text-sm">Product Reviews</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Section: Orders -->
+<div>
+<div class="px-3 pb-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Order Desk</div>
+<ul class="space-y-0.5">
+<li>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span class="text-sm">All Orders</span>
+</div>
+<span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded">1,248</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">hourglass_top</span>
+<span class="text-sm">Pending / Knocking</span>
+</div>
+<span class="text-[10px] bg-brand-500/20 text-brand-500 font-bold px-1.5 py-0.5 rounded">42</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">assignment_return</span>
+<span class="text-sm">Returns &amp; Refunds</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Section: Operations & Finance -->
+<div>
+<div class="px-3 pb-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Fulfillment &amp; Systems</div>
+<ul class="space-y-0.5">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span class="text-sm">Customers &amp; Academies</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">sell</span>
+<span class="text-sm">Coupons &amp; Offers</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span class="text-sm">Shipments &amp; Dispatch</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+<span class="text-sm">Finance &amp; UPI Settlements</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">query_stats</span>
+<span class="text-sm">Sales Analytics</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">admin_panel_settings</span>
+<span class="text-sm">Roles &amp; Permissions</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- Sidebar Footer / Environment Pill -->
+<div class="p-3 border-t border-slate-800 bg-slate-900/90 flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-slate-400 font-mono text-[11px]">PROD-API: v2.4.9</span>
+</div>
+<button class="text-slate-400 hover:text-white p-1 hover:bg-slate-800 rounded" title="Collapse Sidebar">
+<span class="material-symbols-outlined text-[18px]">first_page</span>
+</button>
+</div>
+</aside>
+<!-- ============================================================== -->
+<!-- 2. MAIN APPLICATION WORKSPACE                                  -->
+<!-- ============================================================== -->
+<div class="flex-1 flex flex-col min-w-0 bg-slate-950 overflow-hidden relative">
+<!-- Top Admin Header -->
+<header class="h-16 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 flex items-center justify-between px-6 shrink-0 z-20">
+<div class="flex items-center gap-4 flex-1">
+<button class="lg:hidden text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-slate-800" onclick="toggleSidebar()">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+</button>
+<!-- Breadcrumb Pill -->
+<nav class="flex items-center gap-2 text-xs font-medium text-slate-400">
+<span class="hover:text-slate-200 cursor-pointer">Admin</span>
+<span class="text-slate-600">/</span>
+<span class="hover:text-slate-200 cursor-pointer">Catalog</span>
+<span class="text-slate-600">/</span>
+<span class="text-brand-500 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+            Products
+          </span>
+</nav>
+<!-- Global Search Bar -->
+<div class="relative max-w-md w-full ml-4 hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-500 text-[18px]">search</span>
+<input class="w-full bg-slate-800/80 border border-slate-700/80 rounded-lg pl-9 pr-12 py-1.5 text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all" placeholder="Global search: orders, SKUs, sparkler grades, players..." type="text"/>
+<kbd class="absolute right-2.5 top-2 text-[10px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded border border-slate-700">⌘K</kbd>
+</div>
+</div>
+<!-- Header Right Utilities -->
+<div class="flex items-center gap-3 shrink-0">
+<!-- Quick Notification Bell -->
+<button class="relative p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-brand-500 ring-2 ring-slate-900"></span>
+</button>
+<div class="h-6 w-px bg-slate-800"></div>
+<!-- Admin Profile Pill -->
+<div class="flex items-center gap-3 pl-1 pr-2 py-1 rounded-lg bg-slate-800/60 border border-slate-700/60 cursor-pointer hover:border-slate-600 transition-colors">
+<div class="w-8 h-8 rounded-md bg-gradient-to-tr from-brand-600 to-amber-500 flex items-center justify-center text-white font-bold text-xs shadow-inner">
+            RA
+          </div>
+<div class="flex flex-col text-left leading-tight hidden sm:block">
+<span class="text-xs font-semibold text-slate-200">Raghav A.</span>
+<span class="text-[10px] text-brand-500 font-medium font-mono">Catalog Admin (L3)</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[18px]">expand_more</span>
+</div>
+</div>
+</header>
+<!-- Scrollable Workspace Body -->
+<main class="flex-1 overflow-y-auto p-6 space-y-6"><div class="flex flex-col w-full space-y-6">
+<!-- ============================================================== -->
+<!-- 1. PAGE HEADER & PRIMARY ACTIONS                               -->
+<!-- ============================================================== -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-surface-container-low p-6 rounded-xl shadow-md">
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-wider">ORDERS DESK</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary/10 text-secondary text-label-sm font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+          Live Telemetry Active
+        </span>
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-widest hidden sm:inline-block">Sync: 12ms</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Manage customer order lifecycles from instant checkout to warehouse fulfillment, knocking verification, dispatch, and final delivery.
+      </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-2.5 shrink-0 flex-wrap">
+<button class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md transition-all shadow-sm" onclick="exportOrdersCSV()">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Orders</span>
+</button>
+<button class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-secondary font-label-md text-label-md transition-all shadow-sm" onclick="bulkPrintSlipsModal()">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Bulk Print Slips</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary-container to-on-primary-fixed-variant hover:from-inverse-primary hover:to-primary-container text-on-primary-container font-headline-md text-label-lg uppercase tracking-wider shadow-lg shadow-primary-container/25 transition-all" onclick="openModal('dispatch-modal')">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ Create Manual Order</span>
+</button>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 2. SIX LIFECYCLE ORDER KPI METRICS                             -->
+<!-- ============================================================== -->
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3.5">
+<!-- Card 1: Total Orders -->
+<div class="bg-surface-container p-4 rounded-xl shadow-md flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Total Orders</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">inventory</span>
+</div>
+<div class="mt-3">
+<div class="font-headline-lg text-headline-lg text-on-surface leading-none">12,842</div>
+<div class="flex items-center gap-1 mt-1 text-label-sm font-label-sm text-secondary">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+18.4%</span>
+<span class="text-outline font-body-sm text-[10px]">vs last mo</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Pending Payment -->
+<div class="bg-surface-container p-4 rounded-xl shadow-md flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Pending Verify</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">pending_actions</span>
+</div>
+<div class="mt-3">
+<div class="font-headline-lg text-headline-lg text-tertiary leading-none">124</div>
+<div class="mt-1 text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>Needs Review</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Processing / Knocking -->
+<div class="bg-surface-container p-4 rounded-xl shadow-md flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">In Knocking/Prep</span>
+<span class="material-symbols-outlined text-primary-container text-[20px]">local_fire_department</span>
+</div>
+<div class="mt-3">
+<div class="font-headline-lg text-headline-lg text-primary leading-none">286</div>
+<div class="mt-1 text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span>At Fulfillment Desk</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Dispatched / Shipped -->
+<div class="bg-surface-container p-4 rounded-xl shadow-md flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Dispatched / Transit</span>
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">local_shipping</span>
+</div>
+<div class="mt-3">
+<div class="font-headline-lg text-headline-lg text-secondary-fixed leading-none">418</div>
+<div class="mt-1 text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span>In-transit Partner</span>
+</div>
+</div>
+</div>
+<!-- Card 5: Delivered -->
+<div class="bg-surface-container p-4 rounded-xl shadow-md flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Delivered</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">task_alt</span>
+</div>
+<div class="mt-3">
+<div class="font-headline-lg text-headline-lg text-on-surface leading-none">11,246</div>
+<div class="mt-1 text-label-sm font-label-sm text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>98.2% on-time SLA</span>
+</div>
+</div>
+</div>
+<!-- Card 6: Cancelled / Refunded -->
+<div class="bg-surface-container p-4 rounded-xl shadow-md flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Cancelled/Refund</span>
+<span class="material-symbols-outlined text-error text-[20px]">cancel</span>
+</div>
+<div class="mt-3">
+<div class="font-headline-lg text-headline-lg text-error leading-none">768</div>
+<div class="mt-1 text-label-sm font-label-sm text-outline flex items-center gap-1">
+<span>5.9% overall churn</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 3. COMPACT REVENUE & FINANCIAL TELEMETRY LEDGER                -->
+<!-- ============================================================== -->
+<div class="bg-surface-container-low p-4 rounded-xl shadow-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">account_balance_wallet</span>
+<span class="font-headline-md text-title-md text-on-surface uppercase tracking-wide">Operational Cashflow Ledger (Realized 30D)</span>
+</div>
+<div class="text-label-sm font-label-sm text-outline">
+        GST Reconciliation: <span class="text-secondary font-bold">100% Matched</span>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-3 pt-3 bg-surface-container p-3 rounded-lg">
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase block">Gross Sales</span>
+<span class="font-headline-md text-title-lg text-on-surface">₹4,82,90,450</span>
+</div>
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase block">Discounts</span>
+<span class="font-headline-md text-title-lg text-tertiary">-₹38,40,120</span>
+</div>
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase block">Shipping Freight</span>
+<span class="font-headline-md text-title-lg text-on-surface">+₹14,20,500</span>
+</div>
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase block">Tax / GST (12/18%)</span>
+<span class="font-headline-md text-title-lg text-on-surface-variant">₹58,12,890</span>
+</div>
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase block">Total Refunded</span>
+<span class="font-headline-md text-title-lg text-error">-₹18,20,400</span>
+</div>
+<div class="space-y-0.5 bg-surface-container-high p-2 rounded">
+<span class="font-label-sm text-label-sm text-secondary uppercase block">Net Realized</span>
+<span class="font-headline-md text-title-lg text-secondary">₹4,98,63,320</span>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 4. ADVANCED SEARCH & FILTER CONTROLS TOOLBAR                   -->
+<!-- ============================================================== -->
+<div class="bg-surface-container p-4 rounded-xl shadow-md space-y-3">
+<!-- Omnisearch & Quick Status Chips -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-3">
+<!-- Search Input -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">search</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-body-sm text-body-sm pl-9 pr-10 py-2 rounded-lg placeholder:text-outline focus:outline-none shadow-inner" id="order-search" onkeyup="filterOrdersTable()" placeholder="Search by Order ID (e.g. #RTC-892410), customer name, email, phone, or courier AWB..." type="text"/>
+<kbd class="absolute right-2.5 top-2 text-[10px] font-label-sm bg-surface-container text-outline px-1.5 py-0.5 rounded">⌘K</kbd>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex items-center gap-2 overflow-x-auto shrink-0 pb-1 lg:pb-0">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:text-secondary text-label-sm font-label-sm transition-colors whitespace-nowrap" onclick="applyPresetFilter('ALL')">
+          All Orders
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-primary-container/20 text-primary hover:bg-primary-container/30 text-label-sm font-label-sm transition-colors whitespace-nowrap" onclick="applyPresetFilter('PROCESSING')">
+          Processing (286)
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-secondary-container/20 text-secondary hover:bg-secondary-container/30 text-label-sm font-label-sm transition-colors whitespace-nowrap" onclick="applyPresetFilter('SHIPPED')">
+          In-Transit (418)
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-tertiary-container/30 text-tertiary hover:bg-tertiary-container/40 text-label-sm font-label-sm transition-colors whitespace-nowrap" onclick="applyPresetFilter('PENDING')">
+          Needs Action (124)
+        </button>
+</div>
+</div>
+<!-- Filter Dropdown Matrix -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5 pt-2">
+<!-- Order Status -->
+<div class="space-y-1">
+<label class="block font-label-sm text-[10px] text-outline uppercase tracking-wider">Order Status</label>
+<select class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-sm py-1.5 px-2.5 rounded-lg focus:outline-none" id="filter-order-status" onchange="filterOrdersTable()">
+<option value="ALL">All Statuses</option>
+<option value="PROCESSING">Processing</option>
+<option value="SHIPPED">Shipped</option>
+<option value="DELIVERED">Delivered</option>
+<option value="PENDING">Pending COD/Verif</option>
+<option value="CANCELLED">Cancelled / Refunded</option>
+</select>
+</div>
+<!-- Payment Status -->
+<div class="space-y-1">
+<label class="block font-label-sm text-[10px] text-outline uppercase tracking-wider">Payment State</label>
+<select class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-sm py-1.5 px-2.5 rounded-lg focus:outline-none" id="filter-payment-status" onchange="filterOrdersTable()">
+<option value="ALL">All Payments</option>
+<option value="PAID">Paid</option>
+<option value="PENDING">Pending</option>
+<option value="REFUNDED">Refunded</option>
+<option value="FAILED">Failed</option>
+</select>
+</div>
+<!-- Fulfillment Desk -->
+<div class="space-y-1">
+<label class="block font-label-sm text-[10px] text-outline uppercase tracking-wider">Fulfillment</label>
+<select class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-sm py-1.5 px-2.5 rounded-lg focus:outline-none" id="filter-fulfillment" onchange="filterOrdersTable()">
+<option value="ALL">All States</option>
+<option value="FULFILLED">Fulfilled</option>
+<option value="PARTIALLY PACKED">Partially Packed</option>
+<option value="UNFULFILLED">Unfulfilled</option>
+</select>
+</div>
+<!-- Payment Method -->
+<div class="space-y-1">
+<label class="block font-label-sm text-[10px] text-outline uppercase tracking-wider">Method</label>
+<select class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-sm py-1.5 px-2.5 rounded-lg focus:outline-none" id="filter-method" onchange="filterOrdersTable()">
+<option value="ALL">All Gateways</option>
+<option value="UPI">UPI / Instant</option>
+<option value="CARD">Credit/Debit Card</option>
+<option value="RAZORPAY">Razorpay NetBanking</option>
+<option value="COD">Cash on Delivery</option>
+</select>
+</div>
+<!-- Date Range -->
+<div class="space-y-1">
+<label class="block font-label-sm text-[10px] text-outline uppercase tracking-wider">Date Timeline</label>
+<select class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-sm py-1.5 px-2.5 rounded-lg focus:outline-none" id="filter-date" onchange="filterOrdersTable()">
+<option value="ALL">All History</option>
+<option value="TODAY">Today (Oct 4)</option>
+<option value="7D">Last 7 Days</option>
+<option value="30D">Last 30 Days</option>
+</select>
+</div>
+<!-- Filter Controls CTA -->
+<div class="flex items-end gap-1.5">
+<button class="flex-1 py-1.5 px-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-outline hover:text-on-surface text-label-sm font-label-sm transition-colors text-center" onclick="clearOrderFilters()">
+          Reset
+        </button>
+<button class="flex-1 py-1.5 px-2 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm font-bold shadow-sm transition-colors text-center" onclick="filterOrdersTable()">
+          Filter
+        </button>
+</div>
+</div>
+<!-- Active Filters Feedback Strip -->
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline pt-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span>Active Filters:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary">Channel: Web Storefront</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface">Range: All Recorded</span>
+<span class="text-outline font-body-sm text-[11px]">(Showing <span class="text-secondary font-bold" id="orders-visible-count">6</span> matching orders)</span>
+</div>
+<button class="text-primary hover:underline text-label-sm font-label-sm" onclick="clearOrderFilters()">Clear All</button>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 5. BULK ACTIONS FLOATING TOOLBAR                               -->
+<!-- ============================================================== -->
+<div class="hidden bg-surface-container-highest p-3 rounded-xl shadow-xl flex flex-col sm:flex-row items-center justify-between gap-3 transition-all animate-pulse" id="bulk-order-toolbar">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-headline-md text-title-md text-on-surface">
+<span class="text-secondary font-bold" id="bulk-selected-number">0</span> Orders Selected
+      </span>
+<span class="text-outline text-label-sm font-label-sm hidden sm:inline">| Batch fulfillment operations ready</span>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container text-label-sm font-label-sm font-bold hover:bg-inverse-primary transition-colors" onclick="bulkSetStatus('PROCESSING')">
+        Mark Processing
+      </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-secondary text-label-sm font-label-sm transition-colors" onclick="bulkPrintSlipsModal()">
+        Print Packing Slips
+      </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface text-label-sm font-label-sm transition-colors" onclick="exportOrdersCSV()">
+        Bulk Export
+      </button>
+<button class="px-3 py-1.5 rounded-lg bg-error-container text-on-error-container text-label-sm font-label-sm font-bold hover:bg-on-error transition-colors" onclick="openModal('cancel-order-modal')">
+        Cancel Selected
+      </button>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 6. HIGH-DENSITY ORDER MANAGEMENT DATA TABLE                    -->
+<!-- ============================================================== -->
+<div class="bg-surface-container rounded-xl shadow-md overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm text-on-surface">
+<!-- Table Head -->
+<thead class="bg-surface-container-low font-label-sm text-label-sm text-outline uppercase tracking-wider">
+<tr>
+<th class="p-3.5 w-10 text-center">
+<input class="w-4 h-4 rounded bg-surface-container text-primary focus:ring-0 cursor-pointer" id="master-checkbox" onchange="toggleSelectAllOrders(this)" type="checkbox"/>
+</th>
+<th class="p-3.5">Order ID &amp; Items</th>
+<th class="p-3.5">Customer &amp; Location</th>
+<th class="p-3.5">Timestamp</th>
+<th class="p-3.5">Order Value &amp; GST</th>
+<th class="p-3.5">Payment</th>
+<th class="p-3.5">Order Status</th>
+<th class="p-3.5">Fulfillment</th>
+<th class="p-3.5">Courier &amp; AWB</th>
+<th class="p-3.5 text-right">Actions</th>
+</tr>
+</thead>
+<!-- Table Body with 6 Rich Samples -->
+<tbody class="divide-y divide-surface-container-low" id="orders-table-body">
+<!-- ROW 1: RTC-892410 (SS Ton Bat + SG Pads) -->
+<tr class="hover:bg-surface-container-high transition-colors cursor-pointer" onclick="handleOrderRowClick(event, 'drawer-order-detail')">
+<td class="p-3.5 text-center">
+<input class="order-row-check w-4 h-4 rounded bg-surface-container text-primary focus:ring-0 cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+</td>
+<td class="p-3.5">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-title-md text-secondary font-bold">#RTC-892410</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-[10px] font-label-sm text-outline">3 items</span>
+</div>
+<div class="font-body-sm text-[11px] text-on-surface-variant truncate max-w-[200px]" title="SS Ton Reserve Edition Bat + SG Test Pads + Grip kit">
+                SS Ton Reserve Bat + SG Test Pads...
+              </div>
+</td>
+<td class="p-3.5">
+<div class="font-label-md text-label-md text-on-surface font-semibold">Raghav K.</div>
+<div class="text-[11px] text-outline font-body-sm">r•••••@gmail.com • Bengaluru, KA</div>
+</td>
+<td class="p-3.5 whitespace-nowrap">
+<div class="text-on-surface font-label-sm text-label-sm">Oct 4, 2026</div>
+<div class="text-[11px] text-outline">02:42 PM (12m ago)</div>
+</td>
+<td class="p-3.5 whitespace-nowrap">
+<div class="font-headline-md text-title-md text-secondary font-bold">₹28,495</div>
+<div class="text-[10px] text-outline">Sub: ₹27,000 + GST ₹1,495</div>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary/10 text-secondary text-label-sm font-label-sm uppercase font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                PAID (UPI)
+              </span>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-container/20 text-primary text-label-sm font-label-sm uppercase font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+                PROCESSING
+              </span>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary text-label-sm font-label-sm uppercase">
+                PARTIAL PACK
+              </span>
+</td>
+<td class="p-3.5">
+<div class="font-label-sm text-label-sm text-on-surface font-bold">Delhivery</div>
+<div class="text-[11px] font-mono text-outline">DEL-9842109</div>
+</td>
+<td class="p-3.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-secondary" onclick="openDrawer('drawer-order-detail')" title="Quick View Detail">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg bg-primary-container hover:bg-inverse-primary text-on-primary-container" onclick="openModal('dispatch-modal')" title="Dispatch Workflow">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-outline hover:text-on-surface" onclick="printSingleSlip('#RTC-892410')" title="Print Slip">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: RTC-892409 (Kookaburra Kahuna Pro) -->
+<tr class="hover:bg-surface-container-high transition-colors cursor-pointer" onclick="handleOrderRowClick(event, 'drawer-order-detail')">
+<td class="p-3.5 text-center">
+<input class="order-row-check w-4 h-4 rounded bg-surface-container text-primary focus:ring-0 cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+</td>
+<td class="p-3.5">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-title-md text-secondary font-bold">#RTC-892409</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-[10px] font-label-sm text-outline">2 items</span>
+</div>
+<div class="font-body-sm text-[11px] text-on-surface-variant truncate max-w-[200px]" title="Kookaburra Kahuna Pro Bat + Kookaburra Turf Balls (Box of 6)">
+                Kahuna Pro Bat + Turf Balls (6)...
+              </div>
+</td>
+<td class="p-3.5">
+<div class="font-label-md text-label-md text-on-surface font-semibold">Vikram S.</div>
+<div class="text-[11px] text-outline font-body-sm">v•••••@icloud.com • Mumbai, MH</div>
+</td>
+<td class="p-3.5 whitespace-nowrap">
+<div class="text-on-surface font-label-sm text-label-sm">Oct 4, 2026</div>
+<div class="text-[11px] text-outline">11:15 AM</div>
+</td>
+<td class="p-3.5 whitespace-nowrap">
+<div class="font-headline-md text-title-md text-secondary font-bold">₹64,000</div>
+<div class="text-[10px] text-outline">Sub: ₹57,142 + GST ₹6,858</div>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary/10 text-secondary text-label-sm font-label-sm uppercase font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                PAID (CARD)
+              </span>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container/20 text-secondary text-label-sm font-label-sm uppercase font-bold">
+                SHIPPED
+              </span>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary/10 text-secondary text-label-sm font-label-sm uppercase">
+                FULFILLED
+              </span>
+</td>
+<td class="p-3.5">
+<div class="font-label-sm text-label-sm text-on-surface font-bold">BlueDart Express</div>
+<div class="text-[11px] font-mono text-outline">BLU-88219</div>
+</td>
+<td class="p-3.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-secondary" onclick="openDrawer('drawer-order-detail')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-secondary" onclick="alert('Tracking status for BLU-88219: Out for Hub Dispatch')">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-outline hover:text-on-surface" onclick="printSingleSlip('#RTC-892409')">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: RTC-892408 (Nike Mercurial Vapor 15 FG) -->
+<tr class="hover:bg-surface-container-high transition-colors cursor-pointer" onclick="handleOrderRowClick(event, 'drawer-order-detail')">
+<td class="p-3.5 text-center">
+<input class="order-row-check w-4 h-4 rounded bg-surface-container text-primary focus:ring-0 cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+</td>
+<td class="p-3.5">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-title-md text-secondary font-bold">#RTC-892408</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-[10px] font-label-sm text-outline">1 item</span>
+</div>
+<div class="font-body-sm text-[11px] text-on-surface-variant truncate max-w-[200px]" title="Nike Mercurial Vapor 15 Elite FG Boots (Size UK 9)">
+                Nike Mercurial Vapor 15 FG...
+              </div>
+</td>
+<td class="p-3.5">
+<div class="font-label-md text-label-md text-on-surface font-semibold">Aditya P.</div>
+<div class="text-[11px] text-outline font-body-sm">a•••••@gmail.com • New Delhi, DL</div>
+</td>
+<td class="p-3.5 whitespace-nowrap">
+<div class="text-on-surface font-label-sm text-label-sm">Oct 3, 2026</div>
+<div class="text-[11px] text-outline">04:20 PM</div>
+</td>
+<td class="p-3.5 whitespace-nowrap">
+<div class="font-headline-md text-title-md text-secondary font-bold">₹21,495</div>
+<div class="text-[10px] text-outline">Sub: ₹19,192 + GST ₹2,303</div>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary/10 text-secondary text-label-sm font-label-sm uppercase font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                PAID (RAZOR)
+              </span>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary/10 text-secondary text-label-sm font-label-sm uppercase font-bold">
+                DELIVERED
+              </span>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary/10 text-secondary text-label-sm font-label-sm uppercase">
+                FULFILLED
+              </span>
+</td>
+<td class="p-3.5">
+<div class="font-label-sm text-label-sm text-on-surface font-bold">Delhivery Surface</div>
+<div class="text-[11px] font-mono text-secondary">Delivered Oct 3</div>
+</td>
+<td class="p-3.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-secondary" onclick="openDrawer('drawer-order-detail')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-tertiary" onclick="openModal('refund-workflow-modal')" title="Refund / Return">
+<span class="material-symbols-outlined text-[18px]">assignment_return</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: RTC-892407 (Yonex Astrox 99 Pro Fireworks Rackets) -->
+<tr class="hover:bg-surface-container-high transition-colors cursor-pointer" onclick="handleOrderRowClick(event, 'drawer-order-detail')">
+<td class="p-3.5 text-center">
+<input class="order-row-check w-4 h-4 rounded bg-surface-container text-primary focus:ring-0 cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+</td>
+<td class="p-3.5">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-title-md text-secondary font-bold">#RTC-892407</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-[10px] font-label-sm text-outline">3 items</span>
+</div>
+<div class="font-body-sm text-[11px] text-on-surface-variant truncate max-w-[200px]" title="Yonex Astrox 99 Pro Fireworks Racket (3 pcs) + BG65 Strings">
+                Yonex Astrox 99 Pro (3 pcs)...
+              </div>
+</td>
+<td class="p-3.5">
+<div class="font-label-md text-label-md text-on-surface font-semibold">Rohit M.</div>
+<div class="text-[11px] text-outline font-body-sm">r•••••@yahoo.com • Hyderabad, TS</div>
+</td>
+<td class="p-3.5 whitespace-nowrap">
+<div class="text-on-surface font-label-sm text-label-sm">Oct 3, 2026</div>
+<div class="text-[11px] text-outline">01:05 PM</div>
+</td>
+<td class="p-3.5 whitespace-nowrap">
+<div class="font-headline-md text-title-md text-secondary font-bold">₹55,470</div>
+<div class="text-[10px] text-outline">COD Amount to collect</div>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary text-label-sm font-label-sm uppercase font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                PENDING (COD)
+              </span>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary text-label-sm font-label-sm uppercase font-bold">
+                PENDING VERIF
+              </span>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-outline text-label-sm font-label-sm uppercase">
+                UNFULFILLED
+              </span>
+</td>
+<td class="p-3.5">
+<div class="font-label-sm text-label-sm text-outline font-bold">Awaiting OTP</div>
+<div class="text-[11px] font-mono text-outline">Hold (COD High Val)</div>
+</td>
+<td class="p-3.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-secondary" onclick="openDrawer('drawer-order-detail')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-tertiary" onclick="alert('Triggered customer automated WhatsApp verification ping.')" title="Verify Customer">
+<span class="material-symbols-outlined text-[18px]">mark_chat_unread</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-error" onclick="openModal('cancel-order-modal')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: RTC-892406 (SG Test Batting Gloves) -->
+<tr class="hover:bg-surface-container-high transition-colors cursor-pointer" onclick="handleOrderRowClick(event, 'drawer-order-detail')">
+<td class="p-3.5 text-center">
+<input class="order-row-check w-4 h-4 rounded bg-surface-container text-primary focus:ring-0 cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+</td>
+<td class="p-3.5">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-title-md text-secondary font-bold">#RTC-892406</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-[10px] font-label-sm text-outline">1 item</span>
+</div>
+<div class="font-body-sm text-[11px] text-on-surface-variant truncate max-w-[200px]" title="SG Test White Fireworks Batting Gloves (Men's RH)">
+                SG Test White Batting Gloves...
+              </div>
+</td>
+<td class="p-3.5">
+<div class="font-label-md text-label-md text-on-surface font-semibold">Ananya S.</div>
+<div class="text-[11px] text-outline font-body-sm">a•••••@outlook.com • Chennai, TN</div>
+</td>
+<td class="p-3.5 whitespace-nowrap">
+<div class="text-on-surface font-label-sm text-label-sm">Oct 3, 2026</div>
+<div class="text-[11px] text-outline">09:12 AM</div>
+</td>
+<td class="p-3.5 whitespace-nowrap">
+<div class="font-headline-md text-title-md text-secondary font-bold">₹4,499</div>
+<div class="text-[10px] text-outline">Sub: ₹4,017 + GST ₹482</div>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary/10 text-secondary text-label-sm font-label-sm uppercase font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                PAID (UPI)
+              </span>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-container/20 text-primary text-label-sm font-label-sm uppercase font-bold">
+                PROCESSING
+              </span>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary text-label-sm font-label-sm uppercase">
+                PICK-LIST READY
+              </span>
+</td>
+<td class="p-3.5">
+<div class="font-label-sm text-label-sm text-on-surface font-bold">Delhivery Air</div>
+<div class="text-[11px] font-mono text-outline">DEL-9840192</div>
+</td>
+<td class="p-3.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-secondary" onclick="openDrawer('drawer-order-detail')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg bg-primary-container hover:bg-inverse-primary text-on-primary-container" onclick="openModal('dispatch-modal')">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 6: RTC-892405 (Gray-Nicolls Bat - Refunded) -->
+<tr class="hover:bg-surface-container-high transition-colors cursor-pointer" onclick="handleOrderRowClick(event, 'drawer-order-detail')">
+<td class="p-3.5 text-center">
+<input class="order-row-check w-4 h-4 rounded bg-surface-container text-primary focus:ring-0 cursor-pointer" onchange="updateSelectedCount()" type="checkbox"/>
+</td>
+<td class="p-3.5">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-title-md text-secondary font-bold">#RTC-892405</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-[10px] font-label-sm text-outline">1 item</span>
+</div>
+<div class="font-body-sm text-[11px] text-on-surface-variant truncate max-w-[200px]" title="Gray-Nicolls Shockwave 2.0 Players Edition Fireworks Bat">
+                Gray-Nicolls Shockwave 2.0 Bat...
+              </div>
+</td>
+<td class="p-3.5">
+<div class="font-label-md text-label-md text-on-surface font-semibold">Kunal V.</div>
+<div class="text-[11px] text-outline font-body-sm">k•••••@gmail.com • Kolkata, WB</div>
+</td>
+<td class="p-3.5 whitespace-nowrap">
+<div class="text-on-surface font-label-sm text-label-sm">Oct 2, 2026</div>
+<div class="text-[11px] text-outline">06:45 PM</div>
+</td>
+<td class="p-3.5 whitespace-nowrap">
+<div class="font-headline-md text-title-md text-outline line-through">₹38,990</div>
+<div class="text-[10px] text-error">Refunded ₹38,990 to UPI</div>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error-container text-on-error-container text-label-sm font-label-sm uppercase font-bold">
+                REFUNDED
+              </span>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error-container/30 text-error text-label-sm font-label-sm uppercase font-bold">
+                CANCELLED
+              </span>
+</td>
+<td class="p-3.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-outline text-label-sm font-label-sm uppercase">
+                RESTOCKED
+              </span>
+</td>
+<td class="p-3.5">
+<div class="font-label-sm text-label-sm text-outline font-bold">Return Received</div>
+<div class="text-[11px] font-mono text-outline">Bengaluru Depot</div>
+</td>
+<td class="p-3.5 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-secondary" onclick="openDrawer('drawer-order-detail')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-outline" onclick="openModal('refund-workflow-modal')" title="Audit Refund Details">
+<span class="material-symbols-outlined text-[18px]">receipt</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Page Size -->
+<div class="p-4 bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-4 font-label-sm text-label-sm text-outline">
+<div class="flex items-center gap-3">
+<span>Rows per page:</span>
+<select class="bg-surface-container text-on-surface py-1 px-2 rounded focus:outline-none">
+<option selected="">25</option>
+<option>50</option>
+<option>100</option>
+</select>
+<span>Showing 1 to 6 of 12,842 operations</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-bright text-outline hover:text-on-surface transition-colors" disabled="">
+<span class="material-symbols-outlined text-[18px]">first_page</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-bright text-outline hover:text-on-surface transition-colors" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-3 py-1 rounded bg-secondary text-on-secondary font-bold">1</span>
+<button class="px-3 py-1 rounded bg-surface-container hover:bg-surface-bright text-on-surface">2</button>
+<button class="px-3 py-1 rounded bg-surface-container hover:bg-surface-bright text-on-surface">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="px-3 py-1 rounded bg-surface-container hover:bg-surface-bright text-on-surface">514</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-bright text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-bright text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">last_page</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 7. INTERACTIVE SLIDE-OVER ORDER DETAIL DRAWER (Inspect #RTC-892410) -->
+<!-- ============================================================== -->
+<div aria-labelledby="slide-over-title" aria-modal="true" class="fixed inset-0 z-50 overflow-hidden hidden" id="drawer-order-detail" role="dialog">
+<div class="absolute inset-0 bg-surface-container-lowest/80 backdrop-blur-sm transition-opacity" onclick="closeDrawer('drawer-order-detail')"></div>
+<div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-6 md:pl-10">
+<div class="pointer-events-auto w-screen max-w-2xl bg-surface-container shadow-2xl flex flex-col">
+<!-- Drawer Header -->
+<div class="p-6 bg-surface-container-low shadow-sm flex items-center justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<span class="font-headline-lg text-headline-md text-secondary font-bold">#RTC-892410</span>
+<span class="px-2.5 py-0.5 rounded bg-primary-container/20 text-primary text-label-sm font-label-sm uppercase font-bold">
+                PROCESSING
+              </span>
+<span class="text-label-sm font-label-sm text-outline">Web Checkout</span>
+</div>
+<div class="text-body-sm font-body-sm text-outline">
+              Placed: <span class="text-on-surface font-semibold">Today, Oct 4, 2026 • 02:42 PM</span>
+</div>
+</div>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-bright text-outline hover:text-on-surface transition-colors" onclick="closeDrawer('drawer-order-detail')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Quick Action Bar -->
+<div class="px-6 py-3 bg-surface-container-high flex items-center justify-between gap-2 overflow-x-auto">
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container hover:bg-surface-bright text-on-surface text-label-sm font-label-sm" onclick="alert('Generating GST Tax Invoice (PDF) for #RTC-892410...')">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+<span>Tax Invoice</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container hover:bg-surface-bright text-secondary text-label-sm font-label-sm" onclick="printSingleSlip('#RTC-892410')">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>Packing Slip</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container hover:bg-surface-bright text-outline hover:text-on-surface text-label-sm font-label-sm" onclick="alert('Notification email &amp; SMS re-sent to Raghav K.')">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Resend Alert</span>
+</button>
+</div>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded bg-error-container text-on-error-container text-label-sm font-label-sm font-bold" onclick="openModal('cancel-order-modal')">
+<span>Cancel</span>
+</button>
+</div>
+<!-- Drawer Scrollable Body -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Lifecycle Stepper / Progress Timeline -->
+<div class="bg-surface-container-low p-4 rounded-xl shadow-inner space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-title-md text-on-surface uppercase tracking-wide">Fulfillment Lifecycle</span>
+<span class="text-label-sm font-label-sm text-secondary">Step 4 of 6</span>
+</div>
+<!-- Visual Stepper -->
+<div class="relative pl-6 space-y-4 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
+<!-- Step 1 -->
+<div class="relative">
+<span class="absolute -left-[22px] top-0.5 w-4 h-4 rounded-full bg-secondary flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined text-[12px] font-bold">check</span>
+</span>
+<div class="font-label-md text-label-md text-on-surface font-bold">1. Order Placed</div>
+<div class="text-[11px] text-outline">Oct 4, 02:42 PM via Mobile Web</div>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<span class="absolute -left-[22px] top-0.5 w-4 h-4 rounded-full bg-secondary flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined text-[12px] font-bold">check</span>
+</span>
+<div class="font-label-md text-label-md text-on-surface font-bold">2. Payment Confirmed (₹28,495)</div>
+<div class="text-[11px] text-outline">Oct 4, 02:43 PM via Razorpay UPI #TXN_9841209</div>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<span class="absolute -left-[22px] top-0.5 w-4 h-4 rounded-full bg-secondary flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined text-[12px] font-bold">check</span>
+</span>
+<div class="font-label-md text-label-md text-on-surface font-bold">3. Sparkler Knocking &amp; Laser Weight Spec</div>
+<div class="text-[11px] text-outline">Completed by Raghav A. • Grade 1+ Certified (15,000 Strikes)</div>
+</div>
+<!-- Step 4: Active Current Step -->
+<div class="relative">
+<span class="absolute -left-[22px] top-0.5 w-4 h-4 rounded-full bg-primary-container ring-4 ring-primary-container/30 flex items-center justify-center text-on-primary-container animate-pulse">
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+</span>
+<div class="font-label-md text-label-md text-primary font-bold">4. Warehouse Packing (Current Phase)</div>
+<div class="text-[11px] text-on-surface-variant">Packing Slip #PS-8821 generated. Double-padded bat sleeve enclosed.</div>
+</div>
+<!-- Step 5 -->
+<div class="relative opacity-60">
+<span class="absolute -left-[22px] top-0.5 w-4 h-4 rounded-full bg-surface-container-high flex items-center justify-center text-outline">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</span>
+<div class="font-label-md text-label-md text-outline">5. Courier Handover / Dispatch</div>
+<div class="text-[11px] text-outline">Awaiting pickup by Delhivery Express (AWB: DEL-9842109)</div>
+</div>
+<!-- Step 6 -->
+<div class="relative opacity-40">
+<span class="absolute -left-[22px] top-0.5 w-4 h-4 rounded-full bg-surface-container-high flex items-center justify-center text-outline">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</span>
+<div class="font-label-md text-label-md text-outline">6. Final Customer Delivery</div>
+<div class="text-[11px] text-outline">Estimated Delivery: Oct 6, 2026 before 08:00 PM</div>
+</div>
+</div>
+</div>
+<!-- Customer & Delivery Address Card -->
+<div class="bg-surface-container-low p-4 rounded-xl shadow-inner space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-title-md text-on-surface uppercase tracking-wide">Customer &amp; Shipping Profile</span>
+<span class="px-2 py-0.5 rounded bg-secondary/10 text-secondary text-label-sm font-label-sm font-bold">Premier Club Member</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 font-body-sm text-body-sm">
+<div class="space-y-1">
+<span class="text-outline font-label-sm text-[10px] uppercase block">Customer Details</span>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Raghav K.</div>
+<div class="text-on-surface-variant">Phone: +91 98765 ••••• (Verified OTP)</div>
+<div class="text-on-surface-variant">Email: raghav.k••••@gmail.com</div>
+</div>
+<div class="space-y-1">
+<span class="text-outline font-label-sm text-[10px] uppercase block">Delivery Destination</span>
+<div class="text-on-surface font-medium leading-relaxed">
+                  Flat 402, Prestige Palms,<br/>
+                  100 Feet Road, Indiranagar,<br/>
+                  Bengaluru, Karnataka — 560038
+                </div>
+</div>
+</div>
+</div>
+<!-- Line Items List -->
+<div class="bg-surface-container-low p-4 rounded-xl shadow-inner space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-title-md text-on-surface uppercase tracking-wide">Ordered Items (3)</span>
+<span class="font-label-sm text-label-sm text-outline">SKU Classification Verified</span>
+</div>
+<div class="space-y-3 divide-y divide-surface-container-high pt-1">
+<!-- Item 1 -->
+<div class="flex items-center justify-between gap-4 pt-2">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">local_fire_department</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">SS Ton Reserve Edition Bat</div>
+<div class="text-[11px] text-outline">Size: Short Handle (SH) • Weight: 1180g • 10 Grains</div>
+<div class="text-[10px] font-mono text-secondary">SKU: SS-TON-RES-001</div>
+</div>
+</div>
+<div class="text-right whitespace-nowrap">
+<div class="font-headline-md text-title-md text-on-surface">₹21,499</div>
+<div class="text-[11px] text-outline">Qty: 1</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between gap-4 pt-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[24px]">shield</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">SG Test Pro Batting Leg Guards</div>
+<div class="text-[11px] text-outline">White • Men's Right Hand • High Density Foam</div>
+<div class="text-[10px] font-mono text-outline">SKU: SG-TEST-PAD-WHT</div>
+</div>
+</div>
+<div class="text-right whitespace-nowrap">
+<div class="font-headline-md text-title-md text-on-surface">₹6,850</div>
+<div class="text-[11px] text-outline">Qty: 1</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between gap-4 pt-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[24px]">construction</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">RTCrackers Bat Grip &amp; Toe Kit</div>
+<div class="text-[11px] text-outline">Chevron Red Grip + 2x Hard Polymer Toe Guards</div>
+<div class="text-[10px] font-mono text-outline">SKU: RTC-ACC-GRP-09</div>
+</div>
+</div>
+<div class="text-right whitespace-nowrap">
+<div class="font-headline-md text-title-md text-on-surface">₹146</div>
+<div class="text-[11px] text-outline">Qty: 1</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Financial Ledger Card -->
+<div class="bg-surface-container-low p-4 rounded-xl shadow-inner space-y-2.5 font-body-sm text-body-sm">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline uppercase tracking-wider">
+<span>Financial Ledger</span>
+<span>INR (₹)</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Items Subtotal</span>
+<span class="font-medium text-on-surface">₹28,495</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Courier Freight Express</span>
+<span class="text-secondary font-bold">FREE (Festive Promo)</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Applicable GST (12% Integrated IGST Included)</span>
+<span>₹3,053</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Festive Voucher Applied (CRICKET10)</span>
+<span class="text-secondary">-₹0.00</span>
+</div>
+<div class="pt-2 border-t border-surface-container-high flex justify-between items-baseline font-headline-md text-title-lg text-secondary">
+<span>Total Paid</span>
+<span>₹28,495</span>
+</div>
+<div class="text-[11px] text-outline text-right">Settled via Razorpay UPI #TXN_9841209</div>
+</div>
+<!-- Internal Admin Operations Notes -->
+<div class="bg-surface-container-low p-4 rounded-xl shadow-inner space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-title-md text-on-surface uppercase tracking-wide">Internal Operations Notes</span>
+<span class="text-[10px] font-label-sm bg-surface-container-high text-outline px-1.5 py-0.5 rounded">Restricted L3+</span>
+</div>
+<!-- Existing Note -->
+<div class="p-3 rounded-lg bg-surface-container space-y-1">
+<div class="flex items-center justify-between text-[11px]">
+<span class="font-label-md text-label-md text-secondary font-semibold">Raghav A. (Operations Lead)</span>
+<span class="text-outline">Today, 02:50 PM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                "Customer requested pre-knocked bat with double grip applied. Laser-matched pickup at 1182g. Shipped with spare toe guard."
+              </p>
+</div>
+<!-- Add Note Input -->
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-lowest text-on-surface font-body-sm text-body-sm px-3 py-2 rounded-lg focus:outline-none" id="new-internal-note" placeholder="Add confidential operational log..." type="text"/>
+<button class="px-3 py-2 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm font-bold hover:bg-secondary-fixed transition-colors" onclick="appendOrderNote()">
+                Log Note
+              </button>
+</div>
+</div>
+</div>
+<!-- Drawer Footer Controls -->
+<div class="p-4 bg-surface-container-low shadow-lg flex items-center justify-between gap-3">
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-bright text-outline hover:text-on-surface text-label-md font-label-md" onclick="closeDrawer('drawer-order-detail')">
+            Close Drawer
+          </button>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-lg bg-primary-container hover:bg-inverse-primary text-on-primary-container font-headline-md text-label-lg uppercase tracking-wider shadow-md" onclick="openModal('dispatch-modal'); closeDrawer('drawer-order-detail');">
+              Process &amp; Dispatch Order
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 8. PROCESS & DISPATCH ORDER WORKFLOW MODAL                     -->
+<!-- ============================================================== -->
+<div aria-modal="true" class="fixed inset-0 z-50 overflow-y-auto hidden" id="dispatch-modal" role="dialog">
+<div class="flex items-center justify-center min-h-screen px-4 py-6">
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-sm" onclick="closeModal('dispatch-modal')"></div>
+<div class="relative bg-surface-container rounded-2xl max-w-xl w-full p-6 text-left shadow-2xl z-10 space-y-5">
+<div class="flex items-center justify-between pb-3 bg-surface-container-low -mx-6 -mt-6 p-6 rounded-t-2xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">local_shipping</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">Process &amp; Dispatch Order</h3>
+<p class="font-body-sm text-body-sm text-outline">Assign Courier partner, compute dimensional weight &amp; book AWB</p>
+</div>
+</div>
+<button class="text-outline hover:text-on-surface" onclick="closeModal('dispatch-modal')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="space-y-4">
+<!-- Target Order Display -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between font-label-md text-label-md">
+<span class="text-outline">Target Order:</span>
+<span class="text-secondary font-headline-md text-title-md">#RTC-892410 (Raghav K.)</span>
+</div>
+<!-- Courier Selection -->
+<div class="space-y-1.5">
+<label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider">Select Courier Carrier</label>
+<div class="grid grid-cols-3 gap-2.5">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="courier-choice" type="radio" value="delhivery"/>
+<div class="p-3 rounded-lg bg-surface-container-low text-center peer-checked:bg-secondary/10 peer-checked:text-secondary transition-all">
+<div class="font-headline-md text-title-md">DELHIVERY</div>
+<div class="text-[10px] text-outline mt-0.5">Air Express (24h)</div>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="courier-choice" type="radio" value="bluedart"/>
+<div class="p-3 rounded-lg bg-surface-container-low text-center peer-checked:bg-secondary/10 peer-checked:text-secondary transition-all">
+<div class="font-headline-md text-title-md">BLUEDART</div>
+<div class="text-[10px] text-outline mt-0.5">Apex Priority</div>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="courier-choice" type="radio" value="dtdc"/>
+<div class="p-3 rounded-lg bg-surface-container-low text-center peer-checked:bg-secondary/10 peer-checked:text-secondary transition-all">
+<div class="font-headline-md text-title-md">DTDC</div>
+<div class="text-[10px] text-outline mt-0.5">Surface Economy</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Package Measurements -->
+<div class="grid grid-cols-2 gap-3">
+<div class="space-y-1">
+<label class="block font-label-sm text-label-sm text-outline uppercase">Dead Weight (Kg)</label>
+<input class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-md p-2 rounded-lg focus:outline-none" step="0.1" type="number" value="2.4"/>
+</div>
+<div class="space-y-1">
+<label class="block font-label-sm text-label-sm text-outline uppercase">Box Dimensions (L×W×H cm)</label>
+<input class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-md p-2 rounded-lg focus:outline-none" type="text" value="92 × 15 × 12"/>
+</div>
+</div>
+<!-- Pickup Depot -->
+<div class="space-y-1">
+<label class="block font-label-sm text-label-sm text-outline uppercase">Origin Hub</label>
+<select class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-md p-2 rounded-lg focus:outline-none">
+<option>RTCrackers Main Hub — Bangalore Electronic City (HUB-01)</option>
+<option>RTCrackers North Hub — Meerut Sparkler Foundry (HUB-02)</option>
+<option>RTCrackers West Hub — Mumbai Bhiwandi Logistics (HUB-03)</option>
+</select>
+</div>
+<!-- Auto-Generate AWB Toggle -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="space-y-0.5">
+<span class="font-label-md text-label-md text-on-surface font-bold block">Instant API AWB Booking</span>
+<span class="font-body-sm text-[11px] text-outline block">Auto-fetches tracking token &amp; queues thermal label printer</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+</div>
+</div>
+<div class="pt-3 flex items-center justify-end gap-2.5">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-outline hover:text-on-surface text-label-md font-label-md" onclick="closeModal('dispatch-modal')">
+            Cancel
+          </button>
+<button class="px-5 py-2 rounded-lg bg-primary-container hover:bg-inverse-primary text-on-primary-container font-headline-md text-label-lg uppercase tracking-wider shadow-lg shadow-primary-container/20" onclick="confirmOrderDispatch()">
+            Confirm &amp; Generate AWB
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 9. REFUND ORDER WORKFLOW MODAL                                 -->
+<!-- ============================================================== -->
+<div aria-modal="true" class="fixed inset-0 z-50 overflow-y-auto hidden" id="refund-workflow-modal" role="dialog">
+<div class="flex items-center justify-center min-h-screen px-4 py-6">
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-sm" onclick="closeModal('refund-workflow-modal')"></div>
+<div class="relative bg-surface-container rounded-2xl max-w-lg w-full p-6 text-left shadow-2xl z-10 space-y-4">
+<div class="flex items-center justify-between pb-3 bg-surface-container-low -mx-6 -mt-6 p-6 rounded-t-2xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tertiary-container/30 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">currency_exchange</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">Initiate Refund Protocol</h3>
+<p class="font-body-sm text-body-sm text-outline">Order #RTC-892408 • Aditya P.</p>
+</div>
+</div>
+<button class="text-outline hover:text-on-surface" onclick="closeModal('refund-workflow-modal')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="space-y-4">
+<!-- Balance Metric -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase block">Eligible Refund Balance</span>
+<span class="font-headline-md text-headline-md text-secondary">₹21,495</span>
+</div>
+<span class="text-label-sm font-label-sm bg-secondary/10 text-secondary px-2 py-0.5 rounded font-bold">100% Eligible</span>
+</div>
+<!-- Refund Mode Toggle -->
+<div class="space-y-1.5">
+<label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider">Refund Quantum</label>
+<div class="grid grid-cols-2 gap-2">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="refund-type" type="radio" value="full"/>
+<div class="p-2.5 rounded-lg bg-surface-container-low text-center peer-checked:bg-secondary/10 peer-checked:text-secondary text-label-md font-label-md">
+                  Full Refund (₹21,495)
+                </div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="refund-type" type="radio" value="partial"/>
+<div class="p-2.5 rounded-lg bg-surface-container-low text-center peer-checked:bg-secondary/10 peer-checked:text-secondary text-label-md font-label-md">
+                  Partial Goodwill Credit
+                </div>
+</label>
+</div>
+</div>
+<!-- Reason Dropdown -->
+<div class="space-y-1">
+<label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider">Reason for Refund</label>
+<select class="w-full bg-surface-container-lowest text-on-surface font-label-md text-label-md p-2 rounded-lg focus:outline-none">
+<option>Defective Sparkler / Grain Flaw detected during unboxing</option>
+<option>Size or Weight Mismatch against player request</option>
+<option>Transit Damage reported by Courier Partner</option>
+<option>Customer Cancellation prior to dispatch</option>
+<option>Goodwill Festive Compensation</option>
+</select>
+</div>
+<!-- Restock Items Checkbox -->
+<label class="flex items-center gap-2 text-label-md font-label-md text-on-surface cursor-pointer">
+<input checked="" class="w-4 h-4 rounded bg-surface-container text-primary focus:ring-0" type="checkbox"/>
+<span>Automatically increment SKU inventory upon warehouse receipt</span>
+</label>
+</div>
+<div class="pt-3 flex items-center justify-end gap-2.5">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-outline hover:text-on-surface text-label-md font-label-md" onclick="closeModal('refund-workflow-modal')">
+            Cancel
+          </button>
+<button class="px-5 py-2 rounded-lg bg-gradient-to-r from-tertiary-container to-on-tertiary-fixed-variant text-on-tertiary-container font-headline-md text-label-lg uppercase tracking-wider shadow-md" onclick="confirmRefundExecution()">
+            Process Refund (₹21,495)
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 10. CANCEL ORDER CONFIRMATION MODAL                            -->
+<!-- ============================================================== -->
+<div aria-modal="true" class="fixed inset-0 z-50 overflow-y-auto hidden" id="cancel-order-modal" role="dialog">
+<div class="flex items-center justify-center min-h-screen px-4 py-6">
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-sm" onclick="closeModal('cancel-order-modal')"></div>
+<div class="relative bg-surface-container rounded-2xl max-w-md w-full p-6 text-left shadow-2xl z-10 space-y-4">
+<div class="w-12 h-12 rounded-xl bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">warning</span>
+</div>
+<div class="space-y-1">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">Abort &amp; Cancel Order?</h3>
+<p class="font-body-sm text-body-sm text-outline">
+            Cancelling will revoke pending packing slips, halt warehouse knocking queue, and notify the customer immediately via SMS.
+          </p>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low font-body-sm text-[12px] text-on-surface-variant">
+          ⚠️ If payment was received, an automated Razorpay reversal token will be scheduled within 2 hours.
+        </div>
+<div class="pt-2 flex items-center justify-end gap-2.5">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-outline hover:text-on-surface text-label-md font-label-md" onclick="closeModal('cancel-order-modal')">
+            Keep Active
+          </button>
+<button class="px-4 py-2 rounded-lg bg-error-container hover:bg-on-error text-on-error-container font-headline-md text-label-lg uppercase tracking-wider shadow-md" onclick="confirmCancellationAction()">
+            Confirm Cancel
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 11. INLINE JAVASCRIPT CONTROLLERS                              -->
+<!-- ============================================================== -->
+<script>
+    // Row click opening drawer (ignoring checkboxes & buttons)
+    function handleOrderRowClick(event, drawerId) {
+      if (event.target.tagName.toLowerCase() === 'input' || event.target.closest('button')) {
+        return;
+      }
+      openDrawer(drawerId);
+    }
+
+    // Modal Helpers
+    function openModal(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('hidden');
+    }
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.add('hidden');
+    }
+
+    // Drawer Helpers
+    function openDrawer(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('hidden');
+    }
+    function closeDrawer(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.add('hidden');
+    }
+
+    // Master checkbox logic
+    function toggleSelectAllOrders(master) {
+      const boxes = document.querySelectorAll('.order-row-check');
+      boxes.forEach(cb => cb.checked = master.checked);
+      updateSelectedCount();
+    }
+
+    function updateSelectedCount() {
+      const selected = document.querySelectorAll('.order-row-check:checked');
+      const count = selected.length;
+      const bar = document.getElementById('bulk-order-toolbar');
+      const countLabel = document.getElementById('bulk-selected-number');
+
+      if (count > 0) {
+        bar.classList.remove('hidden');
+        if (countLabel) countLabel.textContent = count;
+      } else {
+        bar.classList.add('hidden');
+        const master = document.getElementById('master-checkbox');
+        if (master) master.checked = false;
+      }
+    }
+
+    // Filtering Logic
+    function filterOrdersTable() {
+      const searchVal = (document.getElementById('order-search')?.value || '').toLowerCase();
+      const statusVal = document.getElementById('filter-order-status')?.value || 'ALL';
+      const payVal = document.getElementById('filter-payment-status')?.value || 'ALL';
+      const fulfillVal = document.getElementById('filter-fulfillment')?.value || 'ALL';
+      const rows = document.querySelectorAll('#orders-table-body tr');
+
+      let visible = 0;
+      rows.forEach(r => {
+        const text = r.textContent.toLowerCase();
+        const matchesSearch = text.includes(searchVal);
+        const matchesStatus = (statusVal === 'ALL') || text.includes(statusVal.toLowerCase());
+        const matchesPay = (payVal === 'ALL') || text.includes(payVal.toLowerCase());
+        const matchesFulfill = (fulfillVal === 'ALL') || text.includes(fulfillVal.toLowerCase());
+
+        if (matchesSearch && matchesStatus && matchesPay && matchesFulfill) {
+          r.style.display = '';
+          visible++;
+        } else {
+          r.style.display = 'none';
+        }
+      });
+
+      const countEl = document.getElementById('orders-visible-count');
+      if (countEl) countEl.textContent = visible;
+    }
+
+    function clearOrderFilters() {
+      if (document.getElementById('order-search')) document.getElementById('order-search').value = '';
+      if (document.getElementById('filter-order-status')) document.getElementById('filter-order-status').value = 'ALL';
+      if (document.getElementById('filter-payment-status')) document.getElementById('filter-payment-status').value = 'ALL';
+      if (document.getElementById('filter-fulfillment')) document.getElementById('filter-fulfillment').value = 'ALL';
+      if (document.getElementById('filter-method')) document.getElementById('filter-method').value = 'ALL';
+      if (document.getElementById('filter-date')) document.getElementById('filter-date').value = 'ALL';
+      filterOrdersTable();
+    }
+
+    function applyPresetFilter(preset) {
+      const statusSelect = document.getElementById('filter-order-status');
+      if (statusSelect) {
+        statusSelect.value = preset;
+        filterOrdersTable();
+      }
+    }
+
+    // Operational Actions
+    function exportOrdersCSV() {
+      alert("Export queued: Compiling comprehensive order telemetry (12,842 rows with AWB, GST, and SKU data) to CSV...");
+    }
+
+    function bulkPrintSlipsModal() {
+      alert("Queued 6 Thermal Shipping Slips to Zebra Warehouse Printer (Depot 1).");
+    }
+
+    function printSingleSlip(orderId) {
+      alert(`Printing 4x6" Barcoded Shipping Label for ${orderId}...`);
+    }
+
+    function bulkSetStatus(status) {
+      alert(`Updated fulfillment status to ${status} for selected orders.`);
+      const boxes = document.querySelectorAll('.order-row-check');
+      boxes.forEach(cb => cb.checked = false);
+      updateSelectedCount();
+    }
+
+    function confirmOrderDispatch() {
+      alert("Delhivery AWB Generated: DEL-9842109! Pickup scheduled for 05:00 PM today.");
+      closeModal('dispatch-modal');
+    }
+
+    function confirmRefundExecution() {
+      alert("Refund of ₹21,495 processed via Razorpay API. UTR generated: #REF_881920.");
+      closeModal('refund-workflow-modal');
+    }
+
+    function confirmCancellationAction() {
+      alert("Order #RTC-892410 cancelled successfully. Knocking technician notified.");
+      closeModal('cancel-order-modal');
+    }
+
+    function appendOrderNote() {
+      const input = document.getElementById('new-internal-note');
+      if (input && input.value.trim() !== '') {
+        alert(`Internal Note Logged: "${input.value}"`);
+        input.value = '';
+      }
+    }
+  </script>
+</div></main>
+</div>
+<!-- ============================================================== -->
+<!-- 8. QUICK-VIEW PRODUCT DETAIL DRAWER                            -->
+<!-- ============================================================== -->
+<div aria-labelledby="slide-over-title" aria-modal="true" class="fixed inset-0 z-50 overflow-hidden hidden" id="drawer-prod-1" role="dialog">
+<div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="closeDrawer('drawer-prod-1')"></div>
+<div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+<div class="pointer-events-auto w-screen max-w-xl bg-slate-900 border-l border-slate-800 shadow-2xl flex flex-col">
+<!-- Drawer Header -->
+<div class="p-5 border-b border-slate-800 bg-slate-950/60 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded bg-brand-500/20 text-brand-500 text-[10px] font-bold uppercase tracking-wider border border-brand-500/30">Catalog Quick-Spec</span>
+<span class="text-xs text-slate-400 font-mono">ID: #PROD-84201</span>
+</div>
+<button class="text-slate-400 hover:text-white p-1 rounded-md hover:bg-slate-800" onclick="closeDrawer('drawer-prod-1')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Content Body -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Product Hero Summary -->
+<div class="flex gap-4 items-start">
+<div class="w-20 h-20 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-brand-500 text-[36px]">local_fire_department</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-emerald-400 text-xs font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Active Published
+                </span>
+<span class="text-slate-600">•</span>
+<span class="text-xs text-slate-400 font-mono">SKU: SS-TON-RES-001</span>
+</div>
+<h2 class="text-base font-bold text-white leading-snug">SS Ton Reserve Edition English Sparkler Bat</h2>
+<div class="text-xs text-slate-400">Category: <span class="text-slate-200">Fireworks / Bats</span> | Brand: <span class="text-brand-500 font-semibold">SS Ton</span></div>
+<div class="flex items-baseline gap-2 pt-1">
+<span class="text-xl font-bold font-display text-white">₹42,999</span>
+<span class="text-xs text-slate-500 line-through">₹48,000</span>
+<span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-1.5 py-0.2 rounded">10.4% OFF</span>
+</div>
+</div>
+</div>
+<!-- Quick Metrics Bar -->
+<div class="grid grid-cols-3 gap-3 p-3 rounded-xl bg-slate-950 border border-slate-800 text-center">
+<div>
+<span class="text-[10px] text-slate-400 uppercase tracking-wider block">Live Stock</span>
+<span class="text-base font-bold text-emerald-400">28 pcs</span>
+</div>
+<div class="border-x border-slate-800">
+<span class="text-[10px] text-slate-400 uppercase tracking-wider block">Units Sold (30D)</span>
+<span class="text-base font-bold text-white">142</span>
+</div>
+<div>
+<span class="text-[10px] text-slate-400 uppercase tracking-wider block">Gross Revenue</span>
+<span class="text-base font-bold text-white">₹61,05,858</span>
+</div>
+</div>
+<!-- Technical Sparkler Specs Matrix -->
+<div class="space-y-3">
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Master Grade Telemetry</h3>
+<div class="bg-slate-950 rounded-xl border border-slate-800 divide-y divide-slate-800/80 text-xs">
+<div class="p-2.5 flex justify-between">
+<span class="text-slate-400">Sparkler Classification</span>
+<span class="font-semibold text-white">Grade 1+ Limited Reserve Cleft</span>
+</div>
+<div class="p-2.5 flex justify-between">
+<span class="text-slate-400">Grains Count</span>
+<span class="font-semibold text-white">9 to 11 Straight Unblemished Grains</span>
+</div>
+<div class="p-2.5 flex justify-between">
+<span class="text-slate-400">Edge Thickness</span>
+<span class="font-semibold text-white">40mm – 42mm Contoured Edges</span>
+</div>
+<div class="p-2.5 flex justify-between">
+<span class="text-slate-400">Spine Profile</span>
+<span class="font-semibold text-white">65mm Full Duckbill Spine</span>
+</div>
+<div class="p-2.5 flex justify-between">
+<span class="text-slate-400">Handle Type</span>
+<span class="font-semibold text-white">12-piece Sarawak Cane Semi-Oval</span>
+</div>
+<div class="p-2.5 flex justify-between">
+<span class="text-slate-400">Knocking Status</span>
+<span class="font-semibold text-brand-500">15,000 Strikes + Raw Linseed Oiled</span>
+</div>
+</div>
+</div>
+<!-- Variants Table -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Weight &amp; Size Variants (4)</h3>
+<span class="text-[11px] text-brand-500 cursor-pointer hover:underline font-semibold">+ Add Variant</span>
+</div>
+<div class="bg-slate-950 rounded-xl border border-slate-800 overflow-hidden text-xs">
+<table class="w-full text-left">
+<thead class="bg-slate-900/60 border-b border-slate-800 text-[10px] text-slate-400 uppercase">
+<tr>
+<th class="p-2.5">Variant</th>
+<th class="p-2.5">SKU</th>
+<th class="p-2.5 text-right">Stock</th>
+<th class="p-2.5 text-center">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-800/60 text-slate-300">
+<tr>
+<td class="p-2.5 font-medium">SH / 1160g (Feather Light)</td>
+<td class="p-2.5 font-mono text-[10px] text-slate-400">SS-RES-SH-1160</td>
+<td class="p-2.5 text-right font-bold text-emerald-400">8</td>
+<td class="p-2.5 text-center"><span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded">Active</span></td>
+</tr>
+<tr>
+<td class="p-2.5 font-medium">SH / 1180g (Festival Spec)</td>
+<td class="p-2.5 font-mono text-[10px] text-slate-400">SS-RES-SH-1180</td>
+<td class="p-2.5 text-right font-bold text-emerald-400">14</td>
+<td class="p-2.5 text-center"><span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded">Active</span></td>
+</tr>
+<tr>
+<td class="p-2.5 font-medium">SH / 1210g (Power Profile)</td>
+<td class="p-2.5 font-mono text-[10px] text-slate-400">SS-RES-SH-1210</td>
+<td class="p-2.5 text-right font-bold text-emerald-400">6</td>
+<td class="p-2.5 text-center"><span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded">Active</span></td>
+</tr>
+<tr>
+<td class="p-2.5 font-medium">LH / 1190g (Long Handle)</td>
+<td class="p-2.5 font-mono text-[10px] text-slate-400">SS-RES-LH-1190</td>
+<td class="p-2.5 text-right font-bold text-brand-500">0</td>
+<td class="p-2.5 text-center"><span class="text-[10px] bg-red-500/10 text-red-400 px-1.5 py-0.5 rounded">Out</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Audit Timeline Preview -->
+<div class="space-y-3">
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Recent Admin Activity</h3>
+<div class="space-y-2 border-l border-slate-800 ml-2 pl-4 text-xs">
+<div class="relative">
+<span class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-brand-500 ring-4 ring-slate-900"></span>
+<p class="font-medium text-slate-200">Selling Price updated from ₹44,999 to ₹42,999</p>
+<span class="text-[10px] text-slate-400">Today, 11:32 AM by Raghav A.</span>
+</div>
+<div class="relative">
+<span class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-slate-900"></span>
+<p class="font-medium text-slate-200">Batch restock verified (+10 bats into Bangalore Depot)</p>
+<span class="text-[10px] text-slate-400">Yesterday, 04:15 PM by Suresh K. (Logistics)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer Controls -->
+<div class="p-4 border-t border-slate-800 bg-slate-950 flex items-center justify-between gap-3">
+<button class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold" onclick="closeDrawer('drawer-prod-1')">
+            Close
+          </button>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 text-xs font-semibold flex items-center gap-1.5" onclick="openModal('add-product-modal'); closeDrawer('drawer-prod-1');">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit Product</span>
+</button>
+<a class="px-4 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 text-white text-xs font-semibold flex items-center gap-1.5 shadow-md shadow-brand-500/20" href="#" target="_blank">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+<span>View on Store</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 9. ADD / EDIT PRODUCT MULTI-STEP MODAL WORKFLOW                -->
+<!-- ============================================================== -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 overflow-y-auto hidden" id="add-product-modal" role="dialog">
+<div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+<div class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="closeModal('add-product-modal')"></div>
+<span aria-hidden="true" class="hidden sm:inline-block sm:align-middle sm:h-screen">​</span>
+<!-- Modal Card -->
+<div class="inline-block align-bottom bg-slate-900 border border-slate-800 rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+<!-- Modal Top Bar -->
+<div class="px-6 py-4 border-b border-slate-800 bg-slate-950 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-brand-500 text-white flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">add_box</span>
+</div>
+<div>
+<h2 class="text-sm font-bold text-white uppercase tracking-wide font-display">Product Configuration Studio</h2>
+<p class="text-[11px] text-slate-400">Configure catalog spec, sparkler telemetry, stock, and media assets</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-white p-1 rounded-md hover:bg-slate-800" onclick="closeModal('add-product-modal')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Multi-Step Navigation Strip -->
+<div class="px-6 py-3 bg-slate-950/60 border-b border-slate-800 flex items-center justify-between overflow-x-auto text-xs font-medium">
+<div class="flex items-center gap-6 shrink-0">
+<button class="text-brand-500 font-bold flex items-center gap-1.5 border-b-2 border-brand-500 pb-1">
+<span class="w-5 h-5 rounded-full bg-brand-500 text-white text-[11px] flex items-center justify-center">1</span>
+<span>General Info</span>
+</button>
+<button class="text-slate-400 hover:text-slate-200 flex items-center gap-1.5 pb-1">
+<span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 text-[11px] flex items-center justify-center">2</span>
+<span>Pricing &amp; Tax</span>
+</button>
+<button class="text-slate-400 hover:text-slate-200 flex items-center gap-1.5 pb-1">
+<span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 text-[11px] flex items-center justify-center">3</span>
+<span>Sparkler &amp; Specs</span>
+</button>
+<button class="text-slate-400 hover:text-slate-200 flex items-center gap-1.5 pb-1">
+<span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 text-[11px] flex items-center justify-center">4</span>
+<span>Media &amp; Photos</span>
+</button>
+<button class="text-slate-400 hover:text-slate-200 flex items-center gap-1.5 pb-1">
+<span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 text-[11px] flex items-center justify-center">5</span>
+<span>Variants</span>
+</button>
+<button class="text-slate-400 hover:text-slate-200 flex items-center gap-1.5 pb-1">
+<span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 text-[11px] flex items-center justify-center">6</span>
+<span>Review &amp; Publish</span>
+</button>
+</div>
+</div>
+<!-- Form Body -->
+<div class="p-6 space-y-6 max-h-[65vh] overflow-y-auto text-xs">
+<!-- Step 1: Basic Information -->
+<div class="space-y-4">
+<h3 class="text-xs font-bold uppercase tracking-wider text-brand-500">01. Basic Information</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="sm:col-span-2 space-y-1">
+<label class="block text-slate-300 font-semibold">Product Title <span class="text-brand-500">*</span></label>
+<input class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none" type="text" value="SS Ton Reserve Edition English Sparkler Bat"/>
+</div>
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Primary Category <span class="text-brand-500">*</span></label>
+<select class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none">
+<option selected="">Fireworks</option>
+<option>Fireworks</option>
+<option>Fireworks</option>
+<option>Fireworks</option>
+<option>Fitness</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Sub-Category</label>
+<select class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none">
+<option selected="">English Sparkler Bats</option>
+<option>Kashmir Sparkler Bats</option>
+<option>Batting Leg Guards</option>
+<option>Batting Gloves</option>
+<option>Helmets &amp; Armor</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Brand / Manufacturer <span class="text-brand-500">*</span></label>
+<select class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none">
+<option selected="">SS Ton</option>
+<option>SG</option>
+<option>Kookaburra</option>
+<option>DSC</option>
+<option>Yonex</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Master SKU <span class="text-brand-500">*</span></label>
+<input class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 font-mono focus:border-brand-500 focus:outline-none" type="text" value="SS-TON-RES-001"/>
+</div>
+</div>
+<!-- Description Textarea -->
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Detailed Product Description &amp; Grain Profile</label>
+<textarea class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none" rows="3">The SS Ton Reserve Edition represents the pinnacle of handcrafted fireworks sparkler. Hand-selected Grade 1+ English cleft featuring straight, unbleached grains with massive 40mm contoured edges and light pickup.</textarea>
+</div>
+</div>
+<!-- Step 2: Pricing, MRP & Tax -->
+<div class="space-y-4 pt-4 border-t border-slate-800">
+<h3 class="text-xs font-bold uppercase tracking-wider text-brand-500">02. Financial &amp; Tax Configuration</h3>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Selling Price (INR) <span class="text-brand-500">*</span></label>
+<div class="relative">
+<span class="absolute left-3 top-2 text-slate-500">₹</span>
+<input class="w-full bg-slate-950 border border-slate-800 rounded-lg pl-7 pr-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none" type="number" value="42999"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Maximum Retail Price (MRP)</label>
+<div class="relative">
+<span class="absolute left-3 top-2 text-slate-500">₹</span>
+<input class="w-full bg-slate-950 border border-slate-800 rounded-lg pl-7 pr-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none" type="number" value="48000"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="block text-slate-300 font-semibold">Cost of Goods (Internal Only)</label>
+<div class="relative">
+<span class="absolute left-3 top-2 text-slate-500">₹</span>
+<input class="w-full bg-slate-950 border border-slate-800 rounded-lg pl-7 pr-3 py-2 text-slate-200 focus:border-brand-500 focus:outline-none" type="number" value="28500"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Media Upload Area -->
+<div class="space-y-4 pt-4 border-t border-slate-800">
+<h3 class="text-xs font-bold uppercase tracking-wider text-brand-500">03. High-Resolution Media &amp; Holograms</h3>
+<div class="border-2 border-dashed border-slate-800 hover:border-brand-500/50 rounded-xl p-6 text-center cursor-pointer transition-colors bg-slate-950/40">
+<span class="material-symbols-outlined text-brand-500 text-[36px] mb-2">add_photo_alternate</span>
+<p class="text-xs font-semibold text-slate-200">Drag &amp; drop product imagery, grain close-ups, or 360° spin renders</p>
+<p class="text-[11px] text-slate-500 mt-1">Supports PNG, JPG, WEBP up to 10MB per file</p>
+</div>
+<!-- Uploaded Image Thumbs Preview -->
+<div class="grid grid-cols-4 gap-3">
+<div class="relative rounded-lg border border-brand-500/60 p-1 bg-slate-950 flex flex-col items-center">
+<div class="w-full h-16 bg-slate-800 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-brand-500 text-[24px]">local_fire_department</span>
+</div>
+<span class="absolute top-2 left-2 bg-brand-500 text-white text-[9px] font-bold px-1.5 rounded">PRIMARY</span>
+<span class="text-[10px] text-slate-400 mt-1 truncate max-w-full">Bat_Full_View.jpg</span>
+</div>
+<div class="relative rounded-lg border border-slate-800 p-1 bg-slate-950 flex flex-col items-center">
+<div class="w-full h-16 bg-slate-800 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400 text-[24px]">zoom_in</span>
+</div>
+<span class="text-[10px] text-slate-400 mt-1 truncate max-w-full">Grain_Telemetry.jpg</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer Controls -->
+<div class="px-6 py-4 border-t border-slate-800 bg-slate-950 flex items-center justify-between">
+<button class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-xs" onclick="closeModal('add-product-modal')">
+            Cancel &amp; Discard
+          </button>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-medium text-xs">
+              Save as Staging Draft
+            </button>
+<button class="px-5 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs shadow-lg shadow-brand-500/30 flex items-center gap-1.5" onclick="submitProductSuccess()">
+<span class="material-symbols-outlined text-[16px]">publish</span>
+<span>Publish Product Live</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 10. BULK DELETE CONFIRMATION MODAL                             -->
+<!-- ============================================================== -->
+<div aria-modal="true" class="fixed inset-0 z-50 overflow-y-auto hidden" id="bulk-delete-modal" role="dialog">
+<div class="flex items-center justify-center min-h-screen px-4">
+<div class="fixed inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal('bulk-delete-modal')"></div>
+<div class="relative bg-slate-900 border border-slate-800 rounded-2xl max-w-md w-full p-6 text-left shadow-2xl z-10 space-y-4">
+<div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">delete_forever</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-white">Delete Selected Products?</h3>
+<p class="text-xs text-slate-400 mt-1">You are about to delete <span class="text-white font-bold" id="delete-count-display">2</span> catalog items. Products with historical orders will be converted to <strong class="text-slate-200">Archived</strong> status to preserve transaction integrity.</p>
+</div>
+<div class="pt-2 flex items-center justify-end gap-2.5">
+<button class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium" onclick="closeModal('bulk-delete-modal')">Cancel</button>
+<button class="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-md shadow-red-600/30" onclick="confirmBulkDelete()">Confirm Delete / Archive</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 11. IMPORT CSV MODAL                                           -->
+<!-- ============================================================== -->
+<div aria-modal="true" class="fixed inset-0 z-50 overflow-y-auto hidden" id="import-modal" role="dialog">
+<div class="flex items-center justify-center min-h-screen px-4">
+<div class="fixed inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal('import-modal')"></div>
+<div class="relative bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 text-left shadow-2xl z-10 space-y-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-brand-500 text-[24px]">file_upload</span>
+<h3 class="text-sm font-bold text-white font-display uppercase tracking-wide">Import Product Catalog (CSV/XLSX)</h3>
+</div>
+<button class="text-slate-400 hover:text-white" onclick="closeModal('import-modal')"><span class="material-symbols-outlined text-[20px]">close</span></button>
+</div>
+<div class="border-2 border-dashed border-slate-800 hover:border-brand-500/50 rounded-xl p-8 text-center cursor-pointer bg-slate-950/40">
+<span class="material-symbols-outlined text-slate-500 text-[36px] mb-2">upload_file</span>
+<p class="text-xs font-semibold text-slate-200">Select or drag CSV catalog spreadsheet</p>
+<p class="text-[11px] text-slate-500 mt-1">Complies with RTCrackers Sparkler &amp; Multi-Variant schema</p>
+</div>
+<div class="flex items-center justify-between text-xs text-slate-400">
+<a class="text-brand-500 hover:underline flex items-center gap-1 font-semibold" href="#">
+<span class="material-symbols-outlined text-[16px]">download</span> Download Sample CSV Template
+          </a>
+<span>Max 15MB file size</span>
+</div>
+<div class="pt-3 border-t border-slate-800 flex justify-end gap-2">
+<button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium" onclick="closeModal('import-modal')">Cancel</button>
+<button class="px-4 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 text-white text-xs font-bold" onclick="alert('Import validation queued: 240 rows parsed successfully.'); closeModal('import-modal');">Start Batch Import</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 12. INTERACTION JAVASCRIPT CONTROLLERS                         -->
+<!-- ============================================================== -->
+<script>
+    // Toggle Mobile Sidebar
+    function toggleSidebar() {
+      const sb = document.getElementById('admin-sidebar');
+      sb.classList.toggle('-translate-x-full');
+      sb.classList.toggle('fixed');
+      sb.classList.toggle('inset-y-0');
+      sb.classList.toggle('left-0');
+    }
+
+    // Modal helpers
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    // Quick-View Drawer Helpers
+    function openDrawer(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function closeDrawer(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+    function handleRowClick(event, drawerId) {
+      // Don't trigger if clicked on checkbox or buttons
+      if (event.target.tagName.toLowerCase() === 'input' || event.target.closest('button')) {
+        return;
+      }
+      openDrawer(drawerId);
+    }
+
+    // Selection & Bulk Toolbar logic
+    function toggleSelectAll(master) {
+      const boxes = document.querySelectorAll('.row-checkbox');
+      boxes.forEach(b => b.checked = master.checked);
+      updateSelectionState();
+    }
+    function updateSelectionState() {
+      const boxes = document.querySelectorAll('.row-checkbox:checked');
+      const count = boxes.length;
+      const bar = document.getElementById('bulk-bar');
+      const countLabel = document.getElementById('selected-count');
+      const delLabel = document.getElementById('delete-count-display');
+
+      if (count > 0) {
+        bar.classList.remove('hidden');
+        countLabel.textContent = count;
+        if (delLabel) delLabel.textContent = count;
+      } else {
+        bar.classList.add('hidden');
+      }
+    }
+    function selectAllRows(status) {
+      const boxes = document.querySelectorAll('.row-checkbox');
+      boxes.forEach(b => b.checked = status);
+      const master = document.getElementById('select-all-header');
+      if (master) master.checked = status;
+      updateSelectionState();
+    }
+
+    // Filter Logic
+    function filterTable() {
+      const searchVal = document.getElementById('product-search').value.toLowerCase();
+      const statusVal = document.getElementById('filter-status').value;
+      const catVal = document.getElementById('filter-category').value;
+      const rows = document.querySelectorAll('#table-body tr');
+
+      let visibleCount = 0;
+      rows.forEach(r => {
+        const text = r.textContent.toLowerCase();
+        const matchesSearch = text.includes(searchVal);
+        const matchesStatus = (statusVal === 'ALL') || text.includes(statusVal.toLowerCase());
+        const matchesCat = (catVal === 'ALL') || text.includes(catVal.toLowerCase());
+
+        if (matchesSearch && matchesStatus && matchesCat) {
+          r.style.display = '';
+          visibleCount++;
+        } else {
+          r.style.display = 'none';
+        }
+      });
+      document.getElementById('item-count').textContent = visibleCount;
+    }
+
+    function clearAllFilters() {
+      document.getElementById('product-search').value = '';
+      document.getElementById('filter-status').value = 'ALL';
+      document.getElementById('filter-category').value = 'ALL';
+      document.getElementById('filter-brand').value = 'ALL';
+      filterTable();
+    }
+
+    function bulkStatus(newStatus) {
+      alert(`Updated status to "${newStatus}" for selected items.`);
+      selectAllRows(false);
+    }
+    function confirmBulkDelete() {
+      alert("Selected products have been scheduled for deletion/archival.");
+      closeModal('bulk-delete-modal');
+      selectAllRows(false);
+    }
+    function submitProductSuccess() {
+      alert("Product published successfully! Live telemetry updated on storefront.");
+      closeModal('add-product-modal');
+    }
+    function exportData() {
+      alert("Generating comprehensive CSV report with grain count, weight in grams, and MRP margins...");
+    }
+  </script>
+<script src="../runtime/rtc-runtime.js"></script></body></html>

@@ -1,0 +1,36 @@
+/* RTCrackers role-based site shells */
+:root{--shell-gold:#f6b73c;--shell-gold-soft:#ffd978;--shell-dark:#080b18;--shell-dark-2:#11172d;--shell-line:rgba(255,255,255,.10)}
+.rt-shell-header{position:sticky;top:0;z-index:900;background:rgba(8,11,24,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--shell-line);color:#fff}
+.rt-shell-header .shell-inner{max-width:1280px;margin:auto;min-height:72px;padding:10px 22px;display:flex;align-items:center;gap:24px}
+.rt-shell-brand{display:inline-flex;align-items:center;gap:10px;min-width:max-content;color:#fff}
+.rt-shell-brand .emblem{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#ffcf55,#d87912);font-size:21px;box-shadow:0 8px 22px rgba(246,183,60,.22)}
+.rt-shell-brand strong{display:block;font:800 17px/1 var(--font-display,'Poppins',sans-serif);letter-spacing:.08em}
+.rt-shell-brand small{display:block;margin-top:4px;color:#b9bfd1;font-size:9px;letter-spacing:.12em;text-transform:uppercase}
+.rt-shell-nav{display:flex;align-items:center;justify-content:center;gap:4px;flex:1}
+.rt-shell-nav a,.rt-shell-action{border:0;background:transparent;color:#dfe3ef;padding:10px 12px;border-radius:10px;font:700 13px var(--font-body,'Inter',sans-serif);transition:.2s}
+.rt-shell-nav a:hover,.rt-shell-nav a.active{color:#fff;background:rgba(255,255,255,.08)}
+.rt-shell-nav a.active{box-shadow:inset 0 -2px 0 var(--shell-gold)}
+.rt-shell-actions{display:flex;align-items:center;gap:8px;min-width:max-content}
+.rt-shell-action.primary{background:linear-gradient(135deg,#ffcc59,#dc8116);color:#17100a}
+.rt-shell-action.icon{padding:10px;font-size:17px}
+.rt-shell-menu{display:none;border:1px solid var(--shell-line);background:rgba(255,255,255,.06);color:#fff;border-radius:10px;padding:9px 11px;font-size:20px}
+.rt-shell-mobile{display:none;border-top:1px solid var(--shell-line);padding:10px 18px 16px;background:#080b18}
+.rt-shell-mobile.open{display:grid;gap:5px}
+.rt-shell-mobile a{padding:12px;border-radius:10px;color:#e8ebf3;font-weight:700}
+.rt-shell-mobile a.active{background:rgba(246,183,60,.13);color:var(--shell-gold-soft)}
+.rt-shell-footer{margin-top:auto;background:#070a15;color:#aeb5c8;border-top:1px solid var(--shell-line)}
+.rt-shell-footer .footer-main{max-width:1280px;margin:auto;padding:46px 22px 28px;display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:34px}
+.rt-shell-footer h3{color:#fff;font-size:14px;margin:0 0 13px}
+.rt-shell-footer p{font-size:13px;line-height:1.7;margin:0;max-width:360px}
+.rt-shell-footer a{display:block;color:#aeb5c8;font-size:13px;padding:4px 0}
+.rt-shell-footer a:hover{color:var(--shell-gold-soft)}
+.rt-shell-footer .footer-brand{color:#fff;font:800 20px var(--font-display,'Poppins',sans-serif);letter-spacing:.08em;margin-bottom:8px}
+.rt-shell-footer .footer-bottom{border-top:1px solid var(--shell-line);padding:15px 22px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:12px;max-width:1280px;margin:auto}
+.rt-admin-shell .rt-shell-header{background:#050711}
+.rt-admin-shell .rt-shell-brand .emblem{background:linear-gradient(135deg,#8e7dff,#5143c7);box-shadow:0 8px 22px rgba(104,88,255,.22)}
+.rt-admin-shell .rt-shell-nav a.active{color:#c9c1ff;box-shadow:inset 0 -2px 0 #8e7dff}
+.rt-admin-shell .rt-shell-action.primary{background:linear-gradient(135deg,#9d91ff,#6658db);color:#fff}
+.rt-admin-shell .rt-shell-footer{background:#050711}
+.rt-admin-badge{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#c9c1ff;border:1px solid rgba(142,125,255,.3);padding:5px 8px;border-radius:999px}
+@media(max-width:900px){.rt-shell-nav{display:none}.rt-shell-actions .desktop-only{display:none}.rt-shell-menu{display:block;margin-left:auto}.rt-shell-footer .footer-main{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.rt-shell-header .shell-inner{padding:9px 14px}.rt-shell-brand strong{font-size:14px}.rt-shell-brand small{font-size:8px}.rt-shell-footer .footer-main{grid-template-columns:1fr;padding:34px 18px 22px}.rt-shell-footer .footer-bottom{padding:14px 18px}.rt-shell-actions{gap:4px}}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎆</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="RTCrackers">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <title>RTCrackers Products | Explore Our Festive Collection</title>
+  <meta name="description"
+    content="Browse the complete RTCrackers catalog — 160 festive products across sparklers, fountains, aerials, novelties, gift boxes and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261003">
+  <link rel="stylesheet" href="css/premium-ui.css?v=20261003">
+  <link rel="stylesheet" href="css/animations.css?v=20261003">
+  <link rel="stylesheet" href="css/pwa.css?v=20261003">
+  <link rel="stylesheet" href="css/features.css?v=20261003">
+  <link rel="stylesheet" href="css/advanced-ui.css?v=20261003"><link rel="stylesheet" href="css/industrial-ui.css?v=20261003">
+
+  <link rel="canonical" href="./products.html"><meta property="og:title" content="RTCrackers Products | Explore Our Festive Collection"><meta property="og:type" content="website"><meta property="og:url" content="./products.html"><meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/adaptive-layout.css?v=20261003-v6">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img data-company-logo class="company-logo" src="" alt="RTCrackers" style="display:none;max-height:46px;max-width:150px;object-fit:contain;">
+        <span class="brand-name">RT <span>CRACKERS</span></span>
+        <span class="brand-sub">RTCrackers</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" data-nav="index.html">Home</a>
+        <a href="products.html" data-nav="products.html" class="active">Products</a>
+        <a href="about.html" data-nav="about.html">About</a>
+        <a href="policy.html" data-nav="policy.html">Policies</a>
+        <a href="feedback.html">Feedback</a><a href="contact.html" data-nav="contact.html">Contact</a>
+        <a href="my-orders.html" data-nav="my-orders.html">My Orders</a>
+        <a href="login.html" data-nav="login.html" id="accountNavLink">Login</a>
+      </nav>
+      <div class="header-actions">
+        <a href="order.html" class="btn btn-primary btn-sm">Order Now</a>
+        <a href="order.html" class="cart-btn">🛒 <span class="label">Order</span> (<span
+            class="cart-count">0</span>)</a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav-backdrop" aria-hidden="true"></div><div class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="policy.html">Policies</a>
+      <a href="feedback.html">Feedback</a><a href="contact.html">Contact</a>
+      <a href="my-orders.html">My Orders</a>
+      <a href="login.html" id="accountNavLinkMobile">Login</a>
+      <a href="order.html" class="btn btn-primary btn-block">Order Now — (<span class="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-tight section-alt">
+      <div class="container">
+        <div class="section-head" style="margin-bottom:28px;">
+          <span class="eyebrow">Full Catalog</span>
+          <h2>Our Festive Products</h2>
+          <p>Search, filter and sort our complete range of 160 products.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container">
+        <div class="product-toolbar">
+          <div class="search-box">
+            <input type="search" id="productSearch" placeholder="Search products...">
+          </div>
+          <div class="advanced-filter-controls"><input id="minPrice" type="number" min="0" placeholder="Min ₹"><input id="maxPrice" type="number" min="0" placeholder="Max ₹"><select id="ratingFilter"><option value="0">Any rating</option><option value="4">4★+</option><option value="3">3★+</option></select><label><input id="featuredOnly" type="checkbox"> Featured</label><label><input id="bestsellerOnly" type="checkbox"> Bestsellers</label><label><input id="newOnly" type="checkbox"> New</label></div><div class="sort-select">
+            <select id="sortSelect" aria-label="Sort products">
+              <option value="default">Default</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A-Z</option><option value="rating-desc">Top Rated</option><option value="newest">Newest</option><option value="discount">Best Value</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="filterBar" class="filter-bar" aria-label="Category filters"></div>
+        <p id="resultsCount" class="results-count"></p>
+
+        <div id="productGrid" class="product-grid"></div>
+        <section style="margin-top:36px" data-festival-box></section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-name">RTCRACKERS</span>
+          <p>RTCrackers<br>Celebrate Brighter. Celebrate Together.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="order.html">Order</a>
+          <a href="about.html">About</a>
+          <a href="policy.html">Policies</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Customer Support</h5>
+          <a data-email-link data-company-email href="mailto:sales@rtcrackers.com">sales@rtcrackers.com</a>
+          <a data-phone-link href="tel:+917358633576" data-company-phone-plist>7358633576</a>
+          <span>WhatsApp: <span data-company-whatsapp>72999 41355</span></span>
+        </div>
+        <div class="footer-col">
+          <h5>Office</h5>
+          <span>Sivakasi (Factory)</span>
+          <span>Manali, Chennai (Admin)</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="currentYear">2026</span> RTCrackers. All rights reserved.</span>
+        <span>Order requests only — no online payment is processed on this website.</span>
+        <a href="admin.html" style="opacity:.55;">Admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-order-bar">
+    <a href="order.html" class="btn btn-primary btn-block">🛒 View Order Request (<span class="cart-count">0</span>)</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/micro-interactions.js"></script>
+  <script src="js/auth.js?v=20261003"></script><script src="js/features.js?v=20261003"></script>
+  <script src="js/script.js?v=20261003"></script>
+  <script src="js/animations.js?v=20261003"></script>
+  <script src="js/pwa.js?v=20261003"></script>
+  <script src="js/advanced-ui.js?v=20261003"></script>
+<script src="js/industrial-ui.js?v=20261003"></script><script src="components/customer-shell.js?v=20261003"></script>
+  <script src="js/adaptive-layout.js?v=20261003-v6"></script>
+  <script src="/js/pwa-update.js" defer></script>
+</body>
+
+</html>

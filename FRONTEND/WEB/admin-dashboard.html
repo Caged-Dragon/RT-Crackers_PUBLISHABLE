@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎆</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | RTCrackers</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="RTCrackers admin dashboard.">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261003">
+  <link rel="stylesheet" href="css/advanced-ui.css?v=20261003"><link rel="stylesheet" href="css/industrial-ui.css?v=20261003">
+  <link rel="stylesheet" href="css/premium-ui.css?v=20261003">
+  <style>
+    body {
+      background: var(--grey-100);
+    }
+
+    .adm-top {
+      background: linear-gradient(120deg, var(--navy-950), var(--navy-700));
+      color: #fff;
+      padding: 16px 0;
+      border-bottom: 4px solid transparent;
+      border-image: var(--brand-gradient-full) 1;
+    }
+
+    .adm-top .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .adm-top h1 {
+      color: #fff;
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .adm-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 24px 0 20px;
+    }
+
+    .adm-tab {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--white);
+      border: 1px solid var(--grey-300);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .adm-tab.active {
+      background: var(--brand-gradient-cool);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .adm-panel {
+      display: none;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .adm-panel.active {
+      display: block;
+    }
+
+    .info-banner {
+      background: #eef1fb;
+      border: 1px solid #c9d0ef;
+      color: var(--navy-800);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      margin-top: 20px;
+    }
+
+    .info-banner a {
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .warn-banner {
+      background: #fff4e5;
+      border: 1px solid #f0c987;
+      color: #7a4c00;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      margin-top: 20px;
+    }
+
+    .tbl-wrap {
+      overflow-x: auto;
+    }
+
+    table.adm {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      min-width: 760px;
+    }
+
+    table.adm th,
+    table.adm td {
+      padding: 8px;
+      border-bottom: 1px solid var(--grey-300);
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    table.adm th {
+      background: var(--grey-100);
+      font-family: var(--font-display);
+    }
+
+    table.adm input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid var(--grey-300);
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    .row-actions {
+      display: flex;
+      gap: 6px;
+    }
+
+    .grid-form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .add-row {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1fr 1fr auto;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .add-row input {
+      padding: 10px;
+      border: 1px solid var(--grey-300);
+      border-radius: 6px;
+    }
+
+    .admin-account-hero{position:relative;overflow:hidden;border-radius:24px;padding:26px;color:#fff;background:linear-gradient(135deg,#07112f,#253e8a 58%,#d92828);box-shadow:0 18px 50px rgba(7,17,47,.18)}
+    .admin-account-hero:after{content:"🎆";position:absolute;right:24px;bottom:-16px;font-size:110px;opacity:.12;transform:rotate(-12deg)}
+    .admin-account-hero h3{margin:0;font-size:28px;color:#fff}.admin-account-hero p{margin:6px 0 0;opacity:.82}
+    .role-card{margin-top:18px;padding:18px;border-radius:18px;background:linear-gradient(135deg,#fff9e8,#fff);border:1px solid #f1d58b;display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}
+    .role-badge{display:inline-flex;padding:7px 12px;border-radius:999px;background:#07112f;color:#fff;font-size:12px;font-weight:900;letter-spacing:.06em}
+
+
+    .cat-add-row {
+      display: grid;
+      grid-template-columns: 1fr 100px auto;
+      gap: 8px;
+      margin-bottom: 18px;
+      max-width: 480px;
+    }
+
+    .cat-add-row input {
+      padding: 10px;
+      border: 1px solid var(--grey-300);
+      border-radius: 6px;
+    }
+
+    .full-page-msg {
+      max-width: 480px;
+      margin: 80px auto;
+      text-align: center;
+      background: var(--white);
+      padding: 36px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+    }
+
+    .loading-row td {
+      color: var(--grey-600);
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Stitch admin: compact, runtime-measured two-sided drawers */
+    .adm-layout{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;gap:clamp(8px,1.2cqw,16px);align-items:start;margin-top:20px;position:relative;container-type:inline-size}
+    .adm-side{position:sticky;top:16px;width:48px;min-width:48px;background:#0f131d;border:1px solid rgba(242,202,80,.18);border-radius:14px;padding:10px 6px;color:#f5f1e7;box-shadow:0 14px 35px rgba(7,11,18,.14);transition:width .18s ease,min-width .18s ease,padding .18s ease,box-shadow .18s ease}
+    .adm-side.is-collapsed{width:48px;min-width:48px;padding:10px 6px}
+    .adm-side-head{display:flex;align-items:center;justify-content:center;gap:8px;padding:4px 2px 10px;border-bottom:1px solid rgba(242,202,80,.12);margin-bottom:8px}
+    .adm-side-title{font:800 10px/1 Inter,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#f2ca50;white-space:nowrap;overflow:hidden;display:none}
+    .adm-side-toggle{width:32px;height:32px;flex:0 0 32px;border:1px solid rgba(242,202,80,.25);border-radius:8px;background:#171d29;color:#f2ca50;cursor:pointer;font-size:18px;line-height:1}
+    .adm-side-nav{display:flex;flex-direction:column;gap:5px}
+    .adm-tab{width:100%;display:flex;align-items:center;justify-content:center;gap:9px;padding:9px 6px;border-radius:8px;background:transparent;border:1px solid transparent;color:#c9ced8;font:700 12px/1.2 Inter,system-ui,sans-serif;text-align:left;cursor:pointer;white-space:nowrap;overflow:hidden}
+    .adm-tab:hover{background:#171d29;color:#fff}
+    .adm-tab.active{background:#f2ca50;color:#11140f;border-color:#f2ca50;box-shadow:0 5px 14px rgba(242,202,80,.16)}
+    .adm-tab .adm-side-icon{width:24px;text-align:center;flex:0 0 24px}
+    .adm-content{min-width:0;max-width:none}
+    .adm-panel{border:1px solid rgba(15,19,29,.07)}
+    .adm-panel.active{animation:none}
+    .adm-side-right{order:3}
+    .adm-side.rt-runtime-expanded,.adm-side:not(.is-collapsed).rt-runtime-expanded{width:var(--rt-admin-expanded,204px);min-width:var(--rt-admin-expanded,204px);padding:10px}
+    .adm-side.rt-runtime-expanded .adm-side-head,.adm-side:not(.is-collapsed).rt-runtime-expanded .adm-side-head{justify-content:space-between}
+    .adm-side.rt-runtime-expanded .adm-side-title,.adm-side:not(.is-collapsed).rt-runtime-expanded .adm-side-title{display:block}
+    .adm-side.rt-runtime-expanded .adm-tab,.adm-side:not(.is-collapsed).rt-runtime-expanded .adm-tab{justify-content:flex-start;padding-inline:10px}
+    .adm-side.rt-runtime-expanded .adm-side-icon,.adm-side:not(.is-collapsed).rt-runtime-expanded .adm-side-icon{width:20px;flex-basis:20px}
+    .adm-layout.rt-admin-drawer-overlay .adm-side.rt-runtime-expanded{position:absolute!important;top:0;bottom:auto;z-index:50;max-height:calc(100dvh - 32px);overflow:auto;box-shadow:0 24px 70px rgba(0,0,0,.38)}
+    .adm-layout.rt-admin-drawer-overlay .adm-side-left.rt-runtime-expanded{left:0}
+    .adm-layout.rt-admin-drawer-overlay .adm-side-right.rt-runtime-expanded{right:0}
+    .adm-layout.rt-admin-drawer-overlay .adm-content{grid-column:1/-1}
+    .adm-layout.rt-admin-compact{grid-template-columns:48px minmax(0,1fr) 48px}
+    .adm-layout.rt-admin-stacked{grid-template-columns:minmax(0,1fr)}
+    .adm-layout.rt-admin-stacked .adm-side{position:relative;top:auto;width:100%;min-width:0}
+    .adm-layout.rt-admin-stacked .adm-side.is-collapsed{height:48px;overflow:hidden}
+    .adm-layout.rt-admin-stacked .adm-side:not(.is-collapsed){width:100%;}
+    .adm-layout.rt-admin-stacked .adm-side-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+    .adm-layout.rt-admin-stacked .adm-side-right{order:3}
+    .bulk-import{margin-top:18px;padding:18px;border-radius:12px;background:#0f131d;color:#f5f1e7;border:1px solid rgba(242,202,80,.18)}
+    .bulk-import h4{margin:0 0 6px;color:#f2ca50}.bulk-import p{color:#b8bfca;font-size:12.5px}.bulk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:end}.bulk-preview{margin-top:14px;overflow:auto;max-height:330px;border:1px solid rgba(242,202,80,.14);border-radius:8px}.bulk-preview table{min-width:900px;color:#f5f1e7}.bulk-preview th{position:sticky;top:0;background:#171d29;color:#f2ca50}.bulk-note{font-size:11.5px;color:#aab2bf}.bulk-status{margin-top:10px;font-weight:700}.bulk-ok{color:#8ee0ad}.bulk-warn{color:#ffd47a}.bulk-error{color:#ff9b9b}
+  </style>
+  <link rel="stylesheet" href="css/adaptive-layout.css?v=20261003-v6">
+  <link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/css/pwa-update.css">
+</head>
+
+<body>
+
+  <div id="gateMsg" class="full-page-msg" style="display:none;"></div>
+
+  <div id="dashboardRoot" style="display:none;">
+    <div class="adm-top">
+      <div class="container">
+        <h1>RTCrackers — Admin Dashboard</h1>
+        <div style="display:flex;gap:10px;">
+          <a href="admin-dashboard.html?tab=orders" class="btn btn-sm btn-outline on-light-navy" id="quickOrderTracking">Order Tracking</a><a href="admin-dashboard.html?tab=order-approvals" class="btn btn-sm btn-outline on-light-navy">Order Approvals</a><a href="admin-dashboard.html?tab=pincodes" class="btn btn-sm btn-outline on-light-navy">PIN Import</a>
+          <a href="index.html" class="btn btn-sm btn-outline on-light-navy">View Website</a>
+          <button type="button" id="logoutBtn" class="btn btn-sm btn-primary">Log Out</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="info-banner">
+        Connected to Supabase project <strong id="projectIdLabel"></strong>. Edits here write directly to Postgres database and
+        are visible to every visitor immediately. For bulk edits or backups, use the <a
+          href="https://supabase.com/dashboard" target="_blank">Supabase Console</a> directly.
+      </div>
+
+      <div class="adm-layout">
+        <aside class="adm-side adm-side-left" id="admLeftSide">
+          <div class="adm-side-head"><span class="adm-side-title">Store</span><button class="adm-side-toggle" type="button" data-side-toggle="left" aria-label="Collapse left navigation">‹</button></div>
+          <nav class="adm-side-nav" aria-label="Store administration">
+            <button class="adm-tab active" data-tab="products" type="button"><span class="adm-side-icon">📦</span><span class="adm-side-label">Products</span></button>
+            <button class="adm-tab" data-tab="banners" type="button"><span class="adm-side-icon">🖼️</span><span class="adm-side-label">Banners</span></button>
+            <button class="adm-tab" data-tab="categories" type="button"><span class="adm-side-icon">🗂️</span><span class="adm-side-label">Categories</span></button>
+            <button class="adm-tab" data-tab="company" type="button"><span class="adm-side-icon">🏢</span><span class="adm-side-label">Company Info</span></button>
+            <button class="adm-tab" data-tab="policy" type="button"><span class="adm-side-icon">📜</span><span class="adm-side-label">Policy Values</span></button>
+            <button class="adm-tab" data-tab="theme" type="button"><span class="adm-side-icon">🎨</span><span class="adm-side-label">Website Theme</span></button>
+            <button class="adm-tab" data-tab="pincodes" type="button"><span class="adm-side-icon">📍</span><span class="adm-side-label">Delivery PIN Codes</span></button>
+            <button class="adm-tab" data-tab="analytics" type="button"><span class="adm-side-icon">📊</span><span class="adm-side-label">Analytics</span></button>
+            <button class="adm-tab" data-tab="offers" type="button"><span class="adm-side-icon">🏷️</span><span class="adm-side-label">Offers</span></button>
+            <button class="adm-tab" data-tab="coupons" type="button"><span class="adm-side-icon">🎟️</span><span class="adm-side-label">Coupons</span></button>
+          </nav>
+        </aside>
+
+        <main class="adm-content">
+      <!-- BANNERS -->
+      <div class="adm-panel" id="tab-banners">
+        <h3>Home Page Banners</h3>
+        <p style="color:var(--grey-600);font-size:13.5px;">
+          Upload an image, video, PDF, or another file for the home-page banner area. The file is stored in Supabase Storage;
+          the banner settings are stored in the database. Active/date-valid banners appear automatically at the top of the home page.
+        </p>
+
+        <form id="bannerForm" class="grid-form" style="margin-top:16px;">
+          <div class="form-group"><label>Banner title *</label><input id="bannerTitle" required maxlength="180" placeholder="Diwali Mega Sale"></div>
+          <div class="form-group"><label>File *</label><input id="bannerFile" type="file" required></div>
+          <div class="form-group"><label>Description</label><input id="bannerDescription" maxlength="1000" placeholder="Festival offer details"></div>
+          <div class="form-group"><label>Display position</label>
+            <select id="bannerPlacement"><option value="home_top">Home page — Top</option><option value="home_promo">Home page — Promotional</option></select>
+          </div>
+          <div class="form-group"><label>Start date/time (optional)</label><input id="bannerStart" type="datetime-local"></div>
+          <div class="form-group"><label>End date/time (optional)</label><input id="bannerEnd" type="datetime-local"></div>
+          <div class="form-group"><label>Display order</label><input id="bannerOrder" type="number" min="0" value="0"></div>
+          <div class="form-group"><label>Click destination (optional)</label><input id="bannerLink" type="url" maxlength="1000" placeholder="https://rt-crackers.com/products.html"></div>
+          <div style="grid-column:1/-1;display:flex;align-items:center;gap:8px;"><input id="bannerActive" type="checkbox" checked style="width:auto;"><label for="bannerActive">Active</label></div>
+          <div style="grid-column:1/-1;"><button class="btn btn-primary" id="uploadBannerBtn" type="submit">Upload Banner</button></div>
+        </form>
+        <div class="info-banner" style="margin-bottom:16px;">Maximum file size: <strong>50 MB</strong>. Common image/video/PDF files can be previewed on the website; unsupported browser file types are shown as an open/download link.</div>
+
+        <h3>Existing Banners <span id="bannerCount" class="badge"></span></h3>
+        <div class="tbl-wrap">
+          <table class="adm" style="min-width:1100px;">
+            <thead><tr><th>Preview</th><th>Title</th><th>Type</th><th>Schedule</th><th>Order</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="bannerBody"><tr class="loading-row"><td colspan="7">Loading banners…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PRODUCTS -->
+      <div class="adm-panel active" id="tab-products">
+        <h3>Add Product</h3>
+        <div class="add-row">
+          <input id="newName" placeholder="Product name">
+          <input id="newCategory" placeholder="Category" list="catList">
+          <input id="newSize" placeholder="Pack size">
+          <input id="newPrice" type="number" placeholder="Price ₹" min="0">
+          <input id="newMrp" type="number" placeholder="MRP ₹" min="0">
+          <input id="newStock" type="number" placeholder="Stock (blank = untracked)" min="0">
+          <input id="newKeywords" placeholder="Keywords, comma separated">
+          <input id="newDescription" placeholder="Short description">
+          <label><input id="newFeatured" type="checkbox"> Featured</label>
+          <label><input id="newBest" type="checkbox"> Bestseller</label>
+          <label><input id="newNew" type="checkbox"> New arrival</label>
+          <label><input id="newFestival" type="checkbox" checked> Festival box</label>
+          <button class="btn btn-primary btn-sm" id="addProductBtn">Add</button>
+        </div>
+        <datalist id="catList"></datalist>
+
+        <section class="bulk-import" aria-labelledby="bulkImportTitle">
+          <h4 id="bulkImportTitle">Bulk Product Import — Excel / CSV</h4>
+          <p>Use the existing connected product database. Upload an <strong>.xlsx</strong>, <strong>.xls</strong>, or <strong>.csv</strong> file. The first row must contain column names. The importer checks whether the first column is only a serial-number column and ignores it automatically when detected.</p>
+          <p class="bulk-note"><strong>Recommended columns:</strong> name, category, size, price, mrp, stock_quantity, image, description, specifications, safety_information, featured, bestseller, new_arrival, festival_box_eligible, keywords. Only <strong>name</strong>, <strong>category</strong>, and <strong>price</strong> are required.</p>
+          <div class="bulk-grid">
+            <div class="form-group"><label for="productImportFile">Excel / CSV file</label><input id="productImportFile" type="file" accept=".xlsx,.xls,.csv,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel"></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;"><button class="btn btn-primary btn-sm" type="button" id="previewProductImportBtn">Preview &amp; Check</button><button class="btn btn-outline btn-sm" type="button" id="importProductRowsBtn" disabled>Import Checked Products</button><button class="btn btn-outline btn-sm" type="button" id="downloadProductTemplateBtn">Download Template</button></div>
+          </div>
+          <div id="productImportStatus" class="bulk-status" aria-live="polite"></div>
+          <div id="productImportPreview" class="bulk-preview" hidden></div>
+        </section>
+        <p style="font-size:12.5px;color:var(--grey-600);margin-top:-10px;">No products in Postgres database yet? Use <a
+            href="supabase/seed.sql" style="text-decoration:underline;">supabase/seed.sql</a> to import the full 160-product starter
+          catalog in one click.</p>
+
+        <h3 style="margin-top:24px;">Edit Products <span id="prodCount" class="badge"></span></h3>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><select id="prodStockFilter"><option value="all">All stock</option><option value="low">Low stock</option><option value="out">Out of stock</option><option value="untracked">Untracked</option></select><select id="prodFlagFilter"><option value="all">All flags</option><option value="featured">Featured</option><option value="bestseller">Bestseller</option><option value="new">New arrival</option></select></div>
+        <input id="prodFilter" placeholder="Filter by id, name, category or keyword..."
+          style="width:100%;max-width:340px;padding:10px;border:1px solid var(--grey-300);border-radius:6px;margin-bottom:12px;">
+        <div class="tbl-wrap">
+          <table class="adm">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Size</th>
+                <th>Price ₹</th>
+                <th>MRP ₹</th>
+                <th>Stock</th>
+                <th>Flags</th>
+                <th>Product Image</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="prodBody">
+              <tr class="loading-row">
+                <td colspan="10">Loading products…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin-top:28px;">Hidden / Deleted Products</h3>
+        <div id="deletedList" style="font-size:13.5px;color:var(--grey-600);">Loading…</div>
+      </div>
+
+      <!-- MEDIA LIBRARY -->
+      <div class="adm-panel" id="tab-media">
+        <h3>Media Library</h3>
+        <p style="color:var(--grey-600);font-size:13.5px;">All website media is added and managed from the administrator account. Upload company assets, product images, promotional videos, PDFs, brochures, certificates, and other documents here. Files are stored in Supabase Storage.</p>
+        <div class="grid-form" style="align-items:end;">
+          <div class="form-group"><label>File</label><input type="file" id="mediaFile" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.json,.zip,.webp,.svg"></div>
+          <div class="form-group"><label>Usage</label><select id="mediaUsage"><option value="general">General website media</option><option value="logo">Company logo</option><option value="product">Product image</option><option value="banner">Banner</option><option value="document">Document</option></select></div>
+          <div class="form-group"><label>Title</label><input id="mediaTitle" placeholder="Diwali brochure"></div>
+          <div class="form-group"><label>Alt text / description</label><input id="mediaAlt" placeholder="Optional description"></div>
+        </div>
+        <button class="btn btn-primary" id="uploadMediaBtn" style="margin-top:12px;">Upload to Media Library</button>
+        <div class="info-banner">Maximum file size: <strong>50 MB</strong>. Images and videos can be previewed. PDFs and other documents can be opened in a new tab.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 12px;">
+          <button class="btn btn-sm btn-primary media-filter" data-kind="all">All</button>
+          <button class="btn btn-sm btn-outline media-filter" data-kind="image">Images</button>
+          <button class="btn btn-sm btn-outline media-filter" data-kind="video">Videos</button>
+          <button class="btn btn-sm btn-outline media-filter" data-kind="document">Documents</button>
+          <button class="btn btn-sm btn-outline media-filter" data-kind="other">Other</button>
+        </div>
+        <div id="mediaGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;"></div>
+      </div>
+
+      <!-- CATEGORIES -->
+      <div class="adm-panel" id="tab-categories">
+        <h3>Add Category</h3>
+        <div class="cat-add-row">
+          <input id="newCatName" placeholder="Category name">
+          <input id="newCatEmoji" placeholder="🎆" maxlength="4">
+          <button class="btn btn-primary btn-sm" id="addCatBtn">Add</button>
+        </div>
+        <h3>All Categories <span id="catCount" class="badge"></span></h3>
+        <div class="tbl-wrap">
+          <table class="adm" style="min-width:420px;">
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>Emoji</th>
+                <th>Name</th>
+                <th>Products</th>
+              </tr>
+            </thead>
+            <tbody id="catBody">
+              <tr class="loading-row">
+                <td colspan="4">Loading categories…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- COMPANY -->
+      <div class="adm-panel" id="tab-company">
+        <h3>Company &amp; Contact Info</h3>
+        <div class="info-banner" style="margin:0 0 16px;">Company logo is managed here from the admin account. Upload once to Supabase Storage and the website uses it everywhere the logo is shown.</div>
+        <div style="display:grid;grid-template-columns:minmax(220px,320px) 1fr;gap:18px;align-items:center;margin-bottom:18px;">
+          <div id="companyLogoPreview" style="min-height:150px;border:1px dashed var(--grey-300);border-radius:10px;display:flex;align-items:center;justify-content:center;padding:14px;background:var(--grey-100);">No logo uploaded</div>
+          <div>
+            <input type="file" id="companyLogoFile" accept="image/*,video/*,.pdf,.svg,.webp">
+            <div style="font-size:12px;color:var(--grey-600);margin:8px 0;">Recommended: PNG/WebP/SVG with transparent background. Maximum 50 MB.</div>
+            <button class="btn btn-primary btn-sm" id="uploadCompanyLogoBtn">Upload / Replace Logo</button>
+          </div>
+        </div>
+        <div class="grid-form" id="companyForm"></div>
+        <button class="btn btn-primary" id="saveCompanyBtn" style="margin-top:12px;">Save Company Info</button>
+      </div>
+
+      <!-- POLICY -->
+      <div class="adm-panel" id="tab-policy">
+        <h3>Policy Manager</h3>
+        <p style="color:var(--grey-600);font-size:13.5px;">Edit the checkout-driving values below and manage the actual public policy page as independent sections. You can add a new restriction, change wording, reorder rules, schedule a rule, archive an old rule, restore it, or permanently delete it. Changes are versioned in Supabase.</p>
+        <div class="grid-form" id="policyForm"></div>
+        <button class="btn btn-primary" id="savePolicyBtn" style="margin-top:12px;">Save Checkout Policy Values</button>
+
+        <hr style="margin:28px 0;border:0;border-top:1px solid var(--grey-200);">
+        <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;">
+          <div><h4 style="margin:0;">Public Policy Sections</h4><div style="font-size:12.5px;color:var(--grey-600);">This is the content customers see on <code>policy.html</code>.</div></div>
+          <button class="btn btn-primary btn-sm" id="addPolicySectionBtn">+ Add Policy Section</button>
+        </div>
+        <div id="policySectionsEditor" style="margin-top:16px;"></div>
+      </div>
+
+      <!-- THEME -->
+      <div class="adm-panel" id="tab-theme">
+        <h3>Website Colour Theme</h3>
+        <p style="color:var(--grey-600);font-size:13.5px;">Choose a complete website theme. Each theme controls 10 coordinated colours across the customer website. Changes are stored in Supabase and applied to the public website automatically.</p>
+        <div class="grid-form" style="margin-top:16px;">
+          <div class="form-group"><label>Theme preset</label><select id="themePreset"><option value="RT Festive">RT Festive</option><option value="Royal Purple">Royal Purple</option><option value="Emerald Night">Emerald Night</option><option value="Ocean Blue">Ocean Blue</option><option value="Sunset">Sunset</option><option value="Rose Gold">Rose Gold</option></select></div>
+          <div class="form-group"><label>Theme name</label><input id="themeName" maxlength="80" placeholder="My RT Theme"></div>
+        </div>
+        <div id="themeEditor" style="display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));gap:14px;margin-top:16px;"></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;">
+          <button class="btn btn-primary" id="saveThemeBtn">Save &amp; Publish Theme</button>
+          <button class="btn btn-outline" id="previewThemeBtn">Preview Theme</button>
+        </div>
+        <div class="info-banner">The database keeps exactly one active site theme. Administrators can change it without editing CSS files.</div>
+      </div>
+
+      <!-- DELIVERY PIN CODES -->
+      <div class="adm-panel" id="tab-pincodes">
+        <h3>Delivery PIN Codes</h3>
+        <p style="color:var(--grey-600);font-size:13.5px;">
+          Add the Tamil Nadu PIN/post-office areas where RTCrackers accepts delivery.
+          Customers can check these PIN codes on the ordering page.
+        </p>
+
+        <div class="add-row" style="grid-template-columns:1fr 1.5fr 1.3fr 1fr 1fr auto;">
+          <input id="newPin" inputmode="numeric" maxlength="6" placeholder="6-digit PIN">
+          <input id="newPinOffice" placeholder="Post office / area">
+          <input id="newPinDistrict" placeholder="District">
+          <input id="newPinDays" placeholder="3-5 days" value="3-5">
+          <select id="newPinAvailable" style="padding:10px;border:1px solid var(--grey-300);border-radius:6px;">
+            <option value="true">Available</option>
+            <option value="false">Unavailable</option>
+          </select>
+          <button class="btn btn-primary btn-sm" id="addPinBtn">Add</button>
+        </div>
+
+        <div class="info-banner" style="margin:0 0 16px;">
+          The customer lookup checks this database first. If a pincode is missing, the server can verify its postal details against Government of India open postal data and send the first order for that pincode to administrator approval.
+        </div>
+        <section class="bulk-import" style="margin-top:0;">
+          <h4>Bulk PIN Import — Excel / CSV</h4>
+          <p class="bulk-note">Upload a spreadsheet with headers such as <strong>pincode, post_office, district, state, estimated_delivery_days, delivery_available</strong>. A serial-number/S.No first column is automatically ignored. No serial number is stored as a pincode.</p>
+          <div class="bulk-grid">
+            <div class="form-group"><label for="pincodeImportFile">Pincode file</label><input id="pincodeImportFile" type="file" accept=".xlsx,.xls,.csv,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel"></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;"><button class="btn btn-primary btn-sm" type="button" id="previewPincodeImportBtn">Preview &amp; Check</button><button class="btn btn-outline btn-sm" type="button" id="importPincodeRowsBtn" disabled>Import PIN Codes</button><button class="btn btn-outline btn-sm" type="button" id="downloadPincodeTemplateBtn">Download Template</button></div>
+          </div>
+          <div id="pincodeImportStatus" class="bulk-status"></div><div id="pincodeImportPreview" class="bulk-preview" hidden></div>
+        </section>
+
+        <input id="pinFilter" placeholder="Search PIN, post office, or district..."
+          style="width:100%;max-width:420px;padding:10px;border:1px solid var(--grey-300);border-radius:6px;margin-bottom:12px;">
+
+        <div class="tbl-wrap">
+          <table class="adm" style="min-width:900px;">
+            <thead>
+              <tr>
+                <th>PIN</th>
+                <th>Post Office / Area</th>
+                <th>District</th>
+                <th>State</th>
+                <th>Estimated Days</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="pinBody">
+              <tr class="loading-row"><td colspan="7">Loading delivery PIN codes…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ORDERS -->
+      <div class="adm-panel" id="tab-analytics"><h2>Analytics</h2><div id="featureAnalytics" class="info-banner">Loading analytics…</div></div>
+<div class="adm-panel" id="tab-offers"><h2>Offers</h2><form id="featureOfferForm" class="grid-form"><input id="foName" placeholder="Offer name" required><input id="foType" placeholder="percentage / fixed / free_delivery"><input id="foValue" type="number" placeholder="Value"><input id="foMin" type="number" placeholder="Minimum order"><input id="foStart" type="datetime-local"><input id="foEnd" type="datetime-local"><label><input id="foActive" type="checkbox"> Active</label><button class="btn btn-primary" type="submit">Create Offer</button></form><div id="offerList" style="margin-top:18px"></div></div>
+<div class="adm-panel" id="tab-coupons"><h2>Coupons</h2><form id="featureCouponForm" class="grid-form"><input id="fcCode" placeholder="RTFESTIVE" required><select id="fcType"><option value="percent">Percent</option><option value="fixed">Fixed</option></select><input id="fcValue" type="number" placeholder="Discount value"><input id="fcMin" type="number" placeholder="Minimum order"><input id="fcMax" type="number" placeholder="Maximum discount"><input id="fcStart" type="datetime-local"><input id="fcEnd" type="datetime-local"><label><input id="fcActive" type="checkbox"> Active</label><button class="btn btn-primary" type="submit">Create Coupon</button></form><div id="couponList" style="margin-top:18px"></div></div>
+<div class="adm-panel" id="tab-festivals"><h2>Festival Countdown & Theme</h2><form id="featureFestivalForm" class="grid-form"><input id="ffName" placeholder="DIWALI SALE" required><input id="ffDescription" placeholder="Description"><input id="ffStart" type="datetime-local"><input id="ffEnd" type="datetime-local"><input id="ffBanner" placeholder="Banner URL"><input id="ffTheme" placeholder="Theme JSON e.g. {&quot;primary&quot;:&quot;#d99a2b&quot;,&quot;accent&quot;:&quot;#7c3aed&quot;}" style="grid-column:1/-1"><label><input id="ffVisible" type="checkbox"> Visible</label><button class="btn btn-primary" type="submit">Publish Festival</button></form><div id="festivalList" style="margin-top:18px"></div></div>
+<div class="adm-panel" id="tab-reviews"><h2>Review Moderation</h2><div id="reviewAdminList">Loading reviews…</div></div>
+<div class="adm-panel" id="tab-support"><h2>Customer Support</h2><div id="supportAdminList">Loading support requests…</div></div><div class="adm-panel" id="tab-notifications"><h2>Promotional Notifications</h2><form id="featureNotificationForm" class="grid-form"><input id="fnTitle" placeholder="Notification title" required><input id="fnMessage" placeholder="Message" required><input id="fnUrl" placeholder="Target URL"><input id="fnStart" type="datetime-local"><input id="fnEnd" type="datetime-local"><label><input id="fnActive" type="checkbox"> Active</label><button class="btn btn-primary" type="submit">Publish Notification</button></form><div id="promoNotificationList" style="margin-top:18px"></div></div>
+<div class="adm-panel" id="tab-order-approvals"><h2>Order Approval Requests</h2><div class="info-banner">New delivery pincodes are verified against government postal data, then held here until an authenticated administrator makes a protected decision. Rejection creates no order record.</div><div id="approvalList" style="margin-top:14px">Loading approval requests…</div></div>
+<div class="adm-panel" id="tab-orders">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+          <h3 style="margin:0;">Order Tracking</h3>
+          <span class="badge">Quick Access</span>
+        </div>
+        <p style="color:var(--grey-600);font-size:13px;margin:6px 0 16px;">This is the dedicated order-tracking workspace. Use the status timeline below instead of navigating through multiple admin sections.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px;">
+          <button class="btn btn-sm btn-primary" id="orderViewCurrent">Current Orders</button>
+          <button class="btn btn-sm btn-outline" id="orderViewCompleted">Completed Orders</button>
+          <button class="btn btn-sm btn-outline" id="orderViewDelivered">Delivered Orders</button>
+        </div>
+        <div id="orderSectionCurrent">
+          <h4>Orders <span id="orderCount" class="badge"></span></h4>
+          <div class="info-banner" style="margin-bottom:12px;">RTCrackers uses <strong>Cash on Delivery only</strong>. Order status and COD payment status are tracked separately. Every status change creates a permanent tracking event.</div>
+          <div class="tbl-wrap">
+            <table class="adm">
+              <thead><tr><th>Reference</th><th>Date</th><th>Customer</th><th>Phone</th><th>Delivery</th><th>Total</th><th>Order Status</th><th>COD</th><th>Action</th></tr></thead>
+              <tbody id="orderBody"><tr class="loading-row"><td colspan="9">Loading orders…</td></tr></tbody>
+            </table>
+          </div>
+          <div id="orderTrackingPanel" style="display:none;margin-top:18px;border:1px solid var(--grey-300);border-radius:12px;padding:18px;background:#fff;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+              <div><h4 style="margin:0;">Tracking <span id="trackingRef"></span></h4><div id="trackingSummary" style="color:var(--grey-600);font-size:13px;margin-top:4px;"></div></div>
+              <button class="btn btn-sm btn-outline" id="closeTrackingPanel">Close</button>
+            </div>
+            <div id="trackingTimeline" style="margin:16px 0;"></div>
+            <div class="grid-form">
+              <div class="form-group"><label>Next status</label><select id="trackingStatus"></select></div>
+              <div class="form-group"><label>Confirmation channel</label><select id="trackingConfirmChannel"><option>Phone</option><option>WhatsApp</option><option>Email</option><option>Manual</option><option>Other</option></select></div>
+              <div class="form-group"><label>Location</label><input id="trackingLocation" placeholder="e.g. Chennai / Transporter Warehouse"></div>
+              <div class="form-group"><label>Carrier / Transporter</label><input id="trackingCarrier"></div>
+              <div class="form-group"><label>Tracking number</label><input id="trackingNumber"></div>
+              <div class="form-group"><label>Expected delivery</label><input id="trackingExpected" type="datetime-local"></div>
+              <div class="form-group"><label>Delivery attempt</label><select id="trackingAttempt"><option value="">None</option><option value="1">Attempt #1</option><option value="2">Attempt #2</option></select></div>
+            </div>
+            <div class="form-group"><label>Tracking note</label><textarea id="trackingDescription" rows="3" placeholder="What happened at this step?"></textarea></div>
+            <button class="btn btn-primary" id="saveTrackingBtn">Update Tracking</button>
+            <hr style="margin:22px 0;border:0;border-top:1px solid var(--grey-200);">
+            <div style="display:flex;gap:10px;align-items:end;flex-wrap:wrap;">
+              <div class="form-group" style="margin:0;"><label>COD payment</label><select id="codPaymentStatus"><option>Pending</option><option>Collected</option><option>Failed</option><option>Waived</option></select></div>
+              <div class="form-group" style="margin:0;flex:1;min-width:220px;"><label>Payment note</label><input id="codPaymentNote" placeholder="Cash collected by delivery staff"></div>
+              <button class="btn btn-primary" id="saveCodBtn">Update COD Payment</button>
+            </div>
+          </div>
+        </div>
+        <div id="orderSectionCompleted" style="display:none;">
+          <h4>Completed Orders <span id="completedCount" class="badge"></span></h4>
+          <div class="tbl-wrap"><table class="adm"><thead><tr><th>Reference</th><th>Customer</th><th>Phone</th><th>Total</th><th>Final Status</th><th>Completed</th></tr></thead><tbody id="completedBody"></tbody></table></div>
+        </div>
+        <div id="orderSectionDelivered" style="display:none;">
+          <h4>Delivered Orders <span id="deliveredCount" class="badge"></span></h4>
+          <div class="tbl-wrap"><table class="adm"><thead><tr><th>Reference</th><th>Customer</th><th>Phone</th><th>Total</th><th>Delivered</th></tr></thead><tbody id="deliveredBody"></tbody></table></div>
+        </div>
+      </div>
+
+      <!-- CUSTOMERS -->
+      <div class="adm-panel" id="tab-customers">
+        <h3>Customers <span id="custCount" class="badge"></span></h3>
+        <div class="tbl-wrap">
+          <table class="adm">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Joined</th>
+              </tr>
+            </thead>
+            <tbody id="custBody">
+              <tr class="loading-row">
+                <td colspan="5">Loading customers…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- FEEDBACK -->
+      <div class="adm-panel" id="tab-feedback">
+        <h3>Feedback Center</h3>
+        <div class="info-banner">Review feedback for <strong>RTCrackers</strong> and <strong>Caged Dragon</strong>. Order-linked RTCrackers feedback is accepted only after delivery or customer collection.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin:16px 0;">
+          <select id="feedbackBrandFilter"><option value="all">All brands</option><option value="rt_crackers">RTCrackers</option><option value="caged_dragon">Caged Dragon</option></select>
+          <select id="feedbackStatusFilter"><option value="all">All statuses</option><option>New</option><option>In Review</option><option>Responded</option><option>Resolved</option><option>Archived</option></select>
+          <button class="btn btn-sm btn-outline" id="reloadFeedbackBtn">Refresh</button>
+        </div>
+        <div class="tbl-wrap"><table class="adm" style="min-width:1100px;"><thead><tr><th>Date</th><th>Brand</th><th>Rating</th><th>Category</th><th>Customer</th><th>Order</th><th>Message</th><th>Status</th><th>Response</th><th>Action</th></tr></thead><tbody id="feedbackBody"><tr class="loading-row"><td colspan="10">Loading feedback…</td></tr></tbody></table></div>
+      </div>
+
+      <!-- ADMIN ACCOUNT -->
+      <div class="adm-panel" id="tab-account">
+        <div class="admin-account-hero">
+          <h3>My Administrator Account</h3>
+          <p>Edit your personal contact and delivery details. Your Supabase login credentials remain protected separately.</p>
+        </div>
+        <div id="adminAccountStatus" class="info-banner" style="display:none;"></div>
+        <form id="adminAccountForm" style="margin-top:20px;">
+          <div class="grid-form">
+            <div class="form-group"><label>Display name</label><input id="adminProfileName" maxlength="100"></div>
+            <div class="form-group"><label>Login email</label><input id="adminProfileEmail" type="email" readonly></div>
+            <div class="form-group"><label>Primary mobile</label><input id="adminProfilePhone" inputmode="tel" maxlength="20"></div>
+            <div class="form-group"><label>Secondary mobile</label><input id="adminProfileSecondary" inputmode="tel" maxlength="20"></div>
+            <div class="form-group" style="grid-column:1/-1;"><label>Address</label><textarea id="adminProfileAddress" rows="3" maxlength="500"></textarea></div>
+            <div class="form-group"><label>City</label><input id="adminProfileCity" maxlength="100"></div>
+            <div class="form-group"><label>District</label><input id="adminProfileDistrict" maxlength="100"></div>
+            <div class="form-group"><label>State</label><input id="adminProfileState" maxlength="100"></div>
+            <div class="form-group"><label>PIN code</label><input id="adminProfilePincode" inputmode="numeric" maxlength="10"></div>
+            <div class="form-group"><label>Country</label><input id="adminProfileCountry" maxlength="80"></div>
+          </div>
+          <button class="btn btn-primary" id="saveAdminProfileBtn" type="submit" style="margin-top:18px;">Save My Account</button>
+        </form>
+        <div class="role-card">
+          <div><strong>Access level</strong><br><span style="color:var(--grey-600);font-size:13px;">You can voluntarily return this account to normal customer access. The protected owner cannot be converted here.</span></div>
+          <div><span class="role-badge" id="adminRoleBadge">ADMINISTRATOR</span><button class="btn btn-outline btn-sm" id="convertSelfBtn" style="margin-left:10px;">Use Customer Access</button></div>
+        </div>
+      </div>
+
+      <!-- SECURITY -->
+      <div class="adm-panel" id="tab-security">
+        <h3>Change Admin Login</h3>
+        <p style="color:var(--grey-600);font-size:13.5px;">This changes the current Supabase account credentials.</p>
+        <div class="grid-form">
+          <div class="form-group"><label>Current password</label><input type="password" id="curPass"></div>
+          <div class="form-group"><label>New email (optional)</label><input type="email" id="newAdminEmail"></div>
+          <div class="form-group"><label>New password (optional)</label><input type="password" id="newAdminPass"></div>
+        </div>
+        <button class="btn btn-primary" id="changePassBtn">Update Login</button>
+
+        <h3 style="margin-top:30px;">Admin Activity Notifications</h3>
+        <div class="info-banner">Every administrator mutation is written to an immutable audit log. The owner account receives a persistent notification whenever another administrator edits products, categories, company information, policies, customers, orders, or administrator access.</div>
+        <div id="ownerNoticeBox" style="margin-top:12px;"></div>
+
+        <h3 style="margin-top:30px;">Admin Panel Security</h3>
+        <div id="securityStatus" class="info-banner">Loading administrator security…</div>
+        <div id="ownerStatus" class="info-banner" style="margin-top:12px;">Loading owner protection…</div>
+        <div class="grid-form" style="margin-top:14px;">
+          <div class="form-group"><label>Admin Panel Password</label><input type="password" id="panelSecurityPass" minlength="8" autocomplete="new-password"><small style="color:var(--grey-600);">Every administrator must enter this password after their normal Supabase account password.</small></div>
+          <div class="form-group"><label>New Administrator Security Question</label><input type="text" id="securityQuestion" placeholder="Example: What is our factory city?"></div>
+          <div class="form-group"><label>New Administrator Security Answer</label><input type="password" id="securityAnswer" autocomplete="new-password"></div>
+        </div>
+        <button class="btn btn-primary" id="saveSecurityBtn">Save Admin Security</button>
+
+        <h3 style="margin-top:30px;">Invite New Administrator</h3>
+        <div class="info-banner">Enter the new administrator's email and name. They will create their Supabase account, receive the normal email-verification message, and after verification they must answer the administrator-set security question before admin access is granted.</div>
+        <div id="adminManageArea" style="margin-top:14px;display:none;">
+          <div class="add-row" style="grid-template-columns:1.5fr 1.5fr 1.2fr auto;max-width:1100px;">
+            <input id="newAdminEmail" type="email" placeholder="New admin email">
+            <input id="newAdminDisplay" placeholder="Admin display name">
+            <input id="newAdminTempPass" type="password" minlength="8" placeholder="Temporary password">
+            <button class="btn btn-primary btn-sm" id="addAdminBtn">Send Invitation</button>
+          </div>
+          <p style="font-size:12.5px;color:var(--grey-600);margin-top:8px">The invitation email is sent by Supabase. The temporary password is set by the existing admin and should be shared separately with the invited administrator.</p>
+          <div class="tbl-wrap" style="margin-top:16px;"><table class="adm"><thead><tr><th>Admin</th><th>Email / Account</th><th>Added</th><th>Owner</th><th>Action</th></tr></thead><tbody id="adminBody"></tbody></table></div>
+        </div>
+
+        <h3 style="margin-top:30px;">Recent Audit Log</h3>
+        <div class="tbl-wrap"><table class="adm"><thead><tr><th>Time</th><th>Admin</th><th>Action</th><th>Table</th><th>Record</th></tr></thead><tbody id="auditBody"></tbody></table></div>
+        </main>
+
+        <aside class="adm-side adm-side-right" id="admRightSide">
+          <div class="adm-side-head"><span class="adm-side-title">Operations</span><button class="adm-side-toggle" type="button" data-side-toggle="right" aria-label="Collapse right navigation">›</button></div>
+          <nav class="adm-side-nav" aria-label="Operations administration">
+            <button class="adm-tab" data-tab="festivals" type="button"><span class="adm-side-icon">🎆</span><span class="adm-side-label">Festival</span></button>
+            <button class="adm-tab" data-tab="reviews" type="button"><span class="adm-side-icon">⭐</span><span class="adm-side-label">Reviews</span></button>
+            <button class="adm-tab" data-tab="notifications" type="button"><span class="adm-side-icon">🔔</span><span class="adm-side-label">Notifications</span></button>
+            <button class="adm-tab" data-tab="support" type="button"><span class="adm-side-icon">💬</span><span class="adm-side-label">Support</span></button>
+            <button class="adm-tab" data-tab="orders" type="button"><span class="adm-side-icon">🧾</span><span class="adm-side-label">Orders</span></button>
+            <button class="adm-tab" data-tab="customers" type="button"><span class="adm-side-icon">👥</span><span class="adm-side-label">Customers</span></button>
+            <button class="adm-tab" data-tab="feedback" type="button"><span class="adm-side-icon">✉️</span><span class="adm-side-label">Feedback</span></button>
+            <button class="adm-tab" data-tab="security" type="button"><span class="adm-side-icon">🔐</span><span class="adm-side-label">Security &amp; Admins</span></button>
+            <button class="adm-tab" data-tab="account" type="button"><span class="adm-side-icon">👤</span><span class="adm-side-label">My Account</span></button>
+            <button class="adm-tab" data-tab="media" type="button"><span class="adm-side-icon">🎞️</span><span class="adm-side-label">Media Library</span></button>
+          </nav>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/micro-interactions.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="js/auth.js?v=20261003-v2"></script>
+  <script>
+    (async function () {
+      const A = window.RTAdmin;
+      const $ = (s) => document.querySelector(s);
+      const gateMsg = $("#gateMsg");
+      const root = $("#dashboardRoot");
+
+      function showGate(html) {
+        gateMsg.innerHTML = html;
+        gateMsg.style.display = "block";
+        root.style.display = "none";
+      }
+
+      if (!A.configured) {
+        showGate('<h2>Not connected to Supabase</h2><p style="color:var(--grey-600);margin:12px 0 20px;">Fill in <code>js/supabase-config.js</code> with your Supabase project&#39;s config, then reload this page. See README.md → Supabase Setup.</p><a href="index.html" class="btn btn-primary">Back to website</a>');
+        return;
+      }
+
+      const isAdmin = await A.requireAdmin();
+      if (!isAdmin || sessionStorage.getItem("rt_admin_panel_verified") !== "1") {
+        sessionStorage.removeItem("rt_admin_panel_verified");
+        window.location.href = "/admin";
+        return;
+      }
+
+      root.style.display = "block";
+      $("#projectIdLabel").textContent = (window.RTSupabaseConfig && window.RTSupabaseConfig.url ? new URL(window.RTSupabaseConfig.url).hostname : "");
+
+      function toast(m) { const t = $("#toast"); t.textContent = m; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 2200); }
+      function esc(s) { return String(s == null ? "" : s).replace(/"/g, "&quot;").replace(/</g, "&lt;"); }
+      function inr(n) { return "₹" + Number(n || 0).toLocaleString("en-IN"); }
+
+      $("#logoutBtn").onclick = async () => { sessionStorage.removeItem("rt_admin_panel_verified"); await A.adminLogout(); window.location.href = "/admin"; };
+
+      function activateAdminTab(tabName) {
+        const tab = document.querySelector(`.adm-tab[data-tab="${CSS.escape(tabName)}"]`);
+        const panel = document.getElementById("tab-" + tabName);
+        if (!tab || !panel) return false;
+        document.querySelectorAll(".adm-tab").forEach((x) => x.classList.remove("active"));
+        document.querySelectorAll(".adm-panel").forEach((x) => x.classList.remove("active"));
+        tab.classList.add("active");
+        panel.classList.add("active");
+        if (tabName === 'order-approvals') loadOrderApprovals();
+        return true;
+      }
+      document.querySelectorAll(".adm-tab").forEach((t) => t.addEventListener("click", () => activateAdminTab(t.dataset.tab)));
+      const requestedTab = new URLSearchParams(location.search).get("tab");
+      if (requestedTab) activateAdminTab(requestedTab);
+      if (requestedTab === 'order-approvals') loadOrderApprovals();
+
+      document.querySelectorAll("[data-side-toggle]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const side = button.dataset.sideToggle === "right" ? $("#admRightSide") : $("#admLeftSide");
+          side.classList.toggle("is-collapsed");
+          const collapsed = side.classList.contains("is-collapsed");
+          side.classList.toggle("rt-runtime-collapsed", collapsed);
+          side.classList.toggle("rt-runtime-expanded", !collapsed);
+          button.textContent = button.dataset.sideToggle === "right" ? (collapsed ? "‹" : "›") : (collapsed ? "›" : "‹");
+          button.setAttribute("aria-expanded", String(!collapsed));
+          button.setAttribute("aria-label", `${collapsed ? "Open" : "Collapse"} ${button.dataset.sideToggle} navigation`);
+        });
+      });
+
+      /* ---- Banners ---- */
+      function bannerTypeLabel(type) {
+        const t = String(type || "").toLowerCase();
+        if (t.startsWith("image/")) return "Image";
+        if (t.startsWith("video/")) return "Video";
+        if (t === "application/pdf") return "PDF";
+        return type || "File";
+      }
+      function localDateValue(value) {
+        if (!value) return "";
+        const d = new Date(value);
+        if (Number.isNaN(d.getTime())) return "";
+        const pad = n => String(n).padStart(2, "0");
+        return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+      }
+      function bannerPreview(b) {
+        const type = String(b.file_type || "").toLowerCase();
+        const url = esc(b.file_url);
+        if (type.startsWith("image/")) return `<img src="${url}" alt="${esc(b.title)}" style="width:150px;height:70px;object-fit:cover;border-radius:6px;">`;
+        if (type.startsWith("video/")) return `<video src="${url}" muted playsinline style="width:150px;height:70px;object-fit:cover;border-radius:6px;"></video>`;
+        if (type === "application/pdf") return `<a href="${url}" target="_blank" rel="noopener">📄 Open PDF</a>`;
+        return `<a href="${url}" target="_blank" rel="noopener">📁 Open file</a>`;
+      }
+      async function loadBanners() {
+        try {
+          const rows = await A.getAllBanners();
+          $("#bannerCount").textContent = rows.length;
+          $("#bannerBody").innerHTML = rows.length ? rows.map(b => `
+            <tr data-id="${esc(b.id)}">
+              <td>${bannerPreview(b)}</td>
+              <td><input class="banner-title" value="${esc(b.title)}" maxlength="180"></td>
+              <td>${esc(bannerTypeLabel(b.file_type))}<br><small>${esc(b.file_name || "")}</small></td>
+              <td><input class="banner-start" type="datetime-local" value="${localDateValue(b.start_at)}"><br><input class="banner-end" type="datetime-local" value="${localDateValue(b.end_at)}"></td>
+              <td><input class="banner-order" type="number" min="0" value="${Number(b.display_order || 0)}" style="width:80px"><br><input class="banner-link" type="url" value="${esc(b.link_url || "")}" placeholder="Link URL"></td>
+              <td><select class="banner-active"><option value="true" ${b.is_active ? "selected" : ""}>Active</option><option value="false" ${!b.is_active ? "selected" : ""}>Disabled</option></select></td>
+              <td><div class="row-actions"><button class="btn btn-sm btn-primary save-banner">Save</button><button class="btn btn-sm btn-outline delete-banner">Delete</button><a class="btn btn-sm btn-outline" href="${esc(b.file_url)}" target="_blank" rel="noopener">Open</a></div></td>
+            </tr>`).join("") : '<tr class="loading-row"><td colspan="7">No banners yet. Upload one above.</td></tr>';
+        } catch (e) {
+          $("#bannerBody").innerHTML = `<tr><td colspan="7" style="color:#b42318;">${esc(e.message || "Could not load banners")}</td></tr>`;
+        }
+      }
+      $("#bannerForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const btn = $("#uploadBannerBtn");
+        const file = $("#bannerFile").files[0];
+        if (!file) { toast("Choose a banner file"); return; }
+        btn.disabled = true; btn.textContent = "Uploading…";
+        try {
+          const r = await A.uploadBanner(file, {
+            title: $("#bannerTitle").value,
+            description: $("#bannerDescription").value,
+            placement: $("#bannerPlacement").value,
+            start_at: $("#bannerStart").value ? new Date($("#bannerStart").value).toISOString() : null,
+            end_at: $("#bannerEnd").value ? new Date($("#bannerEnd").value).toISOString() : null,
+            display_order: $("#bannerOrder").value,
+            link_url: $("#bannerLink").value,
+            is_active: $("#bannerActive").checked
+          });
+          toast(r.ok ? "Banner uploaded" : r.error);
+          if (r.ok) { $("#bannerForm").reset(); $("#bannerActive").checked = true; $("#bannerOrder").value = 0; await loadBanners(); }
+        } finally { btn.disabled = false; btn.textContent = "Upload Banner"; }
+      });
+      $("#bannerBody").addEventListener("click", async (e) => {
+        const tr = e.target.closest("tr[data-id]"); if (!tr) return;
+        if (e.target.closest(".save-banner")) {
+          const r = await A.updateBanner(tr.dataset.id, {
+            title: tr.querySelector(".banner-title").value.trim(),
+            start_at: tr.querySelector(".banner-start").value ? new Date(tr.querySelector(".banner-start").value).toISOString() : null,
+            end_at: tr.querySelector(".banner-end").value ? new Date(tr.querySelector(".banner-end").value).toISOString() : null,
+            display_order: tr.querySelector(".banner-order").value,
+            link_url: tr.querySelector(".banner-link").value.trim() || null,
+            is_active: tr.querySelector(".banner-active").value === "true"
+          });
+          toast(r.ok ? "Banner updated" : r.error); if (r.ok) await loadBanners();
+        }
+        if (e.target.closest(".delete-banner")) {
+          if (!confirm("Delete this banner and its uploaded file?")) return;
+          const r = await A.deleteBanner(tr.dataset.id); toast(r.ok ? "Banner deleted" : r.error); if (r.ok) await loadBanners();
+        }
+      });
+
+      /* ---- Products ---- */
+      let allProducts = [];
+      async function loadProducts() {
+        const raw = await A.getAllProductsRaw();
+        allProducts = raw.map((p) => ({
+          id: p.docId, name: p.name, category: p.categoryName, size: p.size || "",
+          price: p.price, mrp:p.mrp ?? p.price, stock:p.stock_quantity ?? '', description:p.description||'', featured:!!p.featured, bestseller:!!p.bestseller, new_arrival:!!p.new_arrival, image: p.image || "", active: p.active !== false
+        })).sort((a, b) => (Number(a.id) || 0) - (Number(b.id) || 0));
+        renderProducts();
+      }
+      function renderProducts() {
+        const q = $("#prodFilter").value.trim().toLowerCase();
+        const sf=$("#prodStockFilter")?.value||'all', ff=$("#prodFlagFilter")?.value||'all';
+        const active = allProducts.filter((p) => p.active);
+        const list = active.filter((p) => { const hay=(`${p.id} ${p.name} ${p.category} ${(p.keywords||[]).join(' ')}`).toLowerCase(); const stock=p.stock; const stockOk=sf==='all'||(sf==='low'&&stock!=null&&stock>0&&stock<=5)||(sf==='out'&&stock!=null&&stock<=0)||(sf==='untracked'&&stock==null); const flagOk=ff==='all'||(ff==='featured'&&p.featured)||(ff==='bestseller'&&p.bestseller)||(ff==='new'&&p.new_arrival); return (!q||hay.includes(q))&&stockOk&&flagOk; });
+        $("#prodCount").textContent = list.length + " of " + active.length + " shown";
+        const catNames = [...new Set(allProducts.map((p) => p.category))];
+        $("#catList").innerHTML = catNames.map((c) => `<option value="${esc(c)}">`).join("");
+        $("#prodBody").innerHTML = list.length ? list.map((p) => `
+      <tr data-id="${esc(p.id)}">
+        <td>${esc(p.id)}</td>
+        <td><input class="f-name" value="${esc(p.name)}"></td>
+        <td><input class="f-category" value="${esc(p.category)}"></td>
+        <td><input class="f-size" value="${esc(p.size)}"></td>
+        <td><input class="f-price" type="number" value="${p.price}"></td>
+        <td><input class="f-mrp" type="number" value="${p.mrp}"></td>
+        <td><input class="f-stock" type="number" value="${p.stock}"></td>
+        <td style="font-size:11px"><label><input class="f-featured" type="checkbox" ${p.featured?"checked":""}> Featured</label><br><label><input class="f-best" type="checkbox" ${p.bestseller?"checked":""}> Bestseller</label><br><label><input class="f-new" type="checkbox" ${p.new_arrival?"checked":""}> New</label><br><label><input class="f-festival" type="checkbox" ${p.festival_box_eligible!==false?"checked":""}> Festival box</label></td>
+        <td><input class="f-image" value="${esc(p.image)}" placeholder="Public image URL or upload below"><input class="p-image-file" type="file" accept="image/*" style="margin-top:5px;width:100%;font-size:11px;"></td>
+        <td><div class="row-actions">
+          <button class="btn btn-sm btn-primary save-p">Save</button>
+          <button class="btn btn-sm btn-outline del-p" style="border-color:var(--danger);color:var(--danger);">Hide</button>
+        </div></td>
+      </tr>`).join("") : '<tr class="loading-row"><td colspan="10">No products yet — add one above or import via supabase/seed.sql.</td></tr>';
+
+        const deleted = allProducts.filter((p) => !p.active);
+        $("#deletedList").innerHTML = deleted.length
+          ? deleted.map((p) => `<button class="btn btn-sm btn-outline restore-p" data-id="${esc(p.id)}" style="margin:0 6px 6px 0;">Restore "${esc(p.name)}"</button>`).join("")
+          : "None.";
+      }
+      $("#prodFilter").addEventListener("input", renderProducts);
+      $("#prodStockFilter")?.addEventListener("change", renderProducts);
+      $("#prodFlagFilter")?.addEventListener("change", renderProducts);
+      $("#prodBody").addEventListener("click", async (e) => {
+        const tr = e.target.closest("tr"); if (!tr) return;
+        const id = tr.dataset.id;
+        if (e.target.closest(".save-p")) {
+          const price = Number(tr.querySelector(".f-price").value);
+          if (!(price >= 0)) { toast("Enter a valid price"); return; }
+          const btn = e.target.closest(".save-p"); btn.disabled = true; btn.textContent = "...";
+          let imageUrl = tr.querySelector(".f-image").value.trim();
+          const imageFile = tr.querySelector(".p-image-file")?.files?.[0];
+          if (imageFile) {
+            const upload = await A.uploadMedia(imageFile, { usage: "product", title: tr.querySelector(".f-name").value.trim(), altText: tr.querySelector(".f-name").value.trim() });
+            if (!upload.ok) { btn.disabled = false; btn.textContent = "Save"; toast(upload.error); return; }
+            imageUrl = upload.media.public_url;
+          }
+          await A.saveProductEdit(id, {
+            name: tr.querySelector(".f-name").value.trim(),
+            category: tr.querySelector(".f-category").value.trim(),
+            size: tr.querySelector(".f-size").value.trim(),
+            price: price,
+            image: imageUrl,
+            mrp:Number(tr.querySelector('.f-mrp').value||price),
+            stock_quantity:tr.querySelector('.f-stock').value===''?null:Number(tr.querySelector('.f-stock').value),
+            featured:tr.querySelector('.f-featured').checked, bestseller:tr.querySelector('.f-best').checked, new_arrival:tr.querySelector('.f-new').checked, festival_box_eligible:tr.querySelector('.f-festival').checked
+          });
+          toast("Saved " + id);
+          await loadProducts();
+        } else if (e.target.closest(".del-p")) {
+          if (confirm("Hide this product from the website?")) { await A.deleteProduct(id); await loadProducts(); toast("Hidden"); }
+        }
+      });
+      $("#deletedList").addEventListener("click", async (e) => {
+        const b = e.target.closest(".restore-p"); if (!b) return;
+        await A.restoreProduct(b.dataset.id); await loadProducts(); toast("Restored");
+      });
+      $("#addProductBtn").onclick = async () => {
+        const name = $("#newName").value.trim(), category = $("#newCategory").value.trim();
+        const size = $("#newSize").value.trim(), price = Number($("#newPrice").value), mrp=$("#newMrp").value===''?price:Number($("#newMrp").value), stock=$("#newStock").value===''?null:Number($("#newStock").value);
+        if (!name || !category || $("#newPrice").value === "" || !(price >= 0) || !(mrp >= price) || (stock!==null && (!Number.isInteger(stock)||stock<0))) { toast("Check product name, price, MRP and stock"); return; }
+        await A.addProduct({ name, category, size, price, mrp, stock_quantity:stock, image: "", description:$("#newDescription").value.trim(), keywords:$("#newKeywords").value.split(',').map(x=>x.trim()).filter(Boolean), featured:$("#newFeatured").checked, bestseller:$("#newBest").checked, new_arrival:$("#newNew").checked, festival_box_eligible:$("#newFestival").checked });
+        $("#newName").value = ""; $("#newCategory").value = ""; $("#newSize").value = ""; $("#newPrice").value = ""; $("#newMrp").value=""; $("#newStock").value=""; $("#newKeywords").value=""; $("#newDescription").value="";
+        await loadProducts();
+        toast("Product added");
+      };
+      /* ---- Bulk Product Import: Excel / CSV, same connected Supabase database ---- */
+      let productImportRows = [];
+      const importMap = {
+        name:['name','product name','product_name','title'], category:['category','category name','category_name'], size:['size','pack size','pack_size'],
+        price:['price','selling price','selling_price','sale price'], mrp:['mrp','mrp price','maximum retail price'], stock_quantity:['stock','stock quantity','stock_quantity','quantity'],
+        image:['image','image url','image_url','product image','product_image'], description:['description','short description','short_description'],
+        specifications:['specifications','specs'], safety_information:['safety information','safety_information','safety'], featured:['featured'], bestseller:['bestseller','best seller'],
+        new_arrival:['new arrival','new_arrival','new'], festival_box_eligible:['festival box','festival_box_eligible','festival box eligible'], keywords:['keywords','keyword']
+      };
+      const normalizeHeader = v => String(v ?? '').trim().toLowerCase().replace(/[\u0000-\u001f]/g,'').replace(/[_-]+/g,' ').replace(/\s+/g,' ');
+      const findHeader = (headers, aliases) => { const a=aliases.map(normalizeHeader); return headers.findIndex(h=>a.includes(normalizeHeader(h))); };
+      const truthy = v => ['true','1','yes','y','on','featured','bestseller','new','eligible'].includes(String(v??'').trim().toLowerCase());
+      const isSerialHeader = h => /^(s\.?\s*no\.?|serial(\s*number)?|sl\.?\s*no\.?|sr\.?\s*no\.?|sequence|index|row\s*no\.?)$/i.test(String(h||'').trim());
+      function detectSerialColumn(headers, rows){
+        if(!headers.length) return false;
+        if(isSerialHeader(headers[0])) return true;
+        const values=rows.slice(0,25).map(r=>r[0]).filter(v=>String(v??'').trim()!=='').map(Number);
+        if(values.length<3 || values.some(v=>!Number.isFinite(v))) return false;
+        return values.every((v,i)=>v===i+1 || v===i);
+      }
+      function cell(row, headers, aliases){ const i=findHeader(headers,aliases); return i<0?'':row[i]; }
+      function parseBool(v, fallback=false){ const t=String(v??'').trim().toLowerCase(); if(!t)return fallback; return truthy(t); }
+      function parseKeywords(v){ return String(v??'').split(/[;,\n|]/).map(x=>x.trim()).filter(Boolean).slice(0,30); }
+      function parseSpecs(v){ if(!v)return {}; if(typeof v==='object')return v; try{const x=JSON.parse(String(v)); return x && typeof x==='object'?x:{};}catch{return {notes:String(v).trim()};} }
+      function normalizeImportRows(headers, rows){
+        const serialIgnored=detectSerialColumn(headers,rows);
+        const useHeaders=serialIgnored?headers.slice(1):headers;
+        const useRows=serialIgnored?rows.map(r=>r.slice(1)):rows;
+        const mapped=useRows.map((r,idx)=>{
+          const name=String(cell(r,useHeaders,importMap.name)||'').trim();
+          const category=String(cell(r,useHeaders,importMap.category)||'').trim();
+          const priceRaw=cell(r,useHeaders,importMap.price); const price=Number(String(priceRaw??'').replace(/[,₹\s]/g,''));
+          const mrpRaw=cell(r,useHeaders,importMap.mrp); const mrp=mrpRaw===''||mrpRaw==null?price:Number(String(mrpRaw).replace(/[,₹\s]/g,''));
+          const stockRaw=cell(r,useHeaders,importMap.stock_quantity); const stock=stockRaw===''||stockRaw==null?null:Number(stockRaw);
+          return {name,category,size:String(cell(r,useHeaders,importMap.size)||'').trim(),price,mrp,stock_quantity:stock,image:String(cell(r,useHeaders,importMap.image)||'').trim(),description:String(cell(r,useHeaders,importMap.description)||'').trim(),specifications:parseSpecs(cell(r,useHeaders,importMap.specifications)),safety_information:String(cell(r,useHeaders,importMap.safety_information)||'').trim(),featured:parseBool(cell(r,useHeaders,importMap.featured)),bestseller:parseBool(cell(r,useHeaders,importMap.bestseller)),new_arrival:parseBool(cell(r,useHeaders,importMap.new_arrival)),festival_box_eligible:parseBool(cell(r,useHeaders,importMap.festival_box_eligible),true),keywords:parseKeywords(cell(r,useHeaders,importMap.keywords)),_row:idx+2,_serialIgnored:serialIgnored};
+        });
+        return {serialIgnored,rows:mapped,headers:useHeaders};
+      }
+      function renderImportPreview(result){
+        const host=$("#productImportPreview"); host.hidden=false;
+        const errors=result.rows.filter(r=>!r.name||!r.category||!Number.isFinite(r.price)||r.price<0||!Number.isFinite(r.mrp)||r.mrp<r.price||(r.stock_quantity!==null&&(!Number.isInteger(r.stock_quantity)||r.stock_quantity<0)));
+        productImportRows=result.rows.filter(r=>!errors.includes(r));
+        const status=$("#productImportStatus"); status.className='bulk-status '+(errors.length?'bulk-warn':'bulk-ok'); status.textContent=`Detected ${result.rows.length} data rows. ${result.serialIgnored?'First column detected as a serial-number column and will be ignored. ':'No serial-number column detected. '}${errors.length?errors.length+' row(s) need correction and will not be imported.':'All rows passed the basic checks.'}`;
+        const rows=result.rows.slice(0,25).map(r=>`<tr><td>${r._row}</td><td>${esc(r.name)}</td><td>${esc(r.category)}</td><td>${esc(r.size)}</td><td>${Number.isFinite(r.price)?inr(r.price):'⚠'}</td><td>${Number.isFinite(r.mrp)?inr(r.mrp):'⚠'}</td><td>${r.stock_quantity==null?'—':r.stock_quantity}</td><td>${errors.includes(r)?'<span class="bulk-error">Invalid required value</span>':'<span class="bulk-ok">Ready</span>'}</td></tr>`).join('');
+        host.innerHTML=`<table><thead><tr><th>Excel row</th><th>Name</th><th>Category</th><th>Size</th><th>Price</th><th>MRP</th><th>Stock</th><th>Status</th></tr></thead><tbody>${rows||'<tr><td colspan="8">No rows found.</td></tr>'}</tbody></table>${result.rows.length>25?`<div class="bulk-note" style="padding:8px">Showing first 25 rows of ${result.rows.length}.</div>`:''}`;
+        $("#importProductRowsBtn").disabled=productImportRows.length===0;
+      }
+      $("#previewProductImportBtn").onclick=async()=>{
+        const file=$("#productImportFile").files[0]; if(!file){toast('Choose an Excel or CSV file first');return;}
+        const status=$("#productImportStatus"); status.className='bulk-status'; status.textContent='Reading file…';
+        try{ const data=await file.arrayBuffer(); const wb=XLSX.read(data,{type:'array',cellDates:false}); const ws=wb.Sheets[wb.SheetNames[0]]; const matrix=XLSX.utils.sheet_to_json(ws,{header:1,defval:''}).filter(r=>r.some(v=>String(v??'').trim()!=='')); if(matrix.length<2)throw new Error('The first sheet needs a header row and at least one product row.'); const headers=matrix[0].map(v=>String(v??'').trim()); renderImportPreview(normalizeImportRows(headers,matrix.slice(1))); }catch(e){status.className='bulk-status bulk-error';status.textContent=e.message||'Could not read the file.';$("#productImportPreview").hidden=true;$("#importProductRowsBtn").disabled=true;}
+      };
+      $("#importProductRowsBtn").onclick=async()=>{
+        if(!productImportRows.length)return; const btn=$("#importProductRowsBtn"); btn.disabled=true; btn.textContent='Importing…';
+        try{ const result=await A.bulkAddProducts(productImportRows); await loadProducts(); toast(`${result.count} products imported`); $("#productImportStatus").className='bulk-status bulk-ok'; $("#productImportStatus").textContent=`Imported ${result.count} product(s) into the existing database.`; productImportRows=[]; $("#productImportPreview").hidden=true; $("#productImportFile").value=''; }
+        catch(e){$("#productImportStatus").className='bulk-status bulk-error';$("#productImportStatus").textContent=e.message||'Bulk import failed.';}
+        finally{btn.disabled=productImportRows.length===0;btn.textContent='Import Checked Products';}
+      };
+      $("#downloadProductTemplateBtn").onclick=()=>{
+        const rows=[['name','category','size','price','mrp','stock_quantity','image','description','specifications','safety_information','featured','bestseller','new_arrival','festival_box_eligible','keywords'],['Example Premium Crackers','Aerial Multishot Cakes','1 box',1999,2499,50,'https://example.com/product.jpg','Short product description','','',true,true,false,true,'festival,premium']];
+        const ws=XLSX.utils.aoa_to_sheet(rows); const wb=XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb,ws,'Products'); XLSX.writeFile(wb,'RT-Crackers-Product-Import-Template.xlsx');
+      };
+
+      /* ---- Media Library ---- */
+      let allMedia = [], mediaKindFilter = "all";
+      async function loadMedia() {
+        try { allMedia = await A.getMediaLibrary(); renderMedia(); } catch (e) { $("#mediaGrid").innerHTML = `<div class="warn-banner">Could not load media: ${esc(e.message || e)}</div>`; }
+      }
+      function renderMedia() {
+        const rows = mediaKindFilter === "all" ? allMedia : allMedia.filter(m => m.media_kind === mediaKindFilter);
+        $("#mediaGrid").innerHTML = rows.length ? rows.map(m => {
+          const preview = m.media_kind === "image" ? `<img src="${esc(m.public_url)}" alt="${esc(m.alt_text || m.title)}" style="width:100%;height:150px;object-fit:cover;border-radius:8px;">` :
+            m.media_kind === "video" ? `<video src="${esc(m.public_url)}" controls preload="metadata" style="width:100%;height:150px;object-fit:cover;border-radius:8px;"></video>` :
+            `<div style="height:150px;border-radius:8px;background:var(--grey-100);display:flex;align-items:center;justify-content:center;font-size:42px;">${m.media_kind === "document" ? "📄" : "📦"}</div>`;
+          return `<div style="border:1px solid var(--grey-300);border-radius:10px;padding:10px;background:#fff;">
+            ${preview}<div style="margin-top:8px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(m.title || m.original_name)}</div>
+            <div style="font-size:11px;color:var(--grey-600);margin:4px 0;">${esc(m.usage)} · ${Math.ceil(Number(m.file_size || 0)/1024)} KB</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;"><a class="btn btn-sm btn-outline" href="${esc(m.public_url)}" target="_blank" rel="noopener">Open</a><button class="btn btn-sm btn-outline delete-media" data-id="${esc(m.id)}" data-path="${esc(m.storage_path)}" style="border-color:var(--danger);color:var(--danger);">Delete</button></div>
+          </div>`;
+        }).join("") : '<div class="info-banner">No files in this category.</div>';
+      }
+      document.querySelectorAll(".media-filter").forEach(b => b.addEventListener("click", () => { mediaKindFilter = b.dataset.kind; document.querySelectorAll(".media-filter").forEach(x => x.className = "btn btn-sm " + (x === b ? "btn-primary" : "btn-outline")); renderMedia(); }));
+      $("#uploadMediaBtn").onclick = async () => {
+        const file = $("#mediaFile").files?.[0]; if (!file) { toast("Choose a file first"); return; }
+        const btn = $("#uploadMediaBtn"); btn.disabled = true; btn.textContent = "Uploading...";
+        const r = await A.uploadMedia(file, { usage: $("#mediaUsage").value, title: $("#mediaTitle").value.trim() || file.name, altText: $("#mediaAlt").value.trim() });
+        btn.disabled = false; btn.textContent = "Upload to Media Library";
+        if (!r.ok) { toast(r.error); return; }
+        $("#mediaFile").value = ""; $("#mediaTitle").value = ""; $("#mediaAlt").value = ""; await loadMedia(); toast("File uploaded");
+      };
+      $("#mediaGrid").addEventListener("click", async (e) => {
+        const b = e.target.closest(".delete-media"); if (!b) return;
+        if (!confirm("Delete this media file? Any product/banner that uses its URL will stop displaying it.")) return;
+        const r = await A.deleteMedia(b.dataset.id, b.dataset.path); toast(r.ok ? "Media deleted" : r.error); if (r.ok) await loadMedia();
+      });
+
+      /* ---- Categories ---- */
+      async function loadCategories() {
+        const cats = await A.getCategoriesFull();
+        const raw = allProducts.length ? allProducts : await A.getAllProductsRaw().then((r) => r.map((p) => ({ category: p.categoryName, active: p.active !== false })));
+        $("#catCount").textContent = cats.length;
+        $("#catBody").innerHTML = cats.length ? cats.map((c) => {
+          const count = raw.filter((p) => p.category === c.name && p.active !== false).length;
+          return `<tr><td><input class="cat-order" data-id="${esc(c.id)}" type="number" value="${c.order}" style="width:70px"></td><td><input class="cat-emoji" data-id="${esc(c.id)}" value="${esc(c.emoji || "🎆")}" maxlength="4" style="width:70px"></td><td><input class="cat-name" data-id="${esc(c.id)}" value="${esc(c.name)}"><br><small>${c.active?'Active':'Disabled'}</small></td><td>${count} <button class="btn btn-sm btn-outline cat-save" data-id="${esc(c.id)}">Save</button> <button class="btn btn-sm btn-outline cat-toggle" data-id="${esc(c.id)}" data-active="${c.active}">${c.active?'Disable':'Enable'}</button> <button class="btn btn-sm btn-outline cat-delete" data-id="${esc(c.id)}">Delete</button></td></tr>`;
+        }).join("") : '<tr class="loading-row"><td colspan="4">No categories yet — add one above or import via supabase/seed.sql.</td></tr>';
+      }
+      $("#catBody").addEventListener('click', async e=>{const b=e.target.closest('.cat-save,.cat-toggle,.cat-delete');if(!b)return;try{if(b.classList.contains('cat-save')){await A.updateCategory(b.dataset.id,{name:b.closest('tr').querySelector('.cat-name').value,emoji:b.closest('tr').querySelector('.cat-emoji').value,sort_order:Number(b.closest('tr').querySelector('.cat-order').value)});}else if(b.classList.contains('cat-toggle')){await A.updateCategory(b.dataset.id,{active:b.dataset.active!=='true'});}else{if(!confirm('Disable this category? It must have no active products.'))return;await A.deleteCategory(b.dataset.id)}await loadCategories();toast('Category updated')}catch(x){toast(x.message)}});
+      $("#addCatBtn").onclick = async () => {
+        const name = $("#newCatName").value.trim();
+        const emoji = $("#newCatEmoji").value.trim();
+        if (!name) { toast("Category name is required"); return; }
+        await A.addCategory(name, emoji);
+        $("#newCatName").value = ""; $("#newCatEmoji").value = "";
+        await loadCategories();
+        toast("Category added");
+      };
+
+      /* ---- Company & policy ---- */
+      const companyFields = [
+        ["name", "Company name"], ["brand", "Brand name"],
+        ["phoneProductList", "Phone (Product List)"], ["phonePolicy", "Phone (Policy)"],
+        ["whatsapp", "WhatsApp (digits only)"], ["whatsappDisplay", "WhatsApp (display)"],
+        ["email", "Public contact email"], ["website", "Website"],
+        ["addressFactory", "Sivakasi address"], ["addressAdmin", "Chennai admin address"]
+      ];
+      const companyDefaults = { phoneProductList: "7358633576", phonePolicy: "7358737658", whatsapp: "7299941355", whatsappDisplay: "72999 41355", email: "sales@rtcrackers.com", addressFactory: "22, Sivan Sannathi Road, Parasakthi Colony, Sivakasi - 626123", addressAdmin: "14, Rajendra Prasath Street, Manali, Chennai - 600068" };
+      function renderCompanyForm() {
+        const cOv = A.getCompanyOverrides();
+        $("#companyForm").innerHTML = companyFields.map(([k, l]) =>
+          `<div class="form-group"><label>${l}</label><input data-k="${k}" value="${esc(cOv[k] != null ? cOv[k] : companyDefaults[k] || "")}"></div>`).join("") +
+          `<div class="form-group company-about-editor"><label>About Section</label><textarea data-k="aboutSection" rows="7" maxlength="5000" placeholder="Write the public company introduction shown on the About page...">${esc(cOv.aboutSection || "")}</textarea><small>Managed as part of Company Info and displayed on the public About page.</small></div>`;
+      }
+      async function renderCompanyLogo() {
+        const url = A.getCompanyOverrides().logoUrl || "";
+        $("#companyLogoPreview").innerHTML = url ? `<img src="${esc(url)}" alt="Company logo" style="max-width:100%;max-height:130px;object-fit:contain;">` : "No logo uploaded";
+      }
+      $("#uploadCompanyLogoBtn").onclick = async () => {
+        const file = $("#companyLogoFile").files?.[0];
+        if (!file) { toast("Choose a logo file first"); return; }
+        const r = await A.uploadMedia(file, { usage: "logo", title: "RTCrackers Company Logo", altText: "RTCrackers company logo" });
+        if (!r.ok) { toast(r.error); return; }
+        await A.setCompanyLogo(r.media.public_url);
+        $("#companyLogoFile").value = "";
+        await renderCompanyLogo();
+        toast("Company logo updated");
+      };
+
+      $("#saveCompanyBtn").onclick = async () => {
+        const patch = {}; document.querySelectorAll("#companyForm input, #companyForm textarea").forEach((i) => (patch[i.dataset.k] = i.value.trim()));
+        await A.saveCompanySettings(patch); toast("Company info saved");
+      };
+
+      const policyFields = [
+        ["minOrderValue", "Minimum order value (₹)"], ["chennaiKumbakonamFlat", "Chennai/Kumbakonam flat shipping (₹)"],
+        ["freeDeliveryThreshold", "Free delivery threshold (₹)"], ["cancellationWindowHrs", "Cancellation window (hours)"],
+        ["cancellationFeePct", "Cancellation fee (%)"], ["refundDays", "Refund days"], ["maxDeliveryAttempts", "Maximum delivery attempts"]
+      ];
+      const policyDefaults = { minOrderValue: 2000, chennaiKumbakonamFlat: 250, freeDeliveryThreshold: 10000, cancellationWindowHrs: 24, cancellationFeePct: 25, refundDays: 15, maxDeliveryAttempts: 2 };
+      function renderPolicyForm() {
+        const pOv = A.getPolicyOverrides();
+        $("#policyForm").innerHTML = policyFields.map(([k, l]) =>
+          `<div class="form-group"><label>${l}</label><input type="number" min="0" step="0.01" data-k="${k}" value="${pOv[k] != null ? pOv[k] : policyDefaults[k]}"></div>`).join("");
+      }
+      $("#savePolicyBtn").onclick = async () => {
+        try {
+          const patch = {}; document.querySelectorAll("#policyForm input").forEach((i) => (patch[i.dataset.k] = Number(i.value)));
+          const r = await A.savePolicySettings(patch); if (!r.ok) throw new Error(r.error);
+          toast("Checkout policy values saved");
+        } catch(e) { toast(e.message || "Could not save policy values"); }
+      };
+
+      let policySections = [];
+      const policyTypeLabels = { text:"Text", bullets:"Bullet list", numbered:"Numbered list", notice:"Notice", table:"Table" };
+      function policyEditorEsc(s) { return esc(s).replace(/`/g, "&#96;"); }
+      function policySectionCard(x) {
+        const content = policyEditorEsc(x.content || "");
+        const from = x.effective_from ? new Date(x.effective_from).toISOString().slice(0,16) : "";
+        const until = x.effective_until ? new Date(x.effective_until).toISOString().slice(0,16) : "";
+        return `<div class="policy-editor-card" data-policy-id="${x.id || ""}" style="border:1px solid var(--grey-300);border-radius:12px;padding:16px;margin-bottom:12px;background:#fff;">
+          <div style="display:grid;grid-template-columns:1fr 180px 100px;gap:10px;align-items:end;">
+            <div class="form-group"><label>Section title</label><input class="ps-title" value="${policyEditorEsc(x.title)}"></div>
+            <div class="form-group"><label>Type</label><select class="ps-type">${Object.entries(policyTypeLabels).map(([v,l])=>`<option value="${v}" ${x.section_type===v?'selected':''}>${l}</option>`).join("")}</select></div>
+            <div class="form-group"><label>Order</label><input class="ps-order" type="number" value="${Number(x.sort_order||0)}"></div>
+          </div>
+          <input type="hidden" class="ps-key" value="${policyEditorEsc(x.section_key || "")}">
+          <div class="form-group"><label>Content <span style="font-weight:400;color:var(--grey-600)">(one bullet/row per line; table uses <code>left | right</code>)</span></label><textarea class="ps-content" rows="6">${content}</textarea></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;align-items:end;">
+            <div class="form-group"><label>Effective from (optional)</label><input class="ps-from" type="datetime-local" value="${from}"></div>
+            <div class="form-group"><label>Effective until (optional)</label><input class="ps-until" type="datetime-local" value="${until}"></div>
+            <label style="display:flex;gap:8px;align-items:center;margin-bottom:12px;"><input class="ps-active" type="checkbox" ${x.active!==false?'checked':''}> Published / active</label>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn btn-primary btn-sm save-policy-section">Save Section</button>
+            <button class="btn btn-outline btn-sm duplicate-policy-section">Duplicate</button>
+            <button class="btn btn-outline btn-sm toggle-policy-section">${x.active!==false?'Archive':'Restore'}</button>
+            <button class="btn btn-outline btn-sm history-policy-section">History</button>
+            <button class="btn btn-sm" style="background:#fff1f0;color:#b42318;border:1px solid #f3b7b1;" data-delete-policy>Delete Permanently</button>
+          </div>
+          <div class="policy-history" style="display:none;margin-top:12px;"></div>
+        </div>`;
+      }
+      async function loadPolicySections() {
+        try { policySections = await A.getPolicySections(true); renderPolicySections(); }
+        catch(e) { $("#policySectionsEditor").innerHTML = `<div class="info-banner">Could not load policy sections: ${esc(e.message || e)}</div>`; }
+      }
+      function renderPolicySections() {
+        const el = $("#policySectionsEditor");
+        el.innerHTML = policySections.length ? policySections.map(policySectionCard).join("") : '<div class="info-banner">No policy sections yet. Add the first rule above.</div>';
+      }
+      $("#addPolicySectionBtn").onclick = () => {
+        policySections.push({ id:null, section_key:"new-policy-rule-" + Date.now(), title:"New Policy Rule", section_type:"bullets", content:"", active:true, sort_order:(policySections.length+1)*10 });
+        renderPolicySections();
+      };
+      $("#policySectionsEditor").addEventListener("click", async (e) => {
+        const card = e.target.closest("[data-policy-id]"); if (!card) return;
+        const id = card.dataset.policyId;
+        const x = policySections.find(p => String(p.id) === String(id));
+        const payload = { id:id || undefined, section_key:card.querySelector('.ps-key').value, title:card.querySelector('.ps-title').value, section_type:card.querySelector('.ps-type').value, content:card.querySelector('.ps-content').value, active:card.querySelector('.ps-active').checked, sort_order:Number(card.querySelector('.ps-order').value||0), effective_from:card.querySelector('.ps-from').value ? new Date(card.querySelector('.ps-from').value).toISOString() : null, effective_until:card.querySelector('.ps-until').value ? new Date(card.querySelector('.ps-until').value).toISOString() : null };
+        if (e.target.closest('.save-policy-section')) { const r=await A.savePolicySection(payload); if(!r.ok){toast(r.error);return;} await loadPolicySections(); toast('Policy section saved and versioned'); }
+        if (e.target.closest('.duplicate-policy-section')) { payload.id=undefined; payload.section_key=payload.section_key+'-copy'; payload.title=payload.title+' (Copy)'; const r=await A.savePolicySection(payload); if(!r.ok){toast(r.error);return;} await loadPolicySections(); toast('Policy section duplicated'); }
+        if (e.target.closest('.toggle-policy-section')) { if(!id){toast('Save the section first');return;} const r=await A.archivePolicySection(id,!x?.active); if(!r.ok){toast(r.error);return;} await loadPolicySections(); toast(x?.active?'Policy section archived':'Policy section restored'); }
+        if (e.target.closest('[data-delete-policy]')) { if(!id){card.remove();return;} if(!confirm('Permanently delete this policy section? It will no longer appear on the public policy page.')) return; const r=await A.deletePolicySection(id); if(!r.ok){toast(r.error);return;} await loadPolicySections(); toast('Policy section permanently deleted'); }
+        if (e.target.closest('.history-policy-section')) { const box=card.querySelector('.policy-history'); if(box.style.display==='none'){ const rows=await A.getPolicyRevisions(id); box.innerHTML=rows.length?rows.map(h=>`<div style="padding:8px;border-top:1px solid var(--grey-200);font-size:12px;"><strong>${esc(h.action)}</strong> — ${new Date(h.changed_at).toLocaleString()}</div>`).join(''):'<div style="padding:8px;color:var(--grey-600)">No revision history.</div>'; box.style.display='block'; } else box.style.display='none'; }
+      });
+
+      /* ---- Website theme ---- */
+      const themePresets = {
+        "RT Festive": {primary:'#e63946',secondary:'#f3722c',accent:'#ffbf3f',accent2:'#8338ec',dark:'#0a0f24',dark2:'#1c2650',surface:'#fffdfa',surface2:'#f2f1ec',text_color:'#14162a',success:'#2e7d4f'},
+        "Royal Purple": {primary:'#7c3aed',secondary:'#a855f7',accent:'#fbbf24',accent2:'#ec4899',dark:'#21113f',dark2:'#3b1f6b',surface:'#fffaff',surface2:'#f4effa',text_color:'#24152f',success:'#16a34a'},
+        "Emerald Night": {primary:'#059669',secondary:'#10b981',accent:'#f59e0b',accent2:'#14b8a6',dark:'#06251d',dark2:'#0f4d3d',surface:'#fbfffd',surface2:'#eef8f4',text_color:'#10231d',success:'#15803d'},
+        "Ocean Blue": {primary:'#2563eb',secondary:'#06b6d4',accent:'#f59e0b',accent2:'#6366f1',dark:'#071a33',dark2:'#123b67',surface:'#fbfdff',surface2:'#eef5fb',text_color:'#102033',success:'#16a34a'},
+        "Sunset": {primary:'#ef4444',secondary:'#f97316',accent:'#facc15',accent2:'#db2777',dark:'#2a1010',dark2:'#5b211b',surface:'#fffdf8',surface2:'#fff3e6',text_color:'#2b1a16',success:'#16a34a'},
+        "Rose Gold": {primary:'#be185d',secondary:'#e11d48',accent:'#f59e0b',accent2:'#c026d3',dark:'#2a0d1b',dark2:'#5a1737',surface:'#fffafb',surface2:'#fdf0f5',text_color:'#2b1720',success:'#15803d'}
+      };
+      const themeFields=[['primary','Primary'],['secondary','Secondary'],['accent','Accent'],['accent2','Accent 2'],['dark','Dark Background'],['dark2','Dark Surface'],['surface','Light Surface'],['surface2','Light Soft Surface'],['text_color','Light Text'],['success','Success']];
+      function renderThemeEditor(t){ t=t||themePresets['RT Festive']; $('#themeName').value=t.name||$('#themePreset').value||'RT Festive'; $('#themeEditor').innerHTML=themeFields.map(([k,l])=>{const v=/^#[0-9a-fA-F]{6}$/.test(String(t[k]||''))?String(t[k]):'#000000';return `<div class="form-group"><label>${l}</label><div style="display:flex;gap:8px;align-items:center;"><input class="theme-color" data-k="${k}" type="color" value="${esc(v)}" style="width:52px;height:42px;padding:2px;"><input class="theme-hex" data-k="${k}" value="${esc(v)}" maxlength="7" pattern="^#[0-9a-fA-F]{6}$"></div></div>`;}).join(''); }
+      function readTheme(){const t={name:$('#themeName').value.trim()||'Custom Theme'}; document.querySelectorAll('.theme-color').forEach(i=>t[i.dataset.k]=i.value); return t;}
+      $('#themePreset').onchange=()=>renderThemeEditor(themePresets[$('#themePreset').value]);
+      $('#themeEditor').addEventListener('input',e=>{if(e.target.classList.contains('theme-color')){const x=document.querySelector(`.theme-hex[data-k="${e.target.dataset.k}"]`);if(x)x.value=e.target.value;} if(e.target.classList.contains('theme-hex') && /^#[0-9a-fA-F]{6}$/.test(e.target.value)){const x=document.querySelector(`.theme-color[data-k="${e.target.dataset.k}"]`);if(x)x.value=e.target.value;}});
+      async function loadThemeAdmin(){try{const t=await A.getSiteTheme(); renderThemeEditor(t||themePresets['RT Festive']); if(t) $('#themePreset').value=themePresets[t.name]?t.name:'RT Festive';}catch(e){renderThemeEditor(themePresets['RT Festive']);}}
+      $('#previewThemeBtn').onclick=()=>{const t=readTheme(); window.RTTheme?.apply(t); toast('Theme preview applied. Save to publish it.');};
+      $('#saveThemeBtn').onclick=async()=>{const t=readTheme(); if(themeFields.some(([k])=>!/^#[0-9a-fA-F]{6}$/.test(t[k]||''))){toast('All 10 colours must be valid hex values.');return;} const r=await A.saveSiteTheme(t); toast(r.ok?'Website theme published':'Could not save theme: '+r.error); if(r.ok) window.RTTheme?.apply(t);};
+      renderThemeEditor(themePresets['RT Festive']);
+
+      /* ---- Runtime PIN import ---- */
+      let pincodeImportRows = [];
+      function normalizePincodeImportRows(headers, matrix) {
+        const canon = (v) => String(v ?? '').trim().toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_|_$/g,'');
+        let hs = headers.map(canon);
+        const first = hs[0] || '';
+        const firstLooksSerial = /^(s_no|sno|serial|serial_no|sl_no|slno|index|sequence|sr_no)$/.test(first) || (matrix.length && matrix.every((r,i)=>String(r[0]??'').trim() === String(i+1)));
+        if (firstLooksSerial) hs = hs.slice(1);
+        const aliases = { pin:'pincode', pin_code:'pincode', postcode:'pincode', post_code:'pincode', office:'post_office', postoffice:'post_office', office_name:'post_office', officename:'post_office', district_name:'district', state_name:'state', days:'estimated_delivery_days', estimated_days:'estimated_delivery_days', available:'delivery_available' };
+        hs = hs.map(h => aliases[h] || h);
+        return {
+          serialIgnored: firstLooksSerial,
+          rows: matrix
+            .map((r, idx) => {
+              const o = { _row: idx + 2 };
+              hs.forEach((h, j) => { o[h] = String(r[j] ?? '').trim(); });
+              return o;
+            })
+            .filter((r) => Object.keys(r).some((k) => k !== '_row' && r[k]))
+        };
+      }
+      function renderPincodeImportPreview(result) {
+        const errors=[]; result.rows.forEach(r=>{if(!/^\d{6}$/.test(String(r.pincode||'').replace(/\D/g,'')) || !r.post_office || !r.district) errors.push(r);});
+        const status=$("#pincodeImportStatus"); status.className='bulk-status '+(errors.length?'bulk-warn':'bulk-ok'); status.textContent=`Detected ${result.rows.length} rows. ${result.serialIgnored?'First column detected as a serial-number column and ignored. ':'No serial-number column detected. '}${errors.length?errors.length+' row(s) need correction.':'All rows passed basic checks.'}`;
+        pincodeImportRows=result.rows.filter(r=>!errors.includes(r)).map(r=>({pincode:String(r.pincode).replace(/\D/g,''),post_office:r.post_office,district:r.district,state:r.state||'Tamil Nadu',estimated_delivery_days:r.estimated_delivery_days||'3-5',delivery_available:r.delivery_available===''?true:!['false','0','no','unavailable'].includes(String(r.delivery_available).toLowerCase())}));
+        const host=$("#pincodeImportPreview"); host.hidden=false; host.innerHTML=`<table><thead><tr><th>Excel row</th><th>PIN</th><th>Post Office</th><th>District</th><th>State</th><th>Status</th></tr></thead><tbody>${result.rows.slice(0,30).map(r=>`<tr><td>${r._row}</td><td>${esc(r.pincode)}</td><td>${esc(r.post_office)}</td><td>${esc(r.district)}</td><td>${esc(r.state||'Tamil Nadu')}</td><td>${errors.includes(r)?'<span class="bulk-error">Invalid</span>':'<span class="bulk-ok">Ready</span>'}</td></tr>`).join('')}</tbody></table>${result.rows.length>30?`<div class="bulk-note" style="padding:8px">Showing first 30 of ${result.rows.length} rows.</div>`:''}`;
+        $("#importPincodeRowsBtn").disabled=!pincodeImportRows.length;
+      }
+      $("#previewPincodeImportBtn")?.addEventListener('click', async()=>{const file=$("#pincodeImportFile")?.files?.[0];const status=$("#pincodeImportStatus");if(!file){status.className='bulk-status bulk-error';status.textContent='Choose an Excel or CSV file first.';return;}try{const data=await file.arrayBuffer();const wb=XLSX.read(data,{type:'array',cellDates:false});const ws=wb.Sheets[wb.SheetNames[0]];const matrix=XLSX.utils.sheet_to_json(ws,{header:1,defval:''}).filter(r=>r.some(v=>String(v??'').trim()!==''));if(matrix.length<2)throw Error('The first sheet needs a header row and at least one pincode row.');renderPincodeImportPreview(normalizePincodeImportRows(matrix[0],matrix.slice(1)));}catch(e){status.className='bulk-status bulk-error';status.textContent=e.message||'Could not read the file.';$("#pincodeImportPreview").hidden=true;$("#importPincodeRowsBtn").disabled=true;}});
+      $("#importPincodeRowsBtn")?.addEventListener('click',async()=>{const status=$("#pincodeImportStatus");const result=await A.importDeliveryPincodes(pincodeImportRows);if(!result.ok){status.className='bulk-status bulk-error';status.textContent=result.error;return;}status.className='bulk-status bulk-ok';status.textContent=`Imported ${result.imported} pincode record(s).`;$("#pincodeImportFile").value='';$("#pincodeImportPreview").hidden=true;$("#importPincodeRowsBtn").disabled=true;await loadDeliveryPincodes();});
+      $("#downloadPincodeTemplateBtn")?.addEventListener('click',()=>{const rows=[['pincode','post_office','district','state','estimated_delivery_days','delivery_available'],['600001','Chennai GPO','Chennai','Tamil Nadu','3-5','true']];const ws=XLSX.utils.aoa_to_sheet(rows);const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'Pincodes');XLSX.writeFile(wb,'RT-Crackers-Pincode-Import-Template.xlsx');});
+
+      /* ---- Order approval requests ---- */
+      async function loadOrderApprovals(){const host=$("#approvalList");if(!host)return;try{const rows=await A.getOrderApprovalRequests();host.innerHTML=rows.length?rows.map(r=>`<article class="approval-card" data-id="${esc(r.id)}" style="border:1px solid rgba(242,202,80,.18);border-radius:12px;padding:14px;margin-bottom:12px;background:#0f131d;color:#f5f1e7;"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;"><strong>${esc(r.ref)}</strong><span>${esc(r.status)}</span></div><p style="margin:8px 0;color:#c9ced8">${esc(r.name)} · ${esc(r.phone)} · ${esc(r.pincode)} · ${esc(r.district)} · ₹${Number(r.total||0).toLocaleString('en-IN')}</p><p style="margin:6px 0;font-size:12px;color:#aeb6c2">${new Date(r.created_at).toLocaleString('en-IN')} · ${esc(r.government_verification?.source||'postal verification')}</p>${r.status==='pending'?`<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;"><button class="btn btn-primary btn-sm approval-action" data-decision="approve">Approve &amp; Create Order</button><button class="btn btn-outline btn-sm approval-action" data-decision="reject">Reject &amp; Cancel</button></div>`:''}</article>`).join(''):'<div class="info-banner">No approval requests.</div>';}catch(e){host.textContent=e.message||'Could not load approval requests.';}}
+      $("#approvalList")?.addEventListener('click',async e=>{const btn=e.target.closest('.approval-action');if(!btn)return;const card=btn.closest('.approval-card');const password=prompt('Enter the Admin Panel Security Password to authorize this decision:');if(password===null)return;const note=prompt('Optional decision note:')||'';btn.disabled=true;try{const r=await A.decideOrderApproval(card.dataset.id,btn.dataset.decision,password,note);toast(r.ok?(r.status==='approved'?'Order approved and created.':'Order rejected; no order was created.'):r.error);if(r.ok)await loadOrderApprovals();}catch(err){toast(err.message||'Decision failed.');}finally{btn.disabled=false;}});
+
+      /* ---- Delivery PIN codes ---- */
+      let allDeliveryPincodes = [];
+
+      async function loadDeliveryPincodes() {
+        try {
+          allDeliveryPincodes = await A.getDeliveryPincodes();
+          renderDeliveryPincodes();
+        } catch (e) {
+          $("#pinBody").innerHTML = `<tr class="loading-row"><td colspan="7">Could not load PIN codes: ${esc(e.message || e)}</td></tr>`;
+        }
+      }
+
+      function renderDeliveryPincodes() {
+        const q = $("#pinFilter").value.trim().toLowerCase();
+        const rows = allDeliveryPincodes.filter(p =>
+          !q ||
+          String(p.pincode).includes(q) ||
+          String(p.post_office || "").toLowerCase().includes(q) ||
+          String(p.district || "").toLowerCase().includes(q)
+        );
+
+        $("#pinBody").innerHTML = rows.length ? rows.map(p => `
+          <tr data-id="${esc(p.id)}">
+            <td><input class="pin-pincode" inputmode="numeric" maxlength="6" value="${esc(p.pincode)}"></td>
+            <td><input class="pin-office" value="${esc(p.post_office)}"></td>
+            <td><input class="pin-district" value="${esc(p.district)}"></td>
+            <td><strong>Tamil Nadu</strong></td>
+            <td><input class="pin-days" value="${esc(p.estimated_delivery_days || "3-5")}"></td>
+            <td>
+              <select class="pin-status">
+                <option value="true" ${p.delivery_available ? "selected" : ""}>Available</option>
+                <option value="false" ${!p.delivery_available ? "selected" : ""}>Unavailable</option>
+              </select>
+            </td>
+            <td>
+              <div class="row-actions">
+                <button class="btn btn-sm btn-primary save-pin">Save</button>
+                <button class="btn btn-sm btn-outline del-pin" style="border-color:var(--danger);color:var(--danger);">Delete</button>
+              </div>
+            </td>
+          </tr>
+        `).join("") : '<tr class="loading-row"><td colspan="7">No delivery PIN codes found. Add one above.</td></tr>';
+      }
+
+      $("#pinFilter").addEventListener("input", renderDeliveryPincodes);
+
+      $("#addPinBtn").onclick = async () => {
+        const btn = $("#addPinBtn");
+        const pincode = $("#newPin").value.trim();
+        const postOffice = $("#newPinOffice").value.trim();
+        const district = $("#newPinDistrict").value.trim();
+        const days = $("#newPinDays").value.trim() || "3-5";
+        const available = $("#newPinAvailable").value === "true";
+
+        if (!/^\d{6}$/.test(pincode)) { toast("Enter a valid 6-digit PIN code"); return; }
+        if (!postOffice || !district) { toast("Post office and district are required"); return; }
+
+        btn.disabled = true;
+        try {
+          const r = await A.addDeliveryPincode({
+            pincode,
+            post_office: postOffice,
+            district,
+            delivery_available: available,
+            estimated_delivery_days: days
+          });
+          if (!r.ok) { toast(r.error); return; }
+          $("#newPin").value = "";
+          $("#newPinOffice").value = "";
+          $("#newPinDistrict").value = "";
+          $("#newPinDays").value = "3-5";
+          await loadDeliveryPincodes();
+          toast("Delivery PIN added");
+        } finally {
+          btn.disabled = false;
+        }
+      };
+
+      $("#pinBody").addEventListener("click", async (e) => {
+        const tr = e.target.closest("tr");
+        if (!tr || !tr.dataset.id) return;
+
+        if (e.target.closest(".save-pin")) {
+          const r = await A.updateDeliveryPincode(tr.dataset.id, {
+            pincode: tr.querySelector(".pin-pincode").value.trim(),
+            post_office: tr.querySelector(".pin-office").value.trim(),
+            district: tr.querySelector(".pin-district").value.trim(),
+            estimated_delivery_days: tr.querySelector(".pin-days").value.trim(),
+            delivery_available: tr.querySelector(".pin-status").value === "true"
+          });
+          toast(r.ok ? "PIN code updated" : r.error);
+          if (r.ok) await loadDeliveryPincodes();
+        }
+
+        if (e.target.closest(".del-pin")) {
+          if (!confirm("Delete this delivery PIN code?")) return;
+          const r = await A.deleteDeliveryPincode(tr.dataset.id);
+          toast(r.ok ? "PIN code deleted" : r.error);
+          if (r.ok) await loadDeliveryPincodes();
+        }
+      });
+
+      /* ---- Orders / COD Tracking ---- */
+      const ORDER_STATUSES = ["Submitted","Confirmed","Processing","Packed","Ready for Dispatch","Dispatched","In Transit","Out for Delivery","Delivered","Arrived at Transporter","Ready for Collection","Collected","Cancelled","Returned","Rejected"];
+      function nextOrderStatuses(order) {
+        const s=order.status, m=order.deliveryMode;
+        if(s==='Submitted') return ['Submitted','Confirmed','Rejected','Cancelled'];
+        if(s==='Confirmed') return ['Confirmed','Processing','Cancelled'];
+        if(s==='Processing') return ['Processing','Packed','Cancelled'];
+        if(s==='Packed') return ['Packed','Ready for Dispatch','Cancelled'];
+        if(s==='Ready for Dispatch') return ['Ready for Dispatch','Dispatched','Cancelled'];
+        if(s==='Dispatched') return ['Dispatched','In Transit','Cancelled'];
+        if(s==='In Transit') return m==='transporter_collection'?['In Transit','Arrived at Transporter','Cancelled']:['In Transit','Out for Delivery','Cancelled'];
+        if(s==='Out for Delivery') return ['Out for Delivery','Delivered','Cancelled'];
+        if(s==='Arrived at Transporter') return ['Arrived at Transporter','Ready for Collection','Cancelled'];
+        if(s==='Ready for Collection') return ['Ready for Collection','Collected'];
+        if(s==='Delivered') return ['Delivered','Returned'];
+        if(s==='Collected') return ['Collected','Returned'];
+        return [s];
+      }
+      function orderStatusOptions(current,order) { return nextOrderStatuses(order).map(s => `<option value="${esc(s)}" ${s === current ? "selected" : ""}>${esc(s)}</option>`).join(""); }
+      async function loadOrders() {
+        const orders = await A.getAllOrders();
+        $("#orderCount").textContent = orders.length;
+        $("#orderBody").innerHTML = orders.length ? orders.map((o) => `
+      <tr><td><strong>${esc(o.ref)}</strong></td><td>${o.createdAt ? new Date(o.createdAt).toLocaleString("en-IN") : ""}</td>
+      <td>${esc(o.name)}</td><td>${esc(o.phone)}</td><td>${esc(o.deliveryMode === "transporter_collection" ? "Transporter" : o.location)}</td><td>${inr(o.total)}</td>
+      <td><span style="font-weight:600;">${esc(o.status || "Submitted")}</span></td><td>${esc(o.paymentStatus || "Pending")}</td>
+      <td><button class="btn btn-sm btn-outline track-order" data-id="${esc(o.id)}">Track</button></td></tr>`).join("")
+          : '<tr class="loading-row"><td colspan="9">No orders yet.</td></tr>';
+      }
+      let selectedTrackingOrderId = null;
+      async function openTrackingPanel(orderId) {
+        selectedTrackingOrderId = orderId;
+        const orders = await A.getAllOrders();
+        const order = orders.find(o => o.id === orderId);
+        if (!order) return;
+        const tracking = await A.getOrderTracking(orderId);
+        $("#orderTrackingPanel").style.display = "block";
+        $("#trackingRef").textContent = order.ref;
+        $("#trackingSummary").textContent = `${order.name} · ${inr(order.total)} · COD ${order.paymentStatus || "Pending"} · ${order.deliveryMode === "transporter_collection" ? "Transporter collection" : "Door-to-door"}`;
+        $("#trackingStatus").innerHTML = orderStatusOptions(order.status,order);
+        $("#trackingConfirmChannel").value = order.confirmationChannel || "Manual";
+        $("#trackingLocation").value = order.currentLocation || "";
+        $("#trackingCarrier").value = order.carrier || "";
+        $("#trackingNumber").value = order.trackingNumber || "";
+        $("#trackingExpected").value = order.expectedDeliveryAt ? new Date(order.expectedDeliveryAt).toISOString().slice(0,16) : "";
+        $("#codPaymentStatus").value = order.paymentStatus || "Pending";
+        $("#trackingTimeline").innerHTML = (tracking.events || []).map(ev => `<div style="display:flex;gap:12px;border-left:3px solid var(--navy-700);padding:0 0 14px 12px;margin-left:7px;"><div style="min-width:12px;height:12px;border-radius:50%;background:var(--navy-700);margin-left:-20px;margin-top:3px;"></div><div><strong>${esc(ev.title || ev.status)}</strong><div style="font-size:12px;color:var(--grey-600);">${new Date(ev.created_at).toLocaleString("en-IN")}${ev.location ? " · " + esc(ev.location) : ""}</div><div style="margin-top:3px;">${esc(ev.description || "")}</div>${ev.tracking_number ? `<div style="font-size:12px;margin-top:3px;">Tracking: ${esc(ev.tracking_number)}</div>` : ""}</div></div>`).join("") || '<div style="color:var(--grey-600)">No tracking events.</div>';
+        $("#orderTrackingPanel").scrollIntoView({behavior:"smooth",block:"nearest"});
+      }
+      $("#orderBody").addEventListener("click", async (e) => {
+        const btn=e.target.closest(".track-order");
+        if(btn) await openTrackingPanel(btn.dataset.id);
+      });
+      $("#closeTrackingPanel").onclick=()=>{selectedTrackingOrderId=null;$("#orderTrackingPanel").style.display="none";};
+      $("#saveTrackingBtn").onclick=async()=>{
+        if(!selectedTrackingOrderId)return;
+        const nextStatus=$("#trackingStatus").value;
+        const note=$("#trackingDescription").value.trim();
+        const r=nextStatus==='Confirmed' ? await A.confirmOrder(selectedTrackingOrderId,$("#trackingConfirmChannel").value,note) : await A.updateOrderTracking(selectedTrackingOrderId,{status:nextStatus,description:note,location:$("#trackingLocation").value,carrier:$("#trackingCarrier").value,trackingNumber:$("#trackingNumber").value,expectedDeliveryAt:$("#trackingExpected").value?new Date($("#trackingExpected").value).toISOString():null,deliveryAttempt:$("#trackingAttempt").value||null});
+        if(!r.ok){toast(r.error);return;} toast("Tracking updated"); $("#trackingDescription").value=""; $("#trackingAttempt").value=""; await loadOrders(); await openTrackingPanel(selectedTrackingOrderId);
+      };
+      $("#saveCodBtn").onclick=async()=>{
+        if(!selectedTrackingOrderId)return;
+        const r=await A.updateCodPayment(selectedTrackingOrderId,$("#codPaymentStatus").value,$("#codPaymentNote").value);
+        if(!r.ok){toast(r.error);return;} toast("COD payment updated"); $("#codPaymentNote").value=""; await loadOrders(); await openTrackingPanel(selectedTrackingOrderId);
+      };
+      async function loadCompletedOrders() {
+        const rows = await A.getCompletedOrders();
+        $("#completedCount").textContent = rows.length;
+        $("#completedBody").innerHTML = rows.length ? rows.map(r => `<tr><td>${esc(r.ref)}</td><td>${esc(r.name)}</td><td>${esc(r.phone)}</td><td>${inr(r.total)}</td><td>${esc(r.final_status)}</td><td>${new Date(r.completed_at).toLocaleString("en-IN")}</td></tr>`).join("") : '<tr class="loading-row"><td colspan="6">No completed orders yet.</td></tr>';
+      }
+      async function loadDeliveredOrders() {
+        const rows = await A.getDeliveredOrders();
+        $("#deliveredCount").textContent = rows.length;
+        $("#deliveredBody").innerHTML = rows.length ? rows.map(r => `<tr><td>${esc(r.ref)}</td><td>${esc(r.name)}</td><td>${esc(r.phone)}</td><td>${inr(r.total)}</td><td>${new Date(r.delivered_at).toLocaleString("en-IN")}</td></tr>`).join("") : '<tr class="loading-row"><td colspan="5">No delivered orders yet.</td></tr>';
+      }
+      function showOrderSection(which) {
+        ["Current","Completed","Delivered"].forEach(n => $("#orderSection"+n).style.display = n === which ? "block" : "none");
+        ["Current","Completed","Delivered"].forEach(n => $("#orderView"+n).className = "btn btn-sm " + (n === which ? "btn-primary" : "btn-outline"));
+      }
+      $("#orderViewCurrent").onclick = () => showOrderSection("Current");
+      $("#orderViewCompleted").onclick = () => showOrderSection("Completed");
+      $("#orderViewDelivered").onclick = () => showOrderSection("Delivered");
+
+      /* ---- Customers ---- */
+      async function loadCustomers() {
+        const customers = await A.getAllCustomers();
+        $("#custCount").textContent = customers.length;
+        $("#custBody").innerHTML = customers.length ? customers.map((c) => `
+      <tr><td><span class="badge">${c.customerType === "guest" ? "Guest" : "Registered"}</span></td><td>${esc(c.name)}</td><td>${esc(c.email)}</td><td>${esc(c.phone)}</td>
+      <td>${c.createdAt ? new Date(c.createdAt).toLocaleDateString("en-IN") : ""}</td></tr>`).join("")
+          : '<tr class="loading-row"><td colspan="5">No customers yet.</td></tr>';
+      }
+
+      /* ---- Feedback ---- */
+      let feedbackRows=[];
+      async function loadFeedback(){
+        try{ feedbackRows=await A.getFeedback(); renderFeedback(); }catch(e){ $("#feedbackBody").innerHTML=`<tr><td colspan="10" style="color:#b42318;">${esc(e.message||e)}</td></tr>`; }
+      }
+      function renderFeedback(){
+        const brand=$("#feedbackBrandFilter").value,status=$("#feedbackStatusFilter").value;
+        const rows=feedbackRows.filter(f=>(brand==='all'||f.brand===brand)&&(status==='all'||f.status===status));
+        $("#feedbackBody").innerHTML=rows.length?rows.map(f=>`<tr data-feedback-id="${esc(f.id)}"><td>${new Date(f.created_at).toLocaleString('en-IN')}</td><td>${f.brand==='rt_crackers'?'RTCrackers':'Caged Dragon'}</td><td>${'★'.repeat(Number(f.rating))}${'☆'.repeat(5-Number(f.rating))}</td><td>${esc(f.category)}</td><td>${esc(f.customer_name||'Anonymous')}<br><small>${esc(f.customer_email||'')}</small></td><td>${esc(f.order_id||'General')}</td><td style="max-width:260px;white-space:pre-wrap;">${esc(f.message)}</td><td><select class="feedback-status"><option ${f.status==='New'?'selected':''}>New</option><option ${f.status==='In Review'?'selected':''}>In Review</option><option ${f.status==='Responded'?'selected':''}>Responded</option><option ${f.status==='Resolved'?'selected':''}>Resolved</option><option ${f.status==='Archived'?'selected':''}>Archived</option></select></td><td><textarea class="feedback-response" rows="2" placeholder="Admin response">${esc(f.admin_response||'')}</textarea></td><td><button class="btn btn-sm btn-primary save-feedback">Save</button></td></tr>`).join(''):'<tr class="loading-row"><td colspan="10">No feedback matches the filter.</td></tr>';
+      }
+      $("#feedbackBrandFilter").onchange=renderFeedback; $("#feedbackStatusFilter").onchange=renderFeedback; $("#reloadFeedbackBtn").onclick=loadFeedback;
+      $("#feedbackBody").addEventListener('click',async e=>{const b=e.target.closest('.save-feedback');if(!b)return;const tr=b.closest('tr'),r=await A.updateFeedback(tr.dataset.feedbackId,tr.querySelector('.feedback-status').value,tr.querySelector('.feedback-response').value);toast(r.ok?'Feedback updated':r.error);if(r.ok)await loadFeedback();});
+
+      /* ---- Administrator account ---- */
+      async function loadAdminAccount(){
+        const me=A.currentUser();
+        if(!me) return;
+        try{
+          const profile=await A.getAdminProfile();
+          $("#adminProfileName").value=profile?.display_name||me.name||"";
+          $("#adminProfileEmail").value=me.email||"";
+          $("#adminProfilePhone").value=profile?.phone||"";
+          $("#adminProfileSecondary").value=profile?.secondary_phone||"";
+          $("#adminProfileAddress").value=profile?.address||"";
+          $("#adminProfileCity").value=profile?.city||"";
+          $("#adminProfileDistrict").value=profile?.district||"";
+          $("#adminProfileState").value=profile?.state||"Tamil Nadu";
+          $("#adminProfilePincode").value=profile?.pincode||"";
+          $("#adminProfileCountry").value=profile?.country||"India";
+          const control=await A.getAdminControl();
+          const isOwner=!!control&&control.owner_user_id===me.user_id;
+          $("#adminRoleBadge").textContent=isOwner?"OWNER":"ADMINISTRATOR";
+          $("#convertSelfBtn").disabled=isOwner;
+          $("#convertSelfBtn").title=isOwner?"The protected owner cannot be converted":"Return this account to customer access";
+        }catch(e){console.error("Admin account load failed",e);}
+      }
+      $("#adminAccountForm").onsubmit=async e=>{
+        e.preventDefault();const btn=$("#saveAdminProfileBtn"),status=$("#adminAccountStatus");btn.disabled=true;btn.textContent="Saving…";
+        const r=await A.updateAdminProfile({display_name:$("#adminProfileName").value,phone:$("#adminProfilePhone").value,secondary_phone:$("#adminProfileSecondary").value,address:$("#adminProfileAddress").value,city:$("#adminProfileCity").value,district:$("#adminProfileDistrict").value,state:$("#adminProfileState").value,pincode:$("#adminProfilePincode").value,country:$("#adminProfileCountry").value});
+        btn.disabled=false;btn.textContent="Save My Account";status.style.display="block";status.textContent=r.ok?"Administrator account details saved.":r.error;status.className="info-banner "+(r.ok?"":"warn-banner");
+      };
+      $("#convertSelfBtn").onclick=async()=>{
+        const me=A.currentUser(); if(!me) return;
+        if($("#convertSelfBtn").disabled) return;
+        if(!confirm("Convert this administrator account to normal customer access? You will be signed out of the admin panel.")) return;
+        const r=await A.setAccountRole(me.user_id,"customer");
+        toast(r.ok?"Access changed to customer. Redirecting…":r.error);
+        if(r.ok){await A.logout();setTimeout(()=>location.href="account.html",700);}
+      };
+
+      /* ---- Security ---- */
+      async function loadAdminSecurity() {
+        const control = await A.getAdminControl();
+        const admins = await A.getAdmins();
+        const me = A.currentUser();
+        const isOwner = !!control && !!me && control.owner_user_id === me.user_id;
+        let securityConfigured = false;
+        try { securityConfigured = await A.isAdminSecurityConfigured(); } catch (e) { console.error(e); }
+        $("#securityStatus").innerHTML = securityConfigured
+          ? '<strong>Admin Panel Password is active.</strong> Every admin login now requires the Supabase account password and this additional panel password.'
+          : '<strong>Admin Panel Password is not configured yet.</strong> Set it now. The current protected administrator can enter once without it so this security layer can be initialized.';
+        const ownerStatus = $("#ownerStatus");
+        if (ownerStatus) {
+          ownerStatus.innerHTML = control
+            ? (isOwner ? '<strong>You are the protected owner account.</strong> Only your account can remove administrators.' : '<strong>Owner protection is active.</strong> You can edit the site, but only the owner account can remove administrators.')
+            : '<strong>Owner account is not initialized.</strong> After creating your first admin, run the owner setup SQL from README.md.';
+        }
+        $("#adminManageArea").style.display = isOwner ? "block" : "none";
+        const securityEditor = document.getElementById("saveSecurityBtn");
+        const securityInputs = ["panelSecurityPass","securityQuestion","securityAnswer"];
+        securityInputs.forEach(id => { const el=document.getElementById(id); if(el) el.disabled=!isOwner; });
+        if (securityEditor) securityEditor.style.display = isOwner ? "" : "none";
+        $("#adminBody").innerHTML = admins.map(a => `<tr><td>${esc(a.display_name || "Admin")}</td><td>Protected account</td><td>${a.created_at ? new Date(a.created_at).toLocaleString("en-IN") : ""}</td><td>${control?.owner_user_id === a.user_id ? "OWNER" : "Admin"}</td><td>${isOwner && control?.owner_user_id !== a.user_id ? `<button class="btn btn-sm btn-outline remove-admin" data-id="${esc(a.user_id)}">Make Customer</button>` : "Protected"}</td></tr>`).join("");
+        const notices = await A.getOwnerNotifications();
+        const unread = notices.filter(n => !n.is_read).length;
+        $("#ownerNoticeBox").innerHTML = notices.length ? `<div style="font-size:13px;margin-bottom:8px;"><strong>${unread}</strong> unread owner notifications</div>` + notices.slice(0,20).map(n => `<div style="padding:10px;border-bottom:1px solid var(--grey-300);background:${n.is_read ? "transparent" : "#fff8e1"};"><strong>${esc(n.title)}</strong><br><span>${esc(n.message)}</span><br><small>${new Date(n.created_at).toLocaleString("en-IN")}</small>${!n.is_read ? ` <button class="btn btn-sm btn-outline mark-notice" data-id="${n.id}">Mark read</button>` : ""}</div>`).join("") : '<p style="color:var(--grey-600);">No owner notifications.</p>';
+        const logs = await A.getAdminActionLogs();
+        $("#auditBody").innerHTML = logs.length ? logs.slice(0,50).map(l => `<tr><td>${new Date(l.created_at).toLocaleString("en-IN")}</td><td>${esc(l.actor_name || l.actor_user_id || "Unknown")}</td><td>${esc(l.action)}</td><td>${esc(l.table_name)}</td><td>${esc(l.record_id || "")}</td></tr>`).join("") : '<tr class="loading-row"><td colspan="5">No audit entries yet.</td></tr>';
+      }
+      $("#saveSecurityBtn").onclick = async () => {
+        const btn = $("#saveSecurityBtn"); btn.disabled = true; btn.textContent = "Saving...";
+        const r = await A.setAdminSecurity($("#panelSecurityPass").value, $("#securityQuestion").value, $("#securityAnswer").value);
+        btn.disabled = false; btn.textContent = "Save Admin Security";
+        toast(r.ok ? "Admin security saved" : r.error);
+        if (r.ok) { $("#panelSecurityPass").value = ""; $("#securityAnswer").value = ""; await loadAdminSecurity(); }
+      };
+      $("#addAdminBtn").onclick = async () => {
+        const r = await A.createAdminInvite($("#newAdminEmail").value, $("#newAdminDisplay").value, $("#newAdminTempPass").value);
+        toast(r.ok ? "Invitation email sent. Share the temporary password separately." : r.error);
+        if (r.ok) { $("#newAdminEmail").value = ""; $("#newAdminDisplay").value = ""; $("#newAdminTempPass").value = ""; }
+      };
+      $("#adminBody").addEventListener("click", async (e) => {
+        const btn = e.target.closest(".remove-admin"); if (!btn) return;
+        if (!confirm("Remove administrator access from this account?")) return;
+        const r = await A.setAccountRole(btn.dataset.id, "customer"); toast(r.ok ? "Account is now a customer" : r.error); if (r.ok) await loadAdminSecurity();
+      });
+      $("#ownerNoticeBox").addEventListener("click", async (e) => {
+        const btn = e.target.closest(".mark-notice"); if (!btn) return;
+        await A.markOwnerNotificationRead(btn.dataset.id); await loadAdminSecurity();
+      });
+      $("#changePassBtn").onclick = async () => {
+        const btn = $("#changePassBtn"); btn.disabled = true; btn.textContent = "Updating...";
+        const r = await A.changeAdminPassword($("#curPass").value, $("#newAdminEmail").value.trim(), $("#newAdminPass").value);
+        btn.disabled = false; btn.textContent = "Update Login";
+        toast(r.ok ? "Admin login updated" : r.error);
+      };
+
+      await loadProducts();
+      await Promise.all([loadBanners(), loadCategories(), loadDeliveryPincodes(), loadOrders(), loadCompletedOrders(), loadDeliveredOrders(), loadCustomers(), loadFeedback(), loadAdminSecurity(), loadAdminAccount()]);
+      renderCompanyForm();
+      renderPolicyForm();
+      await Promise.all([loadMedia(), renderCompanyLogo(), loadThemeAdmin()]);
+    })();
+  </script>
+<script src="js/performance.js?v=20261003"></script><script src="js/feature-admin.js"></script>
+  <script src="js/advanced-ui.js?v=20261003"></script>
+<script src="js/industrial-ui.js?v=20261003"></script><script src="components/admin-shell.js?v=20261003"></script>
+  <script src="js/adaptive-layout.js?v=20261003-v6"></script>
+  <script src="/js/pwa-update.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error-container": "#93000a", "on-surface": "#191c20", "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-secondary-fixed": "#251a00", "outline-variant": "#e8bdb6", "on-primary-fixed": "#410001", "surface-dim": "#d8dadf", "tertiary": "#8c4900", "primary-container": "#e31b16", "primary": "#b90006", "on-tertiary-fixed": "#2f1500", "on-error": "#ffffff", "on-background": "#191c20", "surface-container": "#eceef3", "inverse-surface": "#2e3135", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#930003", "inverse-on-surface": "#eff0f6", "on-secondary-container": "#6e5400", "primary-fixed": "#ffdad5", "inverse-primary": "#ffb4a9", "surface-tint": "#c00006", "primary-fixed-dim": "#ffb4a9", "surface": "#f8f9ff", "background": "#f8f9ff", "surface-bright": "#f8f9ff", "tertiary-container": "#b05e00", "secondary": "#765a00", "error": "#ba1a1a", "on-surface-variant": "#5e3f3b", "on-primary": "#ffffff", "tertiary-fixed-dim": "#ffb77f", "surface-container-low": "#f2f3f9", "surface-container-highest": "#e1e2e8", "surface-container-high": "#e6e8ee", "tertiary-fixed": "#ffdcc4", "on-secondary-fixed-variant": "#594400", "secondary-fixed-dim": "#f4bf1b", "surface-variant": "#e1e2e8", "outline": "#926e69", "on-tertiary-fixed-variant": "#6f3900", "on-primary-container": "#fff9f8", "secondary-fixed": "#ffdf95", "surface-container-lowest": "#ffffff", "on-tertiary-container": "#fff9f8", "secondary-container": "#fdc826" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2.5rem", "space-lg": "1.5rem", "gutter": "1.25rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem", "space-xs": "0.25rem", "space-md": "1rem", "margin-mobile": "1rem", "margin": "2rem" }, "fontFamily": { "headline-xl-mobile": ["Oswald"], "body-md": ["Inter"], "headline-sm": ["Oswald"], "label-md": ["Inter"], "headline-lg": ["Oswald"], "display-hero": ["Oswald"], "headline-xl": ["Oswald"], "label-lg": ["Inter"], "display-hero-mobile": ["Oswald"], "label-caps": ["Oswald"], "headline-md": ["Oswald"], "body-sm": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "0.02em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "0.01em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "0.02em", "fontWeight": "700" }], "label-caps": ["13px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } };</script><link href="../runtime/theme.css" rel="stylesheet"/></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[260px] bg-inverse-surface text-inverse-on-surface z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.12)]"><div class="h-16 px-space-md flex items-center justify-between bg-inverse-surface border-b border-inverse-on-surface/10"><div class="flex items-center gap-space-xs"><img alt="LOGO.jpeg" class="h-8 w-auto object-contain" src="../assets/branding/LOGO.jpeg"/><span class="font-headline-sm text-headline-sm tracking-wide uppercase text-surface font-bold">RTCrackers</span></div><span class="px-space-xs py-0.5 rounded bg-primary text-on-primary font-label-md text-[10px] uppercase font-bold tracking-wider">Admin</span></div><nav class="flex-1 overflow-y-auto px-space-xs py-space-sm space-y-space-sm" data-active-classes="bg-primary text-on-primary font-bold shadow-[0_4px_16px_rgba(227,27,22,0.25)]"><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Dashboard</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Dashboard</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Catalog</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="products" href="#"><span class="material-symbols-outlined text-[18px]">local_fire_department</span><span>Products</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="categories" href="#"><span class="material-symbols-outlined text-[18px]">category</span><span>Categories</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="brands" href="#"><span class="material-symbols-outlined text-[18px]">verified</span><span>Brands</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="inventory" href="#"><span class="material-symbols-outlined text-[18px]">warehouse</span><span>Inventory</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="product-reviews" href="#"><span class="material-symbols-outlined text-[18px]">reviews</span><span>Product Reviews</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Orders</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="all-orders" href="#"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span>All Orders</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="pending-orders" href="#"><span class="material-symbols-outlined text-[18px]">pending_actions</span><span>Pending Orders</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="processing-orders" href="#"><span class="material-symbols-outlined text-[18px]">sync</span><span>Processing</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="shipped-orders" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span>Shipped</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="delivered-orders" href="#"><span class="material-symbols-outlined text-[18px]">check_circle</span><span>Delivered</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="cancelled-orders" href="#"><span class="material-symbols-outlined text-[18px]">cancel</span><span>Cancelled</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Customers</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="customers" href="#"><span class="material-symbols-outlined text-[18px]">groups</span><span>Customers</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="customer-segments" href="#"><span class="material-symbols-outlined text-[18px]">pie_chart</span><span>Customer Segments</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="customer-activity" href="#"><span class="material-symbols-outlined text-[18px]">monitoring</span><span>Customer Activity</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Marketing</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="coupons" href="#"><span class="material-symbols-outlined text-[18px]">confirmation_number</span><span>Coupons</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="offers" href="#"><span class="material-symbols-outlined text-[18px]">sell</span><span>Offers</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="campaigns" href="#"><span class="material-symbols-outlined text-[18px]">campaign</span><span>Campaigns</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="loyalty" href="#"><span class="material-symbols-outlined text-[18px]">military_tech</span><span>Loyalty</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="referrals" href="#"><span class="material-symbols-outlined text-[18px]">share</span><span>Referrals</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Content</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="cms" href="#"><span class="material-symbols-outlined text-[18px]">article</span><span>CMS</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="banners" href="#"><span class="material-symbols-outlined text-[18px]">view_carousel</span><span>Banners</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="pages" href="#"><span class="material-symbols-outlined text-[18px]">web</span><span>Pages</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="blog" href="#"><span class="material-symbols-outlined text-[18px]">feed</span><span>Blog</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="faqs" href="#"><span class="material-symbols-outlined text-[18px]">quiz</span><span>FAQs</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Delivery</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="shipments" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span>Shipments</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="delivery-tracking" href="#"><span class="material-symbols-outlined text-[18px]">route</span><span>Delivery Tracking</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="shipping-rules" href="#"><span class="material-symbols-outlined text-[18px]">rule</span><span>Shipping Rules</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Finance</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="payments" href="#"><span class="material-symbols-outlined text-[18px]">payments</span><span>Payments</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="transactions" href="#"><span class="material-symbols-outlined text-[18px]">account_balance_wallet</span><span>Transactions</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="invoices" href="#"><span class="material-symbols-outlined text-[18px]">description</span><span>Invoices</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="taxes" href="#"><span class="material-symbols-outlined text-[18px]">account_balance</span><span>Taxes</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Support</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="support-tickets" href="#"><span class="material-symbols-outlined text-[18px]">headset_mic</span><span>Support Tickets</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="contact-requests" href="#"><span class="material-symbols-outlined text-[18px]">mail</span><span>Contact Requests</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Analytics</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="sales-analytics" href="#"><span class="material-symbols-outlined text-[18px]">insights</span><span>Sales Analytics</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="product-analytics" href="#"><span class="material-symbols-outlined text-[18px]">trending_up</span><span>Product Analytics</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="customer-analytics" href="#"><span class="material-symbols-outlined text-[18px]">leaderboard</span><span>Customer Analytics</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">summarize</span><span>Reports</span></a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">System</div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="notifications" href="#"><span class="material-symbols-outlined text-[18px]">notifications</span><span>Notifications</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="admin-users" href="#"><span class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span>Admin Users</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="roles-permissions" href="#"><span class="material-symbols-outlined text-[18px]">lock_person</span><span>Roles &amp; Permissions</span></a><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-[18px]">history</span><span>Audit Logs</span></a></div></nav><div class="p-space-sm border-t border-inverse-on-surface/10 bg-inverse-surface space-y-space-xs"><button class="w-full flex items-center justify-between px-space-sm py-1.5 rounded text-inverse-on-surface/70 hover:bg-surface-container-high hover:text-on-surface text-label-md font-label-md transition-colors" type="button"><span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px]">keyboard_double_arrow_left</span><span>Collapse Menu</span></span><span class="font-label-caps text-[10px] text-inverse-on-surface/40">⌥B</span></button><div class="flex items-center justify-between px-space-sm py-1 bg-inverse-on-surface/5 rounded"><div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-label-md text-[11px] text-inverse-on-surface/90">Production Engine</span></div><span class="font-label-caps text-[10px] uppercase tracking-wider text-emerald-400 font-bold">99.98%</span></div></div></aside><div class="pl-[260px] min-h-screen flex flex-col"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 border-b border-surface-container-high shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-full w-full px-space-md flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-[220px]"><button class="h-9 w-9 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button><div class="flex items-center gap-1.5 font-label-lg text-label-lg text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="catalog" href="#">Catalog</a><span class="text-on-surface-variant/40">/</span><span class="text-on-surface font-semibold">Categories</span></div></div><div class="flex-1 max-w-xl"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-[18px] text-on-surface-variant">search</span><input class="w-full pl-9 pr-14 py-1.5 bg-surface-container-low rounded border border-surface-container-highest text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="Search orders, customers, products, categories..." type="text"/><kbd class="absolute right-3 px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-md text-[10px] font-bold">⌘K</kbd></div></div><div class="flex items-center gap-space-xs"><a class="h-9 px-2.5 rounded flex items-center gap-1.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-md text-label-md transition-colors" href="#" title="Live Storefront Preview"><span class="material-symbols-outlined text-[18px]">storefront</span><span class="hidden xl:inline">Live Store</span></a><div class="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-label-md text-label-md"><span class="h-2 w-2 rounded-full bg-emerald-500"></span><span>All systems operational</span></div><button class="relative h-9 w-9 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 h-4 min-w-[16px] px-1 rounded-full bg-primary text-on-primary font-label-md text-[10px] flex items-center justify-center font-bold">4</span></button><div class="flex items-center gap-2 pl-2 border-l border-surface-container-highest"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md font-bold text-on-surface leading-tight">Super Admin</span><span class="font-body-sm text-[11px] text-on-surface-variant leading-none">R. Kumar</span></div><button class="text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">expand_more</span></button></div></div></div></header><main class="relative flex-1 w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<div class="p-margin space-y-space-md bg-surface text-on-surface">
+<!-- PAGE HEADER -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-2">
+<h1 class="font-headline-xl text-headline-xl text-on-surface uppercase tracking-tight font-bold">
+            Pending Orders &amp; Processing Queue
+          </h1>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-md text-label-md uppercase font-bold tracking-wider">
+            Live Stream
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          Action-oriented fulfillment workspace to triage, unblock, and advance orders into packing.
+        </p>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="h-10 px-3.5 rounded bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container-high transition-all flex items-center gap-2 font-label-lg text-label-lg font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">download</span>
+<span>Export Queue</span>
+</button>
+<button class="h-10 px-3.5 rounded bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container-high transition-all flex items-center gap-2 font-label-md text-label-md font-semibold" id="refresh-queue-btn" type="button">
+<span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>Live • Updated <span id="sync-counter">12s</span> ago</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant ml-1">sync</span>
+</button>
+<button class="h-10 px-4 rounded bg-primary-container text-on-primary font-headline-sm text-headline-sm uppercase tracking-wide hover:bg-primary shadow-sm hover:shadow-md transition-all flex items-center gap-2 font-bold" type="button">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<span>Bulk Process Eligible (18)</span>
+</button>
+</div>
+</div>
+<!-- OPERATIONAL SLA & KPI CARDS (6 METRIC CARDS) -->
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-space-sm">
+<!-- 1: Total Requiring Action -->
+<div class="p-space-md rounded bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">Total In Queue</span>
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="my-2">
+<div class="font-headline-xl text-headline-xl font-bold text-on-surface leading-none">124</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-label-md text-[11px] font-bold">
+            +14 in last hour
+          </span>
+</div>
+</div>
+<!-- 2: Payment Pending -->
+<div class="p-space-md rounded bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">Payment Pending</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">pending</span>
+</div>
+<div class="my-2">
+<div class="font-headline-xl text-headline-xl font-bold text-on-surface leading-none">18</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-[11px] font-bold">
+            Requires Verification
+          </span>
+</div>
+</div>
+<!-- 3: Ready to Process -->
+<div class="p-space-md rounded bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">Ready to Process</span>
+<span class="material-symbols-outlined text-emerald-600 text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="my-2">
+<div class="font-headline-xl text-headline-xl font-bold text-on-surface leading-none text-emerald-600">72</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-md text-[11px] font-bold">
+            All Checks Passed
+          </span>
+</div>
+</div>
+<!-- 4: Inventory Blocked -->
+<div class="p-space-md rounded bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">Inventory Blocked</span>
+<span class="material-symbols-outlined text-primary text-[20px]">inventory_2</span>
+</div>
+<div class="my-2">
+<div class="font-headline-xl text-headline-xl font-bold text-primary leading-none">11</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-md text-[11px] font-bold">
+            Stock Deficit
+          </span>
+</div>
+</div>
+<!-- 5: Address Issues -->
+<div class="p-space-md rounded bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">Address Issues</span>
+<span class="material-symbols-outlined text-indigo-600 text-[20px]">pin_drop</span>
+</div>
+<div class="my-2">
+<div class="font-headline-xl text-headline-xl font-bold text-on-surface leading-none">7</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 font-label-md text-[11px] font-bold">
+            Manual Validation
+          </span>
+</div>
+</div>
+<!-- 6: High Priority / SLA Risk -->
+<div class="p-space-md rounded bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">SLA At Risk</span>
+<span class="material-symbols-outlined text-error text-[20px]">alarm_on</span>
+</div>
+<div class="my-2">
+<div class="font-headline-xl text-headline-xl font-bold text-error leading-none">16</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-label-md text-[11px] font-bold">
+            Overdue &gt; 4 hrs
+          </span>
+</div>
+</div>
+</div>
+<!-- PROCESSING SLA MONITOR STRIP -->
+<div class="p-space-md rounded bg-surface-container-lowest shadow-sm space-y-space-xs">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-xs font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm uppercase font-bold text-on-surface">Queue SLA Health</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">• Target Dispatch Turnaround: Under 2 Hours</span>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant">
+<label class="inline-flex items-center gap-1.5 cursor-pointer">
+<input class="h-4 w-4 rounded text-primary focus:ring-primary accent-primary" id="overdue-toggle" type="checkbox"/>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Show Overdue Only</span>
+</label>
+<a class="text-primary hover:underline font-label-md text-label-md font-bold flex items-center gap-1" href="#">
+<span>SLA Rules &amp; Triggers</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Segmented Bar Chart -->
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden flex">
+<div class="h-full bg-emerald-500 transition-all" style="width: 76%;" title="Within SLA: 76%"></div>
+<div class="h-full bg-secondary-container transition-all" style="width: 17%;" title="Approaching SLA: 17%"></div>
+<div class="h-full bg-primary-container transition-all" style="width: 7%;" title="Overdue: 7%"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+<span class="text-on-surface font-semibold">Within SLA (&lt; 2 hrs):</span>
+<span class="text-on-surface-variant">94 orders (76%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="h-2.5 w-2.5 rounded-full bg-secondary-container"></span>
+<span class="text-on-surface font-semibold">Approaching SLA (2-4 hrs):</span>
+<span class="text-on-surface-variant">21 orders (17%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="h-2.5 w-2.5 rounded-full bg-primary-container"></span>
+<span class="text-on-surface font-semibold text-error">Overdue SLA (&gt; 4 hrs):</span>
+<span class="text-on-surface-variant font-bold text-error">9 orders (7%)</span>
+</div>
+</div>
+</div>
+<!-- FILTER TABS & SEARCH CONTROLS -->
+<div class="p-space-md rounded bg-surface-container-lowest shadow-sm space-y-space-md">
+<!-- Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1" id="filter-tabs">
+<button class="tab-btn px-3 py-1.5 rounded bg-primary text-on-primary font-headline-sm text-headline-sm uppercase font-bold flex items-center gap-2 shadow-sm transition-all" data-tab="all" type="button">
+<span>All Orders</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-lowest/20 font-label-md text-[11px]">124</span>
+</button>
+<button class="tab-btn px-3 py-1.5 rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface font-headline-sm text-headline-sm uppercase font-bold flex items-center gap-2 transition-all" data-tab="ready" type="button">
+<span>Ready to Process</span>
+<span class="px-1.5 py-0.2 rounded bg-emerald-200 text-emerald-900 font-label-md text-[11px]">72</span>
+</button>
+<button class="tab-btn px-3 py-1.5 rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface font-headline-sm text-headline-sm uppercase font-bold flex items-center gap-2 transition-all" data-tab="payment" type="button">
+<span>Payment Pending</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed font-label-md text-[11px]">18</span>
+</button>
+<button class="tab-btn px-3 py-1.5 rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface font-headline-sm text-headline-sm uppercase font-bold flex items-center gap-2 transition-all" data-tab="inventory" type="button">
+<span>Inventory Blocked</span>
+<span class="px-1.5 py-0.2 rounded bg-primary-fixed text-on-primary-fixed font-label-md text-[11px]">11</span>
+</button>
+<button class="tab-btn px-3 py-1.5 rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface font-headline-sm text-headline-sm uppercase font-bold flex items-center gap-2 transition-all" data-tab="address" type="button">
+<span>Address Issue</span>
+<span class="px-1.5 py-0.2 rounded bg-indigo-100 text-indigo-900 font-label-md text-[11px]">7</span>
+</button>
+<button class="tab-btn px-3 py-1.5 rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface font-headline-sm text-headline-sm uppercase font-bold flex items-center gap-2 transition-all" data-tab="priority" type="button">
+<span>High Priority</span>
+<span class="px-1.5 py-0.2 rounded bg-error-container text-on-error-container font-label-md text-[11px]">16</span>
+</button>
+</div>
+<!-- Controls row -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-xs items-center">
+<div class="md:col-span-4 relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[18px] text-on-surface-variant">search</span>
+<input class="w-full pl-9 pr-3 py-2 bg-surface-container-low rounded text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="Search by Order ID, customer, SKU, phone..." type="text"/>
+</div>
+<div class="md:col-span-2">
+<select class="w-full py-2 px-2.5 bg-surface-container-low rounded text-body-sm font-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary">
+<option>Priority: All</option>
+<option>Critical Only</option>
+<option>High Priority</option>
+<option>Normal Priority</option>
+</select>
+</div>
+<div class="md:col-span-2">
+<select class="w-full py-2 px-2.5 bg-surface-container-low rounded text-body-sm font-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary">
+<option>Blocker: All Types</option>
+<option>None (Eligible)</option>
+<option>Stock Shortage</option>
+<option>Payment Gateway</option>
+<option>Address Mismatch</option>
+</select>
+</div>
+<div class="md:col-span-2">
+<select class="w-full py-2 px-2.5 bg-surface-container-low rounded text-body-sm font-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary">
+<option>Shipping: All Modes</option>
+<option>BlueDart Air Express</option>
+<option>DTDC Surface Cargo</option>
+<option>Same Day Delhi-NCR</option>
+</select>
+</div>
+<div class="md:col-span-2">
+<select class="w-full py-2 px-2.5 bg-surface-container-low rounded text-body-sm font-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-semibold">
+<option>Sort: SLA Risk (Urgent First)</option>
+<option>Order Time: Newest</option>
+<option>Order Time: Oldest</option>
+<option>Amount: High to Low</option>
+</select>
+</div>
+</div>
+<!-- Bulk Selection Bar -->
+<div class="p-space-xs rounded bg-surface-container-high flex flex-wrap items-center justify-between gap-space-xs" id="bulk-bar">
+<div class="flex items-center gap-space-sm pl-2">
+<span class="material-symbols-outlined text-primary text-[20px]">checklist</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">3 Orders Selected</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">• 2 Ready to Process, 1 Blocked by Inventory</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="h-8 px-3 rounded bg-primary-container text-on-primary font-label-md text-label-md font-bold uppercase tracking-wider hover:bg-primary transition-all flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">play_circle</span>
+<span>Process Eligible (2)</span>
+</button>
+<button class="h-8 px-3 rounded bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-dim transition-all flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">pause_circle</span>
+<span>Put on Hold</span>
+</button>
+<button class="h-8 px-3 rounded bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-dim transition-all flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Selected</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MAIN TWO-COLUMN SPLIT: ACTION TABLE & FOCUSED DRAWER -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md items-start">
+<!-- LEFT: HIGH-DENSITY QUEUE TABLE (8 COLUMNS ON XL) -->
+<div class="xl:col-span-8 rounded bg-surface-container-lowest shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase font-bold tracking-wider">
+<th class="py-3 px-3 w-10 text-center">
+<input checked="" class="h-4 w-4 rounded accent-primary cursor-pointer" type="checkbox"/>
+</th>
+<th class="py-3 px-2">Priority</th>
+<th class="py-3 px-3">Order &amp; SLA</th>
+<th class="py-3 px-3">Customer</th>
+<th class="py-3 px-3">Items Summary</th>
+<th class="py-3 px-3">Amount</th>
+<th class="py-3 px-2">Payment</th>
+<th class="py-3 px-2">Stock Check</th>
+<th class="py-3 px-3">Blocker / Diagnostic</th>
+<th class="py-3 px-3 text-right">Immediate Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-sm text-body-sm">
+<!-- ROW 1: READY & HIGH PRIORITY (ACTIVE SELECTED) -->
+<tr class="bg-surface-container-low/50 hover:bg-surface-container transition-colors group cursor-pointer" onclick="selectOrder('RTC-1024587')">
+<td class="py-3 px-3 text-center">
+<input checked="" class="h-4 w-4 rounded accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-caps text-[11px] font-bold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[13px]">alarm</span>
+<span>HIGH</span>
+</span>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface leading-snug">#RTC-1024587</div>
+<div class="text-on-surface-variant text-[11px]">Placed 22 min ago</div>
+<div class="text-emerald-700 font-semibold text-[11px]">SLA: 1h 38m remaining</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-semibold text-on-surface">Raghav K.</div>
+<span class="px-1.5 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed font-label-md text-[10px] font-bold">Premier Club</span>
+<div class="text-on-surface-variant text-[11px] mt-0.5">Bengaluru, KA</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-on-surface">3 items</div>
+<div class="text-on-surface-variant text-[11px] truncate max-w-[150px]">SS Ton Reserve Bat + 2 acc.</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">₹7,574</div>
+<div class="text-[10px] text-on-surface-variant font-medium">Razorpay Prepaid</div>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-md text-[11px] font-bold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[12px]">check</span>
+<span>PAID</span>
+</span>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-label-md text-[11px] font-semibold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[13px]">done_all</span>
+<span>All In Stock</span>
+</span>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-md text-[11px] font-bold text-emerald-700 flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+<span>NONE - READY</span>
+</span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="h-8 px-2.5 rounded bg-primary-container text-on-primary font-label-caps text-[11px] font-bold uppercase hover:bg-primary shadow-sm flex items-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+<span>Process</span>
+</button>
+<button class="h-8 w-7 rounded bg-surface-container text-on-surface hover:bg-surface-container-high flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: INVENTORY BLOCKED & CRITICAL -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer" onclick="selectOrder('RTC-1024592')">
+<td class="py-3 px-3 text-center">
+<input checked="" class="h-4 w-4 rounded accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-caps text-[11px] font-bold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[13px]">emergency</span>
+<span>CRITICAL</span>
+</span>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface leading-snug">#RTC-1024592</div>
+<div class="text-on-surface-variant text-[11px]">Placed 3h 15m ago</div>
+<div class="text-error font-bold text-[11px]">OVERDUE by 1h 15m</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-semibold text-on-surface">Vikramaditya S.</div>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-md text-[10px]">Academy Bulk</span>
+<div class="text-on-surface-variant text-[11px] mt-0.5">Mumbai, MH</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-on-surface">2 items</div>
+<div class="text-on-surface-variant text-[11px] truncate max-w-[150px]">English Sparkler Blade Grade 1</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">₹14,200</div>
+<div class="text-[10px] text-on-surface-variant font-medium">Prepaid UPI</div>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-md text-[11px] font-bold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[12px]">check</span>
+<span>PAID</span>
+</span>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-md text-[11px] font-bold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[13px]">block</span>
+<span>2 of 3 Short</span>
+</span>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-md text-[11px] font-bold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[13px]">inventory</span>
+<span>SKU-ENG-902 SHORT</span>
+</span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="h-8 px-2.5 rounded bg-secondary-container text-on-secondary-container font-label-caps text-[11px] font-bold uppercase hover:bg-secondary-fixed-dim transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">swap_horiz</span>
+<span>Stock Alt</span>
+</button>
+<button class="h-8 w-7 rounded bg-surface-container text-on-surface hover:bg-surface-container-high flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: PAYMENT PENDING & NORMAL -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer" onclick="selectOrder('RTC-1024601')">
+<td class="py-3 px-3 text-center">
+<input class="h-4 w-4 rounded accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-caps text-[11px] font-semibold flex items-center gap-1 w-max">
+<span>NORMAL</span>
+</span>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface leading-snug">#RTC-1024601</div>
+<div class="text-on-surface-variant text-[11px]">Placed 45 min ago</div>
+<div class="text-on-surface-variant text-[11px]">SLA: 1h 15m remaining</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-semibold text-on-surface">Ananya Sharma</div>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-md text-[10px]">Retail</span>
+<div class="text-on-surface-variant text-[11px] mt-0.5">Delhi NCR</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-on-surface">1 item</div>
+<div class="text-on-surface-variant text-[11px] truncate max-w-[150px]">SG Club Batting Pads (White)</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">₹2,890</div>
+<div class="text-[10px] text-on-surface-variant font-medium">NetBanking Awaiting</div>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-md text-[11px] font-bold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[12px]">schedule</span>
+<span>GATEWAY</span>
+</span>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-label-md text-[11px] font-semibold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[13px]">done</span>
+<span>In Stock</span>
+</span>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed-dim text-on-secondary-fixed font-label-md text-[11px] font-semibold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[13px]">sync_problem</span>
+<span>WEBHOOK WAIT</span>
+</span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="h-8 px-2.5 rounded bg-surface-container-high text-on-surface font-label-caps text-[11px] font-bold uppercase hover:bg-surface-dim transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+<span>Verify</span>
+</button>
+<button class="h-8 w-7 rounded bg-surface-container text-on-surface hover:bg-surface-container-high flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: ADDRESS ISSUE & HIGH PRIORITY -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer" onclick="selectOrder('RTC-1024560')">
+<td class="py-3 px-3 text-center">
+<input checked="" class="h-4 w-4 rounded accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-caps text-[11px] font-bold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[13px]">priority_high</span>
+<span>HIGH</span>
+</span>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface leading-snug">#RTC-1024560</div>
+<div class="text-on-surface-variant text-[11px]">Placed 2h 40m ago</div>
+<div class="text-secondary font-bold text-[11px]">Approaching SLA (20m)</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-semibold text-on-surface">Mohammed Farooq</div>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-md text-[10px]">Club Player</span>
+<div class="text-on-surface-variant text-[11px] mt-0.5">Hyderabad, TS</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-on-surface">4 items</div>
+<div class="text-on-surface-variant text-[11px] truncate max-w-[150px]">Kitbag, Spikes 9UK, Grip, Helmet</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">₹9,450</div>
+<div class="text-[10px] text-on-surface-variant font-medium">HDFC NetBanking</div>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-md text-[11px] font-bold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[12px]">check</span>
+<span>PAID</span>
+</span>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-label-md text-[11px] font-semibold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[13px]">done</span>
+<span>In Stock</span>
+</span>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-900 font-label-md text-[11px] font-bold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[13px]">wrong_location</span>
+<span>PIN 560001 MISMATCH</span>
+</span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="h-8 px-2.5 rounded bg-indigo-600 text-white font-label-caps text-[11px] font-bold uppercase hover:bg-indigo-700 transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">edit_location</span>
+<span>Fix PIN</span>
+</button>
+<button class="h-8 w-7 rounded bg-surface-container text-on-surface hover:bg-surface-container-high flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: READY & NORMAL -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer" onclick="selectOrder('RTC-1024614')">
+<td class="py-3 px-3 text-center">
+<input class="h-4 w-4 rounded accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-caps text-[11px] font-semibold flex items-center gap-1 w-max">
+<span>NORMAL</span>
+</span>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface leading-snug">#RTC-1024614</div>
+<div class="text-on-surface-variant text-[11px]">Placed 12 min ago</div>
+<div class="text-emerald-700 font-semibold text-[11px]">SLA: 1h 48m remaining</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-semibold text-on-surface">Deepak Patel</div>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-md text-[10px]">Club Player</span>
+<div class="text-on-surface-variant text-[11px] mt-0.5">Ahmedabad, GJ</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-on-surface">2 items</div>
+<div class="text-on-surface-variant text-[11px] truncate max-w-[150px]">MRF Genius Grand Edition, Grips (x3)</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">₹11,400</div>
+<div class="text-[10px] text-on-surface-variant font-medium">Google Pay UPI</div>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-md text-[11px] font-bold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[12px]">check</span>
+<span>PAID</span>
+</span>
+</td>
+<td class="py-3 px-2">
+<span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-label-md text-[11px] font-semibold flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[13px]">done_all</span>
+<span>All In Stock</span>
+</span>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-md text-[11px] font-bold text-emerald-700 flex items-center gap-1 w-max">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+<span>NONE - READY</span>
+</span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="h-8 px-2.5 rounded bg-surface-container-high text-on-surface font-label-caps text-[11px] font-bold uppercase hover:bg-primary-container hover:text-on-primary transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+<span>Process</span>
+</button>
+<button class="h-8 w-7 rounded bg-surface-container text-on-surface hover:bg-surface-container-high flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Bulk Status Footer -->
+<div class="p-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span>Showing <strong class="text-on-surface">1 - 5</strong> of <strong class="text-on-surface">124</strong> queue entries</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface text-[11px] font-bold">Page 1 of 25</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="h-8 px-2.5 rounded bg-surface-container text-on-surface-variant/40 cursor-not-allowed" disabled="" type="button">Previous</button>
+<button class="h-8 w-8 rounded bg-primary text-on-primary font-bold" type="button">1</button>
+<button class="h-8 w-8 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container" type="button">2</button>
+<button class="h-8 w-8 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container" type="button">3</button>
+<span class="px-1 text-on-surface-variant">...</span>
+<button class="h-8 px-2.5 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container font-semibold" type="button">Next</button>
+</div>
+</div>
+</div>
+<!-- RIGHT: FOCUSED ORDER PROCESSING WORKSPACE (4 COLUMNS ON XL) -->
+<div class="xl:col-span-4 rounded bg-surface-container-lowest shadow-sm p-space-md space-y-space-md sticky top-20">
+<div class="flex items-center justify-between pb-space-xs">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">Focused Workspace</span>
+<h2 class="font-headline-md text-headline-md uppercase font-bold text-on-surface" id="focused-order-id">ORDER #RTC-1024587</h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-md text-label-md font-bold uppercase tracking-wider">
+            Clear for Packing
+          </span>
+</div>
+<!-- Progress Verification Checklist -->
+<div class="space-y-space-xs">
+<div class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">Automated Fulfillment Checks</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-[20px] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="text-body-sm text-body-sm">
+<div class="font-bold text-on-surface">Payment Verified</div>
+<div class="text-on-surface-variant text-[11px]">Razorpay ID <code class="font-mono text-on-surface font-semibold">TXN_984210</code> • ₹7,574 settled</div>
+</div>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-[20px] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="text-body-sm text-body-sm">
+<div class="font-bold text-on-surface">Inventory Reserved (3 of 3)</div>
+<div class="text-on-surface-variant text-[11px]">All units locked at Central Warehouse Hub 1</div>
+</div>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-[20px] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="text-body-sm text-body-sm">
+<div class="font-bold text-on-surface">Address &amp; Pincode Reachable</div>
+<div class="text-on-surface-variant text-[11px]">Bengaluru 560034 • BlueDart Express Air verified</div>
+</div>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-[20px] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="text-body-sm text-body-sm">
+<div class="font-bold text-on-surface">Fraud Score: 0.02 (Ultra-Low Risk)</div>
+<div class="text-on-surface-variant text-[11px]">Phone matched, customer repeat index 4.9/5</div>
+</div>
+</div>
+</div>
+<!-- Item Dispatch Preview Table with Bin Locations -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold">Pick List Preview (3 Units)</span>
+<span class="font-label-md text-[11px] text-primary font-bold">Zone B &amp; C</span>
+</div>
+<div class="space-y-1.5">
+<!-- Item 1 -->
+<div class="p-2 rounded bg-surface-container flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<div class="h-10 w-10 rounded bg-surface-container-lowest p-1 flex items-center justify-center flex-shrink-0">
+<img class="h-full w-auto object-contain" data-alt="English sparkler professional fireworks bat with fiery crimson grip and high-contrast dynamic festive branding shot in sports studio lighting" src="../assets/branding/LOGO.jpeg"/>
+</div>
+<div class="min-w-0">
+<div class="font-semibold text-on-surface text-[12px] truncate">SS Ton Reserve Edition Bat</div>
+<div class="font-mono text-[10px] text-on-surface-variant">SKU-SS-BAT-09 • Bin #B12-04</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest font-mono font-bold text-[11px]">Qty: 1</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-2 rounded bg-surface-container flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<div class="h-10 w-10 rounded bg-surface-container-lowest p-1 flex items-center justify-center flex-shrink-0">
+<img class="h-full w-auto object-contain" data-alt="High traction embossed chevron fireworks bat rubber grip white and fiery crimson" src="../assets/branding/LOGO.jpeg"/>
+</div>
+<div class="min-w-0">
+<div class="font-semibold text-on-surface text-[12px] truncate">Chevron Grip Pack (White/Red)</div>
+<div class="font-mono text-[10px] text-on-surface-variant">SKU-GRP-CHEV-02 • Bin #A04-11</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest font-mono font-bold text-[11px]">Qty: 1</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-2 rounded bg-surface-container flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<div class="h-10 w-10 rounded bg-surface-container-lowest p-1 flex items-center justify-center flex-shrink-0">
+<img class="h-full w-auto object-contain" data-alt="Fireworks bat maintenance linseed oil and anti-scuff sheet kit pack" src="../assets/branding/LOGO.jpeg"/>
+</div>
+<div class="min-w-0">
+<div class="font-semibold text-on-surface text-[12px] truncate">Bat Linseed Oil &amp; Anti-Scuff Kit</div>
+<div class="font-mono text-[10px] text-on-surface-variant">SKU-ACC-OIL-KIT • Bin #C08-22</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest font-mono font-bold text-[11px]">Qty: 1</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="space-y-2 pt-2">
+<button class="w-full h-11 rounded bg-primary-container text-on-primary font-headline-sm text-headline-sm uppercase tracking-wide hover:bg-primary shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2 font-bold" type="button">
+<span>START FULFILLMENT &amp; PACKING</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="h-9 px-3 rounded bg-surface-container-low text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-all flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">pause_circle</span>
+<span>Put on Hold</span>
+</button>
+<button class="h-9 px-3 rounded bg-surface-container-low text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-all flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>Print Pick List</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RECENT QUEUE AUDIT & AUTOMATION LOG STRIP -->
+<div class="p-space-md rounded bg-surface-container-lowest shadow-sm space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">history_toggle_off</span>
+<span class="font-headline-sm text-headline-sm uppercase font-bold text-on-surface">Recent Queue Operations &amp; Audit Trail</span>
+</div>
+<a class="font-label-md text-label-md text-primary font-bold hover:underline" href="#">View System Audit Log</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-2">
+<div class="p-2.5 rounded bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-[18px] mt-0.5">lock_open</span>
+<div class="font-body-sm text-body-sm">
+<div class="text-on-surface"><strong>Admin R. Kumar</strong> released <span class="font-mono text-primary font-bold">#RTC-1024541</span> from Hold to Processing.</div>
+<div class="text-on-surface-variant text-[11px] mt-0.5">4 minutes ago • Reason: Address manually confirmed via phone</div>
+</div>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">auto_mode</span>
+<div class="font-body-sm text-body-sm">
+<div class="text-on-surface"><strong>Auto-System Engine</strong> allocated stock to <span class="font-mono text-primary font-bold">#RTC-1024580</span>.</div>
+<div class="text-on-surface-variant text-[11px] mt-0.5">11 minutes ago • Central Warehouse stock reserve replenished</div>
+</div>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">webhook</span>
+<div class="font-body-sm text-body-sm">
+<div class="text-on-surface"><strong>Payment Webhook</strong> verified payment for <span class="font-mono text-primary font-bold">#RTC-1024574</span>.</div>
+<div class="text-on-surface-variant text-[11px] mt-0.5">28 minutes ago • ₹18,400 via Axis Corporate NetBanking</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive mockups for the fulfillment queue
+  function selectOrder(orderId) {
+    const titleEl = document.getElementById('focused-order-id');
+    if (titleEl) {
+      titleEl.textContent = 'ORDER #' + orderId;
+    }
+  }
+
+  // Live counter updater simulation
+  let seconds = 12;
+  const counterEl = document.getElementById('sync-counter');
+  setInterval(() => {
+    seconds++;
+    if (seconds > 59) seconds = 1;
+    if (counterEl) {
+      counterEl.textContent = seconds + 's';
+    }
+  }, 1000);
+
+  // Tab switcher visual toggle
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        b.classList.add('bg-surface-container-low', 'text-on-surface');
+      });
+      btn.classList.remove('bg-surface-container-low', 'text-on-surface');
+      btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+    });
+  });
+
+  // Refresh trigger animation
+  const refreshBtn = document.getElementById('refresh-queue-btn');
+  if (refreshBtn) {
+    refreshBtn.addEventListener('click', () => {
+      seconds = 0;
+      if (counterEl) counterEl.textContent = '0s';
+      const icon = refreshBtn.querySelector('.material-symbols-outlined');
+      if (icon) {
+        icon.classList.add('animate-spin');
+        setTimeout(() => icon.classList.remove('animate-spin'), 700);
+      }
+    });
+  }
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-high py-space-sm"><div class="w-full px-space-md flex flex-col md:flex-row items-center justify-between gap-space-xs text-on-surface-variant font-label-md text-label-md"><div>RTCrackers Enterprise Admin <span class="font-semibold text-on-surface">v2.4</span> • © 2026 RTCrackers Ltd.</div><div class="flex items-center gap-space-md"><a class="hover:text-primary transition-colors" data-path="documentation" href="#">Documentation</a><a class="hover:text-primary transition-colors" data-path="support-desk" href="#">Support Desk</a><a class="hover:text-primary transition-colors" data-path="api-status" href="#">API Status</a><a class="hover:text-primary transition-colors" data-path="privacy-security" href="#">Privacy &amp; Security</a></div></div></footer></div><script src="../runtime/rtc-runtime.js"></script></body></html>

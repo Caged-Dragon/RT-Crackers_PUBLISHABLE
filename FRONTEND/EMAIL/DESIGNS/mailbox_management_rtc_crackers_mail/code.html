@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="web_dashboard" name="shell-type"/>
+  <title>Mailbox Management - RTC Crackers Mail</title>
+  
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tag-notifications": "#EA580C",
+            "secondary-fixed": "#dae2fd",
+            "surface-canvas": "#FFFFFF",
+            "tertiary": "#795500",
+            "on-surface-variant": "#5a4138",
+            "secondary-fixed-dim": "#bec6e0",
+            "border-strong": "#E2E8F0",
+            "brand-fire-red": "#E63946",
+            "surface-bright": "#f8f9ff",
+            "secondary-container": "#dae2fd",
+            "inverse-on-surface": "#eaf1ff",
+            "tag-noreply": "#475569",
+            "on-tertiary-container": "#fffbff",
+            "border-subtle": "#F1F5F9",
+            "on-surface": "#0b1c30",
+            "surface-container-low": "#eff4ff",
+            "tag-orders": "#D97706",
+            "tag-billing": "#7C3AED",
+            "outline": "#8e7166",
+            "on-tertiary": "#ffffff",
+            "secondary": "#565e74",
+            "on-primary-container": "#fffbff",
+            "primary": "#a33900",
+            "surface-variant": "#d3e4fe",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#271900",
+            "background": "#f8f9ff",
+            "surface-container": "#e5eeff",
+            "on-error-container": "#93000a",
+            "primary-container": "#cc4900",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#d3e4fe",
+            "error": "#ba1a1a",
+            "tertiary-container": "#996c00",
+            "surface-container-lowest": "#ffffff",
+            "surface-subtle": "#F8FAFC",
+            "on-secondary-container": "#5c647a",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#ffdbce",
+            "outline-variant": "#e2bfb2",
+            "on-primary": "#ffffff",
+            "tag-info": "#0891B2",
+            "tag-sales": "#16A34A",
+            "primary-fixed-dim": "#ffb599",
+            "tertiary-fixed": "#ffdea9",
+            "on-secondary-fixed-variant": "#3f465c",
+            "tag-contact": "#4F46E5",
+            "surface": "#f8f9ff",
+            "on-background": "#0b1c30",
+            "tertiary-fixed-dim": "#fbbc3c",
+            "on-secondary-fixed": "#131b2e",
+            "surface-dim": "#cbdbf5",
+            "tag-admin": "#DC2626",
+            "surface-tint": "#a73a00",
+            "surface-container-high": "#dce9ff",
+            "tag-support": "#2563EB",
+            "on-tertiary-fixed-variant": "#5e4200",
+            "on-primary-fixed-variant": "#7f2b00",
+            "inverse-primary": "#ffb599",
+            "on-primary-fixed": "#370e00",
+            "inverse-surface": "#213145"
+          },
+          fontFamily: {
+            "title-sm": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "code-sm": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "title-md": ["Inter"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased">
+
+  <!-- LEFT PERSISTENT SIDEBAR -->
+  <aside class="fixed left-0 top-0 h-full w-64 bg-surface-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto">
+    <div class="flex flex-col">
+      <!-- Brand Logo / Wordmark -->
+      <div class="h-16 px-4 flex items-center justify-between gap-2 bg-surface-subtle border-b border-border-subtle">
+        <div class="flex items-center gap-2">
+          <img alt="RTC Crackers Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG_c7pxIPE4wwgSpxLFdUH_tg8svgIbUIwkhn7NCze_r0x_6WTZ_jzC9vfGXc5OgbMK2FdXgS2SwxvmiHBQfXisYT_PH7cTvFWOSkZv_Mr-bzU71U1De5LkmvshUlwXLJFP2Kejr-oGaxIfUck0RnN2ckJhDtCVvshifzkErWtefVAW8Pr75VKhiKZMdr0XVUFm6PCVfbFXbMlmSMxDNBmEpn1CLLHaGet8zoB1wdpONt_CSqntRtOjqB_"/>
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-sm text-on-surface tracking-tight font-bold leading-none">RTC Crackers</span>
+            <span class="font-label-sm text-[11px] text-tag-notifications font-semibold leading-tight">Enterprise Mail</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Compose Action -->
+      <div class="px-4 pt-3 pb-2">
+        <button class="w-full flex items-center justify-center gap-2 py-2 px-3 bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-sm rounded-lg transition-colors shadow-sm" type="button" onclick="showToast('Navigating to Compose...')">
+          <span class="material-symbols-outlined text-[18px]">edit</span>
+          <span>Compose</span>
+        </button>
+      </div>
+
+      <!-- Mailbox Folders -->
+      <div class="px-4 pt-2 pb-1">
+        <span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Mailbox Folders</span>
+      </div>
+      <nav class="flex flex-col px-2 space-y-0.5">
+        <a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/inbox">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[18px]">inbox</span>
+            <span class="text-sm">Inbox</span>
+          </div>
+          <span class="text-[11px] bg-tag-notifications text-on-primary px-1.5 py-0.5 rounded-full font-semibold">24</span>
+        </a>
+        <a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/starred">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[18px]">star</span>
+            <span class="text-sm">Starred</span>
+          </div>
+          <span class="text-[11px] text-secondary">8</span>
+        </a>
+        <a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/drafts">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[18px]">draft</span>
+            <span class="text-sm">Drafts</span>
+          </div>
+          <span class="text-[11px] text-secondary">3</span>
+        </a>
+        <a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/sent">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[18px]">send</span>
+            <span class="text-sm">Sent</span>
+          </div>
+        </a>
+        <a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/archived">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[18px]">archive</span>
+            <span class="text-sm">Archived</span>
+          </div>
+        </a>
+        <a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/trash">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[18px]">delete</span>
+            <span class="text-sm">Trash</span>
+          </div>
+        </a>
+      </nav>
+
+      <!-- Mailbox Accounts Section -->
+      <div class="px-4 pt-4 pb-1">
+        <span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Authorized Mailboxes</span>
+      </div>
+      <nav class="flex flex-col px-2 space-y-0.5">
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-on-surface"></span>
+          <span class="text-xs truncate">All Mailboxes (9)</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-admin"></span>
+          <span class="text-xs truncate">admin@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-support"></span>
+          <span class="text-xs truncate">support@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-sales"></span>
+          <span class="text-xs truncate">sales@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-orders"></span>
+          <span class="text-xs truncate">orders@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-billing"></span>
+          <span class="text-xs truncate">billing@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-info"></span>
+          <span class="text-xs truncate">info@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-contact"></span>
+          <span class="text-xs truncate">contact@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-notifications"></span>
+          <span class="text-xs truncate">notifications@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-noreply"></span>
+          <span class="text-xs truncate">noreply@rtcrackers.com</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Bottom Actions / Settings (Highlighted as Active App Section) -->
+    <div class="flex flex-col border-t border-border-subtle p-2 bg-surface-subtle">
+      <nav class="flex flex-col space-y-0.5 mb-2">
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-surface-container font-semibold text-on-surface shadow-xs transition-all" href="/email/settings">
+          <span class="material-symbols-outlined text-[18px] text-tag-notifications">settings</span>
+          <span class="text-xs">Settings</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="material-symbols-outlined text-[18px]">help</span>
+          <span class="text-xs">Help &amp; Docs</span>
+        </a>
+      </nav>
+      <!-- Profile Widget -->
+      <div class="flex items-center justify-between px-2 py-1.5 rounded-lg bg-surface-container-low">
+        <div class="flex items-center gap-2 min-w-0">
+          <img alt="Admin Avatar" class="w-7 h-7 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+          <div class="flex flex-col min-w-0">
+            <span class="text-xs font-semibold text-on-surface truncate">Operations Admin</span>
+            <span class="text-[10px] text-secondary truncate">admin@rtcrackers.com</span>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-secondary text-[16px]">more_vert</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEWPORT CONTENT (Padded 64 for sidebar) -->
+  <div class="pl-64 min-h-screen flex flex-col">
+
+    <!-- TOP HEADER -->
+    <header class="fixed top-0 left-64 right-0 h-16 bg-surface-canvas/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-6 border-b border-border-subtle">
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-tag-notifications text-[22px]">mark_email_read</span>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="font-headline-sm text-base text-on-surface font-bold leading-tight">Settings</h1>
+              <span class="text-secondary text-xs">/</span>
+              <span class="font-label-md text-sm text-tag-notifications font-semibold">Mailboxes</span>
+            </div>
+            <p class="text-xs text-secondary leading-none">Manage company mailbox permissions, statuses, sending/receiving capabilities, and signatures.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Header Right Controls -->
+      <div class="flex items-center gap-3">
+        <!-- API Synchronization Status -->
+        <span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low text-xs font-medium text-secondary">
+          <span class="w-1.5 h-1.5 rounded-full bg-tag-sales animate-pulse"></span>
+          <span>Connected: api.rtcrackers.com</span>
+        </span>
+
+        <!-- Global Quick Search trigger -->
+        <div class="relative w-64 hidden lg:block">
+          <span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-secondary text-[16px]">search</span>
+          <input class="w-full bg-surface-subtle text-on-surface placeholder:text-secondary text-xs pl-8 pr-8 py-1.5 rounded-md outline-none focus:ring-1 focus:ring-tag-notifications border border-border-strong" placeholder="Quick find (⌘K)..." type="text"/>
+          <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-secondary bg-surface-container px-1 rounded font-mono">⌘K</span>
+        </div>
+
+        <button class="p-2 rounded-lg text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Notifications" type="button">
+          <span class="material-symbols-outlined text-[20px]">notifications</span>
+        </button>
+
+        <button class="flex items-center gap-2 pl-2" type="button">
+          <img alt="Admin Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+          <span class="material-symbols-outlined text-secondary text-[16px]">expand_more</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- WORKSPACE: TWO-COLUMN SETTINGS ARCHITECTURE -->
+    <main class="pt-16 flex-1 flex flex-col bg-surface">
+
+      <!-- Settings Sub-Navigation & Breadcrumbs -->
+      <div class="border-b border-border-subtle bg-surface-canvas px-6 py-2.5 flex items-center justify-between">
+        <!-- Settings Category Tabs -->
+        <div class="flex items-center gap-1 overflow-x-auto text-xs font-medium">
+          <a class="px-3 py-1.5 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-all" href="/email/settings?section=general">
+            General
+          </a>
+          <a class="px-3 py-1.5 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-all" href="/email/settings?section=appearance">
+            Appearance
+          </a>
+          <a class="px-3 py-1.5 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-all" href="/email/settings?section=notifications">
+            Notifications
+          </a>
+          <a class="px-3 py-1.5 rounded-md bg-tag-notifications/10 text-tag-notifications font-semibold shadow-xs transition-all flex items-center gap-1.5" href="/email/settings/mailboxes">
+            <span class="w-1.5 h-1.5 rounded-full bg-tag-notifications"></span>
+            Mailboxes
+          </a>
+          <a class="px-3 py-1.5 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-all" href="/email/settings?section=signature">
+            Signatures
+          </a>
+          <a class="px-3 py-1.5 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-all" href="/email/settings?section=sending">
+            Sending &amp; Reading
+          </a>
+          <a class="px-3 py-1.5 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-all" href="/email/settings?section=security">
+            Security &amp; Sessions
+          </a>
+        </div>
+
+        <!-- Right action: Synchronize / Refresh -->
+        <div class="flex items-center gap-2">
+          <button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border-strong text-secondary hover:text-on-surface hover:bg-surface-subtle text-xs font-medium transition-all shadow-xs" id="btnRefresh" onclick="refreshMailboxes()">
+            <span class="material-symbols-outlined text-[16px]" id="refreshIcon">refresh</span>
+            <span>Refresh</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- MAIN PAGE BODY (Interactive Content) -->
+      <div class="p-6 max-w-7xl w-full mx-auto space-y-6">
+
+        <!-- 1. SUMMARY STATS CARDS -->
+        <section class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Total Mailboxes -->
+          <div class="bg-surface-canvas p-4 rounded-xl border border-border-subtle shadow-xs flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="text-xs font-medium text-secondary uppercase tracking-wider">Total Mailboxes</span>
+              <span class="font-headline-lg text-2xl font-bold text-on-surface mt-0.5" id="statTotal">9</span>
+              <span class="text-[11px] text-secondary mt-1">@rtcrackers.com Domain</span>
+            </div>
+            <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tag-notifications">
+              <span class="material-symbols-outlined text-[22px]">domain</span>
+            </div>
+          </div>
+
+          <!-- Active Mailboxes -->
+          <div class="bg-surface-canvas p-4 rounded-xl border border-border-subtle shadow-xs flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="text-xs font-medium text-secondary uppercase tracking-wider">Active Status</span>
+              <span class="font-headline-lg text-2xl font-bold text-tag-sales mt-0.5" id="statActive">9</span>
+              <span class="text-[11px] text-tag-sales mt-1 font-medium">100% operational</span>
+            </div>
+            <div class="w-10 h-10 rounded-lg bg-tag-sales/10 flex items-center justify-center text-tag-sales">
+              <span class="material-symbols-outlined text-[22px]">check_circle</span>
+            </div>
+          </div>
+
+          <!-- Sending Enabled -->
+          <div class="bg-surface-canvas p-4 rounded-xl border border-border-subtle shadow-xs flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="text-xs font-medium text-secondary uppercase tracking-wider">Sending Enabled</span>
+              <span class="font-headline-lg text-2xl font-bold text-on-surface mt-0.5" id="statSending">8</span>
+              <span class="text-[11px] text-secondary mt-1">1 Inbound-only (noreply)</span>
+            </div>
+            <div class="w-10 h-10 rounded-lg bg-tag-support/10 flex items-center justify-center text-tag-support">
+              <span class="material-symbols-outlined text-[22px]">outgoing_mail</span>
+            </div>
+          </div>
+
+          <!-- Receiving Enabled -->
+          <div class="bg-surface-canvas p-4 rounded-xl border border-border-subtle shadow-xs flex items-center justify-between">
+            <div class="flex flex-col">
+              <span class="text-xs font-medium text-secondary uppercase tracking-wider">Receiving Webhooks</span>
+              <span class="font-headline-lg text-2xl font-bold text-on-surface mt-0.5" id="statReceiving">9</span>
+              <span class="text-[11px] text-secondary mt-1">All ingress routes active</span>
+            </div>
+            <div class="w-10 h-10 rounded-lg bg-tag-billing/10 flex items-center justify-center text-tag-billing">
+              <span class="material-symbols-outlined text-[22px]">move_to_inbox</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. FILTER & SEARCH CONTROL TOOLBAR -->
+        <div class="bg-surface-canvas p-4 rounded-xl border border-border-subtle shadow-xs flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+          <!-- Left: Search Box -->
+          <div class="relative flex-1 max-w-md">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[18px]">search</span>
+            <input class="w-full bg-surface-subtle text-on-surface placeholder:text-secondary text-xs pl-9 pr-8 py-2 rounded-lg outline-none ring-1 ring-border-strong focus:ring-2 focus:ring-tag-notifications transition-all" id="mailboxSearchInput" oninput="handleSearch(this.value)" placeholder="Search mailboxes by address or display name..." type="text"/>
+            <button class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-secondary hover:text-on-surface" id="clearSearchBtn" onclick="clearSearch()" title="Clear search">
+              <span class="material-symbols-outlined text-[16px]">close</span>
+            </button>
+          </div>
+
+          <!-- Right: Filters & Sorting -->
+          <div class="flex flex-wrap items-center gap-3">
+            <!-- Status Filter -->
+            <div class="flex items-center gap-1.5 text-xs text-secondary">
+              <span class="font-medium">Status:</span>
+              <select class="bg-surface-subtle border border-border-strong rounded-lg px-2 py-1.5 text-xs text-on-surface font-medium outline-none focus:ring-1 focus:ring-tag-notifications" id="filterStatus" onchange="applyFilters()">
+                <option value="all">All Statuses</option>
+                <option value="active">Active Only</option>
+                <option value="inactive">Inactive Only</option>
+              </select>
+            </div>
+
+            <!-- Capability Filter -->
+            <div class="flex items-center gap-1.5 text-xs text-secondary">
+              <span class="font-medium">Sending:</span>
+              <select class="bg-surface-subtle border border-border-strong rounded-lg px-2 py-1.5 text-xs text-on-surface font-medium outline-none focus:ring-1 focus:ring-tag-notifications" id="filterSending" onchange="applyFilters()">
+                <option value="all">All</option>
+                <option value="enabled">Enabled</option>
+                <option value="disabled">Disabled</option>
+              </select>
+            </div>
+
+            <!-- View Toggle: Grid / Table -->
+            <div class="flex items-center bg-surface-subtle p-0.5 rounded-lg border border-border-strong text-secondary">
+              <button class="p-1 rounded bg-surface-canvas shadow-xs text-tag-notifications transition-all" id="btnViewCards" onclick="setViewMode('cards')" title="Card View">
+                <span class="material-symbols-outlined text-[18px]">grid_view</span>
+              </button>
+              <button class="p-1 rounded text-secondary hover:text-on-surface transition-all" id="btnViewTable" onclick="setViewMode('table')" title="Table View">
+                <span class="material-symbols-outlined text-[18px]">view_list</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. CURRENT USER DEFAULT MAILBOX PREFERENCE BANNER -->
+        <div class="bg-primary-fixed/20 border border-primary-fixed-dim/40 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-tag-notifications/10 text-tag-notifications flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[20px]">star_rate</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-on-surface">Your Default Sending Mailbox:</span>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-surface-canvas text-tag-notifications border border-border-strong shadow-xs" id="userDefaultDisplay">
+                  <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+                  support@rtcrackers.com
+                </span>
+              </div>
+              <p class="text-[11px] text-secondary mt-0.5">This personal preference automatically pre-selects the "From" address whenever you compose new messages or bulk notices.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2 shrink-0">
+            <span class="text-xs text-secondary font-medium">Quick switch:</span>
+            <select class="bg-surface-canvas border border-border-strong rounded-lg px-2.5 py-1 text-xs font-semibold text-on-surface outline-none focus:ring-1 focus:ring-tag-notifications cursor-pointer" id="selectDefaultMailbox" onchange="setUserDefault(this.value)">
+              <option value="admin@rtcrackers.com">admin@rtcrackers.com</option>
+              <option selected="" value="support@rtcrackers.com">support@rtcrackers.com (Current)</option>
+              <option value="sales@rtcrackers.com">sales@rtcrackers.com</option>
+              <option value="orders@rtcrackers.com">orders@rtcrackers.com</option>
+              <option value="billing@rtcrackers.com">billing@rtcrackers.com</option>
+              <option value="info@rtcrackers.com">info@rtcrackers.com</option>
+              <option value="contact@rtcrackers.com">contact@rtcrackers.com</option>
+              <option value="notifications@rtcrackers.com">notifications@rtcrackers.com</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 4. MAILBOX LIST (CARD VIEW) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" id="mailboxCardsContainer">
+
+          <!-- Mailbox 1: Support (Default) -->
+          <div class="bg-surface-canvas rounded-xl border border-border-subtle p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group" data-address="support@rtcrackers.com" data-name="RTC Crackers Support" data-sending="enabled" data-status="active">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-tag-support/10 text-tag-support flex items-center justify-center font-bold text-sm">
+                    SP
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-1.5">
+                      <h3 class="font-headline-sm text-sm font-bold text-on-surface">RTC Crackers Support</h3>
+                      <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-tag-notifications/10 text-tag-notifications">Default</span>
+                    </div>
+                    <div class="flex items-center gap-1 text-xs text-secondary mt-0.5">
+                      <span class="font-mono">support@rtcrackers.com</span>
+                      <button class="hover:text-on-surface" onclick="copyAddress('support@rtcrackers.com')" title="Copy Email Address"><span class="material-symbols-outlined text-[14px]">content_copy</span></button>
+                    </div>
+                  </div>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-tag-sales/10 text-tag-sales">
+                  <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span> Active
+                </span>
+              </div>
+
+              <!-- Capabilities Matrix -->
+              <div class="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-border-subtle text-xs">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">send</span> Sending:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">inbox</span> Receiving:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+              </div>
+
+              <!-- Metadata & Metrics -->
+              <div class="mt-3 flex items-center justify-between text-[11px] text-secondary">
+                <span>Signature: <strong class="text-on-surface font-semibold">Configured (HTML)</strong></span>
+                <span>Permissions: <strong class="text-on-surface font-semibold">Full Access</strong></span>
+              </div>
+            </div>
+
+            <!-- Card Action Footer -->
+            <div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
+              <a class="text-xs text-tag-notifications hover:underline font-semibold flex items-center gap-1" href="/email/inbox?mailbox=support@rtcrackers.com">
+                <span>Open Inbox</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </a>
+              <div class="flex items-center gap-1.5">
+                <button class="px-2.5 py-1 rounded-md text-xs font-semibold text-secondary hover:text-on-surface hover:bg-surface-subtle border border-border-strong transition-colors" onclick="openManageModal(1, 'support@rtcrackers.com', 'RTC Crackers Support', true, true, true)">
+                  Manage
+                </button>
+                <div class="relative">
+                  <button class="p-1 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-colors" onclick="toggleDropdown('drop-1')">
+                    <span class="material-symbols-outlined text-[18px]">more_vert</span>
+                  </button>
+                  <div class="hidden absolute right-0 bottom-full mb-1 w-44 bg-surface-canvas rounded-lg shadow-lg border border-border-strong py-1 z-20 text-xs" id="drop-1">
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="copyAddress('support@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">content_copy</span> Copy Address</button>
+                    <a class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" href="/email/settings?section=signature"><span class="material-symbols-outlined text-[15px]">draw</span> Edit Signature</a>
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="confirmCapabilityToggle('support@rtcrackers.com', 'sending', false)"><span class="material-symbols-outlined text-[15px]">block</span> Pause Sending</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mailbox 2: Admin -->
+          <div class="bg-surface-canvas rounded-xl border border-border-subtle p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group" data-address="admin@rtcrackers.com" data-name="RTC Crackers Administration" data-sending="enabled" data-status="active">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-tag-admin/10 text-tag-admin flex items-center justify-center font-bold text-sm">
+                    AD
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-sm font-bold text-on-surface">RTC Crackers Administration</h3>
+                    <div class="flex items-center gap-1 text-xs text-secondary mt-0.5">
+                      <span class="font-mono">admin@rtcrackers.com</span>
+                      <button class="hover:text-on-surface" onclick="copyAddress('admin@rtcrackers.com')" title="Copy Email Address"><span class="material-symbols-outlined text-[14px]">content_copy</span></button>
+                    </div>
+                  </div>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-tag-sales/10 text-tag-sales">
+                  <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span> Active
+                </span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-border-subtle text-xs">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">send</span> Sending:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">inbox</span> Receiving:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+              </div>
+
+              <div class="mt-3 flex items-center justify-between text-[11px] text-secondary">
+                <span>Signature: <strong class="text-on-surface font-semibold">Standard Corporate</strong></span>
+                <span>Permissions: <strong class="text-on-surface font-semibold">Super Admin</strong></span>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
+              <a class="text-xs text-tag-notifications hover:underline font-semibold flex items-center gap-1" href="/email/inbox?mailbox=admin@rtcrackers.com">
+                <span>Open Inbox</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </a>
+              <div class="flex items-center gap-1.5">
+                <button class="px-2.5 py-1 rounded-md text-xs font-semibold text-secondary hover:text-on-surface hover:bg-surface-subtle border border-border-strong transition-colors" onclick="openManageModal(2, 'admin@rtcrackers.com', 'RTC Crackers Administration', true, true, true)">
+                  Manage
+                </button>
+                <div class="relative">
+                  <button class="p-1 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-colors" onclick="toggleDropdown('drop-2')">
+                    <span class="material-symbols-outlined text-[18px]">more_vert</span>
+                  </button>
+                  <div class="hidden absolute right-0 bottom-full mb-1 w-44 bg-surface-canvas rounded-lg shadow-lg border border-border-strong py-1 z-20 text-xs" id="drop-2">
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="setUserDefault('admin@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">star</span> Set as Default</button>
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="copyAddress('admin@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">content_copy</span> Copy Address</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mailbox 3: Sales -->
+          <div class="bg-surface-canvas rounded-xl border border-border-subtle p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group" data-address="sales@rtcrackers.com" data-name="RTC Crackers Sales Ops" data-sending="enabled" data-status="active">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-tag-sales/10 text-tag-sales flex items-center justify-center font-bold text-sm">
+                    SO
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-sm font-bold text-on-surface">RTC Crackers Sales Ops</h3>
+                    <div class="flex items-center gap-1 text-xs text-secondary mt-0.5">
+                      <span class="font-mono">sales@rtcrackers.com</span>
+                      <button class="hover:text-on-surface" onclick="copyAddress('sales@rtcrackers.com')" title="Copy Email Address"><span class="material-symbols-outlined text-[14px]">content_copy</span></button>
+                    </div>
+                  </div>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-tag-sales/10 text-tag-sales">
+                  <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span> Active
+                </span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-border-subtle text-xs">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">send</span> Sending:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">inbox</span> Receiving:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+              </div>
+
+              <div class="mt-3 flex items-center justify-between text-[11px] text-secondary">
+                <span>Signature: <strong class="text-on-surface font-semibold">Wholesale Desk</strong></span>
+                <span>Permissions: <strong class="text-on-surface font-semibold">Send &amp; View</strong></span>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
+              <a class="text-xs text-tag-notifications hover:underline font-semibold flex items-center gap-1" href="/email/inbox?mailbox=sales@rtcrackers.com">
+                <span>Open Inbox</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </a>
+              <div class="flex items-center gap-1.5">
+                <button class="px-2.5 py-1 rounded-md text-xs font-semibold text-secondary hover:text-on-surface hover:bg-surface-subtle border border-border-strong transition-colors" onclick="openManageModal(3, 'sales@rtcrackers.com', 'RTC Crackers Sales Ops', true, true, true)">
+                  Manage
+                </button>
+                <div class="relative">
+                  <button class="p-1 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-colors" onclick="toggleDropdown('drop-3')">
+                    <span class="material-symbols-outlined text-[18px]">more_vert</span>
+                  </button>
+                  <div class="hidden absolute right-0 bottom-full mb-1 w-44 bg-surface-canvas rounded-lg shadow-lg border border-border-strong py-1 z-20 text-xs" id="drop-3">
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="setUserDefault('sales@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">star</span> Set as Default</button>
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="copyAddress('sales@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">content_copy</span> Copy Address</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mailbox 4: Orders -->
+          <div class="bg-surface-canvas rounded-xl border border-border-subtle p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group" data-address="orders@rtcrackers.com" data-name="RTC Crackers Order Fulfillment" data-sending="enabled" data-status="active">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-tag-orders/10 text-tag-orders flex items-center justify-center font-bold text-sm">
+                    OR
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-sm font-bold text-on-surface">RTC Crackers Order Fulfillment</h3>
+                    <div class="flex items-center gap-1 text-xs text-secondary mt-0.5">
+                      <span class="font-mono">orders@rtcrackers.com</span>
+                      <button class="hover:text-on-surface" onclick="copyAddress('orders@rtcrackers.com')" title="Copy Email Address"><span class="material-symbols-outlined text-[14px]">content_copy</span></button>
+                    </div>
+                  </div>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-tag-sales/10 text-tag-sales">
+                  <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span> Active
+                </span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-border-subtle text-xs">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">send</span> Sending:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">inbox</span> Receiving:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+              </div>
+
+              <div class="mt-3 flex items-center justify-between text-[11px] text-secondary">
+                <span>Signature: <strong class="text-on-surface font-semibold">Dispatch Team</strong></span>
+                <span>Permissions: <strong class="text-on-surface font-semibold">Send &amp; View</strong></span>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
+              <a class="text-xs text-tag-notifications hover:underline font-semibold flex items-center gap-1" href="/email/inbox?mailbox=orders@rtcrackers.com">
+                <span>Open Inbox</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </a>
+              <div class="flex items-center gap-1.5">
+                <button class="px-2.5 py-1 rounded-md text-xs font-semibold text-secondary hover:text-on-surface hover:bg-surface-subtle border border-border-strong transition-colors" onclick="openManageModal(4, 'orders@rtcrackers.com', 'RTC Crackers Order Fulfillment', true, true, true)">
+                  Manage
+                </button>
+                <div class="relative">
+                  <button class="p-1 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-colors" onclick="toggleDropdown('drop-4')">
+                    <span class="material-symbols-outlined text-[18px]">more_vert</span>
+                  </button>
+                  <div class="hidden absolute right-0 bottom-full mb-1 w-44 bg-surface-canvas rounded-lg shadow-lg border border-border-strong py-1 z-20 text-xs" id="drop-4">
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="setUserDefault('orders@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">star</span> Set as Default</button>
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="copyAddress('orders@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">content_copy</span> Copy Address</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mailbox 5: Billing -->
+          <div class="bg-surface-canvas rounded-xl border border-border-subtle p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group" data-address="billing@rtcrackers.com" data-name="RTC Crackers Finance & Billing" data-sending="enabled" data-status="active">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-tag-billing/10 text-tag-billing flex items-center justify-center font-bold text-sm">
+                    BL
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-sm font-bold text-on-surface">RTC Crackers Finance &amp; Billing</h3>
+                    <div class="flex items-center gap-1 text-xs text-secondary mt-0.5">
+                      <span class="font-mono">billing@rtcrackers.com</span>
+                      <button class="hover:text-on-surface" onclick="copyAddress('billing@rtcrackers.com')" title="Copy Email Address"><span class="material-symbols-outlined text-[14px]">content_copy</span></button>
+                    </div>
+                  </div>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-tag-sales/10 text-tag-sales">
+                  <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span> Active
+                </span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-border-subtle text-xs">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">send</span> Sending:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">inbox</span> Receiving:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+              </div>
+
+              <div class="mt-3 flex items-center justify-between text-[11px] text-secondary">
+                <span>Signature: <strong class="text-on-surface font-semibold">Accounts Desk</strong></span>
+                <span>Permissions: <strong class="text-on-surface font-semibold">Send &amp; View</strong></span>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
+              <a class="text-xs text-tag-notifications hover:underline font-semibold flex items-center gap-1" href="/email/inbox?mailbox=billing@rtcrackers.com">
+                <span>Open Inbox</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </a>
+              <div class="flex items-center gap-1.5">
+                <button class="px-2.5 py-1 rounded-md text-xs font-semibold text-secondary hover:text-on-surface hover:bg-surface-subtle border border-border-strong transition-colors" onclick="openManageModal(5, 'billing@rtcrackers.com', 'RTC Crackers Finance & Billing', true, true, true)">
+                  Manage
+                </button>
+                <div class="relative">
+                  <button class="p-1 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-colors" onclick="toggleDropdown('drop-5')">
+                    <span class="material-symbols-outlined text-[18px]">more_vert</span>
+                  </button>
+                  <div class="hidden absolute right-0 bottom-full mb-1 w-44 bg-surface-canvas rounded-lg shadow-lg border border-border-strong py-1 z-20 text-xs" id="drop-5">
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="setUserDefault('billing@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">star</span> Set as Default</button>
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="copyAddress('billing@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">content_copy</span> Copy Address</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mailbox 6: Info -->
+          <div class="bg-surface-canvas rounded-xl border border-border-subtle p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group" data-address="info@rtcrackers.com" data-name="RTC Crackers General Information" data-sending="enabled" data-status="active">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-tag-info/10 text-tag-info flex items-center justify-center font-bold text-sm">
+                    IN
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-sm font-bold text-on-surface">RTC Crackers General Information</h3>
+                    <div class="flex items-center gap-1 text-xs text-secondary mt-0.5">
+                      <span class="font-mono">info@rtcrackers.com</span>
+                      <button class="hover:text-on-surface" onclick="copyAddress('info@rtcrackers.com')" title="Copy Email Address"><span class="material-symbols-outlined text-[14px]">content_copy</span></button>
+                    </div>
+                  </div>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-tag-sales/10 text-tag-sales">
+                  <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span> Active
+                </span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-border-subtle text-xs">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">send</span> Sending:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">inbox</span> Receiving:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+              </div>
+
+              <div class="mt-3 flex items-center justify-between text-[11px] text-secondary">
+                <span>Signature: <strong class="text-on-surface font-semibold">Standard</strong></span>
+                <span>Permissions: <strong class="text-on-surface font-semibold">Send &amp; View</strong></span>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
+              <a class="text-xs text-tag-notifications hover:underline font-semibold flex items-center gap-1" href="/email/inbox?mailbox=info@rtcrackers.com">
+                <span>Open Inbox</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </a>
+              <div class="flex items-center gap-1.5">
+                <button class="px-2.5 py-1 rounded-md text-xs font-semibold text-secondary hover:text-on-surface hover:bg-surface-subtle border border-border-strong transition-colors" onclick="openManageModal(6, 'info@rtcrackers.com', 'RTC Crackers General Information', true, true, true)">
+                  Manage
+                </button>
+                <div class="relative">
+                  <button class="p-1 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-colors" onclick="toggleDropdown('drop-6')">
+                    <span class="material-symbols-outlined text-[18px]">more_vert</span>
+                  </button>
+                  <div class="hidden absolute right-0 bottom-full mb-1 w-44 bg-surface-canvas rounded-lg shadow-lg border border-border-strong py-1 z-20 text-xs" id="drop-6">
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="setUserDefault('info@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">star</span> Set as Default</button>
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="copyAddress('info@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">content_copy</span> Copy Address</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mailbox 7: Contact -->
+          <div class="bg-surface-canvas rounded-xl border border-border-subtle p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group" data-address="contact@rtcrackers.com" data-name="RTC Crackers Front Desk Contact" data-sending="enabled" data-status="active">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-tag-contact/10 text-tag-contact flex items-center justify-center font-bold text-sm">
+                    CT
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-sm font-bold text-on-surface">RTC Crackers Front Desk Contact</h3>
+                    <div class="flex items-center gap-1 text-xs text-secondary mt-0.5">
+                      <span class="font-mono">contact@rtcrackers.com</span>
+                      <button class="hover:text-on-surface" onclick="copyAddress('contact@rtcrackers.com')" title="Copy Email Address"><span class="material-symbols-outlined text-[14px]">content_copy</span></button>
+                    </div>
+                  </div>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-tag-sales/10 text-tag-sales">
+                  <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span> Active
+                </span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-border-subtle text-xs">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">send</span> Sending:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">inbox</span> Receiving:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+              </div>
+
+              <div class="mt-3 flex items-center justify-between text-[11px] text-secondary">
+                <span>Signature: <strong class="text-on-surface font-semibold">Standard</strong></span>
+                <span>Permissions: <strong class="text-on-surface font-semibold">Send &amp; View</strong></span>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
+              <a class="text-xs text-tag-notifications hover:underline font-semibold flex items-center gap-1" href="/email/inbox?mailbox=contact@rtcrackers.com">
+                <span>Open Inbox</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </a>
+              <div class="flex items-center gap-1.5">
+                <button class="px-2.5 py-1 rounded-md text-xs font-semibold text-secondary hover:text-on-surface hover:bg-surface-subtle border border-border-strong transition-colors" onclick="openManageModal(7, 'contact@rtcrackers.com', 'RTC Crackers Front Desk Contact', true, true, true)">
+                  Manage
+                </button>
+                <div class="relative">
+                  <button class="p-1 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-colors" onclick="toggleDropdown('drop-7')">
+                    <span class="material-symbols-outlined text-[18px]">more_vert</span>
+                  </button>
+                  <div class="hidden absolute right-0 bottom-full mb-1 w-44 bg-surface-canvas rounded-lg shadow-lg border border-border-strong py-1 z-20 text-xs" id="drop-7">
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="setUserDefault('contact@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">star</span> Set as Default</button>
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="copyAddress('contact@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">content_copy</span> Copy Address</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mailbox 8: Notifications -->
+          <div class="bg-surface-canvas rounded-xl border border-border-subtle p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group" data-address="notifications@rtcrackers.com" data-name="RTC Crackers System Alerts" data-sending="enabled" data-status="active">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-tag-notifications/10 text-tag-notifications flex items-center justify-center font-bold text-sm">
+                    NT
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-sm font-bold text-on-surface">RTC Crackers System Alerts</h3>
+                    <div class="flex items-center gap-1 text-xs text-secondary mt-0.5">
+                      <span class="font-mono">notifications@rtcrackers.com</span>
+                      <button class="hover:text-on-surface" onclick="copyAddress('notifications@rtcrackers.com')" title="Copy Email Address"><span class="material-symbols-outlined text-[14px]">content_copy</span></button>
+                    </div>
+                  </div>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-tag-sales/10 text-tag-sales">
+                  <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span> Active
+                </span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-border-subtle text-xs">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">send</span> Sending:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">inbox</span> Receiving:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+              </div>
+
+              <div class="mt-3 flex items-center justify-between text-[11px] text-secondary">
+                <span>Signature: <strong class="text-on-surface font-semibold">Automated Notice</strong></span>
+                <span>Permissions: <strong class="text-on-surface font-semibold">Admin Only</strong></span>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
+              <a class="text-xs text-tag-notifications hover:underline font-semibold flex items-center gap-1" href="/email/inbox?mailbox=notifications@rtcrackers.com">
+                <span>Open Inbox</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </a>
+              <div class="flex items-center gap-1.5">
+                <button class="px-2.5 py-1 rounded-md text-xs font-semibold text-secondary hover:text-on-surface hover:bg-surface-subtle border border-border-strong transition-colors" onclick="openManageModal(8, 'notifications@rtcrackers.com', 'RTC Crackers System Alerts', true, true, true)">
+                  Manage
+                </button>
+                <div class="relative">
+                  <button class="p-1 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-colors" onclick="toggleDropdown('drop-8')">
+                    <span class="material-symbols-outlined text-[18px]">more_vert</span>
+                  </button>
+                  <div class="hidden absolute right-0 bottom-full mb-1 w-44 bg-surface-canvas rounded-lg shadow-lg border border-border-strong py-1 z-20 text-xs" id="drop-8">
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="setUserDefault('notifications@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">star</span> Set as Default</button>
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="copyAddress('notifications@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">content_copy</span> Copy Address</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mailbox 9: No-Reply (Inbound receiving only / sending disabled) -->
+          <div class="bg-surface-canvas rounded-xl border border-border-subtle p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group" data-address="noreply@rtcrackers.com" data-name="RTC Crackers Automated Bot" data-sending="disabled" data-status="active">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-tag-noreply/10 text-tag-noreply flex items-center justify-center font-bold text-sm">
+                    NR
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-sm font-bold text-on-surface">RTC Crackers Automated Bot</h3>
+                    <div class="flex items-center gap-1 text-xs text-secondary mt-0.5">
+                      <span class="font-mono">noreply@rtcrackers.com</span>
+                      <button class="hover:text-on-surface" onclick="copyAddress('noreply@rtcrackers.com')" title="Copy Email Address"><span class="material-symbols-outlined text-[14px]">content_copy</span></button>
+                    </div>
+                  </div>
+                </div>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-tag-sales/10 text-tag-sales">
+                  <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span> Active
+                </span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-border-subtle text-xs">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">send</span> Sending:</span>
+                  <span class="font-semibold text-secondary">Disabled</span>
+                </div>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-surface-subtle">
+                  <span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">inbox</span> Receiving:</span>
+                  <span class="font-semibold text-tag-sales">Enabled</span>
+                </div>
+              </div>
+
+              <div class="mt-3 flex items-center justify-between text-[11px] text-secondary">
+                <span>Signature: <strong class="text-secondary font-medium">None (Do not reply)</strong></span>
+                <span>Permissions: <strong class="text-on-surface font-semibold">System Managed</strong></span>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-border-subtle flex items-center justify-between gap-2">
+              <a class="text-xs text-tag-notifications hover:underline font-semibold flex items-center gap-1" href="/email/inbox?mailbox=noreply@rtcrackers.com">
+                <span>Open Inbox</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </a>
+              <div class="flex items-center gap-1.5">
+                <button class="px-2.5 py-1 rounded-md text-xs font-semibold text-secondary hover:text-on-surface hover:bg-surface-subtle border border-border-strong transition-colors" onclick="openManageModal(9, 'noreply@rtcrackers.com', 'RTC Crackers Automated Bot', true, false, true)">
+                  Manage
+                </button>
+                <div class="relative">
+                  <button class="p-1 rounded-md text-secondary hover:text-on-surface hover:bg-surface-subtle transition-colors" onclick="toggleDropdown('drop-9')">
+                    <span class="material-symbols-outlined text-[18px]">more_vert</span>
+                  </button>
+                  <div class="hidden absolute right-0 bottom-full mb-1 w-44 bg-surface-canvas rounded-lg shadow-lg border border-border-strong py-1 z-20 text-xs" id="drop-9">
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2" onclick="copyAddress('noreply@rtcrackers.com')"><span class="material-symbols-outlined text-[15px]">content_copy</span> Copy Address</button>
+                    <button class="w-full text-left px-3 py-1.5 hover:bg-surface-subtle flex items-center gap-2 text-tag-sales" onclick="confirmCapabilityToggle('noreply@rtcrackers.com', 'sending', true)"><span class="material-symbols-outlined text-[15px]">check_circle</span> Enable Sending</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 5. TABLE VIEW CONTAINER (Toggled via button) -->
+        <div class="hidden bg-surface-canvas rounded-xl border border-border-subtle overflow-hidden shadow-xs" id="mailboxTableContainer">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse">
+              <thead class="bg-surface-subtle border-b border-border-subtle text-secondary uppercase font-semibold text-[11px]">
+                <tr>
+                  <th class="py-3 px-4">Mailbox &amp; Display Name</th>
+                  <th class="py-3 px-4">Address</th>
+                  <th class="py-3 px-4">Status</th>
+                  <th class="py-3 px-4">Sending</th>
+                  <th class="py-3 px-4">Receiving</th>
+                  <th class="py-3 px-4">Default</th>
+                  <th class="py-3 px-4 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-border-subtle text-on-surface">
+                <tr class="hover:bg-surface-subtle/50 transition-colors">
+                  <td class="py-3 px-4 font-semibold flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-tag-support"></span>
+                    <span>RTC Crackers Support</span>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-secondary">support@rtcrackers.com</td>
+                  <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-tag-sales/10 text-tag-sales">ACTIVE</span></td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-tag-notifications/10 text-tag-notifications">USER DEFAULT</span></td>
+                  <td class="py-3 px-4 text-right">
+                    <button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high font-medium" onclick="openManageModal(1, 'support@rtcrackers.com', 'RTC Crackers Support', true, true, true)">Manage</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-surface-subtle/50 transition-colors">
+                  <td class="py-3 px-4 font-semibold flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-tag-admin"></span>
+                    <span>RTC Crackers Administration</span>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-secondary">admin@rtcrackers.com</td>
+                  <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-tag-sales/10 text-tag-sales">ACTIVE</span></td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 text-secondary">—</td>
+                  <td class="py-3 px-4 text-right">
+                    <button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high font-medium" onclick="openManageModal(2, 'admin@rtcrackers.com', 'RTC Crackers Administration', true, true, true)">Manage</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-surface-subtle/50 transition-colors">
+                  <td class="py-3 px-4 font-semibold flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-tag-sales"></span>
+                    <span>RTC Crackers Sales Ops</span>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-secondary">sales@rtcrackers.com</td>
+                  <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-tag-sales/10 text-tag-sales">ACTIVE</span></td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 text-secondary">—</td>
+                  <td class="py-3 px-4 text-right">
+                    <button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high font-medium" onclick="openManageModal(3, 'sales@rtcrackers.com', 'RTC Crackers Sales Ops', true, true, true)">Manage</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-surface-subtle/50 transition-colors">
+                  <td class="py-3 px-4 font-semibold flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-tag-orders"></span>
+                    <span>RTC Crackers Order Fulfillment</span>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-secondary">orders@rtcrackers.com</td>
+                  <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-tag-sales/10 text-tag-sales">ACTIVE</span></td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 text-secondary">—</td>
+                  <td class="py-3 px-4 text-right">
+                    <button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high font-medium" onclick="openManageModal(4, 'orders@rtcrackers.com', 'RTC Crackers Order Fulfillment', true, true, true)">Manage</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-surface-subtle/50 transition-colors">
+                  <td class="py-3 px-4 font-semibold flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-tag-billing"></span>
+                    <span>RTC Crackers Finance &amp; Billing</span>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-secondary">billing@rtcrackers.com</td>
+                  <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-tag-sales/10 text-tag-sales">ACTIVE</span></td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 text-secondary">—</td>
+                  <td class="py-3 px-4 text-right">
+                    <button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high font-medium" onclick="openManageModal(5, 'billing@rtcrackers.com', 'RTC Crackers Finance & Billing', true, true, true)">Manage</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-surface-subtle/50 transition-colors">
+                  <td class="py-3 px-4 font-semibold flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-tag-info"></span>
+                    <span>RTC Crackers General Information</span>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-secondary">info@rtcrackers.com</td>
+                  <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-tag-sales/10 text-tag-sales">ACTIVE</span></td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 text-secondary">—</td>
+                  <td class="py-3 px-4 text-right">
+                    <button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high font-medium" onclick="openManageModal(6, 'info@rtcrackers.com', 'RTC Crackers General Information', true, true, true)">Manage</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-surface-subtle/50 transition-colors">
+                  <td class="py-3 px-4 font-semibold flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-tag-contact"></span>
+                    <span>RTC Crackers Front Desk Contact</span>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-secondary">contact@rtcrackers.com</td>
+                  <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-tag-sales/10 text-tag-sales">ACTIVE</span></td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 text-secondary">—</td>
+                  <td class="py-3 px-4 text-right">
+                    <button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high font-medium" onclick="openManageModal(7, 'contact@rtcrackers.com', 'RTC Crackers Front Desk Contact', true, true, true)">Manage</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-surface-subtle/50 transition-colors">
+                  <td class="py-3 px-4 font-semibold flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-tag-notifications"></span>
+                    <span>RTC Crackers System Alerts</span>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-secondary">notifications@rtcrackers.com</td>
+                  <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-tag-sales/10 text-tag-sales">ACTIVE</span></td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 text-secondary">—</td>
+                  <td class="py-3 px-4 text-right">
+                    <button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high font-medium" onclick="openManageModal(8, 'notifications@rtcrackers.com', 'RTC Crackers System Alerts', true, true, true)">Manage</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-surface-subtle/50 transition-colors">
+                  <td class="py-3 px-4 font-semibold flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-tag-noreply"></span>
+                    <span>RTC Crackers Automated Bot</span>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-secondary">noreply@rtcrackers.com</td>
+                  <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-tag-sales/10 text-tag-sales">ACTIVE</span></td>
+                  <td class="py-3 px-4 font-medium text-secondary">Disabled</td>
+                  <td class="py-3 px-4 font-medium text-tag-sales">Enabled</td>
+                  <td class="py-3 px-4 text-secondary">—</td>
+                  <td class="py-3 px-4 text-right">
+                    <button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high font-medium" onclick="openManageModal(9, 'noreply@rtcrackers.com', 'RTC Crackers Automated Bot', true, false, true)">Manage</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 6. EMPTY SEARCH RESULT STATE (Hidden by default) -->
+        <div class="hidden bg-surface-canvas rounded-xl border border-border-subtle p-12 text-center flex-col items-center justify-center space-y-3" id="mailboxEmptyState">
+          <div class="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center text-secondary">
+            <span class="material-symbols-outlined text-[32px]">search_off</span>
+          </div>
+          <h3 class="font-headline-sm text-sm font-bold text-on-surface">No mailboxes match your query</h3>
+          <p class="text-xs text-secondary max-w-sm">We couldn't find any authorized mailbox with the current search query or filter constraints.</p>
+          <button class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-xs font-semibold text-on-surface" onclick="clearSearch()">
+            Clear Filters &amp; Query
+          </button>
+        </div>
+
+        <!-- 7. SECURITY & ARCHITECTURAL NOTE FOOTER -->
+        <div class="p-4 rounded-xl bg-surface-subtle border border-border-subtle flex items-start gap-3 text-secondary text-xs">
+          <span class="material-symbols-outlined text-tag-notifications text-[18px] shrink-0 mt-0.5">shield</span>
+          <div>
+            <strong class="text-on-surface font-semibold">Security &amp; Authorization Policy:</strong>
+            <span>All mailbox changes require authenticated session tokens verified against PostgreSQL roles. Mailbox addresses are managed by the RTC Crackers domain registrar and cannot be renamed directly. Never expose SMTP credentials or Resend API keys on client devices.</span>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL: MANAGE MAILBOX DETAIL PANEL -->
+  <div class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4" id="manageMailboxModal">
+    <div class="bg-surface-canvas border border-border-strong rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden flex flex-col transition-all">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 bg-surface-subtle border-b border-border-subtle flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-tag-notifications/10 text-tag-notifications flex items-center justify-center font-bold text-xs" id="modalBadge">
+            MB
+          </div>
+          <div>
+            <h3 class="font-headline-sm text-sm font-bold text-on-surface" id="modalTitle">Manage Mailbox Settings</h3>
+            <span class="text-xs font-mono text-secondary" id="modalSubtitle">support@rtcrackers.com</span>
+          </div>
+        </div>
+        <button class="p-1 rounded-md text-secondary hover:text-on-surface" onclick="closeManageModal()">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 space-y-5 text-xs max-h-[75vh] overflow-y-auto">
+        <!-- Display Name -->
+        <div class="space-y-1.5">
+          <label class="font-semibold text-on-surface block">Display Name (Sender Header)</label>
+          <input class="w-full px-3 py-2 rounded-lg bg-surface-subtle border border-border-strong text-xs text-on-surface outline-none focus:ring-2 focus:ring-tag-notifications" id="modalDisplayNameInput" type="text" value="RTC Crackers Support"/>
+          <p class="text-[11px] text-secondary">This name appears as the friendly sender name in customer and supplier inboxes.</p>
+        </div>
+
+        <!-- Email Address (Read-only security field) -->
+        <div class="space-y-1.5">
+          <label class="font-semibold text-secondary block">Canonical Email Address (Read-Only)</label>
+          <div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-low border border-border-strong font-mono text-on-surface text-xs">
+            <span id="modalEmailAddressText">support@rtcrackers.com</span>
+            <span class="material-symbols-outlined text-[15px] text-secondary">lock</span>
+          </div>
+          <p class="text-[11px] text-secondary">Primary addresses are managed by the RTC Crackers domain administrator.</p>
+        </div>
+
+        <!-- Capability Toggles -->
+        <div class="space-y-3 pt-2 border-t border-border-subtle">
+          <span class="font-semibold text-on-surface block">Mailbox Operational Capabilities</span>
+
+          <!-- Operational Status -->
+          <div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+            <div>
+              <div class="font-semibold text-on-surface">Mailbox Operational Status</div>
+              <p class="text-[11px] text-secondary mt-0.5">Controls whether this mailbox is active in the company directory.</p>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input checked="" class="sr-only peer" id="toggleStatusInput" type="checkbox"/>
+              <div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+            </label>
+          </div>
+
+          <!-- Sending Status -->
+          <div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+            <div>
+              <div class="font-semibold text-on-surface">Sending Capability</div>
+              <p class="text-[11px] text-secondary mt-0.5">Allows authorized staff to compose and reply using this address.</p>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input checked="" class="sr-only peer" id="toggleSendingInput" type="checkbox"/>
+              <div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+            </label>
+          </div>
+
+          <!-- Receiving Status -->
+          <div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+            <div>
+              <div class="font-semibold text-on-surface">Receiving Webhook / Ingress</div>
+              <p class="text-[11px] text-secondary mt-0.5">Accepts incoming emails dispatched to this address.</p>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input checked="" class="sr-only peer" id="toggleReceivingInput" type="checkbox"/>
+              <div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-sales"></div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Signature Quick Link -->
+        <div class="p-3 rounded-xl bg-surface-container-low border border-border-subtle flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-tag-notifications text-[18px]">draw</span>
+            <div>
+              <span class="font-semibold text-on-surface">Per-Mailbox Signature</span>
+              <p class="text-[11px] text-secondary">HTML signature configured for this account.</p>
+            </div>
+          </div>
+          <a class="px-2.5 py-1 rounded bg-surface-canvas border border-border-strong text-tag-notifications font-semibold hover:bg-surface-container transition-colors" href="/email/settings?section=signature">
+            Edit in Settings
+          </a>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-3 bg-surface-subtle border-t border-border-subtle flex items-center justify-end gap-2">
+        <button class="px-4 py-2 rounded-lg border border-border-strong text-secondary hover:text-on-surface text-xs font-semibold" onclick="closeManageModal()">
+          Cancel
+        </button>
+        <button class="px-4 py-2 rounded-lg bg-tag-notifications hover:bg-primary-container text-on-primary text-xs font-semibold shadow-xs flex items-center gap-1.5 transition-all" id="btnSaveMailbox" onclick="saveMailboxChanges()">
+          <span class="material-symbols-outlined text-[16px]">save</span>
+          <span>Save Changes</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFIRMATION DIALOG -->
+  <div class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4" id="confirmationDialog">
+    <div class="bg-surface-canvas border border-border-strong rounded-2xl shadow-2xl max-w-sm w-full p-5 space-y-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-tag-notifications/10 text-tag-notifications flex items-center justify-center shrink-0" id="confirmIcon">
+          <span class="material-symbols-outlined text-[20px]">warning</span>
+        </div>
+        <div>
+          <h4 class="font-headline-sm text-sm font-bold text-on-surface" id="confirmTitle">Confirm Action</h4>
+          <p class="text-xs text-secondary mt-0.5" id="confirmMessage">Are you sure you want to proceed?</p>
+        </div>
+      </div>
+      <div class="flex items-center justify-end gap-2 pt-2">
+        <button class="px-3 py-1.5 rounded-lg border border-border-strong text-secondary hover:text-on-surface text-xs font-semibold" onclick="closeConfirmDialog()">
+          Cancel
+        </button>
+        <button class="px-3.5 py-1.5 rounded-lg bg-tag-notifications text-on-primary text-xs font-semibold" id="confirmActionBtn" onclick="executeConfirmedAction()">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING TOAST NOTIFICATION -->
+  <div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 px-4 py-3 rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl text-xs font-medium" id="toast">
+    <span class="material-symbols-outlined text-tag-notifications text-[18px]" id="toastIcon">check_circle</span>
+    <span id="toastMessage">Action completed successfully</span>
+  </div>
+
+  <!-- JAVASCRIPT APP LOGIC & STATE HANDLING -->
+  <script>
+    // State Tracking
+    let activeMailboxId = null;
+    let pendingConfirmAction = null;
+
+    // Toast Functionality
+    function showToast(message, icon = 'check_circle') {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toastMessage');
+      const iconEl = document.getElementById('toastIcon');
+      
+      text.textContent = message;
+      iconEl.textContent = icon;
+      
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2600);
+    }
+
+    // Refresh Action
+    function refreshMailboxes() {
+      const icon = document.getElementById('refreshIcon');
+      icon.classList.add('animate-spin');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        showToast('Authorized mailboxes synchronized with backend');
+      }, 600);
+    }
+
+    // View Mode Toggle (Cards vs Table)
+    function setViewMode(mode) {
+      const cards = document.getElementById('mailboxCardsContainer');
+      const table = document.getElementById('mailboxTableContainer');
+      const btnCards = document.getElementById('btnViewCards');
+      const btnTable = document.getElementById('btnViewTable');
+
+      if (mode === 'cards') {
+        cards.classList.remove('hidden');
+        table.classList.add('hidden');
+        btnCards.classList.add('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnCards.classList.remove('text-secondary');
+        btnTable.classList.remove('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnTable.classList.add('text-secondary');
+      } else {
+        cards.classList.add('hidden');
+        table.classList.remove('hidden');
+        btnTable.classList.add('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnTable.classList.remove('text-secondary');
+        btnCards.classList.remove('bg-surface-canvas', 'shadow-xs', 'text-tag-notifications');
+        btnCards.classList.add('text-secondary');
+      }
+    }
+
+    // Search & Filtering
+    function handleSearch(query) {
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (query.trim()) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+      applyFilters();
+    }
+
+    function clearSearch() {
+      document.getElementById('mailboxSearchInput').value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const query = document.getElementById('mailboxSearchInput').value.toLowerCase().trim();
+      const statusFilter = document.getElementById('filterStatus').value;
+      const sendingFilter = document.getElementById('filterSending').value;
+
+      const cards = document.querySelectorAll('#mailboxCardsContainer > div');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const address = card.getAttribute('data-address').toLowerCase();
+        const name = card.getAttribute('data-name').toLowerCase();
+        const status = card.getAttribute('data-status');
+        const sending = card.getAttribute('data-sending');
+
+        const matchesQuery = !query || address.includes(query) || name.includes(query);
+        const matchesStatus = statusFilter === 'all' || status === statusFilter;
+        const matchesSending = sendingFilter === 'all' || sending === sendingFilter;
+
+        if (matchesQuery && matchesStatus && matchesSending) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const emptyState = document.getElementById('mailboxEmptyState');
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+        emptyState.classList.add('flex');
+      } else {
+        emptyState.classList.add('hidden');
+        emptyState.classList.remove('flex');
+      }
+    }
+
+    // Copy Address Action
+    function copyAddress(address) {
+      navigator.clipboard.writeText(address).then(() => {
+        showToast(`Copied ${address} to clipboard`);
+      }).catch(() => {
+        showToast(`Copied ${address}`);
+      });
+    }
+
+    // User Default Mailbox Switch
+    function setUserDefault(address) {
+      document.getElementById('userDefaultDisplay').innerHTML = `
+        <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+        ${address}
+      `;
+      document.getElementById('selectDefaultMailbox').value = address;
+      showToast(`Default sending mailbox set to ${address}`);
+    }
+
+    // Manage Modal Handling
+    function openManageModal(id, address, name, isActive, canSend, canReceive) {
+      activeMailboxId = id;
+      document.getElementById('modalTitle').textContent = `Manage: ${name}`;
+      document.getElementById('modalSubtitle').textContent = address;
+      document.getElementById('modalEmailAddressText').textContent = address;
+      document.getElementById('modalDisplayNameInput').value = name;
+      document.getElementById('toggleStatusInput').checked = isActive;
+      document.getElementById('toggleSendingInput').checked = canSend;
+      document.getElementById('toggleReceivingInput').checked = canReceive;
+
+      const modal = document.getElementById('manageMailboxModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeManageModal() {
+      const modal = document.getElementById('manageMailboxModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function saveMailboxChanges() {
+      const btn = document.getElementById('btnSaveMailbox');
+      btn.innerHTML = `<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> Saving...`;
+      
+      setTimeout(() => {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[16px]">save</span> Save Changes`;
+        closeManageModal();
+        showToast('Mailbox settings successfully synchronized');
+      }, 700);
+    }
+
+    // Capability Confirmation Dialog
+    function confirmCapabilityToggle(address, capability, enable) {
+      const dialog = document.getElementById('confirmationDialog');
+      const title = document.getElementById('confirmTitle');
+      const msg = document.getElementById('confirmMessage');
+
+      title.textContent = enable ? `Enable ${capability}?` : `Disable ${capability}?`;
+      msg.textContent = enable 
+        ? `Messages will resume normal processing for ${address}.`
+        : `Staff will temporarily be unable to use ${address} for outbound messages.`;
+
+      pendingConfirmAction = () => {
+        showToast(`${address} ${capability} status updated`);
+      };
+
+      dialog.classList.remove('hidden');
+      dialog.classList.add('flex');
+    }
+
+    function closeConfirmDialog() {
+      const dialog = document.getElementById('confirmationDialog');
+      dialog.classList.add('hidden');
+      dialog.classList.remove('flex');
+      pendingConfirmAction = null;
+    }
+
+    function executeConfirmedAction() {
+      if (pendingConfirmAction) pendingConfirmAction();
+      closeConfirmDialog();
+    }
+
+    // Dropdown Handling
+    function toggleDropdown(dropId) {
+      document.querySelectorAll('[id^="drop-"]').forEach(d => {
+        if (d.id !== dropId) d.classList.add('hidden');
+      });
+      const target = document.getElementById(dropId);
+      if (target) target.classList.toggle('hidden');
+    }
+
+    // Close open menus when clicking outside
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('.relative')) {
+        document.querySelectorAll('[id^="drop-"]').forEach(d => d.classList.add('hidden'));
+      }
+    });
+  </script>
+</body>
+</html>

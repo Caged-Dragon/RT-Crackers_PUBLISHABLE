@@ -1,0 +1,102 @@
+/* RTCrackers — Industrial Frontend UI Layer
+   Visual-only enhancement. Business logic remains in the existing modules. */
+:root {
+  --rt-ui-navy: var(--rt-theme-dark, #071426);
+  --rt-ui-navy-2: var(--rt-theme-dark2, #0d213b);
+  --rt-ui-gold: var(--rt-theme-accent, #d6a84f);
+  --rt-ui-gold-hi: var(--rt-theme-secondary, #f3cc72);
+  --rt-ui-text: var(--rt-page-text, #f7f4ea);
+  --rt-ui-surface: var(--rt-page-surface, #102a48);
+  --rt-ui-border: var(--rt-page-border, rgba(214,168,79,.25));
+  --rt-ui-radius: 18px;
+}
+
+html { text-rendering: optimizeLegibility; }
+body { min-width: 320px; overflow-x: hidden; }
+button, input, select, textarea { font: inherit; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid color-mix(in srgb, var(--rt-ui-gold) 75%, white); outline-offset: 3px; }
+
+/* Consistent premium surfaces without changing the application's theme source. */
+.site-header { border-bottom: 1px solid color-mix(in srgb, var(--rt-ui-gold) 18%, transparent); }
+.card, .product-card, .cat-tile, .form-card, .order-card, .order-summary, .accordion-item,
+.rt-box-card, .rt-modal-card, .account-panel, .feature-item {
+  border-radius: var(--rt-ui-radius);
+}
+
+/* Product media remains stable on narrow screens. */
+.product-thumb, .product-card img { aspect-ratio: 4 / 3; object-fit: cover; }
+.product-card img { display: block; width: 100%; }
+
+/* Compact touch targets for mobile. */
+.btn, button, .cart-btn, .filter-chip { min-height: 42px; }
+.btn-sm { min-height: 36px; }
+
+/* Tables become scroll containers rather than causing page overflow. */
+.table-wrap, .table-responsive, .rt-compare-scroll { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+a { text-underline-offset: 3px; }
+
+/* Toast / status surface used by feature modules. */
+#toast.toast { position: fixed; left: 50%; bottom: 22px; transform: translate(-50%, 18px); z-index: 3000;
+  max-width: min(92vw, 520px); padding: 12px 16px; border: 1px solid var(--rt-ui-border);
+  border-radius: 14px; background: color-mix(in srgb, var(--rt-ui-navy) 94%, transparent);
+  color: #fff; box-shadow: 0 18px 55px rgba(0,0,0,.32); opacity: 0; pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease; }
+#toast.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+@media (max-width: 900px) {
+  .container { width: min(100% - 28px, 1280px); }
+  .product-grid { gap: 16px; }
+  .section-head { gap: 10px; }
+}
+@media (max-width: 600px) {
+  .container { width: min(100% - 20px, 1280px); }
+  .btn { min-height: 44px; }
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .product-card { min-width: 0; }
+  .product-body { padding: 12px; }
+  .product-name { font-size: 14px; }
+  .product-price { font-size: 16px; }
+  .rt-feature-tools { gap: 4px; }
+  .rt-feature-tools .rt-icon-btn, .rt-feature-tools .rt-compare-btn, .rt-feature-tools .rt-detail-link { padding: 6px; font-size: 10px; }
+}
+@media (max-width: 380px) {
+  .product-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #toast.toast { transition: none; }
+}
+
+/* Smart search / autocomplete — high-contrast industrial surface */
+.search-box { position: relative; z-index: 30; }
+.search-box::before { content: '⌕'; position:absolute; left:15px; top:50%; transform:translateY(-50%); z-index:2; opacity:.62; font-size:18px; pointer-events:none; }
+#productSearch { padding-left:44px !important; min-height:52px; border:1px solid color-mix(in srgb,var(--rt-ui-gold) 26%,var(--rt-page-border,#d9deea)); background:var(--rt-page-surface,#fff); color:var(--rt-page-text,#172033); box-shadow:0 10px 30px rgba(0,0,0,.08); }
+#productSearch::placeholder { color:color-mix(in srgb,var(--rt-page-text,#172033) 52%,transparent); }
+#productSearch:focus { border-color:var(--rt-ui-gold); box-shadow:0 0 0 4px color-mix(in srgb,var(--rt-ui-gold) 14%,transparent),0 16px 35px rgba(0,0,0,.10); }
+.rt-suggestions { top:calc(100% + 10px) !important; padding:7px; background:color-mix(in srgb,var(--rt-page-surface,#fff) 97%,var(--rt-ui-gold)); border:1px solid color-mix(in srgb,var(--rt-ui-gold) 30%,var(--rt-page-border,#d9deea)); border-radius:18px !important; box-shadow:0 24px 60px rgba(0,0,0,.22) !important; max-height:min(520px,65vh); overflow:auto; }
+.rt-suggestions a { display:grid !important; grid-template-columns:1fr auto; gap:4px 14px; align-items:center; padding:13px 14px !important; border:0 !important; border-radius:12px; color:var(--rt-page-text,#172033) !important; transition:background .18s ease,transform .18s ease; }
+.rt-suggestions a:hover,.rt-suggestions a:focus-visible { background:color-mix(in srgb,var(--rt-ui-gold) 12%,transparent) !important; transform:translateX(2px); outline:none; }
+.rt-suggestions strong { font-size:14px; font-weight:850; }
+.rt-suggestions small { grid-column:1/-1; opacity:.62; font-size:11px; }
+.rt-suggestions .rt-search-empty { padding:18px 14px; text-align:center; opacity:.68; }
+
+/* Fix contrast for close/X controls across modals, drawers and dialogs. */
+.rt-modal-close,.rt-close,.modal-close,.drawer-close,[aria-label="Close"],button[data-close] { color:var(--rt-page-text,#172033) !important; background:color-mix(in srgb,var(--rt-page-surface,#fff) 94%,var(--rt-ui-gold)) !important; border:1px solid color-mix(in srgb,var(--rt-ui-gold) 30%,var(--rt-page-border,#d9deea)) !important; width:40px; height:40px; min-height:40px; display:inline-flex; align-items:center; justify-content:center; border-radius:12px; font-weight:900; line-height:1; box-shadow:0 8px 22px rgba(0,0,0,.12); text-shadow:none; }
+.rt-modal-close:hover,.rt-close:hover,.modal-close:hover,.drawer-close:hover,[aria-label="Close"]:hover,button[data-close]:hover { background:var(--rt-ui-gold) !important; color:var(--rt-ui-navy) !important; }
+.rt-modal-card .rt-modal-close { position:absolute; right:14px; top:14px; z-index:5; }
+
+/* Company Info / About editor */
+.company-about-editor { grid-column:1/-1; }
+.company-about-editor textarea { width:100%; min-height:150px; resize:vertical; padding:13px 14px; border-radius:14px; border:1px solid var(--grey-300,#d9deea); background:var(--surface,#fff); color:inherit; line-height:1.65; }
+.company-about-editor small { display:block; margin-top:6px; opacity:.62; }
+.rt-about-managed { margin-bottom:28px; }
+.rt-about-managed-card { padding:clamp(22px,4vw,42px); border:1px solid color-mix(in srgb,var(--rt-ui-gold) 24%,var(--rt-page-border,#d9deea)); border-radius:24px; background:linear-gradient(145deg,color-mix(in srgb,var(--rt-page-surface,#fff) 96%,var(--rt-ui-gold)),var(--rt-page-surface,#fff)); box-shadow:0 20px 55px rgba(0,0,0,.10); }
+.rt-about-managed-copy { max-width:900px; line-height:1.8; white-space:pre-wrap; opacity:.86; }
+
+@media(max-width:700px){
+  .rt-suggestions a { grid-template-columns:1fr; }
+  .rt-suggestions small { grid-column:auto; }
+  .rt-modal-close,.rt-close,.modal-close,.drawer-close,[aria-label="Close"],button[data-close] { width:38px;height:38px;min-height:38px; }
+}
+.product-stock{display:inline-block;margin:6px 0 2px;font-size:12px;font-weight:800}.stock-ok{color:#19734a}.stock-low{color:#9a5a00}.stock-out{color:#b42318}.product-card.is-out-of-stock{opacity:.78}.product-card.is-out-of-stock .product-thumb{filter:grayscale(.25)}

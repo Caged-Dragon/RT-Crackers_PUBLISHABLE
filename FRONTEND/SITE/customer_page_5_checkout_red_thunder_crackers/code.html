@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Secure Hazmat Checkout | RED THUNDER CRACKERS</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-container":"#fff9f8","primary-fixed":"#ffdad5","surface":"#111418","surface-bright":"#36393e","surface-container-low":"#191c20","on-tertiary-fixed-variant":"#6f3900","primary":"#ffb4a9","primary-container":"#e31b16","error":"#ffb4ab","error-container":"#93000a","on-secondary-container":"#5c4600","surface-container-high":"#272a2f","on-secondary":"#3e2e00","background":"#111418","tertiary-fixed":"#ffdcc4","secondary":"#ffce4b","primary-fixed-dim":"#ffb4a9","on-surface":"#e1e2e8","secondary-container":"#e5b200","on-error-container":"#ffdad6","outline":"#ae8882","on-background":"#e1e2e8","outline-variant":"#5e3f3b","on-tertiary-fixed":"#2f1500","surface-container-highest":"#323539","surface-tint":"#ffb4a9","secondary-fixed":"#ffdf95","on-primary-container":"#fff9f8","on-primary-fixed":"#410001","secondary-fixed-dim":"#f4bf1b","inverse-on-surface":"#2e3135","surface-container":"#1d2024","surface-container-lowest":"#0b0e12","tertiary-container":"#b05e00","tertiary":"#ffb77f","on-surface-variant":"#e8bdb6","surface-variant":"#323539","on-primary":"#690002","inverse-primary":"#c00006","tertiary-fixed-dim":"#ffb77f","on-tertiary":"#4e2600","on-error":"#690005","inverse-surface":"#e1e2e8","surface-dim":"#111418","on-secondary-fixed-variant":"#594400","on-primary-fixed-variant":"#930003","on-secondary-fixed":"#251a00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter-mobile":"1rem","margin":"3rem","space-xs":"0.25rem","space-md":"1rem","space-lg":"1.5rem","space-xl":"2.5rem","gutter":"1.5rem","space-sm":"0.5rem","margin-mobile":"1.25rem"},"fontFamily":{"body-sm":["Montserrat"],"body-lg":["Montserrat"],"title-md":["Montserrat"],"display-hero-mobile":["Oswald"],"headline-xl":["Oswald"],"display-hero":["Oswald"],"headline-lg":["Oswald"],"title-lg":["Montserrat"],"label-md":["Inter"],"headline-md":["Oswald"],"label-lg":["Inter"],"body-md":["Montserrat"],"label-sm":["Inter"],"headline-xl-mobile":["Oswald"]},"fontSize":{"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"display-hero-mobile":["38px",{"lineHeight":"44px","letterSpacing":"1px","fontWeight":"700"}],"headline-xl":["44px",{"lineHeight":"52px","letterSpacing":"1px","fontWeight":"700"}],"display-hero":["64px",{"lineHeight":"72px","letterSpacing":"1.5px","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"0.5px","fontWeight":"600"}],"title-lg":["20px",{"lineHeight":"28px","letterSpacing":"0.2px","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.8px","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"0.5px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"18px","letterSpacing":"1px","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"1.2px","fontWeight":"700"}],"headline-xl-mobile":["30px",{"lineHeight":"36px","letterSpacing":"0.5px","fontWeight":"700"}]}}}};</script><link href="../runtime/theme.css" rel="stylesheet"/></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.5)]"><div class="h-20 max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter flex items-center justify-between gap-4"><div class="flex items-center gap-space-md"><a class="flex items-center gap-3 group" data-path="cart-review" href="#"><img alt="LOGO.jpeg" class="h-8 w-auto object-contain" src="../assets/branding/LOGO.jpeg"/><div class="flex flex-col"><span class="font-headline-md text-headline-md tracking-wider text-on-surface uppercase group-hover:text-primary transition-colors">RED THUNDER</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Sivakasi Sparklers &amp; Pyro Co.</span></div></a></div><div class="hidden md:flex items-center gap-space-lg"><div class="flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-container-low shadow-[0_0_12px_rgba(255,206,75,0.1)]"><span class="material-symbols-outlined text-secondary text-[20px]">verified_user</span><div class="flex flex-col"><span class="font-label-sm text-label-sm uppercase text-secondary leading-none">256-Bit SSL Encrypted</span><span class="font-body-sm text-[11px] text-on-surface-variant leading-none">PESO Hazmat Clearance</span></div></div><div class="h-7 w-[1px] bg-surface-container-highest"></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[20px]">headset_mic</span><div class="flex flex-col"><span class="font-label-sm text-label-sm uppercase text-on-surface-variant leading-none">24/7 Sivakasi Desk</span><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">+91 73587 37658</span></div></div></div><div class="flex items-center gap-space-md"><a class="hidden sm:flex items-center gap-1 text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md uppercase tracking-wider" data-path="checkout-help" href="#"><span class="material-symbols-outlined text-[18px]">help</span><span>Help &amp; FAQ</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_12px_rgba(227,27,22,0.4)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="bg-surface-container-lowest/90 backdrop-blur-md"><div class="max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter py-2.5 overflow-x-auto"><nav class="flex items-center justify-between sm:justify-center min-w-[560px] sm:gap-space-xl" data-active-classes="text-secondary border-b-2 border-secondary font-bold"><a aria-current="page" class="flex items-center gap-2 pb-1 transition-colors text-secondary border-b-2 border-secondary font-bold" data-path="cart-review" href="#"><span class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface text-[11px] flex items-center justify-center font-bold">1</span><span>Cart</span></a><span class="text-surface-container-highest text-xs select-none">→</span><a class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface pb-1 text-label-md font-label-md transition-colors" data-path="delivery-address" href="#"><span class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface text-[11px] flex items-center justify-center font-bold">2</span><span>Delivery Address</span></a><span class="text-surface-container-highest text-xs select-none">→</span><a class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface pb-1 text-label-md font-label-md transition-colors" data-path="hazmat-shipping" href="#"><span class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface text-[11px] flex items-center justify-center font-bold">3</span><span>Hazmat Shipping</span></a><span class="text-surface-container-highest text-xs select-none">→</span><a class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface pb-1 text-label-md font-label-md transition-colors" data-path="payment-verification" href="#"><span class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface text-[11px] flex items-center justify-center font-bold">4</span><span>Payment &amp; Verification</span></a><span class="text-surface-container-highest text-xs select-none">→</span><a class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface pb-1 text-label-md font-label-md transition-colors" data-path="order-confirmation" href="#"><span class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface text-[11px] flex items-center justify-center font-bold">5</span><span>Confirmation</span></a></nav></div></div></header><main class="w-full pt-20 bg-background flex-1 flex flex-col justify-start"><div class="flex flex-col w-full">
+<!-- Subtle Crimson Radial Under-glow (contained) -->
+<div class="relative w-full max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter py-space-md lg:py-space-xl">
+<!-- Top Decorative Aura -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-56 bg-primary-container/10 blur-[120px] pointer-events-none -z-10"></div>
+<!-- Step Progress Tracker Bar -->
+<section class="w-full mb-space-lg">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-xl">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm sm:gap-space-md relative">
+<!-- Step 1 -->
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary text-surface-container-lowest flex items-center justify-center font-label-md font-bold shadow-md shadow-secondary/30 shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider truncate">Step 1</p>
+<p class="font-title-md text-body-sm sm:text-title-md text-on-surface font-semibold truncate">Cart Review</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary text-surface-container-lowest flex items-center justify-center font-label-md font-bold shadow-md shadow-secondary/30 shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider truncate">Step 2</p>
+<p class="font-title-md text-body-sm sm:text-title-md text-on-surface font-semibold truncate">Shipping &amp; Hazmat</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-md font-bold shadow-lg shadow-primary-container/40 shrink-0 ring-2 ring-secondary/50">
+<span class="font-headline-md text-label-md">3</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-primary uppercase tracking-wider truncate">Step 3 • Active</p>
+<p class="font-title-md text-body-sm sm:text-title-md text-on-surface font-bold truncate">Logistics &amp; Depot</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex items-center gap-space-sm opacity-80">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-md font-bold shrink-0">
+<span class="font-headline-md text-label-md">4</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">Step 4</p>
+<p class="font-title-md text-body-sm sm:text-title-md text-on-surface truncate">Payment Dispatch</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2-Column Responsive Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-space-xl items-start">
+<!-- LEFT COLUMN: 65% width on desktop (lg:col-span-8) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg min-w-0">
+<!-- 1. Customer Identity & Verification Banner -->
+<div class="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-xl relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-40 h-40 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-secondary shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div class="min-w-0">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-sm text-label-sm bg-primary-container/20 text-primary px-2 py-0.5 rounded font-bold uppercase tracking-wider">PESO Verified Buyer</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID: SVK-998240</span>
+</div>
+<p class="font-title-lg text-title-md sm:text-title-lg text-on-surface mt-1 truncate">Rajesh Krishnan</p>
+<p class="font-body-md text-body-sm text-on-surface-variant truncate">rajesh.k@gmail.com • +91 73587 37658</p>
+</div>
+</div>
+<button class="self-start sm:self-center px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-secondary hover:text-on-surface font-label-md text-label-md transition-colors whitespace-nowrap shadow-sm" type="button">
+              Change Account
+            </button>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-space-sm bg-surface-container/60 rounded-lg p-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0">mark_chat_read</span>
+<span class="font-body-sm text-body-sm text-on-surface leading-tight">Order dispatch SMS &amp; GPS WhatsApp tracking link will be transmitted to <strong>+91 73587 37658</strong>.</span>
+</div>
+</div>
+<!-- 2. Sivakasi Hazmat Delivery Address -->
+<div class="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-on-surface uppercase tracking-wide">1. Hazardous Material Safe Delivery Address</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Complies with Explosives Rules 2008 for secure residential and licensed warehouse drops.</p>
+</div>
+<span class="self-start sm:self-center inline-flex items-center gap-1.5 px-3 py-1 rounded bg-secondary/10 text-secondary font-label-sm text-label-sm uppercase tracking-wider font-bold">
+<span class="material-symbols-outlined text-[16px]">local_fire_department</span> PESO Certified Transit Zone
+            </span>
+</div>
+<!-- Address Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Address Card A: Selected -->
+<label class="cursor-pointer group relative bg-surface-container rounded-xl p-space-md shadow-lg transition-all duration-200 block">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 text-primary-container bg-surface-container-lowest focus:ring-0 accent-primary-container cursor-pointer" name="delivery_address" type="radio"/>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold uppercase tracking-wider">Default • Home</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<button class="hover:text-secondary p-1" title="Edit Address" type="button"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+<button class="hover:text-error p-1" title="Delete Address" type="button"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+<div class="space-y-1">
+<p class="font-title-md text-title-md text-on-surface font-bold">Rajesh Krishnan</p>
+<p class="font-body-md text-body-sm text-on-surface-variant leading-relaxed">
+                  Flat 402, Royal Palms Heights, 18th Main, 4th Cross, Indiranagar, Bengaluru, Karnataka - 560038
+                </p>
+<p class="font-body-sm text-body-sm text-secondary font-medium">Contact: +91 73587 37658</p>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container-high/60 rounded p-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">thermostat</span>
+<span class="font-label-sm text-[11px] text-on-surface leading-tight font-semibold">
+                  Green Delivery Hub (Bengaluru Urban) — Eligible for Regulated Cold Road Transport
+                </span>
+</div>
+</label>
+<!-- Address Card B: Selectable -->
+<label class="cursor-pointer group relative bg-surface-container-low/70 hover:bg-surface-container rounded-xl p-space-md transition-all duration-200 block">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 text-primary-container bg-surface-container-lowest focus:ring-0 accent-primary-container cursor-pointer" name="delivery_address" type="radio"/>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-semibold uppercase tracking-wider">Office / Society Ground</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<button class="hover:text-secondary p-1" title="Edit Address" type="button"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+</div>
+</div>
+<div class="space-y-1">
+<p class="font-title-md text-title-md text-on-surface">Rajesh Krishnan <span class="text-on-surface-variant text-body-sm font-normal">(c/o Palm Meadows Club)</span></p>
+<p class="font-body-md text-body-sm text-on-surface-variant leading-relaxed">
+                  Clubhouse Gate 2, Palm Meadows, Whitefield, Bengaluru, Karnataka - 560066
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Contact: +91 73587 37658</p>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container/40 rounded p-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] shrink-0">warehouse</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant leading-tight">
+                  Designated Community Open Pyrotechnic Handover Point
+                </span>
+</div>
+</label>
+</div>
+<!-- Add Address Trigger and Billing Address Checkbox -->
+<div class="mt-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-md pt-space-xs">
+<button class="inline-flex items-center gap-2 text-secondary hover:text-on-surface font-label-md text-label-md uppercase tracking-wider font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add_location_alt</span>
+<span>+ Add New Sivakasi Transit Address</span>
+</button>
+<label class="inline-flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-primary-container bg-surface-container-lowest accent-primary-container" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Billing address is the same as shipping address</span>
+</label>
+</div>
+</div>
+<!-- 3. Regulated Pyrotechnic Transport Method -->
+<div class="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-xl">
+<div class="mb-space-md">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-wide">2. Regulated Pyrotechnic Transport Method</h2>
+<span class="text-secondary font-label-sm text-label-sm tracking-widest uppercase font-bold">Class 1.4G Logistics</span>
+</div>
+<!-- Regulatory Disclaimer -->
+<div class="mt-space-sm p-space-sm bg-surface-container rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">warning</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant leading-normal">
+<strong>Statutory Notice:</strong> In accordance with PESO and Central Motor Vehicles Rules, fireworks cannot be transported via air couriers. Shipments move exclusively via shock-buffered, temperature-regulated authorized road transit vans.
+              </p>
+</div>
+</div>
+<!-- Transit Methods -->
+<div class="space-y-space-md">
+<!-- Method 1: Selected -->
+<label class="cursor-pointer group flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-xl bg-surface-container shadow-md transition-all gap-space-md">
+<div class="flex items-start gap-space-md">
+<input checked="" class="mt-1 w-4 h-4 text-primary-container bg-surface-container-lowest focus:ring-0 accent-primary-container cursor-pointer" name="shipping_method" type="radio"/>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface font-bold">Sivakasi Direct Express Hazmat Carrier</span>
+<span class="px-2 py-0.5 rounded bg-secondary/15 text-secondary font-label-sm text-label-sm font-bold uppercase">Popular</span>
+</div>
+<p class="font-body-md text-body-sm text-on-surface font-semibold mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">schedule</span>
+<span>Arrives in 3–4 Days (Oct 28 – Oct 29) • Guaranteed Before Diwali Eve</span>
+</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Insulated shock-resistant wooden lined cargo with real-time GPS telemetry &amp; recipient gate OTP delivery.
+                  </p>
+</div>
+</div>
+<div class="sm:text-right shrink-0">
+<p class="font-headline-md text-headline-md text-secondary">₹250.00</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Flat Festival Rate</p>
+</div>
+</label>
+<!-- Method 2: Priority Dedicated Van -->
+<label class="cursor-pointer group flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all gap-space-md">
+<div class="flex items-start gap-space-md">
+<input class="mt-1 w-4 h-4 text-primary-container bg-surface-container-lowest focus:ring-0 accent-primary-container cursor-pointer" name="shipping_method" type="radio"/>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface font-bold">Priority Dedicated Depot Van (Fastest)</span>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold uppercase">Priority Dispatch</span>
+</div>
+<p class="font-body-md text-body-sm text-primary font-semibold mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">bolt</span>
+<span>Guaranteed 48-Hour Dispatch (Oct 27)</span>
+</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Direct Sivakasi factory hub to regional Bangalore depot express handover with priority safety escort.
+                  </p>
+</div>
+</div>
+<div class="sm:text-right shrink-0">
+<p class="font-headline-md text-headline-md text-on-surface">₹550.00</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Express Slot</p>
+</div>
+</label>
+</div>
+</div>
+<!-- 4. Payment Method Selection (High Trust) -->
+<div class="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-xl" id="payment-section">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-wide">3. Select Secure Payment Option</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">All transactions are tokenized, AES-256 encrypted, and routed via RBI authorized gateways.</p>
+</div>
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm uppercase bg-surface-container px-3 py-1 rounded">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Direct Bank Escrow</span>
+</div>
+</div>
+<!-- Payment Options Accordion/Selector -->
+<div class="space-y-space-md">
+<!-- Payment 1: UPI Instant Checkout (Active) -->
+<div class="bg-surface-container rounded-xl overflow-hidden shadow-md">
+<label class="flex items-center justify-between p-space-md cursor-pointer bg-surface-container-high/60">
+<div class="flex items-center gap-space-md">
+<input checked="" class="w-4 h-4 text-primary-container bg-surface-container-lowest focus:ring-0 accent-primary-container cursor-pointer" name="payment_mode" type="radio"/>
+<div>
+<span class="font-title-md text-title-md text-on-surface font-bold">UPI Instant Checkout</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Zero Gateway Surcharge • GPay, PhonePe, Paytm, BHIM</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary text-label-sm font-label-sm font-bold">FASTEST</span>
+</div>
+</label>
+<!-- UPI Inner Pane -->
+<div class="p-space-md bg-surface-container space-y-space-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-sm text-label-sm uppercase text-on-surface-variant mb-1 font-semibold">Enter Verified UPI VPA</label>
+<div class="relative flex items-center">
+<input class="w-full bg-surface-container-lowest text-on-surface px-space-md py-2.5 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary/70" type="text" value="rajesh@okaxis"/>
+<span class="absolute right-3 flex items-center gap-1 text-secondary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[18px]">verified</span> Verified
+                      </span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-1.5">A collect request will be pushed to your UPI app instantly.</p>
+</div>
+<!-- QR Scan Box Mock -->
+<div class="bg-surface-container-high rounded-lg p-space-md flex items-center justify-between gap-space-md">
+<div class="space-y-1">
+<p class="font-label-md text-label-md uppercase text-on-surface font-bold">Or Pay via Dynamic QR</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Instant 0% transaction fee via any UPI app scanner.</p>
+<span class="inline-block px-2 py-0.5 rounded bg-secondary/20 text-secondary font-label-sm text-[10px] font-bold uppercase mt-1">Ready at Review</span>
+</div>
+<div class="w-16 h-16 rounded bg-surface-container-lowest flex items-center justify-center text-secondary shadow-inner shrink-0">
+<span class="material-symbols-outlined text-[36px]">qr_code_2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Payment 2: Credit / Debit Cards -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<label class="flex items-center justify-between p-space-md cursor-pointer hover:bg-surface-container">
+<div class="flex items-center gap-space-md">
+<input class="w-4 h-4 text-primary-container bg-surface-container-lowest focus:ring-0 accent-primary-container cursor-pointer" name="payment_mode" type="radio"/>
+<div>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Credit / Debit Card (All Indian &amp; Global Cards)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">RuPay, Visa, MasterCard, Diners • 3D Secure OTP</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+</div>
+</label>
+</div>
+<!-- Payment 3: Net Banking -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<label class="flex items-center justify-between p-space-md cursor-pointer hover:bg-surface-container">
+<div class="flex items-center gap-space-md">
+<input class="w-4 h-4 text-primary-container bg-surface-container-lowest focus:ring-0 accent-primary-container cursor-pointer" name="payment_mode" type="radio"/>
+<div>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Net Banking (50+ Indian Banks)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">SBI, HDFC, ICICI, Axis, Kotak, Canara and more</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+</label>
+</div>
+<!-- Payment 4: COD -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<label class="flex items-center justify-between p-space-md cursor-pointer hover:bg-surface-container">
+<div class="flex items-center gap-space-md">
+<input class="w-4 h-4 text-primary-container bg-surface-container-lowest focus:ring-0 accent-primary-container cursor-pointer" name="payment_mode" type="radio"/>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Cash on Handover (COD)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px] font-bold uppercase">Pincode Eligible</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">₹150 Hazmat Cash Handling Surcharge applies for doorstep pyrotechnics.</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- 5. Statutory Adult Verification & Regulations -->
+<div class="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-xl space-y-space-md">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md uppercase font-bold tracking-wider">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+<span>Statutory Declarations &amp; Legal Compliance</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Clause 1 -->
+<label class="flex items-start gap-space-sm cursor-pointer select-none">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary-container bg-surface-container-lowest accent-primary-container shrink-0" type="checkbox"/>
+<span class="font-body-md text-body-sm text-on-surface leading-snug">
+                I hereby declare and confirm that I am <strong>18 years of age or older</strong>. I agree to adhere strictly to local municipal fire department timings, Indian Explosives Act, 1884 protocols, and safe storage requirements outside children's reach.
+              </span>
+</label>
+<!-- Clause 2 -->
+<label class="flex items-start gap-space-sm cursor-pointer select-none">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary-container bg-surface-container-lowest accent-primary-container shrink-0" type="checkbox"/>
+<span class="font-body-md text-body-sm text-on-surface leading-snug">
+                I have read and consent to Red Thunder Crackers' <strong>Regulated Hazmat Transit Terms</strong>, Non-payment adjustmentable Explosives Clause once carrier departs depot, and Green Firework Usage Guidelines.
+              </span>
+</label>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: 35% width on desktop (lg:col-span-4) - Sticky Order Summary -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg lg:sticky lg:top-28">
+<!-- Master Order Summary Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-2xl relative overflow-hidden">
+<!-- Inner Warm Glow Background -->
+<div class="absolute top-0 right-0 w-36 h-36 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Header -->
+<div class="flex items-center justify-between mb-space-md pb-space-sm bg-surface-container-high/40 -mx-space-md -mt-space-md sm:-mx-space-lg sm:-mt-space-lg p-space-md">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase tracking-wide">Order Summary</h3>
+<p class="font-body-sm text-body-sm text-secondary font-semibold">Festive Consignment • 4 Items</p>
+</div>
+<a class="text-on-surface-variant hover:text-secondary font-label-sm text-label-sm uppercase tracking-wider font-bold transition-colors" data-path="cart" href="#">
+              Edit Cart
+            </a>
+</div>
+<!-- Mini Cart Review List (Collapsible / Compact) -->
+<div class="space-y-space-sm mb-space-md max-h-64 overflow-y-auto pr-1">
+<!-- Item 1 -->
+<div class="flex items-center justify-between gap-space-sm py-2 bg-surface-container rounded-lg p-2.5">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-12 rounded bg-surface-container-high shrink-0 overflow-hidden relative flex items-center justify-center text-primary-container">
+<img class="w-full h-full object-cover" data-alt="Packaging box of Red Thunder Crackers 50 Shot aerial firework cake with golden sparkle emissions on midnight obsidian background with high festive contrast" src="../assets/branding/LOGO.jpeg"/>
+</div>
+<div class="min-w-0">
+<p class="font-title-md text-body-sm text-on-surface font-semibold truncate leading-tight">Thunder King 50-Shot Aerial Cake</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Qty: 1 • Multi-Color Burst</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<p class="font-headline-md text-body-lg text-secondary font-bold">₹2,499</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-through">₹3,499</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between gap-space-sm py-2 bg-surface-container rounded-lg p-2.5">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-12 rounded bg-surface-container-high shrink-0 overflow-hidden relative flex items-center justify-center text-secondary">
+<img class="w-full h-full object-cover" data-alt="Luxury box of Sivakasi Royal 100 Shot Peacock Brocade fireworks with golden sparks and peacock metallic emblems in dark celebratory studio lighting" src="../assets/branding/LOGO.jpeg"/>
+</div>
+<div class="min-w-0">
+<p class="font-title-md text-body-sm text-on-surface font-semibold truncate leading-tight">Sivakasi Royal 100-Shot Peacock Brocade</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Qty: 1 • Sparkler Gold Effect</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<p class="font-headline-md text-body-lg text-secondary font-bold">₹4,899</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-through">₹6,500</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between gap-space-sm py-2 bg-surface-container rounded-lg p-2.5">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-12 rounded bg-surface-container-high shrink-0 overflow-hidden relative flex items-center justify-center text-primary">
+<img class="w-full h-full object-cover" data-alt="Pack of 50cm long electric sparklers emitting radiant golden warm titanium embers in dark diwali festival setup" src="../assets/branding/LOGO.jpeg"/>
+</div>
+<div class="min-w-0">
+<p class="font-title-md text-body-sm text-on-surface font-semibold truncate leading-tight">Electric Sparklers 50cm (Pack of 20)</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Qty: 2 • Low-Smoke Green Formula</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<p class="font-headline-md text-body-lg text-secondary font-bold">₹900</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant line-through">₹1,200</p>
+</div>
+</div>
+</div>
+<!-- Applied Coupon Pill -->
+<div class="bg-surface-container rounded-lg p-space-sm mb-space-md flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-6 h-6 rounded-full bg-secondary/20 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">sell</span>
+</span>
+<div class="truncate">
+<p class="font-label-md text-label-md text-secondary font-bold truncate">DIWALI20 (-20% OFF)</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Festive Dhamaka Offer Applied</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-md text-body-md text-secondary font-bold">-₹1,659.80</span>
+<a class="block font-label-sm text-[10px] text-error hover:underline uppercase" href="#">Remove</a>
+</div>
+</div>
+<!-- Financial Cost Calculation Breakdown -->
+<div class="space-y-2 font-body-md text-body-sm text-on-surface-variant py-space-sm">
+<div class="flex items-center justify-between">
+<span>Items Total (Catalog MRP)</span>
+<span class="text-on-surface">₹11,199.00</span>
+</div>
+<div class="flex items-center justify-between text-secondary">
+<span>Direct Sivakasi Factory Discount</span>
+<span>-₹2,901.00</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Cart Subtotal</span>
+<span class="text-on-surface">₹8,298.00</span>
+</div>
+<div class="flex items-center justify-between text-secondary">
+<span>Festive Coupon Savings (DIWALI20)</span>
+<span>-₹1,659.80</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1">
+                Regulated Hazmat Shock Transit
+                <span class="material-symbols-outlined text-[14px] text-secondary cursor-help" title="PESO compliant heavy wood-lined carrier">info</span>
+</span>
+<span class="text-on-surface">₹250.00</span>
+</div>
+<div class="flex items-center justify-between">
+<span>NEERI Green Pyrotechnic Cess</span>
+<span class="text-secondary font-semibold">FREE (₹0.00)</span>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant">
+<span>Applicable GST (18% Green Fireworks)</span>
+<span>Included in Price (₹1,012.60)</span>
+</div>
+</div>
+<!-- Total Payable High-Contrast Presentation Card -->
+<div class="mt-space-md p-space-md bg-gradient-to-br from-primary-container via-primary-container/90 to-surface-container-lowest rounded-xl shadow-xl shadow-primary-container/30 text-on-primary-container relative">
+<div class="flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Total Amount Due</span>
+<p class="font-body-sm text-[11px] text-on-primary-container/80">Inclusive of transit &amp; clearance insurance</p>
+</div>
+<div class="text-right">
+<span class="font-headline-xl text-headline-xl text-secondary font-bold tracking-tight drop-shadow-md">₹6,888.20</span>
+</div>
+</div>
+<!-- Savings Banner -->
+<div class="mt-space-sm pt-space-xs bg-surface-container-lowest/40 rounded p-1.5 text-center">
+<p class="font-label-md text-label-md text-secondary font-semibold">
+                🎉 You are saving ₹4,310.80 on this festive order!
+              </p>
+</div>
+</div>
+<!-- Primary Direct Checkout Action Button -->
+<div class="mt-space-lg space-y-space-sm">
+<button class="w-full py-4 px-space-lg rounded-xl bg-gradient-to-r from-primary-container via-primary-container to-tertiary-container hover:brightness-110 active:scale-[0.99] text-on-primary-container font-headline-md text-headline-md tracking-wider uppercase font-bold flex items-center justify-center gap-space-sm shadow-xl shadow-primary-container/50 transition-all cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+<span>PAY ₹6,888.20 &amp; CONFIRM DISPATCH</span>
+<span class="material-symbols-outlined text-[24px]">bolt</span>
+</button>
+<p class="text-center font-body-sm text-[11px] text-on-surface-variant flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+              Safe &amp; Encrypted 256-Bit Checkout • 100% Genuine Sivakasi Guarantee
+            </p>
+</div>
+</div>
+<!-- Trust Badges & Direct Helplines -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-lg space-y-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0">verified</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold leading-tight">100% Sivakasi Factory Direct &amp; PESO Authorized</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight">Zero counterfeit, strict dry storage assurance</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0">energy_savings_leaf</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold leading-tight">CSIR-NEERI Green Certified Low Emission</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight">30% reduced particulate matter emission formulation</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0">local_police</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Zero Misfire &amp; Insulated Transit Protection</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight">Full depot insurance coverage till threshold handover</p>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-high rounded-lg p-space-sm text-center">
+<p class="font-label-sm text-label-sm uppercase text-on-surface-variant">Urgent Order Assistance?</p>
+<p class="font-title-md text-title-md text-secondary font-bold mt-0.5">Call Sivakasi Specialist: +91 73587 37658</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest text-on-surface-variant"><div class="bg-surface-container-low/70 py-4"><div class="max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter grid grid-cols-1 md:grid-cols-3 gap-space-md text-center md:text-left"><div class="flex items-center justify-center md:justify-start gap-3"><span class="material-symbols-outlined text-secondary text-[24px]">shield</span><div><p class="font-label-md text-label-md text-on-surface uppercase">PESO Certified Explosives License</p><p class="font-body-sm text-[11px] text-on-surface-variant">No: PESO/TN/SV/2021/EXP-88914 (TN-GOVT Approved)</p></div></div><div class="flex items-center justify-center md:justify-start gap-3"><span class="material-symbols-outlined text-secondary text-[24px]">eco</span><div><p class="font-label-md text-label-md text-on-surface uppercase">NEERI Green Fireworks</p><p class="font-body-sm text-[11px] text-on-surface-variant">Verified Low Emission &amp; Safe Barium Formulation</p></div></div><div class="flex items-center justify-center md:justify-start gap-3"><span class="material-symbols-outlined text-secondary text-[24px]">local_shipping</span><div><p class="font-label-md text-label-md text-on-surface uppercase">Insulated Hazmat Transit</p><p class="font-body-sm text-[11px] text-on-surface-variant">Climate-controlled shock-buffered explosive containers</p></div></div></div></div><div class="max-w-[1360px] mx-auto px-gutter-mobile lg:px-gutter py-8"><div class="flex flex-col lg:flex-row items-center justify-between gap-space-lg mb-6 pb-6"><div class="flex flex-col items-center lg:items-start"><span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary mb-2">Supported Instant Secure Gateways</span><div class="flex flex-wrap items-center justify-center gap-space-sm"><span class="px-2.5 py-1 bg-surface-container-high rounded text-on-surface text-label-sm font-label-sm font-semibold tracking-wide">UPI (GPay / PhonePe / Paytm)</span><span class="px-2.5 py-1 bg-surface-container-high rounded text-on-surface text-label-sm font-label-sm font-semibold tracking-wide">RuPay</span><span class="px-2.5 py-1 bg-surface-container-high rounded text-on-surface text-label-sm font-label-sm font-semibold tracking-wide">Visa</span><span class="px-2.5 py-1 bg-surface-container-high rounded text-on-surface text-label-sm font-label-sm font-semibold tracking-wide">Mastercard</span><span class="px-2.5 py-1 bg-surface-container-high rounded text-on-surface text-label-sm font-label-sm font-semibold tracking-wide">NetBanking (HDFC / ICICI / SBI)</span></div></div><div class="flex flex-wrap items-center justify-center gap-space-md text-label-md font-label-md"><a class="text-on-surface-variant hover:text-secondary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="text-on-surface-variant hover:text-secondary transition-colors" data-path="shipping-terms" href="#">Hazardous Transport Terms</a><a class="text-on-surface-variant hover:text-secondary transition-colors" data-path="cancellation-policy" href="#">Cancellation Policy</a><a class="text-on-surface-variant hover:text-secondary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></div></div><div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-center text-on-surface-variant font-body-sm text-[12px]"><p>© 2026 Red Thunder Crackers. Sivakasi, Tamil Nadu, India. All pyrotechnics strictly 18+ compliant.</p><p class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-secondary">lock</span> 100% Encrypted &amp; Hazmat Compliant Checkout Session</p></div></div></footer><script src="../runtime/rtc-runtime.js"></script></body></html>

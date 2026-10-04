@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-surface": "#2e3135", "primary-fixed-dim": "#ffb4a9", "error": "#ba1a1a", "on-tertiary-fixed": "#2f1500", "on-secondary-fixed-variant": "#594400", "on-surface-variant": "#5e3f3b", "secondary-fixed": "#ffdf95", "surface-container-high": "#e6e8ee", "secondary-fixed-dim": "#f4bf1b", "on-primary-fixed": "#410001", "surface-dim": "#d8dadf", "on-primary-fixed-variant": "#930003", "inverse-on-surface": "#eff0f6", "surface-tint": "#c00006", "on-primary-container": "#fff9f8", "primary-container": "#e31b16", "on-background": "#191c20", "surface-bright": "#f8f9ff", "surface-container-low": "#f2f3f9", "primary-fixed": "#ffdad5", "on-error-container": "#93000a", "on-secondary-fixed": "#251a00", "background": "#f8f9ff", "surface-variant": "#e1e2e8", "outline": "#926e69", "tertiary": "#8c4900", "on-primary": "#ffffff", "on-tertiary-container": "#fff9f8", "on-secondary": "#ffffff", "inverse-primary": "#ffb4a9", "surface": "#f8f9ff", "outline-variant": "#e8bdb6", "tertiary-fixed-dim": "#ffb77f", "tertiary-container": "#b05e00", "secondary-container": "#fdc826", "on-tertiary": "#ffffff", "surface-container": "#eceef3", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#ffdcc4", "secondary": "#765a00", "on-secondary-container": "#6e5400", "on-error": "#ffffff", "error-container": "#ffdad6", "on-surface": "#191c20", "on-tertiary-fixed-variant": "#6f3900", "primary": "#b90006", "surface-container-highest": "#e1e2e8" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-mobile": "0.75rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "space-xl": "2.5rem", "margin": "2rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter": "1.25rem" }, "fontFamily": { "display-hero": ["Oswald"], "label-md": ["Inter"], "label-lg": ["Inter"], "body-sm": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Oswald"], "headline-lg": ["Oswald"], "body-lg": ["Inter"], "headline-md": ["Oswald"], "label-caps": ["Oswald"], "display-hero-mobile": ["Oswald"], "headline-xl": ["Oswald"], "headline-xl-mobile": ["Oswald"] }, "fontSize": { "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "0.02em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "label-caps": ["13px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "0.02em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "0.01em", "fontWeight": "700" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "700" }] } } } };</script><link href="../runtime/theme.css" rel="stylesheet"/></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[260px] bg-inverse-surface text-inverse-on-surface z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.12)]"><div class="h-16 px-space-md flex items-center justify-between bg-inverse-surface border-b border-inverse-on-surface/10"><div class="flex items-center gap-space-xs"><img alt="LOGO.jpeg" class="h-8 w-auto object-contain" src="../assets/branding/LOGO.jpeg"/><span class="font-headline-sm text-headline-sm tracking-wide uppercase text-surface font-bold">RTCrackers</span></div><span class="px-space-xs py-0.5 rounded bg-primary text-on-primary font-label-md text-[10px] uppercase font-bold tracking-wider">Admin</span></div><nav class="flex-1 overflow-y-auto px-space-xs py-space-sm space-y-space-sm" data-active-classes="bg-primary text-on-primary font-bold shadow-[0_4px_16px_rgba(227,27,22,0.25)]"><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Dashboard</div><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="dashboard" href="#">Dashboard</a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Catalog</div><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="products" href="#">Products</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="categories" href="#">Categories</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="brands" href="#">Brands</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="inventory" href="#">Inventory</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="product-reviews" href="#">Product Reviews</a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Orders</div><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="all-orders" href="#">All Orders</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="pending-orders" href="#">Pending Orders</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="processing-orders" href="#">Processing</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="shipped-orders" href="#">Shipped</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="delivered-orders" href="#">Delivered</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="cancelled-orders" href="#">Cancelled</a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Customers</div><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="customers" href="#">Customers</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="customer-segments" href="#">Customer Segments</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="customer-activity" href="#">Customer Activity</a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Marketing</div><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="coupons" href="#">Coupons</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="offers" href="#">Offers</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="campaigns" href="#">Campaigns</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="loyalty" href="#">Loyalty</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="referrals" href="#">Referrals</a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Finance</div><a class="block px-space-sm py-1.5 rounded bg-primary text-on-primary font-bold shadow-[0_4px_16px_rgba(227,27,22,0.25)] font-label-md text-label-md" data-path="payments" href="#">Payments</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="transactions" href="#">Transactions</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="invoices" href="#">Invoices</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="taxes" href="#">Taxes</a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Support</div><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="support-tickets" href="#">Support Tickets</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="contact-requests" href="#">Contact Requests</a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">Analytics</div><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="sales-analytics" href="#">Sales Analytics</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="product-analytics" href="#">Product Analytics</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="customer-analytics" href="#">Customer Analytics</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="reports" href="#">Reports</a></div><div class="space-y-0.5"><div class="px-space-sm py-1 font-label-caps text-label-caps uppercase text-inverse-on-surface/50 font-bold">System</div><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="notifications" href="#">Notifications</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="settings" href="#">Settings</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="admin-users" href="#">Admin Users</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="roles-permissions" href="#">Roles &amp; Permissions</a><a class="block px-space-sm py-1.5 rounded text-inverse-on-surface/80 hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="audit-logs" href="#">Audit Logs</a></div></nav><div class="p-space-sm border-t border-inverse-on-surface/10 bg-inverse-surface space-y-space-xs"><button class="w-full flex items-center justify-between px-space-sm py-1.5 rounded text-inverse-on-surface/70 hover:bg-surface-container-high hover:text-on-surface text-label-md font-label-md transition-colors" type="button"><span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px]">keyboard_double_arrow_left</span><span>Collapse Menu</span></span><span class="font-label-caps text-[10px] text-inverse-on-surface/40">⌥B</span></button><div class="flex items-center justify-between px-space-sm py-1 bg-inverse-on-surface/5 rounded"><div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-label-md text-[11px] text-inverse-on-surface/90">Production Engine</span></div><span class="font-label-caps text-[10px] uppercase tracking-wider text-emerald-400 font-bold">99.98%</span></div></div></aside><div class="pl-[260px] min-h-screen flex flex-col"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 border-b border-surface-container-high shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-full w-full px-space-md flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-[280px]"><button class="h-9 w-9 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button><div class="flex items-center gap-1.5 font-label-lg text-label-lg text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="finance-accounts" href="#">Finance &amp; Accounts</a><span class="text-on-surface-variant/40">/</span><span class="text-on-surface font-semibold">Payments &amp; Transaction Ledger</span></div></div><div class="flex-1 max-w-xl"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-[18px] text-on-surface-variant">search</span><input class="w-full pl-9 pr-14 py-1.5 bg-surface-container-low rounded border border-surface-container-highest text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="Search transactions, order IDs, UTR, customer, payment methods..." type="text"/><kbd class="absolute right-3 px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-md text-[10px] font-bold">⌘K</kbd></div></div><div class="flex items-center gap-space-xs"><div class="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-label-md text-label-md border border-surface-container-highest"><span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span><span>Gateway Webhook: Active (12ms)</span></div><button class="relative h-9 w-9 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span></button><div class="flex items-center gap-2 pl-2 border-l border-surface-container-highest"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md font-bold text-on-surface leading-tight">Super Admin — R. Kumar</span><span class="font-body-sm text-[11px] text-on-surface-variant leading-none">L3 Finance Lead</span></div><button class="text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">expand_more</span></button></div></div></div></header><main class="relative flex-1 w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- TOP CONTEXT & ACTION BAR -->
+<div class="px-space-md py-space-md bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-lg text-headline-lg uppercase text-on-surface font-bold tracking-tight">Payments &amp; Transaction Management</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-800 font-label-md text-label-md font-semibold">
+<span class="h-2 w-2 rounded-full bg-emerald-600 animate-pulse"></span>
+            Gateway Webhooks: 99.98% Operational (Razorpay, PayU, Cashfree, UPI Switch)
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+          Monitor multi-gateway payment flows, reconcile provider settlements, triage gateway failures, and audit COD collections across omnichannel touchpoints.
+        </p>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Ledger</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span>Run Reconciliation</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded bg-primary text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider font-bold shadow-md hover:bg-primary-container transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+<span>Investigate Exceptions (8)</span>
+</button>
+<div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-surface-container-high text-on-surface-variant font-label-md text-[11px]">
+<span class="material-symbols-outlined text-[16px] text-primary animate-spin">refresh</span>
+<span>Refreshed 9s ago</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-space-md space-y-space-md">
+<!-- 6-CARD METRIC STRIP -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3">
+<!-- Total Transactions -->
+<div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase font-bold text-on-surface-variant">Total Transactions</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">receipt_long</span>
+</div>
+<div class="my-2">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface leading-tight">14,892</div>
+<span class="inline-flex items-center gap-1 font-label-md text-[11px] text-emerald-700 font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12.4% vs 30d
+          </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">₹3,48,92,400 GMV processed</div>
+</div>
+<!-- Successful Payments -->
+<div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase font-bold text-on-surface-variant">Successful Capture</span>
+<span class="material-symbols-outlined text-[18px] text-emerald-600">verified</span>
+</div>
+<div class="my-2">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface leading-tight">14,118</div>
+<span class="inline-flex items-center gap-1 font-label-md text-[11px] text-emerald-700 font-semibold">
+            94.8% Success Rate (Target &gt; 94%)
+          </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">₹3,32,14,050 captured</div>
+</div>
+<!-- Pending Confirmations -->
+<div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase font-bold text-on-surface-variant">Pending Webhooks</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">pending</span>
+</div>
+<div class="my-2">
+<div class="font-headline-lg text-headline-lg font-bold text-secondary leading-tight">42</div>
+<span class="inline-flex items-center gap-1 font-label-md text-[11px] text-error font-semibold">
+            6 txn &gt; 15m threshold
+          </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">₹1,84,200 in transit queue</div>
+</div>
+<!-- Failed Transactions -->
+<div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase font-bold text-on-surface-variant">Failed / Dropped</span>
+<span class="material-symbols-outlined text-[18px] text-error">cancel</span>
+</div>
+<div class="my-2">
+<div class="font-headline-lg text-headline-lg font-bold text-error leading-tight">614</div>
+<span class="inline-flex items-center gap-1 font-label-md text-[11px] text-on-surface-variant font-semibold">
+            4.1% rate • 28 retry SMS
+          </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">₹13,44,150 uncaptured</div>
+</div>
+<!-- COD In Transit -->
+<div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase font-bold text-on-surface-variant">COD Outstanding</span>
+<span class="material-symbols-outlined text-[18px] text-on-secondary-variant">local_shipping</span>
+</div>
+<div class="my-2">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface leading-tight">₹8,49,200</div>
+<span class="inline-flex items-center gap-1 font-label-md text-[11px] text-emerald-700 font-semibold">
+            14 remitted today
+          </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">118 consignments in field</div>
+</div>
+<!-- Reconciliation Mismatches -->
+<div class="p-space-sm rounded bg-error-container/40 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-error-container">
+<span class="font-label-caps text-label-caps uppercase font-bold text-on-error-container">Recon Mismatches</span>
+<span class="material-symbols-outlined text-[18px] text-error animate-bounce">priority_high</span>
+</div>
+<div class="my-2">
+<div class="font-headline-lg text-headline-lg font-bold text-error leading-tight">8 Urgent</div>
+<span class="inline-flex items-center gap-1 font-label-md text-[11px] text-on-error-container font-bold">
+            -₹34,890 variance
+          </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-error-container truncate">Gateway fee/split review</div>
+</div>
+</div>
+<!-- CRITICAL ATTENTION BANNER -->
+<div class="rounded bg-surface-container-lowest shadow-sm p-space-md space-y-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-2">
+<span class="h-6 w-6 rounded bg-primary text-on-primary flex items-center justify-center font-bold text-sm">!</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface uppercase font-bold">Critical Settlement &amp; Payment Exceptions Requiring Intervention</h2>
+<span class="px-2 py-0.5 rounded bg-error/10 text-error font-label-md text-[11px] font-bold">SLA: Immediate Action</span>
+</div>
+<span class="font-label-md text-body-sm text-on-surface-variant">Automated webhook hold applied to 3 suspicious variances</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<!-- Exception Card 1 -->
+<div class="p-space-sm rounded bg-surface-container-low shadow-sm flex flex-col justify-between space-y-3">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary font-bold">#TXN-8849102</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-label-md text-[10px] font-bold">DISCREPANCY</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Order #RTC-1024587 • Razorpay UPI</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium leading-snug">
+              Captured amount mismatch: Internal ledger reads ₹7,574 vs Gateway confirmed ₹7,074 (-₹500 coupon drop during callback).
+            </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<button class="px-2.5 py-1 rounded bg-primary text-on-primary font-label-md text-label-md font-bold uppercase tracking-wider hover:bg-primary-container transition-colors" type="button">
+              Force Re-Poll Webhook
+            </button>
+<span class="font-label-md text-[11px] text-on-surface-variant">22m ago</span>
+</div>
+</div>
+<!-- Exception Card 2 -->
+<div class="p-space-sm rounded bg-surface-container-low shadow-sm flex flex-col justify-between space-y-3">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary font-bold">#TXN-8848941</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-label-md text-[10px] font-bold">DOUBLE DEBIT</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Order #RTC-1024512 • HDFC NetBanking</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium leading-snug">
+              Customer debited ₹4,850 twice during 3DS session switch timeout. Primary order fulfilled; secondary capture floating.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<button class="px-2.5 py-1 rounded bg-surface-container-highest hover:bg-surface-dim text-on-surface font-label-md text-label-md font-bold uppercase tracking-wider transition-colors" type="button">
+              Initiate Auto-Reversal
+            </button>
+<span class="font-label-md text-[11px] text-on-surface-variant">41m ago</span>
+</div>
+</div>
+<!-- Exception Card 3 -->
+<div class="p-space-sm rounded bg-surface-container-low shadow-sm flex flex-col justify-between space-y-3">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary font-bold">#TXN-8848820</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-md text-[10px] font-bold">COD ESCALATION</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Order #RTC-1024390 • Delhivery Surface</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium leading-snug">
+              Consignment marked 'Delivered' at courier hub without electronic OTP cash collection handshake (₹9,450 at risk).
+            </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<button class="px-2.5 py-1 rounded bg-secondary text-on-secondary font-label-md text-label-md font-bold uppercase tracking-wider hover:opacity-90 transition-opacity" type="button">
+              Flag Courier Hub
+            </button>
+<span class="font-label-md text-[11px] text-on-surface-variant">1h 14m ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- MAIN INTERACTIVE SECTION: PIPELINE + DATA TABLE + RIGHT INSPECTION DRAWER -->
+<div class="flex flex-col 2xl:flex-row gap-space-md items-start">
+<!-- LEFT / CENTER: LEDGER DATA -->
+<div class="flex-1 w-full space-y-space-sm">
+<!-- PIPELINE STATUS TABS -->
+<div class="bg-surface-container-lowest p-1.5 rounded shadow-sm flex items-center gap-1 overflow-x-auto">
+<button class="px-3 py-1.5 rounded bg-primary text-on-primary font-label-md text-label-md font-bold uppercase tracking-wider whitespace-nowrap shadow-sm" type="button">
+            All Transactions (14,892)
+          </button>
+<button class="px-3 py-1.5 rounded hover:bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+            Captured &amp; Settled (13,904)
+          </button>
+<button class="px-3 py-1.5 rounded hover:bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+            Authorized (214)
+          </button>
+<button class="px-3 py-1.5 rounded hover:bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+            Pending Webhook (42)
+          </button>
+<button class="px-3 py-1.5 rounded hover:bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+            Failed / Dropped (614)
+          </button>
+<button class="px-3 py-1.5 rounded hover:bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+            Refunded (118)
+          </button>
+<button class="px-3 py-1.5 rounded hover:bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+            COD In-Transit (118)
+          </button>
+</div>
+<!-- SEARCH & ADVANCED FILTERS -->
+<div class="bg-surface-container-lowest p-space-sm rounded shadow-sm space-y-space-xs">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-2">
+<div class="md:col-span-4 relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-[18px] text-on-surface-variant">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 bg-surface-container-low rounded text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest transition-colors" placeholder="TXN-..., Order #RTC-..., Gateway Ref, Customer, VPA..." type="text"/>
+</div>
+<div class="md:col-span-2">
+<select class="w-full px-2.5 py-1.5 bg-surface-container-low rounded text-label-md font-label-md text-on-surface focus:outline-none focus:bg-surface-container-lowest cursor-pointer">
+<option>All Gateways (Razorpay, Cashfree, PayU, PhonePe)</option>
+<option>Razorpay Direct</option>
+<option>Cashfree Gateway</option>
+<option>PayU Enterprise</option>
+<option>PhonePe UPI Switch</option>
+<option>Delhivery Express COD</option>
+</select>
+</div>
+<div class="md:col-span-2">
+<select class="w-full px-2.5 py-1.5 bg-surface-container-low rounded text-label-md font-label-md text-on-surface focus:outline-none focus:bg-surface-container-lowest cursor-pointer">
+<option>All Payment Methods</option>
+<option>UPI (GPay, PhonePe, Paytm)</option>
+<option>Credit / Debit Cards (Visa, MC, RuPay)</option>
+<option>NetBanking (All Major Banks)</option>
+<option>Wallets / PayLater</option>
+<option>Cash on Delivery (COD)</option>
+</select>
+</div>
+<div class="md:col-span-2">
+<select class="w-full px-2.5 py-1.5 bg-surface-container-low rounded text-label-md font-label-md text-on-surface focus:outline-none focus:bg-surface-container-lowest cursor-pointer">
+<option>Reconciliation: All</option>
+<option>Matched &amp; Settled</option>
+<option>Fee Variance (Review)</option>
+<option>Unsettled Batch</option>
+<option>Manual Override Needed</option>
+</select>
+</div>
+<div class="md:col-span-2 flex items-center gap-1.5">
+<button class="w-full px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>Oct 1 - Oct 25</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-1 flex-wrap">
+<span class="font-label-caps text-[11px] uppercase text-on-surface-variant font-bold">Active Filters:</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-md text-[11px]">
+              Status: All
+              <span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-primary">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-md text-[11px]">
+              Timeframe: Last 30 Days
+              <span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-primary">close</span>
+</span>
+<button class="font-label-md text-[11px] text-primary hover:underline font-bold ml-1" type="button">
+              Reset Filters
+            </button>
+</div>
+</div>
+<!-- TRANSACTIONS DATA TABLE -->
+<div class="bg-surface-container-lowest rounded shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase">
+<th class="py-2.5 px-3 w-8">
+<input class="h-3.5 w-3.5 rounded text-primary focus:ring-primary" type="checkbox"/>
+</th>
+<th class="py-2.5 px-3">Transaction &amp; Date</th>
+<th class="py-2.5 px-3">Order &amp; Customer</th>
+<th class="py-2.5 px-3">Gateway &amp; Method</th>
+<th class="py-2.5 px-3 text-right">Gross / Net MDR</th>
+<th class="py-2.5 px-3">Status</th>
+<th class="py-2.5 px-3">Reconciliation</th>
+<th class="py-2.5 px-3 text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low text-body-sm font-body-sm">
+<!-- ROW 1 (SELECTED ROW) -->
+<tr class="bg-primary/5 hover:bg-primary/10 transition-colors">
+<td class="py-3 px-3">
+<input checked="" class="h-3.5 w-3.5 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-[15px] font-bold text-primary flex items-center gap-1">
+<span>#TXN-8849215</span>
+<span class="material-symbols-outlined text-[14px] text-emerald-600" title="Webhook Verified">verified_user</span>
+</div>
+<div class="text-[11px] text-on-surface-variant font-label-md">Oct 25, 2026 • 11:42 AM</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-label-lg text-label-lg font-bold text-on-surface">#RTC-1024598</div>
+<div class="text-on-surface-variant font-body-sm">Vikramaditya S. <span class="text-[10px] px-1 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed font-bold">VIP CLUB</span></div>
+</td>
+<td class="py-3 px-3">
+<div class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                      UPI (Google Pay)
+                    </div>
+<div class="text-[11px] text-on-surface-variant font-mono">Razorpay • pay_P92kLq81</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">₹14,200.00</div>
+<div class="text-[11px] text-emerald-700 font-label-md font-semibold">MDR: ₹0.00 (Net ₹14,200)</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-label-md text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                      CAPTURED
+                    </span>
+<div class="text-[10px] text-on-surface-variant font-mono mt-0.5">200 SUCCESS (420ms)</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-md text-[11px] font-semibold">
+                      SETTLED (Batch #091)
+                    </span>
+</td>
+<td class="py-3 px-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high text-primary" title="Active in Drawer" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant" title="Copy Gateway Reference" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant" title="Print Invoice / Voucher" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3">
+<input class="h-3.5 w-3.5 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-[15px] font-bold text-on-surface">#TXN-8849102</div>
+<div class="text-[11px] text-on-surface-variant font-label-md">Oct 25, 2026 • 11:15 AM</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-label-lg text-label-lg font-bold text-on-surface">#RTC-1024587</div>
+<div class="text-on-surface-variant font-body-sm">Raghav K.</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                      Credit Card (Axis Visa)
+                    </div>
+<div class="text-[11px] text-on-surface-variant font-mono">Cashfree • cf_88192a01</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">₹7,574.00</div>
+<div class="text-[11px] text-on-surface-variant font-label-md">MDR: ₹136.33 (Net ₹7,437.67)</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-label-md text-[11px] font-bold">
+                      CAPTURED
+                    </span>
+<div class="text-[10px] text-on-surface-variant font-mono mt-0.5">3DS Verified</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-md text-[11px] font-bold">
+                      MISMATCH (-₹500)
+                    </span>
+</td>
+<td class="py-3 px-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="px-2 py-1 rounded bg-primary text-on-primary font-label-md text-[10px] font-bold uppercase" type="button">
+                        Reconcile
+                      </button>
+</div>
+</td>
+</tr>
+<!-- ROW 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3">
+<input class="h-3.5 w-3.5 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-[15px] font-bold text-on-surface">#TXN-8849044</div>
+<div class="text-[11px] text-on-surface-variant font-label-md">Oct 25, 2026 • 10:58 AM</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-label-lg text-label-lg font-bold text-on-surface">#RTC-1024564</div>
+<div class="text-on-surface-variant font-body-sm">Mohammed Farooq</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+                      NetBanking (SBI)
+                    </div>
+<div class="text-[11px] text-on-surface-variant font-mono">PayU • payu_992147</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="font-headline-sm text-headline-sm font-bold text-error">₹4,850.00</div>
+<div class="text-[11px] text-error font-label-md">Uncaptured</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-md text-[11px] font-bold">
+                      TIMEOUT / DROPPED
+                    </span>
+<div class="text-[10px] text-error font-mono mt-0.5">504 Gateway Timeout</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-md text-[11px]">
+                      SMS Retried
+                    </span>
+</td>
+<td class="py-3 px-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Send Payment Link Again" type="button">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Inspect Gateway Payload" type="button">
+<span class="material-symbols-outlined text-[18px]">data_object</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3">
+<input class="h-3.5 w-3.5 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-[15px] font-bold text-on-surface">#TXN-8848991</div>
+<div class="text-[11px] text-on-surface-variant font-label-md">Oct 25, 2026 • 10:30 AM</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-label-lg text-label-lg font-bold text-on-surface">#RTC-1024540</div>
+<div class="text-on-surface-variant font-body-sm">Ananya Sharma</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                      Cash On Delivery (COD)
+                    </div>
+<div class="text-[11px] text-on-surface-variant font-mono">Delhivery Surface COD</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">₹3,499.00</div>
+<div class="text-[11px] text-on-surface-variant font-label-md">COD Handling: ₹99</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-md text-[11px] font-bold">
+                      IN-TRANSIT
+                    </span>
+<div class="text-[10px] text-on-surface-variant font-mono mt-0.5">AWB: 98124019284</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-md text-[11px]">
+                      Awaiting OTP Handshake
+                    </span>
+</td>
+<td class="py-3 px-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Track Logistics" type="button">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3">
+<input class="h-3.5 w-3.5 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-[15px] font-bold text-on-surface">#TXN-8848910</div>
+<div class="text-[11px] text-on-surface-variant font-label-md">Oct 25, 2026 • 09:48 AM</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-label-lg text-label-lg font-bold text-on-surface">#RTC-1024510</div>
+<div class="text-on-surface-variant font-body-sm">Deepak Patel</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                      UPI (PhonePe Direct)
+                    </div>
+<div class="text-[11px] text-on-surface-variant font-mono">Razorpay • pay_P91vVx22</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">₹11,400.00</div>
+<div class="text-[11px] text-on-surface-variant font-label-md">Reversed to Source</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-md text-[11px] font-bold">
+                      REFUNDED / VOID
+                    </span>
+<div class="text-[10px] text-on-surface-variant font-mono mt-0.5">RRN: 42981019028</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-label-md text-[11px] font-semibold">
+                      REVERSED (Batch #B899)
+                    </span>
+</td>
+<td class="py-3 px-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="View Refund Trail" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 6 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3">
+<input class="h-3.5 w-3.5 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="font-headline-sm text-[15px] font-bold text-on-surface">#TXN-8848805</div>
+<div class="text-[11px] text-on-surface-variant font-label-md">Oct 25, 2026 • 09:12 AM</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-label-lg text-label-lg font-bold text-on-surface">#RTC-1024495</div>
+<div class="text-on-surface-variant font-body-sm">Priya Sundaram</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                      Debit Card (HDFC Mastercard)
+                    </div>
+<div class="text-[11px] text-on-surface-variant font-mono">Cashfree • cf_881904bb</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">₹2,190.00</div>
+<div class="text-[11px] text-on-surface-variant font-label-md">MDR: ₹39.42 (Net ₹2,150.58)</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-label-md text-[11px] font-bold">
+                      CAPTURED
+                    </span>
+<div class="text-[10px] text-on-surface-variant font-mono mt-0.5">3DS Auth OK (280ms)</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-md text-[11px] font-semibold">
+                      MATCHED (Batch #B901)
+                    </span>
+</td>
+<td class="py-3 px-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="View Payload" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- TABLE PAGINATION FOOTER -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-2 text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span>Showing 1 to 6 of 14,892 records</span>
+<span class="text-on-surface-variant/40">|</span>
+<select class="px-2 py-1 bg-surface-container-lowest rounded text-on-surface text-[12px] focus:outline-none">
+<option>25 per page</option>
+<option>50 per page</option>
+<option>100 per page</option>
+</select>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-container-lowest hover:bg-surface-container text-on-surface font-semibold disabled:opacity-50" type="button">Previous</button>
+<button class="px-2.5 py-1 rounded bg-primary text-on-primary font-bold" type="button">1</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest hover:bg-surface-container text-on-surface font-semibold" type="button">2</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest hover:bg-surface-container text-on-surface font-semibold" type="button">3</button>
+<span class="px-1 text-on-surface-variant">...</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest hover:bg-surface-container text-on-surface font-semibold" type="button">596</button>
+<button class="px-2 py-1 rounded bg-surface-container-lowest hover:bg-surface-container text-on-surface font-semibold" type="button">Next</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT SIDE: INTERACTIVE TRANSACTION INSPECTION DRAWER -->
+<div class="w-full 2xl:w-[420px] bg-surface-container-lowest rounded shadow-lg p-space-md space-y-space-md">
+<!-- DRAWER HEADER -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-label-md text-[10px] font-bold uppercase tracking-wider">
+              CAPTURED &amp; SETTLED
+            </span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Popout View" type="button">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Close Panel" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface">Dossier: #TXN-8849215</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5">
+<span>Linked to</span>
+<a class="font-bold text-primary hover:underline" href="#">Order #RTC-1024598</a>
+<span>(18 mins ago)</span>
+</div>
+</div>
+<!-- FINANCIAL RECONCILIATION SUMMARY -->
+<div class="p-space-sm rounded bg-surface-container-low space-y-space-xs">
+<div class="font-label-caps text-label-caps uppercase font-bold text-on-surface-variant">Ledger Settlement Breakdown</div>
+<div class="space-y-1 font-body-sm text-body-sm">
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Gross Transaction Value</span>
+<span class="font-bold text-on-surface">₹14,200.00</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">GST on Goods (18% Included)</span>
+<span class="text-on-surface">₹2,166.10</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Gateway MDR Fee (UPI 0.00%)</span>
+<span class="text-emerald-700 font-semibold">- ₹0.00</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Net RTC Settlement</span>
+<span class="font-bold text-emerald-800">₹14,200.00</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-md text-[11px] text-on-surface-variant uppercase font-bold">Settlement ID</span>
+<span class="font-mono text-[11px] text-on-surface font-semibold">UT-RZP-20261025-091</span>
+</div>
+</div>
+</div>
+<!-- TECHNICAL GATEWAY METADATA -->
+<div class="space-y-2">
+<div class="font-label-caps text-label-caps uppercase font-bold text-on-surface-variant">Gateway Telemetry &amp; Auth</div>
+<div class="grid grid-cols-2 gap-2 text-body-sm">
+<div class="p-2 rounded bg-surface-container-low">
+<div class="font-label-md text-[10px] uppercase text-on-surface-variant font-bold">Provider / Gateway</div>
+<div class="font-label-md font-bold text-on-surface">Razorpay Direct v2</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low">
+<div class="font-label-md text-[10px] uppercase text-on-surface-variant font-bold">Latency Response</div>
+<div class="font-label-md font-bold text-emerald-700">420ms (Optimal)</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low">
+<div class="font-label-md text-[10px] uppercase text-on-surface-variant font-bold">VPA / Handle</div>
+<div class="font-mono text-[11px] font-bold text-on-surface truncate">vikram.singh@okaxis</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low">
+<div class="font-label-md text-[10px] uppercase text-on-surface-variant font-bold">Bank RRN Code</div>
+<div class="font-mono text-[11px] font-bold text-on-surface">429810294812</div>
+</div>
+</div>
+</div>
+<!-- TIMELINE OF EVENTS -->
+<div class="space-y-2">
+<div class="font-label-caps text-label-caps uppercase font-bold text-on-surface-variant">Handshake &amp; Capture Timeline</div>
+<div class="relative pl-5 space-y-3">
+<div class="relative">
+<div class="h-2 w-2 rounded-full bg-on-surface-variant absolute -left-4 top-1"></div>
+<div class="font-label-md text-[11px] text-on-surface-variant font-mono">11:42:01 AM</div>
+<div class="font-body-sm text-body-sm text-on-surface">Checkout session initiated with Razorpay Order <code>order_P92kJa81</code></div>
+</div>
+<div class="relative">
+<div class="h-2 w-2 rounded-full bg-on-surface-variant absolute -left-4 top-1"></div>
+<div class="font-label-md text-[11px] text-on-surface-variant font-mono">11:42:18 AM</div>
+<div class="font-body-sm text-body-sm text-on-surface">UPI Intent invoked on Google Pay Client App (RRN: 429810294812)</div>
+</div>
+<div class="relative">
+<div class="h-2 w-2 rounded-full bg-emerald-600 absolute -left-4 top-1"></div>
+<div class="font-label-md text-[11px] text-on-surface-variant font-mono">11:42:24 AM</div>
+<div class="font-body-sm text-body-sm text-on-surface">Bank authorization verified (Issuer Auth Code: 894102)</div>
+</div>
+<div class="relative">
+<div class="h-2 w-2 rounded-full bg-primary absolute -left-4 top-1"></div>
+<div class="font-label-md text-[11px] text-on-surface-variant font-mono">11:42:25 AM</div>
+<div class="font-body-sm text-body-sm text-on-surface font-semibold">Webhook <code>payment.captured</code> cryptographically validated via secret key</div>
+</div>
+<div class="relative">
+<div class="h-2 w-2 rounded-full bg-emerald-600 absolute -left-4 top-1"></div>
+<div class="font-label-md text-[11px] text-on-surface-variant font-mono">11:42:25 AM</div>
+<div class="font-body-sm text-body-sm text-on-surface">Order #RTC-1024598 transitioned to 'PAID' &amp; routed to Fulfillment Desk</div>
+</div>
+</div>
+</div>
+<!-- ACTIONS -->
+<div class="pt-2 space-y-2">
+<button class="w-full py-2 px-3 rounded bg-primary text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider font-bold shadow-md hover:bg-primary-container transition-all flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">receipt</span>
+<span>Download Gateway Receipt</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-1.5 px-2 rounded bg-surface-container-high hover:bg-surface-dim text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">replay</span>
+<span>Issue Refund</span>
+</button>
+<button class="py-1.5 px-2 rounded bg-surface-container-high hover:bg-surface-dim text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span>Webhook JSON</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- BOTTOM TELEMETRY SECTION: GATEWAY PERFORMANCE & COMPLIANCE -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-space-md">
+<!-- GATEWAY PERFORMANCE TELEMETRY GRID -->
+<div class="xl:col-span-2 bg-surface-container-lowest p-space-md rounded shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold uppercase text-on-surface">Gateway Reliability &amp; Routing Health</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time gateway success rates, latency distributions, and volume allocation</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-label-md text-[11px] font-bold">
+            Dynamic Smart Routing: ON
+          </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<!-- Gateway 1: Razorpay -->
+<div class="p-space-sm rounded bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-emerald-600"></span>
+<span class="font-headline-sm text-[15px] font-bold text-on-surface">Razorpay Enterprise</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-800 font-label-md text-[10px] font-bold">OPTIMAL</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Success Rate:</span>
+<span class="font-bold text-emerald-700">96.8%</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Mean Latency:</span>
+<span class="font-mono text-on-surface font-semibold">380ms</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">30-Day GMV:</span>
+<span class="font-bold text-on-surface">₹2.18 Cr (62.5%)</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-emerald-600 rounded-full" style="width: 96.8%"></div>
+</div>
+</div>
+<!-- Gateway 2: Cashfree -->
+<div class="p-space-sm rounded bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-emerald-600"></span>
+<span class="font-headline-sm text-[15px] font-bold text-on-surface">Cashfree Direct</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-800 font-label-md text-[10px] font-bold">OPTIMAL</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Success Rate:</span>
+<span class="font-bold text-emerald-700">94.2%</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Mean Latency:</span>
+<span class="font-mono text-on-surface font-semibold">510ms</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">30-Day GMV:</span>
+<span class="font-bold text-on-surface">₹84.5 L (24.2%)</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-emerald-600 rounded-full" style="width: 94.2%"></div>
+</div>
+</div>
+<!-- Gateway 3: PayU -->
+<div class="p-space-sm rounded bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-error"></span>
+<span class="font-headline-sm text-[15px] font-bold text-on-surface">PayU Enterprise</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-error/10 text-error font-label-md text-[10px] font-bold">DEGRADED</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Success Rate:</span>
+<span class="font-bold text-error">89.1% (Drops on HDFC NB)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Mean Latency:</span>
+<span class="font-mono text-error font-semibold">840ms (High)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">30-Day GMV:</span>
+<span class="font-bold text-on-surface">₹13.6 L (3.9%)</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 89.1%"></div>
+</div>
+</div>
+<!-- Gateway 4: PhonePe Direct Switch -->
+<div class="p-space-sm rounded bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-emerald-600"></span>
+<span class="font-headline-sm text-[15px] font-bold text-on-surface">PhonePe Direct UPI</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-800 font-label-md text-[10px] font-bold">OPTIMAL</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Success Rate:</span>
+<span class="font-bold text-emerald-700">97.4%</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Mean Latency:</span>
+<span class="font-mono text-on-surface font-semibold">290ms (Fastest)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">30-Day GMV:</span>
+<span class="font-bold text-on-surface">₹32.8 L (9.4%)</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-emerald-600 rounded-full" style="width: 97.4%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- SETTLEMENT CALENDAR & REGULATORY COMPLIANCE -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm space-y-space-sm flex flex-col justify-between">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm font-bold uppercase text-on-surface">Settlement &amp; Compliance</h3>
+<span class="material-symbols-outlined text-[20px] text-tertiary">policy</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Automated daily T+1 cycles &amp; RBI payment aggregator mandate compliance.</p>
+<div class="space-y-2 pt-1 font-body-sm text-body-sm">
+<div class="p-2.5 rounded bg-surface-container-low flex items-center justify-between">
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Next Settlement Window</div>
+<div class="text-[11px] text-on-surface-variant">Automated NEFT batch to HDFC Current A/c</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Tomorrow, 06:00 AM</span>
+<div class="text-[11px] text-emerald-700 font-semibold">Est. ₹24,80,500</div>
+</div>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Regulatory Audit Status</span>
+<span class="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-900 font-label-md text-[10px] font-bold">CERTIFIED</span>
+</div>
+<div class="text-[11px] text-on-surface-variant leading-relaxed">
+                Card-on-File Tokenization compliant (RBI/2021-22/96). Zero raw PAN/CVV storage. PCI-DSS Level 1 v4.0 Certified.
+              </div>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-center justify-between">
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Chargeback Ratio</div>
+<div class="text-[11px] text-on-surface-variant">Rolling 90-day Visa/Mastercard index</div>
+</div>
+<div class="text-right font-headline-sm text-headline-sm font-bold text-emerald-700">
+                0.04% <span class="text-[11px] text-on-surface-variant font-normal font-sans">(Limit: 0.90%)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full py-2 px-3 rounded bg-surface-container-high hover:bg-surface-dim text-on-surface font-label-md text-label-md font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">file_present</span>
+<span>Download Bank Settlement Summary</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-high py-space-sm"><div class="w-full px-space-md flex flex-col md:flex-row items-center justify-between gap-space-xs text-on-surface-variant font-label-md text-label-md"><div>RTCrackers Enterprise Admin <span class="font-semibold text-on-surface">v2.4</span> • © 2026 RTCrackers Ltd.</div><div class="flex items-center gap-space-md"><a class="hover:text-primary transition-colors" data-path="documentation" href="#">Documentation</a><a class="hover:text-primary transition-colors" data-path="support-desk" href="#">Support Desk</a><a class="hover:text-primary transition-colors" data-path="api-status" href="#">API Status</a><a class="hover:text-primary transition-colors" data-path="privacy-security" href="#">Privacy &amp; Security</a></div></div></footer></div><script src="../runtime/rtc-runtime.js"></script></body></html>

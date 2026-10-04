@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎆</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="RTCrackers">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <title>RTCrackers | Submit Order Request</title>
+  <meta name="description"
+    content="Review your order and submit an order request to RTCrackers. No online payment is collected on this website.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261003">
+  <link rel="stylesheet" href="css/premium-ui.css?v=20261003">
+  <link rel="stylesheet" href="css/animations.css?v=20261003">
+  <link rel="stylesheet" href="css/pwa.css?v=20261003">
+  <link rel="stylesheet" href="css/features.css?v=20261003">
+  <link rel="stylesheet" href="css/advanced-ui.css?v=20261003"><link rel="stylesheet" href="css/industrial-ui.css?v=20261003">
+
+  <link rel="canonical" href="./order.html"><meta property="og:title" content="RTCrackers | Submit Order Request"><meta property="og:type" content="website"><meta property="og:url" content="./order.html"><meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/adaptive-layout.css?v=20261003-v6">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img data-company-logo class="company-logo" src="" alt="RTCrackers" style="display:none;max-height:46px;max-width:150px;object-fit:contain;">
+        <span class="brand-name">RT <span>CRACKERS</span></span>
+        <span class="brand-sub">RTCrackers</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" data-nav="index.html">Home</a>
+        <a href="products.html" data-nav="products.html">Products</a>
+        <a href="about.html" data-nav="about.html">About</a>
+        <a href="policy.html" data-nav="policy.html">Policies</a>
+        <a href="feedback.html">Feedback</a><a href="contact.html" data-nav="contact.html">Contact</a>
+        <a href="my-orders.html" data-nav="my-orders.html">My Orders</a>
+        <a href="login.html" data-nav="login.html" id="accountNavLink">Login</a>
+      </nav>
+      <div class="header-actions">
+        <a href="order.html" class="btn btn-primary btn-sm">Order Now</a>
+        <a href="order.html" class="cart-btn">🛒 <span class="label">Order</span> (<span
+            class="cart-count">0</span>)</a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav-backdrop" aria-hidden="true"></div><div class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="policy.html">Policies</a>
+      <a href="feedback.html">Feedback</a><a href="contact.html">Contact</a>
+      <a href="my-orders.html">My Orders</a>
+      <a href="login.html" id="accountNavLinkMobile">Login</a>
+      <a href="order.html" class="btn btn-primary btn-block">Order Now — (<span class="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <main><div class="checkout-stepper" id="checkoutStepper" aria-label="Checkout progress"><span class="active">1 Cart</span><span>2 Address</span><span>3 Delivery</span><span>4 Review</span><span>5 Confirmation</span></div>
+    <section class="section-tight section-alt">
+      <div class="container">
+        <div class="section-head" style="margin-bottom:0;">
+          <span class="eyebrow">Order Request</span>
+          <h2>Review &amp; Submit Your Order</h2>
+          <p>This website does not process online payments. Your order request is reviewed and confirmed separately by
+            RTCrackers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container">
+
+        <!-- Empty state -->
+        <div id="orderEmptyState" class="empty-state" style="display:none;">
+          <div class="big">🛒</div>
+          <h3>Your order request is empty</h3>
+          <p>Browse our catalog and add products to get started.</p>
+          <a href="products.html" class="btn btn-primary" style="margin-top:14px;">Explore Products</a>
+        </div>
+
+        <div id="orderFormWrap">
+          <div class="order-layout">
+            <div>
+              <h3>Your Selected Products</h3>
+              <div id="orderList" class="order-list"></div>
+
+              <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="products.html" class="btn btn-outline on-light-navy"
+                  style="border-color:var(--navy-800);color:var(--navy-800);">Add More Products</a>
+                <button type="button" id="clearOrderBtn" class="btn btn-outline"
+                  style="border-color:var(--danger);color:var(--danger);">Clear Order</button>
+              </div>
+
+              <h3 style="margin-top:44px;">Delivery Location</h3>
+              <div class="loc-options">
+                <label class="loc-option">
+                  <input type="radio" name="deliveryLocation" value="chennai"> Chennai
+                </label>
+                <label class="loc-option">
+                  <input type="radio" name="deliveryLocation" value="kumbakonam"> Kumbakonam
+                </label>
+                <label class="loc-option">
+                  <input type="radio" name="deliveryLocation" value="other"> Other Tamil Nadu
+                </label>
+              </div>
+
+              <div id="otherLocationFields" style="display:none;">
+                <div class="info-box">
+                  Delivery will be made to the nearest transporter warehouse/godown. Transporter delivery charges are
+                  payable directly by the customer while collecting the parcel.
+                </div>
+              </div>
+
+              <div class="card" style="margin-top:10px;">
+                <h4 style="margin-bottom:10px;">Check Pincode Availability</h4>
+                <div class="pincode-check">
+                  <input type="text" id="pincodeInput" placeholder="Enter your pincode" maxlength="6"
+                    inputmode="numeric">
+                  <button type="button" id="pincodeCheckBtn" class="btn btn-dark btn-sm">Check Availability</button>
+                </div>
+                <div id="pincodeResult" class="pincode-result"></div>
+              </div>
+
+              <h3 style="margin-top:44px;">Delivery Details</h3><div class="saved-address-picker"><label for="savedAddressSelect">Use a saved address</label><select id="savedAddressSelect"><option value="">Enter a new address</option></select><a href="account.html#addresses">Manage saved addresses</a></div>
+              <form id="orderForm" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" required>
+                    <span class="form-error">Please enter your full name.</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="phoneNumber">Phone Number *</label>
+                    <input type="tel" id="phoneNumber" placeholder="10-digit mobile number" required>
+                    <span class="form-error">Please enter a valid phone number.</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="emailAddress">Email Address</label>
+                  <input type="email" id="emailAddress" placeholder="optional">
+                  <span class="form-error">Please enter a valid email address.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="deliveryAddress">Delivery Address *</label>
+                  <textarea id="deliveryAddress" rows="3" required></textarea>
+                  <span class="form-error">Please enter your delivery address.</span>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="city">City / Town *</label>
+                    <input type="text" id="city" required>
+                    <span class="form-error">Please enter your city/town.</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="district">District *</label>
+                    <input type="text" id="district" required>
+                    <span class="form-error">Please enter your district.</span>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="postOffice">Post Office</label>
+                    <input type="text" id="postOffice" placeholder="Auto-filled after pincode check">
+                  </div>
+                  <div class="form-group">
+                    <label for="state">State *</label>
+                    <input type="text" id="state" value="Tamil Nadu" required>
+                    <span class="form-error">State is required.</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="pincode">Pincode *</label>
+                  <input type="text" id="pincode" maxlength="6" inputmode="numeric" required>
+                  <span class="form-error">Please enter a serviceable 6-digit pincode and check availability.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="additionalNotes">Additional Notes</label>
+                  <textarea id="additionalNotes" rows="3"
+                    placeholder="Anything else RTCrackers should know?"></textarea>
+                </div>
+              </form>
+            </div>
+
+            <div>
+              <div id="orderSummary" class="summary-card">
+                <h3>Order Summary</h3>
+                <div id="minOrderWarning" class="min-order-warning">
+                  Minimum order value is ₹2,000 after discount. Please add more products to continue.
+                </div>
+                <div class="summary-row"><span>Product Subtotal</span><span id="sumSubtotal">₹0</span></div>
+                <div class="summary-row"><span id="sumShippingLabel">Shipping</span><span id="sumShipping">₹0</span>
+                </div>
+                <div id="shippingNote" class="summary-note" style="display:none;"></div>
+                <div class="summary-row total"><span>Order Total</span><span id="sumTotal">₹0</span></div><div class="coupon-box"><div><label for="couponCode">Coupon code</label><input id="couponCode" placeholder="Enter coupon code" maxlength="60"></div><button type="button" id="applyCouponBtn" class="btn btn-outline btn-sm">Apply</button><small id="couponStatus"></small></div><div id="offerProgress" class="offer-progress"></div>
+
+                <p style="font-size:12.5px;color:var(--grey-600);margin:14px 0;">
+                  <strong>Payment method: Cash on Delivery (COD)</strong><br>
+                  No online payment is collected. Your COD amount is due when the order is delivered or collected from the transporter.
+                </p>
+
+                <button type="submit" form="orderForm" id="submitOrderBtn" class="btn btn-primary btn-block"
+                  style="margin-bottom:10px;">Submit Order Request</button>
+                <button type="button" id="waOrderBtn" class="btn btn-whatsapp btn-block"
+                  style="margin-bottom:10px;">Send via WhatsApp</button>
+                <button type="button" id="emailOrderBtn" class="btn btn-outline on-light-navy btn-block"
+                  style="border-color:var(--navy-800);color:var(--navy-800);">Send via Email</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirmation -->
+        <div id="reviewStep" class="card checkout-review" hidden><h3>Review before submitting</h3><div id="checkoutReviewContent"></div></div>
+
+        <div id="orderConfirmation" class="confirm-box" style="display:none;">
+          <div class="confirm-icon">✓</div>
+          <h2>Order Submitted — Cash on Delivery</h2>
+          <p>Your order request has been recorded by this website interface.</p>
+          <p data-confirmation-detail style="color:var(--grey-600);margin:8px 0 0;"></p>
+          <div class="ref-number">Reference: <span id="refNumberDisplay"></span></div>
+          <p>RTCrackers will confirm product availability and delivery details. Payment will be collected as Cash on Delivery.</p>
+          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px;">
+            <a id="waSendLink" href="#" target="_blank" class="btn btn-whatsapp">Send via WhatsApp</a>
+            <a id="emailSendLink" href="#" class="btn btn-outline on-light-navy"
+              style="border-color:var(--navy-800);color:var(--navy-800);">Send via Email</a>
+            <a href="index.html" class="btn btn-dark">Back to Home</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-name">RTCRACKERS</span>
+          <p>RTCrackers<br>Celebrate Brighter. Celebrate Together.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="order.html">Order</a>
+          <a href="about.html">About</a>
+          <a href="policy.html">Policies</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Customer Support</h5>
+          <a data-email-link data-company-email href="mailto:sales@rtcrackers.com">sales@rtcrackers.com</a>
+          <a data-phone-link href="tel:+917358633576" data-company-phone-plist>7358633576</a>
+          <span>WhatsApp: <span data-company-whatsapp>72999 41355</span></span>
+        </div>
+        <div class="footer-col">
+          <h5>Office</h5>
+          <span>Sivakasi (Factory)</span>
+          <span>Manali, Chennai (Admin)</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="currentYear">2026</span> RTCrackers. All rights reserved.</span>
+        <span>Cash on Delivery only · No online payment</span>
+        <a href="admin.html" style="opacity:.55;">Admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/micro-interactions.js"></script>
+  <script src="js/auth.js?v=20261003"></script><script src="js/features.js?v=20261003"></script>
+  <script src="js/script.js?v=20261003"></script>
+  <script src="js/animations.js?v=20261003"></script>
+  <script src="js/pwa.js?v=20261003"></script>
+  <script src="js/advanced-ui.js?v=20261003"></script>
+<script src="js/industrial-ui.js?v=20261003"></script><script src="components/customer-shell.js?v=20261003"></script>
+  <script src="js/adaptive-layout.js?v=20261003-v6"></script>
+  <script src="/js/pwa-update.js" defer></script>
+</body>
+
+</html>

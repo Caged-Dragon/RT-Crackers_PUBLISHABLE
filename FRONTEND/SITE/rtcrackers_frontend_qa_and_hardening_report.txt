@@ -1,0 +1,39 @@
+# RT Crackers — Frontend QA Status (2026-10-04)
+
+This report supersedes older design-only claims. It describes what is actually present in the uploaded repository after the production hardening pass.
+
+## Current architecture
+
+- Static HTML pages under `FRONTEND/SITE/*/code.html` are preserved.
+- `runtime/rtc-runtime.js` is the integration layer for customer/admin APIs.
+- Default API paths are same-origin: `/api/v1` and `/api/v1/admin`.
+- The runtime now hydrates the product catalog, product detail, cart, and COD checkout where matching page containers exist.
+
+## Live customer flow
+
+1. Home/storefront loads the existing page.
+2. Shop page requests live products from `/api/v1/products` and renders server-authoritative price/stock data.
+3. Product detail can load by `?slug=...`, `?id=...` or `?product_id=...` and uses the product API.
+4. Add-to-cart calls `/api/v1/cart/items`.
+5. Cart page requests `/api/v1/cart` and exposes a live-cart panel.
+6. Checkout requests saved addresses and shipping options, forces `payment_method=COD`, validates the checkout summary, and places the order through `/api/v1/orders`.
+7. The resulting order reference is forwarded to the existing order-confirmation page.
+
+## Security posture
+
+- Auth remains server-authoritative.
+- Auth cookies are HttpOnly/Secure in production.
+- No payment-card collection is implemented by the live checkout integration.
+- Online gateway flows are disabled; COD is the only payment method.
+- Customer-supplied text is escaped when inserted into the runtime-generated catalog/cart UI.
+
+## Known frontend limitations
+
+- The project is a static HTML site rather than a bundled SPA/SSR application.
+- Some legacy page controls remain presentation-only unless wired by the runtime or their page-specific scripts.
+- The runtime cannot manufacture missing product IDs; live product links must include an API-backed product identifier.
+- Browser-level visual regression testing was not executable in this environment.
+
+## Release rule
+
+Treat the backend API response as the source of truth for price, stock, coupon, shipping, COD eligibility and order status. Never use static demo values in the frontend to make an order or display a success state.

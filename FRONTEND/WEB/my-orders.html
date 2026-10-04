@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎆</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="RTCrackers">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <title>My Orders | RTCrackers</title>
+  <meta name="description" content="View your RTCrackers order request history for this browser.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261003">
+  <link rel="stylesheet" href="css/premium-ui.css?v=20261003">
+  <link rel="stylesheet" href="css/animations.css?v=20261003">
+  <link rel="stylesheet" href="css/pwa.css?v=20261003">
+  <link rel="stylesheet" href="css/features.css?v=20261003">
+  <link rel="stylesheet" href="css/advanced-ui.css?v=20261003"><link rel="stylesheet" href="css/industrial-ui.css?v=20261003">
+  <style>
+    .orders-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .order-card {
+      background: var(--white);
+      border: 1px solid var(--grey-300);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .order-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--brand-gradient);
+    }
+
+    .order-card-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .order-ref {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 17px;
+      color: var(--navy-950);
+    }
+
+    .order-date {
+      font-size: 12.5px;
+      color: var(--grey-600);
+    }
+
+    .order-total-tag {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 16px;
+      background: var(--brand-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .status-track {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin: 18px 0 20px;
+    }
+
+    .status-step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+    }
+
+    .status-dot {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      margin: 0 auto 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--grey-300);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .status-step.done .status-dot {
+      background: var(--brand-gradient);
+    }
+
+    .status-step.current .status-dot {
+      background: var(--brand-gradient-cool);
+      box-shadow: 0 0 0 4px rgba(131, 56, 236, .18);
+    }
+
+    .status-line {
+      position: absolute;
+      top: 13px;
+      left: -50%;
+      width: 100%;
+      height: 2px;
+      background: var(--grey-300);
+      z-index: -1;
+    }
+
+    .status-step.done .status-line,
+    .status-step.current .status-line {
+      background: var(--brand-gradient);
+    }
+
+    .status-step:first-child .status-line {
+      display: none;
+    }
+
+    .status-label {
+      font-size: 10.5px;
+      color: var(--grey-600);
+      font-weight: 600;
+    }
+
+    .order-items-toggle {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand-violet);
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .order-items {
+      display: none;
+      margin-top: 14px;
+      border-top: 1px dashed var(--grey-300);
+      padding-top: 14px;
+    }
+
+    .order-items.open {
+      display: block;
+    }
+
+    .order-item-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13.5px;
+      padding: 6px 0;
+      color: var(--grey-600);
+    }
+
+    .order-item-row strong {
+      color: var(--navy-950);
+      font-weight: 600;
+    }
+
+    .order-card-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .no-orders {
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .no-orders .big {
+      font-size: 44px;
+      margin-bottom: 16px;
+    }
+
+    .guest-banner {
+      background: linear-gradient(120deg, rgba(230, 57, 70, .08), rgba(131, 56, 236, .08));
+      border: 1px solid var(--grey-300);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      font-size: 13.5px;
+      color: var(--navy-800);
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+  </style>
+  <link rel="stylesheet" href="css/adaptive-layout.css?v=20261003-v6">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img data-company-logo class="company-logo" src="" alt="RTCrackers" style="display:none;max-height:46px;max-width:150px;object-fit:contain;">
+        <span class="brand-name">RT <span>CRACKERS</span></span>
+        <span class="brand-sub">RTCrackers</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" data-nav="index.html">Home</a>
+        <a href="products.html" data-nav="products.html">Products</a>
+        <a href="about.html" data-nav="about.html">About</a>
+        <a href="policy.html" data-nav="policy.html">Policies</a>
+        <a href="feedback.html">Feedback</a><a href="contact.html" data-nav="contact.html">Contact</a>
+        <a href="my-orders.html" data-nav="my-orders.html" class="active">My Orders</a>
+        <a href="login.html" data-nav="login.html" id="accountNavLink">Login</a>
+      </nav>
+      <div class="header-actions">
+        <a href="order.html" class="btn btn-primary btn-sm">Order Now</a>
+        <a href="order.html" class="cart-btn">🛒 <span class="label">Order</span> (<span
+            class="cart-count">0</span>)</a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav-backdrop" aria-hidden="true"></div><div class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="policy.html">Policies</a>
+      <a href="feedback.html">Feedback</a><a href="contact.html">Contact</a>
+      <a href="my-orders.html">My Orders</a>
+      <a href="login.html" id="accountNavLinkMobile">Login</a>
+      <a href="order.html" class="btn btn-primary btn-block">Order Now — (<span class="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="orders-head">
+          <div>
+            <span class="eyebrow">Order History</span>
+            <h2 style="margin-bottom:0;">My Orders</h2>
+          </div>
+          <a href="products.html" class="btn btn-outline on-light-navy"
+            style="border-color:var(--navy-800);color:var(--navy-800);">+ New Order</a>
+        </div>
+
+        <div id="guestBanner" class="guest-banner" style="display:none;">
+          <span>You're browsing as a guest — orders below are saved on this device only. <a href="login.html"
+              style="text-decoration:underline;font-weight:700;">Log in</a> to keep them tied to your account.</span>
+        </div>
+
+        <div id="ordersContainer"></div>
+
+        <div id="noOrders" class="no-orders" style="display:none;">
+          <div class="big">📦</div>
+          <h3>No orders yet</h3>
+          <p style="color:var(--grey-600);max-width:400px;margin:0 auto 20px;">Once you submit an order request, it'll
+            show up here with its status and details.</p>
+          <a href="products.html" class="btn btn-primary">Browse Products</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:0;">
+        <span>© <span id="currentYear">2026</span> RTCrackers. All rights reserved.</span>
+        <a href="admin.html" style="opacity:.55;">Admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/micro-interactions.js"></script>
+  <script src="js/auth.js?v=20261003"></script><script src="js/features.js?v=20261003"></script>
+  <script src="js/script.js?v=20261003"></script>
+  <script>
+    (function () {
+      function inr(n) {
+        try { return new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(n); }
+        catch (e) { return "₹" + n; }
+      }
+
+      const STEPS = ["Submitted", "Confirmed", "Processing", "Packed", "Ready for Dispatch", "Dispatched", "In Transit", "Out for Delivery", "Delivered"];
+      const COLLECTION_STEPS = ["Submitted", "Confirmed", "Processing", "Packed", "Ready for Dispatch", "Dispatched", "In Transit", "Arrived at Transporter", "Ready for Collection", "Collected"];
+
+      function statusTrack(currentStatus, transporter) {
+        const steps = transporter ? COLLECTION_STEPS : STEPS;
+        const idx = Math.max(0, steps.indexOf(currentStatus));
+        return steps.map((s, i) => {
+          let cls = "status-step";
+          if (i < idx) cls += " done";
+          else if (i === idx) cls += " current";
+          return `<div class="${cls}"><div class="status-line"></div><div class="status-dot">${i < idx ? "✓" : i + 1}</div><div class="status-label">${s}</div></div>`;
+        }).join("");
+      }
+
+      async function render() {
+        const container = document.getElementById("ordersContainer");
+        const noOrders = document.getElementById("noOrders");
+
+        if (!window.RTAdmin || !window.RTAdmin.configured) {
+          container.innerHTML = "";
+          noOrders.style.display = "block";
+          noOrders.querySelector("h3").textContent = "Not connected to Supabase yet";
+          noOrders.querySelector("p").textContent = "Order history needs this site connected to Supabase — see README.md → Supabase Setup.";
+          return;
+        }
+
+        await window.RTAdmin.authReady;
+        const user = window.RTAdmin.currentUser();
+        document.getElementById("guestBanner").style.display = user ? "none" : "flex";
+
+        const orders = await window.RTAdmin.getOrdersForCurrentUser();
+
+        if (!orders.length) {
+          container.innerHTML = "";
+          noOrders.style.display = "block";
+          return;
+        }
+        noOrders.style.display = "none";
+
+        const tracked = await Promise.all(orders.map(async (o) => {
+          try { return { o, tracking: await window.RTAdmin.getOrderTracking(o.id) }; } catch (_) { return { o, tracking: { events: [], attempts: [] } }; }
+        }));
+        container.innerHTML = tracked.map(({o,tracking}, idx) => {
+          const dateStr = o.createdAt ? new Date(o.createdAt).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" }) : "Just now";
+          const itemsHtml = (o.lines || []).map((l) => `<div class="order-item-row"><span><strong>${l.product?.name || l.name}</strong>${(l.product?.size || l.size) ? " — " + (l.product?.size || l.size) : ""} × ${l.qty}</span><span>${inr((l.product?.price ?? l.price) * l.qty)}</span></div>`).join("");
+          const shippingLine = o.shippingFee === null || o.shippingFee === undefined ? "Payable to transporter on collection" : inr(o.shippingFee);
+          const transporter = o.deliveryMode === "transporter_collection";
+          const eventsHtml = (tracking.events || []).map(ev => `<div style="display:flex;gap:10px;border-left:3px solid var(--navy-700);padding:0 0 12px 10px;margin-left:6px;"><span style="width:9px;height:9px;border-radius:50%;background:var(--navy-700);margin-left:-16px;margin-top:4px;"></span><div><strong>${ev.title || ev.status}</strong><div style="font-size:11px;color:var(--grey-600);">${new Date(ev.created_at).toLocaleString("en-IN")}${ev.location ? " · " + ev.location : ""}</div><div style="font-size:12px;">${ev.description || ""}</div>${ev.tracking_number ? `<div style="font-size:12px;">Tracking: ${ev.tracking_number}</div>` : ""}</div></div>`).join("");
+          return `<div class="order-card">
+          <div class="order-card-top"><div><div class="order-ref">${o.ref}</div><div class="order-date">${dateStr} · ${o.location || ""}</div></div><div class="order-total-tag">${inr(o.total)}</div></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0;font-size:12px;"><span class="badge">COD · ${o.paymentStatus || "Pending"}</span><span class="badge">${transporter ? "Transporter Collection" : "Door-to-door"}</span>${o.expectedDeliveryAt ? `<span class="badge">ETA ${new Date(o.expectedDeliveryAt).toLocaleDateString("en-IN")}</span>` : ""}</div>
+          <div class="status-track">${statusTrack(o.status || "Submitted", transporter)}</div>
+          <details style="margin-top:12px;"><summary style="cursor:pointer;font-weight:600;">Full tracking history</summary><div style="margin-top:14px;">${eventsHtml || "No tracking events yet."}</div>${o.trackingNumber ? `<div style="margin-top:8px;font-size:13px;"><strong>Tracking:</strong> ${o.carrier || "Transporter"} · ${o.trackingNumber}</div>` : ""}</details>
+          <button type="button" class="order-items-toggle" data-idx="${idx}">View ${o.lines ? o.lines.length : 0} item(s) &amp; details ▾</button>
+          <div class="order-items" id="items-${idx}">${itemsHtml}<div class="order-item-row" style="border-top:1px solid var(--grey-300);margin-top:6px;padding-top:10px;"><span>Subtotal</span><span>${inr(o.subtotal)}</span></div><div class="order-item-row"><span>Shipping</span><span>${shippingLine}</span></div><div class="order-item-row" style="margin-top:8px;color:var(--navy-800);"><span>Delivery Address</span><span style="text-align:right;max-width:60%;">${o.address || ""}</span></div><div class="order-item-row"><span>Payment</span><span>Cash on Delivery · ${o.paymentStatus || "Pending"}</span></div></div>
+          <div class="order-card-actions"><button type="button" class="btn btn-sm btn-outline on-light-navy reorder-btn" data-order-id="${o.id}" style="border-color:var(--navy-800);color:var(--navy-800);">Reorder</button><a href="https://wa.me/917299941355?text=${encodeURIComponent("Hi RTCrackers, I have a question about my order " + o.ref)}" target="_blank" class="btn btn-sm btn-whatsapp">Ask on WhatsApp</a></div>
+        </div>`;
+        }).join("");
+
+        document.querySelectorAll(".order-items-toggle").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            document.getElementById("items-" + btn.getAttribute("data-idx")).classList.toggle("open");
+          });
+        });
+        document.querySelectorAll(".reorder-btn").forEach((btn) => btn.addEventListener("click", async () => {
+          try {
+            btn.disabled=true; btn.textContent="Checking…";
+            const session=await window.RTAdmin.supabaseSession();
+            const r=await fetch('/api/features/reorder/'+btn.dataset.orderId,{headers:{Authorization:`Bearer ${session.data.session.access_token}`}});
+            const j=await r.json(); if(!r.ok||j.ok===false) throw Error(j.error||'Reorder failed');
+            const raw=JSON.parse(localStorage.getItem('rt_crackers_order_v1')||'{"items":{},"delivery":{}}'); raw.items=raw.items||{};
+            (j.items||[]).forEach(x=>raw.items[String(x.product.id)]=(Number(raw.items[String(x.product.id)])||0)+Number(x.quantity||1));
+            localStorage.setItem('rt_crackers_order_v1',JSON.stringify(raw));
+            const skipped=(j.skipped||[]).length; alert(skipped?`Reorder added. ${skipped} unavailable item(s) were skipped.`:'Reorder added all available items.');
+            location.href='order.html';
+          } catch(e) { btn.disabled=false; btn.textContent='Reorder'; alert(e.message); }
+        }));
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", render);
+      } else {
+        render();
+      }
+    })();
+  </script>
+  <script src="js/animations.js?v=20261003"></script>
+  <script src="js/pwa.js?v=20261003"></script>
+  <script src="js/advanced-ui.js?v=20261003"></script>
+<script src="js/industrial-ui.js?v=20261003"></script><script src="components/customer-shell.js?v=20261003"></script>
+  <script src="js/adaptive-layout.js?v=20261003-v6"></script>
+  <script src="/js/pwa-update.js" defer></script>
+</body>
+
+</html>

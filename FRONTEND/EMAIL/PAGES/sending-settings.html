@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="shell-type" content="web_dashboard"/>
+  <title>Sending Settings - RTC Crackers Mail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tag-notifications": "#EA580C",
+            "secondary-fixed": "#dae2fd",
+            "surface-canvas": "#FFFFFF",
+            "tertiary": "#795500",
+            "on-surface-variant": "#5a4138",
+            "secondary-fixed-dim": "#bec6e0",
+            "border-strong": "#E2E8F0",
+            "brand-fire-red": "#E63946",
+            "surface-bright": "#f8f9ff",
+            "secondary-container": "#dae2fd",
+            "inverse-on-surface": "#eaf1ff",
+            "tag-noreply": "#475569",
+            "on-tertiary-container": "#fffbff",
+            "border-subtle": "#F1F5F9",
+            "on-surface": "#0b1c30",
+            "surface-container-low": "#eff4ff",
+            "tag-orders": "#D97706",
+            "tag-billing": "#7C3AED",
+            "outline": "#8e7166",
+            "on-tertiary": "#ffffff",
+            "secondary": "#565e74",
+            "on-primary-container": "#fffbff",
+            "primary": "#a33900",
+            "surface-variant": "#d3e4fe",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#271900",
+            "background": "#f8f9ff",
+            "surface-container": "#e5eeff",
+            "on-error-container": "#93000a",
+            "primary-container": "#cc4900",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#d3e4fe",
+            "error": "#ba1a1a",
+            "tertiary-container": "#996c00",
+            "surface-container-lowest": "#ffffff",
+            "surface-subtle": "#F8FAFC",
+            "on-secondary-container": "#5c647a",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#ffdbce",
+            "outline-variant": "#e2bfb2",
+            "on-primary": "#ffffff",
+            "tag-info": "#0891B2",
+            "tag-sales": "#16A34A",
+            "primary-fixed-dim": "#ffb599",
+            "tertiary-fixed": "#ffdea9",
+            "on-secondary-fixed-variant": "#3f465c",
+            "tag-contact": "#4F46E5",
+            "surface": "#f8f9ff",
+            "on-background": "#0b1c30",
+            "tertiary-fixed-dim": "#fbbc3c",
+            "on-secondary-fixed": "#131b2e",
+            "surface-dim": "#cbdbf5",
+            "tag-admin": "#DC2626",
+            "surface-tint": "#a73a00",
+            "surface-container-high": "#dce9ff",
+            "tag-support": "#2563EB",
+            "on-tertiary-fixed-variant": "#5e4200",
+            "on-primary-fixed-variant": "#7f2b00",
+            "inverse-primary": "#ffb599",
+            "on-primary-fixed": "#370e00",
+            "inverse-surface": "#213145"
+          },
+          fontFamily: {
+            "title-sm": ["Inter", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+            "code-sm": ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+            "headline-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "display-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "title-md": ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<link rel="stylesheet" href="/FRONTEND/EMAIL/email-runtime.css"><script src="/FRONTEND/EMAIL/config.js"></script><script src="/FRONTEND/EMAIL/email-api.js"></script><script src="/FRONTEND/EMAIL/email-runtime.js"></script></head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+  <!-- LEFT PERSISTENT SIDEBAR -->
+  <aside class="fixed left-0 top-0 h-full w-64 bg-surface-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto">
+    <div class="flex flex-col">
+      <!-- Brand Logo / Wordmark -->
+      <div class="h-16 px-4 flex items-center justify-between gap-2 bg-surface-subtle border-b border-border-subtle">
+        <div class="flex items-center gap-2">
+          <img alt="RTC Crackers Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG_c7pxIPE4wwgSpxLFdUH_tg8svgIbUIwkhn7NCze_r0x_6WTZ_jzC9vfGXc5OgbMK2FdXgS2SwxvmiHBQfXisYT_PH7cTvFWOSkZv_Mr-bzU71U1De5LkmvshUlwXLJFP2Kejr-oGaxIfUck0RnN2ckJhDtCVvshifzkErWtefVAW8Pr75VKhiKZMdr0XVUFm6PCVfbFXbMlmSMxDNBmEpn1CLLHaGet8zoB1wdpONt_CSqntRtOjqB_"/>
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-sm text-on-surface tracking-tight font-bold leading-none">RTC Crackers</span>
+            <span class="font-label-sm text-[11px] text-tag-notifications font-semibold leading-tight">Enterprise Mail</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Compose Action -->
+      <div class="px-4 pt-3 pb-2">
+        <a href="/email/compose" class="w-full flex items-center justify-center gap-2 py-2 px-3 bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-sm rounded-lg transition-colors shadow-sm">
+          <span class="material-symbols-outlined text-[18px]">edit</span>
+          <span>Compose</span>
+        </a>
+      </div>
+
+      <!-- Mailbox Folders -->
+      <div class="px-4 pt-2 pb-1">
+        <span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Mailbox Folders</span>
+      </div>
+      <nav class="flex flex-col px-2 space-y-0.5">
+        <a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/inbox">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[18px]">inbox</span>
+            <span class="text-sm">Inbox</span>
+          </div>
+          <span class="text-[11px] bg-tag-notifications text-on-primary px-1.5 py-0.5 rounded-full font-semibold">24</span>
+        </a>
+        <a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/starred">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[18px]">star</span>
+            <span class="text-sm">Starred</span>
+          </div>
+          <span class="text-[11px] text-secondary">8</span>
+        </a>
+        <a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/drafts">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[18px]">draft</span>
+            <span class="text-sm">Drafts</span>
+          </div>
+          <span class="text-[11px] text-secondary">3</span>
+        </a>
+        <a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/sent">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[18px]">send</span>
+            <span class="text-sm">Sent</span>
+          </div>
+        </a>
+        <a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/archived">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[18px]">archive</span>
+            <span class="text-sm">Archived</span>
+          </div>
+        </a>
+        <a class="flex items-center justify-between px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="/email/trash">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[18px]">delete</span>
+            <span class="text-sm">Trash</span>
+          </div>
+        </a>
+      </nav>
+
+      <!-- Mailbox Accounts Section -->
+      <div class="px-4 pt-4 pb-1">
+        <span class="font-label-sm text-[11px] text-secondary uppercase tracking-wider font-semibold">Authorized Mailboxes</span>
+      </div>
+      <nav class="flex flex-col px-2 space-y-0.5">
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-on-surface"></span>
+          <span class="text-xs truncate">All Mailboxes (9)</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-admin"></span>
+          <span class="text-xs truncate">admin@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-support"></span>
+          <span class="text-xs truncate">support@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-sales"></span>
+          <span class="text-xs truncate">sales@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-orders"></span>
+          <span class="text-xs truncate">orders@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-billing"></span>
+          <span class="text-xs truncate">billing@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-info"></span>
+          <span class="text-xs truncate">info@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-contact"></span>
+          <span class="text-xs truncate">contact@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-notifications"></span>
+          <span class="text-xs truncate">notifications@rtcrackers.com</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="w-2 h-2 rounded-full bg-tag-noreply"></span>
+          <span class="text-xs truncate">noreply@rtcrackers.com</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Bottom Actions / Settings (Highlighted as Active App Section) -->
+    <div class="flex flex-col border-t border-border-subtle p-2 bg-surface-subtle">
+      <nav class="flex flex-col space-y-0.5 mb-2">
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-surface-container font-semibold text-on-surface shadow-xs transition-all" href="/email/settings">
+          <span class="material-symbols-outlined text-[18px] text-tag-notifications">settings</span>
+          <span class="text-xs">Settings</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" href="#">
+          <span class="material-symbols-outlined text-[18px]">help</span>
+          <span class="text-xs">Help &amp; Docs</span>
+        </a>
+      </nav>
+
+      <!-- Profile Widget -->
+      <div class="flex items-center justify-between px-2 py-1.5 rounded-lg bg-surface-container-low">
+        <div class="flex items-center gap-2 min-w-0">
+          <img alt="Admin Avatar" class="w-7 h-7 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+          <div class="flex flex-col min-w-0">
+            <span class="text-xs font-semibold text-on-surface truncate">Operations Admin</span>
+            <span class="text-[10px] text-secondary truncate">admin@rtcrackers.com</span>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-secondary text-[16px]">more_vert</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEWPORT CONTENT (Padded 64 for sidebar) -->
+  <div class="pl-64 min-h-screen flex flex-col">
+    <!-- TOP HEADER -->
+    <header class="fixed top-0 left-64 right-0 h-16 bg-surface-canvas/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-6 border-b border-border-subtle">
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-tag-notifications text-[22px]">outbox</span>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="font-headline-sm text-base text-on-surface font-bold leading-tight">Settings</h1>
+              <span class="text-secondary text-xs">/</span>
+              <span class="font-label-md text-sm text-tag-notifications font-semibold">Sending</span>
+            </div>
+            <p class="text-xs text-secondary leading-none">Configure how emails are sent and how the compose experience behaves.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Header Right Controls -->
+      <div class="flex items-center gap-3">
+        <!-- Live Autosave Status Indicator -->
+        <span id="saveStatusIndicator" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-xs font-medium text-secondary transition-all">
+          <span id="saveStatusDot" class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+          <span id="saveStatusText">All changes saved</span>
+        </span>
+
+        <!-- Global Quick Search trigger -->
+        <div class="relative w-64 hidden lg:block">
+          <span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-secondary text-[16px]">search</span>
+          <input class="w-full bg-surface-subtle text-on-surface placeholder:text-secondary text-xs pl-8 pr-8 py-1.5 rounded-md outline-none focus:ring-1 focus:ring-tag-notifications border border-border-strong" placeholder="Quick find (⌘K)..." type="text" onkeydown="if(event.key==='Enter') window.location.href='/email/search?q='+encodeURIComponent(this.value)"/>
+          <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-secondary bg-surface-container px-1 rounded font-mono">⌘K</span>
+        </div>
+
+        <!-- Refresh Button -->
+        <button onclick="refreshSettings()" class="p-2 rounded-lg text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Reload Sending Settings" type="button">
+          <span class="material-symbols-outlined text-[20px]" id="refreshSettingsIcon">refresh</span>
+        </button>
+
+        <button class="p-2 rounded-lg text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Notifications" type="button">
+          <span class="material-symbols-outlined text-[20px]">notifications</span>
+        </button>
+
+        <button class="flex items-center gap-2 pl-2" type="button">
+          <img alt="Admin Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/>
+          <span class="material-symbols-outlined text-secondary text-[16px]">expand_more</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- WORKSPACE -->
+    <main class="pt-16 flex-1 flex flex-col bg-surface">
+      <div class="flex flex-col w-full">
+        <!-- SETTINGS SUB-NAVIGATION BAR (Sticky under shell header) -->
+        <div class="sticky top-0 z-30 bg-surface-canvas/95 backdrop-blur-md px-6 py-2.5 shadow-sm border-b border-border-subtle">
+          <div class="flex items-center justify-between gap-4">
+            <!-- Horizontal Navigation Tabs -->
+            <nav class="flex items-center gap-1 overflow-x-auto py-1 text-xs">
+              <a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="/email/settings">
+                <span class="material-symbols-outlined text-[17px]">tune</span>
+                <span class="font-label-md text-label-md">General</span>
+              </a>
+              <a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="/email/settings/appearance">
+                <span class="material-symbols-outlined text-[17px]">palette</span>
+                <span class="font-label-md text-label-md">Appearance</span>
+              </a>
+              <a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="/email/settings/notifications">
+                <span class="material-symbols-outlined text-[17px]">notifications_active</span>
+                <span class="font-label-md text-label-md">Notifications</span>
+              </a>
+              <a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="/email/settings/mailboxes">
+                <span class="material-symbols-outlined text-[17px]">mark_email_read</span>
+                <span class="font-label-md text-label-md">Mailboxes</span>
+              </a>
+              <a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="/email/settings/signatures">
+                <span class="material-symbols-outlined text-[17px]">draw</span>
+                <span class="font-label-md text-label-md">Signatures</span>
+              </a>
+              <a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="/email/settings/templates">
+                <span class="material-symbols-outlined text-[17px]">drafts</span>
+                <span class="font-label-md text-label-md">Templates</span>
+              </a>
+              <!-- ACTIVE TAB: Sending -->
+              <a class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-tag-notifications text-on-primary font-semibold shadow-xs" href="/email/settings/sending">
+                <span class="material-symbols-outlined text-[17px]" style="font-variation-settings: 'FILL' 1;">outbox</span>
+                <span class="font-label-md text-label-md">Sending</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-surface-canvas animate-pulse"></span>
+              </a>
+              <a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="/email/settings/reading">
+                <span class="material-symbols-outlined text-[17px]">mark_email_unread</span>
+                <span class="font-label-md text-label-md">Reading</span>
+              </a>
+              <a class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="/email/settings/security">
+                <span class="material-symbols-outlined text-[17px]">shield</span>
+                <span class="font-label-md text-label-md">Security</span>
+              </a>
+            </nav>
+
+            <!-- Backend Relay Contract Notice -->
+            <div class="hidden xl:flex items-center gap-3">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-code-sm text-xs">
+                <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+                <span>POSTGRES: /api/email/settings/sending</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAIN SETTINGS CONTAINER -->
+        <div class="max-w-5xl w-full mx-auto px-6 py-6 space-y-6">
+
+          <!-- BANNER / OVERVIEW -->
+          <div class="bg-surface-canvas rounded-2xl p-5 shadow-sm border border-border-subtle flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-tag-notifications/10 text-tag-notifications flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[24px]">send_and_archive</span>
+              </div>
+              <div>
+                <h2 class="font-headline-sm text-base text-on-surface font-bold">Outbound Message Rules &amp; Compose Behavior</h2>
+                <p class="font-body-sm text-xs text-secondary mt-0.5">Customize your personal dispatch defaults, safeguard recipient boundaries, automate draft recovery, and calibrate compose dialog interactions.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container-low text-xs font-medium text-secondary">
+                <span class="material-symbols-outlined text-[15px] text-tag-sales">verified_user</span>
+                <span>User Preferences Context</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- CARD 1: DEFAULT SENDING MAILBOX & ADDRESS BEHAVIOR -->
+          <div class="bg-surface-canvas rounded-2xl shadow-sm border border-border-subtle overflow-hidden">
+            <div class="px-6 py-4 border-b border-border-subtle flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-tag-notifications">
+                  <span class="material-symbols-outlined text-[18px]">alternate_email</span>
+                </span>
+                <div>
+                  <h3 class="font-headline-sm text-sm font-bold text-on-surface">Default Sending Identities</h3>
+                  <p class="text-[11px] text-secondary">Determines the "From:" mailbox pre-selected during fresh drafts, customer replies, and forwards.</p>
+                </div>
+              </div>
+              <span class="text-xs font-code-sm text-secondary bg-surface-subtle px-2 py-0.5 rounded">RBAC Authenticated</span>
+            </div>
+
+            <div class="p-6 space-y-5 text-xs">
+              <!-- Default Mailbox Select -->
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                <div class="md:col-span-5">
+                  <label for="defaultMailboxSelect" class="font-semibold text-on-surface block text-sm">Default Sending Mailbox</label>
+                  <p class="text-secondary text-[11px] mt-0.5">Pre-selects this authorized corporate mailbox whenever opening a fresh Compose session.</p>
+                </div>
+                <div class="md:col-span-7">
+                  <div class="relative">
+                    <select id="defaultMailboxSelect" onchange="updateSetting('default_mailbox_id', parseInt(this.value))" class="w-full appearance-none bg-surface-subtle border border-border-strong text-on-surface rounded-xl px-3.5 py-2.5 text-xs font-medium outline-none focus:ring-2 focus:ring-tag-notifications focus:border-transparent transition-all cursor-pointer">
+                      <option value="1">admin@rtcrackers.com (Operations Root)</option>
+                      <option value="2">support@rtcrackers.com (Support Team)</option>
+                      <option value="3" selected>sales@rtcrackers.com (Wholesale &amp; Retail Desk)</option>
+                      <option value="4">orders@rtcrackers.com (Dispatch Desk)</option>
+                      <option value="5">billing@rtcrackers.com (Accounts &amp; GST Invoicing)</option>
+                      <option value="6">info@rtcrackers.com (General Inquiries)</option>
+                      <option value="7">contact@rtcrackers.com (Corporate Relations)</option>
+                      <option value="8">notifications@rtcrackers.com (Outbound Only)</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-secondary text-[18px]">expand_more</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 mt-1.5 text-[11px] text-secondary">
+                    <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+                    <span>Synchronized with user profile. Inbound-only mailboxes (noreply@) are excluded automatically.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="h-px bg-border-subtle"></div>
+
+              <!-- Reply Mailbox Behavior -->
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                <div class="md:col-span-5">
+                  <span class="font-semibold text-on-surface block text-sm">Reply "From" Selection</span>
+                  <p class="text-secondary text-[11px] mt-0.5">Controls which authorized address is chosen when replying to customer inquiries.</p>
+                </div>
+                <div class="md:col-span-7 space-y-2">
+                  <label class="flex items-start gap-3 p-3 rounded-xl bg-surface-subtle border border-border-subtle hover:bg-surface-container-low transition-colors cursor-pointer">
+                    <input type="radio" name="reply_from_behavior" value="receiving_mailbox" checked onchange="updateSetting('reply_from_behavior', this.value)" class="mt-0.5 accent-tag-notifications w-4 h-4 cursor-pointer"/>
+                    <div>
+                      <span class="font-semibold text-on-surface block">Use mailbox that received the message (Recommended)</span>
+                      <p class="text-secondary text-[11px] mt-0.5">Maintains thread consistency so customers receive replies from the exact address they contacted.</p>
+                    </div>
+                  </label>
+
+                  <label class="flex items-start gap-3 p-3 rounded-xl bg-surface-subtle border border-border-subtle hover:bg-surface-container-low transition-colors cursor-pointer">
+                    <input type="radio" name="reply_from_behavior" value="default_sending" onchange="updateSetting('reply_from_behavior', this.value)" class="mt-0.5 accent-tag-notifications w-4 h-4 cursor-pointer"/>
+                    <div>
+                      <span class="font-semibold text-on-surface block">Always use my default sending mailbox</span>
+                      <p class="text-secondary text-[11px] mt-0.5">Standardizes all responses under your designated primary mailbox.</p>
+                    </div>
+                  </label>
+
+                  <label class="flex items-start gap-3 p-3 rounded-xl bg-surface-subtle border border-border-subtle hover:bg-surface-container-low transition-colors cursor-pointer">
+                    <input type="radio" name="reply_from_behavior" value="original_to" onchange="updateSetting('reply_from_behavior', this.value)" class="mt-0.5 accent-tag-notifications w-4 h-4 cursor-pointer"/>
+                    <div>
+                      <span class="font-semibold text-on-surface block">Use original recipient "To" address header</span>
+                      <p class="text-secondary text-[11px] mt-0.5">Matches exact alias if the message was routed via a secondary distribution list.</p>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="h-px bg-border-subtle"></div>
+
+              <!-- Forward Mailbox Behavior -->
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                <div class="md:col-span-5">
+                  <label for="forwardBehaviorSelect" class="font-semibold text-on-surface block text-sm">Forward "From" Selection</label>
+                  <p class="text-secondary text-[11px] mt-0.5">Rules when routing quotations, invoices, or customer logs to third parties.</p>
+                </div>
+                <div class="md:col-span-7">
+                  <div class="relative">
+                    <select id="forwardBehaviorSelect" onchange="updateSetting('forward_from_behavior', this.value)" class="w-full appearance-none bg-surface-subtle border border-border-strong text-on-surface rounded-xl px-3.5 py-2.5 text-xs font-medium outline-none focus:ring-2 focus:ring-tag-notifications focus:border-transparent transition-all cursor-pointer">
+                      <option value="current_mailbox" selected>Use currently viewed mailbox</option>
+                      <option value="default_sending">Use my default sending mailbox</option>
+                      <option value="original_sender">Use original receiving mailbox context</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-secondary text-[18px]">expand_more</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- From Switch Reminder Toggle -->
+              <div class="p-3.5 rounded-xl bg-surface-container-low border border-border-subtle flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-[20px] text-tag-notifications">flag</span>
+                  <div>
+                    <span class="font-semibold text-on-surface block text-xs">Alert when composing from non-default mailbox</span>
+                    <p class="text-secondary text-[11px]">Displays a soft badge in Compose if you switch away from sales@rtcrackers.com.</p>
+                  </div>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" id="warnNonDefaultMailbox" checked onchange="updateSetting('warn_non_default_mailbox', this.checked)" class="sr-only peer"/>
+                  <div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-notifications"></div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: DISPATCH CONFIRMATION & SAFETY GUARDRAILS -->
+          <div class="bg-surface-canvas rounded-2xl shadow-sm border border-border-subtle overflow-hidden">
+            <div class="px-6 py-4 border-b border-border-subtle flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-tag-notifications">
+                  <span class="material-symbols-outlined text-[18px]">security</span>
+                </span>
+                <div>
+                  <h3 class="font-headline-sm text-sm font-bold text-on-surface">Send Safeguards &amp; Confirmations</h3>
+                  <p class="text-[11px] text-secondary">Prevent inadvertent dispatch of wholesale quotes, sensitive price lists, or wrong recipients.</p>
+                </div>
+              </div>
+              <span class="text-xs font-semibold text-tag-sales bg-tag-sales/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span> Active Shield
+              </span>
+            </div>
+
+            <div class="p-6 space-y-4 text-xs">
+              <!-- Confirm Before Send -->
+              <div class="flex items-start justify-between gap-4 p-3.5 rounded-xl bg-surface-subtle border border-border-subtle hover:bg-surface-container-low transition-colors">
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-tag-notifications text-[20px] mt-0.5">rule</span>
+                  <div>
+                    <span class="font-semibold text-on-surface text-sm block">Confirm before sending</span>
+                    <p class="text-secondary text-[11px] mt-0.5">Prompts with a quick modal reviewing "From", "To", and "Subject" before triggering final SMTP delivery.</p>
+                  </div>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+                  <input type="checkbox" id="confirmBeforeSendToggle" onchange="toggleSendConfirmation(this.checked)" class="sr-only peer"/>
+                  <div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-notifications"></div>
+                </label>
+              </div>
+
+              <!-- Warn External Recipients -->
+              <div class="flex items-start justify-between gap-4 p-3.5 rounded-xl bg-surface-subtle border border-border-subtle hover:bg-surface-container-low transition-colors">
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-tag-orders text-[20px] mt-0.5">public</span>
+                  <div>
+                    <span class="font-semibold text-on-surface text-sm block">Warn before sending to external recipients</span>
+                    <p class="text-secondary text-[11px] mt-0.5">Flags recipients outside <span class="font-mono text-tag-notifications font-medium">@rtcrackers.com</span> domain to prevent accidental data leaks of Sivakasi depot stock lists.</p>
+                  </div>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+                  <input type="checkbox" id="warnExternalRecipientsToggle" checked onchange="updateSetting('warn_external_recipients', this.checked)" class="sr-only peer"/>
+                  <div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-notifications"></div>
+                </label>
+              </div>
+
+              <!-- Warn Multiple Recipients -->
+              <div class="flex items-start justify-between gap-4 p-3.5 rounded-xl bg-surface-subtle border border-border-subtle hover:bg-surface-container-low transition-colors">
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">group</span>
+                  <div>
+                    <span class="font-semibold text-on-surface text-sm block">Warn when sending to multiple recipients (&gt; 5 contacts)</span>
+                    <p class="text-secondary text-[11px] mt-0.5">Suggests utilizing BCC to maintain privacy when addressing multiple distributors or retail dealers.</p>
+                  </div>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+                  <input type="checkbox" id="warnMultipleRecipientsToggle" onchange="updateSetting('warn_multiple_recipients', this.checked)" class="sr-only peer"/>
+                  <div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-notifications"></div>
+                </label>
+              </div>
+
+              <!-- Attachment Size Threshold Warning -->
+              <div class="flex items-start justify-between gap-4 p-3.5 rounded-xl bg-surface-subtle border border-border-subtle hover:bg-surface-container-low transition-colors">
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-tag-info text-[20px] mt-0.5">attachment</span>
+                  <div class="flex-1">
+                    <span class="font-semibold text-on-surface text-sm block">Warn before sending large attachments</span>
+                    <p class="text-secondary text-[11px] mt-0.5">Advises cloud link sharing if cumulative PDF or proforma attachments exceed the threshold.</p>
+                    <div class="mt-2 flex items-center gap-2">
+                      <span class="text-secondary font-medium">Threshold:</span>
+                      <select id="attachmentThresholdSelect" onchange="updateSetting('attachment_threshold_mb', parseInt(this.value))" class="bg-surface-canvas border border-border-strong text-on-surface rounded-lg px-2.5 py-1 text-xs outline-none focus:ring-1 focus:ring-tag-notifications cursor-pointer">
+                        <option value="5">5 MB</option>
+                        <option value="10" selected>10 MB (Recommended)</option>
+                        <option value="15">15 MB</option>
+                        <option value="20">20 MB</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+                  <input type="checkbox" id="warnLargeAttachmentsToggle" checked onchange="updateSetting('warn_large_attachments', this.checked)" class="sr-only peer"/>
+                  <div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-notifications"></div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3: DRAFTS & RECOVERY RESILIENCE -->
+          <div class="bg-surface-canvas rounded-2xl shadow-sm border border-border-subtle overflow-hidden">
+            <div class="px-6 py-4 border-b border-border-subtle flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-tag-notifications">
+                  <span class="material-symbols-outlined text-[18px]">restore_page</span>
+                </span>
+                <div>
+                  <h3 class="font-headline-sm text-sm font-bold text-on-surface">Draft Autosave &amp; Fault Recovery</h3>
+                  <p class="text-[11px] text-secondary">Ensure zero loss of sales quotes or order logs in case of network disruptions.</p>
+                </div>
+              </div>
+              <span class="text-xs font-semibold text-tag-sales bg-surface-container px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">sync</span> Page 5 Drafts Integrated
+              </span>
+            </div>
+
+            <div class="p-6 space-y-4 text-xs">
+              <!-- Auto-save Drafts -->
+              <div class="flex items-start justify-between gap-4 p-3.5 rounded-xl bg-surface-subtle border border-border-subtle">
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-tag-sales text-[20px] mt-0.5">save_as</span>
+                  <div class="flex-1">
+                    <div class="flex items-center gap-2">
+                      <span class="font-semibold text-on-surface text-sm">Automatically save drafts</span>
+                      <span class="text-[10px] bg-tag-sales/15 text-tag-sales px-1.5 py-0.5 rounded font-bold uppercase">Mandatory Safety Rule</span>
+                    </div>
+                    <p class="text-secondary text-[11px] mt-0.5">Periodically syncs in-progress messages to the Postgres draft table to prevent accidental browser closure loss.</p>
+                    
+                    <div class="mt-3 flex items-center gap-3">
+                      <span class="text-secondary font-medium">Autosave Interval:</span>
+                      <div class="flex items-center gap-1.5">
+                        <button type="button" onclick="setAutosaveInterval(10)" id="btnInterval10" class="px-2.5 py-1 rounded-md text-xs font-medium border border-border-strong bg-surface-canvas text-secondary hover:text-on-surface">10s</button>
+                        <button type="button" onclick="setAutosaveInterval(30)" id="btnInterval30" class="px-2.5 py-1 rounded-md text-xs font-bold border border-tag-notifications bg-tag-notifications/10 text-tag-notifications">30s (Default)</button>
+                        <button type="button" onclick="setAutosaveInterval(60)" id="btnInterval60" class="px-2.5 py-1 rounded-md text-xs font-medium border border-border-strong bg-surface-canvas text-secondary hover:text-on-surface">60s</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="shrink-0 mt-1">
+                  <span class="material-symbols-outlined text-tag-sales text-[22px]" title="Enabled by system policy">lock_clock</span>
+                </div>
+              </div>
+
+              <!-- Keep Failed Messages as Drafts -->
+              <div class="flex items-start justify-between gap-4 p-3.5 rounded-xl bg-surface-subtle border border-border-subtle hover:bg-surface-container-low transition-colors">
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-tag-admin text-[20px] mt-0.5">report_problem</span>
+                  <div>
+                    <span class="font-semibold text-on-surface text-sm block">Keep failed messages as drafts</span>
+                    <p class="text-secondary text-[11px] mt-0.5">If the background SMTP relay returns a transient delivery error, preserves all text, attachments, and headers in your Drafts folder for one-click retry.</p>
+                  </div>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+                  <input type="checkbox" id="keepFailedAsDraftsToggle" checked onchange="updateSetting('keep_failed_messages_as_drafts', this.checked)" class="sr-only peer"/>
+                  <div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-notifications"></div>
+                </label>
+              </div>
+
+              <!-- Duplicate Send Protection Badge -->
+              <div class="p-3 rounded-xl bg-surface-container-low border border-border-subtle flex items-center justify-between text-[11px]">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-tag-sales text-[18px]">verified</span>
+                  <span class="text-on-surface font-medium">Idempotency &amp; Double-Click Protection is permanently enforced in Compose v2.4.</span>
+                </div>
+                <span class="text-secondary font-code-sm">UUID RFC-4122</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 4: UNDO SEND & QUEUE DISPATCH -->
+          <div class="bg-surface-canvas rounded-2xl shadow-sm border border-border-subtle overflow-hidden">
+            <div class="px-6 py-4 border-b border-border-subtle flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-tag-notifications">
+                  <span class="material-symbols-outlined text-[18px]">timer</span>
+                </span>
+                <div>
+                  <h3 class="font-headline-sm text-sm font-bold text-on-surface">Undo Send Window &amp; Dispatch Queue</h3>
+                  <p class="text-[11px] text-secondary">Briefly buffers outgoing emails in the application dispatch queue so you can recall an accidental send.</p>
+                </div>
+              </div>
+              <span class="text-xs font-semibold text-secondary bg-surface-subtle px-2 py-0.5 rounded">Client Queue Layer</span>
+            </div>
+
+            <div class="p-6 space-y-4 text-xs">
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                <div class="md:col-span-5">
+                  <label for="undoSendSecondsSelect" class="font-semibold text-on-surface block text-sm">Undo Send Cancellation Window</label>
+                  <p class="text-secondary text-[11px] mt-0.5">Allows hitting "Undo" on the bottom notification bar to reopen Compose before SMTP release.</p>
+                </div>
+                <div class="md:col-span-7">
+                  <div class="relative">
+                    <select id="undoSendSecondsSelect" onchange="updateSetting('undo_send_seconds', parseInt(this.value))" class="w-full appearance-none bg-surface-subtle border border-border-strong text-on-surface rounded-xl px-3.5 py-2.5 text-xs font-medium outline-none focus:ring-2 focus:ring-tag-notifications focus:border-transparent transition-all cursor-pointer">
+                      <option value="0">Off (Send immediately without delay)</option>
+                      <option value="5">5 seconds</option>
+                      <option value="10" selected>10 seconds (Recommended)</option>
+                      <option value="20">20 seconds</option>
+                      <option value="30">30 seconds</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-secondary text-[18px]">expand_more</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Scheduled Send Support Indicator -->
+              <div class="p-3.5 rounded-xl bg-surface-subtle border border-border-subtle flex items-start justify-between gap-4">
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-tag-notifications text-[20px] mt-0.5">schedule_send</span>
+                  <div>
+                    <span class="font-semibold text-on-surface text-sm block">Allow Scheduled Send in Compose</span>
+                    <p class="text-secondary text-[11px] mt-0.5">Exposes time-release slots (e.g., "Tomorrow 08:00 AM IST - Factory Open") in the Compose dropdown.</p>
+                  </div>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+                  <input type="checkbox" id="allowScheduledSendToggle" checked onchange="updateSetting('allow_scheduled_send', this.checked)" class="sr-only peer"/>
+                  <div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-notifications"></div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 5: COMPOSE INTERFACE DEFAULTS & FIELD VISIBILITY -->
+          <div class="bg-surface-canvas rounded-2xl shadow-sm border border-border-subtle overflow-hidden">
+            <div class="px-6 py-4 border-b border-border-subtle flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-tag-notifications">
+                  <span class="material-symbols-outlined text-[18px]">input</span>
+                </span>
+                <div>
+                  <h3 class="font-headline-sm text-sm font-bold text-on-surface">Compose Window Defaults</h3>
+                  <p class="text-[11px] text-secondary">Control the starting layout and field expansions of the Page 3 Compose editor.</p>
+                </div>
+              </div>
+              <span class="text-xs font-semibold text-secondary bg-surface-subtle px-2 py-0.5 rounded">UI Layout</span>
+            </div>
+
+            <div class="p-6 space-y-4 text-xs">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Show CC by default -->
+                <label class="flex items-start gap-3 p-3.5 rounded-xl bg-surface-subtle border border-border-subtle hover:bg-surface-container-low transition-colors cursor-pointer">
+                  <input type="checkbox" id="showCcToggle" onchange="updateSetting('show_cc_by_default', this.checked)" class="mt-0.5 accent-tag-notifications w-4 h-4 cursor-pointer"/>
+                  <div>
+                    <span class="font-semibold text-on-surface text-sm block">Show CC field by default</span>
+                    <p class="text-secondary text-[11px] mt-0.5">Expands Carbon Copy field immediately when opening Compose.</p>
+                  </div>
+                </label>
+
+                <!-- Show BCC by default -->
+                <label class="flex items-start gap-3 p-3.5 rounded-xl bg-surface-subtle border border-border-subtle hover:bg-surface-container-low transition-colors cursor-pointer">
+                  <input type="checkbox" id="showBccToggle" onchange="updateSetting('show_bcc_by_default', this.checked)" class="mt-0.5 accent-tag-notifications w-4 h-4 cursor-pointer"/>
+                  <div>
+                    <span class="font-semibold text-on-surface text-sm block">Show BCC field by default</span>
+                    <p class="text-secondary text-[11px] mt-0.5">Expands Blind Carbon Copy field for high-privacy distribution.</p>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Keyboard Shortcut Hint -->
+              <div class="p-3.5 rounded-xl bg-surface-subtle border border-border-subtle flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">keyboard</span>
+                  <div>
+                    <span class="font-semibold text-on-surface block text-xs">Send with keyboard shortcut (⌘ + Enter / Ctrl + Enter)</span>
+                    <p class="text-secondary text-[11px]">Instant dispatch trigger from inside the message text editor.</p>
+                  </div>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" id="enableCmdEnterSend" checked onchange="updateSetting('enable_cmd_enter_send', this.checked)" class="sr-only peer"/>
+                  <div class="w-9 h-5 bg-secondary-fixed peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tag-notifications"></div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 6: COMPACT RELATED SETTINGS JUMP CARDS -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+            <!-- Jump to Signatures -->
+            <div class="bg-surface-canvas rounded-2xl p-4 shadow-sm border border-border-subtle flex flex-col justify-between hover:border-tag-notifications transition-colors">
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-tag-notifications/10 text-tag-notifications flex items-center justify-center mb-3">
+                  <span class="material-symbols-outlined text-[20px]">draw</span>
+                </div>
+                <h4 class="font-headline-sm text-sm font-bold text-on-surface">Email Signatures</h4>
+                <p class="text-secondary text-[11px] mt-1">Configure PESO-certified HTML signatures and per-mailbox insertion rules.</p>
+              </div>
+              <a href="/email/settings/signatures" class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-tag-notifications hover:underline">
+                <span>Manage Signatures</span>
+                <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+              </a>
+            </div>
+
+            <!-- Jump to Templates -->
+            <div class="bg-surface-canvas rounded-2xl p-4 shadow-sm border border-border-subtle flex flex-col justify-between hover:border-tag-notifications transition-colors">
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-tag-orders/10 text-tag-orders flex items-center justify-center mb-3">
+                  <span class="material-symbols-outlined text-[20px]">drafts</span>
+                </div>
+                <h4 class="font-headline-sm text-sm font-bold text-on-surface">Reusable Templates</h4>
+                <p class="text-secondary text-[11px] mt-1">Order confirmations, proforma dispatches, and quick quotation boilerplates.</p>
+              </div>
+              <a href="/email/settings/templates" class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-tag-orders hover:underline">
+                <span>Manage Templates</span>
+                <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+              </a>
+            </div>
+
+            <!-- Jump to Mailboxes -->
+            <div class="bg-surface-canvas rounded-2xl p-4 shadow-sm border border-border-subtle flex flex-col justify-between hover:border-tag-notifications transition-colors">
+              <div>
+                <div class="w-8 h-8 rounded-lg bg-tag-support/10 text-tag-support flex items-center justify-center mb-3">
+                  <span class="material-symbols-outlined text-[20px]">mark_email_read</span>
+                </div>
+                <h4 class="font-headline-sm text-sm font-bold text-on-surface">Authorized Mailboxes</h4>
+                <p class="text-secondary text-[11px] mt-1">Inspect operational status and sending capabilities of all 9 corporate accounts.</p>
+              </div>
+              <a href="/email/settings/mailboxes" class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-tag-support hover:underline">
+                <span>Manage Mailboxes</span>
+                <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- AUDIT FOOTER NOTE -->
+          <div class="p-4 rounded-xl bg-surface-subtle border border-border-subtle flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-secondary text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-tag-sales"></span>
+              <span>All preferences apply directly to Compose v2.4, background SMTP dispatch queues, and offline draft stores.</span>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <span class="font-code-sm text-[11px] bg-surface-container px-2 py-0.5 rounded">Client Prefs v2.4</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- CONFIRMATION MODAL PREVIEW (Simulated for "Confirm before sending") -->
+  <div id="confirmSendDemoModal" class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-xs hidden items-center justify-center p-4">
+    <div class="bg-surface-canvas border border-border-strong rounded-2xl shadow-2xl max-w-md w-full p-5 space-y-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-tag-notifications/10 text-tag-notifications flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-[22px]">send</span>
+        </div>
+        <div>
+          <h4 class="font-headline-sm text-sm font-bold text-on-surface">Send Confirmation Active</h4>
+          <p class="text-xs text-secondary mt-0.5">This safety dialog will appear before every outbound email dispatch.</p>
+        </div>
+      </div>
+      <div class="p-3 bg-surface-subtle rounded-xl text-xs space-y-1.5 border border-border-subtle">
+        <div><strong class="text-secondary">From:</strong> <span class="text-on-surface font-medium">sales@rtcrackers.com</span></div>
+        <div><strong class="text-secondary">To:</strong> <span class="text-on-surface font-medium">client@supermart.in</span></div>
+        <div><strong class="text-secondary">Subject:</strong> <span class="text-on-surface font-medium">Diwali Wholesale Consignment Quotation</span></div>
+      </div>
+      <div class="flex items-center justify-end gap-2 pt-2">
+        <button onclick="closeConfirmDemo()" class="px-4 py-2 rounded-lg border border-border-strong text-secondary hover:text-on-surface text-xs font-semibold">
+          Understood
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 px-4 py-3 rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl text-xs font-medium">
+    <span class="material-symbols-outlined text-tag-notifications text-[18px]" id="toastIcon">check_circle</span>
+    <span id="toastMessage">Sending settings updated</span>
+  </div>
+
+  <!-- JAVASCRIPT STATE LOGIC & ADAPTER -->
+  <script>
+    // State Store for User Sending Settings
+    const sendingSettingsState = {
+      default_mailbox_id: 3,
+      reply_from_behavior: "receiving_mailbox",
+      forward_from_behavior: "current_mailbox",
+      warn_non_default_mailbox: true,
+      confirm_before_send: false,
+      warn_external_recipients: true,
+      warn_multiple_recipients: false,
+      warn_large_attachments: true,
+      attachment_threshold_mb: 10,
+      auto_save_drafts: true,
+      draft_autosave_interval_seconds: 30,
+      keep_failed_messages_as_drafts: true,
+      undo_send_seconds: 10,
+      allow_scheduled_send: true,
+      show_cc_by_default: false,
+      show_bcc_by_default: false,
+      enable_cmd_enter_send: true
+    };
+
+    // Autosave Simulation with Live Indicator
+    function updateSetting(key, value) {
+      sendingSettingsState[key] = value;
+      triggerAutosave(key, value);
+    }
+
+    function triggerAutosave(key, value) {
+      const indicator = document.getElementById('saveStatusIndicator');
+      const dot = document.getElementById('saveStatusDot');
+      const text = document.getElementById('saveStatusText');
+
+      // Visual saving state
+      dot.className = "w-1.5 h-1.5 rounded-full bg-tag-orders animate-ping";
+      text.textContent = "Saving changes...";
+      indicator.classList.remove('text-secondary');
+      indicator.classList.add('text-tag-orders');
+
+      // Simulate backend PATCH /api/email/settings/sending
+      setTimeout(() => {
+        dot.className = "w-1.5 h-1.5 rounded-full bg-tag-sales";
+        text.textContent = "All changes saved";
+        indicator.classList.remove('text-tag-orders');
+        indicator.classList.add('text-secondary');
+        showToast('Sending settings updated');
+      }, 450);
+    }
+
+    function setAutosaveInterval(seconds) {
+      sendingSettingsState.draft_autosave_interval_seconds = seconds;
+      
+      const btn10 = document.getElementById('btnInterval10');
+      const btn30 = document.getElementById('btnInterval30');
+      const btn60 = document.getElementById('btnInterval60');
+
+      [btn10, btn30, btn60].forEach(b => {
+        b.className = "px-2.5 py-1 rounded-md text-xs font-medium border border-border-strong bg-surface-canvas text-secondary hover:text-on-surface";
+      });
+
+      if (seconds === 10) {
+        btn10.className = "px-2.5 py-1 rounded-md text-xs font-bold border border-tag-notifications bg-tag-notifications/10 text-tag-notifications";
+      } else if (seconds === 30) {
+        btn30.className = "px-2.5 py-1 rounded-md text-xs font-bold border border-tag-notifications bg-tag-notifications/10 text-tag-notifications";
+      } else if (seconds === 60) {
+        btn60.className = "px-2.5 py-1 rounded-md text-xs font-bold border border-tag-notifications bg-tag-notifications/10 text-tag-notifications";
+      }
+
+      triggerAutosave('draft_autosave_interval_seconds', seconds);
+    }
+
+    function toggleSendConfirmation(enabled) {
+      updateSetting('confirm_before_send', enabled);
+      if (enabled) {
+        document.getElementById('confirmSendDemoModal').classList.remove('hidden');
+        document.getElementById('confirmSendDemoModal').classList.add('flex');
+      }
+    }
+
+    function closeConfirmDemo() {
+      document.getElementById('confirmSendDemoModal').classList.add('hidden');
+      document.getElementById('confirmSendDemoModal').classList.remove('flex');
+    }
+
+    function refreshSettings() {
+      const icon = document.getElementById('refreshSettingsIcon');
+      icon.classList.add('animate-spin');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        showToast('Sending settings synchronized with PostgreSQL');
+      }, 500);
+    }
+
+    function showToast(message, icon = 'check_circle') {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toastMessage');
+      const iconEl = document.getElementById('toastIcon');
+      
+      text.textContent = message;
+      iconEl.textContent = icon;
+      
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+  </script>
+</body>
+</html>

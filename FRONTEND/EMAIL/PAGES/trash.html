@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tag-notifications": "#EA580C", "secondary-fixed": "#dae2fd", "surface-canvas": "#FFFFFF", "tertiary": "#795500", "on-surface-variant": "#5a4138", "secondary-fixed-dim": "#bec6e0", "border-strong": "#E2E8F0", "brand-fire-red": "#E63946", "surface-bright": "#f8f9ff", "secondary-container": "#dae2fd", "inverse-on-surface": "#eaf1ff", "tag-noreply": "#475569", "on-tertiary-container": "#fffbff", "border-subtle": "#F1F5F9", "on-surface": "#0b1c30", "surface-container-low": "#eff4ff", "tag-orders": "#D97706", "tag-billing": "#7C3AED", "outline": "#8e7166", "on-tertiary": "#ffffff", "secondary": "#565e74", "on-primary-container": "#fffbff", "primary": "#a33900", "surface-variant": "#d3e4fe", "on-error": "#ffffff", "on-tertiary-fixed": "#271900", "background": "#f8f9ff", "surface-container": "#e5eeff", "on-error-container": "#93000a", "primary-container": "#cc4900", "on-secondary": "#ffffff", "surface-container-highest": "#d3e4fe", "error": "#ba1a1a", "tertiary-container": "#996c00", "surface-container-lowest": "#ffffff", "surface-subtle": "#F8FAFC", "on-secondary-container": "#5c647a", "error-container": "#ffdad6", "primary-fixed": "#ffdbce", "outline-variant": "#e2bfb2", "on-primary": "#ffffff", "tag-info": "#0891B2", "tag-sales": "#16A34A", "primary-fixed-dim": "#ffb599", "tertiary-fixed": "#ffdea9", "on-secondary-fixed-variant": "#3f465c", "tag-contact": "#4F46E5", "surface": "#f8f9ff", "on-background": "#0b1c30", "tertiary-fixed-dim": "#fbbc3c", "on-secondary-fixed": "#131b2e", "surface-dim": "#cbdbf5", "tag-admin": "#DC2626", "surface-tint": "#a73a00", "surface-container-high": "#dce9ff", "tag-support": "#2563EB", "on-tertiary-fixed-variant": "#5e4200", "on-primary-fixed-variant": "#7f2b00", "inverse-primary": "#ffb599", "on-primary-fixed": "#370e00", "inverse-surface": "#213145" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1rem", "gutter-compact": "0.5rem", "space-xs": "0.25rem", "margin-mobile": "0.75rem", "gutter": "1rem", "space-sm": "0.5rem", "space-md": "0.75rem", "space-xl": "1.5rem", "margin": "1rem" }, "fontFamily": { "title-sm": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "code-sm": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "label-md": ["Inter"], "body-md": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "title-md": ["Inter"] }, "fontSize": { "title-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "code-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "body-md": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "title-md": ["15px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><link rel="stylesheet" href="/FRONTEND/EMAIL/email-runtime.css"><script src="/FRONTEND/EMAIL/config.js"></script><script src="/FRONTEND/EMAIL/email-api.js"></script><script src="/FRONTEND/EMAIL/email-runtime.js"></script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between gap-space-sm bg-surface-subtle"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #ea580c
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XG_c7pxIPE4wwgSpxLFdUH_tg8svgIbUIwkhn7NCze_r0x_6WTZ_jzC9vfGXc5OgbMK2FdXgS2SwxvmiHBQfXisYT_PH7cTvFWOSkZv_Mr-bzU71U1De5LkmvshUlwXLJFP2Kejr-oGaxIfUck0RnN2ckJhDtCVvshifzkErWtefVAW8Pr75VKhiKZMdr0XVUFm6PCVfbFXbMlmSMxDNBmEpn1CLLHaGet8zoB1wdpONt_CSqntRtOjqB_"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">RTC Crackers</span><span class="font-label-sm text-label-sm text-tag-notifications font-semibold leading-tight">Enterprise Mail</span></div></div></div><div class="px-space-md pt-space-sm pb-space-xs"><button class="w-full flex items-center justify-center gap-space-sm py-space-sm px-space-md bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-label-md rounded-xl transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">edit</span><span>Compose</span></button></div><div class="px-space-md pt-space-sm pb-space-xs"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Mailbox Folders</span></div><nav class="flex flex-col px-space-sm space-y-0.5" data-active-classes="bg-surface-container text-on-surface font-semibold rounded-lg"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="inbox" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">inbox</span><span class="font-body-md text-body-md">Inbox</span></div><span class="font-label-sm text-label-sm bg-tag-notifications text-on-primary px-1.5 py-0.5 rounded-full">24</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="starred" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">star</span><span class="font-body-md text-body-md">Starred</span></div><span class="font-label-sm text-label-sm text-secondary">8</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="drafts" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">draft</span><span class="font-body-md text-body-md">Drafts</span></div><span class="font-label-sm text-label-sm text-secondary">3</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="sent" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">send</span><span class="font-body-md text-body-md">Sent</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="archived" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">archive</span><span class="font-body-md text-body-md">Archived</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="trash" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[18px]">delete</span><span class="font-body-md text-body-md">Trash</span></div></a></nav><div class="px-space-md pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Mailbox Accounts</span></div><nav class="flex flex-col px-space-sm space-y-0.5" data-active-classes="bg-surface-container text-on-surface font-semibold rounded-lg"><a class="flex items-center gap-space-md px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="all-mailboxes" href="#"><span class="w-2 h-2 rounded-full bg-on-surface"></span><span class="font-body-sm text-body-sm truncate">All Mailboxes</span></a><a class="flex items-center gap-space-md px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="mailbox-admin" href="#"><span class="w-2 h-2 rounded-full bg-tag-admin"></span><span class="font-body-sm text-body-sm truncate">admin@rtcrackers.com</span></a><a class="flex items-center gap-space-md px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="mailbox-support" href="#"><span class="w-2 h-2 rounded-full bg-tag-support"></span><span class="font-body-sm text-body-sm truncate">support@rtcrackers.com</span></a><a class="flex items-center gap-space-md px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="mailbox-sales" href="#"><span class="w-2 h-2 rounded-full bg-tag-sales"></span><span class="font-body-sm text-body-sm truncate">sales@rtcrackers.com</span></a><a class="flex items-center gap-space-md px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="mailbox-orders" href="#"><span class="w-2 h-2 rounded-full bg-tag-orders"></span><span class="font-body-sm text-body-sm truncate">orders@rtcrackers.com</span></a><a class="flex items-center gap-space-md px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="mailbox-billing" href="#"><span class="w-2 h-2 rounded-full bg-tag-billing"></span><span class="font-body-sm text-body-sm truncate">billing@rtcrackers.com</span></a><a class="flex items-center gap-space-md px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="mailbox-info" href="#"><span class="w-2 h-2 rounded-full bg-tag-info"></span><span class="font-body-sm text-body-sm truncate">info@rtcrackers.com</span></a><a class="flex items-center gap-space-md px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="mailbox-contact" href="#"><span class="w-2 h-2 rounded-full bg-tag-contact"></span><span class="font-body-sm text-body-sm truncate">contact@rtcrackers.com</span></a><a class="flex items-center gap-space-md px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="mailbox-notifications" href="#"><span class="w-2 h-2 rounded-full bg-tag-notifications"></span><span class="font-body-sm text-body-sm truncate">notifications@rtcrackers.com</span></a><a class="flex items-center gap-space-md px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="mailbox-noreply" href="#"><span class="w-2 h-2 rounded-full bg-tag-noreply"></span><span class="font-body-sm text-body-sm truncate">noreply@rtcrackers.com</span></a></nav></div><div class="flex flex-col border-t border-border-subtle p-space-sm bg-surface-subtle"><nav class="flex flex-col space-y-0.5 mb-space-sm" data-active-classes="bg-surface-container text-on-surface font-semibold rounded-lg"><a class="flex items-center gap-space-md px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-body-sm text-body-sm">Settings</span></a><a class="flex items-center gap-space-md px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="help" href="#"><span class="material-symbols-outlined text-[18px]">help</span><span class="font-body-sm text-body-sm">Help &amp; Docs</span></a><a class="flex items-center gap-space-md px-space-md py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login" href="#"><span class="material-symbols-outlined text-[18px]">logout</span><span class="font-body-sm text-body-sm">Sign Out</span></a></nav><div class="flex items-center justify-between px-space-sm py-space-xs rounded-xl bg-surface-container-low"><div class="flex items-center gap-space-sm min-w-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md text-on-surface font-semibold truncate">Operations Admin</span><span class="font-label-sm text-label-sm text-secondary truncate">admin@rtcrackers.com</span></div></div><span class="material-symbols-outlined text-secondary text-[16px]">more_vert</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-canvas/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md flex-1 max-w-2xl"><div class="flex items-center gap-1 text-secondary"><button class="p-1.5 rounded-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Previous Message" type="button"><span class="material-symbols-outlined text-[20px]">chevron_left</span></button><button class="p-1.5 rounded-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Next Message" type="button"><span class="material-symbols-outlined text-[20px]">chevron_right</span></button><button class="p-1.5 rounded-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Refresh Mail" type="button"><span class="material-symbols-outlined text-[20px]">refresh</span></button></div><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[18px]">search</span><input class="w-full bg-surface-subtle text-on-surface placeholder:text-secondary font-body-sm text-body-sm pl-9 pr-14 py-2 rounded-lg outline-none focus:bg-surface-canvas focus:ring-1 focus:ring-tag-notifications transition-all" placeholder="Search messages, orders, or sender emails (⌘K)..." type="text"/><span class="absolute right-2.5 top-1/2 -translate-y-1/2 font-code-sm text-code-sm text-secondary bg-surface-container-low px-1.5 py-0.5 rounded">⌘K</span></div></div><div class="flex items-center gap-space-md"><button class="relative p-2 rounded-lg text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tag-notifications"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XYtS9LAvmNOGCCADS4Wye4A4qE4CvNHFQA8vBfcjT_FqrGJQ0XoTBFv_zzMNhn-wj110KVwCgCtqygBSXiSQSSId3MDFfCyDN5PQdzNZo245h--M9BuknmPUcO_uJeOfJm_wfOIfI2FzJOLD71ndEHkcO569eQDZ0IXn8G-EXq_xrgoCe9o8ZGeO13Poc5ekDdV1QkFMEP_dJrt6gYOhfKQZEMZEh4A6JQANT6TcRlWSYqTNfl2ztOTl_-"/><div class="hidden lg:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Admin User</span><span class="font-label-sm text-label-sm text-secondary leading-tight">rtcrackers.com</span></div><span class="material-symbols-outlined text-secondary text-[18px]">expand_more</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive View State Controller & Floating Live Toast System -->
+<div class="fixed top-20 right-8 z-50 flex flex-col gap-space-sm pointer-events-none" id="toast-container">
+<div class="hidden pointer-events-auto transform transition-all duration-300 translate-y-0 opacity-100 flex items-center gap-space-sm px-space-md py-space-sm rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl" id="demo-toast">
+<span class="material-symbols-outlined text-[18px] text-tag-sales" id="toast-icon">check_circle</span>
+<span class="font-body-sm text-body-sm font-medium" id="toast-message">Message restored to Inbox</span>
+<button class="ml-space-md text-secondary hover:text-surface-canvas" onclick="dismissToast()" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Main Viewport Layout Canvas -->
+<div class="flex flex-col w-full px-space-lg py-space-md space-y-space-md">
+<!-- Top Action / Context Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-canvas p-space-md rounded-xl shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-error-container text-error flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-[24px]">delete</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Trash</h1>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-error-container text-error font-semibold" id="header-trash-count">18</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Deleted messages &amp; recovery queue for RTC Crackers mailboxes</p>
+</div>
+</div>
+<!-- Quick Context Switcher (Prototype Demonstration Bar) -->
+<div class="flex items-center gap-space-sm bg-surface-subtle p-1 rounded-xl self-start lg:self-auto">
+<span class="font-label-sm text-label-sm text-secondary px-2">Prototype State:</span>
+<button class="px-2.5 py-1 rounded-lg font-label-md text-label-md transition-all bg-surface-canvas shadow-sm text-tag-notifications font-semibold" id="btn-state-list" onclick="setViewState('list')" type="button">
+          Normal Feed (18)
+        </button>
+<button class="px-2.5 py-1 rounded-lg font-label-md text-label-md transition-all text-secondary hover:text-on-surface" id="btn-state-empty" onclick="setViewState('empty')" type="button">
+          Empty State
+        </button>
+<button class="px-2.5 py-1 rounded-lg font-label-md text-label-md transition-all text-secondary hover:text-on-surface" id="btn-state-skeleton" onclick="setViewState('skeleton')" type="button">
+          Loading Skeleton
+        </button>
+</div>
+</div>
+<!-- Retention Warning Advisory Banner -->
+<div class="flex items-start justify-between gap-space-md p-space-md rounded-xl bg-surface-container-low text-on-surface transition-all" id="retention-banner">
+<div class="flex items-start gap-space-md">
+<div class="p-1 rounded bg-tertiary-fixed text-on-tertiary-fixed mt-0.5">
+<span class="material-symbols-outlined text-[18px]">policy</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Organizational Auto-Purge Protocol (30-Day Window)</span>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+            Messages in Trash are scheduled for permanent purge 30 days after deletion in accordance with PESO compliance and enterprise retention policy. You can restore them to original mailboxes anytime.
+          </p>
+<div class="flex items-center gap-space-md mt-space-xs">
+<a class="font-label-md text-label-md text-tag-notifications hover:underline flex items-center gap-1 font-semibold" href="#">
+<span>View Data Retention Matrix</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+<span class="text-secondary text-xs">•</span>
+<button class="font-label-md text-label-md text-secondary hover:text-on-surface" onclick="triggerToast('Storage log export generated')" type="button">
+              Export Audit Manifest
+            </button>
+</div>
+</div>
+</div>
+<button class="p-1 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" onclick="document.getElementById('retention-banner').classList.add('hidden')" title="Dismiss" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- KPI / Metric Highlights Row -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+<div class="flex flex-col p-space-md rounded-xl bg-surface-canvas shadow-sm">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-md text-label-md uppercase tracking-wider font-semibold">Total In Trash</span>
+<span class="material-symbols-outlined text-[20px] text-error">auto_delete</span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-space-sm">
+<span class="font-display-lg text-display-lg text-on-surface font-bold leading-none" id="kpi-total">18</span>
+<span class="font-body-sm text-body-sm text-secondary">threads</span>
+</div>
+<div class="flex items-center gap-1.5 mt-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span class="font-label-sm text-label-sm text-secondary">1.8 MB server footprint</span>
+</div>
+</div>
+<div class="flex flex-col p-space-md rounded-xl bg-surface-canvas shadow-sm">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-md text-label-md uppercase tracking-wider font-semibold">Unread Deleted</span>
+<span class="material-symbols-outlined text-[20px] text-tag-notifications">mark_email_unread</span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-space-sm">
+<span class="font-display-lg text-display-lg text-tag-notifications font-bold leading-none">4</span>
+<span class="font-body-sm text-body-sm text-secondary">urgent inquiries</span>
+</div>
+<div class="flex items-center gap-1.5 mt-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-notifications"></span>
+<span class="font-label-sm text-label-sm text-secondary">Requires review before purge</span>
+</div>
+</div>
+<div class="flex flex-col p-space-md rounded-xl bg-surface-canvas shadow-sm">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-md text-label-md uppercase tracking-wider font-semibold">Flagged / Starred</span>
+<span class="material-symbols-outlined text-[20px] text-tag-orders">star</span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-space-sm">
+<span class="font-display-lg text-display-lg text-on-surface font-bold leading-none">3</span>
+<span class="font-body-sm text-body-sm text-secondary">saved records</span>
+</div>
+<div class="flex items-center gap-1.5 mt-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-orders"></span>
+<span class="font-label-sm text-label-sm text-secondary">Protected by flagged priority</span>
+</div>
+</div>
+<div class="flex flex-col p-space-md rounded-xl bg-surface-canvas shadow-sm justify-between">
+<div>
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-md text-label-md uppercase tracking-wider font-semibold">Recent (7 Days)</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">history</span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-space-sm">
+<span class="font-display-lg text-display-lg text-on-surface font-bold leading-none">11</span>
+<span class="font-body-sm text-body-sm text-secondary">past week</span>
+</div>
+</div>
+<div class="pt-space-xs">
+<button class="w-full flex items-center justify-center gap-1.5 px-space-md py-1.5 rounded-lg bg-error-container hover:bg-error text-error hover:text-on-error font-label-md text-label-md font-semibold transition-colors" onclick="openEmptyTrashModal()" type="button">
+<span class="material-symbols-outlined text-[16px]">delete_forever</span>
+<span>Empty Trash...</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Filter Rails & Account Tabs -->
+<div class="flex flex-col space-y-space-sm bg-surface-canvas p-space-md rounded-xl shadow-sm">
+<!-- Mailbox Multi-Account Segment Bar -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1" id="mailbox-filter-bar">
+<button class="shrink-0 flex items-center gap-space-xs px-3 py-1.5 rounded-lg bg-on-surface text-surface-canvas font-label-md text-label-md font-semibold transition-all" onclick="filterMailbox('all', this)">
+<span>All Mailboxes</span>
+<span class="bg-surface-canvas/20 text-surface-canvas px-1.5 py-0.2 rounded-full text-code-sm">18</span>
+</button>
+<button class="shrink-0 flex items-center gap-space-xs px-3 py-1.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-all" onclick="filterMailbox('sales', this)">
+<span class="w-2 h-2 rounded-full bg-tag-sales"></span>
+<span>sales@rtcrackers.com</span>
+<span class="text-secondary text-code-sm">6</span>
+</button>
+<button class="shrink-0 flex items-center gap-space-xs px-3 py-1.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-all" onclick="filterMailbox('support', this)">
+<span class="w-2 h-2 rounded-full bg-tag-support"></span>
+<span>support@rtcrackers.com</span>
+<span class="text-secondary text-code-sm">5</span>
+</button>
+<button class="shrink-0 flex items-center gap-space-xs px-3 py-1.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-all" onclick="filterMailbox('orders', this)">
+<span class="w-2 h-2 rounded-full bg-tag-orders"></span>
+<span>orders@rtcrackers.com</span>
+<span class="text-secondary text-code-sm">4</span>
+</button>
+<button class="shrink-0 flex items-center gap-space-xs px-3 py-1.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-all" onclick="filterMailbox('billing', this)">
+<span class="w-2 h-2 rounded-full bg-tag-billing"></span>
+<span>billing@rtcrackers.com</span>
+<span class="text-secondary text-code-sm">2</span>
+</button>
+<button class="shrink-0 flex items-center gap-space-xs px-3 py-1.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-all" onclick="filterMailbox('admin', this)">
+<span class="w-2 h-2 rounded-full bg-tag-admin"></span>
+<span>admin@rtcrackers.com</span>
+<span class="text-secondary text-code-sm">1</span>
+</button>
+</div>
+<!-- Secondary Attribute Chips & Sorting -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center flex-wrap gap-space-xs">
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold" onclick="toggleAttributeFilter('all', this)">
+            All (18)
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-subtle hover:bg-surface-container text-secondary hover:text-on-surface font-label-sm text-label-sm font-medium" onclick="toggleAttributeFilter('unread', this)">
+            Unread (4)
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-subtle hover:bg-surface-container text-secondary hover:text-on-surface font-label-sm text-label-sm font-medium" onclick="toggleAttributeFilter('starred', this)">
+            ★ Starred (3)
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-subtle hover:bg-surface-container text-secondary hover:text-on-surface font-label-sm text-label-sm font-medium flex items-center gap-1" onclick="toggleAttributeFilter('attachments', this)">
+<span class="material-symbols-outlined text-[13px]">attach_file</span>
+<span>Has Attachments (6)</span>
+</button>
+<div class="relative">
+<button class="px-2.5 py-1 rounded-full bg-surface-subtle hover:bg-surface-container text-secondary hover:text-on-surface font-label-sm text-label-sm font-medium flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[13px]">calendar_today</span>
+<span>Date Range: All Time</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-space-md self-end md:self-auto">
+<div class="flex items-center gap-1 text-secondary">
+<span class="font-label-sm text-label-sm text-secondary">Sort:</span>
+<select class="bg-surface-subtle text-on-surface font-label-md text-label-md rounded-lg px-2 py-1 outline-none cursor-pointer hover:bg-surface-container transition-colors">
+<option selected="">Newest deleted first</option>
+<option>Oldest deleted first</option>
+<option>Sender A–Z</option>
+<option>Subject A–Z</option>
+</select>
+</div>
+<div class="flex items-center gap-0.5 bg-surface-subtle p-0.5 rounded-lg">
+<button class="p-1 rounded bg-surface-canvas text-on-surface shadow-xs" title="Comfortable density" type="button">
+<span class="material-symbols-outlined text-[16px]">density_medium</span>
+</button>
+<button class="p-1 rounded text-secondary hover:text-on-surface" title="Compact density" type="button">
+<span class="material-symbols-outlined text-[16px]">density_small</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Batch Operations Toolbar (Dynamically swaps when rows selected) -->
+<div class="flex items-center justify-between px-space-md py-space-sm bg-surface-canvas rounded-xl shadow-sm min-h-[52px]" id="batch-toolbar">
+<!-- Default Toolbar (0 selected) -->
+<div class="flex items-center gap-space-md w-full justify-between" id="default-toolbar-actions">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications" id="master-select" onchange="toggleSelectAll(this)" title="Select All" type="checkbox"/>
+<button class="p-1 text-secondary hover:text-on-surface rounded" title="Selection Options" type="button">
+<span class="material-symbols-outlined text-[16px]">arrow_drop_down</span>
+</button>
+</div>
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" onclick="simulateRefresh()" type="button">
+<span class="material-symbols-outlined text-[18px]" id="refresh-spin-icon">refresh</span>
+<span>Refresh</span>
+</button>
+<div class="h-4 w-px bg-border-strong hidden sm:block"></div>
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-error hover:bg-error-container font-label-md text-label-md transition-colors" onclick="openEmptyTrashModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_sweep</span>
+<span>Empty Entire Trash</span>
+</button>
+</div>
+<div class="flex items-center gap-space-md text-secondary">
+<span class="font-label-md text-label-md">Showing <span class="font-semibold text-on-surface">1–15</span> of 18</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-container disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="p-1 rounded text-secondary hover:text-on-surface hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Active Selection Floating Bar (Appears when >=1 selected) -->
+<div class="hidden flex items-center justify-between w-full" id="selection-toolbar-actions">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-sm">
+<input checked="" class="w-4 h-4 rounded cursor-pointer accent-tag-notifications" id="master-select-active" onchange="clearAllSelections()" type="checkbox"/>
+<span class="font-label-md text-label-md font-semibold text-on-surface" id="selected-counter-badge">3 selected</span>
+</div>
+<div class="h-4 w-px bg-border-strong"></div>
+<!-- Primary Restore Action -->
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-tag-sales text-on-primary font-label-md text-label-md font-semibold hover:opacity-95 shadow-sm transition-all" onclick="restoreSelectedMessages()" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+<span>Restore to Inbox</span>
+</button>
+<!-- Permanently Delete -->
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-error text-on-primary font-label-md text-label-md font-semibold hover:opacity-90 shadow-sm transition-all" onclick="openPermanentlyDeleteModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+<span>Permanently Delete</span>
+</button>
+<div class="h-4 w-px bg-border-strong hidden md:block"></div>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors hidden md:flex" onclick="markSelectedRead(true)" title="Mark as Read" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+</button>
+<button class="p-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors hidden md:flex" onclick="starSelectedMessages()" title="Star All" type="button">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+</div>
+<button class="text-secondary hover:text-on-surface font-label-md text-label-md font-medium" onclick="clearAllSelections()" type="button">
+          Deselect All
+        </button>
+</div>
+</div>
+<!-- MAIN VIEW 1: Deleted Email List View (15 sample items) -->
+<div class="flex flex-col bg-surface-canvas rounded-xl shadow-sm overflow-hidden" id="view-state-list">
+<!-- Email Item 1 (Unread, Starred, Attachment, Support) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-subtle/60 hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="1">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-tag-orders hover:scale-110 transition-transform" onclick="toggleStar(this, event)" title="Starred">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<div class="w-2 h-2 rounded-full bg-tag-notifications shrink-0" title="Unread"></div>
+<div class="w-7 h-7 rounded-full bg-tag-support/15 text-tag-support font-semibold text-code-sm flex items-center justify-center shrink-0">
+            KR
+          </div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">Kavitha Ramesh</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-support/10 text-tag-support flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-support"></span>
+            support
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">Order cancellation request - Sivakasi Mega Gift Box (Order #RTC-88219)</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- Dear Support, due to unavoidable family event rescheduling, we would like to cancel the mega box dispatch...</span>
+</div>
+<span class="shrink-0 flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-secondary text-code-sm font-medium">
+<span class="material-symbols-outlined text-[12px]">picture_as_pdf</span>
+<span>cancel.pdf</span>
+</span>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">40m ago</span>
+<!-- Hover Action Toolbar -->
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('Order #RTC-88219', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as read" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Email Item 2 (Read, Sales) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="2">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-secondary hover:text-tag-orders transition-colors" onclick="toggleStar(this, event)" title="Star">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+<div class="w-2 h-2 shrink-0"></div>
+<div class="w-7 h-7 rounded-full bg-tag-sales/15 text-tag-sales font-semibold text-code-sm flex items-center justify-center shrink-0">
+            MA
+          </div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-body-md text-body-md text-on-surface truncate">Murugan Agencies</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-sales/10 text-tag-sales flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+            sales
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-body-md text-body-md text-on-surface truncate">Duplicate inquiry: Bulk sparklers 500 packs supply schedule</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- Please disregard previous ticket, updating revised carton quantities for Diwali dispatch tier...</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">2h ago</span>
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('Murugan Agencies', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as unread" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Email Item 3 (Outbound, Read, Sales) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="3">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-secondary hover:text-tag-orders transition-colors" onclick="toggleStar(this, event)" title="Star">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+<div class="w-2 h-2 shrink-0"></div>
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-secondary font-semibold text-code-sm flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-body-md text-body-md text-on-surface truncate">To: Chennai Distributors</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-sales/10 text-tag-sales flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+            sales
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-body-md text-body-md text-on-surface truncate">Outdated quote draft: Festival Pre-booking Tier 3</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- Revised rate card superseded by seasonal wholesale batch pricing revision #RTC-2026-v2...</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">Yesterday</span>
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('Quote Draft', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as unread" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Email Item 4 (Starred, Orders, Attachment) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="4">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-tag-orders hover:scale-110 transition-transform" onclick="toggleStar(this, event)" title="Starred">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<div class="w-2 h-2 shrink-0"></div>
+<div class="w-7 h-7 rounded-full bg-tag-orders/15 text-tag-orders font-semibold text-code-sm flex items-center justify-center shrink-0">
+            SI
+          </div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-body-md text-body-md text-on-surface truncate">South India Express Logistics</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-orders/10 text-tag-orders flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-orders"></span>
+            orders
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-body-md text-body-md text-on-surface truncate">Delivered consignment POD confirmation #CON-90214</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- Consignment of 80 cartons safely delivered to Bangalore hub central depot unloading dock...</span>
+</div>
+<span class="shrink-0 flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-secondary text-code-sm font-medium">
+<span class="material-symbols-outlined text-[12px]">picture_as_pdf</span>
+<span>POD_Scan.pdf</span>
+</span>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">Yesterday</span>
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('POD Confirmation', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as unread" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Email Item 5 (Unread, Admin) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-subtle/60 hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="5">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-secondary hover:text-tag-orders transition-colors" onclick="toggleStar(this, event)" title="Star">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+<div class="w-2 h-2 rounded-full bg-tag-notifications shrink-0" title="Unread"></div>
+<div class="w-7 h-7 rounded-full bg-tag-admin/15 text-tag-admin font-semibold text-code-sm flex items-center justify-center shrink-0">
+            PR
+          </div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">Fireworks Trade India</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-admin/10 text-tag-admin flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-admin"></span>
+            admin
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">Sub: Industry newsletter - PESO fireworks compliance handbook 2026</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- Read the quarterly updates on safe chemical compositions and Sivakasi licensing schedules...</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">2 days ago</span>
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('PESO Compliance', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as read" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Email Item 6 (Read, Billing, Attachment) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="6">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-secondary hover:text-tag-orders transition-colors" onclick="toggleStar(this, event)" title="Star">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+<div class="w-2 h-2 shrink-0"></div>
+<div class="w-7 h-7 rounded-full bg-tag-billing/15 text-tag-billing font-semibold text-code-sm flex items-center justify-center shrink-0">
+            AD
+          </div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-body-md text-body-md text-on-surface truncate">Accounts Desk</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-billing/10 text-tag-billing flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-billing"></span>
+            billing
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-body-md text-body-md text-on-surface truncate">Payment receipt acknowledgment for corrugated boxes INV-4491</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- We confirm receipt of NEFT payment Rs 1,45,000 against monthly corrugated box consignment...</span>
+</div>
+<span class="shrink-0 flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-secondary text-code-sm font-medium">
+<span class="material-symbols-outlined text-[12px]">receipt_long</span>
+<span>INV4491.pdf</span>
+</span>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">3 days ago</span>
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('Payment Receipt', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as unread" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Email Item 7 (Outbound, Info) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="7">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-secondary hover:text-tag-orders transition-colors" onclick="toggleStar(this, event)" title="Star">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+<div class="w-2 h-2 shrink-0"></div>
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-secondary font-semibold text-code-sm flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-body-md text-body-md text-on-surface truncate">To: Pyrotech Materials</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-info/10 text-tag-info flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-info"></span>
+            info
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-body-md text-body-md text-on-surface truncate">Obsolete supplier query regarding raw sulfur purity specifications</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- Please cancel this inquiry as we have finalized certified grade raw material with local Sivakasi vendor...</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">Oct 19</span>
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('Supplier Query', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as unread" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Email Item 8 (Unread, Starred, Support, Attachment) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-subtle/60 hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="8">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-tag-orders hover:scale-110 transition-transform" onclick="toggleStar(this, event)" title="Starred">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<div class="w-2 h-2 rounded-full bg-tag-notifications shrink-0" title="Unread"></div>
+<div class="w-7 h-7 rounded-full bg-tag-support/15 text-tag-support font-semibold text-code-sm flex items-center justify-center shrink-0">
+            AF
+          </div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">Anand Fireworks Depot</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-support/10 text-tag-support flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-support"></span>
+            support
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">Defective carton replacement claim [Resolved]</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- Batch of Ground Chakkars replaced promptly by depot field executive. Closing claim file...</span>
+</div>
+<span class="shrink-0 flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-secondary text-code-sm font-medium">
+<span class="material-symbols-outlined text-[12px]">image</span>
+<span>damage.jpg</span>
+</span>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">Oct 18</span>
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('Replacement Claim', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as read" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Email Item 9 (Read, Admin) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="9">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-secondary hover:text-tag-orders transition-colors" onclick="toggleStar(this, event)" title="Star">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+<div class="w-2 h-2 shrink-0"></div>
+<div class="w-7 h-7 rounded-full bg-tag-admin/15 text-tag-admin font-semibold text-code-sm flex items-center justify-center shrink-0">
+            FS
+          </div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-body-md text-body-md text-on-surface truncate">TN Fire Safety Portal</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-admin/10 text-tag-admin flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-admin"></span>
+            admin
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-body-md text-body-md text-on-surface truncate">Scheduled depot inspection reminder - Sivakasi Unit 4</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- Periodic regional fire department safety audit scheduled on 14th November morning shift...</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">Oct 16</span>
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('Safety Reminder', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as unread" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Email Item 10 (Outbound, Noreply) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="10">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-secondary hover:text-tag-orders transition-colors" onclick="toggleStar(this, event)" title="Star">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+<div class="w-2 h-2 shrink-0"></div>
+<div class="w-7 h-7 rounded-full bg-tag-noreply/15 text-tag-noreply font-semibold text-code-sm flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[14px]">smart_toy</span>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-body-md text-body-md text-on-surface truncate">Auto-Responder System</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-noreply/10 text-tag-noreply flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-noreply"></span>
+            noreply
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-body-md text-body-md text-on-surface truncate">Auto-responder test message - Diwali Surge setup verification</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- Testing automated reply routing logic for Bangalore customer queries during peak campaign hours...</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">Oct 15</span>
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('Auto-Responder Test', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as unread" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Email Item 11 (Sales, Read) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="11">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-secondary hover:text-tag-orders transition-colors" onclick="toggleStar(this, event)" title="Star">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+<div class="w-2 h-2 shrink-0"></div>
+<div class="w-7 h-7 rounded-full bg-tag-sales/15 text-tag-sales font-semibold text-code-sm flex items-center justify-center shrink-0">
+            GB
+          </div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-body-md text-body-md text-on-surface truncate">Ganesh Bazaars Wholesale</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-sales/10 text-tag-sales flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+            sales
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-body-md text-body-md text-on-surface truncate">Inquiry regarding 1000-Wala Garland Crackers bulk pricing</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- Requesting revised commercial proforma invoice for Hyderabad wholesale branch consignment...</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">Oct 14</span>
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('Ganesh Bazaars', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as unread" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Email Item 12 (Orders, Read, Attachment) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="12">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-secondary hover:text-tag-orders transition-colors" onclick="toggleStar(this, event)" title="Star">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+<div class="w-2 h-2 shrink-0"></div>
+<div class="w-7 h-7 rounded-full bg-tag-orders/15 text-tag-orders font-semibold text-code-sm flex items-center justify-center shrink-0">
+            KL
+          </div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-body-md text-body-md text-on-surface truncate">Kowsalya Lorry Service</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-orders/10 text-tag-orders flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-orders"></span>
+            orders
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-body-md text-body-md text-on-surface truncate">Trip sheet LR copy #TR-4401 Madurai to Salem transit</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- Attached digital copy of lorry receipt counter-signed by transport supervisor at weigh-bridge...</span>
+</div>
+<span class="shrink-0 flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-secondary text-code-sm font-medium">
+<span class="material-symbols-outlined text-[12px]">description</span>
+<span>LR_4401.pdf</span>
+</span>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">Oct 12</span>
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('Trip Sheet LR', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as unread" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Email Item 13 (Support, Read) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="13">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-secondary hover:text-tag-orders transition-colors" onclick="toggleStar(this, event)" title="Star">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+<div class="w-2 h-2 shrink-0"></div>
+<div class="w-7 h-7 rounded-full bg-tag-support/15 text-tag-support font-semibold text-code-sm flex items-center justify-center shrink-0">
+            VS
+          </div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-body-md text-body-md text-on-surface truncate">Vignesh Sundaram</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-support/10 text-tag-support flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-support"></span>
+            support
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-body-md text-body-md text-on-surface truncate">Query on green crackers QR code verification app</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- CSIR NEERI QR code scanning instruction sheet successfully dispatched to customer...</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">Oct 11</span>
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('QR Verification', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as unread" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Email Item 14 (Billing, Read) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="14">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-secondary hover:text-tag-orders transition-colors" onclick="toggleStar(this, event)" title="Star">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+<div class="w-2 h-2 shrink-0"></div>
+<div class="w-7 h-7 rounded-full bg-tag-billing/15 text-tag-billing font-semibold text-code-sm flex items-center justify-center shrink-0">
+            HDFC
+          </div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-body-md text-body-md text-on-surface truncate">HDFC Corporate Bank</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-billing/10 text-tag-billing flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-billing"></span>
+            billing
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-body-md text-body-md text-on-surface truncate">Daily transaction summary alert - Sivakasi Current A/c #9011</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- EOD settlement report confirmed. Routine automated notification archived to deleted queue...</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">Oct 09</span>
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('Daily Summary Alert', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as unread" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Email Item 15 (Sales, Read, Attachment) -->
+<div class="group relative flex items-center justify-between px-space-md py-space-sm bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 email-row cursor-pointer" data-id="15">
+<div class="flex items-center gap-space-sm min-w-0 flex-1">
+<input class="w-4 h-4 rounded cursor-pointer accent-tag-notifications row-check" onchange="handleRowCheckbox(this)" type="checkbox"/>
+<button class="p-1 text-secondary hover:text-tag-orders transition-colors" onclick="toggleStar(this, event)" title="Star">
+<span class="material-symbols-outlined text-[18px]">star</span>
+</button>
+<div class="w-2 h-2 shrink-0"></div>
+<div class="w-7 h-7 rounded-full bg-tag-sales/15 text-tag-sales font-semibold text-code-sm flex items-center justify-center shrink-0">
+            RP
+          </div>
+<div class="flex items-center gap-space-sm shrink-0 w-44">
+<span class="font-body-md text-body-md text-on-surface truncate">Rajarathnam Pyros</span>
+</div>
+<span class="shrink-0 px-2 py-0.5 rounded text-code-sm font-semibold bg-tag-sales/10 text-tag-sales flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+            sales
+          </span>
+<div class="flex items-center gap-space-sm min-w-0 flex-1 pl-space-xs">
+<span class="font-body-md text-body-md text-on-surface truncate">Out-of-stock notification for Aerial Repeating Shots 50-break</span>
+<span class="font-body-sm text-body-sm text-secondary truncate hidden xl:inline">- Production batch exhausted for November season. Recommending substitution item RTC-SKY7...</span>
+</div>
+<span class="shrink-0 flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-secondary text-code-sm font-medium">
+<span class="material-symbols-outlined text-[12px]">table_chart</span>
+<span>stock_matrix.xlsx</span>
+</span>
+</div>
+<div class="flex items-center gap-space-md shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm text-secondary group-hover:hidden">Oct 07</span>
+<div class="hidden group-hover:flex items-center gap-1 bg-surface-canvas shadow-sm rounded-lg p-0.5">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-tag-sales" onclick="restoreSingleItem('Stock Notice', event)" title="Restore message" type="button">
+<span class="material-symbols-outlined text-[18px]">settings_backup_restore</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-error" onclick="openPermanentlyDeleteModal(event)" title="Permanently delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="toggleSingleRead(this, event)" title="Mark as unread" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_email_unread</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-secondary" onclick="showMoreMenu(event)" title="More options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MAIN VIEW 2: Empty Trash State View (Prototype Target) -->
+<div class="hidden flex flex-col items-center justify-center py-20 px-space-md bg-surface-canvas rounded-xl shadow-sm text-center" id="view-state-empty">
+<div class="w-20 h-20 rounded-full bg-surface-subtle flex items-center justify-center text-secondary mb-space-md shadow-inner">
+<span class="material-symbols-outlined text-[42px] text-tag-noreply/70">auto_delete</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Trash is clean and empty</h3>
+<p class="font-body-md text-body-md text-secondary max-w-md mt-space-xs">
+        No deleted emails or operational threads pending purge. Messages moved to Trash in any RTC Crackers mailbox will stay here for 30 days before auto-cleanup.
+      </p>
+<div class="flex items-center gap-space-sm mt-space-lg">
+<a class="px-space-lg py-space-sm rounded-xl bg-tag-notifications hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all shadow-sm" href="#">
+          Go to Inbox
+        </a>
+<button class="px-space-md py-space-sm rounded-xl bg-surface-subtle hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all" onclick="setViewState('list')">
+          Reload Sample Feed
+        </button>
+</div>
+</div>
+<!-- MAIN VIEW 3: Loading Skeleton State (Prototype Target) -->
+<div class="hidden flex flex-col bg-surface-canvas rounded-xl shadow-sm p-space-md space-y-space-md" id="view-state-skeleton">
+<div class="flex items-center justify-between animate-pulse">
+<div class="h-4 w-48 bg-surface-container rounded"></div>
+<div class="h-4 w-24 bg-surface-container rounded"></div>
+</div>
+<div class="space-y-space-sm">
+<div class="flex items-center gap-space-md p-space-sm bg-surface-subtle rounded-lg animate-pulse">
+<div class="w-4 h-4 bg-surface-container rounded"></div>
+<div class="w-7 h-7 rounded-full bg-surface-container shrink-0"></div>
+<div class="h-4 w-32 bg-surface-container rounded"></div>
+<div class="h-4 w-16 bg-surface-container rounded"></div>
+<div class="h-4 flex-1 bg-surface-container rounded"></div>
+<div class="h-4 w-16 bg-surface-container rounded"></div>
+</div>
+<div class="flex items-center gap-space-md p-space-sm bg-surface-subtle rounded-lg animate-pulse">
+<div class="w-4 h-4 bg-surface-container rounded"></div>
+<div class="w-7 h-7 rounded-full bg-surface-container shrink-0"></div>
+<div class="h-4 w-28 bg-surface-container rounded"></div>
+<div class="h-4 w-16 bg-surface-container rounded"></div>
+<div class="h-4 flex-1 bg-surface-container rounded"></div>
+<div class="h-4 w-16 bg-surface-container rounded"></div>
+</div>
+<div class="flex items-center gap-space-md p-space-sm bg-surface-subtle rounded-lg animate-pulse">
+<div class="w-4 h-4 bg-surface-container rounded"></div>
+<div class="w-7 h-7 rounded-full bg-surface-container shrink-0"></div>
+<div class="h-4 w-36 bg-surface-container rounded"></div>
+<div class="h-4 w-16 bg-surface-container rounded"></div>
+<div class="h-4 flex-1 bg-surface-container rounded"></div>
+<div class="h-4 w-16 bg-surface-container rounded"></div>
+</div>
+<div class="flex items-center gap-space-md p-space-sm bg-surface-subtle rounded-lg animate-pulse">
+<div class="w-4 h-4 bg-surface-container rounded"></div>
+<div class="w-7 h-7 rounded-full bg-surface-container shrink-0"></div>
+<div class="h-4 w-24 bg-surface-container rounded"></div>
+<div class="h-4 w-16 bg-surface-container rounded"></div>
+<div class="h-4 flex-1 bg-surface-container rounded"></div>
+<div class="h-4 w-16 bg-surface-container rounded"></div>
+</div>
+</div>
+</div>
+<!-- Bottom Pagination & Storage Telemetry Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm p-space-md bg-surface-canvas rounded-xl shadow-sm text-secondary font-label-sm text-label-sm">
+<div class="flex items-center gap-space-md">
+<span>Trash quota utilization: <strong class="text-on-surface">1.8 MB / 5.0 GB (0.03%)</strong></span>
+<span class="hidden sm:inline text-secondary">•</span>
+<span class="flex items-center gap-1 text-tag-sales font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tag-sales"></span>
+          Retention scheduler active (daily 02:00 AM IST)
+        </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span>Items per page:</span>
+<select class="bg-surface-subtle text-on-surface font-label-md text-label-md rounded px-2 py-0.5 outline-none">
+<option>15</option>
+<option>25</option>
+<option>50</option>
+<option>100</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Interactive Modal 1: Empty Trash Confirmation Dialog -->
+<div class="fixed inset-0 z-50 hidden flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-space-md" id="modal-empty-trash">
+<div class="w-full max-w-md bg-surface-canvas rounded-xl shadow-2xl p-space-xl flex flex-col space-y-space-md animate-in fade-in zoom-in-95 duration-200">
+<div class="flex items-center gap-space-md text-error">
+<div class="w-12 h-12 rounded-xl bg-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">delete_forever</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Empty Trash?</h3>
+<span class="font-label-sm text-label-sm text-secondary">Irreversible action warning</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-secondary">
+        Are you sure you want to permanently delete all <strong class="text-on-surface">18 messages</strong> in the Trash folder? This will immediately purge items from <span class="text-on-surface font-medium">sales@</span>, <span class="text-on-surface font-medium">support@</span>, and all associated RTC Crackers mailboxes. This action cannot be undone.
+      </p>
+<div class="p-space-sm bg-error-container/40 rounded-lg flex items-center gap-space-sm text-error font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+<span>Audit logs will record an administrative bulk purge operation.</span>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2 rounded-lg bg-surface-subtle hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold transition-colors" onclick="closeEmptyTrashModal()" type="button">
+          Cancel
+        </button>
+<button class="px-space-lg py-2 rounded-lg bg-error hover:bg-error/90 text-on-error font-label-md text-label-md font-semibold shadow-md transition-all" onclick="confirmEmptyTrash()" type="button">
+          Yes, Empty Entire Trash
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Modal 2: Permanently Delete Single / Selected Item Dialog -->
+<div class="fixed inset-0 z-50 hidden flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-space-md" id="modal-delete-permanent">
+<div class="w-full max-w-md bg-surface-canvas rounded-xl shadow-2xl p-space-xl flex flex-col space-y-space-md animate-in fade-in zoom-in-95 duration-200">
+<div class="flex items-center gap-space-md text-error">
+<div class="w-10 h-10 rounded-xl bg-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">delete</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Permanently Delete Message?</h3>
+<span class="font-label-sm text-label-sm text-secondary">Immediate database purge</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-secondary">
+        This item and all associated attachments will be completely erased from disk. You will not be able to recover this correspondence through standard restore mechanisms.
+      </p>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2 rounded-lg bg-surface-subtle hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold transition-colors" onclick="closePermanentlyDeleteModal()" type="button">
+          Keep in Trash
+        </button>
+<button class="px-space-lg py-2 rounded-lg bg-error hover:bg-error/90 text-on-error font-label-md text-label-md font-semibold shadow-md transition-all" onclick="confirmSingleDelete()" type="button">
+          Delete Permanently
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Scripts for Prototype Functionality -->
+<script>
+    let selectedIds = new Set();
+    let toastTimeout = null;
+
+    function triggerToast(text, isError = false) {
+      const toast = document.getElementById('demo-toast');
+      const msg = document.getElementById('toast-message');
+      const icon = document.getElementById('toast-icon');
+
+      msg.textContent = text;
+      if (isError) {
+        icon.textContent = 'warning';
+        icon.className = 'material-symbols-outlined text-[18px] text-error';
+      } else {
+        icon.textContent = 'check_circle';
+        icon.className = 'material-symbols-outlined text-[18px] text-tag-sales';
+      }
+
+      toast.classList.remove('hidden');
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        dismissToast();
+      }, 3500);
+    }
+
+    function dismissToast() {
+      const toast = document.getElementById('demo-toast');
+      toast.classList.add('hidden');
+    }
+
+    function setViewState(state) {
+      document.getElementById('view-state-list').classList.add('hidden');
+      document.getElementById('view-state-empty').classList.add('hidden');
+      document.getElementById('view-state-skeleton').classList.add('hidden');
+
+      const btnList = document.getElementById('btn-state-list');
+      const btnEmpty = document.getElementById('btn-state-empty');
+      const btnSkeleton = document.getElementById('btn-state-skeleton');
+
+      const neutralClasses = 'px-2.5 py-1 rounded-lg font-label-md text-label-md transition-all text-secondary hover:text-on-surface';
+      const activeClasses = 'px-2.5 py-1 rounded-lg font-label-md text-label-md transition-all bg-surface-canvas shadow-sm text-tag-notifications font-semibold';
+
+      btnList.className = neutralClasses;
+      btnEmpty.className = neutralClasses;
+      btnSkeleton.className = neutralClasses;
+
+      if (state === 'list') {
+        document.getElementById('view-state-list').classList.remove('hidden');
+        btnList.className = activeClasses;
+      } else if (state === 'empty') {
+        document.getElementById('view-state-empty').classList.remove('hidden');
+        btnEmpty.className = activeClasses;
+      } else if (state === 'skeleton') {
+        document.getElementById('view-state-skeleton').classList.remove('hidden');
+        btnSkeleton.className = activeClasses;
+      }
+    }
+
+    function updateBatchToolbar() {
+      const defaultBar = document.getElementById('default-toolbar-actions');
+      const selectionBar = document.getElementById('selection-toolbar-actions');
+      const counterBadge = document.getElementById('selected-counter-badge');
+      const masterCheck = document.getElementById('master-select');
+
+      if (selectedIds.size > 0) {
+        defaultBar.classList.add('hidden');
+        selectionBar.classList.remove('hidden');
+        counterBadge.textContent = selectedIds.size + ' selected';
+        masterCheck.checked = true;
+      } else {
+        defaultBar.classList.remove('hidden');
+        selectionBar.classList.add('hidden');
+        masterCheck.checked = false;
+      }
+    }
+
+    function handleRowCheckbox(checkbox) {
+      const row = checkbox.closest('.email-row');
+      const id = row.getAttribute('data-id');
+
+      if (checkbox.checked) {
+        selectedIds.add(id);
+        row.classList.add('bg-primary-fixed/20');
+      } else {
+        selectedIds.delete(id);
+        row.classList.remove('bg-primary-fixed/20');
+      }
+      updateBatchToolbar();
+    }
+
+    function toggleSelectAll(masterCheckbox) {
+      const rows = document.querySelectorAll('.email-row');
+      rows.forEach(row => {
+        const id = row.getAttribute('data-id');
+        const check = row.querySelector('.row-check');
+        if (masterCheckbox.checked) {
+          check.checked = true;
+          selectedIds.add(id);
+          row.classList.add('bg-primary-fixed/20');
+        } else {
+          check.checked = false;
+          selectedIds.delete(id);
+          row.classList.remove('bg-primary-fixed/20');
+        }
+      });
+      updateBatchToolbar();
+    }
+
+    function clearAllSelections() {
+      const rows = document.querySelectorAll('.email-row');
+      rows.forEach(row => {
+        const check = row.querySelector('.row-check');
+        if (check) check.checked = false;
+        row.classList.remove('bg-primary-fixed/20');
+      });
+      selectedIds.clear();
+      updateBatchToolbar();
+    }
+
+    function toggleStar(btn, e) {
+      e.stopPropagation();
+      const icon = btn.querySelector('.material-symbols-outlined');
+      const isFilled = icon.style.fontVariationSettings && icon.style.fontVariationSettings.includes("'FILL' 1");
+
+      if (isFilled) {
+        icon.style.fontVariationSettings = "'FILL' 0";
+        btn.classList.remove('text-tag-orders');
+        btn.classList.add('text-secondary');
+        triggerToast('Message unstarred');
+      } else {
+        icon.style.fontVariationSettings = "'FILL' 1";
+        btn.classList.remove('text-secondary');
+        btn.classList.add('text-tag-orders');
+        triggerToast('Message starred');
+      }
+    }
+
+    function toggleSingleRead(btn, e) {
+      e.stopPropagation();
+      const row = btn.closest('.email-row');
+      const unreadDot = row.querySelector('.bg-tag-notifications');
+      if (unreadDot) {
+        unreadDot.classList.remove('bg-tag-notifications');
+        unreadDot.classList.add('w-2', 'h-2');
+        triggerToast('Marked as read');
+      } else {
+        triggerToast('Marked as unread');
+      }
+    }
+
+    function restoreSingleItem(name, e) {
+      e.stopPropagation();
+      const row = e.target.closest('.email-row');
+      if (row) {
+        row.style.opacity = '0.3';
+        setTimeout(() => {
+          row.remove();
+          decrementCounters();
+          triggerToast('Restored "' + name + '" to original mailbox');
+        }, 250);
+      }
+    }
+
+    function restoreSelectedMessages() {
+      const count = selectedIds.size;
+      selectedIds.forEach(id => {
+        const row = document.querySelector(`.email-row[data-id="${id}"]`);
+        if (row) row.remove();
+      });
+      selectedIds.clear();
+      updateBatchToolbar();
+      decrementCounters(count);
+      triggerToast(count + ' messages restored to Inbox');
+    }
+
+    function starSelectedMessages() {
+      selectedIds.forEach(id => {
+        const row = document.querySelector(`.email-row[data-id="${id}"]`);
+        if (row) {
+          const starBtn = row.querySelector('button[title="Star"], button[title="Starred"]');
+          if (starBtn) {
+            const icon = starBtn.querySelector('.material-symbols-outlined');
+            icon.style.fontVariationSettings = "'FILL' 1";
+            starBtn.classList.add('text-tag-orders');
+          }
+        }
+      });
+      triggerToast(selectedIds.size + ' messages starred');
+      clearAllSelections();
+    }
+
+    function markSelectedRead(markRead) {
+      triggerToast(selectedIds.size + (markRead ? ' messages marked read' : ' messages marked unread'));
+      clearAllSelections();
+    }
+
+    function decrementCounters(amount = 1) {
+      const kpi = document.getElementById('kpi-total');
+      const badge = document.getElementById('header-trash-count');
+      let val = parseInt(kpi.textContent, 10) - amount;
+      if (val < 0) val = 0;
+      kpi.textContent = val;
+      badge.textContent = val;
+      if (val === 0) setViewState('empty');
+    }
+
+    function simulateRefresh() {
+      const icon = document.getElementById('refresh-spin-icon');
+      icon.classList.add('animate-spin');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        triggerToast('Trash folder synchronised');
+      }, 700);
+    }
+
+    function openEmptyTrashModal() {
+      document.getElementById('modal-empty-trash').classList.remove('hidden');
+    }
+
+    function closeEmptyTrashModal() {
+      document.getElementById('modal-empty-trash').classList.add('hidden');
+    }
+
+    function confirmEmptyTrash() {
+      closeEmptyTrashModal();
+      setViewState('empty');
+      document.getElementById('kpi-total').textContent = '0';
+      document.getElementById('header-trash-count').textContent = '0';
+      triggerToast('All 18 messages permanently purged from server');
+    }
+
+    function openPermanentlyDeleteModal(e) {
+      if (e) e.stopPropagation();
+      document.getElementById('modal-delete-permanent').classList.remove('hidden');
+    }
+
+    function closePermanentlyDeleteModal() {
+      document.getElementById('modal-delete-permanent').classList.add('hidden');
+    }
+
+    function confirmSingleDelete() {
+      closePermanentlyDeleteModal();
+      if (selectedIds.size > 0) {
+        selectedIds.forEach(id => {
+          const row = document.querySelector(`.email-row[data-id="${id}"]`);
+          if (row) row.remove();
+        });
+        const cnt = selectedIds.size;
+        selectedIds.clear();
+        updateBatchToolbar();
+        decrementCounters(cnt);
+        triggerToast(cnt + ' messages permanently deleted');
+      } else {
+        decrementCounters(1);
+        triggerToast('Message permanently deleted');
+      }
+    }
+
+    function showMoreMenu(e) {
+      e.stopPropagation();
+      triggerToast('Message headers & diagnostics ready for inspection');
+    }
+
+    function filterMailbox(dept, btn) {
+      const parent = document.getElementById('mailbox-filter-bar');
+      parent.querySelectorAll('button').forEach(b => {
+        b.className = 'shrink-0 flex items-center gap-space-xs px-3 py-1.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-all';
+      });
+      btn.className = 'shrink-0 flex items-center gap-space-xs px-3 py-1.5 rounded-lg bg-on-surface text-surface-canvas font-label-md text-label-md font-semibold transition-all';
+      triggerToast('Filtered mailbox: ' + dept);
+    }
+
+    function toggleAttributeFilter(type, btn) {
+      triggerToast('Applied filter: ' + type);
+    }
+  </script>
+</div></main></div></body></html>
